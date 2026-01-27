@@ -1,12 +1,80 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import { TechBackground } from '@/components/timeline/TechBackground';
+import { TimelineProgress } from '@/components/timeline/TimelineProgress';
+import { TimelineHero } from '@/components/timeline/TimelineHero';
+import { TableOfContents } from '@/components/timeline/TableOfContents';
+import { TeamSection } from '@/components/timeline/TeamSection';
+import { TimelineAboutSection } from '@/components/timeline/TimelineAboutSection';
+import { TimelineSection } from '@/components/timeline/TimelineSection';
+import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
+import { BackToTopButton } from '@/components/timeline/BackToTopButton';
 
 const Index = () => {
+  // Set SEO meta tags
+  useEffect(() => {
+    document.title = 'Black Tech Street | Rebirthing Historic Black Wall Street';
+    
+    const updateOrCreateMeta = (property: string, content: string, isName = false) => {
+      const attr = isName ? 'name' : 'property';
+      let meta = document.querySelector(`meta[${attr}="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute(attr, property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateOrCreateMeta('description', 'Explore Black Tech Street\'s journey rebirthing Historic Black Wall Street as a world-class AI innovation economy in Greenwood, Tulsa.', true);
+    updateOrCreateMeta('og:title', 'Black Tech Street | Rebirthing Historic Black Wall Street');
+    updateOrCreateMeta('og:description', 'Explore Black Tech Street\'s journey rebirthing Historic Black Wall Street as a world-class AI innovation economy.');
+    updateOrCreateMeta('og:type', 'website');
+    
+    updateOrCreateMeta('twitter:card', 'summary_large_image', true);
+    updateOrCreateMeta('twitter:title', 'Black Tech Street | Timeline', true);
+    updateOrCreateMeta('twitter:description', 'Explore Black Tech Street\'s journey rebirthing Historic Black Wall Street as a world-class innovation economy.', true);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Tech background with matrix effect */}
+      <TechBackground isVisible={true} />
+      
+      {/* Scroll progress bar */}
+      <TimelineProgress />
+
+      {/* Hero section */}
+      <TimelineHero />
+
+      {/* Navigation pills */}
+      <div className="relative z-10 px-5 max-w-2xl mx-auto">
+        <TableOfContents />
       </div>
+
+      {/* Main content */}
+      <main className="relative z-10 px-5 pb-20 max-w-2xl mx-auto">
+        {/* Team section */}
+        <TeamSection />
+
+        {/* About section */}
+        <TimelineAboutSection />
+
+        {/* Timeline section */}
+        <TimelineSection />
+
+        {/* Testimonials */}
+        <TestimonialsSection />
+
+        {/* Footer */}
+        <footer className="text-center pt-12 border-t border-border/30">
+          <p className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Black Tech Street. All rights reserved.
+          </p>
+        </footer>
+      </main>
+
+      {/* Back to top button */}
+      <BackToTopButton />
     </div>
   );
 };
