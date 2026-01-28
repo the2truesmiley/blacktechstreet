@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { TimelineProgress } from '@/components/timeline/TimelineProgress';
+import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { TimelineHero } from '@/components/timeline/TimelineHero';
 import { TableOfContents } from '@/components/timeline/TableOfContents';
 import { TeamSection } from '@/components/timeline/TeamSection';
 import { TimelineAboutSection } from '@/components/timeline/TimelineAboutSection';
+import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
 import { TimelineSection } from '@/components/timeline/TimelineSection';
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
+import { FinalCTASection } from '@/components/timeline/FinalCTASection';
+import { Footer } from '@/components/timeline/Footer';
 import { BackToTopButton } from '@/components/timeline/BackToTopButton';
 
 const Index = () => {
@@ -40,6 +44,9 @@ const Index = () => {
       {/* Tech background with matrix effect */}
       <TechBackground isVisible={true} />
       
+      {/* Fixed navigation bar */}
+      <TopNavBar />
+      
       {/* Scroll progress bar */}
       <TimelineProgress />
 
@@ -56,22 +63,26 @@ const Index = () => {
         {/* Team section */}
         <TeamSection />
 
-        {/* About section */}
+        {/* About section with Instagram */}
         <TimelineAboutSection />
+
+        {/* Photo Gallery */}
+        <PhotoGallerySection />
 
         {/* Timeline section */}
         <TimelineSection />
 
         {/* Testimonials */}
         <TestimonialsSection />
-
-        {/* Footer */}
-        <footer className="text-center pt-12 border-t border-border/30">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Black Tech Street. All rights reserved.
-          </p>
-        </footer>
       </main>
+
+      {/* Final CTA */}
+      <FinalCTASection />
+
+      {/* Enhanced Footer */}
+      <div className="relative z-10 px-5 max-w-2xl mx-auto">
+        <Footer />
+      </div>
 
       {/* Back to top button */}
       <BackToTopButton />

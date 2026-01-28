@@ -1,138 +1,114 @@
 import { motion } from 'framer-motion';
-import { Target, Eye, Wrench, Lightbulb, Users } from 'lucide-react';
-import { aboutContent } from '@/data/timeline';
+import { Target, Instagram } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface IconBoxProps {
-  icon: React.ReactNode;
-}
-
-function IconBox({ icon }: IconBoxProps) {
-  return (
-    <div className="relative group">
-      <div className="absolute inset-0 rounded-xl bg-primary/20 blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
-      <div className={cn(
-        "relative w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
-        "bg-secondary border border-primary/30",
-        "shadow-lg shadow-black/20"
-      )}>
-        {icon}
-      </div>
-    </div>
-  );
-}
+const instagramPosts = [
+  { id: 1 }, { id: 2 }, { id: 3 },
+  { id: 4 }, { id: 5 }, { id: 6 },
+];
 
 export function TimelineAboutSection() {
   return (
     <section id="about-section" className="py-16 border-b border-border/30">
-      <div className="grid gap-8 md:gap-10">
-        {/* Origin */}
+      <div className="grid md:grid-cols-2 gap-10 md:gap-12">
+        {/* Mission Block */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="flex items-start gap-5"
+          className="flex flex-col"
         >
-          <IconBox icon={<Lightbulb className="h-5 w-5 text-primary" strokeWidth={1.5} />} />
-          <div>
-            <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-foreground">
-              Origin
-            </h3>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              Black Tech Street was founded on one question:{' '}
-              <motion.strong
-                initial={{ opacity: 0.6, y: 5 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
-                className="inline text-primary font-bold"
+          <div className="flex items-start gap-4 mb-6">
+            <div className="relative group">
+              <div className="absolute inset-0 rounded-xl bg-primary/20 blur-lg opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+              <div className={cn(
+                "relative w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
+                "bg-secondary border border-primary/30",
+                "shadow-lg shadow-black/20"
+              )}>
+                <Target className="h-5 w-5 text-primary" strokeWidth={1.5} />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl md:text-2xl font-display font-bold text-foreground">
+                Our Mission
+              </h3>
+            </div>
+          </div>
+
+          <p className="text-muted-foreground leading-relaxed text-base md:text-lg mb-6">
+            <strong className="text-primary">Rebirthing Historic Black Wall Street</strong> as a world-class 
+            innovation economy rooted in AI, Cybersecurity, and Other Emerging Technologies.
+          </p>
+
+          <p className="text-muted-foreground leading-relaxed text-base md:text-lg mb-6">
+            We design and deliver programs at the intersection of{' '}
+            <strong className="text-primary">education, innovation, and research</strong> to ensure 
+            communities can participate in, and shape, the AI economy.
+          </p>
+
+          <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+            Transforming Greenwood and the Greater Tulsa Region into{' '}
+            <strong className="text-primary">the model for AI-powered societies</strong> and economies of the future.
+          </p>
+        </motion.div>
+
+        {/* Instagram Feed Placeholder */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-col"
+        >
+          <div className="flex items-center gap-3 mb-6">
+          <div className={cn(
+              "w-10 h-10 rounded-full flex items-center justify-center",
+              "bg-gradient-to-br from-primary via-primary/70 to-primary/50"
+            )}>
+              <Instagram className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <a 
+                href="https://instagram.com/blacktechstreet" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-medium text-foreground hover:text-primary transition-colors"
               >
-                "{aboutContent.origin.question}"
-              </motion.strong>{' '}
-              BTS was built on three core realities:{' '}
-              <strong className="text-primary">tech can create intergenerational wealth in 7–10 years</strong>, it is the{' '}
-              <strong className="text-primary">engine behind global innovation</strong>, and by{' '}
-              <strong className="text-primary">2030</strong> the U.S. is projected to face a shortage of up to{' '}
-              <strong className="text-primary">4.3 million high-paying tech jobs</strong>.
-            </p>
+                @blacktechstreet
+              </a>
+              <p className="text-xs text-muted-foreground">Follow us on Instagram</p>
+            </div>
           </div>
-        </motion.div>
 
-        {/* Mission */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="flex items-start gap-5"
-        >
-          <IconBox icon={<Target className="h-5 w-5 text-primary" strokeWidth={1.5} />} />
-          <div>
-            <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-foreground">
-              Mission
-            </h3>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              {aboutContent.mission}
-            </p>
+          <div className="grid grid-cols-3 gap-2">
+            {instagramPosts.map((post, index) => (
+              <motion.a
+                key={post.id}
+                href="https://instagram.com/blacktechstreet"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+                whileHover={{ scale: 1.05 }}
+                className={cn(
+                  "aspect-square rounded-lg overflow-hidden",
+                  "bg-secondary/50 border border-border/40",
+                  "hover:border-primary/50 transition-all duration-300",
+                  "flex items-center justify-center"
+                )}
+              >
+                <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center">
+                  <Instagram className="w-4 h-4 text-primary/40" />
+                </div>
+              </motion.a>
+            ))}
           </div>
-        </motion.div>
 
-        {/* Vision */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="flex items-start gap-5"
-        >
-          <IconBox icon={<Eye className="h-5 w-5 text-primary" strokeWidth={1.5} />} />
-          <div>
-            <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-foreground">
-              Vision
-            </h3>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              {aboutContent.vision}
-            </p>
-          </div>
-        </motion.div>
-
-        {/* What We Do */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="flex items-start gap-5"
-        >
-          <IconBox icon={<Wrench className="h-5 w-5 text-primary" strokeWidth={1.5} />} />
-          <div>
-            <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-foreground">
-              What We Do
-            </h3>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              {aboutContent.whatWeDo}
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Who We Serve */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="flex items-start gap-5"
-        >
-          <IconBox icon={<Users className="h-5 w-5 text-primary" strokeWidth={1.5} />} />
-          <div>
-            <h3 className="text-xl md:text-2xl font-display font-bold mb-3 text-foreground">
-              Who We Serve
-            </h3>
-            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-              Black Tech Street serves local government, educational institutions, employers and business networks, entrepreneurs and startups, and community learners, including residents and future-ready professionals.
-            </p>
-          </div>
+          <p className="text-xs text-muted-foreground text-center mt-4">
+            Latest updates from our community
+          </p>
         </motion.div>
       </div>
     </section>
