@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import logoWhite from '@/assets/logo_b_solo_white.png';
 
 const navLinks = [
   { label: 'About Us', href: '#about-section' },
-  { label: 'Programs', href: '#timeline-section' },
+  { label: 'Programs', href: '#gallery-section' },
   { label: 'Contact', href: '#contact-section' },
 ];
 
@@ -50,13 +51,15 @@ export function TopNavBar() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
           >
             <div className="relative">
               <div className="absolute inset-0 rounded-lg bg-primary/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative w-8 h-8 rounded-lg bg-primary/20 border border-primary/50 flex items-center justify-center">
-                <span className="font-display font-bold text-primary text-sm">B</span>
-              </div>
+              <img 
+                src={logoWhite} 
+                alt="Black Tech Street" 
+                className="relative w-10 h-10 object-contain"
+              />
             </div>
             <span className="font-display font-bold text-foreground text-lg hidden sm:block">
               Black Tech Street

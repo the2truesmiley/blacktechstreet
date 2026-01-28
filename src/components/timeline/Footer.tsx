@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import logoWhite from '@/assets/logo_b_solo_white.png';
 
 const socialLinks = [
   { icon: Facebook, href: 'https://facebook.com/blacktechstreet', label: 'Facebook' },
@@ -27,13 +28,15 @@ export function Footer() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="group flex items-center gap-2"
+            className="group flex items-center gap-3"
           >
             <div className="relative">
               <div className="absolute inset-0 rounded-lg bg-primary/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative w-10 h-10 rounded-lg bg-primary/20 border border-primary/50 flex items-center justify-center">
-                <span className="font-display font-bold text-primary text-lg">B</span>
-              </div>
+              <img 
+                src={logoWhite} 
+                alt="Black Tech Street" 
+                className="relative w-12 h-12 object-contain"
+              />
             </div>
             <span className="font-display font-bold text-foreground text-xl">
               Black Tech Street

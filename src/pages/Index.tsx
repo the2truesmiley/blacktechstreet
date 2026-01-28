@@ -7,7 +7,6 @@ import { TableOfContents } from '@/components/timeline/TableOfContents';
 import { TeamSection } from '@/components/timeline/TeamSection';
 import { TimelineAboutSection } from '@/components/timeline/TimelineAboutSection';
 import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
-import { TimelineSection } from '@/components/timeline/TimelineSection';
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
 import { FinalCTASection } from '@/components/timeline/FinalCTASection';
 import { Footer } from '@/components/timeline/Footer';
@@ -50,7 +49,7 @@ const Index = () => {
       {/* Scroll progress bar */}
       <TimelineProgress />
 
-      {/* Hero section */}
+      {/* Hero section (unchanged Matrix-style) */}
       <TimelineHero />
 
       {/* Navigation pills */}
@@ -68,9 +67,6 @@ const Index = () => {
 
         {/* Photo Gallery */}
         <PhotoGallerySection />
-
-        {/* Timeline section */}
-        <TimelineSection />
 
         {/* Testimonials */}
         <TestimonialsSection />

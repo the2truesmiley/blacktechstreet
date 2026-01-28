@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
-import { Image } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import speakerPresentation from '@/assets/speaker_presentation.jpg';
+import teamGroupPhoto from '@/assets/team_group_photo.jpg';
 
 const galleryItems = [
-  { id: 1, title: 'ASPIRE Workshop', description: 'GenAI Fluency Lab Session' },
-  { id: 2, title: 'Community Gathering', description: 'Tech professionals networking' },
-  { id: 3, title: 'NVIDIA Partnership', description: 'MOU signing ceremony' },
-  { id: 4, title: 'Hack the Future', description: 'AI challenge participants' },
-  { id: 5, title: 'Certificate Ceremony', description: 'Program graduates celebration' },
-  { id: 6, title: 'White House Visit', description: 'National Cyber Director event' },
+  { id: 1, title: 'Leadership Presentation', image: speakerPresentation },
+  { id: 2, title: 'Community Gathering', image: teamGroupPhoto },
+  { id: 3, title: 'ASPIRE Workshop', image: speakerPresentation },
+  { id: 4, title: 'Hack the Future', image: teamGroupPhoto },
+  { id: 5, title: 'Certificate Ceremony', image: speakerPresentation },
+  { id: 6, title: 'Tech Summit', image: teamGroupPhoto },
 ];
 
 export function PhotoGallerySection() {
@@ -38,20 +39,26 @@ export function PhotoGallerySection() {
               "hover:border-primary/50 transition-all duration-300"
             )}
           >
-            {/* Placeholder content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                <Image className="w-6 h-6 text-primary/60" />
-              </div>
-              <h3 className="text-sm font-medium text-foreground mb-1">{item.title}</h3>
-              <p className="text-xs text-muted-foreground">{item.description}</p>
+            {/* Image */}
+            <img
+              src={item.image}
+              alt={item.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
+
+            {/* Title overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-3">
+              <h3 className="text-sm font-medium text-foreground">{item.title}</h3>
             </div>
 
             {/* Hover overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
             {/* Corner accent */}
-            <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary/50 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
         ))}
       </div>
