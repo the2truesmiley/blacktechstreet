@@ -1,117 +1,74 @@
 
-# Plan: Update Homepage Content (Keep Existing Hero)
+
+# Plan: Update Navigation to Match Mega-Menu Screenshot
 
 ## Overview
-This plan adds the content from the website analysis document while **preserving the current Matrix-style hero section exactly as it is** - including the matrix rain, floating particles, pulsing rings, scanning lines, animated logo, and "Black Tech Street" title.
+Update the TopNavBar to match the reference screenshot with a mega-menu style navigation featuring dropdown columns for About Us, Programs, People, and Contact sections.
 
-## What Stays the Same
-- **Hero Section** - No changes. Matrix rain, particles, scanning lines, pulsing rings, animated B logo, "Black Tech Street" headline, and scroll indicator all remain untouched.
+## Current vs. Target
 
-## What Gets Added/Modified
+| Current | Target (Screenshot) |
+|---------|---------------------|
+| Simple horizontal links: About Us, Programs, Contact | Multi-column mega-menu dropdowns |
+| No dropdowns | About Us, Programs (with ASPIRE), People (Partners, Team), Contact (email, Contact Us) |
+| Logo + text on left | Same - logo + "Black Tech Street" text on left |
 
-### 1. Top Navigation Bar
-**New file:** `src/components/timeline/TopNavBar.tsx`
+## Implementation Details
 
-A fixed navigation bar at the top of the page:
-- Transparent background with glass-morphism effect
-- "Black Tech Street" logo/text on the left
-- Navigation links on the right: **About Us**, **Programs**, **Contact**
-- Becomes more solid on scroll
-- Mobile hamburger menu for smaller screens
+### File: `src/components/timeline/TopNavBar.tsx`
 
-### 2. Simplified About Section + Instagram Placeholder
-**Modify:** `src/components/timeline/TimelineAboutSection.tsx`
+**Changes:**
 
-Streamline the current 5-block about section:
-- Condense into a focused mission statement block
-- Add an Instagram feed placeholder section showing @blacktechstreet with a 3x2 grid of placeholder images
-- Side-by-side layout on desktop (mission left, Instagram right)
+1. **Update navigation structure** to include dropdown menus with sub-items:
+   - **About Us** - single link (no dropdown)
+   - **Programs** - dropdown with "ASPIRE" sub-item
+   - **People** - dropdown with "Partners" and "Team" sub-items
+   - **Contact** - dropdown with "contact@blacktechstreet.com" (email link) and "Contact Us" link
 
-### 3. Photo Gallery Section
-**New file:** `src/components/timeline/PhotoGallerySection.tsx`
+2. **Add hover-triggered dropdowns** using React state or CSS hover:
+   - Glass-morphism dropdown panels with dark background
+   - Smooth fade-in animation using Framer Motion
+   - High z-index to ensure visibility over other content
 
-A new section showcasing event photos:
-- Responsive grid layout (2 columns mobile, 3-4 columns desktop)
-- Placeholder image cards representing workshops, presentations, group photos
-- Hover effects with glass-morphism styling
-- Emerald accent on hover states
+3. **Update mobile menu** to include all sub-items in an accordion-style expandable format
 
-### 4. Final Call-to-Action Section
-**New file:** `src/components/timeline/FinalCTASection.tsx`
+4. **Styling:**
+   - Dropdown background: `bg-background/95 backdrop-blur-lg`
+   - Border: `border border-border/40`
+   - Sub-items: muted text that highlights on hover
+   - Email link styled differently (potentially with mailto: link)
 
-A high-impact section near the bottom:
-- Bold headline: **"THE FUTURE OF TECH STARTS HERE."**
-- Two action buttons: **"Learn More"** and **"Contact Us"**
-- Gradient background with subtle glow effects
-- Centered layout with emerald accents
+### Navigation Structure
 
-### 5. Enhanced Footer
-**New file:** `src/components/timeline/Footer.tsx`
-
-Replace the simple copyright line with:
-- Black Tech Street logo
-- Social media icons (Facebook, Instagram) with hover effects
-- Copyright: "Black Tech Street © 2025. All rights reserved."
-- Subtle gradient top border
-
-### 6. Page Structure Update
-**Modify:** `src/pages/Index.tsx`
-
-New section order:
-```text
-┌─────────────────────────────────────┐
-│         TopNavBar (fixed)           │
-├─────────────────────────────────────┤
-│     TimelineHero (unchanged)        │
-│   Matrix rain, particles, logo,     │
-│   "Black Tech Street" title         │
-├─────────────────────────────────────┤
-│     TableOfContents (pills)         │
-├─────────────────────────────────────┤
-│          TeamSection                │
-├─────────────────────────────────────┤
-│   TimelineAboutSection (updated)    │
-│   + Instagram placeholder           │
-├─────────────────────────────────────┤
-│      PhotoGallerySection (new)      │
-├─────────────────────────────────────┤
-│         TimelineSection             │
-├─────────────────────────────────────┤
-│       TestimonialsSection           │
-├─────────────────────────────────────┤
-│      FinalCTASection (new)          │
-├─────────────────────────────────────┤
-│         Footer (enhanced)           │
-└─────────────────────────────────────┘
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ [Logo] Black Tech Street     About Us    Programs▼    People▼    Contact▼  │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                             │            │           │
+                                             │            │           │
+                                           ┌─┴─┐       ┌──┴──┐     ┌──┴──────────────────┐
+                                           │ASPIRE│    │Partners│  │contact@blacktech...│
+                                           └─────┘    │Team    │  │Contact Us          │
+                                                      └────────┘  └─────────────────────┘
 ```
 
----
+### Technical Implementation
 
-## Technical Details
+**Dropdown Component:**
+- Use hover state (`onMouseEnter`/`onMouseLeave`) for desktop
+- AnimatePresence for smooth enter/exit animations
+- Positioned absolutely below the nav item
 
-### New Files to Create
-| File | Purpose |
-|------|---------|
-| `src/components/timeline/TopNavBar.tsx` | Fixed navigation with glass effect |
-| `src/components/timeline/PhotoGallerySection.tsx` | Event photo grid |
-| `src/components/timeline/FinalCTASection.tsx` | Final CTA with action buttons |
-| `src/components/timeline/Footer.tsx` | Enhanced footer with social links |
+**Mobile Menu:**
+- Convert dropdowns to collapsible sections
+- Tap to expand/collapse sub-items
+- Chevron icon to indicate expandable sections
 
-### Files to Modify
-| File | Changes |
-|------|---------|
-| `src/components/timeline/TimelineAboutSection.tsx` | Simplify content, add Instagram placeholder |
-| `src/pages/Index.tsx` | Import new components, reorder sections |
+**Links:**
+- "About Us" scrolls to `#about-section`
+- "ASPIRE" - placeholder link (can scroll to gallery or programs)
+- "Partners" - placeholder link
+- "Team" - scrolls to `#team-section`
+- "Contact Us" - scrolls to `#contact-section`
+- Email - opens `mailto:contact@blacktechstreet.com`
 
-### Design Consistency
-All new components follow the existing design system:
-- **Colors:** Dark background, emerald (#10b981) accents
-- **Effects:** Glass-morphism (backdrop-blur, semi-transparent backgrounds)
-- **Animations:** Framer Motion fade-in on scroll, hover effects
-- **Typography:** Space Grotesk headings, Inter body text
-- **Styling:** Consistent border-radius, shadows, glow effects
-
----
-
-## Summary
-The Matrix-style hero with all its effects (rain, particles, rings, scanning lines, animated logo) will remain completely unchanged. The updates focus on adding navigation, simplifying the about section, adding a photo gallery, creating a final CTA, and enhancing the footer to match the website analysis content structure.
