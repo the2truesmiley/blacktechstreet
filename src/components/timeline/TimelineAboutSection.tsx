@@ -1,13 +1,34 @@
 import { motion } from 'framer-motion';
 import { Target, Instagram } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-const instagramPosts = [
-  { id: 1 }, { id: 2 }, { id: 3 },
-  { id: 4 }, { id: 5 }, { id: 6 },
-];
+import { useEffect, useRef } from 'react';
 
 export function TimelineAboutSection() {
+  const instagramRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Load Instagram embed script
+    const script = document.createElement('script');
+    script.src = 'https://www.instagram.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Process embeds when script loads
+    script.onload = () => {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://www.instagram.com/embed.js"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
     <section id="about-section" className="py-16 border-b border-border/30">
       <div className="grid md:grid-cols-2 gap-10 md:gap-12">
@@ -53,7 +74,7 @@ export function TimelineAboutSection() {
           </p>
         </motion.div>
 
-        {/* Instagram Feed Placeholder */}
+        {/* Instagram Embed */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +82,7 @@ export function TimelineAboutSection() {
           className="flex flex-col"
         >
           <div className="flex items-center gap-3 mb-6">
-          <div className={cn(
+            <div className={cn(
               "w-10 h-10 rounded-full flex items-center justify-center",
               "bg-gradient-to-br from-primary via-primary/70 to-primary/50"
             )}>
@@ -80,30 +101,37 @@ export function TimelineAboutSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-2">
-            {instagramPosts.map((post, index) => (
-              <motion.a
-                key={post.id}
-                href="https://instagram.com/blacktechstreet"
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-                className={cn(
-                  "aspect-square rounded-lg overflow-hidden",
-                  "bg-secondary/50 border border-border/40",
-                  "hover:border-primary/50 transition-all duration-300",
-                  "flex items-center justify-center"
-                )}
-              >
-                <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center">
-                  <Instagram className="w-4 h-4 text-primary/40" />
-                </div>
-              </motion.a>
-            ))}
+          <div 
+            ref={instagramRef}
+            className={cn(
+              "rounded-lg overflow-hidden",
+              "bg-secondary/30 border border-border/40",
+              "[&_iframe]:!min-w-0 [&_iframe]:!max-w-full"
+            )}
+          >
+            <blockquote 
+              className="instagram-media" 
+              data-instgrm-permalink="https://www.instagram.com/blacktechstreet/"
+              data-instgrm-version="14"
+              style={{
+                background: 'transparent',
+                border: 0,
+                borderRadius: '3px',
+                boxShadow: 'none',
+                margin: '0',
+                maxWidth: '100%',
+                minWidth: '100%',
+                padding: 0,
+                width: '100%',
+              }}
+            >
+              <div className="p-8 flex flex-col items-center justify-center min-h-[400px]">
+                <Instagram className="w-12 h-12 text-primary/40 mb-4" />
+                <p className="text-muted-foreground text-center text-sm">
+                  Loading Instagram feed...
+                </p>
+              </div>
+            </blockquote>
           </div>
 
           <p className="text-xs text-muted-foreground text-center mt-4">
@@ -113,4 +141,15 @@ export function TimelineAboutSection() {
       </div>
     </section>
   );
+}
+
+// Extend Window interface for Instagram embed
+declare global {
+  interface Window {
+    instgrm?: {
+      Embeds: {
+        process: () => void;
+      };
+    };
+  }
 }
