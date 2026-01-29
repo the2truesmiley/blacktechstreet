@@ -1,18 +1,44 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import logoWhite from '@/assets/logo_b_solo_white.png';
 
-const navLinks = [
+interface NavItem {
+  label: string;
+  href?: string;
+  children?: { label: string; href: string; isEmail?: boolean }[];
+}
+
+const navItems: NavItem[] = [
   { label: 'About Us', href: '#about-section' },
-  { label: 'Programs', href: '#gallery-section' },
-  { label: 'Contact', href: '#contact-section' },
+  { 
+    label: 'Programs', 
+    children: [
+      { label: 'ASPIRE', href: '#gallery-section' },
+    ]
+  },
+  { 
+    label: 'People', 
+    children: [
+      { label: 'Partners', href: '#testimonials-section' },
+      { label: 'Team', href: '#team-section' },
+    ]
+  },
+  { 
+    label: 'Contact', 
+    children: [
+      { label: 'contact@blacktechstreet.com', href: 'mailto:contact@blacktechstreet.com', isEmail: true },
+      { label: 'Contact Us', href: '#contact-section' },
+    ]
+  },
 ];
 
 export function TopNavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpandedItems, setMobileExpandedItems] = useState<string[]>([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +48,27 @@ export function TopNavBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, isEmail?: boolean) => {
     setIsMobileMenuOpen(false);
+    setOpenDropdown(null);
+    
+    if (isEmail) {
+      window.location.href = href;
+      return;
+    }
+    
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const toggleMobileExpanded = (label: string) => {
+    setMobileExpandedItems(prev => 
+      prev.includes(label) 
+        ? prev.filter(item => item !== label)
+        : [...prev, label]
+    );
   };
 
   return (
@@ -68,15 +109,62 @@ export function TopNavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => handleNavClick(link.href)}
-                className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium group"
+            {navItems.map((item) => (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.children && setOpenDropdown(item.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
-              </button>
+                {item.children ? (
+                  <button
+                    className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium group"
+                  >
+                    {item.label}
+                    <ChevronDown className={cn(
+                      "w-4 h-4 transition-transform duration-200",
+                      openDropdown === item.label && "rotate-180"
+                    )} />
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => handleNavClick(item.href!)}
+                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium group"
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                  </button>
+                )}
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {item.children && openDropdown === item.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 min-w-[200px] z-50"
+                    >
+                      <div className="bg-background/95 backdrop-blur-lg border border-border/40 rounded-lg shadow-xl overflow-hidden">
+                        {item.children.map((child) => (
+                          <button
+                            key={child.label}
+                            onClick={() => handleNavClick(child.href, child.isEmail)}
+                            className={cn(
+                              "block w-full text-left px-4 py-3 text-sm transition-colors duration-200",
+                              "text-muted-foreground hover:text-foreground hover:bg-secondary/50",
+                              child.isEmail && "text-primary hover:text-primary"
+                            )}
+                          >
+                            {child.label}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
           </div>
 
@@ -98,17 +186,60 @@ export function TopNavBar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[72px] left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-b border-border/40 md:hidden"
+            className="fixed top-[72px] left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-b border-border/40 md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
           >
-            <div className="px-5 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.label}
-                  onClick={() => handleNavClick(link.href)}
-                  className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium py-2"
-                >
-                  {link.label}
-                </button>
+            <div className="px-5 py-4 flex flex-col gap-2">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  {item.children ? (
+                    <>
+                      <button
+                        onClick={() => toggleMobileExpanded(item.label)}
+                        className="flex items-center justify-between w-full text-left text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium py-2"
+                      >
+                        {item.label}
+                        <ChevronDown className={cn(
+                          "w-4 h-4 transition-transform duration-200",
+                          mobileExpandedItems.includes(item.label) && "rotate-180"
+                        )} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileExpandedItems.includes(item.label) && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pl-4 pb-2 flex flex-col gap-1">
+                              {item.children.map((child) => (
+                                <button
+                                  key={child.label}
+                                  onClick={() => handleNavClick(child.href, child.isEmail)}
+                                  className={cn(
+                                    "text-left text-sm py-2 transition-colors duration-200",
+                                    "text-muted-foreground hover:text-foreground",
+                                    child.isEmail && "text-primary hover:text-primary"
+                                  )}
+                                >
+                                  {child.label}
+                                </button>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <button
+                      onClick={() => handleNavClick(item.href!)}
+                      className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium py-2"
+                    >
+                      {item.label}
+                    </button>
+                  )}
+                </div>
               ))}
             </div>
           </motion.div>
