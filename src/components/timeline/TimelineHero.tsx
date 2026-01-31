@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useMemo } from 'react';
+import logoCircuit from '@/assets/logo_b_circuit.png';
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
 
@@ -185,10 +186,11 @@ export function TimelineHero() {
               ease: 'easeInOut',
             }}
           />
-          {/* Placeholder B Logo */}
-          <div className="relative w-full h-full rounded-2xl bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center shadow-xl shadow-primary/30">
-            <span className="text-4xl md:text-5xl font-display font-bold text-primary-foreground">B</span>
-          </div>
+          <img 
+            src={logoCircuit} 
+            alt="Black Tech Street" 
+            className="relative w-full h-full object-contain drop-shadow-[0_0_15px_hsl(var(--primary)/0.5)]"
+          />
         </motion.div>
 
         <motion.div

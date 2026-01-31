@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logoWhite from '@/assets/logo_b_solo_white.png';
+import logoCircuit from '@/assets/logo_b_circuit.png';
 
 interface NavItem {
   label: string;
@@ -97,8 +97,8 @@ export function TopNavBar() {
             <div className="relative">
               <div className="absolute inset-0 rounded-lg bg-primary/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <img 
-                src={logoWhite} 
-                alt="Black Tech Street" 
+                src={logoCircuit} 
+                alt="Black Tech Street"
                 className="relative w-10 h-10 object-contain"
               />
             </div>
