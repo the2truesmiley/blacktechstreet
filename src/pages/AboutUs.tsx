@@ -1,161 +1,293 @@
 import { motion } from 'framer-motion';
-import { Target, Users, Lightbulb, MapPin, ArrowLeft } from 'lucide-react';
+import { Target, Users, Lightbulb, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { TechBackground } from '@/components/timeline/TechBackground';
 
 const values = [
   {
     icon: Target,
-    title: 'Our Mission',
+    title: 'Mission',
     description: 'Rebirthing Historic Black Wall Street as a world-class innovation economy rooted in AI, Cybersecurity, and Other Emerging Technologies.',
   },
   {
     icon: Lightbulb,
-    title: 'Our Vision',
+    title: 'Vision',
     description: 'Transforming Greenwood and the Greater Tulsa Region into the model for AI-powered societies and economies of the future.',
   },
   {
     icon: Users,
-    title: 'Our Approach',
+    title: 'Approach',
     description: 'We design and deliver programs at the intersection of education, innovation, and research to ensure communities can participate in, and shape, the AI economy.',
   },
   {
     icon: MapPin,
-    title: 'Our Roots',
+    title: 'Roots',
     description: 'Rooted in the historic Greenwood District of Tulsa, Oklahoma — once known as Black Wall Street — we honor that legacy by building the future of technology.',
+  },
+];
+
+const timeline = [
+  {
+    year: '1921',
+    title: 'Black Wall Street',
+    description: 'The thriving Greenwood District in Tulsa was one of the most prosperous African American communities in the United States, home to hundreds of Black-owned businesses.',
+  },
+  {
+    year: '2020',
+    title: 'Vision Born',
+    description: 'Black Tech Street was founded with a mission to revitalize the spirit of innovation and entrepreneurship that defined the original Black Wall Street.',
+  },
+  {
+    year: '2021',
+    title: 'Centennial Launch',
+    description: 'On the 100th anniversary of the Tulsa Race Massacre, Black Tech Street launched its first programs to bring tech education to the Greenwood community.',
+  },
+  {
+    year: '2023',
+    title: 'ASPIRE Program',
+    description: 'Launched the ASPIRE program, providing comprehensive AI and cybersecurity training to equip community members with cutting-edge tech skills.',
+  },
+  {
+    year: '2024',
+    title: 'Growing Impact',
+    description: 'Expanded programming and partnerships, reaching more students and professionals across the Greater Tulsa region.',
+  },
+  {
+    year: 'Future',
+    title: 'The Road Ahead',
+    description: 'Building toward our goal of establishing Greenwood as the model for AI-powered communities and economies of the future.',
   },
 ];
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
-      <TechBackground isVisible={true} />
+    <div className="min-h-screen bg-background text-foreground">
       <TopNavBar />
       
-      <main className="relative z-10 pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-5">
-          {/* Back Link */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 group"
+      <main className="relative">
+        {/* Editorial Hero */}
+        <section className="pt-32 pb-20 px-5">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-8"
             >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              Back to Home
-            </Link>
-          </motion.div>
+              <span className="inline-block text-primary text-sm font-medium tracking-[0.2em] uppercase mb-6">
+                Our Story
+              </span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-8">
+                Building the Future,<br />
+                <span className="text-primary">Honoring the Past</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+                We're channeling the entrepreneurial spirit of historic Black Wall Street 
+                into the technologies that will shape tomorrow.
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-          {/* Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6">
-              About <span className="text-primary">Black Tech Street</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              We're building the future of technology, rooted in the historic legacy of Black Wall Street.
-            </p>
-          </motion.div>
+        {/* Full-width Divider */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-          {/* Values Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={cn(
-                  "p-6 rounded-xl",
-                  "bg-secondary/30 border border-border/40",
-                  "backdrop-blur-sm",
-                  "hover:border-primary/40 transition-colors duration-300"
-                )}
+        {/* Story Section - Editorial Layout */}
+        <section className="py-24 px-5">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-4"
               >
-                <div className="flex items-start gap-4">
-                  <div className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
-                    "bg-primary/10 border border-primary/30"
-                  )}>
-                    <value.icon className="w-5 h-5 text-primary" />
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground sticky top-32">
+                  The Spirit of<br />
+                  <span className="text-primary">Greenwood</span>
+                </h2>
+              </motion.div>
+              
+              <motion.div 
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="lg:col-span-8 space-y-6 text-lg text-muted-foreground leading-relaxed"
+              >
+                <p className="text-xl text-foreground font-medium">
+                  In the early 20th century, Tulsa's Greenwood District was a beacon of Black 
+                  excellence — a thriving community of entrepreneurs, professionals, and innovators.
+                </p>
+                <p>
+                  Known as Black Wall Street, Greenwood was home to hundreds of Black-owned 
+                  businesses, from banks and hotels to theaters and hospitals. It represented 
+                  what was possible when a community invested in itself.
+                </p>
+                <p>
+                  Today, Black Tech Street carries that torch forward. We're not just teaching 
+                  technology — we're rebuilding a legacy. By focusing on artificial intelligence, 
+                  cybersecurity, and emerging technologies, we're ensuring our community doesn't 
+                  just participate in the future economy; we help shape it.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Values - Clean Grid */}
+        <section className="py-24 px-5 bg-secondary/20">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <span className="inline-block text-primary text-sm font-medium tracking-[0.2em] uppercase mb-4">
+                What Drives Us
+              </span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
+                Our Foundation
+              </h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+              {values.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="flex items-start gap-5">
+                    <div className={cn(
+                      "w-14 h-14 rounded-2xl flex items-center justify-center shrink-0",
+                      "bg-primary/10 border border-primary/20",
+                      "group-hover:bg-primary/20 transition-colors duration-300"
+                    )}>
+                      <value.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                        {value.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {value.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2">
-                      {value.title}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Timeline Section */}
+        <section className="py-24 px-5">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <span className="inline-block text-primary text-sm font-medium tracking-[0.2em] uppercase mb-4">
+                Our Journey
+              </span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
+                A Timeline of Progress
+              </h2>
+            </motion.div>
+
+            <div className="relative">
+              {/* Vertical Line */}
+              <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
+              
+              {timeline.map((item, index) => (
+                <motion.div
+                  key={item.year}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={cn(
+                    "relative pl-12 md:pl-0 pb-16 last:pb-0",
+                    index % 2 === 0 ? "md:pr-[50%] md:text-right" : "md:pl-[50%] md:text-left"
+                  )}
+                >
+                  {/* Timeline Dot */}
+                  <div className={cn(
+                    "absolute top-0 w-4 h-4 rounded-full bg-primary border-4 border-background",
+                    "left-0 md:left-1/2 md:-translate-x-1/2"
+                  )} />
+                  
+                  {/* Content */}
+                  <div className={cn(
+                    "md:px-12",
+                    index % 2 === 0 ? "md:pr-12 md:pl-0" : "md:pl-12 md:pr-0"
+                  )}>
+                    <span className="inline-block text-primary font-display font-bold text-2xl mb-2">
+                      {item.year}
+                    </span>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-3">
+                      {item.title}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      {value.description}
+                      {item.description}
                     </p>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Story Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={cn(
-              "p-8 rounded-xl mb-16",
-              "bg-secondary/30 border border-border/40",
-              "backdrop-blur-sm"
-            )}
-          >
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
-              Our Story
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Black Tech Street was born from a vision to revitalize the spirit of innovation and 
-                entrepreneurship that defined the original Black Wall Street in Tulsa's Greenwood District.
-              </p>
-              <p>
-                In the early 20th century, Greenwood was a thriving hub of Black-owned businesses and 
-                cultural institutions. Today, we're channeling that same entrepreneurial energy into 
-                the technologies that will shape our future: <strong className="text-primary">artificial intelligence, 
-                cybersecurity, and emerging tech</strong>.
-              </p>
-              <p>
-                Our programs bridge the gap between education and industry, ensuring that our community 
-                doesn't just participate in the AI revolution—we help lead it.
-              </p>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
+          </div>
+        </section>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h3 className="text-xl font-display font-semibold text-foreground mb-4">
-              Ready to join the movement?
-            </h3>
-            <Link
-              to="/#contact-section"
-              className={cn(
-                "inline-flex items-center gap-2 px-6 py-3 rounded-lg",
-                "bg-primary text-primary-foreground font-medium",
-                "hover:bg-primary/90 transition-colors"
-              )}
+        {/* CTA Section */}
+        <section className="py-24 px-5 bg-secondary/20">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
-              Get In Touch
-            </Link>
-          </motion.div>
-        </div>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+                Join the Movement
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+                Be part of the next chapter in Greenwood's story. Together, we're building 
+                the future of technology.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/#contact-section"
+                  className={cn(
+                    "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg",
+                    "bg-primary text-primary-foreground font-semibold",
+                    "hover:bg-primary/90 transition-colors"
+                  )}
+                >
+                  Get In Touch
+                </Link>
+                <Link
+                  to="/"
+                  className={cn(
+                    "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg",
+                    "border border-border text-foreground font-semibold",
+                    "hover:bg-secondary/50 transition-colors"
+                  )}
+                >
+                  Back to Home
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </main>
 
       <Footer />
