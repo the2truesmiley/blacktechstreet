@@ -186,10 +186,22 @@ export function TimelineHero() {
               ease: 'easeInOut',
             }}
           />
-          <img 
+          <motion.img 
             src={logoCircuit} 
             alt="Black Tech Street" 
-            className="relative w-full h-full object-contain drop-shadow-[0_0_15px_hsl(var(--primary)/0.5)]"
+            className="relative w-full h-full object-contain"
+            animate={{
+              filter: [
+                'drop-shadow(0 0 10px hsl(var(--primary) / 0.3))',
+                'drop-shadow(0 0 25px hsl(var(--primary) / 0.7))',
+                'drop-shadow(0 0 10px hsl(var(--primary) / 0.3))',
+              ],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
           />
         </motion.div>
 
