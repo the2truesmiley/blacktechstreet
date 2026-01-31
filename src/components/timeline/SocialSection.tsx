@@ -87,14 +87,15 @@ export function SocialSection() {
         </a>
       </motion.div>
 
-      {/* Instagram Embed - Prominent */}
+      {/* Two-Column Layout: Instagram + Mission Text */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.2 }}
-        className="max-w-xl mx-auto"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto"
       >
+        {/* Left Column: Instagram Embed */}
         <div 
           ref={instagramRef}
           className={cn(
@@ -121,7 +122,7 @@ export function SocialSection() {
               width: '100%',
             }}
           >
-            <div className="p-12 flex flex-col items-center justify-center min-h-[450px]">
+            <div className="p-12 flex flex-col items-center justify-center min-h-[400px]">
               <div className={cn(
                 "w-16 h-16 rounded-full flex items-center justify-center mb-6",
                 "bg-gradient-to-br from-primary via-primary/80 to-primary/60"
@@ -138,10 +139,44 @@ export function SocialSection() {
           </blockquote>
         </div>
 
-        <p className="text-sm text-muted-foreground text-center mt-6">
-          Latest updates from our community 🚀
-        </p>
+        {/* Right Column: Mission Statement */}
+        <div className="flex flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <p className="text-xl md:text-2xl lg:text-3xl font-display leading-relaxed text-foreground">
+              Black Tech Street{' '}
+              <span className="inline-block px-3 py-1 bg-primary/20 border border-primary/40 rounded-lg text-primary font-semibold">
+                revitalizes
+              </span>{' '}
+              Historic Black Wall Street through tech and innovation.
+            </p>
+            
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+              ASPIRE builds AI fluency, fosters innovation, and empowers individuals to lead in an AI-driven future.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <span className="px-4 py-2 bg-secondary border border-border rounded-full text-sm text-muted-foreground">
+                🚀 Innovation
+              </span>
+              <span className="px-4 py-2 bg-secondary border border-border rounded-full text-sm text-muted-foreground">
+                🤖 AI Fluency
+              </span>
+              <span className="px-4 py-2 bg-secondary border border-border rounded-full text-sm text-muted-foreground">
+                💡 Empowerment
+              </span>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
+
+      <p className="text-sm text-muted-foreground text-center mt-10">
+        Latest updates from our community 🚀
+      </p>
     </section>
   );
 }

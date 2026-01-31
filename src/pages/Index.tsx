@@ -53,12 +53,12 @@ const Index = () => {
       <TimelineHero />
 
       {/* Navigation pills */}
-      <div className="relative z-10 px-5 max-w-2xl mx-auto">
+      <div className="relative z-10 px-5 max-w-5xl mx-auto">
         <TableOfContents />
       </div>
 
       {/* Main content */}
-      <main className="relative z-10 px-5 pb-20 max-w-2xl mx-auto">
+      <main className="relative z-10 px-5 pb-20 max-w-5xl mx-auto">
         {/* Team section */}
         <TeamSection />
 
@@ -76,7 +76,7 @@ const Index = () => {
       <FinalCTASection />
 
       {/* Enhanced Footer */}
-      <div className="relative z-10 px-5 max-w-2xl mx-auto">
+      <div className="relative z-10 px-5 max-w-5xl mx-auto">
         <Footer />
       </div>
 
