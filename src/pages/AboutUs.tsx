@@ -37,27 +37,66 @@ const timeline = [
   {
     year: '2020',
     title: 'Vision Born',
-    description: 'Black Tech Street was founded with a mission to revitalize the spirit of innovation and entrepreneurship that defined the original Black Wall Street.',
-  },
-  {
-    year: '2021',
-    title: 'Centennial Launch',
-    description: 'On the 100th anniversary of the Tulsa Race Massacre, Black Tech Street launched its first programs to bring tech education to the Greenwood community.',
+    description: 'Black Tech Street was founded with one question: "What could Black Wall Street have been, had it been supported and not destroyed?"',
   },
   {
     year: '2023',
-    title: 'ASPIRE Program',
-    description: 'Launched the ASPIRE program, providing comprehensive AI and cybersecurity training to equip community members with cutting-edge tech skills.',
+    title: 'White House Cyber Roundtable',
+    description: 'Tyrance served as a Panelist Speaker at a convening hosted by the White House Office of the National Cyber Director, establishing BTS\'s first White House touchpoint.',
+    month: 'January',
+  },
+  {
+    year: '2023',
+    title: 'Microsoft Partnership Established',
+    description: 'Black Tech Street established a foundational relationship with Microsoft for long-term AI and cybersecurity collaboration, later leading to the Microsoft Cyber and AI Co-Innovation Lab in historic Greenwood.',
+    month: 'June',
+  },
+  {
+    year: '2023',
+    title: 'DEF-CON 31 & SeedAI Partnership',
+    description: 'In partnership with SeedAI and the White House Office of Science and Technology Policy, BTS took 75 people to participate in the largest public red team of AI models in history.',
+    month: 'July',
+  },
+  {
+    year: '2023',
+    title: 'Senate HELP Committee Testimony',
+    description: 'Tyrance testified before the Senate HELP Committee about AI and the future of work, addressing workforce development and ensuring AI benefits are shared across all communities.',
+    month: 'November',
   },
   {
     year: '2024',
-    title: 'Growing Impact',
-    description: 'Expanded programming and partnerships, reaching more students and professionals across the Greater Tulsa region.',
+    title: 'Tech Hubs Designation',
+    description: 'Black Tech Street served on the steering committee that won both the federal Tech Hubs designation and a $51M grant for autonomous systems — one of only two cities awarded both designation and implementation funding.',
+    month: 'December',
+  },
+  {
+    year: '2024',
+    title: 'Hack the Future Greenwood',
+    description: 'Co-hosted with SeedAI and the White House, this event used case-based challenges across 6 focus areas: Entrepreneurship, Community Development, Social Justice, Creative Expression, Education, and more.',
+    month: 'January',
+  },
+  {
+    year: '2024',
+    title: 'G-ACE Established',
+    description: 'The Greenwood AI Center of Excellence (G-ACE) launched as Black Tech Street\'s national model for AI integration, governance, and adaptation at scale — America\'s testbed for democratic AI scaling.',
+    month: 'May',
+  },
+  {
+    year: '2025',
+    title: 'ASPIRE AI Workshops Launch',
+    description: 'ASPIRE (AI Fluency, Innovation & Research Engine) launched its first workshop series, aiming to engage 500+ community members with goals of 25-50 individuals AI fluent/certified per quarter by Year 3.',
+    month: 'May',
+  },
+  {
+    year: '2025',
+    title: 'NVIDIA Partnership',
+    description: 'Black Tech Street signed an MOU with NVIDIA to train up to 10,000 learners in AI, provide advanced computing resources, and expand access to NVIDIA\'s startup ecosystem including the Inception program.',
+    highlight: true,
   },
   {
     year: 'Future',
     title: 'The Road Ahead',
-    description: 'Building toward our goal of establishing Greenwood as the model for AI-powered communities and economies of the future.',
+    description: 'Transforming Greenwood and the Greater Tulsa Region into the model for AI-powered societies and economies. Helping the United States win the AI Race and thrive in the AI Age.',
   },
 ];
 
@@ -211,34 +250,49 @@ export default function AboutUs() {
               
               {timeline.map((item, index) => (
                 <motion.div
-                  key={item.year}
+                  key={`${item.year}-${item.title}`}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
                   className={cn(
-                    "relative pl-12 md:pl-0 pb-16 last:pb-0",
+                    "relative pl-12 md:pl-0 pb-12 last:pb-0",
                     index % 2 === 0 ? "md:pr-[50%] md:text-right" : "md:pl-[50%] md:text-left"
                   )}
                 >
                   {/* Timeline Dot */}
                   <div className={cn(
-                    "absolute top-0 w-4 h-4 rounded-full bg-primary border-4 border-background",
-                    "left-0 md:left-1/2 md:-translate-x-1/2"
+                    "absolute top-0 w-4 h-4 rounded-full border-4 border-background",
+                    "left-0 md:left-1/2 md:-translate-x-1/2",
+                    item.highlight ? "bg-accent ring-4 ring-accent/20" : "bg-primary"
                   )} />
                   
                   {/* Content */}
                   <div className={cn(
                     "md:px-12",
-                    index % 2 === 0 ? "md:pr-12 md:pl-0" : "md:pl-12 md:pr-0"
+                    index % 2 === 0 ? "md:pr-12 md:pl-0" : "md:pl-12 md:pr-0",
+                    item.highlight && "bg-primary/5 p-4 rounded-xl border border-primary/20 md:mx-4"
                   )}>
-                    <span className="inline-block text-primary font-display font-bold text-2xl mb-2">
-                      {item.year}
-                    </span>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-3">
+                    <div className="flex items-center gap-2 mb-2 justify-start md:justify-inherit" style={{ justifyContent: index % 2 === 0 ? 'flex-end' : 'flex-start' }}>
+                      <span className="text-primary font-display font-bold text-xl">
+                        {item.year}
+                      </span>
+                      {item.month && (
+                        <span className="text-muted-foreground text-sm">
+                          • {item.month}
+                        </span>
+                      )}
+                      {item.highlight && (
+                        <span className="text-accent text-sm">⭐</span>
+                      )}
+                    </div>
+                    <h3 className={cn(
+                      "text-lg font-display font-bold mb-2",
+                      item.highlight ? "text-primary" : "text-foreground"
+                    )}>
                       {item.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-sm">
                       {item.description}
                     </p>
                   </div>
