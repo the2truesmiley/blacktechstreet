@@ -5,7 +5,7 @@ import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { TimelineHero } from '@/components/timeline/TimelineHero';
 import { TableOfContents } from '@/components/timeline/TableOfContents';
 import { TeamSection } from '@/components/timeline/TeamSection';
-import { TimelineAboutSection } from '@/components/timeline/TimelineAboutSection';
+import { SocialSection } from '@/components/timeline/SocialSection';
 import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
 import { FinalCTASection } from '@/components/timeline/FinalCTASection';
@@ -62,8 +62,8 @@ const Index = () => {
         {/* Team section */}
         <TeamSection />
 
-        {/* About section with Instagram */}
-        <TimelineAboutSection />
+        {/* Social section with Instagram */}
+        <SocialSection />
 
         {/* Photo Gallery */}
         <PhotoGallerySection />

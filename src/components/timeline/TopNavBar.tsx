@@ -11,7 +11,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'About Us', href: '#about-section' },
+  { label: 'About Us', href: '/about' },
   { 
     label: 'Programs', 
     children: [
@@ -53,6 +53,12 @@ export function TopNavBar() {
     setOpenDropdown(null);
     
     if (isEmail) {
+      window.location.href = href;
+      return;
+    }
+    
+    // Handle internal page navigation
+    if (href.startsWith('/')) {
       window.location.href = href;
       return;
     }
