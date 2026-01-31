@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
-import { Users, Scroll, Calendar, MessageSquareQuote } from 'lucide-react';
+import { Users, Instagram, Calendar, MessageSquareQuote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const sections = [
   { id: 'team-section', label: 'Team', icon: Users },
-  { id: 'about-section', label: 'Story', icon: Scroll },
-  { id: 'timeline-section', label: 'Timeline', icon: Calendar },
-  { id: 'testimonials', label: 'Voices', icon: MessageSquareQuote },
+  { id: 'social-section', label: 'Social', icon: Instagram },
+  { id: 'gallery-section', label: 'Gallery', icon: Calendar },
+  { id: 'testimonials-section', label: 'Voices', icon: MessageSquareQuote },
 ];
 
 export function TableOfContents() {
