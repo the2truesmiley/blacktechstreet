@@ -1,74 +1,117 @@
 
+# Homepage Enhancement Plan (Matrix Theme Preserved)
 
-# Plan: Update Navigation to Match Mega-Menu Screenshot
+Keeping the signature Matrix aesthetic while integrating the new layout from the reference design.
+
+---
 
 ## Overview
-Update the TopNavBar to match the reference screenshot with a mega-menu style navigation featuring dropdown columns for About Us, Programs, People, and Contact sections.
 
-## Current vs. Target
+Enhance the homepage hero to match the reference layout while preserving all Matrix-themed effects (falling characters, scanning lines, particles, pulsing rings). Update the Social section to a two-column layout.
 
-| Current | Target (Screenshot) |
-|---------|---------------------|
-| Simple horizontal links: About Us, Programs, Contact | Multi-column mega-menu dropdowns |
-| No dropdowns | About Us, Programs (with ASPIRE), People (Partners, Team), Contact (email, Contact Us) |
-| Logo + text on left | Same - logo + "Black Tech Street" text on left |
+---
 
-## Implementation Details
+## Changes
 
-### File: `src/components/timeline/TopNavBar.tsx`
+### 1. Enhanced Hero Section (Matrix Theme + New Layout)
+**File:** `src/components/timeline/TimelineHero.tsx`
 
-**Changes:**
+**Preserved Matrix Effects:**
+- MatrixRain (falling katakana/binary characters)
+- ScanningLines (horizontal + vertical scanning lines)
+- FloatingParticles (12 pulsing emerald particles)
+- PulsingRings (concentric circles)
 
-1. **Update navigation structure** to include dropdown menus with sub-items:
-   - **About Us** - single link (no dropdown)
-   - **Programs** - dropdown with "ASPIRE" sub-item
-   - **People** - dropdown with "Partners" and "Team" sub-items
-   - **Contact** - dropdown with "contact@blacktechstreet.com" (email link) and "Contact Us" link
+**New Layout Changes:**
+- Expand hero to full viewport height (`min-h-screen`)
+- **Two-column layout** for content:
+  - **Left side**: Full mission statement headline + "Get Involved" CTA button
+  - **Right side**: Large B logo with pulsing glow (repositioned/enlarged)
+- Update headline from "Black Tech Street" to:
+  > "Creating The Blueprint For An AI-Powered Society On The Grounds Of Historic Greenwood"
+- Add prominent "Get Involved" CTA button with glass-morphism style
+- Logo size increased from 112px to ~200px
 
-2. **Add hover-triggered dropdowns** using React state or CSS hover:
-   - Glass-morphism dropdown panels with dark background
-   - Smooth fade-in animation using Framer Motion
-   - High z-index to ensure visibility over other content
-
-3. **Update mobile menu** to include all sub-items in an accordion-style expandable format
-
-4. **Styling:**
-   - Dropdown background: `bg-background/95 backdrop-blur-lg`
-   - Border: `border border-border/40`
-   - Sub-items: muted text that highlights on hover
-   - Email link styled differently (potentially with mailto: link)
-
-### Navigation Structure
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ [Logo] Black Tech Street     About Us    Programs▼    People▼    Contact▼  │
-└─────────────────────────────────────────────────────────────────────────────┘
-                                             │            │           │
-                                             │            │           │
-                                           ┌─┴─┐       ┌──┴──┐     ┌──┴──────────────────┐
-                                           │ASPIRE│    │Partners│  │contact@blacktech...│
-                                           └─────┘    │Team    │  │Contact Us          │
-                                                      └────────┘  └─────────────────────┘
+**Visual Structure:**
+```text
+┌─────────────────────────────────────────────────────────────┐
+│  [Matrix Rain + Scanning Lines + Particles + Rings]         │
+│                                                             │
+│  Creating The Blueprint For                                 │
+│  An AI-Powered Society            ┌────────────────────┐    │
+│  On The Grounds Of                │        ████        │    │
+│  Historic Greenwood               │      ████████      │    │
+│                                   │    ████  ████      │    │
+│  ┌──────────────────┐             │    ████████        │    │
+│  │  Get Involved    │             │  (large B logo     │    │
+│  └──────────────────┘             │   with glow)       │    │
+│                                   └────────────────────┘    │
+│                  [Scroll Indicator]                         │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### Technical Implementation
+### 2. Two-Column Social/Mission Section
+**File:** `src/components/timeline/SocialSection.tsx`
 
-**Dropdown Component:**
-- Use hover state (`onMouseEnter`/`onMouseLeave`) for desktop
-- AnimatePresence for smooth enter/exit animations
-- Positioned absolutely below the nav item
+- Restructure to a **two-column responsive grid**:
+  - **Left column**: Instagram embed (compact)
+  - **Right column**: Mission statement with highlighted "revitalizes" keyword
+- Text content:
+  > "Black Tech Street **revitalizes** Historic Black Wall Street through tech and innovation. ASPIRE builds AI fluency, fosters innovation, and empowers individuals to lead in an AI-driven future."
+- Green highlight box around "revitalizes"
 
-**Mobile Menu:**
-- Convert dropdowns to collapsible sections
-- Tap to expand/collapse sub-items
-- Chevron icon to indicate expandable sections
+**Layout:**
+```text
+┌─────────────────────────────────────────────────────────────┐
+│  ┌────────────────────┐    ┌──────────────────────────────┐ │
+│  │                    │    │ Black Tech Street            │ │
+│  │    Instagram       │    │ [revitalizes] Historic       │ │
+│  │    Embed           │    │ Black Wall Street through    │ │
+│  │                    │    │ tech and innovation...       │ │
+│  │                    │    │                              │ │
+│  └────────────────────┘    └──────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────┘
+```
 
-**Links:**
-- "About Us" scrolls to `#about-section`
-- "ASPIRE" - placeholder link (can scroll to gallery or programs)
-- "Partners" - placeholder link
-- "Team" - scrolls to `#team-section`
-- "Contact Us" - scrolls to `#contact-section`
-- Email - opens `mailto:contact@blacktechstreet.com`
+### 3. Container Width Adjustment
+**File:** `src/pages/Index.tsx`
 
+- Increase main content `max-width` from `max-w-2xl` to `max-w-5xl` to accommodate wider two-column layouts
+
+---
+
+## Technical Details
+
+### Hero Responsive Behavior
+- **Desktop (lg+)**: Side-by-side layout, logo on right
+- **Tablet (md)**: Stacked with smaller logo above
+- **Mobile**: Full-width stacked, centered content
+
+### CTA Button Styling
+- Glass-morphism background (`bg-white/10 backdrop-blur`)
+- Primary border accent
+- Hover scale effect with glow
+- Links to contact/involvement section
+
+---
+
+## Files Modified
+
+| File | Changes |
+|------|---------|
+| `src/components/timeline/TimelineHero.tsx` | New two-column layout, larger logo, mission headline, CTA button (all Matrix effects preserved) |
+| `src/components/timeline/SocialSection.tsx` | Two-column grid with Instagram + mission text |
+| `src/pages/Index.tsx` | Wider container (`max-w-5xl`) |
+
+---
+
+## Preserved Design Elements
+
+| Element | Status |
+|---------|--------|
+| Matrix Rain (20 columns, katakana + binary) | Kept |
+| Scanning Lines (horizontal + vertical) | Kept |
+| Floating Particles (12 emerald particles) | Kept |
+| Pulsing Rings (3 concentric circles) | Kept |
+| Logo Glow Animation | Kept (enhanced size) |
+| Emerald (#10b981) accent color | Kept |
