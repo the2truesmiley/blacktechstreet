@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, Globe, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { TopNavBar } from '@/components/timeline/TopNavBar';
 
 // Featured partners (larger display)
 const featuredPartners = [
@@ -38,6 +39,8 @@ const stats = [
 export default function Partners() {
   return (
     <div className="min-h-screen bg-background overflow-hidden">
+      <TopNavBar />
+      
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
@@ -45,7 +48,7 @@ export default function Partners() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center py-20">
+      <section className="relative min-h-[80vh] flex items-center justify-center pt-24 pb-20">
         {/* Decorative grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
