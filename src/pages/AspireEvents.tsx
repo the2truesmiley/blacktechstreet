@@ -83,6 +83,7 @@ export default function AspireEvents() {
             </p>
 
             {/* Quick Stats */}
+            {/* Quick Stats */}
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 border border-border/40">
                 <Calendar className="w-4 h-4 text-primary" />
@@ -96,6 +97,13 @@ export default function AspireEvents() {
                 <MapPin className="w-4 h-4 text-primary" />
                 <span className="text-sm font-medium">LU-Tulsa</span>
               </div>
+              <a 
+                href="#childcare"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-colors cursor-pointer"
+              >
+                <Baby className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">Childcare Provided</span>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -202,7 +210,7 @@ export default function AspireEvents() {
       </section>
 
       {/* Childcare Partnership Section */}
-      <section className="py-16">
+      <section id="childcare" className="py-16 scroll-mt-24">
         <div className="max-w-4xl mx-auto px-5">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
