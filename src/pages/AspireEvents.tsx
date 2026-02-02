@@ -272,23 +272,15 @@ export default function AspireEvents() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-4">
-                <a
-                  href="https://www.jovie.com/resources-faq/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
-                >
-                  Learn More About Jovie
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <a
-                  href="mailto:TulsaOK@jovie.com"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border hover:border-primary/50 text-foreground font-medium transition-colors"
-                >
-                  Contact: TulsaOK@jovie.com
-                </a>
-              </div>
+              <a
+                href="https://www.jovie.com/resources-faq/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+              >
+                Learn More About Jovie
+                <ExternalLink className="w-4 h-4" />
+              </a>
 
               <p className="mt-6 text-sm text-muted-foreground italic">
                 Indicate your childcare needs during registration to reserve your spot.
