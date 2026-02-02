@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Users, Clock, MapPin, Sparkles, Baby, Accessibility, Briefcase } from 'lucide-react';
+import { Calendar, Users, Clock, MapPin, Sparkles, Baby, Accessibility, Briefcase, Heart, Shield, ExternalLink } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { EventCalendar } from '@/components/events/EventCalendar';
@@ -8,7 +8,6 @@ import { EventCard } from '@/components/events/EventCard';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
-
 export default function AspireEvents() {
   const [selectedEvent, setSelectedEvent] = useState<AspireEvent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -199,6 +198,95 @@ export default function AspireEvents() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Childcare Partnership Section */}
+      <section className="py-16">
+        <div className="max-w-4xl mx-auto px-5">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className={cn(
+              "relative overflow-hidden rounded-2xl",
+              "bg-gradient-to-br from-primary/10 via-card/80 to-card/60",
+              "border border-primary/20 backdrop-blur-sm",
+              "p-8 md:p-10"
+            )}
+          >
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                  <Baby className="w-6 h-6 text-primary" />
+                </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                  <Heart className="w-3 h-3" />
+                  <span>Complimentary Childcare</span>
+                </div>
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
+                Focus on Learning, We've Got Your Kids Covered
+              </h2>
+              
+              <p className="text-muted-foreground mb-6 max-w-2xl">
+                Black Tech Street has partnered with <strong className="text-foreground">Jovie of Tulsa</strong> to provide 
+                professional on-site childcare at no cost during our AI workshops—so you can fully engage 
+                without worrying about your little ones.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-background/50">
+                  <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm">Fully Vetted Staff</p>
+                    <p className="text-xs text-muted-foreground">CPR/FA certified & background checked</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-background/50">
+                  <Users className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm">Experienced Nannies</p>
+                    <p className="text-xs text-muted-foreground">Professional childcare experts</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 p-4 rounded-lg bg-background/50">
+                  <Sparkles className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm">Age-Appropriate Activities</p>
+                    <p className="text-xs text-muted-foreground">Safe & structured environment</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="https://www.jovie.com/resources-faq/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+                >
+                  Learn More About Jovie
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+                <a
+                  href="mailto:TulsaOK@jovie.com"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border hover:border-primary/50 text-foreground font-medium transition-colors"
+                >
+                  Contact: TulsaOK@jovie.com
+                </a>
+              </div>
+
+              <p className="mt-6 text-sm text-muted-foreground italic">
+                Indicate your childcare needs during registration to reserve your spot.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
