@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, Users, Clock, MapPin, Sparkles, Baby, Accessibility, Briefcase, Heart, Shield, ExternalLink } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { EventCalendar } from '@/components/events/EventCalendar';
+import { NextEventHero } from '@/components/events/NextEventHero';
 import { EventCard } from '@/components/events/EventCard';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
@@ -15,13 +15,6 @@ export default function AspireEvents() {
   const handleRegister = (event: AspireEvent) => {
     setSelectedEvent(event);
     setIsModalOpen(true);
-  };
-
-  const scrollToEvent = (eventId: string) => {
-    const element = document.getElementById(eventId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
   };
 
   const expectItems = [
@@ -109,56 +102,10 @@ export default function AspireEvents() {
         </div>
       </section>
 
-      {/* Interactive Calendar Section */}
+      {/* Next Event Hero Section */}
       <section className="py-16 bg-secondary/20">
-        <div className="max-w-6xl mx-auto px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              2026 Calendar
-            </h2>
-            <p className="text-muted-foreground">
-              Click on highlighted dates to view workshop details
-            </p>
-          </motion.div>
-
-          <EventCalendar onEventClick={scrollToEvent} />
-        </div>
-      </section>
-
-      {/* Event Cards Section */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Upcoming Workshops
-            </h2>
-            <p className="text-muted-foreground">
-              Secure your spot at one of our 2026 ASPIRE sessions
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {aspireEvents2026.map((event, index) => (
-              <EventCard
-                key={event.id}
-                event={event}
-                index={index}
-                onRegister={handleRegister}
-              />
-            ))}
-          </div>
+        <div className="max-w-5xl mx-auto px-5">
+          <NextEventHero onRegister={handleRegister} />
         </div>
       </section>
 
