@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, Clock, MapPin, ArrowRight, Sparkles } from 'lucide-react';
 import { format, differenceInDays, differenceInHours, differenceInMinutes, isPast } from 'date-fns';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -8,6 +8,52 @@ import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
 
 interface NextEventHeroProps {
   onRegister: (event: AspireEvent) => void;
+}
+
+// Animated counter digit component
+function AnimatedDigit({ value }: { value: number }) {
+  return (
+    <motion.span
+      key={value}
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: 20, opacity: 0 }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className="inline-block"
+    >
+      {value}
+    </motion.span>
+  );
+}
+
+// Floating sparkle effect
+function FloatingSparkles() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute"
+          style={{
+            left: `${10 + i * 20}%`,
+            top: `${20 + (i % 2) * 40}%`,
+          }}
+          animate={{
+            y: [-10, 10, -10],
+            opacity: [0.3, 0.8, 0.3],
+            scale: [0.8, 1.2, 0.8],
+          }}
+          transition={{
+            duration: 3 + i * 0.5,
+            repeat: Infinity,
+            delay: i * 0.4,
+          }}
+        >
+          <Sparkles className="w-3 h-3 text-primary/40" />
+        </motion.div>
+      ))}
+    </div>
+  );
 }
 
 export function NextEventHero({ onRegister }: NextEventHeroProps) {
@@ -39,19 +85,47 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
 
   if (!nextEvent) {
     return (
-      <div className="text-center py-12">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="text-center py-12"
+      >
         <p className="text-muted-foreground">All 2026 workshops have concluded. Stay tuned for 2027!</p>
-      </div>
+      </motion.div>
     );
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  } as const;
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+    },
+  } as const;
+
   return (
-    <div className="space-y-8">
+    <motion.div 
+      className="space-y-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {/* Next Event - Hero Card */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        variants={itemVariants}
+        whileHover={{ scale: 1.01 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
         className={cn(
           "relative overflow-hidden rounded-2xl",
           "bg-gradient-to-br from-primary/20 via-card to-card",
@@ -59,72 +133,167 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
           "p-6 md:p-10"
         )}
       >
+        {/* Animated background gradient */}
+        <motion.div 
+          className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"
+          animate={{
+            opacity: [0.5, 1, 0.5],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
         {/* Decorative glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2" />
+        <motion.div 
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+
+        <FloatingSparkles />
         
         <div className="relative">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4"
+          >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
             Next Workshop
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Event Info */}
-            <div className="space-y-4">
-              <h3 className="text-3xl md:text-4xl font-display font-bold">
-                {format(nextEvent.date, 'MMMM d, yyyy')}
-              </h3>
-              
-              <div className="flex flex-wrap gap-4 text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-primary" />
-                  <span>{format(nextEvent.date, 'EEEE')}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary" />
-                  <span>{nextEvent.time}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span>{nextEvent.locationFull}</span>
-                </div>
-              </div>
-
-              <Button 
-                size="lg" 
-                className="mt-4 group"
-                onClick={() => onRegister(nextEvent)}
+            <motion.div 
+              className="space-y-4"
+              variants={containerVariants}
+            >
+              <motion.h3 
+                variants={itemVariants}
+                className="text-3xl md:text-4xl font-display font-bold"
               >
-                Register Now
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </div>
+                {format(nextEvent.date, 'MMMM d, yyyy')}
+              </motion.h3>
+              
+              <motion.div 
+                variants={itemVariants}
+                className="flex flex-wrap gap-4 text-muted-foreground"
+              >
+                {[
+                  { icon: Calendar, text: format(nextEvent.date, 'EEEE') },
+                  { icon: Clock, text: nextEvent.time },
+                  { icon: MapPin, text: nextEvent.locationFull },
+                ].map((item, idx) => (
+                  <motion.div 
+                    key={idx}
+                    className="flex items-center gap-2"
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <item.icon className="w-4 h-4 text-primary" />
+                    <span>{item.text}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <Button 
+                  size="lg" 
+                  className="mt-4 group relative overflow-hidden"
+                  onClick={() => onRegister(nextEvent)}
+                >
+                  <motion.span
+                    className="absolute inset-0 bg-primary-foreground/10"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "100%" }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  <span className="relative flex items-center">
+                    Register Now
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Button>
+              </motion.div>
+            </motion.div>
 
             {/* Countdown */}
             {countdown && (
-              <div className="flex justify-center md:justify-end gap-4">
-                <div className="text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-background/50 border border-border/50 flex items-center justify-center">
-                    <span className="text-3xl md:text-4xl font-display font-bold text-primary">{countdown.days}</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground mt-2 block">Days</span>
-                </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-background/50 border border-border/50 flex items-center justify-center">
-                    <span className="text-3xl md:text-4xl font-display font-bold text-primary">{countdown.hours}</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground mt-2 block">Hours</span>
-                </div>
-                <div className="text-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-background/50 border border-border/50 flex items-center justify-center">
-                    <span className="text-3xl md:text-4xl font-display font-bold text-primary">{countdown.minutes}</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground mt-2 block">Minutes</span>
-                </div>
-              </div>
+              <motion.div 
+                variants={itemVariants}
+                className="flex justify-center md:justify-end gap-4"
+              >
+                {[
+                  { value: countdown.days, label: 'Days' },
+                  { value: countdown.hours, label: 'Hours' },
+                  { value: countdown.minutes, label: 'Minutes' },
+                ].map((item, idx) => (
+                  <motion.div 
+                    key={item.label}
+                    className="text-center"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 + idx * 0.1, type: "spring" }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { type: "spring", stiffness: 400 }
+                    }}
+                  >
+                    <motion.div 
+                      className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-background/50 border border-border/50 flex items-center justify-center relative overflow-hidden"
+                      whileHover={{
+                        borderColor: "hsl(var(--primary) / 0.5)",
+                        boxShadow: "0 0 20px hsl(var(--primary) / 0.2)",
+                      }}
+                    >
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"
+                        animate={{
+                          opacity: [0.3, 0.6, 0.3],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: idx * 0.3,
+                        }}
+                      />
+                      <AnimatePresence mode="wait">
+                        <motion.span 
+                          key={item.value}
+                          className="text-3xl md:text-4xl font-display font-bold text-primary relative"
+                          initial={{ y: -20, opacity: 0 }}
+                          animate={{ y: 0, opacity: 1 }}
+                          exit={{ y: 20, opacity: 0 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        >
+                          {item.value}
+                        </motion.span>
+                      </AnimatePresence>
+                    </motion.div>
+                    <motion.span 
+                      className="text-xs text-muted-foreground mt-2 block"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 + idx * 0.1 }}
+                    >
+                      {item.label}
+                    </motion.span>
+                  </motion.div>
+                ))}
+              </motion.div>
             )}
           </div>
         </div>
@@ -132,37 +301,80 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
 
       {/* Other Upcoming Dates */}
       {upcomingEvents.length > 0 && (
-        <div className="space-y-4">
-          <h4 className="text-lg font-display font-semibold text-muted-foreground">Also Coming Up</h4>
+        <motion.div 
+          className="space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
+          <motion.h4 
+            className="text-lg font-display font-semibold text-muted-foreground"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            Also Coming Up
+          </motion.h4>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {upcomingEvents.map((event, index) => (
               <motion.button
                 key={event.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+                initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.4, 
+                  delay: 0.6 + index * 0.1,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                whileHover={{ 
+                  scale: 1.03,
+                  y: -4,
+                  transition: { type: "spring", stiffness: 400, damping: 20 }
+                }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => onRegister(event)}
                 className={cn(
-                  "p-4 rounded-xl text-left",
+                  "p-4 rounded-xl text-left relative overflow-hidden",
                   "bg-card/50 border border-border/40",
-                  "hover:border-primary/40 hover:bg-card transition-all duration-200",
+                  "hover:border-primary/40 hover:bg-card transition-colors duration-200",
                   "group"
                 )}
               >
-                <div className="font-display font-semibold text-lg">
-                  {format(event.date, 'MMM d')}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {format(event.date, 'EEEE')}
-                </div>
-                <div className="text-xs text-primary mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Register →
+                {/* Hover gradient effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0"
+                  whileHover={{
+                    background: "linear-gradient(to bottom right, hsl(var(--primary) / 0.1), hsl(var(--primary) / 0.05))",
+                  }}
+                  transition={{ duration: 0.3 }}
+                />
+                
+                <div className="relative">
+                  <motion.div 
+                    className="font-display font-semibold text-lg"
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {format(event.date, 'MMM d')}
+                  </motion.div>
+                  <div className="text-sm text-muted-foreground">
+                    {format(event.date, 'EEEE')}
+                  </div>
+                  <motion.div 
+                    className="text-xs text-primary mt-2 flex items-center gap-1"
+                    initial={{ opacity: 0, x: -5 }}
+                    whileHover={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Register <ArrowRight className="w-3 h-3" />
+                  </motion.div>
                 </div>
               </motion.button>
             ))}
           </div>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }
