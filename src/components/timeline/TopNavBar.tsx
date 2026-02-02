@@ -15,7 +15,8 @@ const navItems: NavItem[] = [
   { 
     label: 'Programs', 
     children: [
-      { label: 'ASPIRE', href: '#gallery-section' },
+      { label: 'ASPIRE', href: '/aspire' },
+      { label: '2026 Events', href: '/aspire/events' },
     ]
   },
   { 
