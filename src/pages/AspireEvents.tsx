@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Users, Clock, MapPin, Sparkles, Baby, Accessibility, Briefcase, Heart, Shield, ExternalLink } from 'lucide-react';
+import { Users, Sparkles, Baby, Briefcase, Heart, Shield, ExternalLink, Accessibility } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { NextEventHero } from '@/components/events/NextEventHero';
-import { EventCard } from '@/components/events/EventCard';
+import { EventsHero } from '@/components/events/EventsHero';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
-import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
+import { type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
+
 export default function AspireEvents() {
   const [selectedEvent, setSelectedEvent] = useState<AspireEvent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,58 +50,7 @@ export default function AspireEvents() {
     <div className="min-h-screen bg-background text-foreground">
       <TopNavBar />
       
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-        
-        <div className="relative max-w-6xl mx-auto px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-6"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-              <Calendar className="w-4 h-4" />
-              <span>2026 Workshop Series</span>
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-display font-bold">
-              ASPIRE{' '}
-              <span className="text-primary">2026 Events</span>
-            </h1>
-
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              GenAI Fluency & Responsible Innovation Workshops
-            </p>
-
-            {/* Quick Stats */}
-            {/* Quick Stats */}
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 border border-border/40">
-                <Calendar className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">4 Workshops</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 border border-border/40">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">All Saturdays</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 border border-border/40">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium">LU-Tulsa</span>
-              </div>
-              <a 
-                href="#childcare"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 border border-primary/30 hover:bg-primary/20 transition-colors cursor-pointer"
-              >
-                <Baby className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Childcare Provided</span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <EventsHero />
 
       {/* Next Event Hero Section */}
       <section className="py-16 bg-secondary/20">
