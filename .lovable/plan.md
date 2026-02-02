@@ -1,97 +1,158 @@
 
-# Homepage Enhancement Plan (Matrix Theme Preserved)
+# ASPIRE Events Calendar & Signup Page
 
-Keeping the signature Matrix aesthetic while integrating the new layout from the reference design.
+Creating a dedicated events page at `/aspire/events` with an interactive 2026 calendar, event cards for all 4 workshops, and placeholder registration links ready for your specific Tally form URLs.
 
 ---
 
 ## Overview
 
-Enhance the homepage hero to match the reference layout while preserving all Matrix-themed effects (falling characters, scanning lines, particles, pulsing rings). Update the Social section to a two-column layout.
+Build a visually striking events page that:
+- Displays an interactive 12-month calendar with ASPIRE event dates highlighted
+- Shows detailed event cards with registration CTAs
+- Includes a modal with embedded Tally form for registration
+- Matches the site's dark theme with emerald accents
 
 ---
 
-## Changes
+## Event Data
 
-### 1. Enhanced Hero Section (Matrix Theme + New Layout)
-**File:** `src/components/timeline/TimelineHero.tsx`
+| Date | Day | Time | Location | Registration Link |
+|------|-----|------|----------|-------------------|
+| March 28, 2026 | Saturday | 10:00 AM - 6:00 PM | LU-Tulsa | Placeholder (you'll provide) |
+| June 27, 2026 | Saturday | 10:00 AM - 6:00 PM | LU-Tulsa | Placeholder (you'll provide) |
+| September 26, 2026 | Saturday | 10:00 AM - 6:00 PM | LU-Tulsa | Placeholder (you'll provide) |
+| December 5, 2026 | Saturday | 10:00 AM - 6:00 PM | LU-Tulsa | Placeholder (you'll provide) |
 
-**Preserved Matrix Effects:**
-- MatrixRain (falling katakana/binary characters)
-- ScanningLines (horizontal + vertical scanning lines)
-- FloatingParticles (12 pulsing emerald particles)
-- PulsingRings (concentric circles)
+---
 
-**New Layout Changes:**
-- Expand hero to full viewport height (`min-h-screen`)
-- **Two-column layout** for content:
-  - **Left side**: Full mission statement headline + "Get Involved" CTA button
-  - **Right side**: Large B logo with pulsing glow (repositioned/enlarged)
-- Update headline from "Black Tech Street" to:
-  > "Creating The Blueprint For An AI-Powered Society On The Grounds Of Historic Greenwood"
-- Add prominent "Get Involved" CTA button with glass-morphism style
-- Logo size increased from 112px to ~200px
+## Page Layout
 
-**Visual Structure:**
 ```text
-┌─────────────────────────────────────────────────────────────┐
-│  [Matrix Rain + Scanning Lines + Particles + Rings]         │
-│                                                             │
-│  Creating The Blueprint For                                 │
-│  An AI-Powered Society            ┌────────────────────┐    │
-│  On The Grounds Of                │        ████        │    │
-│  Historic Greenwood               │      ████████      │    │
-│                                   │    ████  ████      │    │
-│  ┌──────────────────┐             │    ████████        │    │
-│  │  Get Involved    │             │  (large B logo     │    │
-│  └──────────────────┘             │   with glow)       │    │
-│                                   └────────────────────┘    │
-│                  [Scroll Indicator]                         │
-└─────────────────────────────────────────────────────────────┘
++----------------------------------------------------------+
+|  TopNavBar                                               |
++----------------------------------------------------------+
+|                                                          |
+|   ASPIRE 2026 EVENTS                                     |
+|   GenAI Fluency & Responsible Innovation Workshops       |
+|   [4 Workshops] [All Saturdays] [10AM-6PM @ LU-Tulsa]   |
+|                                                          |
++----------------------------------------------------------+
+|                                                          |
+|   +----------------------------------------------------+ |
+|   |           INTERACTIVE 2026 CALENDAR                | |
+|   |  +------+  +------+  +------+  +------+            | |
+|   |  | JAN  |  | FEB  |  | MAR* |  | APR  |  ...       | |
+|   |  +------+  +------+  +------+  +------+            | |
+|   |  +------+  +------+  +------+  +------+            | |
+|   |  | MAY  |  | JUN* |  | JUL  |  | AUG  |  ...       | |
+|   |  +------+  +------+  +------+  +------+            | |
+|   |  +------+  +------+  +------+  +------+            | |
+|   |  | SEP* |  | OCT  |  | NOV  |  | DEC* |            | |
+|   |  +------+  +------+  +------+  +------+            | |
+|   |            (* = months with events)                 | |
+|   +----------------------------------------------------+ |
+|                                                          |
++----------------------------------------------------------+
+|                                                          |
+|   UPCOMING WORKSHOPS                                     |
+|   +------------------+  +------------------+             |
+|   | MAR 28           |  | JUN 27           |             |
+|   | Saturday         |  | Saturday         |             |
+|   | 10AM - 6PM       |  | 10AM - 6PM       |             |
+|   | @ LU-Tulsa       |  | @ LU-Tulsa       |             |
+|   | [Register Now]   |  | [Register Now]   |             |
+|   +------------------+  +------------------+             |
+|   +------------------+  +------------------+             |
+|   | SEP 26           |  | DEC 5            |             |
+|   | Saturday         |  | Saturday         |             |
+|   | 10AM - 6PM       |  | 10AM - 6PM       |             |
+|   | @ LU-Tulsa       |  | @ LU-Tulsa       |             |
+|   | [Register Now]   |  | [Register Now]   |             |
+|   +------------------+  +------------------+             |
+|                                                          |
++----------------------------------------------------------+
+|                                                          |
+|   WHAT TO EXPECT                                         |
+|   - Full-day immersive experience                        |
+|   - Hands-on AI tool training                            |
+|   - Networking with community leaders                    |
+|   - Childcare options available (ask during signup)      |
+|                                                          |
++----------------------------------------------------------+
+|   [Questions? Contact Us]                                |
++----------------------------------------------------------+
+|  Footer                                                  |
++----------------------------------------------------------+
 ```
 
-### 2. Two-Column Social/Mission Section
-**File:** `src/components/timeline/SocialSection.tsx`
+---
 
-- Restructure to a **two-column responsive grid**:
-  - **Left column**: Instagram embed (compact)
-  - **Right column**: Mission statement with highlighted "revitalizes" keyword
-- Text content:
-  > "Black Tech Street **revitalizes** Historic Black Wall Street through tech and innovation. ASPIRE builds AI fluency, fosters innovation, and empowers individuals to lead in an AI-driven future."
-- Green highlight box around "revitalizes"
+## New Files
 
-**Layout:**
-```text
-┌─────────────────────────────────────────────────────────────┐
-│  ┌────────────────────┐    ┌──────────────────────────────┐ │
-│  │                    │    │ Black Tech Street            │ │
-│  │    Instagram       │    │ [revitalizes] Historic       │ │
-│  │    Embed           │    │ Black Wall Street through    │ │
-│  │                    │    │ tech and innovation...       │ │
-│  │                    │    │                              │ │
-│  └────────────────────┘    └──────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### 3. Container Width Adjustment
-**File:** `src/pages/Index.tsx`
-
-- Increase main content `max-width` from `max-w-2xl` to `max-w-5xl` to accommodate wider two-column layouts
+| File | Purpose |
+|------|---------|
+| `src/pages/AspireEvents.tsx` | Main events page with hero, calendar, event cards, and info sections |
+| `src/components/events/EventCalendar.tsx` | Custom year-view calendar component showing all 12 months with event highlights |
+| `src/components/events/EventCard.tsx` | Reusable event card with date, time, location, and CTA |
+| `src/components/events/RegistrationModal.tsx` | Dialog modal with embedded Tally form iframe |
+| `src/data/aspireEvents.ts` | Event data with dates, times, and placeholder registration links |
 
 ---
 
 ## Technical Details
 
-### Hero Responsive Behavior
-- **Desktop (lg+)**: Side-by-side layout, logo on right
-- **Tablet (md)**: Stacked with smaller logo above
-- **Mobile**: Full-width stacked, centered content
+### Event Data Structure
 
-### CTA Button Styling
-- Glass-morphism background (`bg-white/10 backdrop-blur`)
-- Primary border accent
-- Hover scale effect with glow
-- Links to contact/involvement section
+```typescript
+// src/data/aspireEvents.ts
+export interface AspireEvent {
+  id: string;
+  date: Date;
+  title: string;
+  time: string;
+  location: string;
+  locationFull: string;
+  registrationUrl: string; // Placeholder - you'll update these
+  status: 'upcoming' | 'registration-open' | 'sold-out';
+}
+
+export const aspireEvents2026: AspireEvent[] = [
+  {
+    id: 'march-2026',
+    date: new Date(2026, 2, 28), // March 28, 2026
+    title: 'ASPIRE GenAI Fluency Workshop',
+    time: '10:00 AM - 6:00 PM',
+    location: 'LU-Tulsa',
+    locationFull: 'Langston University - Tulsa Campus',
+    registrationUrl: 'https://tally.so/r/PLACEHOLDER_MARCH',
+    status: 'registration-open'
+  },
+  // ... 3 more events
+];
+```
+
+### Calendar Component
+
+Using the existing `react-day-picker` library with customizations:
+- Year-at-a-glance view (4x3 grid of months)
+- Event dates highlighted with emerald glow and pulse animation
+- Clickable event dates that scroll to corresponding event card
+- Navigation to switch between single-month and year views
+
+### Registration Modal
+
+- Uses existing Radix Dialog component
+- Embeds Tally form via iframe with transparent background
+- Responsive sizing (90% width on mobile, max 600px on desktop)
+- Event-specific URL passed as prop
+
+### Visual Design
+
+- Event dates: Emerald background with glow effect
+- Event cards: Glass-morphism with hover animations
+- Month grid: Dark cards with subtle borders
+- Status badges: Registration open (emerald), Upcoming (amber), Sold out (red)
 
 ---
 
@@ -99,19 +160,38 @@ Enhance the homepage hero to match the reference layout while preserving all Mat
 
 | File | Changes |
 |------|---------|
-| `src/components/timeline/TimelineHero.tsx` | New two-column layout, larger logo, mission headline, CTA button (all Matrix effects preserved) |
-| `src/components/timeline/SocialSection.tsx` | Two-column grid with Instagram + mission text |
-| `src/pages/Index.tsx` | Wider container (`max-w-5xl`) |
+| `src/App.tsx` | Add route `/aspire/events` |
+| `src/components/timeline/TopNavBar.tsx` | Add "2026 Events" link under Programs dropdown |
+| `src/pages/AspireEvents.tsx` | New page (created) |
+| `src/components/events/EventCalendar.tsx` | New component (created) |
+| `src/components/events/EventCard.tsx` | New component (created) |
+| `src/components/events/RegistrationModal.tsx` | New component (created) |
+| `src/data/aspireEvents.ts` | New data file (created) |
 
 ---
 
-## Preserved Design Elements
+## Navigation Update
 
-| Element | Status |
-|---------|--------|
-| Matrix Rain (20 columns, katakana + binary) | Kept |
-| Scanning Lines (horizontal + vertical) | Kept |
-| Floating Particles (12 emerald particles) | Kept |
-| Pulsing Rings (3 concentric circles) | Kept |
-| Logo Glow Animation | Kept (enhanced size) |
-| Emerald (#10b981) accent color | Kept |
+The Programs dropdown in TopNavBar will be updated:
+
+```typescript
+{
+  label: 'Programs',
+  children: [
+    { label: 'ASPIRE', href: '/aspire' },
+    { label: '2026 Events', href: '/aspire/events' }, // New link
+  ]
+}
+```
+
+---
+
+## After Build: Your Action Items
+
+Once the page is built, you'll need to provide the 4 individual Tally form links for each event:
+1. March 28, 2026 workshop link
+2. June 27, 2026 workshop link
+3. September 26, 2026 workshop link
+4. December 5, 2026 workshop link
+
+I'll update the placeholder URLs in `src/data/aspireEvents.ts` with your actual links.
