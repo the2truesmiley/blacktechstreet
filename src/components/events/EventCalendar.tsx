@@ -81,7 +81,7 @@ export function EventCalendar({ onEventClick }: EventCalendarProps) {
                   "flex items-center justify-center rounded-md transition-all duration-200",
                   compact ? "h-5 w-5 text-[10px]" : "h-8 w-8 text-sm",
                   hasEvent 
-                    ? "bg-primary text-primary-foreground font-bold cursor-pointer hover:bg-primary/80 shadow-md shadow-primary/30 animate-pulse"
+                    ? "bg-primary text-primary-foreground font-bold cursor-pointer hover:bg-primary/80 shadow-lg shadow-primary/40 ring-2 ring-primary/50"
                     : "text-muted-foreground hover:bg-secondary/50"
                 )}
               >
@@ -94,20 +94,21 @@ export function EventCalendar({ onEventClick }: EventCalendarProps) {
     );
   };
 
-  // Year view - 4x3 grid of all months
+  // Year view - only show months with events
   const renderYearView = () => {
-    const months = Array.from({ length: 12 }, (_, i) => new Date(2026, i, 1));
+    // Get only the months that have events
+    const eventMonths = aspireEvents2026.map(event => new Date(event.date.getFullYear(), event.date.getMonth(), 1));
 
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-        {months.map((month, index) => (
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {eventMonths.map((month, index) => (
           <motion.div
             key={month.toISOString()}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
+            transition={{ duration: 0.3, delay: index * 0.1 }}
           >
-            {renderMonthGrid(month, true)}
+            {renderMonthGrid(month, false)}
           </motion.div>
         ))}
       </div>
