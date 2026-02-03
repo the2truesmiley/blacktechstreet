@@ -22,10 +22,11 @@ const navItems: NavItem[] = [
   { 
     label: 'People', 
     children: [
-      { label: 'Partners', href: '#testimonials-section' },
-      { label: 'Team', href: '#team-section' },
+      { label: 'Partners', href: '/partners' },
+      { label: 'Team', href: '/about#team-section' },
     ]
   },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
 
