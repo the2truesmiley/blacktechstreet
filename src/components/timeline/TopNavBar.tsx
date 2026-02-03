@@ -26,13 +26,7 @@ const navItems: NavItem[] = [
       { label: 'Team', href: '#team-section' },
     ]
   },
-  { 
-    label: 'Contact', 
-    children: [
-      { label: 'contact@blacktechstreet.com', href: 'mailto:contact@blacktechstreet.com', isEmail: true },
-      { label: 'Contact Us', href: '#contact-section' },
-    ]
-  },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export function TopNavBar() {
