@@ -1,27 +1,29 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
+const binaryChars = '01';
 
 function MatrixRain() {
   const columns = useMemo(() => {
-    return [...Array(20)].map((_, i) => ({
+    return [...Array(30)].map((_, i) => ({
       id: i,
-      chars: [...Array(8)].map(() => matrixChars[Math.floor(Math.random() * matrixChars.length)]),
-      left: `${i * 5 + Math.random() * 2}%`,
-      delay: Math.random() * 5,
-      duration: 8 + Math.random() * 6,
+      chars: [...Array(12)].map(() => matrixChars[Math.floor(Math.random() * matrixChars.length)]),
+      left: `${i * 3.3 + Math.random() * 1.5}%`,
+      delay: Math.random() * 4,
+      duration: 6 + Math.random() * 8,
+      fontSize: i % 4 === 0 ? 'text-sm' : 'text-xs',
     }));
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {columns.map((col) => (
         <motion.div
           key={col.id}
-          className="absolute top-0 text-primary font-mono text-xs leading-tight"
+          className={`absolute top-0 text-primary font-mono ${col.fontSize} leading-tight`}
           style={{ left: col.left }}
           initial={{ y: '-100%' }}
           animate={{ y: '100vh' }}
@@ -33,18 +35,7 @@ function MatrixRain() {
           }}
         >
           {col.chars.map((char, i) => (
-            <motion.div
-              key={i}
-              className="opacity-70"
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: i * 0.1,
-              }}
-            >
-              {char}
-            </motion.div>
+            <MorphingChar key={i} initialChar={char} index={i} isLead={i === col.chars.length - 1} />
           ))}
         </motion.div>
       ))}
@@ -52,32 +43,108 @@ function MatrixRain() {
   );
 }
 
+function MorphingChar({ initialChar, index, isLead }: { initialChar: string; index: number; isLead: boolean }) {
+  const [char, setChar] = useState(initialChar);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (Math.random() > 0.7) {
+        setChar(matrixChars[Math.floor(Math.random() * matrixChars.length)]);
+      }
+    }, 150 + index * 50);
+    return () => clearInterval(interval);
+  }, [index]);
+
+  return (
+    <motion.div
+      className={isLead ? 'text-white font-bold' : ''}
+      style={{
+        opacity: isLead ? 1 : 0.15 + (index * 0.05),
+        textShadow: isLead ? '0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary))' : 'none',
+      }}
+    >
+      {char}
+    </motion.div>
+  );
+}
+
+function DataBurst() {
+  const bursts = useMemo(() => {
+    return [...Array(6)].map((_, i) => ({
+      id: i,
+      chars: [...Array(20)].map(() => binaryChars[Math.floor(Math.random() * 2)]).join(''),
+      top: `${15 + i * 15}%`,
+      delay: i * 1.5,
+    }));
+  }, []);
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+      {bursts.map((burst) => (
+        <motion.div
+          key={burst.id}
+          className="absolute left-0 text-primary/60 font-mono text-[10px] whitespace-nowrap"
+          style={{ top: burst.top }}
+          initial={{ x: '-100%', opacity: 0 }}
+          animate={{ x: '100vw', opacity: [0, 1, 1, 0] }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: 'linear',
+            delay: burst.delay,
+            repeatDelay: 5,
+          }}
+        >
+          {burst.chars}
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+function GridOverlay() {
+  return (
+    <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+        }}
+      />
+    </div>
+  );
+}
+
 function FloatingParticles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(12)].map((_, i) => (
+      {[...Array(20)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full"
           style={{
-            left: `${10 + i * 7}%`,
-            top: `${15 + (i % 4) * 20}%`,
-            width: i % 3 === 0 ? '3px' : '2px',
-            height: i % 3 === 0 ? '3px' : '2px',
+            left: `${5 + i * 4.5}%`,
+            top: `${10 + (i % 5) * 18}%`,
+            width: i % 4 === 0 ? '4px' : i % 3 === 0 ? '3px' : '2px',
+            height: i % 4 === 0 ? '4px' : i % 3 === 0 ? '3px' : '2px',
             background: 'hsl(var(--primary))',
-            boxShadow: '0 0 8px hsl(var(--primary) / 0.6)',
+            boxShadow: `0 0 ${i % 3 === 0 ? '15px' : '8px'} hsl(var(--primary) / 0.6)`,
           }}
           animate={{
-            y: [-30, 30, -30],
-            x: [-10, 10, -10],
-            opacity: [0.2, 0.8, 0.2],
-            scale: [1, 1.5, 1],
+            y: [-40, 40, -40],
+            x: [-15, 15, -15],
+            opacity: [0.2, 1, 0.2],
+            scale: [1, 1.8, 1],
           }}
           transition={{
-            duration: 5 + i * 0.4,
+            duration: 4 + i * 0.3,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: i * 0.2,
+            delay: i * 0.15,
           }}
         />
       ))}
@@ -88,23 +155,24 @@ function FloatingParticles() {
 function PulsingRings({ className }: { className?: string }) {
   return (
     <div className={`absolute flex items-center justify-center pointer-events-none ${className || 'inset-0'}`}>
-      {[...Array(3)].map((_, i) => (
+      {[...Array(4)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full border border-primary/20"
+          className="absolute rounded-full border border-primary/30"
           style={{
-            width: `${200 + i * 80}px`,
-            height: `${200 + i * 80}px`,
+            width: `${180 + i * 70}px`,
+            height: `${180 + i * 70}px`,
           }}
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.3, 0.1],
+            scale: [1, 1.15, 1],
+            opacity: [0.15, 0.4, 0.15],
+            rotate: [0, i % 2 === 0 ? 10 : -10, 0],
           }}
           transition={{
-            duration: 3 + i,
+            duration: 2.5 + i * 0.5,
             repeat: Infinity,
             ease: 'easeInOut',
-            delay: i * 0.5,
+            delay: i * 0.4,
           }}
         />
       ))}
@@ -115,31 +183,91 @@ function PulsingRings({ className }: { className?: string }) {
 function ScanningLines() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Horizontal scanning line */}
+      {/* Primary horizontal scanning line */}
       <motion.div
-        className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+        className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent"
+        style={{ boxShadow: '0 0 20px hsl(var(--primary) / 0.5)' }}
         initial={{ top: '0%' }}
         animate={{ top: '100%' }}
         transition={{
-          duration: 4,
+          duration: 3,
           repeat: Infinity,
           ease: 'linear',
         }}
       />
       
+      {/* Secondary horizontal line (offset) */}
+      <motion.div
+        className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+        initial={{ top: '0%' }}
+        animate={{ top: '100%' }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: 'linear',
+          delay: 1.5,
+        }}
+      />
+      
       {/* Vertical scanning line */}
       <motion.div
-        className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent"
+        className="absolute top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/50 to-transparent"
+        style={{ boxShadow: '0 0 15px hsl(var(--primary) / 0.4)' }}
         initial={{ left: '0%' }}
         animate={{ left: '100%' }}
         transition={{
-          duration: 6,
+          duration: 5,
           repeat: Infinity,
           ease: 'linear',
-          delay: 2,
+          delay: 1,
+        }}
+      />
+
+      {/* Diagonal sweep */}
+      <motion.div
+        className="absolute w-[200%] h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent origin-left"
+        style={{ rotate: '25deg', top: '50%' }}
+        initial={{ x: '-100%' }}
+        animate={{ x: '50%' }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: 'linear',
+          repeatDelay: 3,
         }}
       />
     </div>
+  );
+}
+
+function CircuitConnections() {
+  const paths = useMemo(() => [
+    { id: 1, d: 'M0,100 Q50,100 50,150 T100,150', delay: 0 },
+    { id: 2, d: 'M100,0 Q100,50 150,50 T150,100', delay: 1 },
+    { id: 3, d: 'M200,50 Q200,100 250,100 T250,150', delay: 2 },
+  ], []);
+
+  return (
+    <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-10">
+      {paths.map((path) => (
+        <motion.path
+          key={path.id}
+          d={path.d}
+          fill="none"
+          stroke="hsl(var(--primary))"
+          strokeWidth="1"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: 'easeInOut',
+            delay: path.delay,
+            repeatDelay: 2,
+          }}
+        />
+      ))}
+    </svg>
   );
 }
 
@@ -154,9 +282,12 @@ export function TimelineHero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-20 overflow-hidden">
+      <GridOverlay />
       <MatrixRain />
       <ScanningLines />
+      <DataBurst />
       <FloatingParticles />
+      <CircuitConnections />
       
       {/* Two-column layout container */}
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
