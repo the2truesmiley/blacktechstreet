@@ -4,7 +4,7 @@ import { TimelineProgress } from '@/components/timeline/TimelineProgress';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { TimelineHero } from '@/components/timeline/TimelineHero';
 import { TableOfContents } from '@/components/timeline/TableOfContents';
-import { TeamSection } from '@/components/timeline/TeamSection';
+
 import { SocialSection } from '@/components/timeline/SocialSection';
 import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
@@ -59,9 +59,6 @@ const Index = () => {
 
       {/* Main content */}
       <main className="relative z-10 px-5 pb-20 max-w-5xl mx-auto">
-        {/* Team section */}
-        <TeamSection />
-
         {/* Social section with Instagram */}
         <SocialSection />
 
