@@ -316,7 +316,8 @@ export function TimelineHero() {
                 ease: 'easeInOut',
               }}
             >
-              The Next Era Runs on{' '}
+              The Next Era Runs on
+              <br />
               <span className="text-primary">AI Literacy</span>
             </motion.span>
           </motion.h1>
