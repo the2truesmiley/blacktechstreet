@@ -300,7 +300,7 @@ export function TimelineHero() {
           className="flex-1 text-center lg:text-left"
         >
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight mb-8"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight mb-4"
           >
             <motion.span
               animate={{
@@ -316,11 +316,14 @@ export function TimelineHero() {
                 ease: 'easeInOut',
               }}
             >
-              Creating The Blueprint For An{' '}
-              <span className="text-primary">AI-Powered Society</span>{' '}
-              On The Grounds Of Historic Greenwood
+              The Next Era Runs on{' '}
+              <span className="text-primary">AI Literacy</span>
             </motion.span>
           </motion.h1>
+          
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 font-medium">
+            Practical fluency. Responsible use. Real-world application.
+          </p>
 
           {/* CTA Button */}
           <motion.button
