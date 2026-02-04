@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
+import { TeamSection } from '@/components/timeline/TeamSection';
 
 const values = [
   {
@@ -299,6 +300,13 @@ export default function AboutUs() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="py-24 px-5 bg-secondary/20">
+          <div className="max-w-5xl mx-auto">
+            <TeamSection />
           </div>
         </section>
 
