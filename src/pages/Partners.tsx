@@ -4,16 +4,27 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 
+// Import partner logos
+import microsoftLogo from '@/assets/partners/microsoft-logo.png';
+import nvidiaLogo from '@/assets/partners/nvidia-logo.png';
+import atlasLogo from '@/assets/partners/atlas-logo.png';
+import greenwoodLogo from '@/assets/partners/greenwood-cultural-center-logo.png';
+import hpLogo from '@/assets/partners/hewlett-packard-logo.png';
+import seedaiLogo from '@/assets/partners/seedai-logo.png';
+import tedcLogo from '@/assets/partners/tedc-logo.png';
+import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
+import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
+
 // Featured partners (larger display)
 const featuredPartners = [
   { 
     name: 'Microsoft', 
-    logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/68b675b6e736cd59c16c5d53_Microsoft%20%20color%20logo%20.png',
+    logo: microsoftLogo,
     description: 'AI & Cybersecurity Innovation Partner'
   },
   { 
     name: 'NVIDIA', 
-    logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/6932028dc71f086344ab0b39_NVIDIA%20logo%20.png',
+    logo: nvidiaLogo,
     link: 'https://www.nvidia.com/',
     description: 'AI Training & Compute Access Partner'
   },
@@ -21,13 +32,13 @@ const featuredPartners = [
 
 // All other partners
 const partners = [
-  { name: 'Atlas', logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/68955161f1e681cc843afe53_Atlas%20Website%20Logo%20.png' },
-  { name: 'Greenwood Cultural Center', logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/68a49c2b27a8f8782961eb05_Greenwood%20Cultural%20Center%20Color%20Logo%20.png' },
-  { name: 'Hewlett Packard', logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/68a49df0434a8a90e4b36085_Hewlett%20Packard%20Color%20Logo%20.png' },
-  { name: 'SeedAI', logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/68b676228705d9fd3a1903e8_SeedAI%20%20color%20logo%20.png' },
-  { name: 'TEDC', logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/68b676e4a5f62fb6f72d67f3_TEDC%20color%20logo%20.png' },
-  { name: 'Tulsa Innovation Labs', logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/6834c054e7721eb1687f1ca5_Tulsa%20Innovation%20Labs%20Black%20Glow%20Logo%20.png' },
-  { name: 'Tulsa Remote', logo: 'https://cdn.prod.website-files.com/6812e5e1258216169cbbdeb5/68b677a4efac2b58c62dd1a4_Tulsa%20Remote%20%20color%20logo%20%20(1).png' },
+  { name: 'Atlas', logo: atlasLogo },
+  { name: 'Greenwood Cultural Center', logo: greenwoodLogo },
+  { name: 'Hewlett Packard', logo: hpLogo },
+  { name: 'SeedAI', logo: seedaiLogo },
+  { name: 'TEDC', logo: tedcLogo },
+  { name: 'Tulsa Innovation Labs', logo: tilLogo },
+  { name: 'Tulsa Remote', logo: tulsaRemoteLogo },
 ];
 
 const stats = [
@@ -160,7 +171,7 @@ export default function Partners() {
                   
                   <div className="flex flex-col items-center text-center">
                     {/* Logo Container */}
-                    <div className="relative w-full h-24 mb-6 flex items-center justify-center">
+                    <div className="relative w-full h-32 mb-6 flex items-center justify-center">
                       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-xl" />
                       {partner.link ? (
                         <a
@@ -172,14 +183,14 @@ export default function Partners() {
                           <img
                             src={partner.logo}
                             alt={partner.name}
-                            className="max-h-16 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="max-h-24 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                         </a>
                       ) : (
                         <img
                           src={partner.logo}
                           alt={partner.name}
-                          className="relative z-10 max-h-16 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                          className="relative z-10 max-h-24 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                         />
                       )}
                     </div>
@@ -220,7 +231,7 @@ export default function Partners() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           >
             {partners.map((partner, index) => (
               <motion.div
@@ -233,7 +244,7 @@ export default function Partners() {
                 className="group relative"
               >
                 <div className={cn(
-                  "relative h-32 p-6 rounded-xl",
+                  "relative h-40 p-8 rounded-xl",
                   "bg-card/50 backdrop-blur-sm",
                   "border border-border/30 hover:border-primary/40",
                   "flex items-center justify-center",
@@ -245,7 +256,7 @@ export default function Partners() {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="relative z-10 max-h-12 w-auto object-contain filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300"
+                    className="relative z-10 max-h-20 max-w-[80%] object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
                   />
                 </div>
                 
