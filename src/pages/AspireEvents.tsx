@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Users, Sparkles, Baby, Briefcase, Heart, Shield, ExternalLink, Accessibility } from 'lucide-react';
+import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { NextEventHero } from '@/components/events/NextEventHero';
@@ -8,7 +8,7 @@ import { EventsHero } from '@/components/events/EventsHero';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
-import jovieLogo from '@/assets/partners/jovie-logo.png';
+import jovieChildcareBadge from '@/assets/partners/jovie-childcare-badge.png';
 
 // Staggered animation variants
 const containerVariants = {
@@ -267,39 +267,24 @@ export default function AspireEvents() {
             />
             
             <div className="relative">
-              <motion.div 
-                className="flex items-center gap-3 mb-4"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+              {/* Jovie Badge at Top */}
+              <motion.a
+                href="https://www.jovie.com/resources-faq/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mb-6"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
+                whileHover={{ scale: 1.05 }}
               >
-                <motion.div 
-                  className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center"
-                  whileHover={{ scale: 1.1, rotate: 10 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <Baby className="w-6 h-6 text-primary" />
-                </motion.div>
-                <motion.div 
-                  className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium"
-                  animate={{
-                    boxShadow: [
-                      "0 0 0 0 hsl(var(--primary) / 0)",
-                      "0 0 0 4px hsl(var(--primary) / 0.1)",
-                      "0 0 0 0 hsl(var(--primary) / 0)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <Heart className="w-3 h-3" />
-                  <span>NEW Partnership</span>
-                </motion.div>
-              </motion.div>
+                <img 
+                  src={jovieChildcareBadge} 
+                  alt="Jovie - Free On-Site Childcare Provided" 
+                  className="h-24 md:h-32 w-auto object-contain"
+                />
+              </motion.a>
 
               <motion.h2 
                 className="text-2xl md:text-3xl font-display font-bold mb-4"
@@ -330,25 +315,6 @@ export default function AspireEvents() {
                 to provide professional on-site childcare at no cost during our ASPIRE AI workshops—so you can fully engage 
                 without worrying about your little ones.
               </motion.p>
-
-              {/* Jovie Logo */}
-              <motion.a
-                href="https://www.jovie.com/resources-faq/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mb-6"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.25 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <img 
-                  src={jovieLogo} 
-                  alt="Jovie - Nannies + Sitters" 
-                  className="h-16 md:h-20 w-auto object-contain"
-                />
-              </motion.a>
 
               <motion.div 
                 className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8"
