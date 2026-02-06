@@ -191,7 +191,7 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
               
               <motion.div 
                 variants={itemVariants}
-                className="flex flex-wrap gap-4 text-muted-foreground"
+                className="flex flex-col gap-3"
               >
                 {[
                   { icon: Calendar, text: format(nextEvent.date, 'EEEE') },
@@ -200,12 +200,12 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                 ].map((item, idx) => (
                   <motion.div 
                     key={idx}
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-3"
                     whileHover={{ x: 3 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <item.icon className="w-4 h-4 text-primary" />
-                    <span>{item.text}</span>
+                    <item.icon className="w-5 h-5 text-primary" />
+                    <span className="text-lg md:text-xl font-medium text-foreground">{item.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -213,7 +213,7 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
               <motion.div variants={itemVariants}>
                 <Button 
                   size="lg" 
-                  className="mt-4 group relative overflow-hidden"
+                  className="mt-6 group relative overflow-hidden text-base px-6 py-6"
                   onClick={() => onRegister(nextEvent)}
                 >
                   <motion.span
@@ -223,8 +223,8 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                     transition={{ duration: 0.5 }}
                   />
                   <span className="relative flex items-center">
-                    Register Now
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                    Join Our Next ASPIRE AI Workshop!
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
               </motion.div>
