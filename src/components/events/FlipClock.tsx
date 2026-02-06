@@ -7,35 +7,74 @@ interface FlipCardProps {
   label: string;
 }
 
-// Simplified flip card - no complex animations that cause stacking
 const FlipCard = memo(function FlipCard({ value, label }: FlipCardProps) {
+  const [currentValue, setCurrentValue] = useState(value);
+  const [previousValue, setPreviousValue] = useState(value);
   const [isFlipping, setIsFlipping] = useState(false);
-  const prevValueRef = useRef(value);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (prevValueRef.current !== value) {
-      setIsFlipping(true);
-      const timer = setTimeout(() => {
-        setIsFlipping(false);
-      }, 300);
-      prevValueRef.current = value;
-      return () => clearTimeout(timer);
+    // Skip animation on first render
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      setCurrentValue(value);
+      setPreviousValue(value);
+      return;
     }
-  }, [value]);
 
-  const formattedValue = String(value).padStart(2, '0');
+    if (value !== currentValue) {
+      // Store the old value and start flipping
+      setPreviousValue(currentValue);
+      setIsFlipping(true);
+      
+      // Update to new value partway through animation
+      const updateTimer = setTimeout(() => {
+        setCurrentValue(value);
+      }, 300); // Halfway through the 600ms animation
+
+      // End the flip animation
+      const endTimer = setTimeout(() => {
+        setIsFlipping(false);
+        setPreviousValue(value);
+      }, 600);
+
+      return () => {
+        clearTimeout(updateTimer);
+        clearTimeout(endTimer);
+      };
+    }
+  }, [value, currentValue]);
+
+  const formatValue = (val: number) => String(val).padStart(2, '0');
 
   return (
     <div className="flip-clock-item">
-      <div className={cn("flip-clock-card", isFlipping && "flipping")}>
-        {/* Top half - shows top portion of number */}
-        <div className="flip-clock-top">
-          <span>{formattedValue}</span>
+      <div className="flip-clock-card">
+        {/* Static top half - always shows current number */}
+        <div className="flip-card-top">
+          <span>{formatValue(currentValue)}</span>
         </div>
         
-        {/* Bottom half - shows bottom portion of number */}
-        <div className="flip-clock-bottom">
-          <span>{formattedValue}</span>
+        {/* Static bottom half - always shows current number */}
+        <div className="flip-card-bottom">
+          <span>{formatValue(currentValue)}</span>
+        </div>
+
+        {/* Animated top flap - flips DOWN showing old → new */}
+        <div className={cn("flip-card-flap-top", isFlipping && "flipping")}>
+          <div className="flap-face flap-front">
+            <span>{formatValue(previousValue)}</span>
+          </div>
+          <div className="flap-face flap-back">
+            <span>{formatValue(currentValue)}</span>
+          </div>
+        </div>
+
+        {/* Animated bottom flap - flips DOWN from hidden to visible */}
+        <div className={cn("flip-card-flap-bottom", isFlipping && "flipping")}>
+          <div className="flap-face flap-front">
+            <span>{formatValue(currentValue)}</span>
+          </div>
         </div>
       </div>
       <span className="flip-clock-label">{label}</span>
