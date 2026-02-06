@@ -5,6 +5,7 @@ import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { NextEventHero } from '@/components/events/NextEventHero';
 import { EventsHero } from '@/components/events/EventsHero';
+import { EventTestimonials } from '@/components/events/EventTestimonials';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
@@ -387,6 +388,9 @@ export default function AspireEvents() {
           </motion.div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <EventTestimonials />
 
       {/* Contact CTA Section */}
       <section className="py-16 relative overflow-hidden">
