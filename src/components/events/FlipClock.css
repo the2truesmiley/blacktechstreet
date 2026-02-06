@@ -3,6 +3,7 @@
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  perspective: 1000px;
 }
 
 @media (min-width: 640px) {
@@ -36,7 +37,7 @@
   box-shadow: 
     0 4px 12px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 @media (min-width: 640px) {
@@ -53,32 +54,107 @@
   }
 }
 
-/* Top and Bottom halves */
-.flip-card-top,
-.flip-card-bottom {
+/* Shared styles for all halves */
+.flip-card-static-top,
+.flip-card-static-bottom,
+.flip-card-flap-top,
+.flip-card-flap-bottom {
   position: absolute;
   left: 0;
   right: 0;
   height: 50%;
   overflow: hidden;
+  backface-visibility: hidden;
 }
 
-.flip-card-top {
+/* Static top half - always visible behind */
+.flip-card-static-top {
   top: 0;
   background: linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 100%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  z-index: 1;
 }
 
-.flip-card-bottom {
+/* Static bottom half - always visible behind */
+.flip-card-static-bottom {
   bottom: 0;
   background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
+  border-radius: 0 0 0.5rem 0.5rem;
+  z-index: 1;
 }
 
-/* The number display - positioned to show correct half */
+/* Animated top flap - flips down from top */
+.flip-card-flap-top {
+  top: 0;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 100%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  z-index: 3;
+  transform-origin: bottom center;
+  transform: rotateX(0deg);
+}
+
+.flip-card-flap-top.flipping {
+  animation: flipTopDown 0.6s ease-in-out forwards;
+}
+
+/* Animated bottom flap - starts flipped up, flips down to reveal */
+.flip-card-flap-bottom {
+  bottom: 0;
+  background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
+  border-radius: 0 0 0.5rem 0.5rem;
+  z-index: 2;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+}
+
+.flip-card-flap-bottom.flipping {
+  animation: flipBottomDown 0.6s ease-in-out forwards;
+}
+
+/* Top flap animation - flips from 0 to -90deg (out of view) */
+@keyframes flipTopDown {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 3;
+  }
+  50% {
+    transform: rotateX(-90deg);
+    z-index: 3;
+  }
+  50.001% {
+    z-index: 1;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    z-index: 1;
+  }
+}
+
+/* Bottom flap animation - flips from 90deg to 0 (into view) */
+@keyframes flipBottomDown {
+  0% {
+    transform: rotateX(90deg);
+    z-index: 2;
+  }
+  49.999% {
+    z-index: 2;
+  }
+  50% {
+    transform: rotateX(90deg);
+    z-index: 4;
+  }
+  100% {
+    transform: rotateX(0deg);
+    z-index: 4;
+  }
+}
+
+/* Number styling */
 .flip-card-number {
   position: absolute;
   left: 0;
   right: 0;
-  height: 200%; /* Double height so we can position top/bottom halves */
+  height: 200%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,16 +163,17 @@
   font-size: 2.5rem;
   color: hsl(var(--primary));
   text-shadow: 0 0 15px hsl(var(--primary) / 0.4);
-  transition: transform 0.15s ease-out;
 }
 
-/* Top half shows top of number */
-.flip-card-top .flip-card-number {
+/* Position number for top halves (show top half of number) */
+.flip-card-static-top .flip-card-number,
+.flip-card-flap-top .flip-card-number {
   top: 0;
 }
 
-/* Bottom half shows bottom of number */
-.flip-card-bottom .flip-card-number {
+/* Position number for bottom halves (show bottom half of number) */
+.flip-card-static-bottom .flip-card-number,
+.flip-card-flap-bottom .flip-card-number {
   bottom: 0;
 }
 
@@ -146,33 +223,6 @@
   right: 0;
 }
 
-/* Animation on number change */
-.flip-clock-card.animating .flip-card-top {
-  animation: flipTopAnim 0.15s ease-in;
-}
-
-.flip-clock-card.animating .flip-card-bottom {
-  animation: flipBottomAnim 0.15s ease-out;
-}
-
-@keyframes flipTopAnim {
-  0% {
-    transform: perspective(200px) rotateX(0deg);
-  }
-  100% {
-    transform: perspective(200px) rotateX(-30deg);
-  }
-}
-
-@keyframes flipBottomAnim {
-  0% {
-    transform: perspective(200px) rotateX(30deg);
-  }
-  100% {
-    transform: perspective(200px) rotateX(0deg);
-  }
-}
-
 /* Label styling */
 .flip-clock-label {
   font-size: 0.65rem;
@@ -197,8 +247,9 @@
   transition: box-shadow 0.3s ease;
 }
 
-/* Inner shadow for depth */
-.flip-card-top::after {
+/* Inner shadows for depth on static panels */
+.flip-card-static-top::after,
+.flip-card-flap-top::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -206,9 +257,11 @@
   right: 0;
   height: 4px;
   background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  pointer-events: none;
 }
 
-.flip-card-bottom::before {
+.flip-card-static-bottom::before,
+.flip-card-flap-bottom::before {
   content: '';
   position: absolute;
   top: 0;
@@ -216,4 +269,15 @@
   right: 0;
   height: 4px;
   background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 3D shadow effect during flip */
+.flip-card-flap-top.flipping {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.flip-card-flap-bottom.flipping {
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
 }
