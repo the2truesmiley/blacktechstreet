@@ -25,7 +25,7 @@ export function RegistrationModal({ event, isOpen, onClose }: RegistrationModalP
         
         <div className="h-[600px] overflow-auto">
           <iframe
-            src={`${event.registrationUrl}?alignLeft=1&hideTitle=1&transparentBackground=1`}
+            src={`${event.registrationUrl}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
             width="100%"
             height="100%"
             frameBorder="0"
