@@ -251,7 +251,7 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
           >
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
             <h4 className="text-sm font-display font-semibold text-muted-foreground uppercase tracking-widest">
-              Also Coming Up in 2026
+              Upcoming ASPIRE Events
             </h4>
             <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
           </motion.div>
