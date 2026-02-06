@@ -105,7 +105,7 @@
   }
 }
 
-/* Flip animation cards */
+/* Flip animation cards - hidden by default */
 .flip-clock-flip-top,
 .flip-clock-flip-bottom {
   position: absolute;
@@ -119,6 +119,8 @@
   backface-visibility: hidden;
   transform-style: preserve-3d;
   will-change: transform;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .flip-clock-flip-top {
@@ -139,6 +141,12 @@
   align-items: flex-start;
   padding-top: 0.125rem;
   z-index: 1;
+}
+
+/* Only show flip cards during animation */
+.flip-clock-flip-top.animate,
+.flip-clock-flip-bottom.animate {
+  opacity: 1;
 }
 
 .flip-clock-flip-top span,
