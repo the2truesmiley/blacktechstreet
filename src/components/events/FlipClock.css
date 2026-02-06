@@ -33,10 +33,12 @@
   width: 3.5rem;
   height: 4.5rem;
   border-radius: 0.5rem;
-  background: #1a1a1a;
+  background: linear-gradient(180deg, #1e1e1e 0%, #141414 100%);
   box-shadow: 
     0 4px 12px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
   transform-style: preserve-3d;
 }
 
@@ -165,54 +167,74 @@
 
 /* Upper flap flips from 0 to -90deg (out of view) */
 .flip-card-upper-flap.animate-flip-down {
-  animation: flipUpperDown 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  animation: flipUpperDown 0.5s cubic-bezier(0.33, 0, 0.2, 1) forwards;
 }
 
 @keyframes flipUpperDown {
   0% {
-    transform: rotateX(0deg);
+    transform: rotateX(0deg) scale(1);
     z-index: 3;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    filter: brightness(1);
+  }
+  30% {
+    transform: rotateX(-50deg) scale(1.01);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    filter: brightness(0.9);
   }
   50% {
-    transform: rotateX(-90deg);
+    transform: rotateX(-90deg) scale(1);
     z-index: 3;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    filter: brightness(0.85);
   }
   50.01% {
     z-index: 1;
   }
   100% {
-    transform: rotateX(-90deg);
+    transform: rotateX(-90deg) scale(1);
     z-index: 1;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    filter: brightness(1);
   }
 }
 
 /* Lower flap flips from 90deg to 0 (into view), starts at 50% of animation */
 .flip-card-lower-flap.animate-flip-reveal {
-  animation: flipLowerReveal 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+  animation: flipLowerReveal 0.5s cubic-bezier(0.33, 0, 0.2, 1) forwards;
 }
 
 @keyframes flipLowerReveal {
   0% {
-    transform: rotateX(90deg);
+    transform: rotateX(90deg) scale(1);
     z-index: 2;
     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    filter: brightness(0.85);
   }
   49.99% {
-    transform: rotateX(90deg);
+    transform: rotateX(90deg) scale(1);
     z-index: 2;
+    filter: brightness(0.85);
   }
   50% {
-    transform: rotateX(90deg);
+    transform: rotateX(90deg) scale(1);
     z-index: 4;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.5);
+    filter: brightness(0.9);
+  }
+  70% {
+    transform: rotateX(30deg) scale(1.01);
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.6);
+    filter: brightness(0.95);
+  }
+  85% {
+    transform: rotateX(-3deg) scale(1.005);
   }
   100% {
-    transform: rotateX(0deg);
+    transform: rotateX(0deg) scale(1);
     z-index: 4;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    filter: brightness(1);
   }
 }
 
@@ -232,11 +254,21 @@
   font-weight: 700;
   font-size: 2.5rem;
   color: hsl(var(--primary));
-  text-shadow: 0 0 15px hsl(var(--primary) / 0.4);
+  text-shadow: 
+    0 0 10px hsl(var(--primary) / 0.5),
+    0 0 20px hsl(var(--primary) / 0.3),
+    0 0 40px hsl(var(--primary) / 0.15);
+  transition: text-shadow 0.15s ease;
 }
 
-/* Position number for upper halves (show top half of number) */
-.flip-card-upper-back .flip-card-number,
+/* Glow intensifies during flip */
+.animate-flip-down .flip-card-number,
+.animate-flip-reveal .flip-card-number {
+  text-shadow: 
+    0 0 15px hsl(var(--primary) / 0.7),
+    0 0 30px hsl(var(--primary) / 0.5),
+    0 0 60px hsl(var(--primary) / 0.3);
+}
 .flip-card-upper-flap .flip-card-number {
   top: 0;
 }
