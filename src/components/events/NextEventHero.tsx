@@ -142,13 +142,28 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
             transition={{ delay: 0.1 }}
             className="mb-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-3">
+            <motion.div 
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-semibold mb-3 border border-primary/30"
+              animate={{
+                boxShadow: [
+                  "0 0 0 0 hsl(var(--primary) / 0)",
+                  "0 0 20px 4px hsl(var(--primary) / 0.4)",
+                  "0 0 0 0 hsl(var(--primary) / 0)",
+                ],
+                scale: [1, 1.02, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               Next Workshop
-            </div>
+            </motion.div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
               Join Our Next ASPIRE AI Workshop!
             </h2>
