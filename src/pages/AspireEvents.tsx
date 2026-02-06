@@ -5,6 +5,7 @@ import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { NextEventHero } from '@/components/events/NextEventHero';
 import { EventsHero } from '@/components/events/EventsHero';
+import { FacilitatorsSection } from '@/components/events/FacilitatorsSection';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
@@ -222,6 +223,9 @@ export default function AspireEvents() {
           </motion.div>
         </div>
       </section>
+
+      {/* Meet Your Facilitators Section */}
+      <FacilitatorsSection />
 
       {/* Childcare Partnership Section */}
       <section id="childcare" className="py-16 scroll-mt-24 relative overflow-hidden">
