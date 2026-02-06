@@ -222,20 +222,27 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
       {/* Other Upcoming Dates */}
       {upcomingEvents.length > 0 && (
         <motion.div 
-          className="space-y-4"
+          className="space-y-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <motion.h4 
-            className="text-lg font-display font-semibold text-muted-foreground"
+          {/* Section Header */}
+          <motion.div 
+            className="flex items-center gap-4"
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Also Coming Up
-          </motion.h4>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+            <h4 className="text-sm font-display font-semibold text-muted-foreground uppercase tracking-widest">
+              Also Coming Up in 2026
+            </h4>
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-border to-transparent" />
+          </motion.div>
+
+          {/* Event Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {upcomingEvents.map((event, index) => (
               <motion.button
                 key={event.id}
@@ -248,47 +255,66 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                   stiffness: 100,
                 }}
                 whileHover={{ 
-                  scale: 1.03,
-                  y: -4,
+                  scale: 1.02,
+                  y: -6,
                   transition: { type: "spring", stiffness: 400, damping: 20 }
                 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => onRegister(event)}
                 className={cn(
-                  "p-4 rounded-xl text-left relative overflow-hidden",
-                  "bg-card/50 border border-border/40",
-                  "hover:border-primary/40 hover:bg-card transition-colors duration-200",
-                  "group"
+                  "relative overflow-hidden rounded-xl text-left",
+                  "bg-gradient-to-br from-card via-card to-card/80",
+                  "border border-border/50",
+                  "hover:border-primary/50 transition-all duration-300",
+                  "group shadow-lg shadow-black/5"
                 )}
               >
-                {/* Hover gradient effect */}
+                {/* Top accent bar */}
+                <div className="h-1 w-full bg-gradient-to-r from-primary/60 via-primary to-primary/60" />
+                
+                {/* Hover glow effect */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0"
-                  whileHover={{
-                    background: "linear-gradient(to bottom right, hsl(var(--primary) / 0.1), hsl(var(--primary) / 0.05))",
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background: "radial-gradient(circle at 50% 0%, hsl(var(--primary) / 0.15), transparent 70%)",
                   }}
-                  transition={{ duration: 0.3 }}
                 />
                 
-                <div className="relative">
-                  <motion.div 
-                    className="font-display font-semibold text-lg"
-                    whileHover={{ x: 3 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    {format(event.date, 'MMM d')}
-                  </motion.div>
-                  <div className="text-sm text-muted-foreground">
+                <div className="relative p-5">
+                  {/* Month badge */}
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider">
+                      {format(event.date, 'MMMM')}
+                    </span>
+                    <Calendar className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary/50 transition-colors" />
+                  </div>
+                  
+                  {/* Date - Large */}
+                  <div className="mb-2">
+                    <span className="text-4xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
+                      {format(event.date, 'd')}
+                    </span>
+                  </div>
+                  
+                  {/* Day of week */}
+                  <div className="text-sm text-muted-foreground font-medium mb-4">
                     {format(event.date, 'EEEE')}
                   </div>
-                  <motion.div 
-                    className="text-xs text-primary mt-2 flex items-center gap-1"
-                    initial={{ opacity: 0, x: -5 }}
-                    whileHover={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    Register <ArrowRight className="w-3 h-3" />
-                  </motion.div>
+                  
+                  {/* CTA */}
+                  <div className="flex items-center justify-between pt-3 border-t border-border/30">
+                    <span className="text-xs text-muted-foreground">
+                      {event.time.split(' - ')[0]}
+                    </span>
+                    <motion.div 
+                      className="flex items-center gap-1.5 text-sm font-medium text-primary"
+                      whileHover={{ x: 3 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">Register</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </motion.div>
+                  </div>
                 </div>
               </motion.button>
             ))}
