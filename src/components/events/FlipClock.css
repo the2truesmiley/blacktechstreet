@@ -26,67 +26,202 @@
   gap: 0.5rem;
 }
 
-/* The flip card container - classic flip board style */
+/* The flip card container */
 .flip-clock-card {
   position: relative;
   width: 3.25rem;
-  height: 4rem;
-  border-radius: 0.375rem;
+  height: 4.5rem;
+  perspective: 400px;
+  border-radius: 0.5rem;
   background: #1a1a1a;
   box-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  overflow: hidden;
 }
 
 @media (min-width: 640px) {
   .flip-clock-card {
     width: 4rem;
-    height: 5rem;
-    border-radius: 0.5rem;
+    height: 5.5rem;
   }
 }
 
 @media (min-width: 768px) {
   .flip-clock-card {
     width: 4.5rem;
-    height: 5.5rem;
+    height: 6rem;
   }
 }
 
-/* Top half */
-.flip-clock-top {
+/* ===== STATIC HALVES ===== */
+/* These always show the CURRENT number */
+
+.flip-card-top,
+.flip-card-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-top {
+  top: 0;
+  align-items: flex-end;
+  background: linear-gradient(180deg, #2d2d2d 0%, #222 100%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 1px solid #111;
+}
+
+.flip-card-bottom {
+  bottom: 0;
+  align-items: flex-start;
+  background: linear-gradient(180deg, #1a1a1a 0%, #151515 100%);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.flip-card-top span,
+.flip-card-bottom span {
+  font-family: 'SF Mono', 'Roboto Mono', 'Consolas', monospace;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: hsl(var(--primary));
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+@media (min-width: 640px) {
+  .flip-card-top span,
+  .flip-card-bottom span {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .flip-card-top span,
+  .flip-card-bottom span {
+    font-size: 3rem;
+  }
+}
+
+/* ===== ANIMATED FLAPS ===== */
+
+/* Top flap - flips DOWN from 0 to -180deg */
+.flip-card-flap-top {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 50%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 1px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #2a2a2a, #1f1f1f);
-  border-bottom: 1px solid #0a0a0a;
+  transform-origin: bottom center;
+  transform-style: preserve-3d;
+  z-index: 10;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
-/* Bottom half */
-.flip-clock-bottom {
+.flip-card-flap-top.flipping {
+  animation: flipTop 0.6s ease-in-out forwards;
+}
+
+/* Bottom flap - flips DOWN from 90deg to 0deg */
+.flip-card-flap-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 50%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 1px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #1a1a1a, #151515);
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg);
+  z-index: 5;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
-/* Center divider line - the classic flip clock look */
-.flip-clock-card::before {
+.flip-card-flap-bottom.flipping {
+  animation: flipBottom 0.6s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Flap faces (front and back) */
+.flap-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+/* Top flap front - shows OLD number (top portion) */
+.flip-card-flap-top .flap-front {
+  align-items: flex-end;
+  background: linear-gradient(180deg, #2d2d2d 0%, #222 100%);
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 1px solid #111;
+}
+
+/* Top flap back - shows NEW number (top portion), rotated 180deg */
+.flip-card-flap-top .flap-back {
+  align-items: flex-start;
+  background: linear-gradient(180deg, #1a1a1a 0%, #151515 100%);
+  transform: rotateX(180deg);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+/* Bottom flap front - shows NEW number (bottom portion) */
+.flip-card-flap-bottom .flap-front {
+  align-items: flex-start;
+  background: linear-gradient(180deg, #1a1a1a 0%, #151515 100%);
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.flap-face span {
+  font-family: 'SF Mono', 'Roboto Mono', 'Consolas', monospace;
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: hsl(var(--primary));
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+}
+
+@media (min-width: 640px) {
+  .flap-face span {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .flap-face span {
+    font-size: 3rem;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes flipBottom {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* ===== CENTER LINE ===== */
+.flip-clock-card::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -94,57 +229,11 @@
   right: 0;
   height: 2px;
   background: #0a0a0a;
-  z-index: 10;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
-}
-
-/* Small notches on the sides like real flip clocks */
-.flip-clock-card::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 4px;
   transform: translateY(-50%);
-  background: linear-gradient(to right, 
-    #0a0a0a 0%, 
-    #0a0a0a 3px, 
-    transparent 3px, 
-    transparent calc(100% - 3px), 
-    #0a0a0a calc(100% - 3px), 
-    #0a0a0a 100%
-  );
-  z-index: 11;
+  z-index: 20;
 }
 
-/* Number styling */
-.flip-clock-top span,
-.flip-clock-bottom span {
-  font-family: 'SF Mono', 'Roboto Mono', 'Monaco', monospace;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1;
-  color: hsl(var(--primary));
-  text-shadow: 0 0 8px hsl(var(--primary) / 0.4);
-  letter-spacing: -0.02em;
-}
-
-@media (min-width: 640px) {
-  .flip-clock-top span,
-  .flip-clock-bottom span {
-    font-size: 2.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .flip-clock-top span,
-  .flip-clock-bottom span {
-    font-size: 2.75rem;
-  }
-}
-
-/* Label styling */
+/* ===== LABEL ===== */
 .flip-clock-label {
   font-size: 0.625rem;
   color: hsl(var(--muted-foreground));
@@ -159,25 +248,11 @@
   }
 }
 
-/* Subtle highlight on card edges */
+/* ===== HOVER EFFECT ===== */
 .flip-clock-item:hover .flip-clock-card {
   box-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 0 15px hsl(var(--primary) / 0.15);
-  transition: box-shadow 0.2s ease;
-}
-
-/* Flip animation - simplified for smooth performance */
-.flip-clock-card.flipping .flip-clock-top {
-  animation: flipTopSimple 0.3s ease-in-out;
-}
-
-@keyframes flipTopSimple {
-  0%, 49% {
-    transform: perspective(200px) rotateX(0deg);
-  }
-  50%, 100% {
-    transform: perspective(200px) rotateX(-5deg);
-  }
+    0 0 20px hsl(var(--primary) / 0.2);
+  transition: box-shadow 0.3s ease;
 }
