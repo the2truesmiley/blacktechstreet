@@ -167,13 +167,18 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4"
+            className="mb-6"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Next Workshop
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-3">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              Next Workshop
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
+              Join Our Next ASPIRE AI Workshop!
+            </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -213,7 +218,7 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
               <motion.div variants={itemVariants}>
                 <Button 
                   size="lg" 
-                  className="mt-6 group relative overflow-hidden text-base px-6 py-6"
+                  className="mt-4 group relative overflow-hidden"
                   onClick={() => onRegister(nextEvent)}
                 >
                   <motion.span
@@ -223,8 +228,8 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                     transition={{ duration: 0.5 }}
                   />
                   <span className="relative flex items-center">
-                    Join Our Next ASPIRE AI Workshop!
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    Register Now
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>
               </motion.div>
