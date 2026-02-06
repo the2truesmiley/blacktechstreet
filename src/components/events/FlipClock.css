@@ -1,0 +1,225 @@
+/* Flip Clock Container */
+.flip-clock {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .flip-clock {
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .flip-clock {
+    gap: 1rem;
+    justify-content: flex-end;
+  }
+}
+
+/* Individual flip clock item */
+.flip-clock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* The flip card container */
+.flip-clock-card {
+  position: relative;
+  width: 3.5rem;
+  height: 4.5rem;
+  perspective: 400px;
+  border-radius: 0.5rem;
+  background: hsl(var(--background) / 0.5);
+  border: 1px solid hsl(var(--border) / 0.5);
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .flip-clock-card {
+    width: 4.5rem;
+    height: 5.5rem;
+    border-radius: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .flip-clock-card {
+    width: 5rem;
+    height: 6rem;
+  }
+}
+
+/* Top and bottom halves */
+.flip-clock-top,
+.flip-clock-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(to bottom, hsl(var(--background) / 0.8), hsl(var(--background) / 0.6));
+}
+
+.flip-clock-top {
+  top: 0;
+  border-bottom: 1px solid hsl(var(--border) / 0.3);
+  align-items: flex-end;
+  padding-bottom: 0.125rem;
+}
+
+.flip-clock-bottom {
+  bottom: 0;
+  align-items: flex-start;
+  padding-top: 0.125rem;
+  background: linear-gradient(to bottom, hsl(var(--background) / 0.6), hsl(var(--background) / 0.4));
+}
+
+.flip-clock-top span,
+.flip-clock-bottom span {
+  font-family: var(--font-display, 'Space Grotesk', system-ui, sans-serif);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: hsl(var(--primary));
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+}
+
+@media (min-width: 640px) {
+  .flip-clock-top span,
+  .flip-clock-bottom span {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .flip-clock-top span,
+  .flip-clock-bottom span {
+    font-size: 3rem;
+  }
+}
+
+/* Flip animation cards */
+.flip-clock-flip-top,
+.flip-clock-flip-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.flip-clock-flip-top {
+  top: 0;
+  transform-origin: bottom center;
+  background: linear-gradient(to bottom, hsl(var(--background) / 0.8), hsl(var(--background) / 0.6));
+  border-bottom: 1px solid hsl(var(--border) / 0.3);
+  align-items: flex-end;
+  padding-bottom: 0.125rem;
+  z-index: 2;
+}
+
+.flip-clock-flip-bottom {
+  bottom: 0;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+  background: linear-gradient(to bottom, hsl(var(--background) / 0.6), hsl(var(--background) / 0.4));
+  align-items: flex-start;
+  padding-top: 0.125rem;
+  z-index: 1;
+}
+
+.flip-clock-flip-top span,
+.flip-clock-flip-bottom span {
+  font-family: var(--font-display, 'Space Grotesk', system-ui, sans-serif);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: hsl(var(--primary));
+  text-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+}
+
+@media (min-width: 640px) {
+  .flip-clock-flip-top span,
+  .flip-clock-flip-bottom span {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .flip-clock-flip-top span,
+  .flip-clock-flip-bottom span {
+    font-size: 3rem;
+  }
+}
+
+/* Animation states */
+.flip-clock-flip-top.animate {
+  animation: flipTop 0.3s ease-in forwards;
+}
+
+.flip-clock-flip-bottom.animate {
+  animation: flipBottom 0.3s ease-out forwards;
+  animation-delay: 0.15s;
+}
+
+@keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flipBottom {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* Label styling */
+.flip-clock-label {
+  font-size: 0.625rem;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 640px) {
+  .flip-clock-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Subtle glow effect on the card */
+.flip-clock-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, hsl(var(--primary) / 0.05), transparent);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Hover effect */
+.flip-clock-item:hover .flip-clock-card {
+  border-color: hsl(var(--primary) / 0.5);
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}

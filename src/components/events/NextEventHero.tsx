@@ -1,29 +1,14 @@
 import { useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, ArrowRight, Sparkles } from 'lucide-react';
-import { format, differenceInDays, differenceInHours, differenceInMinutes, isPast } from 'date-fns';
+import { format, isPast } from 'date-fns';
+import { FlipClock } from './FlipClock';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
 
 interface NextEventHeroProps {
   onRegister: (event: AspireEvent) => void;
-}
-
-// Animated counter digit component
-function AnimatedDigit({ value }: { value: number }) {
-  return (
-    <motion.span
-      key={value}
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 20, opacity: 0 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="inline-block"
-    >
-      {value}
-    </motion.span>
-  );
 }
 
 // Floating sparkle effect
@@ -57,7 +42,6 @@ function FloatingSparkles() {
 }
 
 export function NextEventHero({ onRegister }: NextEventHeroProps) {
-  const now = new Date();
   
   // Find the next upcoming event
   const { nextEvent, upcomingEvents, pastEvents } = useMemo(() => {
@@ -71,17 +55,6 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
       pastEvents: past
     };
   }, []);
-
-  // Calculate countdown
-  const countdown = useMemo(() => {
-    if (!nextEvent) return null;
-    
-    const days = differenceInDays(nextEvent.date, now);
-    const hours = differenceInHours(nextEvent.date, now) % 24;
-    const minutes = differenceInMinutes(nextEvent.date, now) % 60;
-    
-    return { days, hours, minutes };
-  }, [nextEvent, now]);
 
   if (!nextEvent) {
     return (
@@ -235,71 +208,13 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
               </motion.div>
             </motion.div>
 
-            {/* Countdown */}
-            {countdown && (
-              <motion.div 
-                variants={itemVariants}
-                className="flex justify-center md:justify-end gap-4"
-              >
-                {[
-                  { value: countdown.days, label: 'Days' },
-                  { value: countdown.hours, label: 'Hours' },
-                  { value: countdown.minutes, label: 'Minutes' },
-                ].map((item, idx) => (
-                  <motion.div 
-                    key={item.label}
-                    className="text-center"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 + idx * 0.1, type: "spring" }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      transition: { type: "spring", stiffness: 400 }
-                    }}
-                  >
-                    <motion.div 
-                      className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-background/50 border border-border/50 flex items-center justify-center relative overflow-hidden"
-                      whileHover={{
-                        borderColor: "hsl(var(--primary) / 0.5)",
-                        boxShadow: "0 0 20px hsl(var(--primary) / 0.2)",
-                      }}
-                    >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"
-                        animate={{
-                          opacity: [0.3, 0.6, 0.3],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          delay: idx * 0.3,
-                        }}
-                      />
-                      <AnimatePresence mode="wait">
-                        <motion.span 
-                          key={item.value}
-                          className="text-3xl md:text-4xl font-display font-bold text-primary relative"
-                          initial={{ y: -20, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          exit={{ y: 20, opacity: 0 }}
-                          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        >
-                          {item.value}
-                        </motion.span>
-                      </AnimatePresence>
-                    </motion.div>
-                    <motion.span 
-                      className="text-xs text-muted-foreground mt-2 block"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.5 + idx * 0.1 }}
-                    >
-                      {item.label}
-                    </motion.span>
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}
+            {/* Countdown with Flip Clock */}
+            <motion.div 
+              variants={itemVariants}
+              className="flex justify-center md:justify-end"
+            >
+              <FlipClock targetDate={nextEvent.date} />
+            </motion.div>
           </div>
         </div>
       </motion.div>
