@@ -8,46 +8,69 @@ interface FlipCardProps {
 }
 
 const FlipCard = memo(function FlipCard({ value, label }: FlipCardProps) {
-  const [displayValue, setDisplayValue] = useState(value);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const prevValueRef = useRef(value);
+  const [currentValue, setCurrentValue] = useState(value);
+  const [previousValue, setPreviousValue] = useState(value);
+  const [isFlipping, setIsFlipping] = useState(false);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
-    if (prevValueRef.current !== value) {
-      setIsAnimating(true);
-      
-      // Quick update for the flip effect
-      const timer = setTimeout(() => {
-        setDisplayValue(value);
-        setIsAnimating(false);
-      }, 150);
-
-      prevValueRef.current = value;
-      return () => clearTimeout(timer);
+    // Skip animation on first render
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      setCurrentValue(value);
+      setPreviousValue(value);
+      return;
     }
-  }, [value]);
 
-  const formattedValue = String(displayValue).padStart(2, '0');
+    if (value !== currentValue) {
+      // Start the flip animation
+      setPreviousValue(currentValue);
+      setIsFlipping(true);
+      
+      // Update the displayed value mid-animation
+      const updateTimer = setTimeout(() => {
+        setCurrentValue(value);
+      }, 300); // Half of the animation duration
+
+      // End the animation
+      const endTimer = setTimeout(() => {
+        setIsFlipping(false);
+      }, 600);
+
+      return () => {
+        clearTimeout(updateTimer);
+        clearTimeout(endTimer);
+      };
+    }
+  }, [value, currentValue]);
+
+  const formatValue = (val: number) => String(val).padStart(2, '0');
 
   return (
     <div className="flip-clock-item">
-      <div className={cn("flip-clock-card", isAnimating && "animating")}>
-        {/* Top half */}
-        <div className="flip-card-top">
-          <div className="flip-card-number">
-            {formattedValue}
-          </div>
+      <div className="flip-clock-card">
+        {/* Static top half - shows current value */}
+        <div className="flip-card-static-top">
+          <span className="flip-card-number">{formatValue(currentValue)}</span>
+        </div>
+        
+        {/* Static bottom half - shows current value */}
+        <div className="flip-card-static-bottom">
+          <span className="flip-card-number">{formatValue(currentValue)}</span>
+        </div>
+        
+        {/* Animated top flap - flips down, starts showing old value, ends showing new */}
+        <div className={cn("flip-card-flap-top", isFlipping && "flipping")}>
+          <span className="flip-card-number">{formatValue(isFlipping ? previousValue : currentValue)}</span>
+        </div>
+        
+        {/* Animated bottom flap - flips up to reveal, shows new value */}
+        <div className={cn("flip-card-flap-bottom", isFlipping && "flipping")}>
+          <span className="flip-card-number">{formatValue(currentValue)}</span>
         </div>
         
         {/* Center divider */}
         <div className="flip-card-divider" />
-        
-        {/* Bottom half */}
-        <div className="flip-card-bottom">
-          <div className="flip-card-number">
-            {formattedValue}
-          </div>
-        </div>
       </div>
       <span className="flip-clock-label">{label}</span>
     </div>
