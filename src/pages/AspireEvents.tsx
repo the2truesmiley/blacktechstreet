@@ -55,8 +55,8 @@ export default function AspireEvents() {
     },
     {
       icon: Users,
-      title: 'Networking with Community Leaders',
-      description: 'Connect with innovators and thought leaders in the AI space'
+      title: 'Networking with Community',
+      description: 'Build lasting connections with fellow participants, local innovators, and Tulsa tech leaders'
     },
     {
       icon: Baby,
