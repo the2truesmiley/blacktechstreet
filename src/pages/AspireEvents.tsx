@@ -8,6 +8,7 @@ import { EventsHero } from '@/components/events/EventsHero';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
+import jovieLogo from '@/assets/partners/jovie-logo.png';
 
 // Staggered animation variants
 const containerVariants = {
@@ -60,8 +61,8 @@ export default function AspireEvents() {
     },
     {
       icon: Baby,
-      title: 'Childcare Options Available',
-      description: 'Ask about childcare during the signup process'
+      title: 'Free On-Site Childcare',
+      description: 'Professional childcare provided at no cost during workshops'
     },
     {
       icon: Accessibility,
@@ -296,7 +297,7 @@ export default function AspireEvents() {
                   }}
                 >
                   <Heart className="w-3 h-3" />
-                  <span>Complimentary Childcare</span>
+                  <span>NEW Partnership</span>
                 </motion.div>
               </motion.div>
 
@@ -307,7 +308,7 @@ export default function AspireEvents() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
               >
-                Focus on Learning, We've Got Your Kids Covered
+                Free On-Site Childcare Provided
               </motion.h2>
               
               <motion.p 
@@ -317,10 +318,37 @@ export default function AspireEvents() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                Black Tech Street has partnered with <strong className="text-foreground">Jovie of Tulsa</strong> to provide 
-                professional on-site childcare at no cost during our AI workshops—so you can fully engage 
+                Black Tech Street has partnered with{' '}
+                <a 
+                  href="https://www.jovie.com/resources-faq/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-foreground font-semibold hover:text-primary transition-colors"
+                >
+                  Jovie of Tulsa
+                </a>{' '}
+                to provide professional on-site childcare at no cost during our ASPIRE AI workshops—so you can fully engage 
                 without worrying about your little ones.
               </motion.p>
+
+              {/* Jovie Logo */}
+              <motion.a
+                href="https://www.jovie.com/resources-faq/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mb-6"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.25 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <img 
+                  src={jovieLogo} 
+                  alt="Jovie - Nannies + Sitters" 
+                  className="h-16 md:h-20 w-auto object-contain"
+                />
+              </motion.a>
 
               <motion.div 
                 className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8"
