@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Lightbulb, Target, Zap, Users, Brain, Sparkles } from 'lucide-react';
+import { ArrowRight, Lightbulb, Target, Zap, Users, Brain } from 'lucide-react';
 import teamGroupPhoto from '@/assets/team_group_photo.jpg';
+import btsLogo from '@/assets/logo_b_circuit.png';
 
 const Aspire = () => {
   useEffect(() => {
@@ -208,10 +209,12 @@ const Aspire = () => {
                 <li>Shape change, not just survive it.</li>
               </ul>
             </div>
-            <div className="mt-10 bg-primary/15 border border-primary/30 rounded-xl p-6 md:p-8 flex gap-4 items-start">
-              <div className="shrink-0 w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary" />
-              </div>
+            <div className="mt-10 bg-primary/15 border border-primary/30 rounded-xl p-6 md:p-8 flex gap-4 items-center">
+              <img 
+                src={btsLogo} 
+                alt="Black Tech Street" 
+                className="shrink-0 w-10 h-10 md:w-12 md:h-12 object-contain"
+              />
               <p className="text-lg md:text-xl font-semibold text-card-foreground leading-relaxed">
                 You are not a passive user. You are a co-creator of what comes next.
               </p>
