@@ -160,10 +160,10 @@ const Aspire = () => {
           </div>
           <div className="mt-12 text-center">
             <Button asChild size="lg">
-              <a href="mailto:contact@blacktechstreet.com">
+              <Link to="/aspire/events">
                 Join our next ASPIRE experience
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
