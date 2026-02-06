@@ -7,58 +7,35 @@ interface FlipCardProps {
   label: string;
 }
 
-// Memoized flip card to prevent unnecessary re-renders
+// Simplified flip card - no complex animations that cause stacking
 const FlipCard = memo(function FlipCard({ value, label }: FlipCardProps) {
-  const [displayValue, setDisplayValue] = useState(value);
   const [isFlipping, setIsFlipping] = useState(false);
   const prevValueRef = useRef(value);
 
   useEffect(() => {
     if (prevValueRef.current !== value) {
       setIsFlipping(true);
-      
-      // After flip animation starts, update the display value midway
       const timer = setTimeout(() => {
-        setDisplayValue(value);
-      }, 150); // Half of the flip duration
-
-      // Reset flipping state after animation completes
-      const resetTimer = setTimeout(() => {
         setIsFlipping(false);
       }, 300);
-
       prevValueRef.current = value;
-
-      return () => {
-        clearTimeout(timer);
-        clearTimeout(resetTimer);
-      };
+      return () => clearTimeout(timer);
     }
   }, [value]);
 
-  const formattedValue = String(displayValue).padStart(2, '0');
-  const nextValue = String(value).padStart(2, '0');
+  const formattedValue = String(value).padStart(2, '0');
 
   return (
     <div className="flip-clock-item">
       <div className={cn("flip-clock-card", isFlipping && "flipping")}>
-        {/* Top half - static */}
+        {/* Top half - shows top portion of number */}
         <div className="flip-clock-top">
           <span>{formattedValue}</span>
         </div>
         
-        {/* Bottom half - static */}
+        {/* Bottom half - shows bottom portion of number */}
         <div className="flip-clock-bottom">
           <span>{formattedValue}</span>
-        </div>
-        
-        {/* Flip animation cards */}
-        <div className={cn("flip-clock-flip-top", isFlipping && "animate")}>
-          <span>{String(prevValueRef.current).padStart(2, '0')}</span>
-        </div>
-        
-        <div className={cn("flip-clock-flip-bottom", isFlipping && "animate")}>
-          <span>{nextValue}</span>
         </div>
       </div>
       <span className="flip-clock-label">{label}</span>
@@ -86,8 +63,8 @@ export function FlipClock({ targetDate, className }: FlipClockProps) {
     <div className={cn("flip-clock", className)}>
       <FlipCard value={timeLeft.days} label="Days" />
       <FlipCard value={timeLeft.hours} label="Hours" />
-      <FlipCard value={timeLeft.minutes} label="Minutes" />
-      <FlipCard value={timeLeft.seconds} label="Seconds" />
+      <FlipCard value={timeLeft.minutes} label="Mins" />
+      <FlipCard value={timeLeft.seconds} label="Secs" />
     </div>
   );
 }
