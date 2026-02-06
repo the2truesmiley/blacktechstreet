@@ -29,33 +29,31 @@
 /* The flip card container */
 .flip-clock-card {
   position: relative;
-  width: 3.25rem;
+  width: 3.5rem;
   height: 4.5rem;
-  perspective: 400px;
   border-radius: 0.5rem;
   background: #1a1a1a;
   box-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
 @media (min-width: 640px) {
   .flip-clock-card {
-    width: 4rem;
+    width: 4.5rem;
     height: 5.5rem;
   }
 }
 
 @media (min-width: 768px) {
   .flip-clock-card {
-    width: 4.5rem;
+    width: 5rem;
     height: 6rem;
   }
 }
 
-/* ===== STATIC HALVES ===== */
-/* These always show the CURRENT number, clipped to show top/bottom halves */
-
+/* Top and Bottom halves */
 .flip-card-top,
 .flip-card-bottom {
   position: absolute;
@@ -63,219 +61,59 @@
   right: 0;
   height: 50%;
   overflow: hidden;
-  backface-visibility: hidden;
 }
 
 .flip-card-top {
   top: 0;
-  background: linear-gradient(180deg, #2d2d2d 0%, #222 100%);
-  border-radius: 0.5rem 0.5rem 0 0;
-  border-bottom: 1px solid #111;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1f1f1f 100%);
 }
 
 .flip-card-bottom {
   bottom: 0;
-  background: linear-gradient(180deg, #1a1a1a 0%, #151515 100%);
-  border-radius: 0 0 0.5rem 0.5rem;
+  background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
 }
 
-/* Position the number so it gets clipped correctly */
-.flip-card-top span {
+/* The number display - positioned to show correct half */
+.flip-card-number {
   position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 0;
-  /* The full number height equals the card height, so position at top to show top half */
-  line-height: 4.5rem; /* Match card height */
-}
-
-.flip-card-bottom span {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: 0;
-  /* Position at bottom to show bottom half of the number */
-  line-height: 4.5rem; /* Match card height */
-}
-
-.flip-card-top span,
-.flip-card-bottom span {
+  left: 0;
+  right: 0;
+  height: 200%; /* Double height so we can position top/bottom halves */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'SF Mono', 'Roboto Mono', 'Consolas', monospace;
   font-weight: 700;
   font-size: 2.5rem;
   color: hsl(var(--primary));
-  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  text-shadow: 0 0 15px hsl(var(--primary) / 0.4);
+  transition: transform 0.15s ease-out;
+}
+
+/* Top half shows top of number */
+.flip-card-top .flip-card-number {
+  top: 0;
+}
+
+/* Bottom half shows bottom of number */
+.flip-card-bottom .flip-card-number {
+  bottom: 0;
 }
 
 @media (min-width: 640px) {
-  .flip-card-top span,
-  .flip-card-bottom span {
-    font-size: 3rem;
-    line-height: 5.5rem; /* Match card height at this breakpoint */
-  }
-}
-
-@media (min-width: 768px) {
-  .flip-card-top span,
-  .flip-card-bottom span {
-    font-size: 3.25rem;
-    line-height: 6rem; /* Match card height at this breakpoint */
-  }
-}
-
-/* ===== ANIMATED FLAPS ===== */
-/* Hidden by default, only visible during animation */
-
-/* Top flap - flips DOWN from 0 to -180deg */
-.flip-card-flap-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  transform-origin: bottom center;
-  transform-style: preserve-3d;
-  z-index: 10;
-  border-radius: 0.5rem 0.5rem 0 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.flip-card-flap-top.flipping {
-  opacity: 1;
-  animation: flipTop 0.6s ease-in-out forwards;
-}
-
-/* Bottom flap - flips DOWN from 90deg to 0deg */
-.flip-card-flap-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  transform-origin: top center;
-  transform-style: preserve-3d;
-  transform: rotateX(90deg);
-  z-index: 5;
-  border-radius: 0 0 0.5rem 0.5rem;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.flip-card-flap-bottom.flipping {
-  opacity: 1;
-  animation: flipBottom 0.6s ease-in-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Flap faces (front and back) */
-.flap-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  backface-visibility: hidden;
-}
-
-/* Top flap front - shows OLD number (top portion) */
-.flip-card-flap-top .flap-front {
-  background: linear-gradient(180deg, #2d2d2d 0%, #222 100%);
-  border-radius: 0.5rem 0.5rem 0 0;
-  border-bottom: 1px solid #111;
-}
-
-.flip-card-flap-top .flap-front span {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 0;
-  line-height: 4.5rem;
-}
-
-/* Top flap back - shows NEW number (bottom portion when flipped), rotated 180deg */
-.flip-card-flap-top .flap-back {
-  background: linear-gradient(180deg, #151515 0%, #1a1a1a 100%);
-  transform: rotateX(180deg);
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.flip-card-flap-top .flap-back span {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 0;
-  line-height: 4.5rem;
-}
-
-/* Bottom flap front - shows NEW number (bottom portion) */
-.flip-card-flap-bottom .flap-front {
-  background: linear-gradient(180deg, #1a1a1a 0%, #151515 100%);
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.flip-card-flap-bottom .flap-front span {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: 0;
-  line-height: 4.5rem;
-}
-
-.flap-face span {
-  font-family: 'SF Mono', 'Roboto Mono', 'Consolas', monospace;
-  font-weight: 700;
-  font-size: 2.5rem;
-  color: hsl(var(--primary));
-  text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
-}
-
-@media (min-width: 640px) {
-  .flip-card-flap-top .flap-front span,
-  .flip-card-flap-top .flap-back span,
-  .flip-card-flap-bottom .flap-front span {
-    line-height: 5.5rem;
-  }
-  
-  .flap-face span {
+  .flip-card-number {
     font-size: 3rem;
   }
 }
 
 @media (min-width: 768px) {
-  .flip-card-flap-top .flap-front span,
-  .flip-card-flap-top .flap-back span,
-  .flip-card-flap-bottom .flap-front span {
-    line-height: 6rem;
-  }
-  
-  .flap-face span {
-    font-size: 3.25rem;
+  .flip-card-number {
+    font-size: 3.5rem;
   }
 }
 
-/* ===== ANIMATIONS ===== */
-
-@keyframes flipTop {
-  0% {
-    transform: rotateX(0deg);
-  }
-  100% {
-    transform: rotateX(-180deg);
-  }
-}
-
-@keyframes flipBottom {
-  0% {
-    transform: rotateX(90deg);
-  }
-  100% {
-    transform: rotateX(0deg);
-  }
-}
-
-/* ===== CENTER LINE ===== */
-.flip-clock-card::after {
-  content: '';
+/* Center divider line */
+.flip-card-divider {
   position: absolute;
   top: 50%;
   left: 0;
@@ -283,12 +121,61 @@
   height: 2px;
   background: #0a0a0a;
   transform: translateY(-50%);
-  z-index: 20;
+  z-index: 10;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* ===== LABEL ===== */
+/* Side notches for authentic look */
+.flip-card-divider::before,
+.flip-card-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 4px;
+  height: 6px;
+  background: #0a0a0a;
+  transform: translateY(-50%);
+  border-radius: 1px;
+}
+
+.flip-card-divider::before {
+  left: 0;
+}
+
+.flip-card-divider::after {
+  right: 0;
+}
+
+/* Animation on number change */
+.flip-clock-card.animating .flip-card-top {
+  animation: flipTopAnim 0.15s ease-in;
+}
+
+.flip-clock-card.animating .flip-card-bottom {
+  animation: flipBottomAnim 0.15s ease-out;
+}
+
+@keyframes flipTopAnim {
+  0% {
+    transform: perspective(200px) rotateX(0deg);
+  }
+  100% {
+    transform: perspective(200px) rotateX(-30deg);
+  }
+}
+
+@keyframes flipBottomAnim {
+  0% {
+    transform: perspective(200px) rotateX(30deg);
+  }
+  100% {
+    transform: perspective(200px) rotateX(0deg);
+  }
+}
+
+/* Label styling */
 .flip-clock-label {
-  font-size: 0.625rem;
+  font-size: 0.65rem;
   color: hsl(var(--muted-foreground));
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -297,15 +184,36 @@
 
 @media (min-width: 640px) {
   .flip-clock-label {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 }
 
-/* ===== HOVER EFFECT ===== */
+/* Hover effect */
 .flip-clock-item:hover .flip-clock-card {
   box-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 0 20px hsl(var(--primary) / 0.2);
+    0 0 20px hsl(var(--primary) / 0.15);
   transition: box-shadow 0.3s ease;
+}
+
+/* Inner shadow for depth */
+.flip-card-top::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+}
+
+.flip-card-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent);
 }
