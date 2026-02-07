@@ -133,6 +133,7 @@ export interface TeamMember {
   shortBio: string;
   expandedBio: string;
   linkedIn?: string;
+  image?: string;
 }
 
 export const teamMembers: TeamMember[] = [
