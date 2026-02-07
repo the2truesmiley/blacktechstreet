@@ -40,20 +40,11 @@ interface Facilitator {
 const facilitators: Facilitator[] = [
   {
     name: "Tyrance Billingsley II",
-    role: "Founder & Executive Director",
-    bio: "Visionary leader driving AI equity in Tulsa's Historic Greenwood District. Tyrance founded Black Tech Street to ensure underrepresented communities have a seat at the table in the AI revolution.",
-    linkedin: "https://www.linkedin.com/in/tyrancebillingsley/",
+    role: "ASPIRE Program Lead",
+    bio: "Tulsa-born technologist leading ASPIRE workshops to make AI fluency accessible to all. Featured speaker at the White House and U.S. Senate on AI and the future of work.",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQHzLKDODyZItg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718118213219?e=1744243200&v=beta&t=sK8Vw3xaFLlxNknxv3UNqfFVQOphMkqvO7N_o7OXMdA",
+    linkedin: "https://www.linkedin.com/in/tyrance-billingsley-ii-ab0683123/",
     twitter: "https://twitter.com/TyranceBii",
-  },
-  {
-    name: "Workshop Facilitator",
-    role: "AI Education Specialist",
-    bio: "Expert in making complex AI concepts accessible to all skill levels. Passionate about hands-on learning and practical applications of generative AI tools.",
-  },
-  {
-    name: "Industry Expert",
-    role: "GenAI Practitioner",
-    bio: "Brings real-world enterprise AI experience to the workshop. Helps participants understand how AI is transforming industries and creating new opportunities.",
   },
 ];
 
@@ -111,7 +102,7 @@ export function FacilitatorsSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
           >
-            Meet Your Facilitators
+            Meet Your Facilitator
           </motion.h2>
           <motion.p 
             className="text-muted-foreground max-w-2xl mx-auto"
@@ -125,7 +116,7 @@ export function FacilitatorsSection() {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="flex justify-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -137,7 +128,7 @@ export function FacilitatorsSection() {
               variants={itemVariants}
               whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
               className={cn(
-                "relative p-6 rounded-2xl",
+                "relative p-8 rounded-2xl max-w-md w-full",
                 "bg-card/50 backdrop-blur-sm border border-border/40",
                 "group cursor-default"
               )}
@@ -161,15 +152,15 @@ export function FacilitatorsSection() {
               <div className="relative text-center">
                 {/* Avatar */}
                 <motion.div
-                  className="mx-auto mb-5"
+                  className="mx-auto mb-6"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Avatar className="w-24 h-24 mx-auto ring-4 ring-primary/20 ring-offset-2 ring-offset-background">
+                  <Avatar className="w-32 h-32 mx-auto ring-4 ring-primary/20 ring-offset-2 ring-offset-background">
                     {facilitator.image ? (
-                      <AvatarImage src={facilitator.image} alt={facilitator.name} />
+                      <AvatarImage src={facilitator.image} alt={facilitator.name} className="object-cover" />
                     ) : null}
-                    <AvatarFallback className="bg-primary/10 text-primary text-2xl font-bold">
+                    <AvatarFallback className="bg-primary/10 text-primary text-3xl font-bold">
                       {facilitator.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                     </AvatarFallback>
                   </Avatar>
