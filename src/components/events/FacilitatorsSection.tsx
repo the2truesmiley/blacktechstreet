@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Linkedin, Twitter } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+import tyrancePhoto from '@/assets/speaker_presentation.jpg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -42,6 +43,7 @@ const facilitators: Facilitator[] = [
     name: "Tyrance Billingsley II",
     role: "Founder & CEO",
     bio: "Tulsa-born visionary leading ASPIRE workshops to make AI fluency accessible to all. Featured speaker at the White House and U.S. Senate on AI and the future of work.",
+    image: tyrancePhoto,
     linkedin: "https://www.linkedin.com/in/tyrance-billingsley-ii-ab0683123/",
     twitter: "https://twitter.com/TyranceBii",
   },
