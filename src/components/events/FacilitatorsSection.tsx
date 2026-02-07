@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Linkedin, Twitter } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
-import tyrancePhoto from '@/assets/speaker_presentation.jpg';
+import tyrancePhoto from '@/assets/team/tyrance-headshot.png';
 
 const containerVariants = {
   hidden: { opacity: 0 },
