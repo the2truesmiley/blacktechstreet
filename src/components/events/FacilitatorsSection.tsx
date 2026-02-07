@@ -40,9 +40,8 @@ interface Facilitator {
 const facilitators: Facilitator[] = [
   {
     name: "Tyrance Billingsley II",
-    role: "ASPIRE Program Lead",
-    bio: "Tulsa-born technologist leading ASPIRE workshops to make AI fluency accessible to all. Featured speaker at the White House and U.S. Senate on AI and the future of work.",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQHzLKDODyZItg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718118213219?e=1744243200&v=beta&t=sK8Vw3xaFLlxNknxv3UNqfFVQOphMkqvO7N_o7OXMdA",
+    role: "Founder & CEO",
+    bio: "Tulsa-born visionary leading ASPIRE workshops to make AI fluency accessible to all. Featured speaker at the White House and U.S. Senate on AI and the future of work.",
     linkedin: "https://www.linkedin.com/in/tyrance-billingsley-ii-ab0683123/",
     twitter: "https://twitter.com/TyranceBii",
   },
