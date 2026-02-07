@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, User, ChevronDown } from 'lucide-react';
-import { teamMembers } from '@/data/timeline';
+import { teamMembers, TeamMember } from '@/data/timeline';
+import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
+
+// Map team member names to their photos
+const teamPhotos: Record<string, string> = {
+  "Tyrance Billingsley II": tyranceHeadshot,
+};
 
 interface TeamMemberCardProps {
-  member: typeof teamMembers[0];
+  member: TeamMember;
   index: number;
 }
 
@@ -28,9 +34,17 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
           {/* Avatar */}
           <div className="flex-shrink-0 flex justify-center md:justify-start">
             <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-xl overflow-hidden bg-secondary border-2 border-primary/20 group-hover:border-primary/40 transition-colors">
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
-                <User className="w-12 h-12 text-muted-foreground/50" />
-              </div>
+              {teamPhotos[member.name] ? (
+                <img 
+                  src={teamPhotos[member.name]} 
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
+                  <User className="w-12 h-12 text-muted-foreground/50" />
+                </div>
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
           </div>
