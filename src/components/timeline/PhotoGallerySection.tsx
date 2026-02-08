@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import speakerPresentation from '@/assets/speaker_presentation.jpg';
-import teamGroupPhoto from '@/assets/team_group_photo.jpg';
+import aspireCertificateCeremony from '@/assets/gallery/aspire-certificate-ceremony.jpg';
+import eventEntrance from '@/assets/gallery/event-entrance.png';
+import communityGathering from '@/assets/gallery/community-gathering.jpg';
+import tyranceSpeaking from '@/assets/gallery/tyrance-speaking.jpg';
+import aspireWorkshop from '@/assets/gallery/aspire-workshop.jpg';
 
 const galleryItems = [
-  { id: 1, title: 'Leadership Presentation', image: speakerPresentation },
-  { id: 2, title: 'Community Gathering', image: teamGroupPhoto },
-  { id: 3, title: 'ASPIRE Workshop', image: speakerPresentation },
-  { id: 4, title: 'Hack the Future', image: teamGroupPhoto },
-  { id: 5, title: 'Certificate Ceremony', image: speakerPresentation },
-  { id: 6, title: 'Tech Summit', image: teamGroupPhoto },
+  { id: 1, title: 'ASPIRE Certificate Ceremony', image: aspireCertificateCeremony },
+  { id: 2, title: 'Event Arrival', image: eventEntrance },
+  { id: 3, title: 'Community Gathering', image: communityGathering },
+  { id: 4, title: 'Leadership Keynote', image: tyranceSpeaking },
+  { id: 5, title: 'ASPIRE Workshop Session', image: aspireWorkshop },
 ];
 
 export function PhotoGallerySection() {
