@@ -3,19 +3,18 @@ import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { Camera, Calendar, MapPin } from 'lucide-react';
-import speakerPresentation from '@/assets/speaker_presentation.jpg';
-import teamGroupPhoto from '@/assets/team_group_photo.jpg';
+import aspireCertificateCeremony from '@/assets/gallery/aspire-certificate-ceremony.jpg';
+import eventEntrance from '@/assets/gallery/event-entrance.png';
+import communityGathering from '@/assets/gallery/community-gathering.jpg';
+import tyranceSpeaking from '@/assets/gallery/tyrance-speaking.jpg';
+import aspireWorkshop from '@/assets/gallery/aspire-workshop.jpg';
 
 const galleryItems = [
-  { id: 1, title: 'Leadership Presentation', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: speakerPresentation },
-  { id: 2, title: 'Community Gathering', category: 'Community', date: '2024', location: 'Greenwood, Tulsa', image: teamGroupPhoto },
-  { id: 3, title: 'ASPIRE Workshop', category: 'ASPIRE', date: '2024', location: 'Greenwood, Tulsa', image: speakerPresentation },
-  { id: 4, title: 'Hack the Future', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: teamGroupPhoto },
-  { id: 5, title: 'Certificate Ceremony', category: 'ASPIRE', date: '2024', location: 'Greenwood, Tulsa', image: speakerPresentation },
-  { id: 6, title: 'Tech Summit', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: teamGroupPhoto },
-  { id: 7, title: 'Networking Session', category: 'Community', date: '2024', location: 'Greenwood, Tulsa', image: speakerPresentation },
-  { id: 8, title: 'AI Workshop', category: 'ASPIRE', date: '2024', location: 'Greenwood, Tulsa', image: teamGroupPhoto },
-  { id: 9, title: 'Panel Discussion', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: speakerPresentation },
+  { id: 1, title: 'ASPIRE Certificate Ceremony', category: 'ASPIRE', date: '2024', location: 'Langston University', image: aspireCertificateCeremony },
+  { id: 2, title: 'Event Arrival', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: eventEntrance },
+  { id: 3, title: 'Community Gathering', category: 'Community', date: '2024', location: 'Greenwood, Tulsa', image: communityGathering },
+  { id: 4, title: 'Leadership Keynote', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: tyranceSpeaking },
+  { id: 5, title: 'ASPIRE Workshop Session', category: 'ASPIRE', date: '2024', location: 'Langston University', image: aspireWorkshop },
 ];
 
 const categories = ['All', 'Events', 'ASPIRE', 'Community'];
