@@ -1,25 +1,16 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { Camera, Calendar, MapPin } from 'lucide-react';
-import aspireCertificateCeremony from '@/assets/gallery/aspire-certificate-ceremony.jpg';
-import eventEntrance from '@/assets/gallery/event-entrance.png';
-import communityGathering from '@/assets/gallery/community-gathering.jpg';
-import tyranceSpeaking from '@/assets/gallery/tyrance-speaking.jpg';
-import aspireWorkshop from '@/assets/gallery/aspire-workshop.jpg';
-
-const galleryItems = [
-  { id: 1, title: 'ASPIRE Certificate Ceremony', category: 'ASPIRE', date: '2024', location: 'Langston University', image: aspireCertificateCeremony },
-  { id: 2, title: 'Event Arrival', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: eventEntrance },
-  { id: 3, title: 'Community Gathering', category: 'Community', date: '2024', location: 'Greenwood, Tulsa', image: communityGathering },
-  { id: 4, title: 'Leadership Keynote', category: 'Events', date: '2024', location: 'Greenwood, Tulsa', image: tyranceSpeaking },
-  { id: 5, title: 'ASPIRE Workshop Session', category: 'ASPIRE', date: '2024', location: 'Langston University', image: aspireWorkshop },
-];
-
-const categories = ['All', 'Events', 'ASPIRE', 'Community'];
+import { Camera, Calendar, MapPin, Tag } from 'lucide-react';
+import { galleryPhotos, getAllTags, getPhotosByTag } from '@/data/galleryData';
 
 export default function Gallery() {
+  const [activeTag, setActiveTag] = useState('All');
+  const tags = getAllTags();
+  const filteredPhotos = getPhotosByTag(activeTag);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <TopNavBar />
@@ -49,7 +40,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Category Filter */}
+      {/* Tag Filter */}
       <section className="px-5 pb-8">
         <div className="max-w-6xl mx-auto">
           <motion.div 
@@ -58,17 +49,18 @@ export default function Gallery() {
             transition={{ delay: 0.2 }}
             className="flex flex-wrap justify-center gap-3"
           >
-            {categories.map((category, index) => (
+            {tags.map((tag) => (
               <button
-                key={category}
+                key={tag}
+                onClick={() => setActiveTag(tag)}
                 className={cn(
                   "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                  index === 0
+                  activeTag === tag
                     ? "bg-primary text-primary-foreground"
                     : "bg-card/60 border border-border/40 text-muted-foreground hover:border-primary/30 hover:text-foreground"
                 )}
               >
-                {category}
+                {tag}
               </button>
             ))}
           </motion.div>
@@ -79,7 +71,7 @@ export default function Gallery() {
       <section className="px-5 pb-20">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryItems.map((item, index) => (
+            {filteredPhotos.map((item, index) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -88,6 +80,7 @@ export default function Gallery() {
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -5 }}
                 className="group relative"
+                layout
               >
                 <div className={cn(
                   "relative aspect-[4/3] rounded-2xl overflow-hidden",
@@ -104,11 +97,16 @@ export default function Gallery() {
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
 
-                  {/* Category badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30">
-                      {item.category}
-                    </span>
+                  {/* Tags badges */}
+                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                    {item.tags.slice(0, 2).map((tag) => (
+                      <span 
+                        key={tag}
+                        className="px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
 
                   {/* Content overlay */}
@@ -125,6 +123,18 @@ export default function Gallery() {
                         <MapPin className="w-3 h-3" />
                         {item.location}
                       </span>
+                    </div>
+                    {/* Show more tags on hover */}
+                    <div className="flex flex-wrap gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      {item.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="flex items-center gap-1 text-xs text-muted-foreground"
+                        >
+                          <Tag className="w-2 h-2" />
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
