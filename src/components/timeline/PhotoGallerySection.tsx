@@ -1,18 +1,9 @@
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import aspireCertificateCeremony from '@/assets/gallery/aspire-certificate-ceremony.jpg';
-import eventEntrance from '@/assets/gallery/event-entrance.png';
-import communityGathering from '@/assets/gallery/community-gathering.jpg';
-import tyranceSpeaking from '@/assets/gallery/tyrance-speaking.jpg';
-import aspireWorkshop from '@/assets/gallery/aspire-workshop.jpg';
+import { galleryPhotos } from '@/data/galleryData';
 
-const galleryItems = [
-  { id: 1, title: 'ASPIRE Certificate Ceremony', image: aspireCertificateCeremony },
-  { id: 2, title: 'Event Arrival', image: eventEntrance },
-  { id: 3, title: 'Community Gathering', image: communityGathering },
-  { id: 4, title: 'Leadership Keynote', image: tyranceSpeaking },
-  { id: 5, title: 'ASPIRE Workshop Session', image: aspireWorkshop },
-];
+// Show latest 6 photos on home page
+const displayPhotos = galleryPhotos.slice(0, 6);
 
 export function PhotoGallerySection() {
   return (
@@ -27,7 +18,7 @@ export function PhotoGallerySection() {
       </motion.h2>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {galleryItems.map((item, index) => (
+        {displayPhotos.map((item, index) => (
           <motion.div
             key={item.id}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -54,6 +45,7 @@ export function PhotoGallerySection() {
             {/* Title overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-3">
               <h3 className="text-sm font-medium text-foreground">{item.title}</h3>
+              <span className="text-xs text-muted-foreground">{item.date}</span>
             </div>
 
             {/* Hover overlay */}
