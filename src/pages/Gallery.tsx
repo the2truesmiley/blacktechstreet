@@ -3,13 +3,15 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { Camera, Calendar, MapPin, Tag } from 'lucide-react';
-import { galleryPhotos, getAllTags, getPhotosByTag } from '@/data/galleryData';
+import { Camera, Calendar, MapPin, Tag, Loader2 } from 'lucide-react';
+import { useGalleryPhotos, useGalleryTags, filterPhotosByTag } from '@/hooks/useGalleryPhotos';
+import { format } from 'date-fns';
 
 export default function Gallery() {
   const [activeTag, setActiveTag] = useState('All');
-  const tags = getAllTags();
-  const filteredPhotos = getPhotosByTag(activeTag);
+  const { data: photos, isLoading, error } = useGalleryPhotos();
+  const tags = useGalleryTags(photos);
+  const filteredPhotos = filterPhotosByTag(photos, activeTag);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -70,80 +72,90 @@ export default function Gallery() {
       {/* Gallery Grid */}
       <section className="px-5 pb-20">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredPhotos.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -5 }}
-                className="group relative"
-                layout
-              >
-                <div className={cn(
-                  "relative aspect-[4/3] rounded-2xl overflow-hidden",
-                  "bg-secondary/50 border border-border/40",
-                  "hover:border-primary/50 transition-all duration-500"
-                )}>
-                  {/* Image */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+          {isLoading ? (
+            <div className="flex items-center justify-center py-20">
+              <Loader2 className="w-8 h-8 animate-spin text-primary" />
+            </div>
+          ) : error ? (
+            <div className="text-center py-20 text-muted-foreground">
+              Failed to load gallery photos
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredPhotos.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{ y: -5 }}
+                  className="group relative"
+                  layout
+                >
+                  <div className={cn(
+                    "relative aspect-[4/3] rounded-2xl overflow-hidden",
+                    "bg-secondary/50 border border-border/40",
+                    "hover:border-primary/50 transition-all duration-500"
+                  )}>
+                    {/* Image */}
+                    <img
+                      src={item.image_url}
+                      alt={item.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
 
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
 
-                  {/* Tags badges */}
-                  <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                    {item.tags.slice(0, 2).map((tag) => (
-                      <span 
-                        key={tag}
-                        className="px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Content overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {item.date}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-3 h-3" />
-                        {item.location}
-                      </span>
-                    </div>
-                    {/* Show more tags on hover */}
-                    <div className="flex flex-wrap gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                      {item.tags.map((tag) => (
+                    {/* Tags badges */}
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                      {item.tags.slice(0, 2).map((tag) => (
                         <span 
                           key={tag}
-                          className="flex items-center gap-1 text-xs text-muted-foreground"
+                          className="px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30"
                         >
-                          <Tag className="w-2 h-2" />
                           {tag}
                         </span>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Hover glow effect */}
-                  <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                    {/* Content overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" />
+                          {format(new Date(item.event_date), 'MMMM d, yyyy')}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <MapPin className="w-3 h-3" />
+                          {item.location}
+                        </span>
+                      </div>
+                      {/* Show more tags on hover */}
+                      <div className="flex flex-wrap gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        {item.tags.map((tag) => (
+                          <span 
+                            key={tag}
+                            className="flex items-center gap-1 text-xs text-muted-foreground"
+                          >
+                            <Tag className="w-2 h-2" />
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
