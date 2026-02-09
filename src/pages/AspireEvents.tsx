@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
+import { TechBackground } from '@/components/timeline/TechBackground';
 import { NextEventHero } from '@/components/events/NextEventHero';
 import { EventsHero } from '@/components/events/EventsHero';
 import { EventTestimonials } from '@/components/events/EventTestimonials';
@@ -74,7 +75,10 @@ export default function AspireEvents() {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Tech background with matrix effect */}
+      <TechBackground isVisible={true} />
+      
       <TopNavBar />
       
       <EventsHero />
