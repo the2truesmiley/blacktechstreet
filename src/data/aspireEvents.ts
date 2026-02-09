@@ -45,7 +45,7 @@ export const aspireEvents2026: AspireEvent[] = [
     date: new Date(2026, 11, 5), // December 5, 2026
     title: "ASPIRE GenAI Fluency Workshop",
     time: "10:00 AM - 6:00 PM",
-    location: "LU-Tulsa",
+    location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/r/PLACEHOLDER_DECEMBER",
     status: "upcoming",
