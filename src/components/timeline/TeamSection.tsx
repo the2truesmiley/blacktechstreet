@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, User, ChevronDown } from 'lucide-react';
 import { teamMembers, TeamMember } from '@/data/timeline';
 import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
+import josephineHeadshot from '@/assets/team/josephine-headshot.png';
 
 // Map team member names to their photos
 const teamPhotos: Record<string, string> = {
   "Tyrance Billingsley II": tyranceHeadshot,
+  "Josephine Nelms": josephineHeadshot,
 };
 
 interface TeamMemberCardProps {
