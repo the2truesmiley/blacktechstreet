@@ -66,15 +66,6 @@ export function EventTestimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <motion.span
-            className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            Past Participant Voices
-          </motion.span>
           <motion.h2 
             className="text-3xl md:text-4xl font-display font-bold mb-4"
             initial={{ opacity: 0, scale: 0.95 }}
