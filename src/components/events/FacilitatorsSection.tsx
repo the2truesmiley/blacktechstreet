@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import tyrancePhoto from '@/assets/team/tyrance-headshot.png';
@@ -45,7 +45,6 @@ const facilitators: Facilitator[] = [
     bio: "Tulsa-born visionary leading ASPIRE workshops to make AI fluency accessible to all. Featured speaker at the White House and U.S. Senate on AI and the future of work.",
     image: tyrancePhoto,
     linkedin: "https://www.linkedin.com/in/tyrance-billingsley-ii-ab0683123/",
-    twitter: "https://twitter.com/TyranceBii",
   },
 ];
 
@@ -172,34 +171,19 @@ export function FacilitatorsSection() {
                 </p>
 
                 {/* Social Links */}
-                {(facilitator.linkedin || facilitator.twitter) && (
+                {facilitator.linkedin && (
                   <div className="flex items-center justify-center gap-3">
-                    {facilitator.linkedin && (
-                      <motion.a
-                        href={facilitator.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        aria-label={`${facilitator.name}'s LinkedIn`}
-                      >
-                        <Linkedin className="w-4 h-4" />
-                      </motion.a>
-                    )}
-                    {facilitator.twitter && (
-                      <motion.a
-                        href={facilitator.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
-                        aria-label={`${facilitator.name}'s Twitter`}
-                      >
-                        <Twitter className="w-4 h-4" />
-                      </motion.a>
-                    )}
+                    <motion.a
+                      href={facilitator.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      aria-label={`${facilitator.name}'s LinkedIn`}
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </motion.a>
                   </div>
                 )}
               </div>
