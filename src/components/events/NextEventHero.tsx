@@ -201,6 +201,9 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                     <span className="text-lg md:text-xl font-medium text-foreground">{item.text}</span>
                   </motion.div>
                 ))}
+                <div className="flex items-center gap-3 pl-8">
+                  <span className="text-base text-muted-foreground">914 N. Greenwood Avenue, Tulsa, OK 74106</span>
+                </div>
               </motion.div>
 
               <motion.div variants={itemVariants}>
