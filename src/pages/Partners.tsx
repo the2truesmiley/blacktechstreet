@@ -169,9 +169,9 @@ export default function Partners() {
                   {/* Top accent line */}
                   <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   
-                  <div className="flex flex-col items-center text-center">
+                  <div className="flex flex-col items-center justify-center h-full">
                     {/* Logo Container */}
-                    <div className="relative w-full h-32 mb-6 flex items-center justify-center">
+                    <div className="relative w-full h-48 flex items-center justify-center">
                       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-xl" />
                       {partner.link ? (
                         <a
@@ -183,20 +183,17 @@ export default function Partners() {
                           <img
                             src={partner.logo}
                             alt={partner.name}
-                            className="max-h-24 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="max-h-36 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                         </a>
                       ) : (
                         <img
                           src={partner.logo}
                           alt={partner.name}
-                          className="relative z-10 max-h-24 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                          className="relative z-10 max-h-36 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                         />
                       )}
                     </div>
-
-                    <h3 className="text-xl font-semibold text-foreground mb-2">{partner.name}</h3>
-                    <p className="text-muted-foreground text-sm">{partner.description}</p>
 
                     {/* Decorative corner elements */}
                     <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-primary/20 rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity" />
