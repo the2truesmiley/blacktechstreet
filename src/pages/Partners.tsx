@@ -72,7 +72,8 @@ export default function Partners() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-6 leading-[1.1]"
           >
-            Partner with{' '}
+            Partner with
+            <br />
             <span className="relative">
               <span className="text-primary">Black Tech Street</span>
               <motion.span
