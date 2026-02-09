@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby } from 'lucide-react';
+import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
@@ -71,6 +71,11 @@ export default function AspireEvents() {
       icon: Accessibility,
       title: 'Accessibility Accommodations',
       description: 'Contact us for any accessibility needs'
+    },
+    {
+      icon: Laptop,
+      title: 'Laptop Checkout Available',
+      description: 'Need a device? Laptops are available to borrow during the workshop at no cost'
     }
   ];
 
