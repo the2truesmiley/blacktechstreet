@@ -87,15 +87,6 @@ export function FacilitatorsSection() {
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-12"
         >
-          <motion.span
-            className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            Your Guides
-          </motion.span>
           <motion.h2 
             className="text-3xl md:text-4xl font-display font-bold mb-4"
             initial={{ opacity: 0, scale: 0.95 }}
