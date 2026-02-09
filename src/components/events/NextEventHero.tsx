@@ -202,7 +202,7 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                   </motion.div>
                 ))}
                 <div className="flex items-center gap-3 pl-8">
-                  <span className="text-base text-muted-foreground">914 N. Greenwood Ave, Tulsa, OK 74106</span>
+                  <span className="text-base text-muted-foreground">914 N Greenwood Ave, Tulsa, OK 74106</span>
                 </div>
               </motion.div>
 
