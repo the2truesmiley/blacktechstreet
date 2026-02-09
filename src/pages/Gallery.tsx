@@ -26,10 +26,6 @@ export default function Gallery() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <Camera className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Photo Gallery</span>
-            </div>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
               <span className="text-foreground">Our Community</span>{' '}
               <span className="text-primary">in Action</span>
