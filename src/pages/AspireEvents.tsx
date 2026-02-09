@@ -84,7 +84,7 @@ export default function AspireEvents() {
       <EventsHero />
 
       {/* Next Event Hero Section */}
-      <section className="py-16 bg-secondary/20 relative">
+      <section className="py-16 relative">
         <motion.div 
           className="absolute inset-0 bg-gradient-to-b from-background to-transparent opacity-50"
           style={{ y: backgroundY }}
@@ -95,7 +95,7 @@ export default function AspireEvents() {
       </section>
 
       {/* What to Expect Section */}
-      <section className="py-16 bg-secondary/20 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         {/* Animated background decoration */}
         <motion.div
           className="absolute -top-32 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
