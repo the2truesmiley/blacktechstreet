@@ -296,37 +296,52 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                 />
                 
                 <div className="relative p-5">
-                  {/* Month badge */}
-                  <div className="flex items-start justify-between mb-3">
-                    <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider">
+                  {/* Month Header - Large & Prominent */}
+                  <div className="mb-1">
+                    <span className="text-2xl font-display font-bold text-primary tracking-tight">
                       {format(event.date, 'MMMM')}
                     </span>
-                    <Calendar className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary/50 transition-colors" />
                   </div>
                   
-                  {/* Date - Large */}
-                  <div className="mb-2">
-                    <span className="text-4xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
+                  {/* Date - Extra Large */}
+                  <div className="mb-1">
+                    <span className="text-5xl font-display font-bold text-foreground group-hover:text-primary transition-colors leading-none">
                       {format(event.date, 'd')}
+                    </span>
+                    <span className="text-lg text-muted-foreground font-medium ml-2">
+                      {format(event.date, 'yyyy')}
                     </span>
                   </div>
                   
                   {/* Day of week */}
-                  <div className="text-sm text-muted-foreground font-medium mb-4">
+                  <div className="text-sm text-muted-foreground font-medium mb-3">
                     {format(event.date, 'EEEE')}
                   </div>
                   
-                  {/* CTA */}
-                  <div className="flex items-center justify-between pt-3 border-t border-border/30">
-                    <span className="text-xs text-muted-foreground">
-                      {event.time.split(' - ')[0]}
+                  {/* Time Header */}
+                  <div className="flex items-center gap-2 py-3 border-t border-border/30">
+                    <Clock className="w-4 h-4 text-primary" />
+                    <span className="text-base font-semibold text-foreground">
+                      {event.time}
                     </span>
+                  </div>
+                  
+                  {/* Location */}
+                  <div className="flex items-center gap-2 pb-3 border-b border-border/30">
+                    <MapPin className="w-4 h-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">
+                      {event.location}
+                    </span>
+                  </div>
+                  
+                  {/* CTA */}
+                  <div className="flex items-center justify-end pt-3">
                     <motion.div 
                       className="flex items-center gap-1.5 text-sm font-medium text-primary"
                       whileHover={{ x: 3 }}
                       transition={{ type: "spring", stiffness: 400 }}
                     >
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">Register</span>
+                      <span>Register</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </motion.div>
                   </div>
