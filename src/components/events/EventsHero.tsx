@@ -124,15 +124,6 @@ export function EventsHero() {
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="flex-1 text-center lg:text-left"
         >
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>2026 Workshop Series</span>
-          </motion.div>
 
           <motion.h1 
             className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-foreground tracking-tight leading-tight mb-6"
