@@ -15,7 +15,7 @@ export const aspireEvents2026: AspireEvent[] = [
     date: new Date(2026, 2, 28), // March 28, 2026
     title: "ASPIRE GenAI Fluency Workshop",
     time: "10:00 AM - 6:00 PM",
-    location: "LU-Tulsa",
+    location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/embed/EkWBo2",
     status: "registration-open",
@@ -25,7 +25,7 @@ export const aspireEvents2026: AspireEvent[] = [
     date: new Date(2026, 5, 27), // June 27, 2026
     title: "ASPIRE GenAI Fluency Workshop",
     time: "10:00 AM - 6:00 PM",
-    location: "LU-Tulsa",
+    location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/r/PLACEHOLDER_JUNE",
     status: "upcoming",
@@ -35,7 +35,7 @@ export const aspireEvents2026: AspireEvent[] = [
     date: new Date(2026, 8, 26), // September 26, 2026
     title: "ASPIRE GenAI Fluency Workshop",
     time: "10:00 AM - 6:00 PM",
-    location: "LU-Tulsa",
+    location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/r/PLACEHOLDER_SEPTEMBER",
     status: "upcoming",
@@ -45,7 +45,7 @@ export const aspireEvents2026: AspireEvent[] = [
     date: new Date(2026, 11, 5), // December 5, 2026
     title: "ASPIRE GenAI Fluency Workshop",
     time: "10:00 AM - 6:00 PM",
-    location: "LU-Tulsa",
+    location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/r/PLACEHOLDER_DECEMBER",
     status: "upcoming",
