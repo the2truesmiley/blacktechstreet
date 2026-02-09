@@ -3,7 +3,6 @@ import { Linkedin, Twitter } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import tyrancePhoto from '@/assets/team/tyrance-headshot.png';
-import josephinePhoto from '@/assets/team/josephine-headshot.png';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -47,13 +46,6 @@ const facilitators: Facilitator[] = [
     image: tyrancePhoto,
     linkedin: "https://www.linkedin.com/in/tyrance-billingsley-ii-ab0683123/",
     twitter: "https://twitter.com/TyranceBii",
-  },
-  {
-    name: "Josephine Nelms",
-    role: "Chief Operating Officer",
-    bio: "Operations leader with 15+ years of experience powering Black Tech Street's mission through strategic partnerships and organizational excellence.",
-    image: josephinePhoto,
-    linkedin: "https://www.linkedin.com/in/josephine-nelms-108b87173/",
   },
 ];
 
@@ -111,7 +103,7 @@ export function FacilitatorsSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
           >
-            Meet Your Facilitators
+            Meet Your Facilitator
           </motion.h2>
           <motion.p 
             className="text-muted-foreground max-w-2xl mx-auto"
