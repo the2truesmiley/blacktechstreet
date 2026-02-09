@@ -89,10 +89,10 @@ export function TopNavBar() {
         <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.location.href = '/';
             }}
             className="flex items-center gap-3 group"
           >
