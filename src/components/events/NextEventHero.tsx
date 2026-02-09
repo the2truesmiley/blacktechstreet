@@ -326,13 +326,8 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                     </span>
                   </div>
                   
-                  {/* Location */}
-                  <div className="flex items-center gap-2 pb-3 border-b border-border/30">
-                    <MapPin className="w-4 h-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      {event.location}
-                    </span>
-                  </div>
+                  {/* Divider */}
+                  <div className="pb-3 border-b border-border/30" />
                   
                   {/* CTA */}
                   <div className="flex items-center justify-end pt-3">
