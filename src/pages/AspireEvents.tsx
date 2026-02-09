@@ -71,6 +71,11 @@ export default function AspireEvents() {
       icon: Accessibility,
       title: 'Accessibility Accommodations',
       description: 'Contact us for any accessibility needs'
+    },
+    {
+      icon: Laptop,
+      title: 'Laptop Checkout Available',
+      description: 'Need a device? Laptops are available to borrow during the workshop at no cost'
     }
   ];
 
