@@ -190,7 +190,7 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                   { icon: Calendar, text: format(nextEvent.date, 'EEEE') },
                   { icon: Clock, text: nextEvent.time },
                   { icon: MapPin, text: nextEvent.locationFull },
-                  { icon: null, text: "914 N. Greenwood Avenue, Tulsa, OK 74106" },
+                ].map((item, idx) => (
                   <motion.div 
                     key={idx}
                     className="flex items-center gap-3"
@@ -201,6 +201,9 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                     <span className="text-lg md:text-xl font-medium text-foreground">{item.text}</span>
                   </motion.div>
                 ))}
+                <div className="flex items-center gap-3 pl-8">
+                  <span className="text-base text-muted-foreground">914 N. Greenwood Avenue, Tulsa, OK 74106</span>
+                </div>
               </motion.div>
 
               <motion.div variants={itemVariants}>
