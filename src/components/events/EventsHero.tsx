@@ -111,8 +111,8 @@ export function EventsHero() {
       <ScanningLine />
       <FloatingParticles />
       
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background pointer-events-none" />
+      {/* Subtle gradient overlay - transparent enough to show Matrix effect */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80 pointer-events-none" />
       
       {/* Content */}
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16">
