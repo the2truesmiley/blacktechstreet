@@ -20,6 +20,7 @@ const featuredPartners = [
   { 
     name: 'Microsoft', 
     logo: microsoftLogo,
+    link: 'https://www.microsoft.com/',
     description: 'AI & Cybersecurity Innovation Partner'
   },
   { 
