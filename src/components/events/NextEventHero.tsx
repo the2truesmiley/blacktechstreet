@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, ArrowRight, Sparkles } from 'lucide-react';
 import { format, isPast } from 'date-fns';
