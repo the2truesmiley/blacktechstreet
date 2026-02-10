@@ -3,7 +3,7 @@ import { TechBackground } from '@/components/timeline/TechBackground';
 import { TimelineProgress } from '@/components/timeline/TimelineProgress';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { TimelineHero } from '@/components/timeline/TimelineHero';
-import { TableOfContents } from '@/components/timeline/TableOfContents';
+
 
 import { SocialSection } from '@/components/timeline/SocialSection';
 import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
