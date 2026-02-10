@@ -52,11 +52,6 @@ const Index = () => {
       {/* Hero section (unchanged Matrix-style) */}
       <TimelineHero />
 
-      {/* Navigation pills */}
-      <div className="relative z-10 px-5 max-w-5xl mx-auto">
-        <TableOfContents />
-      </div>
-
       {/* Main content */}
       <main className="relative z-10 px-5 pb-20 max-w-5xl mx-auto">
         {/* Social section with Instagram */}
