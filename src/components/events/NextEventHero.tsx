@@ -43,7 +43,8 @@ function FloatingSparkles() {
 }
 
 export function NextEventHero({ onRegister }: NextEventHeroProps) {
-  
+  const navigate = useNavigate();
+
   // Find the next upcoming event
   const { nextEvent, upcomingEvents, pastEvents } = useMemo(() => {
     const sorted = [...aspireEvents2026].sort((a, b) => a.date.getTime() - b.date.getTime());
