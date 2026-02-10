@@ -100,7 +100,11 @@ function ScanningLine() {
   );
 }
 
-export function EventsHero() {
+interface EventsHeroProps {
+  hideBadges?: string[];
+}
+
+export function EventsHero({ hideBadges = [] }: EventsHeroProps) {
   const scrollToContent = () => {
     document.getElementById('events-content')?.scrollIntoView({ behavior: 'smooth' });
   };
