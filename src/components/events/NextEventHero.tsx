@@ -191,7 +191,6 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                 {[
                   { icon: Calendar, text: format(nextEvent.date, 'EEEE') },
                   { icon: Clock, text: nextEvent.time },
-                  { icon: MapPin, text: nextEvent.locationFull },
                 ].map((item, idx) => (
                   <motion.div 
                     key={idx}
@@ -203,9 +202,24 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                     <span className="text-lg md:text-xl font-medium text-foreground">{item.text}</span>
                   </motion.div>
                 ))}
-                <div className="flex items-center gap-3 pl-8">
-                  <span className="text-base text-muted-foreground">914 N Greenwood Ave, Tulsa, OK 74106</span>
-                </div>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=914+N+Greenwood+Ave,+Tulsa,+OK+74106"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/map"
+                >
+                  <motion.div 
+                    className="flex items-center gap-3"
+                    whileHover={{ x: 3 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span className="text-lg md:text-xl font-medium text-foreground group-hover/map:text-primary transition-colors">{nextEvent.locationFull}</span>
+                  </motion.div>
+                  <div className="flex items-center gap-3 pl-8">
+                    <span className="text-base text-muted-foreground group-hover/map:text-primary/80 transition-colors">914 N Greenwood Ave, Tulsa, OK 74106</span>
+                  </div>
+                </a>
               </motion.div>
 
               <motion.div variants={itemVariants}>

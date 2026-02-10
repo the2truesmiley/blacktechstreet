@@ -69,10 +69,16 @@ export function EventCard({ event, index, onRegister }: EventCardProps) {
             <Clock className="w-4 h-4 text-primary" />
             <span className="text-sm">{event.time}</span>
           </div>
-          <div className="flex items-center gap-3 text-muted-foreground">
+          <a 
+            href="https://www.google.com/maps/dir/?api=1&destination=914+N+Greenwood+Ave,+Tulsa,+OK+74106"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
+          >
             <MapPin className="w-4 h-4 text-primary" />
             <span className="text-sm">{event.locationFull}</span>
-          </div>
+          </a>
           <div className="flex items-center gap-3 text-muted-foreground">
             <Calendar className="w-4 h-4 text-primary" />
             <span className="text-sm">{event.title}</span>
