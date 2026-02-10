@@ -176,10 +176,10 @@ export function EventsHero({ hideBadges = [] }: EventsHeroProps) {
             </a>
             <a 
               href="#childcare"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/40 hover:bg-primary/25 transition-colors cursor-pointer group"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50 hover:bg-card/80 hover:border-primary/40 transition-colors cursor-pointer group"
             >
               <Baby className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary group-hover:underline">Childcare Provided</span>
+              <span className="text-sm font-medium group-hover:text-primary transition-colors">Childcare Provided</span>
             </a>
           </motion.div>
         </motion.div>
