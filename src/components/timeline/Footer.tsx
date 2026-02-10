@@ -10,9 +10,9 @@ const socialLinks = [
 
 const quickLinks = [
   { label: 'About Us', href: '/about' },
-  { label: 'Programs', href: '#gallery-section' },
-  { label: 'Partners', href: '#testimonials-section' },
-  { label: 'Team', href: '#team-section' },
+  { label: 'Programs', href: '/aspire' },
+  { label: 'Partners', href: '/partners' },
+  { label: 'Team', href: '/about' },
 ];
 
 const contactInfo = [
