@@ -30,6 +30,18 @@ export const PERMANENT_ROUTES = {
    * Full URL: https://blacktechstreet.ai/aspire/events/june-2026
    */
   ASPIRE_EVENT_JUNE_2026: '/aspire/events/june-2026',
+
+  /**
+   * ASPIRE September 2026 Event Landing Page
+   * 
+   * ⚠️ DO NOT CHANGE THIS PATH
+   * 
+   * Dedicated landing page for the September 26, 2026 workshop.
+   * May be used in physical/digital marketing materials.
+   * 
+   * Full URL: https://blacktechstreet.ai/aspire/events/september-2026
+   */
+  ASPIRE_EVENT_SEPTEMBER_2026: '/aspire/events/september-2026',
 } as const;
 
 /**
