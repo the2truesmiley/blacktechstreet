@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 export function FinalCTASection() {
