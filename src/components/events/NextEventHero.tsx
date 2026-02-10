@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, ArrowRight, Sparkles } from 'lucide-react';
 import { format, isPast } from 'date-fns';
@@ -42,7 +43,8 @@ function FloatingSparkles() {
 }
 
 export function NextEventHero({ onRegister }: NextEventHeroProps) {
-  
+  const navigate = useNavigate();
+
   // Find the next upcoming event
   const { nextEvent, upcomingEvents, pastEvents } = useMemo(() => {
     const sorted = [...aspireEvents2026].sort((a, b) => a.date.getTime() - b.date.getTime());
@@ -278,7 +280,13 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                   transition: { type: "spring", stiffness: 400, damping: 20 }
                 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => onRegister(event)}
+                onClick={() => {
+                  if (event.id === 'june-2026') {
+                    navigate('/aspire/events/june-2026');
+                  } else {
+                    onRegister(event);
+                  }
+                }}
                 className={cn(
                   "relative overflow-hidden rounded-xl text-left",
                   "bg-gradient-to-br from-card via-card to-card/80",
