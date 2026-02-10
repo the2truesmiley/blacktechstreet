@@ -302,6 +302,7 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                 onClick={() => {
                   if (event.id === 'june-2026') {
                     navigate('/aspire/events/june-2026');
+                    window.scrollTo(0, 0);
                   } else {
                     onRegister(event);
                   }
