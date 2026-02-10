@@ -92,22 +92,6 @@ export default function Contact() {
                 </div>
               </motion.a>
 
-              <motion.div
-                variants={itemVariants}
-                className={cn(
-                  "flex items-start gap-4 p-5 rounded-xl",
-                  "bg-secondary/30 border border-border/40"
-                )}
-              >
-                <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">Location</h3>
-                  <p className="text-muted-foreground">Historic Greenwood District</p>
-                  <p className="text-muted-foreground">Tulsa, Oklahoma</p>
-                </div>
-              </motion.div>
 
               {/* Decorative element */}
               <motion.div
