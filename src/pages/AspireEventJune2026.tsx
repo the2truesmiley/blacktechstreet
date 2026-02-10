@@ -187,22 +187,40 @@ export default function AspireEventJune2026() {
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
-                      <Button 
-                        size="lg" 
-                        className="mt-4 group relative overflow-hidden"
-                        onClick={handleRegister}
+                      <motion.div
+                        className="mt-4 inline-block rounded-lg"
+                        animate={{
+                          boxShadow: [
+                            "0 0 10px hsl(var(--primary) / 0.3), 0 0 30px hsl(var(--primary) / 0.1)",
+                            "0 0 20px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.2)",
+                            "0 0 10px hsl(var(--primary) / 0.3), 0 0 30px hsl(var(--primary) / 0.1)",
+                          ],
+                        }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.97 }}
                       >
-                        <motion.span
-                          className="absolute inset-0 bg-primary-foreground/10"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: "100%" }}
-                          transition={{ duration: 0.5 }}
-                        />
-                        <span className="relative flex items-center">
-                          Register Now
-                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                        </span>
-                      </Button>
+                        <Button 
+                          size="lg" 
+                          className="group relative overflow-hidden bg-primary text-primary-foreground px-8 py-6 text-lg font-semibold"
+                          onClick={handleRegister}
+                        >
+                          <motion.span
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                            animate={{ x: ["-200%", "200%"] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
+                          />
+                          <span className="relative flex items-center gap-2">
+                            Register Now
+                            <motion.span
+                              animate={{ x: [0, 4, 0] }}
+                              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                            >
+                              <ArrowRight className="w-5 h-5" />
+                            </motion.span>
+                          </span>
+                        </Button>
+                      </motion.div>
                     </motion.div>
                   </motion.div>
 
