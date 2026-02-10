@@ -165,10 +165,15 @@ export function EventsHero({ hideBadges = [] }: EventsHeroProps) {
                 <span className="text-sm font-medium">Workshops</span>
               </div>
             )}
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=914+N+Greenwood+Ave,+Tulsa,+OK+74106"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50 hover:bg-card/80 hover:border-primary/40 transition-colors cursor-pointer group"
+            >
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">Langston Tulsa</span>
-            </div>
+              <span className="text-sm font-medium group-hover:text-primary transition-colors">Langston Tulsa</span>
+            </a>
             <a 
               href="#childcare"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/15 border border-primary/40 hover:bg-primary/25 transition-colors cursor-pointer group"
