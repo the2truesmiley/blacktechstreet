@@ -37,7 +37,7 @@ export const aspireEvents2026: AspireEvent[] = [
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
-    registrationUrl: "https://tally.so/r/PLACEHOLDER_SEPTEMBER",
+    registrationUrl: "https://tally.so/embed/lbdNNN",
     status: "upcoming",
   },
   {
