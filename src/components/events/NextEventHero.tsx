@@ -280,7 +280,13 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                   transition: { type: "spring", stiffness: 400, damping: 20 }
                 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => onRegister(event)}
+                onClick={() => {
+                  if (event.id === 'june-2026') {
+                    navigate('/aspire/events/june-2026');
+                  } else {
+                    onRegister(event);
+                  }
+                }}
                 className={cn(
                   "relative overflow-hidden rounded-xl text-left",
                   "bg-gradient-to-br from-card via-card to-card/80",
