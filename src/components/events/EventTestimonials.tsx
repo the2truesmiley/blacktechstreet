@@ -164,11 +164,11 @@ export function EventTestimonials() {
                     />
                     
                     {/* Quote icon */}
-                    <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mb-3">
                       <Quote className="w-4 h-4 text-primary" />
                     </div>
 
-                    <div className="relative pt-2">
+                    <div className="relative">
                       <p className="text-foreground/90 text-sm leading-relaxed mb-4 italic">
                         "{testimonial.quote}"
                       </p>
