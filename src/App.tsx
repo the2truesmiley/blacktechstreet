@@ -10,6 +10,7 @@ import AspireEvents from "./pages/AspireEvents";
 import AspireEventJune2026 from "./pages/AspireEventJune2026";
 import AspireEventSeptember2026 from "./pages/AspireEventSeptember2026";
 import AspireEventDecember2026 from "./pages/AspireEventDecember2026";
+import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
