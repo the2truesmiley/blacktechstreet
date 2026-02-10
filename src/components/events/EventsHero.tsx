@@ -100,7 +100,11 @@ function ScanningLine() {
   );
 }
 
-export function EventsHero() {
+interface EventsHeroProps {
+  hideBadges?: string[];
+}
+
+export function EventsHero({ hideBadges = [] }: EventsHeroProps) {
   const scrollToContent = () => {
     document.getElementById('events-content')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -155,14 +159,18 @@ export function EventsHero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8"
           >
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50">
-              <Calendar className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">Workshops</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50">
-              <Clock className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">All Saturdays</span>
-            </div>
+            {!hideBadges.includes('workshops') && (
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50">
+                <Calendar className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium">Workshops</span>
+              </div>
+            )}
+            {!hideBadges.includes('all-saturdays') && (
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50">
+                <Clock className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium">All Saturdays</span>
+              </div>
+            )}
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/60 backdrop-blur-sm border border-border/50">
               <MapPin className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">Langston Tulsa</span>
