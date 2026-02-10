@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Aspire from "./pages/Aspire";
 import AspireEvents from "./pages/AspireEvents";
+import AspireEventJune2026 from "./pages/AspireEventJune2026";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
