@@ -34,7 +34,7 @@ const FlipCard = memo(function FlipCard({ value, label }: FlipCardProps) {
   const formatValue = (val: number) => String(val).padStart(2, '0');
 
   return (
-    <div className="flip-clock-item">
+    <div className="flip-clock-item" data-digits={displayValue >= 100 ? '3' : '2'}>
       <div className="flip-clock-card">
         {/* Layer 1: Static back showing NEW value (revealed after flip) */}
         <div className="flip-card-upper-back">
