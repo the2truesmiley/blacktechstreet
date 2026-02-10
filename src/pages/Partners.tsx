@@ -42,11 +42,6 @@ const partners = [
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo },
 ];
 
-const stats = [
-  { icon: Users, value: '9+', label: 'Strategic Partners' },
-  { icon: Globe, value: 'Global', label: 'Reach & Impact' },
-  { icon: Zap, value: 'AI', label: 'Powered Innovation' },
-];
 
 export default function Partners() {
   return (
