@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSEO } from '@/hooks/useSEO';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
@@ -37,6 +38,13 @@ const itemVariants = {
 export default function AspireEvents() {
   const [selectedEvent, setSelectedEvent] = useState<AspireEvent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useSEO({
+    title: 'ASPIRE GenAI Workshops | Black Tech Street – Tulsa AI Training',
+    description: 'Register for ASPIRE GenAI Fluency Workshops in Tulsa. Hands-on AI training, free childcare, and community networking at Langston Tulsa. 2026 dates available.',
+    canonical: 'https://blacktechstreet.lovable.app/aspire/events',
+    ogImage: 'https://blacktechstreet.lovable.app/og-image.png',
+  });
   
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
