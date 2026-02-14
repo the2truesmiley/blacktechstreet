@@ -173,10 +173,6 @@ export function SocialSection() {
           </motion.div>
         </div>
       </motion.div>
-
-      <p className="text-sm text-muted-foreground text-center mt-10">
-        Latest updates from our community 🚀
-      </p>
     </section>
   );
 }

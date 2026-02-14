@@ -10,9 +10,9 @@ const socialLinks = [
 
 const quickLinks = [
   { label: 'About Us', href: '/about' },
-  { label: 'Programs', href: '#gallery-section' },
-  { label: 'Partners', href: '#testimonials-section' },
-  { label: 'Team', href: '#team-section' },
+  { label: 'Programs', href: '/aspire' },
+  { label: 'Partners', href: '/partners' },
+  { label: 'Team', href: '/about' },
 ];
 
 const contactInfo = [
@@ -72,7 +72,7 @@ export function Footer() {
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6">
               Revitalizing the legacy of Black Wall Street through technology, 
-              innovation, and community empowerment in Tulsa, Oklahoma.
+              innovation, and community empowerment in the Greater Tulsa Region.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-3">

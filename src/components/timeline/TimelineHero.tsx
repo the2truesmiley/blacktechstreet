@@ -277,7 +277,7 @@ export function TimelineHero() {
   };
 
   const scrollToContact = () => {
-    document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

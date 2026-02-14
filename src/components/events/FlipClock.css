@@ -40,6 +40,12 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     inset 0 -1px 0 rgba(0, 0, 0, 0.5);
   transform-style: preserve-3d;
+  transition: width 0.3s ease;
+}
+
+/* Wider card for 3-digit values (e.g. days >= 100) */
+.flip-clock-item[data-digits="3"] .flip-clock-card {
+  width: 4.75rem;
 }
 
 @media (min-width: 640px) {
@@ -47,12 +53,18 @@
     width: 4.5rem;
     height: 5.5rem;
   }
+  .flip-clock-item[data-digits="3"] .flip-clock-card {
+    width: 5.75rem;
+  }
 }
 
 @media (min-width: 768px) {
   .flip-clock-card {
     width: 5rem;
     height: 6rem;
+  }
+  .flip-clock-item[data-digits="3"] .flip-clock-card {
+    width: 6.5rem;
   }
 }
 

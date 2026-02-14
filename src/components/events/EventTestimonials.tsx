@@ -1,34 +1,53 @@
+import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Quote } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { testimonials } from '@/data/timeline';
 import { cn } from '@/lib/utils';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring" as const,
-      stiffness: 100,
-      damping: 15,
-    }
-  },
-};
-
 export function EventTestimonials() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    slidesToScroll: 1,
+  });
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+
+    // Autoplay
+    const interval = setInterval(() => {
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext();
+      } else {
+        emblaApi.scrollTo(0);
+      }
+    }, 5000);
+
+    return () => {
+      clearInterval(interval);
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
   return (
     <section className="py-16 bg-background relative overflow-hidden">
       {/* Background decorations */}
@@ -64,7 +83,7 @@ export function EventTestimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <motion.h2 
             className="text-3xl md:text-4xl font-display font-bold mb-4"
@@ -86,63 +105,107 @@ export function EventTestimonials() {
           </motion.p>
         </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.author}
-              variants={cardVariants}
-              whileHover={{ 
-                y: -5, 
-                scale: 1.02,
-                transition: { type: "spring", stiffness: 400 }
-              }}
-              className={cn(
-                "relative p-6 rounded-xl",
-                "bg-card/50 backdrop-blur-sm border border-border/40",
-                "group cursor-default"
-              )}
-            >
-              {/* Hover glow effect */}
-              <motion.div
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: "radial-gradient(circle at center, hsl(var(--primary) / 0.1) 0%, transparent 70%)",
-                }}
-              />
-              
-              {/* Quote icon */}
-              <motion.div
-                className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center"
-                whileHover={{ rotate: 10, scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <Quote className="w-4 h-4 text-primary" />
-              </motion.div>
+        {/* Carousel */}
+        <div className="relative">
+          {/* Nav Buttons */}
+          <button
+            onClick={scrollPrev}
+            className={cn(
+              "absolute -left-2 md:-left-5 top-1/2 -translate-y-1/2 z-10",
+              "w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm border border-border/50",
+              "flex items-center justify-center",
+              "hover:bg-primary/10 hover:border-primary/30 transition-colors",
+              "focus:outline-none focus:ring-2 focus:ring-primary/50"
+            )}
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-5 h-5 text-foreground" />
+          </button>
 
-              <div className="relative pt-2">
-                <p className="text-foreground/90 text-sm leading-relaxed mb-4 italic">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-primary font-semibold text-sm">
-                      {testimonial.author.charAt(0)}
-                    </span>
-                  </div>
-                  <span className="text-sm font-medium text-foreground">
-                    {testimonial.author}
-                  </span>
+          <button
+            onClick={scrollNext}
+            className={cn(
+              "absolute -right-2 md:-right-5 top-1/2 -translate-y-1/2 z-10",
+              "w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm border border-border/50",
+              "flex items-center justify-center",
+              "hover:bg-primary/10 hover:border-primary/30 transition-colors",
+              "focus:outline-none focus:ring-2 focus:ring-primary/50"
+            )}
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-5 h-5 text-foreground" />
+          </button>
+
+          {/* Embla viewport */}
+          <div className="overflow-hidden mx-6 md:mx-8" ref={emblaRef}>
+            <div className="flex gap-6">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={testimonial.author}
+                  className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className={cn(
+                      "relative p-6 rounded-xl h-full",
+                      "bg-card/50 backdrop-blur-sm border border-border/40",
+                      "group cursor-default"
+                    )}
+                  >
+                    {/* Hover glow effect */}
+                    <div
+                      className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        background: "radial-gradient(circle at center, hsl(var(--primary) / 0.1) 0%, transparent 70%)",
+                      }}
+                    />
+                    
+                    {/* Quote icon */}
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                      <Quote className="w-4 h-4 text-primary" />
+                    </div>
+
+                    <div className="relative">
+                      <p className="text-foreground/90 text-sm leading-relaxed mb-4 italic">
+                        "{testimonial.quote}"
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                          <span className="text-primary font-semibold text-sm">
+                            {testimonial.author.charAt(0)}
+                          </span>
+                        </div>
+                        <span className="text-sm font-medium text-foreground">
+                          {testimonial.author}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
-            </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex justify-center gap-2 mt-8">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={cn(
+                "w-2 h-2 rounded-full transition-all duration-300",
+                index === selectedIndex
+                  ? "bg-primary w-6"
+                  : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+              )}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

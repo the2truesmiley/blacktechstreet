@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 export function FinalCTASection() {
@@ -40,12 +41,8 @@ export function FinalCTASection() {
           transition={{ delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="#about-section"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#about-section')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+          <Link
+            to="/about"
             className={cn(
               "group flex items-center gap-2 px-6 py-3 rounded-full",
               "bg-primary text-primary-foreground font-medium",
@@ -55,7 +52,7 @@ export function FinalCTASection() {
           >
             Learn More
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
 
           <a
             href="mailto:info@blacktechstreet.com"

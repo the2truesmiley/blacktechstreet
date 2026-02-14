@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Aspire from "./pages/Aspire";
 import AspireEvents from "./pages/AspireEvents";
+import AspireEventJune2026 from "./pages/AspireEventJune2026";
+import AspireEventSeptember2026 from "./pages/AspireEventSeptember2026";
+import AspireEventDecember2026 from "./pages/AspireEventDecember2026";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
@@ -25,6 +28,9 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/aspire" element={<Aspire />} />
           <Route path="/aspire/events" element={<AspireEvents />} />
+          <Route path="/aspire/events/june-2026" element={<AspireEventJune2026 />} />
+          <Route path="/aspire/events/september-2026" element={<AspireEventSeptember2026 />} />
+          <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />

@@ -3,7 +3,7 @@ import { TechBackground } from '@/components/timeline/TechBackground';
 import { TimelineProgress } from '@/components/timeline/TimelineProgress';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { TimelineHero } from '@/components/timeline/TimelineHero';
-import { TableOfContents } from '@/components/timeline/TableOfContents';
+
 
 import { SocialSection } from '@/components/timeline/SocialSection';
 import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
@@ -51,11 +51,6 @@ const Index = () => {
 
       {/* Hero section (unchanged Matrix-style) */}
       <TimelineHero />
-
-      {/* Navigation pills */}
-      <div className="relative z-10 px-5 max-w-5xl mx-auto">
-        <TableOfContents />
-      </div>
 
       {/* Main content */}
       <main className="relative z-10 px-5 pb-20 max-w-5xl mx-auto">

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Zap, Globe, Users } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
@@ -42,11 +42,6 @@ const partners = [
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo },
 ];
 
-const stats = [
-  { icon: Users, value: '9+', label: 'Strategic Partners' },
-  { icon: Globe, value: 'Global', label: 'Reach & Impact' },
-  { icon: Zap, value: 'AI', label: 'Powered Innovation' },
-];
 
 export default function Partners() {
   return (
@@ -95,29 +90,6 @@ export default function Partners() {
             for AI and cybersecurity innovation. Join us to shape a legacy of bold innovation.
           </motion.p>
 
-          {/* Stats Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-8 md:gap-16"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 mx-auto mb-3">
-                  <stat.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 

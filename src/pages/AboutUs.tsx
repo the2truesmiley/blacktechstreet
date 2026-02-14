@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Target, Users, Lightbulb, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -102,6 +103,10 @@ const timeline = [
 ];
 
 export default function AboutUs() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <TopNavBar />
