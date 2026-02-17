@@ -43,9 +43,6 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-              Get In Touch
-            </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6">
               Let's Build the{' '}
               <span className="text-primary">Future Together</span>
