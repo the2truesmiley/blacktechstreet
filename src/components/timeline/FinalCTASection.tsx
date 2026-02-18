@@ -55,7 +55,7 @@ export function FinalCTASection() {
           </Link>
 
           <a
-            href="mailto:info@blacktechstreet.com"
+            href="mailto:contact@blacktechstreet.com"
             className={cn(
               "group flex items-center gap-2 px-6 py-3 rounded-full",
               "bg-secondary/80 text-foreground font-medium border border-border/50",
