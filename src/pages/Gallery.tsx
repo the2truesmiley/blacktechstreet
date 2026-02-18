@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { Camera, Calendar, MapPin, Tag, Loader2 } from 'lucide-react';
+import { Camera, Calendar, Loader2 } from 'lucide-react';
 import { useGalleryPhotos, useGalleryTags, filterPhotosByTag } from '@/hooks/useGalleryPhotos';
 import { format } from 'date-fns';
 
@@ -101,52 +101,19 @@ export default function Gallery() {
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
 
-                    {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
+                    {/* Subtle gradient only on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    {/* Tags badges */}
-                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                      {item.tags.slice(0, 2).map((tag) => (
-                        <span 
-                          key={tag}
-                          className="px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Content overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                    {/* Content overlay — visible only on hover */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                      <h3 className="text-sm font-semibold text-foreground">
                         {item.title}
                       </h3>
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
-                          {format(new Date(item.event_date), 'MMMM d, yyyy')}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-3 h-3" />
-                          {item.location}
-                        </span>
-                      </div>
-                      {/* Show more tags on hover */}
-                      <div className="flex flex-wrap gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        {item.tags.map((tag) => (
-                          <span 
-                            key={tag}
-                            className="flex items-center gap-1 text-xs text-muted-foreground"
-                          >
-                            <Tag className="w-2 h-2" />
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                      <span className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
+                        <Calendar className="w-3 h-3" />
+                        {format(new Date(item.event_date), 'MMMM d, yyyy')}
+                      </span>
                     </div>
-
-                    {/* Hover glow effect */}
-                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </motion.div>
               ))}
