@@ -332,7 +332,7 @@ export default function AboutUs() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/#contact-section"
+                  to="/contact"
                   className={cn(
                     "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg",
                     "bg-primary text-primary-foreground font-semibold",

@@ -306,7 +306,7 @@ export default function Partners() {
                 </Link>
 
                 <a
-                  href="mailto:info@blacktechstreet.com"
+                  href="mailto:contact@blacktechstreet.com"
                   className={cn(
                     "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full",
                     "bg-secondary/80 text-foreground font-semibold border border-border/50",
