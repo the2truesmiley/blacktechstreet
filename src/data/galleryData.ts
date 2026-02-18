@@ -17,6 +17,16 @@ import aspireWorkshop from '@/assets/gallery/aspire-workshop.jpg';
 import dec2025TyrancePresenting from '@/assets/gallery/dec-2025-tyrance-presenting.jpg';
 import dec2025AiWorkshopFullRoom from '@/assets/gallery/dec-2025-ai-workshop-full-room.jpg';
 import dec2025ParticipantsLearning from '@/assets/gallery/dec-2025-participants-learning.jpg';
+import sep2025Presenting from '@/assets/gallery/sep-2025-aspire-presenting.jpg';
+import sep2025ParticipantAttentive from '@/assets/gallery/sep-2025-participant-attentive.jpg';
+import sep2025TableDiscussion from '@/assets/gallery/sep-2025-table-discussion.jpg';
+import sep2025GroupLaptops from '@/assets/gallery/sep-2025-group-laptops.jpg';
+import sep2025ParticipantSpeaking from '@/assets/gallery/sep-2025-participant-speaking.jpg';
+import sep2025BtsHelping from '@/assets/gallery/sep-2025-bts-helping.jpg';
+import sep2025AiExercise from '@/assets/gallery/sep-2025-ai-exercise.jpg';
+import sep2025FullRoom from '@/assets/gallery/sep-2025-full-room.jpg';
+import sep2025WomenCollaborating from '@/assets/gallery/sep-2025-women-collaborating.jpg';
+import sep2025TrioLaptop from '@/assets/gallery/sep-2025-trio-laptop.jpg';
 
 export const galleryPhotos: GalleryPhoto[] = [
   // December 6th, 2025 ASPIRE Workshop
@@ -43,6 +53,87 @@ export const galleryPhotos: GalleryPhoto[] = [
     location: 'Langston University',
     tags: ['ASPIRE', 'Workshop', 'Learning', 'December 2025'],
     image: dec2025ParticipantsLearning,
+  },
+  // September 27th, 2025 ASPIRE Workshop
+  {
+    id: 'sep-2025-aspire-presenting',
+    title: 'ASPIRE GenAI Fluency & Responsibility Lab',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Leadership', 'September 2025'],
+    image: sep2025Presenting,
+  },
+  {
+    id: 'sep-2025-participant-attentive',
+    title: 'Participant Engaged in Learning',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Community', 'September 2025'],
+    image: sep2025ParticipantAttentive,
+  },
+  {
+    id: 'sep-2025-table-discussion',
+    title: 'Table Discussion at ASPIRE',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Networking', 'September 2025'],
+    image: sep2025TableDiscussion,
+  },
+  {
+    id: 'sep-2025-group-laptops',
+    title: 'Group Working on AI Exercises',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Learning', 'AI', 'September 2025'],
+    image: sep2025GroupLaptops,
+  },
+  {
+    id: 'sep-2025-participant-speaking',
+    title: 'Participant Asking a Question',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Community', 'September 2025'],
+    image: sep2025ParticipantSpeaking,
+  },
+  {
+    id: 'sep-2025-bts-helping',
+    title: 'Black Tech Street Staff Assisting Participant',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Learning', 'September 2025'],
+    image: sep2025BtsHelping,
+  },
+  {
+    id: 'sep-2025-ai-exercise',
+    title: 'Participant Working on AI Exercise',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'AI', 'Learning', 'September 2025'],
+    image: sep2025AiExercise,
+  },
+  {
+    id: 'sep-2025-full-room',
+    title: 'Full Room at ASPIRE Workshop',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Community', 'September 2025'],
+    image: sep2025FullRoom,
+  },
+  {
+    id: 'sep-2025-women-collaborating',
+    title: 'Women Collaborating at ASPIRE',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Networking', 'Community', 'September 2025'],
+    image: sep2025WomenCollaborating,
+  },
+  {
+    id: 'sep-2025-trio-laptop',
+    title: 'Trio Learning Together',
+    date: 'September 27, 2025',
+    location: 'Greenwood Cultural Center, Tulsa',
+    tags: ['ASPIRE', 'Workshop', 'Learning', 'September 2025'],
+    image: sep2025TrioLaptop,
   },
   // Previous photos
   {
