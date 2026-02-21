@@ -26,7 +26,7 @@ export function AspireCtaBanner() {
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-                  ASPIRE GenAI Fluency Workshop
+                  ASPIRE AI Workshop
                 </h3>
 
                 <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
