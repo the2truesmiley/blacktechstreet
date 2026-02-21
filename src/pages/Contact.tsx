@@ -1,13 +1,9 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
 
 const containerVariants = {
@@ -108,73 +104,24 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <form
-                action="mailto:contact@blacktechstreet.com"
-                method="GET"
-                encType="text/plain"
-                className={cn(
+              <div className={cn(
                   "p-8 rounded-2xl",
                   "bg-secondary/20 border border-border/40",
                   "backdrop-blur-sm"
-                )}
-              >
+                )}>
                 <h2 className="text-2xl font-display font-bold text-foreground mb-6">
                   Send a Message
                 </h2>
-
-                <div className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Your name"
-                        className="bg-background/50"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="your@email.com"
-                        className="bg-background/50"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      placeholder="What's this about?"
-                      className="bg-background/50"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="body"
-                      placeholder="Tell us more..."
-                      rows={5}
-                      className="bg-background/50 resize-none"
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    className="w-full gap-2 bg-primary hover:bg-primary/90"
-                  >
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </Button>
-                </div>
-              </form>
+                <iframe
+                  data-tally-src="https://tally.so/embed/wQWOWA?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
+                  width="100%"
+                  height="337"
+                  frameBorder="0"
+                  title="Contact form"
+                  className="w-full"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
