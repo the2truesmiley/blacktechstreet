@@ -5,6 +5,7 @@ import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { TimelineHero } from '@/components/timeline/TimelineHero';
 
 
+import { AspireCtaBanner } from '@/components/timeline/AspireCtaBanner';
 import { SocialSection } from '@/components/timeline/SocialSection';
 import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
@@ -51,6 +52,9 @@ const Index = () => {
 
       {/* Hero section (unchanged Matrix-style) */}
       <TimelineHero />
+
+      {/* ASPIRE March CTA */}
+      <AspireCtaBanner />
 
       {/* Main content */}
       <main className="relative z-10 px-5 pb-20 max-w-5xl mx-auto">
