@@ -23,6 +23,21 @@ export default function Contact() {
   useEffect(() => {
     document.title = 'Contact Us | Black Tech Street';
     window.scrollTo(0, 0);
+
+    // Load Tally embed script
+    const w = "https://tally.so/widgets/embed.js";
+    if (!document.querySelector(`script[src="${w}"]`)) {
+      const s = document.createElement("script");
+      s.src = w;
+      s.onload = () => {
+        if (typeof (window as any).Tally !== 'undefined') {
+          (window as any).Tally.loadEmbeds();
+        }
+      };
+      document.body.appendChild(s);
+    } else if (typeof (window as any).Tally !== 'undefined') {
+      (window as any).Tally.loadEmbeds();
+    }
   }, []);
 
   return (
