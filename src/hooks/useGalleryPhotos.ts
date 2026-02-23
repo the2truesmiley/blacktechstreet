@@ -21,7 +21,9 @@ export const useGalleryPhotos = () => {
         .order('event_date', { ascending: false });
 
       if (error) throw error;
-      return data as GalleryPhoto[];
+      // Shuffle photos randomly
+      const shuffled = (data as GalleryPhoto[]).sort(() => Math.random() - 0.5);
+      return shuffled;
     },
   });
 };
