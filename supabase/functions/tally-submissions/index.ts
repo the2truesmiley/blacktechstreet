@@ -45,16 +45,25 @@ serve(async (req) => {
     const url = new URL(req.url);
     const formId = url.searchParams.get('formId');
 
-    if (!formId) {
+    // Validate formId: alphanumeric, hyphens, underscores only
+    if (!formId || !/^[a-zA-Z0-9_-]+$/.test(formId)) {
       return new Response(
-        JSON.stringify({ error: 'formId query parameter is required' }),
+        JSON.stringify({ error: 'Invalid or missing formId' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
 
-    const page = url.searchParams.get('page') || '1';
+    // Validate page: must be a positive integer
+    const rawPage = url.searchParams.get('page') || '1';
+    const pageNum = parseInt(rawPage, 10);
+    if (isNaN(pageNum) || pageNum < 1 || pageNum > 1000) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid page number' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
 
-    const tallyUrl = `https://api.tally.so/forms/${formId}/submissions?page=${page}`;
+    const tallyUrl = `https://api.tally.so/forms/${encodeURIComponent(formId)}/submissions?page=${pageNum}`;
     const response = await fetch(tallyUrl, {
       headers: { 'Authorization': `Bearer ${TALLY_API_KEY}` },
     });
