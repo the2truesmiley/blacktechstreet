@@ -1,1 +1,4 @@
 project_id = "qxcfebasxnjrihentndh"
+
+[functions.tally-submissions]
+verify_jwt = false
