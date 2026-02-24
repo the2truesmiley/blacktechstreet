@@ -224,11 +224,8 @@ export default function AboutUs() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <span className="inline-block text-primary text-sm font-medium tracking-[0.2em] uppercase mb-4">
-                Our Journey
-              </span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-                A Timeline of Progress
+                Key Milestones
               </h2>
             </motion.div>
 
