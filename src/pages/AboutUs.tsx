@@ -165,7 +165,7 @@ export default function AboutUs() {
                       <span className="text-5xl font-display font-black text-primary/50 group-hover:text-primary transition-colors duration-300 block mb-4">
                         {item.number}
                       </span>
-                      <p className="text-foreground leading-relaxed text-base md:text-lg">
+                      <p className="text-foreground leading-relaxed text-base">
                         {item.text} <strong className="text-primary">{item.highlight}</strong> {item.suffix}
                       </p>
                     </motion.div>
@@ -204,7 +204,7 @@ export default function AboutUs() {
                       <h2 className="text-xl font-display font-bold text-primary mb-2">
                         {value.title}
                       </h2>
-                      <p className="text-foreground leading-relaxed">
+                      <p className="text-foreground leading-relaxed text-base">
                         {value.description}
                       </p>
                     </div>
