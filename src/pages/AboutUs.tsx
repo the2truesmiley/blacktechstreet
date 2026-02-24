@@ -121,12 +121,25 @@ export default function AboutUs() {
                 <span className="text-primary">Founding Story</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-                Black Tech Street (BTS) was founded on a question and a three pronged epiphany. The question of "What could Black Wall Street have been, had it been supported and not destroyed?"
+                Black Tech Street (BTS) was founded on a question and a three pronged epiphany:
               </p>
+
+              <motion.blockquote
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="mt-10 max-w-3xl mx-auto relative px-8 py-6"
+              >
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-transparent rounded-full" />
+                <p className="text-2xl md:text-3xl font-display font-semibold text-foreground italic leading-snug">
+                  "What could Black Wall Street have been, had it been supported and not destroyed?"
+                </p>
+              </motion.blockquote>
 
               <div className="mt-12 max-w-4xl mx-auto">
                 <p className="text-lg text-muted-foreground font-medium mb-8 text-center tracking-wide">
-                  And the three pronged epiphany that:
+                  The three pronged epiphany:
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 text-left">
                   {[
