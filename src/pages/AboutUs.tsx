@@ -123,6 +123,27 @@ export default function AboutUs() {
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
                 Black Tech Street (BTS) was founded on a question and a three pronged epiphany. The question of "What could Black Wall Street have been, had it been supported and not destroyed?"
               </p>
+
+              <div className="mt-10 max-w-3xl mx-auto">
+                <p className="text-lg text-foreground font-semibold mb-6">And the three pronged epiphany that:</p>
+                <div className="grid md:grid-cols-3 gap-6 text-left">
+                  <div className="bg-secondary/30 border border-border/40 rounded-xl p-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Tech is one of the only industries within which one can build <strong className="text-primary">intergenerational wealth</strong> in just 7–10 years.
+                    </p>
+                  </div>
+                  <div className="bg-secondary/30 border border-border/40 rounded-xl p-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      Tech is the <strong className="text-primary">core medium</strong> for all global innovation.
+                    </p>
+                  </div>
+                  <div className="bg-secondary/30 border border-border/40 rounded-xl p-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      By the year 2030, there are projected to be as many as <strong className="text-primary">4.3 million high paying tech jobs</strong> due to a tech talent shortage.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
