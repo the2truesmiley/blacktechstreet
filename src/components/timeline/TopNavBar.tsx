@@ -30,7 +30,11 @@ const navItems: NavItem[] = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export function TopNavBar() {
+interface TopNavBarProps {
+  largerLogo?: boolean;
+}
+
+export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -101,7 +105,7 @@ export function TopNavBar() {
               <img 
                 src={logoCircuit} 
                 alt="Black Tech Street"
-                className="relative w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300"
+                className={cn("relative object-contain group-hover:scale-105 transition-transform duration-300", largerLogo ? "w-[52px] h-[52px]" : "w-10 h-10")}
               />
             </div>
             <span className="font-display font-bold text-foreground text-xl hidden sm:block tracking-tight">
