@@ -21,7 +21,7 @@ const values = [
   {
     icon: Users,
     title: 'Strategy',
-    description: 'We mobilize talent, capital, and industry around emerging technologies in Greenwood and the Greater Tulsa region. Through strategic partnerships, we are building 21st century Greenwood into a globally recognized technology hub.',
+    description: 'We partner with companies, organizations, and institutions to architect emerging-technology opportunities for Greenwood and the Greater Tulsa Region, securing the investment, talent, and programming to position 21st-century Greenwood as a global leader in AI and Cybersecurity.',
   },
 ];
 
