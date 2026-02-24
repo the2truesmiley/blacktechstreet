@@ -31,7 +31,7 @@ export function FinalCTASection() {
           transition={{ delay: 0.1 }}
           className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto"
         >
-          Join us in building the blueprint for an AI-powered society on the grounds of Historic Greenwood.
+          Join us in creating the blueprint for an AI-powered society on the grounds of Historic Greenwood.
         </motion.p>
 
         <motion.div
