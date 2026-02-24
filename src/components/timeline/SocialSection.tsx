@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Instagram, Facebook, ArrowUpRight } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useEffect, useRef } from 'react';
 
@@ -83,6 +83,21 @@ export function SocialSection() {
         >
           <Facebook className="w-5 h-5" />
           Black Tech Street
+          <ArrowUpRight className="w-4 h-4" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/black-tech-street/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "inline-flex items-center gap-3 px-6 py-3 rounded-full",
+            "bg-secondary border border-border text-foreground font-medium",
+            "hover:scale-105 hover:border-primary/50 transition-all duration-300",
+            "shadow-lg shadow-black/25"
+          )}
+        >
+          <Linkedin className="w-5 h-5" />
+          LinkedIn
           <ArrowUpRight className="w-4 h-4" />
         </a>
       </motion.div>
