@@ -173,7 +173,7 @@ Deeply connected to the legacy of Tulsa's historic Greenwood District, Allen pla
 
 Before joining Black Tech Street, Allen held marketing, communications, and operations roles with City Year Tulsa, Hunger Free Oklahoma, the Tahlequah Area Chamber of Commerce, and inTulsa. His experience includes coordinating large-scale events, managing vendor partnerships, and supporting programs that build bridges between residents, educators, and local institutions.
 
-Allen remains active in service and civic leadership. He has volunteered with My Brother's Keeper Sports at McLain High School and has participated in leadership and board-readiness programs including Leadership Tulsa New Voices Class 12, 918 Lead, and the TYPros Get On Board Internship with the Foundation for Tulsa Schools.`,
+Allen remains active in service and civic leadership. He volunteers with My Brother's Keeper Sports at McLain High School and has participated in leadership and board-readiness programs including Leadership Tulsa New Voices Class 12, 918 Lead, and the TYPros Get On Board Internship with the Foundation for Tulsa Schools.`,
     linkedIn: "https://www.linkedin.com/in/allen-collins/"
   },
   {
