@@ -7,7 +7,7 @@ import { TimelineHero } from '@/components/timeline/TimelineHero';
 
 import { AspireCtaBanner } from '@/components/timeline/AspireCtaBanner';
 import { SocialSection } from '@/components/timeline/SocialSection';
-import { PhotoGallerySection } from '@/components/timeline/PhotoGallerySection';
+
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
 import { FinalCTASection } from '@/components/timeline/FinalCTASection';
 import { Footer } from '@/components/timeline/Footer';
@@ -61,8 +61,6 @@ const Index = () => {
         {/* Social section with Instagram */}
         <SocialSection />
 
-        {/* Photo Gallery */}
-        <PhotoGallerySection />
 
         {/* Testimonials */}
         <TestimonialsSection />
