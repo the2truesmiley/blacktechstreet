@@ -152,7 +152,7 @@ export default function AboutUs() {
                       transition={{ duration: 0.5, delay: parseInt(item.number) * 0.15 }}
                       className="relative bg-secondary/20 border border-primary/15 rounded-2xl p-7 hover:border-primary/40 transition-all duration-300 group"
                     >
-                      <span className="text-4xl font-display font-bold text-primary/20 group-hover:text-primary/40 transition-colors duration-300 block mb-3">
+                      <span className="text-5xl font-display font-black text-primary/50 group-hover:text-primary transition-colors duration-300 block mb-4">
                         {item.number}
                       </span>
                       <p className="text-foreground leading-relaxed text-base md:text-lg">
