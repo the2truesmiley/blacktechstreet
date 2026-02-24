@@ -183,10 +183,10 @@ export default function Partners() {
             className="text-center mb-12"
           >
             <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-              Our Network
+              Community Partner
             </h2>
             <p className="text-2xl md:text-3xl font-display font-bold text-foreground">
-              Collaborating for Change
+              Community Partner
             </p>
           </motion.div>
 
