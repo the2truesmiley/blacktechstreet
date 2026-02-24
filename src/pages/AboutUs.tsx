@@ -121,8 +121,7 @@ export default function AboutUs() {
                 <span className="text-primary">Founding Story</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-                We're channeling the entrepreneurial spirit of historic Black Wall Street 
-                into the technologies that will shape tomorrow.
+                Black Tech Street (BTS) was founded on a question and a three pronged epiphany. The question of "What could Black Wall Street have been, had it been supported and not destroyed?"
               </p>
             </motion.div>
           </div>
