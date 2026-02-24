@@ -180,38 +180,36 @@ export default function AboutUs() {
         <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
 
-        {/* Values - Clean Grid */}
+        {/* Values - Single Column */}
         <section className="py-24 px-5 bg-secondary/20">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-3xl mx-auto space-y-6">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="group relative"
+              >
+                <div className="relative overflow-hidden rounded-2xl bg-card/60 backdrop-blur-sm border border-border/40 hover:border-primary/30 transition-all duration-300 p-8 md:p-10">
+                  {/* Left accent bar */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-transparent rounded-l-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
 
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -4 }}
-                  className="group relative bg-card/60 backdrop-blur-sm border border-border/40 hover:border-primary/30 rounded-2xl p-7 transition-all duration-300"
-                >
-                  {/* Top border glow */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="flex items-start gap-4">
-                    <value.icon className="w-6 h-6 text-primary shrink-0 mt-1" />
+                  <div className="flex items-start gap-5">
+                    <value.icon className="w-7 h-7 text-primary shrink-0 mt-0.5" />
                     <div>
-                      <h2 className="text-xl font-display font-bold text-primary mb-2">
+                      <h2 className="text-2xl font-display font-bold text-primary mb-3">
                         {value.title}
                       </h2>
-                      <p className="text-foreground leading-relaxed text-base">
+                      <p className="text-foreground/90 leading-relaxed text-base md:text-lg">
                         {value.description}
                       </p>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </section>
 
