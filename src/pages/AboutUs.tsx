@@ -21,7 +21,7 @@ const values = [
   {
     icon: Users,
     title: 'Approach',
-    description: 'We create strategies to make 21st century Greenwood a global leader in our defined technology areas, and we partner with companies, organizations or institutions to create/secure investment, talent and programming to bring that vision to fruition.',
+    description: 'We mobilize talent, capital, and industry around emerging technologies in Greenwood and the Greater Tulsa region. Through strategic partnerships, we are building 21st century Greenwood into a globally recognized technology hub.',
   },
 ];
 
