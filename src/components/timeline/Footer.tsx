@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
 const socialLinks = [
   { icon: Facebook, href: 'https://facebook.com/blacktechstreet', label: 'Facebook' },
   { icon: Instagram, href: 'https://instagram.com/blacktechstreet', label: 'Instagram' },
+  { icon: Linkedin, href: 'https://linkedin.com/company/blacktechstreet', label: 'LinkedIn' },
 ];
 
 const quickLinks = [
