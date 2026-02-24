@@ -116,9 +116,6 @@ export default function AboutUs() {
               transition={{ duration: 0.8 }}
               className="text-center mb-8"
             >
-              <span className="inline-block text-primary text-sm font-medium tracking-[0.2em] uppercase mb-6">
-                Our Story
-              </span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-8">
                 Black Tech Street<br />
                 <span className="text-primary">Founding Story</span>
