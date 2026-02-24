@@ -149,7 +149,7 @@ export default function Partners() {
                             src={partner.logo}
                             alt={partner.name}
                             loading="lazy"
-                            className="max-h-36 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="max-h-36 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                         </a>
                       ) : (
@@ -157,7 +157,7 @@ export default function Partners() {
                             src={partner.logo}
                             alt={partner.name}
                             loading="lazy"
-                            className="relative z-10 max-h-36 w-auto object-contain filter brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="relative z-10 max-h-36 w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                       )}
                     </div>
@@ -223,9 +223,7 @@ export default function Partners() {
                     loading="lazy"
                     className={cn(
                       "relative z-10 max-h-28 max-w-[85%] object-contain transition-all duration-300",
-                      partner.name === 'Hewlett Packard'
-                        ? "opacity-90 group-hover:opacity-100 group-hover:scale-110"
-                        : "filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110"
+                      "opacity-90 group-hover:opacity-100 group-hover:scale-110"
                     )}
                   />
                   
