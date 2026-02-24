@@ -90,7 +90,7 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
             : "bg-background/60 backdrop-blur-md"
         )}
       >
-        <div className="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-5 py-1 flex items-center justify-between">
           {/* Logo */}
           <a
             href="/"
@@ -105,7 +105,7 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
               <img 
                 src={logoCircuit} 
                 alt="Black Tech Street"
-                className={cn("relative object-contain group-hover:scale-105 transition-transform duration-300", largerLogo ? "w-[120px] h-auto" : "w-[80px] h-auto")}
+                className={cn("relative object-contain group-hover:scale-105 transition-transform duration-300", largerLogo ? "w-[168px] h-auto" : "w-[80px] h-auto")}
               />
             </div>
           </a>
