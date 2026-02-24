@@ -193,7 +193,7 @@ export default function Partners() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
           >
             {partners.map((partner, index) => (
               <motion.div
@@ -206,7 +206,7 @@ export default function Partners() {
                 className="group relative"
               >
                 <div className={cn(
-                  "relative h-40 p-8 rounded-xl",
+                  "relative h-52 p-8 rounded-xl",
                   "bg-card/50 backdrop-blur-sm",
                   "border border-border/30 hover:border-primary/40",
                   "flex items-center justify-center",
@@ -218,13 +218,18 @@ export default function Partners() {
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="relative z-10 max-h-20 max-w-[80%] object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-all duration-300"
+                    className={cn(
+                      "relative z-10 max-h-28 max-w-[85%] object-contain transition-all duration-300",
+                      partner.name === 'Hewlett Packard'
+                        ? "opacity-90 group-hover:opacity-100 group-hover:scale-110"
+                        : "filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110"
+                    )}
                   />
-                </div>
-                
-                {/* Partner name tooltip */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1 rounded-full bg-card border border-border/50 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                  {partner.name}
+                  
+                  {/* Partner name tooltip - positioned above */}
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
+                    {partner.name}
+                  </div>
                 </div>
               </motion.div>
             ))}
