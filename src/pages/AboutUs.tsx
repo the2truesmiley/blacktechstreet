@@ -191,19 +191,19 @@ export default function AboutUs() {
               className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed"
             >
               <p className="text-xl text-foreground font-medium">
-                In the early 20th century, Tulsa's Greenwood District was a beacon of Black 
-                excellence — a thriving community of entrepreneurs, professionals, and innovators.
+                In the early 20th century, Tulsa's Greenwood District was home to one of 
+                the most prosperous Black communities in the United States.
               </p>
               <p>
-                Known as Black Wall Street, Greenwood was home to hundreds of Black-owned 
-                businesses, from banks and hotels to theaters and hospitals. It represented 
+                Known as Black Wall Street, Greenwood had hundreds of Black-owned 
+                businesses, including banks, hotels, theaters, and hospitals. It showed 
                 what was possible when a community invested in itself.
               </p>
               <p>
-                Today, Black Tech Street carries that torch forward. We're not just teaching 
-                technology — we're rebuilding a legacy. By focusing on artificial intelligence, 
-                cybersecurity, and emerging technologies, we're ensuring our community doesn't 
-                just participate in the future economy; we help shape it.
+                Today, Black Tech Street carries that legacy forward. We focus on 
+                artificial intelligence, cybersecurity, and emerging technologies to 
+                ensure our community helps shape the future economy, not just 
+                participate in it.
               </p>
             </motion.div>
           </div>
