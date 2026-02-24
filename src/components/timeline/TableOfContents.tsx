@@ -6,7 +6,7 @@ const sections = [
   { id: 'team-section', label: 'Team', icon: Users },
   { id: 'social-section', label: 'Social', icon: Instagram },
   { id: 'gallery-section', label: 'Gallery', icon: Calendar },
-  { id: 'testimonials-section', label: 'Voices', icon: MessageSquareQuote },
+  { id: 'testimonials-section', label: 'Testimonials', icon: MessageSquareQuote },
 ];
 
 export function TableOfContents() {

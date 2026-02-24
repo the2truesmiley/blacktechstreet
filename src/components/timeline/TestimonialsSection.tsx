@@ -35,8 +35,7 @@ export function TestimonialsSection() {
         className="text-center mb-12"
       >
         <h2 className="text-2xl md:text-3xl font-display font-bold">
-          <span className="text-primary">Community</span>{' '}
-          <span className="text-foreground">Voices</span>
+          <span className="text-primary">Testimonials</span>
         </h2>
       </motion.div>
 
