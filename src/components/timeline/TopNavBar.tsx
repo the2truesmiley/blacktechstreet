@@ -105,7 +105,7 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
               <img 
                 src={logoCircuit} 
                 alt="Black Tech Street"
-                className={cn("relative object-contain group-hover:scale-105 transition-transform duration-300", largerLogo ? "w-[52px] h-[52px]" : "w-10 h-10")}
+                className={cn("relative object-contain group-hover:scale-105 transition-transform duration-300", largerLogo ? "w-[60px] h-[60px]" : "w-10 h-10")}
               />
             </div>
             <span className="font-display font-bold text-foreground text-xl hidden sm:block tracking-tight">
