@@ -140,9 +140,9 @@ export default function AboutUs() {
               <div className="mt-12 max-w-4xl mx-auto">
                 <div className="grid md:grid-cols-3 gap-6 text-left">
                   {[
-                    { number: '01', text: 'Tech is one of the only industries within which one can build', highlight: 'intergenerational wealth', suffix: 'in just 7–10 years.' },
-                    { number: '02', text: 'Tech is the', highlight: 'core medium', suffix: 'for all global innovation.' },
-                    { number: '03', text: 'By 2030, there are projected to be as many as', highlight: '4.3 million high paying tech jobs', suffix: 'due to a tech talent shortage.' },
+                    { number: '1', text: 'Tech is one of the only industries within which one can build', highlight: 'intergenerational wealth', suffix: 'in just 7–10 years.' },
+                    { number: '2', text: 'Tech is the', highlight: 'core medium', suffix: 'for all global innovation.' },
+                    { number: '3', text: 'By 2030, there are projected to be as many as', highlight: '4.3 million high paying tech jobs', suffix: 'due to a tech talent shortage.' },
                   ].map((item) => (
                     <motion.div
                       key={item.number}
