@@ -138,9 +138,6 @@ export default function AboutUs() {
               </motion.blockquote>
 
               <div className="mt-12 max-w-4xl mx-auto">
-                <p className="text-lg text-muted-foreground font-medium mb-8 text-center tracking-wide">
-                  The three pronged epiphany:
-                </p>
                 <div className="grid md:grid-cols-3 gap-6 text-left">
                   {[
                     { number: '01', text: 'Tech is one of the only industries within which one can build', highlight: 'intergenerational wealth', suffix: 'in just 7–10 years.' },
@@ -158,7 +155,7 @@ export default function AboutUs() {
                       <span className="text-4xl font-display font-bold text-primary/20 group-hover:text-primary/40 transition-colors duration-300 block mb-3">
                         {item.number}
                       </span>
-                      <p className="text-muted-foreground leading-relaxed text-[15px]">
+                      <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
                         {item.text} <strong className="text-primary">{item.highlight}</strong> {item.suffix}
                       </p>
                     </motion.div>
