@@ -74,11 +74,11 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                 </a>
               )}
             </div>
-            <p className="text-sm text-primary font-medium mb-3">
+            <p className="text-base text-primary font-medium mb-3">
               {member.title}
             </p>
             
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-base text-foreground/90 leading-relaxed">
               {member.shortBio}
             </p>
 
@@ -92,7 +92,7 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                   className="overflow-hidden"
                 >
                   <div className="pt-4 border-t border-border/30 mt-4">
-                    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
+                    <p className="text-base text-foreground/80 leading-relaxed whitespace-pre-line">
                       {member.expandedBio}
                     </p>
                   </div>
