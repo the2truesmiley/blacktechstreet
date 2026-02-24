@@ -274,7 +274,7 @@ export function TimelineHero() {
           className="flex-1 text-center lg:text-left"
         >
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight mb-4 text-balance"
           >
             <motion.span
               animate={{
@@ -290,8 +290,7 @@ export function TimelineHero() {
                 ease: 'easeInOut',
               }}
             >
-              Creating the Blueprint for an
-              <br />
+              Creating the Blueprint for an{' '}
               <span className="text-primary">AI-Powered Society</span>
             </motion.span>
           </motion.h1>
