@@ -194,11 +194,7 @@ export default function AboutUs() {
                   className="group"
                 >
                   <div className="flex items-start gap-5">
-                    <div className={cn(
-                      "w-14 h-14 rounded-2xl flex items-center justify-center shrink-0",
-                      "bg-primary/10 border border-primary/20",
-                      "group-hover:bg-primary/20 transition-colors duration-300"
-                    )}>
+                    <div className="shrink-0 mt-1">
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
