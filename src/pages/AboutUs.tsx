@@ -155,7 +155,7 @@ export default function AboutUs() {
                       <span className="text-4xl font-display font-bold text-primary/20 group-hover:text-primary/40 transition-colors duration-300 block mb-3">
                         {item.number}
                       </span>
-                      <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
+                      <p className="text-foreground leading-relaxed text-base md:text-lg">
                         {item.text} <strong className="text-primary">{item.highlight}</strong> {item.suffix}
                       </p>
                     </motion.div>
