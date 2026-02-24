@@ -167,7 +167,7 @@ export function Footer() {
             © {new Date().getFullYear()} Black Tech Street. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Building the future, honoring the past.
+            Creating the Blueprint for an AI-Powered Society.
           </p>
         </motion.div>
       </div>
