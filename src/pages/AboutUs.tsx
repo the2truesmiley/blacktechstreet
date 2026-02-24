@@ -129,7 +129,7 @@ export default function AboutUs() {
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
                 Black Tech Street (BTS) was established in 2020 by{' '}
-                <Link to="/about#team-section" className="text-primary hover:text-primary/80 transition-colors whitespace-nowrap">
+                <Link to="/about#team-section" className="text-foreground hover:text-foreground/80 transition-colors whitespace-nowrap">
                   Tyrance Billingsley II, Founder &amp; CEO
                 </Link>
                 {' '}on a question and a three pronged epiphany:
