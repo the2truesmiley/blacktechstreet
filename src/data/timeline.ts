@@ -143,7 +143,7 @@ export const teamMembers: TeamMember[] = [
     shortBio: "Tyrance Billingsley II is a Tulsa-born entrepreneur, technologist, and ecosystem builder. Under his leadership, Black Tech Street has brokered a citywide alliance with Microsoft to establish 21st-century Greenwood and secured federal Tech Hubs designation with an eight-figure award.",
     expandedBio: `Tyrance Billingsley II is a Tulsa-born and raised entrepreneur, technologist and ecosystem builder. Tyrance is the founder and executive director of Black Tech Street, an organization dedicated to rebirthing historic Black Wall Street as the nation's premiere black innovation economy rooted in the critical technology areas of cybersecurity, data analytics and responsible artificial intelligence.
 
-Under his leadership, Black Tech Street has, in just three years, brokered a citywide alliance with Microsoft to establish 21st-century Greenwood and, as a leader in cyber and AI, served on the Tulsa Tech Hub steering committee that secured both a federal Tech Hubs designation and funding from the Economic Development Administration, with an eight-figure award being allocated to Black Tech Street's work.
+Under his leadership, Black Tech Street has, in just three years, brokered a citywide alliance with Microsoft to establish 21st-century Greenwood and, as a leader in cyber and AI, served on the Tulsa Tech Hub steering committee that secured both a federal Tech Hubs designation and funding from the Economic Development Administration, with an eight-figure award being allocated to Black Tech Street's work, and generated widespread community support for the vision of rebirthing Black Wall Street through technology.
 
 Tyrance has given a TEDx talk and been featured in publications like Forbes, Blavity, CNN Business and Black Enterprise. His thought leadership on AI and emerging technologies has led to him testifying before the United States Senate HELP committee on AI and the Future of Work, attending the historic signing of the AI Executive Order at the White House, addressing a caucus meeting on AI and civil rights, and hosting the White House National Cyber Director Harry Coker Jr. and his team in historic Greenwood.`,
     linkedIn: "https://www.linkedin.com/in/tyrance-billingsley-ii-ab0683123/"
@@ -152,27 +152,43 @@ Tyrance has given a TEDx talk and been featured in publications like Forbes, Bla
     name: "Josephine Nelms",
     title: "Chief Operating Officer",
     shortBio: "Josephine Nelms leads the operational strategy, partnerships and organizational systems that power Black Tech Street's mission. With more than 15 years of experience in operations, HR and organizational leadership.",
-    expandedBio: `Josephine Nelms is the Chief Operating Officer of Black Tech Street, an organization committed to rebirthing Black Wall Street as the nation's premiere innovative economy, with a strategic focus on responsible AI, cybersecurity and emerging technologies. As COO, Josephine leads the operational strategy, partnerships and organizational systems that power Black Tech Street's mission.
+    expandedBio: `Josephine Nelms is the Chief Operating Officer of Black Tech Street, an organization committed to rebirthing Black Wall Street as the nation's premiere innovative economy, with a strategic focus on responsible AI, cybersecurity and emerging technologies. As COO, Josephine leads the operational strategy, partnerships and organizational systems that power Black Tech Street's mission. She oversees program execution and infrastructure development, driving scalable systems that empower communities through technology and innovation. Josephine brings more than 15 years of experience in operations, human resources and organizational leadership across both nonprofit and for-profit sectors.
 
-Prior to joining Black Tech Street, Josephine served as Director of Operations at Atento Capital, where she was recognized with the Atent-Awesome award in 2023. She also spent a decade with Girl Scouts of Eastern Oklahoma, earning Supervisor of the Year in 2018 and the Youth at Heart award in 2019.`,
+Before joining Black Tech Street, she served as Director of Operations at Atento Capital, where she led enterprise operations, HR initiatives and strategic planning for a rapidly growing venture capital firm. Prior to that, she spent a decade with Girl Scouts of Eastern Oklahoma, ultimately serving as Director of Community Outreach, where she expanded programs reaching thousands of youth annually and strengthened partnerships across Eastern Oklahoma.
+
+Her leadership has earned several honors, including the Supervisor of the Year Award (2018), the Youth at Heart Alumnus Achievement Award (2019), the Atent-Awesome Leadership Award (2023) and recognition from the Supporters of Families with Sickle Cell Disease (2023).
+
+A Tulsa native, Josephine is a graduate of the University of Tulsa with a Bachelor of Science in Biological Sciences and a Minor in Chemistry. She also completed Leadership Tulsa New Voices Class 11 and has served on the boards of the American Red Cross and Broken Arrow Neighbors. She remains actively connected to her community through volunteer work with 3D Elite Track and Field Club.
+
+Josephine is committed to building strong, future-focused systems that expand access to high-impact technology pathways, strengthen community capacity and create environments where individuals and families can thrive in an innovation-driven economy.`,
     linkedIn: "https://www.linkedin.com/in/josephine-nelms-108b87173/"
   },
   {
     name: "Allen Collins",
     title: "Chief of Staff",
     shortBio: "Allen Collins transforms BTS initiatives into high-impact experiences that strengthen Tulsa's innovation ecosystem. He oversees program execution, community engagements, and manages logistics.",
-    expandedBio: `Allen Collins is a Tulsa-born and community-centered leader who serves as the Chief of Staff for Black Tech Street (BTS). In this role, Allen is responsible for transforming BTS initiatives into high-impact experiences that strengthen Tulsa's innovation ecosystem.
+    expandedBio: `Allen Collins is a Tulsa-born and community-centered leader who serves as the Chief of Staff for Black Tech Street (BTS). In this role, Allen is responsible for transforming BTS initiatives into high-impact experiences that strengthen Tulsa's innovation ecosystem. He oversees the execution of programs, events, and community engagements, managing logistics, venues, and vendor coordination to ensure each initiative reflects Black Tech Street's mission and delivers meaningful community impact.
 
-Allen's background includes roles at City Year Tulsa, Hunger Free Oklahoma, Tahlequah Chamber, and inTulsa. He is an active volunteer with My Brother's Keeper Sports and a graduate of Leadership Tulsa New Voices Class 12.`,
+Deeply connected to the legacy of Tulsa's historic Greenwood District, Allen plays a key role in cultivating long-term relationships with local partners and community organizations, helping expand Black Tech Street's visibility and engagement across the Greater Tulsa Region. He also oversees BTS internship relations by supervising, managing, and mentoring interns to support their professional development and contributions to the organization.
+
+Before joining Black Tech Street, Allen held marketing, communications, and operations roles with City Year Tulsa, Hunger Free Oklahoma, the Tahlequah Area Chamber of Commerce, and inTulsa. His experience includes coordinating large-scale events, managing vendor partnerships, and supporting programs that build bridges between residents, educators, and local institutions.
+
+Allen remains active in service and civic leadership. He has volunteered with My Brother's Keeper Sports at McLain High School and has participated in leadership and board-readiness programs including Leadership Tulsa New Voices Class 12, 918 Lead, and the TYPros Get On Board Internship with the Foundation for Tulsa Schools.`,
     linkedIn: "https://www.linkedin.com/in/allen-collins/"
   },
   {
     name: "Smiley Elmore III",
     title: "Communications Manager",
     shortBio: "Smiley Elmore III leads all organizational communications, marketing, and brand execution across digital, email, and public platforms.",
-    expandedBio: `Smiley Elmore III is a Tulsa-based communications strategist and creative technologist who serves as the Communications Manager for Black Tech Street (BTS). In this role, Smiley leads all organizational communications, marketing, and brand execution across digital, email, and public platforms.
+    expandedBio: `Smiley Elmore III is a Tulsa-based communications strategist and creative technologist who serves as the Communications Manager for Black Tech Street (BTS). In this role, Smiley leads all organizational communications, marketing, and brand execution across digital, email, and public platforms. He develops and manages communications flows, designs marketing assets, and oversees the messaging strategy for BTS initiatives and events. Smiley directs communications for major BTS programs including the ASPIRE AI Fluency Program, the NVIDIA collaboration, and partnerships with Tulsa Innovation Labs and Microsoft.
 
-Before joining BTS, Smiley founded Eminent Media and worked with digital agencies across various industries. His work includes leading communications for the ASPIRE program, collaborating with NVIDIA on partnership announcements, and architecting CRM systems for community engagement.`,
+He manages end-to-end communications for workshops, announcements, and large-scale events, producing campaigns, press materials, branded content, and the technical workflows that support them.
+
+His work includes building and maintaining data systems, CRM architecture, and operational processes that strengthen outreach and program visibility. Smiley also leads cross-team coordination with partners, vendors, and internal stakeholders to ensure consistent branding, clear messaging, and efficient execution across all channels. His approach blends creative direction with technical discipline, allowing BTS to communicate complex work in an accessible and professional way.
+
+Before joining Black Tech Street, Smiley founded Eminent Media, a digital agency specializing in branding, web development, AI automation, and lead-generation systems. He has built digital infrastructures, websites, funnels, and marketing operations for clients across multiple industries including real estate, churches, small businesses, entertainment, and emerging startups.
+
+His experience includes strategic communications, content development, event production, digital system design, and multimedia storytelling for organizations looking to modernize their brand and strengthen their operational pipeline. Smiley remains focused on communications, technology, and producing high-quality work that supports BTS and the broader innovation environment developing in Tulsa.`,
     linkedIn: "https://www.linkedin.com/in/smiley-elmore-iii/"
   }
 ];
