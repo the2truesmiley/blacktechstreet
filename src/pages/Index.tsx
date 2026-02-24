@@ -45,7 +45,7 @@ const Index = () => {
       <TechBackground isVisible={true} />
       
       {/* Fixed navigation bar */}
-      <TopNavBar largerLogo />
+      <TopNavBar variant="home" />
       
       {/* Scroll progress bar */}
       <TimelineProgress />
