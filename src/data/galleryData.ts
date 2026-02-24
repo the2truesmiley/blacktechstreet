@@ -27,8 +27,45 @@ import sep2025AiExercise from '@/assets/gallery/sep-2025-ai-exercise.jpg';
 import sep2025FullRoom from '@/assets/gallery/sep-2025-full-room.jpg';
 import sep2025WomenCollaborating from '@/assets/gallery/sep-2025-women-collaborating.jpg';
 import sep2025TrioLaptop from '@/assets/gallery/sep-2025-trio-laptop.jpg';
+import jun2025AttendeeArriving from '@/assets/gallery/jun-2025-attendee-arriving.jpg';
+import jun2025CheckinSigning from '@/assets/gallery/jun-2025-checkin-signing.jpg';
+import jun2025StaffAssisting from '@/assets/gallery/jun-2025-staff-assisting.jpg';
+import jun2025StaffGreeting from '@/assets/gallery/jun-2025-staff-greeting.jpg';
 
 export const galleryPhotos: GalleryPhoto[] = [
+  // June 2025 ASPIRE Day 1
+  {
+    id: 'jun-2025-attendee-arriving',
+    title: 'Attendee Arriving at ASPIRE',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Community', 'June 2025'],
+    image: jun2025AttendeeArriving,
+  },
+  {
+    id: 'jun-2025-checkin-signing',
+    title: 'Attendees Signing In at Check-In',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Staff', 'June 2025'],
+    image: jun2025CheckinSigning,
+  },
+  {
+    id: 'jun-2025-staff-assisting',
+    title: 'Staff Assisting Attendee at Check-In',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Staff', 'June 2025'],
+    image: jun2025StaffAssisting,
+  },
+  {
+    id: 'jun-2025-staff-greeting',
+    title: 'Registration Staff Greeting Attendees',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Staff', 'Community', 'June 2025'],
+    image: jun2025StaffGreeting,
+  },
   // December 6th, 2025 ASPIRE Workshop
   {
     id: 'dec-2025-tyrance-presenting',
