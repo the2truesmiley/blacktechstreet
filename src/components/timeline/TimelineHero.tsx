@@ -331,7 +331,7 @@ export function TimelineHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            onClick={scrollToContact}
+            onClick={() => { window.location.href = '/contact'; }}
             className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-primary/50 text-foreground font-medium text-lg hover:bg-primary/20 hover:border-primary hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20"
           >
             Get Involved
