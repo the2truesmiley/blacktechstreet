@@ -121,7 +121,7 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
               >
                 {item.children ? (
                   <button
-                    className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors duration-200 text-[15px] font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
+                    className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors duration-200 text-lg font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
                   >
                     {item.label}
                     <ChevronDown className={cn(
@@ -132,7 +132,7 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
                 ) : (
                   <button
                     onClick={() => handleNavClick(item.href!)}
-                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 text-[15px] font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
+                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 text-lg font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
                   >
                     {item.label}
                     <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
