@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logoCircuit from '@/assets/logo_b_circuit.png';
+import logoCircuit from '@/assets/logo_bts_dark_glow.png';
 
 interface NavItem {
   label: string;
