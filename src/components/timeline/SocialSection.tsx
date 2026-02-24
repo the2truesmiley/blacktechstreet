@@ -41,9 +41,6 @@ export function SocialSection() {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
           Follow Us On <span className="text-primary">Social</span>
         </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Stay connected with Black Tech Street. Get the latest updates, events, and stories from our community.
-        </p>
       </motion.div>
 
       {/* Social Links */}
