@@ -120,7 +120,7 @@ export default function AboutUs() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="text-center mb-8"
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-8">
@@ -134,10 +134,10 @@ export default function AboutUs() {
               </p>
 
               <motion.blockquote
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="mt-10 max-w-3xl mx-auto relative px-8 py-6"
               >
                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-primary/60 to-transparent rounded-full" />
@@ -155,10 +155,11 @@ export default function AboutUs() {
                   ].map((item) => (
                     <motion.div
                       key={item.number}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 20, scale: 0.97 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      whileHover={{ y: -3 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: parseInt(item.number) * 0.15 }}
+                      transition={{ duration: 0.5, delay: parseInt(item.number) * 0.15, ease: [0.22, 1, 0.36, 1] }}
                       className="relative bg-secondary/20 border border-primary/15 rounded-2xl p-7 hover:border-primary/40 transition-all duration-300 group"
                     >
                       <span className="text-5xl font-display font-black text-primary/50 group-hover:text-primary transition-colors duration-300 block mb-4">
@@ -191,12 +192,14 @@ export default function AboutUs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group"
+                  whileHover={{ y: -4 }}
+                  className="group relative bg-card/60 backdrop-blur-sm border border-border/40 hover:border-primary/30 rounded-2xl p-7 transition-all duration-300"
                 >
-                  <div className="flex items-start gap-5">
-                    <div className="shrink-0 mt-1">
-                      <value.icon className="w-6 h-6 text-primary" />
-                    </div>
+                  {/* Top border glow */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="flex items-start gap-4">
+                    <value.icon className="w-6 h-6 text-primary shrink-0 mt-1" />
                     <div>
                       <h2 className="text-xl font-display font-bold text-primary mb-2">
                         {value.title}
@@ -236,10 +239,10 @@ export default function AboutUs() {
               {timeline.map((item, index) => (
                 <motion.div
                   key={`${item.year}-${item.title}`}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
+                  transition={{ duration: 0.6, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
                   className={cn(
                     "relative pl-12 md:pl-0 pb-12 last:pb-0",
                     index % 2 === 0 ? "md:pr-[50%] md:text-right" : "md:pl-[50%] md:text-left"
@@ -298,9 +301,10 @@ export default function AboutUs() {
         <section className="py-24 px-5 bg-secondary/20">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
                 Join the Movement
