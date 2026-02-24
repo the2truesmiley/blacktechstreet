@@ -31,6 +31,13 @@ import jun2025AttendeeArriving from '@/assets/gallery/jun-2025-attendee-arriving
 import jun2025CheckinSigning from '@/assets/gallery/jun-2025-checkin-signing.jpg';
 import jun2025StaffAssisting from '@/assets/gallery/jun-2025-staff-assisting.jpg';
 import jun2025StaffGreeting from '@/assets/gallery/jun-2025-staff-greeting.jpg';
+import jun2025BtsRegistrationAssisting from '@/assets/gallery/jun-2025-bts-registration-assisting.jpg';
+import jun2025StaffHandingLaptop from '@/assets/gallery/jun-2025-staff-handing-laptop.jpg';
+import jun2025CoachWhiteStickyNotes from '@/assets/gallery/jun-2025-coach-white-sticky-notes.jpg';
+import jun2025SwagPrizesTable from '@/assets/gallery/jun-2025-swag-prizes-table.jpg';
+import jun2025SwagBagCloseup from '@/assets/gallery/jun-2025-swag-bag-closeup.jpg';
+import jun2025VolunteersRefreshments from '@/assets/gallery/jun-2025-volunteers-refreshments.jpg';
+import jun2025AttendeesAuditorium from '@/assets/gallery/jun-2025-attendees-auditorium.jpg';
 
 export const galleryPhotos: GalleryPhoto[] = [
   // June 2025 ASPIRE Day 1
@@ -65,6 +72,62 @@ export const galleryPhotos: GalleryPhoto[] = [
     location: 'Greenwood, Tulsa',
     tags: ['ASPIRE', 'Events', 'Staff', 'Community', 'June 2025'],
     image: jun2025StaffGreeting,
+  },
+  {
+    id: 'jun-2025-bts-registration-assisting',
+    title: 'BTS Staff Assisting Attendee at Registration',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Staff', 'June 2025'],
+    image: jun2025BtsRegistrationAssisting,
+  },
+  {
+    id: 'jun-2025-staff-handing-laptop',
+    title: 'Staff Handing Laptop to Attendee at Check-In',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Staff', 'June 2025'],
+    image: jun2025StaffHandingLaptop,
+  },
+  {
+    id: 'jun-2025-coach-white-sticky-notes',
+    title: 'Coach White Posting Sticky Notes',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Workshop', 'Leadership', 'June 2025'],
+    image: jun2025CoachWhiteStickyNotes,
+  },
+  {
+    id: 'jun-2025-swag-prizes-table',
+    title: 'Emerging Technologies Summit Swag & Prizes',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Community', 'June 2025'],
+    image: jun2025SwagPrizesTable,
+  },
+  {
+    id: 'jun-2025-swag-bag-closeup',
+    title: 'Emerging Technologies Summit Swag Bag',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Community', 'June 2025'],
+    image: jun2025SwagBagCloseup,
+  },
+  {
+    id: 'jun-2025-volunteers-refreshments',
+    title: 'Volunteers Setting Up Refreshments',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Staff', 'Community', 'June 2025'],
+    image: jun2025VolunteersRefreshments,
+  },
+  {
+    id: 'jun-2025-attendees-auditorium',
+    title: 'Attendees Seated in Auditorium',
+    date: 'June 2025',
+    location: 'Greenwood, Tulsa',
+    tags: ['ASPIRE', 'Events', 'Community', 'Learning', 'June 2025'],
+    image: jun2025AttendeesAuditorium,
   },
   // December 6th, 2025 ASPIRE Workshop
   {
