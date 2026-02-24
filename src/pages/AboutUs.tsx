@@ -124,24 +124,32 @@ export default function AboutUs() {
                 Black Tech Street (BTS) was founded on a question and a three pronged epiphany. The question of "What could Black Wall Street have been, had it been supported and not destroyed?"
               </p>
 
-              <div className="mt-10 max-w-3xl mx-auto">
-                <p className="text-lg text-foreground font-semibold mb-6">And the three pronged epiphany that:</p>
+              <div className="mt-12 max-w-4xl mx-auto">
+                <p className="text-lg text-muted-foreground font-medium mb-8 text-center tracking-wide">
+                  And the three pronged epiphany that:
+                </p>
                 <div className="grid md:grid-cols-3 gap-6 text-left">
-                  <div className="bg-secondary/30 border border-border/40 rounded-xl p-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Tech is one of the only industries within which one can build <strong className="text-primary">intergenerational wealth</strong> in just 7–10 years.
-                    </p>
-                  </div>
-                  <div className="bg-secondary/30 border border-border/40 rounded-xl p-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      Tech is the <strong className="text-primary">core medium</strong> for all global innovation.
-                    </p>
-                  </div>
-                  <div className="bg-secondary/30 border border-border/40 rounded-xl p-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      By the year 2030, there are projected to be as many as <strong className="text-primary">4.3 million high paying tech jobs</strong> due to a tech talent shortage.
-                    </p>
-                  </div>
+                  {[
+                    { number: '01', text: 'Tech is one of the only industries within which one can build', highlight: 'intergenerational wealth', suffix: 'in just 7–10 years.' },
+                    { number: '02', text: 'Tech is the', highlight: 'core medium', suffix: 'for all global innovation.' },
+                    { number: '03', text: 'By 2030, there are projected to be as many as', highlight: '4.3 million high paying tech jobs', suffix: 'due to a tech talent shortage.' },
+                  ].map((item) => (
+                    <motion.div
+                      key={item.number}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: parseInt(item.number) * 0.15 }}
+                      className="relative bg-secondary/20 border border-primary/15 rounded-2xl p-7 hover:border-primary/40 transition-all duration-300 group"
+                    >
+                      <span className="text-4xl font-display font-bold text-primary/20 group-hover:text-primary/40 transition-colors duration-300 block mb-3">
+                        {item.number}
+                      </span>
+                      <p className="text-muted-foreground leading-relaxed text-[15px]">
+                        {item.text} <strong className="text-primary">{item.highlight}</strong> {item.suffix}
+                      </p>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </motion.div>
