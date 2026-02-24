@@ -66,11 +66,11 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                   href={member.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center md:justify-start gap-1.5 text-primary hover:text-primary/80 transition-colors"
+                  className="inline-flex items-center justify-center md:justify-start gap-2 text-primary hover:text-primary/80 transition-colors bg-primary/10 px-3 py-1.5 rounded-full"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <Linkedin className="w-4 h-4" />
-                  <span className="text-xs font-medium">LinkedIn</span>
+                  <Linkedin className="w-5 h-5" />
+                  <span className="text-sm font-semibold">LinkedIn</span>
                 </a>
               )}
             </div>
