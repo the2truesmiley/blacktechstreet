@@ -20,7 +20,7 @@ const values = [
   },
   {
     icon: Users,
-    title: 'Strategy',
+    title: 'Approach',
     description: 'We create strategies to make 21st century Greenwood a global leader in our defined technology areas, and we partner with companies, organizations or institutions to create/secure investment, talent and programming to bring that vision to fruition.',
   },
 ];
