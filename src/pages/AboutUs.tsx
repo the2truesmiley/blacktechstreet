@@ -99,6 +99,13 @@ const timeline = [
 
 export default function AboutUs() {
   useEffect(() => {
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 300);
+        return;
+      }
+    }
     window.scrollTo(0, 0);
   }, []);
 
@@ -121,7 +128,11 @@ export default function AboutUs() {
                 <span className="text-primary">Founding Story</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-                Black Tech Street (BTS) was founded on a question and a three pronged epiphany:
+                Black Tech Street (BTS) was founded by{' '}
+                <Link to="/about#team-section" className="text-primary hover:text-primary/80 underline underline-offset-4 transition-colors">
+                  Tyrance Billingsley II
+                </Link>
+                {' '}on a question and a three pronged epiphany:
               </p>
 
               <motion.blockquote
