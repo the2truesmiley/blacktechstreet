@@ -120,8 +120,8 @@ export default function AboutUs() {
                 Our Story
               </span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-8">
-                Building the Future,<br />
-                <span className="text-primary">Honoring the Past</span>
+                Black Tech Street<br />
+                <span className="text-primary">Founding Story</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
                 We're channeling the entrepreneurial spirit of historic Black Wall Street 
@@ -137,44 +137,29 @@ export default function AboutUs() {
         {/* Story Section - Editorial Layout */}
         <section className="py-24 px-5">
           <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="lg:col-span-4"
-              >
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground sticky top-32">
-                  Founding<br />
-                  <span className="text-primary">Story</span>
-                </h2>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="lg:col-span-8 space-y-6 text-lg text-muted-foreground leading-relaxed"
-              >
-                <p className="text-xl text-foreground font-medium">
-                  In the early 20th century, Tulsa's Greenwood District was a beacon of Black 
-                  excellence — a thriving community of entrepreneurs, professionals, and innovators.
-                </p>
-                <p>
-                  Known as Black Wall Street, Greenwood was home to hundreds of Black-owned 
-                  businesses, from banks and hotels to theaters and hospitals. It represented 
-                  what was possible when a community invested in itself.
-                </p>
-                <p>
-                  Today, Black Tech Street carries that torch forward. We're not just teaching 
-                  technology — we're rebuilding a legacy. By focusing on artificial intelligence, 
-                  cybersecurity, and emerging technologies, we're ensuring our community doesn't 
-                  just participate in the future economy; we help shape it.
-                </p>
-              </motion.div>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed"
+            >
+              <p className="text-xl text-foreground font-medium">
+                In the early 20th century, Tulsa's Greenwood District was a beacon of Black 
+                excellence — a thriving community of entrepreneurs, professionals, and innovators.
+              </p>
+              <p>
+                Known as Black Wall Street, Greenwood was home to hundreds of Black-owned 
+                businesses, from banks and hotels to theaters and hospitals. It represented 
+                what was possible when a community invested in itself.
+              </p>
+              <p>
+                Today, Black Tech Street carries that torch forward. We're not just teaching 
+                technology — we're rebuilding a legacy. By focusing on artificial intelligence, 
+                cybersecurity, and emerging technologies, we're ensuring our community doesn't 
+                just participate in the future economy; we help shape it.
+              </p>
+            </motion.div>
           </div>
         </section>
 
