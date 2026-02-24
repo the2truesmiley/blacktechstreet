@@ -316,9 +316,9 @@ export function TimelineHero() {
                 ease: 'easeInOut',
               }}
             >
-              The Next Era Runs on
+              Creating the Blueprint for an
               <br />
-              <span className="text-primary">AI Literacy</span>
+              <span className="text-primary">AI-Powered Society</span>
             </motion.span>
           </motion.h1>
           
