@@ -146,8 +146,8 @@ export default function AboutUs() {
                 className="lg:col-span-4"
               >
                 <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground sticky top-32">
-                  The Spirit of<br />
-                  <span className="text-primary">Greenwood</span>
+                  Founding<br />
+                  <span className="text-primary">Story</span>
                 </h2>
               </motion.div>
               
