@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import logoCircuit from '@/assets/logo_bts_dark_glow.png';
+import logoGlow from '@/assets/logo_bts_dark_glow.png';
+import logoCircuit from '@/assets/logo_b_circuit.png';
 
 interface NavItem {
   label: string;
@@ -31,10 +32,11 @@ const navItems: NavItem[] = [
 ];
 
 interface TopNavBarProps {
-  largerLogo?: boolean;
+  variant?: 'home' | 'default';
 }
 
-export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
+export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
+  const isHome = variant === 'home';
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -57,7 +59,6 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
       return;
     }
     
-    // Handle internal page navigation
     if (href.startsWith('/')) {
       window.location.href = href;
       return;
@@ -85,12 +86,19 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          isScrolled
-            ? "bg-background/90 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_30px_rgba(16,185,129,0.06)]"
-            : "bg-background/60 backdrop-blur-md"
+          isHome
+            ? isScrolled
+              ? "bg-background/90 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_30px_rgba(16,185,129,0.06)]"
+              : "bg-transparent"
+            : isScrolled
+              ? "bg-background/95 backdrop-blur-xl border-b border-border/20 shadow-sm"
+              : "bg-background/80 backdrop-blur-md border-b border-border/10"
         )}
       >
-        <div className="max-w-6xl mx-auto px-5 py-1 flex items-center justify-between">
+        <div className={cn(
+          "mx-auto flex items-center justify-between transition-all duration-500",
+          isHome ? "max-w-7xl px-6 py-3" : "max-w-6xl px-5 py-2"
+        )}>
           {/* Logo */}
           <a
             href="/"
@@ -101,13 +109,23 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
             className="flex items-center gap-3 group"
           >
             <div className="relative">
-              <div className="absolute inset-0 rounded-lg bg-primary/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {isHome && (
+                <div className="absolute inset-0 rounded-lg bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              )}
               <img 
-                src={logoCircuit} 
+                src={isHome ? logoGlow : logoCircuit} 
                 alt="Black Tech Street"
-                className={cn("relative object-contain group-hover:scale-105 transition-transform duration-300", largerLogo ? "w-[168px] h-auto" : "w-[80px] h-auto")}
+                className={cn(
+                  "relative object-contain group-hover:scale-105 transition-transform duration-300",
+                  isHome ? "w-[168px] h-auto" : "w-10 h-10"
+                )}
               />
             </div>
+            {!isHome && (
+              <span className="font-display font-bold text-foreground text-lg hidden sm:block tracking-tight">
+                Black Tech Street
+              </span>
+            )}
           </a>
 
           {/* Desktop Navigation */}
@@ -121,21 +139,35 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
               >
                 {item.children ? (
                   <button
-                    className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors duration-200 text-lg font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
+                    className={cn(
+                      "flex items-center gap-1.5 transition-colors duration-200 font-medium rounded-lg group",
+                      isHome
+                        ? "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
+                        : "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
+                    )}
                   >
                     {item.label}
                     <ChevronDown className={cn(
-                      "w-3.5 h-3.5 transition-transform duration-200",
+                      "transition-transform duration-200",
+                      isHome ? "w-4 h-4" : "w-3.5 h-3.5",
                       openDropdown === item.label && "rotate-180"
                     )} />
                   </button>
                 ) : (
                   <button
                     onClick={() => handleNavClick(item.href!)}
-                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 text-lg font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
+                    className={cn(
+                      "relative transition-colors duration-200 font-medium rounded-lg group",
+                      isHome
+                        ? "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
+                        : "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
+                    )}
                   >
                     {item.label}
-                    <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
+                    <span className={cn(
+                      "absolute bottom-1 left-4 right-4 h-0.5 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full",
+                      isHome ? "bg-primary" : "bg-primary"
+                    )} />
                   </button>
                 )}
 
@@ -149,14 +181,21 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
                       transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                       className="absolute top-full left-0 mt-1 min-w-[200px] z-50"
                     >
-                      <div className="bg-background/95 backdrop-blur-xl border border-border/40 rounded-xl shadow-xl overflow-hidden p-1">
+                      <div className={cn(
+                        "backdrop-blur-xl border rounded-xl shadow-xl overflow-hidden p-1",
+                        isHome
+                          ? "bg-black/80 border-white/10"
+                          : "bg-background/95 border-border/40"
+                      )}>
                         {item.children.map((child) => (
                           <button
                             key={child.label}
                             onClick={() => handleNavClick(child.href, child.isEmail)}
                             className={cn(
-                              "block w-full text-left px-4 py-2.5 text-sm rounded-lg transition-colors duration-200",
-                              "text-muted-foreground hover:text-foreground hover:bg-secondary/50",
+                              "block w-full text-left px-4 py-2.5 rounded-lg transition-colors duration-200",
+                              isHome
+                                ? "text-sm text-white/70 hover:text-white hover:bg-white/10"
+                                : "text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50",
                               child.isEmail && "text-primary hover:text-primary"
                             )}
                           >
@@ -174,7 +213,12 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2.5 rounded-lg bg-secondary/50 border border-border/40 text-foreground hover:bg-secondary transition-colors"
+            className={cn(
+              "md:hidden p-2.5 rounded-lg border transition-colors",
+              isHome
+                ? "bg-white/10 border-white/20 text-white hover:bg-white/20"
+                : "bg-secondary/50 border-border/40 text-foreground hover:bg-secondary"
+            )}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -189,7 +233,12 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[72px] left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-b border-border/40 md:hidden max-h-[calc(100vh-72px)] overflow-y-auto"
+            className={cn(
+              "fixed left-0 right-0 z-40 backdrop-blur-lg border-b md:hidden max-h-[calc(100vh-72px)] overflow-y-auto",
+              isHome
+                ? "top-[80px] bg-black/90 border-white/10"
+                : "top-[60px] bg-background/95 border-border/40"
+            )}
           >
             <div className="px-5 py-4 flex flex-col gap-2">
               {navItems.map((item) => (
@@ -198,7 +247,10 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
                     <>
                       <button
                         onClick={() => toggleMobileExpanded(item.label)}
-                        className="flex items-center justify-between w-full text-left text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium py-2"
+                        className={cn(
+                          "flex items-center justify-between w-full text-left transition-colors duration-200 text-base font-medium py-2",
+                          isHome ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                        )}
                       >
                         {item.label}
                         <ChevronDown className={cn(
@@ -222,7 +274,7 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
                                   onClick={() => handleNavClick(child.href, child.isEmail)}
                                   className={cn(
                                     "text-left text-sm py-2 transition-colors duration-200",
-                                    "text-muted-foreground hover:text-foreground",
+                                    isHome ? "text-white/60 hover:text-white" : "text-muted-foreground hover:text-foreground",
                                     child.isEmail && "text-primary hover:text-primary"
                                   )}
                                 >
@@ -237,7 +289,10 @@ export function TopNavBar({ largerLogo = false }: TopNavBarProps) {
                   ) : (
                     <button
                       onClick={() => handleNavClick(item.href!)}
-                      className="text-left text-muted-foreground hover:text-foreground transition-colors duration-200 text-base font-medium py-2"
+                      className={cn(
+                        "text-left transition-colors duration-200 text-base font-medium py-2",
+                        isHome ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                      )}
                     >
                       {item.label}
                     </button>
