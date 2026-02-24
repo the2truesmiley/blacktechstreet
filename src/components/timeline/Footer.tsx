@@ -84,14 +84,15 @@ export function Footer() {
                   rel="noopener noreferrer"
                   aria-label={social.label}
                   className={cn(
-                    "p-2.5 rounded-lg",
+                    "px-3 py-2.5 rounded-lg flex items-center gap-2",
                     "bg-secondary/50 border border-border/40",
                     "text-muted-foreground hover:text-primary",
                     "hover:border-primary/50 hover:bg-secondary",
-                    "transition-all duration-300"
+                    "transition-all duration-300 text-sm"
                   )}
                 >
                   <social.icon className="w-4 h-4" />
+                  <span>{social.label}</span>
                 </a>
               ))}
             </div>
