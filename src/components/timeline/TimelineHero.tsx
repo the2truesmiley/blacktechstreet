@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import { useMemo, useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
@@ -8,13 +8,14 @@ const binaryChars = '01';
 
 function MatrixRain() {
   const columns = useMemo(() => {
-    return [...Array(30)].map((_, i) => ({
+    return [...Array(20)].map((_, i) => ({
       id: i,
-      chars: [...Array(12)].map(() => matrixChars[Math.floor(Math.random() * matrixChars.length)]),
-      left: `${i * 3.3 + Math.random() * 1.5}%`,
+      chars: [...Array(10)].map(() => matrixChars[Math.floor(Math.random() * matrixChars.length)]).join('\n'),
+      left: `${i * 5 + Math.random() * 2}%`,
       delay: Math.random() * 4,
       duration: 6 + Math.random() * 8,
       fontSize: i % 4 === 0 ? 'text-sm' : 'text-xs',
+      opacity: 0.15 + Math.random() * 0.15,
     }));
   }, []);
 
@@ -23,8 +24,8 @@ function MatrixRain() {
       {columns.map((col) => (
         <motion.div
           key={col.id}
-          className={`absolute top-0 text-primary font-mono ${col.fontSize} leading-tight`}
-          style={{ left: col.left }}
+          className={`absolute top-0 text-primary font-mono ${col.fontSize} leading-tight whitespace-pre`}
+          style={{ left: col.left, opacity: col.opacity }}
           initial={{ y: '-100%' }}
           animate={{ y: '100vh' }}
           transition={{
@@ -34,39 +35,14 @@ function MatrixRain() {
             delay: col.delay,
           }}
         >
-          {col.chars.map((char, i) => (
-            <MorphingChar key={i} initialChar={char} index={i} isLead={i === col.chars.length - 1} />
-          ))}
+          {col.chars}
         </motion.div>
       ))}
     </div>
   );
 }
 
-function MorphingChar({ initialChar, index, isLead }: { initialChar: string; index: number; isLead: boolean }) {
-  const [char, setChar] = useState(initialChar);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (Math.random() > 0.7) {
-        setChar(matrixChars[Math.floor(Math.random() * matrixChars.length)]);
-      }
-    }, 150 + index * 50);
-    return () => clearInterval(interval);
-  }, [index]);
-
-  return (
-    <motion.div
-      className={isLead ? 'text-white font-bold' : ''}
-      style={{
-        opacity: isLead ? 1 : 0.15 + (index * 0.05),
-        textShadow: isLead ? '0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary))' : 'none',
-      }}
-    >
-      {char}
-    </motion.div>
-  );
-}
+// MorphingChar removed — replaced with static text columns for performance
 
 function DataBurst() {
   const bursts = useMemo(() => {
@@ -122,29 +98,27 @@ function GridOverlay() {
 function FloatingParticles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(20)].map((_, i) => (
+      {[...Array(10)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full"
           style={{
-            left: `${5 + i * 4.5}%`,
+            left: `${10 + i * 9}%`,
             top: `${10 + (i % 5) * 18}%`,
-            width: i % 4 === 0 ? '4px' : i % 3 === 0 ? '3px' : '2px',
-            height: i % 4 === 0 ? '4px' : i % 3 === 0 ? '3px' : '2px',
+            width: i % 3 === 0 ? '3px' : '2px',
+            height: i % 3 === 0 ? '3px' : '2px',
             background: 'hsl(var(--primary))',
-            boxShadow: `0 0 ${i % 3 === 0 ? '15px' : '8px'} hsl(var(--primary) / 0.6)`,
+            boxShadow: `0 0 8px hsl(var(--primary) / 0.5)`,
           }}
           animate={{
-            y: [-40, 40, -40],
-            x: [-15, 15, -15],
-            opacity: [0.2, 1, 0.2],
-            scale: [1, 1.8, 1],
+            y: [-30, 30, -30],
+            opacity: [0.2, 0.8, 0.2],
           }}
           transition={{
-            duration: 4 + i * 0.3,
+            duration: 5 + i * 0.5,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: i * 0.15,
+            delay: i * 0.3,
           }}
         />
       ))}

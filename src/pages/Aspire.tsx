@@ -123,6 +123,7 @@ const Aspire = () => {
                 <img 
                   src={teamGroupPhoto}
                   alt="ASPIRE participants group photo"
+                  loading="lazy"
                   className="relative z-10 w-full h-auto rounded-lg shadow-xl object-cover"
                 />
               </div>

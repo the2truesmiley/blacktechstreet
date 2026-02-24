@@ -44,6 +44,7 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                 <img 
                   src={teamPhotos[member.name]} 
                   alt={member.name}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               ) : (
