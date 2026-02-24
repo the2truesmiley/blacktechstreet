@@ -184,19 +184,6 @@ export default function AboutUs() {
         {/* Values - Clean Grid */}
         <section className="py-24 px-5 bg-secondary/20">
           <div className="max-w-5xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <span className="inline-block text-primary text-sm font-medium tracking-[0.2em] uppercase mb-4">
-                What Drives Us
-              </span>
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
-                Our Foundation
-              </h2>
-            </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
               {values.map((value, index) => (
@@ -217,9 +204,9 @@ export default function AboutUs() {
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-display font-bold text-foreground mb-2">
+                      <h2 className="text-xl font-display font-bold text-foreground mb-2">
                         {value.title}
-                      </h3>
+                      </h2>
                       <p className="text-muted-foreground leading-relaxed">
                         {value.description}
                       </p>
