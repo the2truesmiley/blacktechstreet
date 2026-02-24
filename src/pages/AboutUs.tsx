@@ -202,10 +202,10 @@ export default function AboutUs() {
                       <value.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h2 className="text-xl font-display font-bold text-foreground mb-2">
+                      <h2 className="text-xl font-display font-bold text-primary mb-2">
                         {value.title}
                       </h2>
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-foreground leading-relaxed">
                         {value.description}
                       </p>
                     </div>
