@@ -78,15 +78,15 @@ export function TopNavBar() {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
-            ? "bg-background/80 backdrop-blur-lg border-b border-border/40 shadow-lg"
-            : "bg-transparent"
+            ? "bg-background/90 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_30px_rgba(16,185,129,0.06)]"
+            : "bg-background/60 backdrop-blur-md"
         )}
       >
-        <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
           {/* Logo */}
           <a
             href="/"
@@ -101,16 +101,16 @@ export function TopNavBar() {
               <img 
                 src={logoCircuit} 
                 alt="Black Tech Street"
-                className="relative w-10 h-10 object-contain"
+                className="relative w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
-            <span className="font-display font-bold text-foreground text-lg hidden sm:block">
+            <span className="font-display font-bold text-foreground text-xl hidden sm:block tracking-tight">
               Black Tech Street
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -120,21 +120,21 @@ export function TopNavBar() {
               >
                 {item.children ? (
                   <button
-                    className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium group"
+                    className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors duration-200 text-[15px] font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
                   >
                     {item.label}
                     <ChevronDown className={cn(
-                      "w-4 h-4 transition-transform duration-200",
+                      "w-3.5 h-3.5 transition-transform duration-200",
                       openDropdown === item.label && "rotate-180"
                     )} />
                   </button>
                 ) : (
                   <button
                     onClick={() => handleNavClick(item.href!)}
-                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium group"
+                    className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 text-[15px] font-medium px-4 py-2 rounded-lg hover:bg-secondary/40 group"
                   >
                     {item.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                    <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
                   </button>
                 )}
 
@@ -142,19 +142,19 @@ export function TopNavBar() {
                 <AnimatePresence>
                   {item.children && openDropdown === item.label && (
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 min-w-[200px] z-50"
+                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                      className="absolute top-full left-0 mt-1 min-w-[200px] z-50"
                     >
-                      <div className="bg-background/95 backdrop-blur-lg border border-border/40 rounded-lg shadow-xl overflow-hidden">
+                      <div className="bg-background/95 backdrop-blur-xl border border-border/40 rounded-xl shadow-xl overflow-hidden p-1">
                         {item.children.map((child) => (
                           <button
                             key={child.label}
                             onClick={() => handleNavClick(child.href, child.isEmail)}
                             className={cn(
-                              "block w-full text-left px-4 py-3 text-sm transition-colors duration-200",
+                              "block w-full text-left px-4 py-2.5 text-sm rounded-lg transition-colors duration-200",
                               "text-muted-foreground hover:text-foreground hover:bg-secondary/50",
                               child.isEmail && "text-primary hover:text-primary"
                             )}
@@ -173,7 +173,7 @@ export function TopNavBar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg bg-secondary/50 border border-border/40 text-foreground hover:bg-secondary transition-colors"
+            className="md:hidden p-2.5 rounded-lg bg-secondary/50 border border-border/40 text-foreground hover:bg-secondary transition-colors"
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
