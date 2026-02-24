@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Target, Users, Lightbulb, MapPin } from 'lucide-react';
+import { Target, Users, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
@@ -20,13 +20,8 @@ const values = [
   },
   {
     icon: Users,
-    title: 'Approach',
-    description: 'We design and deliver programs at the intersection of education, innovation, and research to ensure communities can participate in, and shape, the AI economy.',
-  },
-  {
-    icon: MapPin,
-    title: 'Roots',
-    description: 'Rooted in the historic Greenwood District of Tulsa, Oklahoma — once known as Black Wall Street — we honor that legacy by building the future of technology.',
+    title: 'Strategy',
+    description: 'We create strategies to make 21st century Greenwood a global leader in our defined technology areas, and we partner with companies, organizations or institutions to create/secure investment, talent and programming to bring that vision to fruition.',
   },
 ];
 
@@ -200,7 +195,7 @@ export default function AboutUs() {
               </h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
