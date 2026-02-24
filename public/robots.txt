@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://blacktechstreet.ai/sitemap.xml
+Sitemap: https://blacktechstreet.com/sitemap.xml
