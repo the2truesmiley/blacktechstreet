@@ -72,8 +72,7 @@ export function Footer() {
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6">
-              Revitalizing the legacy of Black Wall Street through technology, 
-              innovation, and community empowerment in the Greater Tulsa Region.
+              Rebirthing Historic Black Wall Street as a world-class innovation economy rooted in AI, Cybersecurity, and Other Emerging Technologies.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-3">
