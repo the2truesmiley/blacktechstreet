@@ -298,8 +298,8 @@ export function TimelineHero() {
             </motion.span>
           </motion.h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 font-medium">
-            Practical fluency. Responsible use. Real-world application.
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 font-medium tracking-wide">
+            Community Wide Fluency &nbsp;·&nbsp; AI Powered Innovation &nbsp;·&nbsp; Real World Application
           </p>
 
           {/* CTA Button */}
