@@ -1,7 +1,21 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import logoCircuit from '@/assets/logo_b_circuit.png';
+
+// Hero slideshow photos
+import heroImg1 from '@/assets/gallery/jun-2025-attendees-auditorium.jpg';
+import heroImg2 from '@/assets/gallery/sep-2025-full-room.jpg';
+import heroImg3 from '@/assets/gallery/dec-2025-ai-workshop-full-room.jpg';
+import heroImg4 from '@/assets/gallery/jan-2026-workshop-overview-001.jpg';
+import heroImg5 from '@/assets/gallery/community-gathering.jpg';
+import heroImg6 from '@/assets/gallery/jan-2026-students-learning-001.jpg';
+import heroImg7 from '@/assets/gallery/sep-2025-group-laptops.jpg';
+import heroImg8 from '@/assets/gallery/jan-2026-cert-group-001.jpg';
+import heroImg9 from '@/assets/gallery/dec-2025-tyrance-presenting.jpg';
+import heroImg10 from '@/assets/gallery/jan-2026-student-presentation-001.jpg';
+
+const heroSlides = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9, heroImg10];
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
 const binaryChars = '01';
@@ -244,6 +258,39 @@ function CircuitConnections() {
     </svg>
   );
 }
+function HeroSlideshow() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="absolute inset-0 z-0">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          className="absolute inset-0"
+        >
+          <img
+            src={heroSlides[currentIndex]}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </motion.div>
+      </AnimatePresence>
+      {/* Dark overlay for readability + transparency for matrix to show */}
+      <div className="absolute inset-0 bg-background/75" />
+    </div>
+  );
+}
 
 export function TimelineHero() {
   const scrollToContent = () => {
@@ -256,6 +303,8 @@ export function TimelineHero() {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-20 overflow-hidden">
+      {/* Photo slideshow background */}
+      <HeroSlideshow />
       <GridOverlay />
       <MatrixRain />
       <ScanningLines />
