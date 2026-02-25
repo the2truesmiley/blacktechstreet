@@ -56,7 +56,7 @@ export default function Partners() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center pt-24 pb-20">
+      <section className="relative flex items-center justify-center pt-32 pb-12">
         {/* Decorative grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
