@@ -102,11 +102,8 @@ export default function Partners() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-              Core Partners
-            </h2>
             <p className="text-3xl md:text-4xl font-display font-bold text-foreground">
-              Industry Leaders Powering Innovation
+              Strategic Partners
             </p>
           </motion.div>
 
