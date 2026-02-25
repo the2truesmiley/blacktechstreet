@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
+import { Footer } from '@/components/timeline/Footer';
 
 // Import partner logos
 import microsoftLogo from '@/assets/partners/microsoft-logo.png';
@@ -331,14 +332,7 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative py-8 border-t border-border/30">
-        <div className="max-w-6xl mx-auto px-5 text-center">
-          <p className="text-muted-foreground text-sm">
-            Black Tech Street © {new Date().getFullYear()}. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
