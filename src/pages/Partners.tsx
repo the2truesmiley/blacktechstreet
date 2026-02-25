@@ -68,10 +68,9 @@ export default function Partners() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-6 leading-[1.1]"
           >
-            Partner with
-            <br />
+            Our{' '}
             <span className="relative">
-              <span className="text-primary">Black Tech Street</span>
+              <span className="text-primary">Partners</span>
               <motion.span
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 rounded-full"
                 initial={{ scaleX: 0 }}
@@ -79,6 +78,7 @@ export default function Partners() {
                 transition={{ duration: 0.8, delay: 0.5 }}
               />
             </span>
+
           </motion.h1>
 
           <motion.p
@@ -87,8 +87,7 @@ export default function Partners() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            Uniting trailblazing partners to transform Historic Greenwood into a global epicenter 
-            for AI and cybersecurity innovation. Join us to shape a legacy of bold innovation.
+            The organizations powering our mission to transform Historic Greenwood into a global epicenter for AI and cybersecurity innovation.
           </motion.p>
 
         </div>
