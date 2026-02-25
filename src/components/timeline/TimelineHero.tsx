@@ -16,8 +16,11 @@ import heroImg9 from '@/assets/gallery/dec-2025-tyrance-presenting.jpg';
 import heroImg10 from '@/assets/gallery/jan-2026-student-presentation-001.jpg';
 import heroImg11 from '@/assets/gallery/sep-2025-women-collaborating.jpg';
 import heroImg12 from '@/assets/gallery/jan-2026-prize-unboxing-001.jpg';
+import heroImg13 from '@/assets/gallery/feb-2026-workshop-coaching.jpg';
+import heroImg14 from '@/assets/gallery/feb-2026-group-certificates.jpg';
+import heroImg15 from '@/assets/gallery/feb-2026-students-collaborating.jpg';
 
-const heroSlides = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9, heroImg10, heroImg11, heroImg12];
+const heroSlides = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9, heroImg10, heroImg11, heroImg12, heroImg13, heroImg14, heroImg15];
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
 const binaryChars = '01';
