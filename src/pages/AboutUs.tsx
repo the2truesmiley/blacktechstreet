@@ -302,7 +302,7 @@ export default function AboutUs() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-                Join the Movement
+                Get Involved
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
                 Be part of the next chapter in Greenwood's story. Together, we're building 
