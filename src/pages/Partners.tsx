@@ -115,6 +115,7 @@ export default function Partners() {
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {featuredPartners.map((partner, index) => (
               <motion.div
+                id={partner.name.toLowerCase().replace(/\s+/g, '-')}
                 key={partner.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
