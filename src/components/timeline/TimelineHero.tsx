@@ -14,8 +14,10 @@ import heroImg7 from '@/assets/gallery/sep-2025-group-laptops.jpg';
 import heroImg8 from '@/assets/gallery/jan-2026-cert-group-001.jpg';
 import heroImg9 from '@/assets/gallery/dec-2025-tyrance-presenting.jpg';
 import heroImg10 from '@/assets/gallery/jan-2026-student-presentation-001.jpg';
+import heroImg11 from '@/assets/gallery/sep-2025-women-collaborating.jpg';
+import heroImg12 from '@/assets/gallery/jan-2026-prize-unboxing-001.jpg';
 
-const heroSlides = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9, heroImg10];
+const heroSlides = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9, heroImg10, heroImg11, heroImg12];
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
 const binaryChars = '01';
@@ -264,40 +266,30 @@ function HeroSlideshow() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 4500);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
-  // Slight random rotation for each slide for organic feel
-  const rotations = useMemo(
-    () => heroSlides.map(() => (Math.random() - 0.5) * 6),
-    []
-  );
-
   return (
-    <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-      <AnimatePresence mode="popLayout">
+    <div className="absolute inset-0 z-0">
+      <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, x: 300, rotate: rotations[currentIndex] + 8, scale: 0.85 }}
-          animate={{ opacity: 0.18, x: 0, rotate: rotations[currentIndex], scale: 1 }}
-          exit={{ opacity: 0, x: -300, rotate: rotations[currentIndex] - 8, scale: 0.85 }}
-          transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="absolute"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          className="absolute inset-0"
         >
-          {/* Instax-style frame */}
-          <div
-            className="bg-white rounded-sm shadow-2xl shadow-black/40"
-            style={{ padding: '12px 12px 40px 12px' }}
-          >
-            <img
-              src={heroSlides[currentIndex]}
-              alt=""
-              className="w-[280px] h-[320px] sm:w-[340px] sm:h-[400px] md:w-[420px] md:h-[480px] object-cover rounded-[2px]"
-            />
-          </div>
+          <img
+            src={heroSlides[currentIndex]}
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </motion.div>
       </AnimatePresence>
+      {/* Dark overlay for readability + transparency for matrix to show */}
+      <div className="absolute inset-0 bg-background/75" />
     </div>
   );
 }
