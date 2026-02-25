@@ -132,7 +132,7 @@ export const galleryPhotos: GalleryPhoto[] = [
   // December 6th, 2025 ASPIRE Workshop
   {
     id: 'dec-2025-tyrance-presenting',
-    title: 'Tyrance Presenting at ASPIRE',
+    title: 'Tyrance Billingsley II, Founder & CEO, Presenting at ASPIRE',
     date: 'December 6, 2025',
     location: 'Langston University',
     tags: ['ASPIRE', 'Workshop', 'Leadership', 'December 2025'],

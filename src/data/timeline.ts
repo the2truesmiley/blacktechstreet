@@ -22,8 +22,8 @@ export const timelineItems: TimelineItem[] = [
     date: '2023-02',
     year: 2023,
     title: 'White House Cyber Roundtable',
-    description: 'Tyrance spoke as a panelist at the White House Office of the National Cyber Director convening.',
-    longDescription: 'Tyrance was a Panelist Speaker at a convening of leaders in the Cyber Industry, hosted by the White House Office of the National Cyber Director. This marked Black Tech Street\'s first White House touchpoint, establishing critical relationships at the highest levels of federal cybersecurity policy.',
+    description: 'Tyrance Billingsley II, Founder & CEO, spoke as a panelist at the White House Office of the National Cyber Director convening.',
+    longDescription: 'Tyrance Billingsley II, Founder & CEO, was a Panelist Speaker at a convening of leaders in the Cyber Industry, hosted by the White House Office of the National Cyber Director. This marked Black Tech Street\'s first White House touchpoint, establishing critical relationships at the highest levels of federal cybersecurity policy.',
     category: 'Policy',
   },
   {
@@ -58,8 +58,8 @@ export const timelineItems: TimelineItem[] = [
     date: '2023-12',
     year: 2023,
     title: 'Democratic Caucus Interview on AI & Civil Rights',
-    description: 'Tyrance interviewed on the Democratic Caucus on AI and civil rights.',
-    longDescription: 'Tyrance was interviewed by the Democratic Caucus on the intersection of AI and civil rights, discussing how emerging technologies can either reinforce or help dismantle systemic inequities, and the importance of inclusive AI policy development.',
+    description: 'Tyrance Billingsley II, Founder & CEO, interviewed on the Democratic Caucus on AI and civil rights.',
+    longDescription: 'Tyrance Billingsley II, Founder & CEO, was interviewed by the Democratic Caucus on the intersection of AI and civil rights, discussing how emerging technologies can either reinforce or help dismantle systemic inequities, and the importance of inclusive AI policy development.',
     category: 'Policy',
   },
   {
@@ -68,7 +68,7 @@ export const timelineItems: TimelineItem[] = [
     year: 2023,
     title: 'AI and the Future of Work: Moving Forward Together',
     description: 'Testified before Senate HELP Committee on AI and the future of work.',
-    longDescription: 'Tyrance testified in front of the Senate HELP Committee about AI and the future of work, addressing how AI will transform employment, the need for workforce development, and ensuring that the benefits of AI-driven productivity are shared across all communities.',
+    longDescription: 'Tyrance Billingsley II, Founder & CEO, testified in front of the Senate HELP Committee about AI and the future of work, addressing how AI will transform employment, the need for workforce development, and ensuring that the benefits of AI-driven productivity are shared across all communities.',
     category: 'Policy',
   },
   {
