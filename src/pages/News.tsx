@@ -96,25 +96,6 @@ export default function News() {
             mission to rebuild Black Wall Street through technology and AI.
           </motion.p>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex items-center justify-center gap-8 md:gap-12"
-          >
-            {[
-              { value: 44, label: 'Articles' },
-              { value: 22, label: 'National' },
-              { value: 22, label: 'Local' },
-              { value: 5, label: 'Years' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <CountUp end={stat.value} className="text-3xl md:text-4xl font-display font-bold text-primary" />
-                <p className="text-xs md:text-sm text-muted-foreground mt-1">{stat.label}</p>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
