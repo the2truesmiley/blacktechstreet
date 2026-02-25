@@ -14,6 +14,7 @@ export interface TimelineItem {
   description: string;
   category: TimelineCategory;
   longDescription?: string;
+  link?: string;
 }
 
 export const timelineItems: TimelineItem[] = [
@@ -34,6 +35,7 @@ export const timelineItems: TimelineItem[] = [
     description: 'BTS established a foundational relationship with Microsoft for long-term AI and cybersecurity collaboration.',
     longDescription: 'Black Tech Street established a foundational relationship with Microsoft for long-term AI and cybersecurity collaboration. Robert F. Smith highlighted the Microsoft announcement in August 2023. This partnership would later lead to the Microsoft Cyber and AI Co-Innovation Lab in historic Greenwood.',
     category: 'Partnerships',
+    link: '/partners#microsoft',
   },
   {
     id: 'defcon-seedai-2023',

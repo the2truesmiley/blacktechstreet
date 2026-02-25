@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { TimelineItem } from '@/data/timeline';
 import { cn } from '@/lib/utils';
 
@@ -93,6 +94,15 @@ export function TimelineCard({ item, index }: TimelineCardProps) {
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
                   {item.longDescription || item.description}
                 </p>
+                {item.link && (
+                  <Link
+                    to={item.link}
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 mt-3 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                  >
+                    Learn more <ExternalLink className="h-3.5 w-3.5" />
+                  </Link>
+                )}
               </motion.div>
             )}
           </AnimatePresence>
