@@ -169,7 +169,7 @@ export function Footer() {
             © {new Date().getFullYear()} Black Tech Street. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Creating the Blueprint for an AI-Powered Society.
+            Rebirthing Greenwood As The Nation's Premiere AI Economy.
           </p>
         </motion.div>
       </div>
