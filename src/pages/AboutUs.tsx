@@ -39,7 +39,7 @@ const timeline = [
   {
     year: '2023',
     title: 'White House Cyber Roundtable',
-    description: 'Tyrance Billingsley II, Founder & CEO, served as a Panelist Speaker at a convening hosted by the White House Office of the National Cyber Director, establishing BTS\'s first White House touchpoint.',
+    description: 'Tyrance Billingsley II, Founder & CEO, served as a panelist speaker at a convening hosted by the White House Office of the National Cyber Director, establishing BTS\'s first White House touchpoint.',
     month: 'January',
   },
   {
