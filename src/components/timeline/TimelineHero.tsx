@@ -290,8 +290,8 @@ export function TimelineHero() {
                 ease: 'easeInOut',
               }}
             >
-              Creating the Blueprint for an{' '}
-              <span className="text-primary">AI-Powered Society</span>
+              Rebirthing Greenwood As The Nation's Premiere{' '}
+              <span className="text-primary">AI Economy</span>
             </motion.span>
           </motion.h1>
           
