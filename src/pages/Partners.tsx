@@ -34,13 +34,13 @@ const featuredPartners = [
 
 // All other partners
 const partners = [
-  { name: 'Atlas', logo: atlasLogo },
-  { name: 'Greenwood Cultural Center', logo: greenwoodLogo },
-  { name: 'Hewlett Packard', logo: hpLogo },
-  { name: 'SeedAI', logo: seedaiLogo },
-  { name: 'TEDC', logo: tedcLogo },
-  { name: 'Tulsa Innovation Labs', logo: tilLogo },
-  { name: 'Tulsa Remote', logo: tulsaRemoteLogo },
+  { name: 'Atlas', logo: atlasLogo, needsLightBg: false },
+  { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
+  { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
+  { name: 'SeedAI', logo: seedaiLogo, needsLightBg: false },
+  { name: 'TEDC', logo: tedcLogo, needsLightBg: false },
+  { name: 'Tulsa Innovation Labs', logo: tilLogo, needsLightBg: false },
+  { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
 ];
 
 
@@ -220,16 +220,21 @@ export default function Partners() {
                   {/* Subtle glow on hover */}
                   <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                   
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    loading="lazy"
-                    className={cn(
-                      "relative z-10 w-[150px] h-auto object-contain",
-                      "transition-all duration-300",
-                      "opacity-90 group-hover:opacity-100 group-hover:scale-110"
-                    )}
-                  />
+                  <div className={cn(
+                    "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
+                    partner.needsLightBg && "bg-white/90"
+                  )}>
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      loading="lazy"
+                      className={cn(
+                        "w-[150px] h-auto object-contain",
+                        "transition-all duration-300",
+                        "opacity-90 group-hover:opacity-100 group-hover:scale-110"
+                      )}
+                    />
+                  </div>
                   
                   {/* Partner name tooltip - positioned above */}
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
