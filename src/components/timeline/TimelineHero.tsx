@@ -292,14 +292,14 @@ export function TimelineHero() {
             >
               Rebirthing Greenwood
               <br className="hidden sm:block" />
-              {' '}As The Nation's Premiere
+              {' '}as the Nation's Premiere
               <br className="hidden sm:block" />
               {' '}<span className="text-primary">AI Powered Economy</span>
             </motion.span>
           </motion.h1>
           
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 font-medium tracking-wide">
-            Community Wide Fluency &nbsp;·&nbsp; AI Powered Innovation &nbsp;·&nbsp; Real World Application
+            Community Wide Fluency &nbsp;·&nbsp; AI Driven Innovation &nbsp;·&nbsp; Real World Application
           </p>
 
           {/* CTA Button */}
