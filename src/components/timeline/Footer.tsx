@@ -169,7 +169,7 @@ export function Footer() {
             © {new Date().getFullYear()} Black Tech Street. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Rebirthing Greenwood As The Nation's Premiere AI Economy.
+            Rebirthing Greenwood As The Nation's Premiere AI Powered Economy.
           </p>
         </motion.div>
       </div>
