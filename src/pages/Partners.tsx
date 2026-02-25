@@ -143,22 +143,22 @@ export default function Partners() {
                           href={partner.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="relative z-10 w-40 h-12 flex items-center justify-center"
+                          className="relative z-10 flex items-center justify-center"
                         >
                           <img
                             src={partner.logo}
                             alt={partner.name}
                             loading="lazy"
-                            className="max-w-full max-h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="max-h-24 max-w-[240px] w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                         </a>
                       ) : (
-                        <div className="relative z-10 w-40 h-12 flex items-center justify-center">
+                        <div className="relative z-10 flex items-center justify-center">
                           <img
                             src={partner.logo}
                             alt={partner.name}
                             loading="lazy"
-                            className="max-w-full max-h-full object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="max-h-24 max-w-[240px] w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                         </div>
                       )}
@@ -219,18 +219,16 @@ export default function Partners() {
                   {/* Subtle glow on hover */}
                   <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                   
-                  <div className="relative z-10 overflow-hidden" style={{ width: '112px', height: '40px' }}>
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      loading="lazy"
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                      className={cn(
-                        "transition-all duration-300",
-                        "opacity-90 group-hover:opacity-100 group-hover:scale-110"
-                      )}
-                    />
-                  </div>
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    loading="lazy"
+                    className={cn(
+                      "relative z-10 max-h-20 max-w-[70%] w-auto object-contain",
+                      "transition-all duration-300",
+                      "opacity-90 group-hover:opacity-100 group-hover:scale-110"
+                    )}
+                  />
                   
                   {/* Partner name tooltip - positioned above */}
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
