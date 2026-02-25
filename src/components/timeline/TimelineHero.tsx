@@ -299,7 +299,7 @@ export function TimelineHero() {
           </motion.h1>
           
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 font-medium tracking-wide">
-            Community Wide Fluency &nbsp;·&nbsp; AI Driven Innovation &nbsp;·&nbsp; Real World Application
+            Community Wide Fluency &nbsp;·&nbsp; AI Powered Innovation &nbsp;·&nbsp; Real World Application
           </p>
 
           {/* CTA Button */}
