@@ -130,38 +130,6 @@ export function TestimonialsSection() {
         </div>
       </div>
 
-      {/* Mini quote cards */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-8"
-      >
-        {testimonials.slice(0, 6).map((testimonial, index) => (
-          <motion.button
-            key={testimonial.author}
-            onClick={() => {
-              setIsAutoPlaying(false);
-              setActiveIndex(index);
-            }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className={cn(
-              "p-4 rounded-xl border text-left transition-all duration-300",
-              activeIndex === index
-                ? "bg-primary/10 border-primary/40"
-                : "bg-card/40 border-border/30 hover:border-primary/20"
-            )}
-          >
-            <Quote className="h-4 w-4 text-primary/40 mb-2" />
-            <p className="text-xs text-muted-foreground line-clamp-2 mb-2">
-              {testimonial.quote.slice(0, 60)}...
-            </p>
-            <span className="text-xs font-medium text-primary">{testimonial.author}</span>
-          </motion.button>
-        ))}
-      </motion.div>
     </section>
   );
 }
