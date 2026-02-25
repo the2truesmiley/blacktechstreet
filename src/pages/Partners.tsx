@@ -103,7 +103,7 @@ export default function Partners() {
             className="text-center mb-16"
           >
             <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-              Strategic Partners
+              Core Partners
             </h2>
             <p className="text-3xl md:text-4xl font-display font-bold text-foreground">
               Industry Leaders Powering Innovation
@@ -176,86 +176,6 @@ export default function Partners() {
         </div>
       </section>
 
-      {/* All Partners Grid */}
-      <section className="relative py-20">
-        <div className="max-w-6xl mx-auto px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-              Community Partners
-            </h2>
-            <p className="text-2xl md:text-3xl font-display font-bold text-foreground">
-              Collaborating for Change
-            </p>
-          </motion.div>
-
-          {/* Partner Logo Grid */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-          >
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                className="group relative"
-              >
-                {partner.link ? (
-                  <a href={partner.link} target="_blank" rel="noopener noreferrer" className="block">
-                    <div className={cn(
-                      "relative h-52 p-8 rounded-xl",
-                      "bg-card/50 backdrop-blur-sm",
-                      "border border-border/30 hover:border-primary/40",
-                      "flex items-center justify-center",
-                      "transition-all duration-300"
-                    )}>
-                      <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <div className={cn(
-                        "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                        partner.needsLightBg && "bg-white/90"
-                      )}>
-                        <img src={partner.logo} alt={partner.name} loading="lazy" className={cn("w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110")} />
-                      </div>
-                      <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                        {partner.name}
-                      </div>
-                    </div>
-                  </a>
-                ) : (
-                  <div className={cn(
-                    "relative h-52 p-8 rounded-xl",
-                    "bg-card/50 backdrop-blur-sm",
-                    "border border-border/30 hover:border-primary/40",
-                    "flex items-center justify-center",
-                    "transition-all duration-300"
-                  )}>
-                    <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className={cn(
-                      "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                      partner.needsLightBg && "bg-white/90"
-                    )}>
-                      <img src={partner.logo} alt={partner.name} loading="lazy" className={cn("w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110")} />
-                    </div>
-                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                      {partner.name}
-                    </div>
-                  </div>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="relative py-24">
