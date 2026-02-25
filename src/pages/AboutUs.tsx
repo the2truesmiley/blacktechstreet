@@ -16,7 +16,7 @@ const values = [
   {
     icon: Lightbulb,
     title: 'Vision',
-    description: 'Transforming Greenwood and the Greater Tulsa Region into America's model for an AI-Powered Society.',
+    description: "Transforming Greenwood and the Greater Tulsa Region into America's model for an AI-Powered Society.",
   },
   {
     icon: Users,
