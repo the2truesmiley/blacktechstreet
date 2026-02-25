@@ -73,7 +73,7 @@ export function Footer() {
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6">
-              Rebirthing Historic Black Wall Street as a world-class innovation economy rooted in AI, Cybersecurity, and Other Emerging Technologies.
+              Rebirthing Greenwood As The Nation's Premiere AI Powered Economy.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-3">
@@ -167,9 +167,6 @@ export function Footer() {
         >
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Black Tech Street. All rights reserved.
-          </p>
-          <p className="text-xs text-muted-foreground">
-            Rebirthing Greenwood As The Nation's Premiere AI Powered Economy.
           </p>
         </motion.div>
       </div>
