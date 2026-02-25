@@ -54,4 +54,5 @@ export const ROUTES = {
   GALLERY: '/gallery',
   PARTNERS: '/partners',
   ASPIRE: '/aspire',
+  NEWS: '/news',
 } as const;
