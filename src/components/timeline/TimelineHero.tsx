@@ -290,9 +290,11 @@ export function TimelineHero() {
                 ease: 'easeInOut',
               }}
             >
-              Rebirthing Greenwood As The Nation's
-              <br />
-              Premiere <span className="text-primary">AI Powered Economy</span>
+              Rebirthing Greenwood
+              <br className="hidden sm:block" />
+              {' '}As The Nation's Premiere
+              <br className="hidden sm:block" />
+              {' '}<span className="text-primary">AI Powered Economy</span>
             </motion.span>
           </motion.h1>
           
