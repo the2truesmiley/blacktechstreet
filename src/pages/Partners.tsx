@@ -34,7 +34,7 @@ const featuredPartners = [
 
 // All other partners
 const partners = [
-  { name: 'Atlas', logo: atlasLogo, needsLightBg: false },
+  { name: 'Atlas School', logo: atlasLogo, needsLightBg: false, link: 'https://www.atlasschool.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
   { name: 'SeedAI', logo: seedaiLogo, needsLightBg: false },
@@ -210,37 +210,47 @@ export default function Partners() {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="group relative"
               >
-                <div className={cn(
-                  "relative h-52 p-8 rounded-xl",
-                  "bg-card/50 backdrop-blur-sm",
-                  "border border-border/30 hover:border-primary/40",
-                  "flex items-center justify-center",
-                  "transition-all duration-300"
-                )}>
-                  {/* Subtle glow on hover */}
-                  <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  
+                {partner.link ? (
+                  <a href={partner.link} target="_blank" rel="noopener noreferrer" className="block">
+                    <div className={cn(
+                      "relative h-52 p-8 rounded-xl",
+                      "bg-card/50 backdrop-blur-sm",
+                      "border border-border/30 hover:border-primary/40",
+                      "flex items-center justify-center",
+                      "transition-all duration-300"
+                    )}>
+                      <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className={cn(
+                        "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
+                        partner.needsLightBg && "bg-white/90"
+                      )}>
+                        <img src={partner.logo} alt={partner.name} loading="lazy" className={cn("w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110")} />
+                      </div>
+                      <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
+                        {partner.name}
+                      </div>
+                    </div>
+                  </a>
+                ) : (
                   <div className={cn(
-                    "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                    partner.needsLightBg && "bg-white/90"
+                    "relative h-52 p-8 rounded-xl",
+                    "bg-card/50 backdrop-blur-sm",
+                    "border border-border/30 hover:border-primary/40",
+                    "flex items-center justify-center",
+                    "transition-all duration-300"
                   )}>
-                    <img
-                      src={partner.logo}
-                      alt={partner.name}
-                      loading="lazy"
-                      className={cn(
-                        "w-[150px] h-auto object-contain",
-                        "transition-all duration-300",
-                        "opacity-90 group-hover:opacity-100 group-hover:scale-110"
-                      )}
-                    />
+                    <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className={cn(
+                      "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
+                      partner.needsLightBg && "bg-white/90"
+                    )}>
+                      <img src={partner.logo} alt={partner.name} loading="lazy" className={cn("w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110")} />
+                    </div>
+                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
+                      {partner.name}
+                    </div>
                   </div>
-                  
-                  {/* Partner name tooltip - positioned above */}
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                    {partner.name}
-                  </div>
-                </div>
+                )}
               </motion.div>
             ))}
           </motion.div>
