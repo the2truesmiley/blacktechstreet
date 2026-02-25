@@ -39,7 +39,7 @@ const timeline = [
   {
     year: '2023',
     title: 'White House Cyber Roundtable',
-    description: 'Tyrance served as a Panelist Speaker at a convening hosted by the White House Office of the National Cyber Director, establishing BTS\'s first White House touchpoint.',
+    description: 'Tyrance Billingsley II, Founder & CEO, served as a Panelist Speaker at a convening hosted by the White House Office of the National Cyber Director, establishing BTS\'s first White House touchpoint.',
     month: 'January',
   },
   {
@@ -57,7 +57,7 @@ const timeline = [
   {
     year: '2023',
     title: 'Senate HELP Committee Testimony',
-    description: 'Tyrance testified before the Senate HELP Committee about AI and the future of work, addressing workforce development and ensuring AI benefits are shared across all communities.',
+    description: 'Tyrance Billingsley II, Founder & CEO, testified before the Senate HELP Committee about AI and the future of work, addressing workforce development and ensuring AI benefits are shared across all communities.',
     month: 'November',
   },
   {
