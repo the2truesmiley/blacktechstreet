@@ -291,7 +291,7 @@ export default function Partners() {
                 transition={{ delay: 0.15 }}
                 className="text-lg font-semibold text-foreground mb-10"
               >
-                Let's build a legacy of impact together—start today.
+                Let's build a legacy of impact together, start today.
               </motion.p>
 
               <motion.div
