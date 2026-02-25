@@ -1,15 +1,11 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Newspaper, Globe, MapPin } from 'lucide-react';
+import { ExternalLink, Newspaper } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { Badge } from '@/components/ui/badge';
-import { CountUp } from '@/components/ui/count-up';
-import { newsArticles, YEARS, type SourceType } from '@/data/newsArticles';
+import { newsArticles, YEARS } from '@/data/newsArticles';
 import { useSEO } from '@/hooks/useSEO';
-
-type FilterType = 'All' | SourceType;
 
 export default function News() {
   useSEO({
@@ -17,16 +13,14 @@ export default function News() {
     description: 'Explore 44 press articles covering Black Tech Street\'s mission to rebuild Black Wall Street through technology — from CNN to Forbes to the U.S. Senate.',
   });
 
-  const [sourceFilter, setSourceFilter] = useState<FilterType>('All');
   const [yearFilter, setYearFilter] = useState<number | null>(null);
 
   const filtered = useMemo(() => {
     return newsArticles.filter((a) => {
-      if (sourceFilter !== 'All' && a.sourceType !== sourceFilter) return false;
       if (yearFilter && a.year !== yearFilter) return false;
       return true;
     });
-  }, [sourceFilter, yearFilter]);
+  }, [yearFilter]);
 
   const grouped = useMemo(() => {
     const map = new Map<number, typeof filtered>();
@@ -37,12 +31,6 @@ export default function News() {
     }
     return [...map.entries()].sort(([a], [b]) => b - a);
   }, [filtered]);
-
-  const sourceFilters: { label: string; value: FilterType; icon: typeof Globe }[] = [
-    { label: 'All', value: 'All', icon: Newspaper },
-    { label: 'National', value: 'National', icon: Globe },
-    { label: 'Local', value: 'Local', icon: MapPin },
-  ];
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
@@ -95,7 +83,6 @@ export default function News() {
             From CNN to Forbes to the U.S. Senate — explore the press coverage of Black Tech Street's 
             mission to rebuild Black Wall Street through technology and AI.
           </motion.p>
-
         </div>
       </section>
 
@@ -105,27 +92,8 @@ export default function News() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-wrap"
+          className="flex items-center gap-4 flex-wrap"
         >
-          {/* Source type filter */}
-          <div className="flex items-center gap-2">
-            {sourceFilters.map((f) => (
-              <button
-                key={f.value}
-                onClick={() => setSourceFilter(f.value)}
-                className={cn(
-                  'inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border',
-                  sourceFilter === f.value
-                    ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20'
-                    : 'bg-card/50 text-muted-foreground border-border/30 hover:border-primary/40 hover:text-foreground'
-                )}
-              >
-                <f.icon className="w-3.5 h-3.5" />
-                {f.label}
-              </button>
-            ))}
-          </div>
-
           {/* Year pills */}
           <div className="flex items-center gap-2 flex-wrap">
             <button
@@ -133,8 +101,8 @@ export default function News() {
               className={cn(
                 'px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border',
                 yearFilter === null
-                  ? 'bg-secondary text-foreground border-border/50'
-                  : 'bg-transparent text-muted-foreground border-border/20 hover:border-border/40 hover:text-foreground'
+                  ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20'
+                  : 'bg-card/50 text-muted-foreground border-border/30 hover:border-primary/40 hover:text-foreground'
               )}
             >
               All Years
@@ -146,8 +114,8 @@ export default function News() {
                 className={cn(
                   'px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border',
                   yearFilter === y
-                    ? 'bg-secondary text-foreground border-border/50'
-                    : 'bg-transparent text-muted-foreground border-border/20 hover:border-border/40 hover:text-foreground'
+                    ? 'bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20'
+                    : 'bg-card/50 text-muted-foreground border-border/30 hover:border-primary/40 hover:text-foreground'
                 )}
               >
                 {y}
@@ -165,7 +133,7 @@ export default function News() {
       <section className="relative z-10 max-w-6xl mx-auto px-5 pb-24">
         <AnimatePresence mode="wait">
           <motion.div
-            key={`${sourceFilter}-${yearFilter}`}
+            key={`${yearFilter}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -222,53 +190,54 @@ function ArticleCard({ article, index }: { article: typeof newsArticles[0]; inde
         'transition-all duration-300'
       )}
     >
-      <div className="flex flex-col md:flex-row md:items-start gap-4">
-        {/* Left: source info */}
-        <div className="flex items-center gap-3 md:min-w-[180px] shrink-0">
-          <Badge
-            className={cn(
-              'text-xs font-semibold',
-              article.sourceType === 'National'
-                ? 'bg-primary/15 text-primary border-primary/30'
-                : 'bg-accent/50 text-accent-foreground border-accent/30'
-            )}
-          >
-            {article.sourceType === 'National' ? <Globe className="w-3 h-3 mr-1" /> : <MapPin className="w-3 h-3 mr-1" />}
-            {article.sourceType}
-          </Badge>
-          <span className="text-sm font-medium text-muted-foreground">{article.source}</span>
+      <div className="flex flex-col gap-3">
+        {/* Source */}
+        <div>
+          {article.sourceUrl ? (
+            <a
+              href={article.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+            >
+              {article.source}
+            </a>
+          ) : (
+            <span className="text-sm font-semibold text-primary">{article.source}</span>
+          )}
         </div>
 
-        {/* Right: content */}
-        <div className="flex-1 min-w-0">
-          <h3 className="text-base md:text-lg font-semibold text-foreground leading-snug mb-1.5 group-hover:text-primary transition-colors">
-            {article.headline}
-          </h3>
+        {/* Headline */}
+        <h3 className="text-base md:text-lg font-semibold text-foreground leading-snug group-hover:text-primary transition-colors">
+          {article.headline}
+        </h3>
 
-          <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-            <span>{formattedDate}</span>
-            <span>·</span>
-            <span>{article.author}</span>
-          </div>
-
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {article.summary}
-          </p>
-
-          <div className="flex items-center gap-4 mt-3">
-            {article.url && (
-              <a
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 font-medium transition-colors ml-auto"
-              >
-                Read Article
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            )}
-          </div>
+        {/* Meta */}
+        <div className="flex items-center gap-3 text-xs text-muted-foreground">
+          <span>{formattedDate}</span>
+          <span>·</span>
+          <span>{article.author}</span>
         </div>
+
+        {/* Summary */}
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          {article.summary}
+        </p>
+
+        {/* Read Article link */}
+        {article.url && (
+          <div className="mt-1">
+            <a
+              href={article.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-primary hover:text-primary/80 font-medium transition-colors"
+            >
+              Read Article
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
+        )}
       </div>
     </motion.div>
   );
