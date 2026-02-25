@@ -46,15 +46,7 @@ export default function News() {
       <section className="relative min-h-[60vh] flex items-center justify-center pt-24 pb-12">
         <div className="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
         <div className="relative z-10 max-w-5xl mx-auto px-5 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-6"
-          >
-            <Newspaper className="w-4 h-4" />
-            Press Coverage
-          </motion.div>
+
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
