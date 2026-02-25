@@ -11,7 +11,7 @@ const values = [
   {
     icon: Target,
     title: 'Mission',
-    description: 'Rebirthing Historic Black Wall Street as a world-class innovation economy rooted in AI, Cybersecurity, and Other Emerging Technologies.',
+    description: 'Rebirthing Greenwood as the Nation\'s Premiere AI Powered Economy.',
   },
   {
     icon: Lightbulb,
