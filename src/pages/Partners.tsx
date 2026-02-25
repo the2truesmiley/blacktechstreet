@@ -149,7 +149,7 @@ export default function Partners() {
                             src={partner.logo}
                             alt={partner.name}
                             loading="lazy"
-                            className="min-w-[100px] max-h-28 max-w-[280px] w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="w-[250px] h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                         </a>
                       ) : (
@@ -158,7 +158,7 @@ export default function Partners() {
                             src={partner.logo}
                             alt={partner.name}
                             loading="lazy"
-                            className="min-w-[100px] max-h-28 max-w-[280px] w-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                            className="w-[250px] h-auto object-contain opacity-90 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                           />
                         </div>
                       )}
@@ -224,7 +224,7 @@ export default function Partners() {
                     alt={partner.name}
                     loading="lazy"
                     className={cn(
-                      "relative z-10 min-w-[100px] max-h-24 max-w-[80%] w-auto object-contain",
+                      "relative z-10 w-[150px] h-auto object-contain",
                       "transition-all duration-300",
                       "opacity-90 group-hover:opacity-100 group-hover:scale-110"
                     )}
