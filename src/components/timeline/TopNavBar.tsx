@@ -88,8 +88,8 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isHome
             ? isScrolled
-              ? "bg-background/90 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_30px_rgba(16,185,129,0.06)]"
-              : "bg-transparent"
+              ? "bg-background/95 backdrop-blur-xl border-b border-primary/30 shadow-[0_4px_30px_rgba(16,185,129,0.06)]"
+              : "bg-background border-b border-primary/40"
             : isScrolled
               ? "bg-background/95 backdrop-blur-xl border-b border-border/20 shadow-sm"
               : "bg-background/80 backdrop-blur-md border-b border-border/10"
