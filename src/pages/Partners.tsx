@@ -85,7 +85,7 @@ export default function Partners() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6 leading-relaxed"
           >
             The organizations powering our mission to transform Historic Greenwood into a global epicenter for AI and cybersecurity innovation.
           </motion.p>
@@ -94,7 +94,7 @@ export default function Partners() {
       </section>
 
       {/* Featured Partners Section */}
-      <section className="relative py-20 bg-gradient-to-b from-transparent via-card/50 to-transparent">
+      <section className="relative py-10 bg-gradient-to-b from-transparent via-card/50 to-transparent">
         <div className="max-w-6xl mx-auto px-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
