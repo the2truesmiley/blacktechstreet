@@ -314,8 +314,8 @@ export default function Partners() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
-                <a
-                  href="mailto:contact@blacktechstreet.com"
+                <Link
+                  to="/contact"
                   className={cn(
                     "inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full",
                     "bg-secondary/80 text-foreground font-semibold border border-border/50",
@@ -324,7 +324,7 @@ export default function Partners() {
                   )}
                 >
                   Contact Us
-                </a>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
