@@ -203,7 +203,6 @@ export default function News() {
 }
 
 function ArticleCard({ article, index }: { article: typeof newsArticles[0]; index: number }) {
-  const [expanded, setExpanded] = useState(false);
   const formattedDate = new Date(article.date).toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -252,22 +251,11 @@ function ArticleCard({ article, index }: { article: typeof newsArticles[0]; inde
             <span>{article.author}</span>
           </div>
 
-          <p className={cn(
-            'text-sm text-muted-foreground leading-relaxed',
-            !expanded && 'line-clamp-2'
-          )}>
+          <p className="text-sm text-muted-foreground leading-relaxed">
             {article.summary}
           </p>
 
           <div className="flex items-center gap-4 mt-3">
-            {article.summary.length > 120 && (
-              <button
-                onClick={() => setExpanded(!expanded)}
-                className="text-xs text-primary hover:text-primary/80 font-medium transition-colors"
-              >
-                {expanded ? 'Show less' : 'Read more'}
-              </button>
-            )}
             {article.url && (
               <a
                 href={article.url}
