@@ -32,7 +32,7 @@ const timeline = [
     description: 'The thriving Greenwood District in Tulsa was one of the most prosperous African American communities in the United States, home to hundreds of Black-owned businesses.',
   },
   {
-    year: '2020',
+    year: '2021',
     title: 'Vision Born',
     description: 'Black Tech Street was founded with one question: "What could Black Wall Street have been, had it been supported and not destroyed?"',
   },
@@ -128,7 +128,7 @@ export default function AboutUs() {
                 <span className="text-primary">Founding Story</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
-                Black Tech Street (BTS) was established in 2020 by{' '}
+                Black Tech Street (BTS) was established in 2021 by{' '}
                 <span className="whitespace-nowrap">Tyrance Billingsley II, Founder &amp; CEO</span>
                 {' '}on a question and a three pronged epiphany:
               </p>
