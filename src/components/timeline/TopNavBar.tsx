@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -34,6 +34,170 @@ const navItems: NavItem[] = [
 interface TopNavBarProps {
   variant?: 'home' | 'default';
 }
+
+// ─── Animated matrix canvas scoped to the nav bar ────────────────────────────
+
+const NAV_CHARS = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEF∞≈≠∑∏∫δλφψΩ';
+
+interface NavDrop {
+  x: number;
+  y: number;
+  speed: number;
+  chars: string[];
+  length: number;
+  opacity: number;
+  mutateTimer: number;
+}
+
+function createNavDrop(w: number, h: number): NavDrop {
+  const length = 3 + Math.floor(Math.random() * 6);
+  return {
+    x: Math.random() * w,
+    y: -(Math.random() * h + 10),
+    speed: 0.5 + Math.random() * 1.2,
+    chars: Array.from({ length }, () => NAV_CHARS[Math.floor(Math.random() * NAV_CHARS.length)]),
+    length,
+    opacity: 0.18 + Math.random() * 0.22,
+    mutateTimer: Math.random() * 8,
+  };
+}
+
+function NavMatrixCanvas({ isHome, isScrolled }: { isHome: boolean; isScrolled: boolean }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animRef = useRef<number>(0);
+  const dropsRef = useRef<NavDrop[]>([]);
+  const lastTimeRef = useRef(0);
+  const sizeRef = useRef({ w: 0, h: 0 });
+
+  const resize = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const parent = canvas.parentElement;
+    if (!parent) return;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = parent.offsetWidth;
+    const h = parent.offsetHeight;
+    if (sizeRef.current.w === w && sizeRef.current.h === h) return;
+    sizeRef.current = { w, h };
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
+    const ctx = canvas.getContext('2d');
+    if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }, []);
+
+  useEffect(() => {
+    // Only render the animated canvas on the home variant
+    if (!isHome) return;
+
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return;
+
+    resize();
+
+    const { w, h } = sizeRef.current;
+    const count = Math.min(Math.floor(w / 28), 48);
+    dropsRef.current = Array.from({ length: count }, () => createNavDrop(w, h));
+
+    const computedStyle = getComputedStyle(document.documentElement);
+    const primaryHSL = computedStyle.getPropertyValue('--primary').trim();
+
+    function draw(ts: number) {
+      if (!ctx || !canvas) return;
+      if (lastTimeRef.current === 0) {
+        lastTimeRef.current = ts;
+        animRef.current = requestAnimationFrame(draw);
+        return;
+      }
+      const dt = Math.min((ts - lastTimeRef.current) / 16.667, 3);
+      lastTimeRef.current = ts;
+
+      const { w, h } = sizeRef.current;
+      ctx.clearRect(0, 0, w, h);
+      ctx.shadowBlur = 0;
+      ctx.shadowColor = 'transparent';
+
+      // Global opacity dims when scrolled so it doesn't compete with page content
+      const globalDim = isScrolled ? 0.45 : 1;
+
+      for (const drop of dropsRef.current) {
+        ctx.font = `11px "Courier New", monospace`;
+
+        drop.mutateTimer += dt;
+        if (drop.mutateTimer > 8) {
+          drop.mutateTimer = 0;
+          const idx = Math.floor(Math.random() * drop.chars.length);
+          drop.chars[idx] = NAV_CHARS[Math.floor(Math.random() * NAV_CHARS.length)];
+        }
+
+        for (let i = 0; i < drop.length; i++) {
+          const charY = drop.y + i * 13;
+          if (charY < -13 || charY > h + 13) continue;
+          const progress = i / drop.length;
+
+          if (i === 0) {
+            // Lead char — bright with simulated glow
+            const leadAlpha = Math.min(drop.opacity + 0.5, 0.95) * globalDim;
+            ctx.globalAlpha = leadAlpha;
+            ctx.fillStyle = `hsl(${primaryHSL})`;
+            ctx.fillText(drop.chars[i], drop.x, charY);
+            ctx.globalAlpha = leadAlpha * 0.25;
+            ctx.fillText(drop.chars[i], drop.x - 0.5, charY);
+            ctx.fillText(drop.chars[i], drop.x + 0.5, charY);
+          } else {
+            const fadeAlpha = Math.max(drop.opacity * (1 - progress * 0.85) * globalDim, 0.01);
+            ctx.globalAlpha = fadeAlpha;
+            ctx.fillStyle = `hsl(${primaryHSL})`;
+            ctx.fillText(drop.chars[i], drop.x, charY);
+          }
+        }
+
+        drop.y += drop.speed * dt;
+
+        if (drop.y > h + drop.length * 14) {
+          const { w: cw, h: ch } = sizeRef.current;
+          Object.assign(drop, createNavDrop(cw, ch));
+          drop.y = -(Math.random() * 40 + 10);
+        }
+      }
+
+      ctx.globalAlpha = 1;
+      animRef.current = requestAnimationFrame(draw);
+    }
+
+    ctx.clearRect(0, 0, w, h);
+    lastTimeRef.current = 0;
+    animRef.current = requestAnimationFrame(draw);
+
+    const handleResize = () => resize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      cancelAnimationFrame(animRef.current);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isHome, resize]);
+
+  // Re-read isScrolled each frame via a ref so we don't restart the animation
+  const isScrolledRef = useRef(isScrolled);
+  useEffect(() => { isScrolledRef.current = isScrolled; }, [isScrolled]);
+
+  if (!isHome) return null;
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 pointer-events-none"
+      style={{ width: '100%', height: '100%' }}
+      aria-hidden="true"
+    />
+  );
+}
+
+// ─── Main NavBar ──────────────────────────────────────────────────────────────
 
 export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
   const isHome = variant === 'home';
@@ -85,18 +249,49 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 overflow-hidden",
           isHome
             ? isScrolled
-              ? "bg-background/95 backdrop-blur-xl border-b border-primary/30 shadow-[0_4px_30px_rgba(16,185,129,0.06)]"
-              : "bg-background border-b border-primary/40"
+              ? "bg-background/90 backdrop-blur-xl border-b border-primary/30 shadow-[0_4px_30px_rgba(16,185,129,0.08)]"
+              : "bg-background/60 backdrop-blur-sm border-b border-primary/25"
             : isScrolled
               ? "bg-background/95 backdrop-blur-xl border-b border-border/20 shadow-sm"
               : "bg-background/80 backdrop-blur-md border-b border-border/10"
         )}
       >
+        {/* ── Animated matrix canvas lives here, behind all nav content ── */}
+        <NavMatrixCanvas isHome={isHome} isScrolled={isScrolled} />
+
+        {/* Subtle left-to-right gradient sweep on the nav bar for depth */}
+        {isHome && (
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: isScrolled
+                ? 'linear-gradient(90deg, hsl(var(--primary)/0.04) 0%, transparent 40%, hsl(var(--primary)/0.04) 100%)'
+                : 'linear-gradient(90deg, hsl(var(--primary)/0.07) 0%, transparent 40%, hsl(var(--primary)/0.05) 100%)',
+            }}
+          />
+        )}
+
+        {/* Animated bottom border glow line (home only) */}
+        {isHome && (
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-px pointer-events-none"
+            style={{
+              background: 'linear-gradient(90deg, transparent 0%, hsl(var(--primary)/0.6) 30%, hsl(var(--primary)) 50%, hsl(var(--primary)/0.6) 70%, transparent 100%)',
+              boxShadow: '0 0 12px hsl(var(--primary)/0.5)',
+            }}
+            animate={{
+              opacity: isScrolled ? [0.4, 0.7, 0.4] : [0.6, 1, 0.6],
+              backgroundPosition: ['0% 0%', '100% 0%', '0% 0%'],
+            }}
+            transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        )}
+
         <div className={cn(
-          "mx-auto flex items-center justify-between transition-all duration-500",
+          "relative z-10 mx-auto flex items-center justify-between transition-all duration-500",
           isHome ? "max-w-7xl px-6 py-3" : "max-w-6xl px-5 py-2"
         )}>
           {/* Logo */}
