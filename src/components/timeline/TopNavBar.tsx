@@ -292,7 +292,11 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
 
         <div className={cn(
           "relative z-10 mx-auto flex items-center justify-between transition-all duration-500",
-          isHome ? "max-w-7xl px-6 py-3" : "max-w-6xl px-5 py-2"
+          isHome
+            ? isScrolled
+              ? "max-w-6xl px-5 py-2"
+              : "max-w-7xl px-6 py-3"
+            : "max-w-6xl px-5 py-2"
         )}>
           {/* Logo */}
           <a
