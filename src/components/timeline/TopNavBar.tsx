@@ -315,12 +315,16 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                 src={isHome ? logoGlow : logoCircuit} 
                 alt="Black Tech Street"
                 className={cn(
-                  "relative object-contain group-hover:scale-105 transition-transform duration-300",
-                  isHome ? "w-[100px] md:w-[168px] h-auto" : "w-10 h-10"
+                  "relative object-contain group-hover:scale-105 transition-all duration-500",
+                  isHome
+                    ? isScrolled
+                      ? "w-10 h-10"
+                      : "w-[100px] md:w-[168px] h-auto"
+                    : "w-10 h-10"
                 )}
               />
             </div>
-            {!isHome && (
+            {(!isHome || isScrolled) && (
               <span className="font-display font-bold text-foreground text-lg hidden sm:block tracking-tight">
                 Black Tech Street
               </span>
