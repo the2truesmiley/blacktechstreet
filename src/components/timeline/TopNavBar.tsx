@@ -345,7 +345,9 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                     className={cn(
                       "flex items-center gap-1.5 transition-colors duration-200 font-medium rounded-lg group",
                       isHome
-                        ? "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
+                        ? isScrolled
+                          ? "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
+                          : "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
                         : "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
                     )}
                   >
