@@ -354,7 +354,7 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                     {item.label}
                     <ChevronDown className={cn(
                       "transition-transform duration-200",
-                      isHome ? "w-4 h-4" : "w-3.5 h-3.5",
+                      isHome ? (isScrolled ? "w-3.5 h-3.5" : "w-4 h-4") : "w-3.5 h-3.5",
                       openDropdown === item.label && "rotate-180"
                     )} />
                   </button>
