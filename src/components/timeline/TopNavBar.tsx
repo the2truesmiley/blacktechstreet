@@ -292,7 +292,11 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
 
         <div className={cn(
           "relative z-10 mx-auto flex items-center justify-between transition-all duration-500",
-          isHome ? "max-w-7xl px-6 py-3" : "max-w-6xl px-5 py-2"
+          isHome
+            ? isScrolled
+              ? "max-w-6xl px-5 py-2"
+              : "max-w-7xl px-6 py-3"
+            : "max-w-6xl px-5 py-2"
         )}>
           {/* Logo */}
           <a
@@ -311,12 +315,16 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                 src={isHome ? logoGlow : logoCircuit} 
                 alt="Black Tech Street"
                 className={cn(
-                  "relative object-contain group-hover:scale-105 transition-transform duration-300",
-                  isHome ? "w-[100px] md:w-[168px] h-auto" : "w-10 h-10"
+                  "relative object-contain group-hover:scale-105 transition-all duration-500",
+                  isHome
+                    ? isScrolled
+                      ? "w-10 h-10"
+                      : "w-[100px] md:w-[168px] h-auto"
+                    : "w-10 h-10"
                 )}
               />
             </div>
-            {!isHome && (
+            {(!isHome || isScrolled) && (
               <span className="font-display font-bold text-foreground text-lg hidden sm:block tracking-tight">
                 Black Tech Street
               </span>
@@ -337,14 +345,16 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                     className={cn(
                       "flex items-center gap-1.5 transition-colors duration-200 font-medium rounded-lg group",
                       isHome
-                        ? "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
+                        ? isScrolled
+                          ? "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
+                          : "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
                         : "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
                     )}
                   >
                     {item.label}
                     <ChevronDown className={cn(
                       "transition-transform duration-200",
-                      isHome ? "w-4 h-4" : "w-3.5 h-3.5",
+                      isHome ? (isScrolled ? "w-3.5 h-3.5" : "w-4 h-4") : "w-3.5 h-3.5",
                       openDropdown === item.label && "rotate-180"
                     )} />
                   </button>
@@ -354,7 +364,9 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                     className={cn(
                       "relative transition-colors duration-200 font-medium rounded-lg group",
                       isHome
-                        ? "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
+                        ? isScrolled
+                          ? "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
+                          : "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
                         : "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
                     )}
                   >
