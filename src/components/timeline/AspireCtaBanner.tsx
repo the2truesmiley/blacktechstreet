@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, MapPin, Baby } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FlipClock } from '@/components/events/FlipClock';
 import { aspireEvents2026 } from '@/data/aspireEvents';
