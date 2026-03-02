@@ -3,22 +3,20 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useMemo, useState, useEffect } from 'react';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
-// Hero slideshow photos
-import heroImg1 from '@/assets/gallery/jun-2025-attendees-auditorium.jpg';
-import heroImg2 from '@/assets/gallery/sep-2025-full-room.jpg';
-import heroImg3 from '@/assets/gallery/dec-2025-ai-workshop-full-room.jpg';
-import heroImg4 from '@/assets/gallery/jan-2026-workshop-overview-001.jpg';
-import heroImg5 from '@/assets/gallery/community-gathering.jpg';
-import heroImg6 from '@/assets/gallery/jan-2026-students-learning-001.jpg';
-import heroImg7 from '@/assets/gallery/sep-2025-group-laptops.jpg';
-import heroImg8 from '@/assets/gallery/jan-2026-cert-group-001.jpg';
-import heroImg9 from '@/assets/gallery/dec-2025-tyrance-presenting.jpg';
-import heroImg10 from '@/assets/gallery/jan-2026-student-presentation-001.jpg';
-import heroImg11 from '@/assets/gallery/sep-2025-women-collaborating.jpg';
-import heroImg12 from '@/assets/gallery/jan-2026-prize-unboxing-001.jpg';
-import heroImg13 from '@/assets/gallery/feb-2026-workshop-coaching.jpg';
-import heroImg14 from '@/assets/gallery/feb-2026-group-certificates.jpg';
-import heroImg15 from '@/assets/gallery/feb-2026-students-collaborating.jpg';
+// Hero slideshow photos — curated 12-shot selection
+// Tells the full BTS story: leadership → scale → teaching → community → achievement → mentorship
+import heroImg1  from '@/assets/gallery/tyrance-speaking.jpg';
+import heroImg2  from '@/assets/gallery/jun-2025-attendees-auditorium.jpg';
+import heroImg3  from '@/assets/gallery/sep-2025-aspire-presenting.jpg';
+import heroImg4  from '@/assets/gallery/sep-2025-women-collaborating.jpg';
+import heroImg5  from '@/assets/gallery/dec-2025-tyrance-presenting.jpg';
+import heroImg6  from '@/assets/gallery/dec-2025-participants-learning.jpg';
+import heroImg7  from '@/assets/gallery/jan-2026-students-learning-001.jpg';
+import heroImg8  from '@/assets/gallery/sep-2025-group-laptops.jpg';
+import heroImg9  from '@/assets/gallery/jan-2026-cert-group-001.jpg';
+import heroImg10 from '@/assets/gallery/feb-2026-workshop-coaching.jpg';
+import heroImg11 from '@/assets/gallery/feb-2026-group-certificates.jpg';
+import heroImg12 from '@/assets/gallery/feb-2026-students-collaborating.jpg';
 
 interface HeroSlide {
   src: string;
@@ -27,21 +25,18 @@ interface HeroSlide {
 }
 
 const heroSlides: HeroSlide[] = [
-  { src: heroImg1,  position: 'center 30%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '1%',  xEnd: '0%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg2,  position: 'center 35%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '0%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
-  { src: heroImg3,  position: 'center 35%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg4,  position: 'center 30%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
-  { src: heroImg5,  position: 'center 25%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '0%',  xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg6,  position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '-1%'  } },
-  { src: heroImg7,  position: 'center 38%', kenBurns: { scaleStart: 1.07, scaleEnd: 1.0,  xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
-  { src: heroImg8,  position: 'center 22%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '0%',  xEnd: '1%',   yStart: '-1%', yEnd: '0%'   } },
-  { src: heroImg9,  position: 'center 18%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg10, position: 'center 22%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '0%',   yStart: '0%',  yEnd: '-1%'  } },
-  { src: heroImg11, position: 'center 35%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '0%',  xEnd: '-1%',  yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg12, position: 'center 40%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '-1%', xEnd: '1%',   yStart: '-1%', yEnd: '1%'   } },
-  { src: heroImg13, position: 'center 28%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
-  { src: heroImg14, position: 'center 22%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '0%',  xEnd: '1%',   yStart: '1%',  yEnd: '-1%'  } },
-  { src: heroImg15, position: 'center 38%', kenBurns: { scaleStart: 1.07, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg1,  position: 'center 20%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '0%',  xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg2,  position: 'center 30%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg3,  position: 'center 22%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg4,  position: 'center 35%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '0%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg5,  position: 'center 18%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg6,  position: 'center 32%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '0%',   yStart: '0%',  yEnd: '-1%'  } },
+  { src: heroImg7,  position: 'center 38%', kenBurns: { scaleStart: 1.07, scaleEnd: 1.0,  xStart: '0%',  xEnd: '-1%',  yStart: '-1%', yEnd: '1%'   } },
+  { src: heroImg8,  position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg9,  position: 'center 22%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg10, position: 'center 28%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '0%',  xEnd: '1%',   yStart: '-1%', yEnd: '0%'   } },
+  { src: heroImg11, position: 'center 22%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '-1%'  } },
+  { src: heroImg12, position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
 ];
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
@@ -351,7 +346,7 @@ export function TimelineHero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-40 md:pt-44 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-24 md:pt-36 lg:pt-44 overflow-hidden">
       {/* Photo slideshow background */}
       <HeroSlideshow onIndexChange={setSlideIndex} />
       <GridOverlay />
@@ -413,7 +408,7 @@ export function TimelineHero() {
           </motion.button>
         </motion.div>
 
-        {/* Right side - Large B Logo with Glow */}
+        {/* Right side - Large B Logo with Glow — hidden on mobile to keep hero clean */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -423,7 +418,7 @@ export function TimelineHero() {
             type: 'spring',
             stiffness: 200,
           }}
-          className="relative w-48 h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 flex-shrink-0"
+          className="relative hidden lg:flex lg:w-72 lg:h-72 flex-shrink-0"
         >
           {/* Pulsing rings behind logo */}
           <PulsingRings className="inset-0" />
