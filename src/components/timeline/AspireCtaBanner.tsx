@@ -84,6 +84,12 @@ export function AspireCtaBanner() {
                       ASPIRE AI Workshop. A free, full-day AI training experience open to the community.
                     </p>
 
+                    {/* Free childcare callout */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent/40 border border-accent/60 text-accent-foreground text-xs font-medium">
+                      <Baby className="w-4 h-4 text-primary" />
+                      <span>Free childcare provided</span>
+                    </div>
+
                     {/* Event details */}
                     <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                       <span className="flex items-center gap-1.5">
