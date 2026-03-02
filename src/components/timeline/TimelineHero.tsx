@@ -284,15 +284,15 @@ function HeroSlideshow({ onIndexChange }: { onIndexChange: (i: number) => void }
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    onIndexChange(currentIndex);
+  }, [currentIndex, onIndexChange]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const next = (prev + 1) % heroSlides.length;
-        onIndexChange(next);
-        return next;
-      });
+      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
     }, 6500);
     return () => clearInterval(interval);
-  }, [onIndexChange]);
+  }, []);
 
   const slide = heroSlides[currentIndex];
 
