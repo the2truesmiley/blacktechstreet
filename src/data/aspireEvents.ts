@@ -13,7 +13,7 @@ export const aspireEvents2026: AspireEvent[] = [
   {
     id: "march-2026",
     date: new Date(2026, 2, 28), // March 28, 2026
-    title: "ASPIRE GenAI Fluency Workshop",
+    title: "ASPIRE AI Workshop",
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
@@ -23,7 +23,7 @@ export const aspireEvents2026: AspireEvent[] = [
   {
     id: "june-2026",
     date: new Date(2026, 5, 27), // June 27, 2026
-    title: "ASPIRE GenAI Fluency Workshop",
+    title: "ASPIRE AI Workshop",
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
@@ -33,7 +33,7 @@ export const aspireEvents2026: AspireEvent[] = [
   {
     id: "september-2026",
     date: new Date(2026, 8, 26), // September 26, 2026
-    title: "ASPIRE GenAI Fluency Workshop",
+    title: "ASPIRE AI Workshop",
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
@@ -43,7 +43,7 @@ export const aspireEvents2026: AspireEvent[] = [
   {
     id: "december-2026",
     date: new Date(2026, 11, 5), // December 5, 2026
-    title: "ASPIRE GenAI Fluency Workshop",
+    title: "ASPIRE AI Workshop",
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
