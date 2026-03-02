@@ -20,7 +20,29 @@ import heroImg13 from '@/assets/gallery/feb-2026-workshop-coaching.jpg';
 import heroImg14 from '@/assets/gallery/feb-2026-group-certificates.jpg';
 import heroImg15 from '@/assets/gallery/feb-2026-students-collaborating.jpg';
 
-const heroSlides = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6, heroImg7, heroImg8, heroImg9, heroImg10, heroImg11, heroImg12, heroImg13, heroImg14, heroImg15];
+interface HeroSlide {
+  src: string;
+  position: string;
+  kenBurns: { scaleStart: number; scaleEnd: number; xStart: string; xEnd: string; yStart: string; yEnd: string };
+}
+
+const heroSlides: HeroSlide[] = [
+  { src: heroImg1,  position: 'center 30%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '1%',  xEnd: '0%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg2,  position: 'center 35%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '0%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg3,  position: 'center 35%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg4,  position: 'center 30%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg5,  position: 'center 25%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '0%',  xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg6,  position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '-1%'  } },
+  { src: heroImg7,  position: 'center 38%', kenBurns: { scaleStart: 1.07, scaleEnd: 1.0,  xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg8,  position: 'center 22%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '0%',  xEnd: '1%',   yStart: '-1%', yEnd: '0%'   } },
+  { src: heroImg9,  position: 'center 18%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg10, position: 'center 22%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '0%',   yStart: '0%',  yEnd: '-1%'  } },
+  { src: heroImg11, position: 'center 35%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '0%',  xEnd: '-1%',  yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg12, position: 'center 40%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '-1%', xEnd: '1%',   yStart: '-1%', yEnd: '1%'   } },
+  { src: heroImg13, position: 'center 28%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg14, position: 'center 22%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '0%',  xEnd: '1%',   yStart: '1%',  yEnd: '-1%'  } },
+  { src: heroImg15, position: 'center 38%', kenBurns: { scaleStart: 1.07, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '0%',  yEnd: '1%'   } },
+];
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
 const binaryChars = '01';
@@ -263,41 +285,63 @@ function CircuitConnections() {
     </svg>
   );
 }
-function HeroSlideshow() {
+function HeroSlideshow({ onIndexChange }: { onIndexChange: (i: number) => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+      setCurrentIndex((prev) => {
+        const next = (prev + 1) % heroSlides.length;
+        onIndexChange(next);
+        return next;
+      });
+    }, 6500);
     return () => clearInterval(interval);
-  }, []);
+  }, [onIndexChange]);
+
+  const slide = heroSlides[currentIndex];
 
   return (
-    <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 z-0 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          transition={{ duration: 1.8, ease: 'easeInOut' }}
           className="absolute inset-0"
         >
-          <img
-            src={heroSlides[currentIndex]}
+          <motion.img
+            src={slide.src}
             alt=""
             className="w-full h-full object-cover"
+            style={{ objectPosition: slide.position }}
+            initial={{
+              scale: slide.kenBurns.scaleStart,
+              x: slide.kenBurns.xStart,
+              y: slide.kenBurns.yStart,
+            }}
+            animate={{
+              scale: slide.kenBurns.scaleEnd,
+              x: slide.kenBurns.xEnd,
+              y: slide.kenBurns.yEnd,
+            }}
+            transition={{ duration: 7.5, ease: 'easeInOut' }}
           />
         </motion.div>
       </AnimatePresence>
-      {/* Dark overlay for readability + transparency for matrix to show */}
-      <div className="absolute inset-0 bg-background/75" />
+      {/* Gradient overlay — lighter than before so photos read through */}
+      <div className="absolute inset-0 bg-background/55" />
+      {/* Extra bottom vignette so text stays readable */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/20" />
     </div>
   );
 }
 
 export function TimelineHero() {
+  const [slideIndex, setSlideIndex] = useState(0);
+
   const scrollToContent = () => {
     document.getElementById('timeline-start')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -309,7 +353,7 @@ export function TimelineHero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-40 md:pt-44 overflow-hidden">
       {/* Photo slideshow background */}
-      <HeroSlideshow />
+      <HeroSlideshow onIndexChange={setSlideIndex} />
       <GridOverlay />
       <MatrixRain />
       <ScanningLines />
@@ -419,21 +463,42 @@ export function TimelineHero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.button
+      {/* Slide progress dots + scroll indicator */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.6 }}
-        onClick={scrollToContent}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 group flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+        {/* Dots */}
+        <div className="flex items-center gap-1.5">
+          {heroSlides.map((_, i) => (
+            <motion.div
+              key={i}
+              className="rounded-full bg-primary"
+              animate={{
+                width: i === slideIndex ? 20 : 5,
+                opacity: i === slideIndex ? 1 : 0.35,
+              }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              style={{ height: 5 }}
+            />
+          ))}
+        </div>
+
+        {/* Scroll chevron */}
+        <button
+          onClick={scrollToContent}
+          className="group flex flex-col items-center text-muted-foreground hover:text-primary transition-colors"
         >
-          <ChevronDown className="h-6 w-6" />
-        </motion.div>
-      </motion.button>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <ChevronDown className="h-6 w-6" />
+          </motion.div>
+        </button>
+      </motion.div>
 
       <div id="timeline-start" className="absolute bottom-0" />
     </section>
