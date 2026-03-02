@@ -312,7 +312,7 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                 <div className="absolute inset-0 rounded-lg bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               )}
               <img 
-                src={isHome ? logoGlow : logoCircuit} 
+                src={isHome && !isScrolled ? logoGlow : logoCircuit} 
                 alt="Black Tech Street"
                 className={cn(
                   "relative object-contain group-hover:scale-105 transition-all duration-500",
