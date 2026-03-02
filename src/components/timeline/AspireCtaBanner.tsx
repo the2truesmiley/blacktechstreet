@@ -81,7 +81,7 @@ export function AspireCtaBanner() {
                     </h3>
 
                     <p className="text-muted-foreground text-sm max-w-sm">
-                      ASPIRE GenAI Fluency Workshop — a free, full-day AI training experience open to the community.
+                      ASPIRE GenAI Fluency Workshop. A free, full-day AI training experience open to the community.
                     </p>
 
                     {/* Event details */}
