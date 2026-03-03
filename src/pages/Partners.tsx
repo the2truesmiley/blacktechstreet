@@ -256,7 +256,8 @@ export default function Partners() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
             <p className="text-3xl md:text-4xl font-display font-bold text-foreground">
@@ -267,7 +268,8 @@ export default function Partners() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
           >
             {partners.map((partner, index) => (
