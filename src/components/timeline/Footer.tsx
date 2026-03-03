@@ -11,7 +11,7 @@ const socialLinks = [
 
 const quickLinks = [
   { label: 'About Us', href: '/about' },
-  { label: 'Programs', href: '/aspire' },
+  { label: 'G-ACE', href: '/aspire' },
   { label: 'Partners', href: '/partners' },
   { label: 'Team', href: '/about' },
   { label: 'In The News', href: '/news' },
