@@ -282,7 +282,7 @@ export default function Partners() {
                 className="group relative"
               >
                 {partner.link ? (
-                  <a href={partner.link} target="_blank" rel="noopener noreferrer" className="block">
+                  <a href={partner.link} target="_blank" rel={`noopener noreferrer${partner.nofollow ? ' nofollow' : ''}`} className="block">
                     <div className={cn(
                       "relative h-52 p-8 rounded-xl",
                       "bg-card/50 backdrop-blur-sm",
