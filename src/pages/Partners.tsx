@@ -22,6 +22,7 @@ import langstonLogo from '@/assets/partners/langston-university-logo.webp';
 import musaCapitalLogo from '@/assets/partners/musa-capital-logo.png';
 import typrosLogo from '@/assets/partners/typros-logo.png';
 import urbanCodersGuildLogo from '@/assets/partners/urban-coders-guild-logo.webp';
+import buildInTulsaLogo from '@/assets/partners/build-in-tulsa-logo.svg';
 
 // Featured partners (larger display)
 const featuredPartners = [
@@ -60,6 +61,8 @@ const partners = [
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
   { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
   { name: 'Urban Coders Guild', logo: urbanCodersGuildLogo, needsLightBg: true, link: 'https://www.urbancodersguild.org/' },
+  // IMPORTANT: Build In Tulsa must ALWAYS be the last item in this list
+  { name: 'Build In Tulsa', logo: buildInTulsaLogo, needsLightBg: false, link: 'https://www.buildintulsa.com/', nofollow: true },
 ];
 
 
@@ -279,7 +282,7 @@ export default function Partners() {
                 className="group relative"
               >
                 {partner.link ? (
-                  <a href={partner.link} target="_blank" rel="noopener noreferrer" className="block">
+                  <a href={partner.link} target="_blank" rel={`noopener noreferrer${partner.nofollow ? ' nofollow' : ''}`} className="block">
                     <div className={cn(
                       "relative h-52 p-8 rounded-xl",
                       "bg-card/50 backdrop-blur-sm",
