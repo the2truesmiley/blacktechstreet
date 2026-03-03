@@ -19,6 +19,7 @@ import actHouseLogo from '@/assets/partners/act-house-logo.svg';
 import gradientLogo from '@/assets/partners/gradient-logo.svg';
 import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
 import langstonLogo from '@/assets/partners/langston-university-logo.webp';
+import musaCapitalLogo from '@/assets/partners/musa-capital-logo.png';
 
 // Featured partners (larger display)
 const featuredPartners = [
