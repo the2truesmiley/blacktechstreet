@@ -357,7 +357,7 @@ export function TimelineHero() {
       <CircuitConnections />
       
       {/* Two-column layout container */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+      <div className="relative z-10 w-full max-w-6xl xl:max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 xl:gap-20">
         
         {/* Left side - Mission Statement & CTA */}
         <motion.div
