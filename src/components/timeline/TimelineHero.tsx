@@ -357,7 +357,7 @@ export function TimelineHero() {
       <CircuitConnections />
       
       {/* Two-column layout container */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+      <div className="relative z-10 w-full max-w-6xl xl:max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 xl:gap-20">
         
         {/* Left side - Mission Statement & CTA */}
         <motion.div
@@ -367,7 +367,7 @@ export function TimelineHero() {
           className="flex-1 text-center lg:text-left"
         >
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight mb-4 text-balance"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground tracking-tight leading-tight mb-4 lg:mb-6 text-balance"
           >
             <motion.span
               animate={{
@@ -391,7 +391,7 @@ export function TimelineHero() {
             </motion.span>
           </motion.h1>
           
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 font-medium tracking-wide">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 lg:mb-10 font-medium tracking-wide">
             Community Wide Fluency &nbsp;·&nbsp; AI Powered Innovation &nbsp;·&nbsp; Real World Application
           </p>
 
@@ -401,10 +401,10 @@ export function TimelineHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             onClick={() => { window.location.href = '/contact'; }}
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-primary/50 text-foreground font-medium text-lg hover:bg-primary/20 hover:border-primary hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20"
+            className="group inline-flex items-center gap-3 px-8 py-4 lg:px-10 lg:py-5 rounded-full bg-white/10 backdrop-blur-sm border border-primary/50 text-foreground font-medium text-lg lg:text-xl hover:bg-primary/20 hover:border-primary hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20"
           >
             Get Involved
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </motion.div>
 
@@ -418,7 +418,7 @@ export function TimelineHero() {
             type: 'spring',
             stiffness: 200,
           }}
-          className="relative hidden lg:flex lg:w-72 lg:h-72 flex-shrink-0"
+          className="relative hidden lg:flex lg:w-80 lg:h-80 xl:w-96 xl:h-96 flex-shrink-0"
         >
           {/* Pulsing rings behind logo */}
           <PulsingRings className="inset-0" />
