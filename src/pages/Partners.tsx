@@ -16,6 +16,7 @@ import tedcLogo from '@/assets/partners/tedc-logo.png';
 import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
 import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
 import actHouseLogo from '@/assets/partners/act-house-logo.svg';
+import gradientLogo from '@/assets/partners/gradient-logo.svg';
 
 // Featured partners (larger display)
 const featuredPartners = [
