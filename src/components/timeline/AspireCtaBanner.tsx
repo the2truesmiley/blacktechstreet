@@ -94,7 +94,7 @@ export function AspireCtaBanner() {
                     <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-4 h-4 text-primary" />
-                        March 28, 2026
+                        April 18, 2026
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Clock className="w-4 h-4 text-primary" />

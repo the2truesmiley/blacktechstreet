@@ -11,8 +11,8 @@ export interface AspireEvent {
 
 export const aspireEvents2026: AspireEvent[] = [
   {
-    id: "march-2026",
-    date: new Date(2026, 2, 28), // March 28, 2026
+    id: "april-2026",
+    date: new Date(2026, 3, 18), // April 18, 2026
     title: "ASPIRE AI Workshop",
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",
