@@ -461,6 +461,9 @@ export function TimelineHero() {
         </motion.div>
       </div>
 
+      {/* Bottom spacer to balance vertical centering */}
+      <div className="flex-1" />
+
       {/* Slide progress dots + scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
