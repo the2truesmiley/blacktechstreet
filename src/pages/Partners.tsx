@@ -20,6 +20,7 @@ import gradientLogo from '@/assets/partners/gradient-logo.svg';
 import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
 import langstonLogo from '@/assets/partners/langston-university-logo.webp';
 import musaCapitalLogo from '@/assets/partners/musa-capital-logo.png';
+import typrosLogo from '@/assets/partners/typros-logo.png';
 
 // Featured partners (larger display)
 const featuredPartners = [
@@ -56,6 +57,7 @@ const partners = [
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: true, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Regional Chamber of Commerce', logo: null, needsLightBg: false, link: 'https://tulsachamber.com/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
+  { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
 ];
 
 
