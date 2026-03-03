@@ -357,7 +357,7 @@ export function TimelineHero() {
       <CircuitConnections />
 
       {/* Spacer to push content below the nav — grows to vertically center the content block */}
-      <div className="flex-1 min-h-[140px] sm:min-h-[150px] md:min-h-[160px]" />
+      <div className="flex-1 min-h-[120px] sm:min-h-[130px] md:min-h-[140px] lg:min-h-[180px]" />
       
       {/* Two-column layout container */}
       <div className="relative z-10 w-full max-w-6xl xl:max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 xl:gap-20">
