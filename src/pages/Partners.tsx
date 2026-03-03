@@ -241,7 +241,7 @@ export default function Partners() {
                     {partner.name}
                   </div>
                 </div>
-              </motion.div>
+          </div>
             ))}
           </motion.div>
         </div>
