@@ -56,7 +56,7 @@ const partners = [
   { name: 'Langston University', logo: langstonLogo, needsLightBg: true, link: 'https://langston.edu/' },
   { name: 'Musa Capital', logo: musaCapitalLogo, needsLightBg: true, link: 'https://www.musacap.com/' },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
-  { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: true, link: 'https://www.tulsadreamcenter.org/' },
+  { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: false, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Regional Chamber of Commerce', logo: null, needsLightBg: false, link: 'https://tulsachamber.com/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
   { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
