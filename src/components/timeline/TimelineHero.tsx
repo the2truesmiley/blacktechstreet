@@ -391,7 +391,7 @@ export function TimelineHero() {
             </motion.span>
           </motion.h1>
           
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 font-medium tracking-wide">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 lg:mb-10 font-medium tracking-wide">
             Community Wide Fluency &nbsp;·&nbsp; AI Powered Innovation &nbsp;·&nbsp; Real World Application
           </p>
 
