@@ -15,6 +15,7 @@ import seedaiLogo from '@/assets/partners/seedai-logo.png';
 import tedcLogo from '@/assets/partners/tedc-logo.png';
 import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
 import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
+import actHouseLogo from '@/assets/partners/act-house-logo.svg';
 
 // Featured partners (larger display)
 const featuredPartners = [
