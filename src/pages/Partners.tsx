@@ -312,7 +312,11 @@ export default function Partners() {
                       "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
                       partner.needsLightBg && "bg-white/90"
                     )}>
-                      <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
+                        {partner.logo ? (
+                          <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
+                        ) : (
+                          <span className="text-lg font-bold text-foreground text-center leading-tight">{partner.name}</span>
+                        )}
                     </div>
                     <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
                       {partner.name}
