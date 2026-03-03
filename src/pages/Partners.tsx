@@ -32,14 +32,18 @@ const featuredPartners = [
   },
 ];
 
-// All other partners
+// Core partners
+const corePartners = [
+  { name: 'TEDC', logo: tedcLogo, needsLightBg: false },
+  { name: 'Tulsa Innovation Labs', logo: tilLogo, needsLightBg: false },
+  { name: 'SeedAI', logo: seedaiLogo, needsLightBg: false },
+];
+
+// Community partners
 const partners = [
   { name: 'Atlas School', logo: atlasLogo, needsLightBg: false, link: 'https://www.atlasschool.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
-  { name: 'SeedAI', logo: seedaiLogo, needsLightBg: false },
-  { name: 'TEDC', logo: tedcLogo, needsLightBg: false },
-  { name: 'Tulsa Innovation Labs', logo: tilLogo, needsLightBg: false },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
 ];
 
