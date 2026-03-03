@@ -249,7 +249,7 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 overflow-hidden",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isHome
             ? isScrolled
               ? "bg-background/90 backdrop-blur-xl border-b border-primary/30 shadow-[0_4px_30px_rgba(16,185,129,0.08)]"
