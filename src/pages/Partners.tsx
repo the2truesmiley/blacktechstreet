@@ -138,7 +138,7 @@ export default function Partners() {
                 key={partner.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "50px 0px" }}
                 transition={{ delay: index * 0.15 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group relative"
