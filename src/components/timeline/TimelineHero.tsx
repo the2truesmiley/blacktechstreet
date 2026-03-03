@@ -418,7 +418,7 @@ export function TimelineHero() {
             type: 'spring',
             stiffness: 200,
           }}
-          className="relative hidden lg:flex lg:w-72 lg:h-72 flex-shrink-0"
+          className="relative hidden lg:flex lg:w-80 lg:h-80 xl:w-96 xl:h-96 flex-shrink-0"
         >
           {/* Pulsing rings behind logo */}
           <PulsingRings className="inset-0" />
