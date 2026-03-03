@@ -16,6 +16,7 @@ import tedcLogo from '@/assets/partners/tedc-logo.png';
 import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
 import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
 import actHouseLogo from '@/assets/partners/act-house-logo.svg';
+import gradientLogo from '@/assets/partners/gradient-logo.svg';
 
 // Featured partners (larger display)
 const featuredPartners = [
@@ -44,6 +45,7 @@ const corePartners = [
 const partners = [
   { name: 'ACT House', logo: actHouseLogo, needsLightBg: true, link: 'https://www.act.house/' },
   { name: 'Atlas School', logo: atlasLogo, needsLightBg: false, link: 'https://www.atlasschool.com/' },
+  { name: 'Gradient', logo: gradientLogo, needsLightBg: true, link: 'https://www.joingradient.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
