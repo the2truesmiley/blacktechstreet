@@ -21,6 +21,7 @@ import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg'
 import langstonLogo from '@/assets/partners/langston-university-logo.webp';
 import musaCapitalLogo from '@/assets/partners/musa-capital-logo.png';
 import typrosLogo from '@/assets/partners/typros-logo.png';
+import urbanCodersGuildLogo from '@/assets/partners/urban-coders-guild-logo.webp';
 
 // Featured partners (larger display)
 const featuredPartners = [
@@ -58,6 +59,7 @@ const partners = [
   { name: 'Tulsa Regional Chamber of Commerce', logo: null, needsLightBg: false, link: 'https://tulsachamber.com/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
   { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
+  { name: 'Urban Coders Guild', logo: urbanCodersGuildLogo, needsLightBg: true, link: 'https://www.urbancodersguild.org/' },
 ];
 
 
