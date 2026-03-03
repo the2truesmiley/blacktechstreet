@@ -401,10 +401,10 @@ export function TimelineHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             onClick={() => { window.location.href = '/contact'; }}
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-primary/50 text-foreground font-medium text-lg hover:bg-primary/20 hover:border-primary hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20"
+            className="group inline-flex items-center gap-3 px-8 py-4 lg:px-10 lg:py-5 rounded-full bg-white/10 backdrop-blur-sm border border-primary/50 text-foreground font-medium text-lg lg:text-xl hover:bg-primary/20 hover:border-primary hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20"
           >
             Get Involved
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 lg:w-6 lg:h-6 group-hover:translate-x-1 transition-transform" />
           </motion.button>
         </motion.div>
 
