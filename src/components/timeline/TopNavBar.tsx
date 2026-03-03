@@ -311,18 +311,31 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
               {isHome && (
                 <div className="absolute inset-0 rounded-lg bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               )}
-              <img 
-                src={isHome && !isScrolled ? logoGlow : logoCircuit} 
-                alt="Black Tech Street"
-                className={cn(
-                  "relative object-contain group-hover:scale-105 transition-all duration-500",
-                  isHome
-                    ? isScrolled
-                      ? "w-10 h-10"
-                      : "w-[100px] md:w-[168px] h-auto"
-                    : "w-10 h-10"
+              <AnimatePresence mode="wait" initial={false}>
+                {isHome && !isScrolled ? (
+                  <motion.img
+                    key="glow"
+                    src={logoGlow}
+                    alt="Black Tech Street"
+                    initial={{ opacity: 0, scale: 0.85 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.85 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative object-contain w-[100px] md:w-[168px] h-auto group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <motion.img
+                    key="circuit"
+                    src={logoCircuit}
+                    alt="Black Tech Street"
+                    initial={{ opacity: 0, scale: 1.15 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.15 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative object-contain w-10 h-10 group-hover:scale-105 transition-transform duration-500"
+                  />
                 )}
-              />
+              </AnimatePresence>
             </div>
             {(!isHome || isScrolled) && (
               <span className="font-display font-bold text-foreground text-lg hidden sm:block tracking-tight">
