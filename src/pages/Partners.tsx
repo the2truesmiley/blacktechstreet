@@ -17,6 +17,7 @@ import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
 import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
 import actHouseLogo from '@/assets/partners/act-house-logo.svg';
 import gradientLogo from '@/assets/partners/gradient-logo.svg';
+import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
 
 // Featured partners (larger display)
 const featuredPartners = [
@@ -48,6 +49,7 @@ const partners = [
   { name: 'Gradient', logo: gradientLogo, needsLightBg: true, link: 'https://www.joingradient.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
+  { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: true, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
 ];
 
