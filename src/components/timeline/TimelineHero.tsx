@@ -346,7 +346,7 @@ export function TimelineHero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-28 sm:pt-32 md:pt-36 lg:pt-44 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center px-5 pb-6 overflow-hidden">
       {/* Photo slideshow background */}
       <HeroSlideshow onIndexChange={setSlideIndex} />
       <GridOverlay />
@@ -355,6 +355,9 @@ export function TimelineHero() {
       <DataBurst />
       <FloatingParticles />
       <CircuitConnections />
+
+      {/* Spacer to push content below the nav — grows to vertically center the content block */}
+      <div className="flex-1 min-h-[140px] sm:min-h-[150px] md:min-h-[160px]" />
       
       {/* Two-column layout container */}
       <div className="relative z-10 w-full max-w-6xl xl:max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 xl:gap-20">
