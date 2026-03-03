@@ -42,6 +42,7 @@ const corePartners = [
 
 // Community partners
 const partners = [
+  { name: 'ACT House', logo: actHouseLogo, needsLightBg: true, link: 'https://www.act.house/' },
   { name: 'Atlas School', logo: atlasLogo, needsLightBg: false, link: 'https://www.atlasschool.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
