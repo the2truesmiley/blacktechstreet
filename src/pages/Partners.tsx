@@ -61,6 +61,8 @@ const partners = [
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
   { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
   { name: 'Urban Coders Guild', logo: urbanCodersGuildLogo, needsLightBg: true, link: 'https://www.urbancodersguild.org/' },
+  // IMPORTANT: Build In Tulsa must ALWAYS be the last item in this list
+  { name: 'Build In Tulsa', logo: buildInTulsaLogo, needsLightBg: false, link: 'https://www.buildintulsa.com/', nofollow: true },
 ];
 
 
