@@ -346,7 +346,7 @@ export function TimelineHero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-24 md:pt-36 lg:pt-44 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-36 sm:pt-40 md:pt-44 lg:pt-48 overflow-hidden">
       {/* Photo slideshow background */}
       <HeroSlideshow onIndexChange={setSlideIndex} />
       <GridOverlay />
