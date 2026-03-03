@@ -346,7 +346,7 @@ export function TimelineHero() {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-5 pb-6 pt-32 sm:pt-36 md:pt-40 lg:pt-56 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center px-5 pb-20 pt-[130px] sm:pt-[140px] md:pt-[160px] lg:pt-[200px] xl:pt-[220px] overflow-hidden">
       {/* Photo slideshow background */}
       <HeroSlideshow onIndexChange={setSlideIndex} />
       <GridOverlay />
@@ -418,7 +418,7 @@ export function TimelineHero() {
             type: 'spring',
             stiffness: 200,
           }}
-          className="relative hidden lg:flex lg:w-80 lg:h-80 xl:w-96 xl:h-96 flex-shrink-0"
+          className="relative hidden lg:flex lg:w-64 lg:h-64 xl:w-96 xl:h-96 flex-shrink-0"
         >
           {/* Pulsing rings behind logo */}
           <PulsingRings className="inset-0" />
@@ -457,6 +457,7 @@ export function TimelineHero() {
           />
         </motion.div>
       </div>
+
 
       {/* Slide progress dots + scroll indicator */}
       <motion.div
