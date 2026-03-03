@@ -1,0 +1,656 @@
+<!DOCTYPE html><!-- Last Published: Mon Mar 02 2026 08:00:22 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.experiencetulsa.com" data-wf-page="68efc267f6b4426e5b3f6f10" data-wf-site="68efc266f6b4426e5b3f6e0b" lang="en"><head><meta charset="utf-8"/><title>Experience Tulsa - Discover Opportunity, Community and Culture</title><meta content="Explore everything there is to do in Tulsa. Experience Tulsa connects you to the city’s people, culture, events and community to help you thrive." name="description"/><meta content="Experience Tulsa - Discover Opportunity, Community and Culture" property="og:title"/><meta content="Explore everything there is to do in Tulsa. Experience Tulsa connects you to the city’s people, culture, events and community to help you thrive." property="og:description"/><meta content="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/694861f8e1ea720eb74d27a9_ET_OPENGRAPH.jpg" property="og:image"/><meta content="Experience Tulsa - Discover Opportunity, Community and Culture" property="twitter:title"/><meta content="Explore everything there is to do in Tulsa. Experience Tulsa connects you to the city’s people, culture, events and community to help you thrive." property="twitter:description"/><meta property="og:type" content="website"/><meta content="summary_large_image" name="twitter:card"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/css/experience-tulsa-web-2025.shared.a9ece16dc.min.css" rel="stylesheet" type="text/css" integrity="sha384-qezhbcAwLbEJAJKjb+zc+ThqMRW7cVzYsMz8vR0Y833jANo+9xI0jSS9H/EQSe77" crossorigin="anonymous"/><style>html.w-mod-js:not(.w-mod-ix3) :is(.frame-corner-1, .frame-corner-2, .frame-corner-3, .frame-corner-4, .image-marquee.ascending, .image-marquee.descending, .navbar_main-wrapper, .nav-dropdown-icon, .steps_module_step_number, .steps_module_step_description, .copy-link-success-wrapper, .homepage_leadspace-content-wrapper, [data-wf-target*='["68efc267f6b4426e5b3f6f10","571d1076-c4b4-a73b-7bdd-e2908eaa534a"]'], .homepage_leadspace-content, .leadspace-cutout-left, .leadspace-cutout-right, .homepage_leadspace-image-wrapper) {visibility: hidden !important;}</style><script src="https://use.typekit.net/lhs1ksh.js" type="text/javascript"></script><script type="text/javascript">try{Typekit.load();}catch(e){}</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/69385fcc15f150ddb649da2d_ET_FAVICON.png" rel="shortcut icon" type="image/x-icon"/><link href="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/69385fd059522018b334ae50_ET_WEB%20CLIP.png" rel="apple-touch-icon"/><!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" type="fs-cc" fs-cc-categories="marketing"async defer src="//js.hs-scripts.com/23811891.js?businessUnitId=2517947"></script>
+<!-- End of HubSpot Embed Code -->
+
+
+<!-- Google Tag Manager -->
+<script type="fs-cc" fs-cc-categories="analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHKX7N5G');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Finsweet Cookie Consent -->
+<script type="fs-cc" fs-cc-categories="personalization, analytics, marketing"></script>
+
+<!-- Finsweet Cookie Consent -->
+<script async src="https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js" fs-cc-mode="opt-in"></script>
+
+<!-- Finsweet Attributes -->
+<script async type="module"
+src="https://cdn.jsdelivr.net/npm/@finsweet/attributes@2/attributes.js"
+fs-list
+fs-mirrorclick
+fs-copyclip
+fs-socialshare
+fs-readtime
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var shareLinks = document.querySelectorAll(".button.social-share.email");
+
+    if (!shareLinks.length) return;
+
+    shareLinks.forEach(function (link) {
+      link.href = "mailto:?body=" + encodeURIComponent(window.location.href);
+    });
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const copyLinks = document.querySelectorAll(".button.social-share.copy-link");
+  if (!copyLinks.length) return;
+
+  const currentUrl = window.location.href;
+
+  copyLinks.forEach((link) => {
+    link.setAttribute("fs-copyclip-text", currentUrl);
+  });
+});
+</script>
+
+<script>
+	window.FinsweetAttributes = window.FinsweetAttributes || [];
+	window.FinsweetAttributes.push([
+		"list",
+		(listInstances) => {
+			listInstances.forEach((listInstance) => {
+				listInstance.sorting.value.fieldKey = "date";
+				listInstance.sorting.value.direction = "desc";
+			});
+		},
+	]);
+
+</script>
+
+<!-- End Finsweet Attributes -->
+
+<!-- Global Navbar GA4 -->
+<script type="text/javascript">
+
+  document.addEventListener( "DOMContentLoaded", function () {
+    if ( !window.AnalyticsFrameworkFunctions ) {
+      window.AnalyticsFrameworkFunctions = {};
+    }
+
+    window.AnalyticsFrameworkFunctions.wireGlobalNav = function () {
+      const socialLinks = document.querySelectorAll( 'nav.navbar_utility-wrapper a.button.social' );
+      const baseLinkName = 'et:nav:utility:';
+      for ( var sl = 0; sl < socialLinks.length; sl++ ) {
+
+        const link = socialLinks[sl];
+
+        var dataLayerJSON = {
+          "event": "social_click",
+          "link_conversion": "0",
+          "link_text": "na",
+          "link_name": "et:nav:utility:",
+          "generic_link_name": "et:nav:utility:cta",
+          "link_type": "custom",
+          "link_url": "###",
+          "social_platform": "na"
+        }
+
+        const href = link.href.toLowerCase();
+        var linkText = 'na';
+        var linkName = 'na';
+        var isSocial = false;
+
+        if ( href.includes( 'instagram' ) ) {
+          isSocial = true;
+          linkText = 'instagram';
+          linkName = baseLinkName + linkText;
+        }
+        else if ( href.includes( 'tiktok' ) ) {
+          isSocial = true;
+          linkText = 'tiktok';
+          linkName = baseLinkName + linkText;
+        }
+        else if ( href.includes( 'linkedin' ) ) {
+          isSocial = true;
+          linkText = 'linkedin';
+          linkName = baseLinkName + linkText;
+        }
+        else if ( href.startsWith( 'mailto:' ) ) {
+        }
+
+        if ( isSocial ) {
+          dataLayerJSON.link_text = linkText;
+          dataLayerJSON.link_name = linkName;
+          dataLayerJSON.social_platform = linkText;
+          link.setAttribute( "data-datalayer", JSON.stringify( dataLayerJSON ) )
+        }
+      }
+
+    };
+
+    const checkAnalyticsFrameworkFunctions = setInterval( () => {
+      if ( typeof window.AnalyticsFrameworkFunctions === 'object' && window.AnalyticsFrameworkFunctions !== null ) {
+        if ( typeof window.AnalyticsFrameworkFunctions.toSnakeCase === 'function' ) {
+          clearInterval( checkAnalyticsFrameworkFunctions );
+          window.AnalyticsFrameworkFunctions.wireGlobalNav();
+        }
+      }
+    }, 50 );
+  } );
+</script>
+
+<!-- End Global Navbar GA4 -->
+
+<!--
+===============
+2025 RETAGGING
+===============
+-->
+<meta name="page-analytics" data-analytics-id="home:pageload:1" data-datalayer="{'event':'page_view','site':'et','site_section':'et:home','generic_site_section':'et:home','page_name':'et:home:overview','generic_page_name':'et:home:overview','page_type':'page'}" />
+<script type="text/javascript">
+    document.addEventListener( "DOMContentLoaded", function () {
+      if ( !window.AnalyticsFrameworkFunctions ) {
+        window.AnalyticsFrameworkFunctions = {};
+      }
+      // Upcoming Events Analytics
+      window.AnalyticsFrameworkFunctions.addUpcomingEventsAnalytics = function () {
+        var allEventsButton = document.querySelector( "section.section_upcoming-events a[href='/events']" )
+        if ( allEventsButton ) {
+          allEventsButton.setAttribute( "data-analytics-id", "home:upcoming_events:1" )
+          var dataLayerJSON = {
+            "event": "custom_link",
+            "link_conversion": "0",
+            "link_text": "###",
+            "link_name": "et:home:upcoming_events:view_more_events",
+            "generic_link_name": "et:home:upcoming_events:cta",
+            "link_type": "custom",
+            "link_url": "###"
+          }
+          allEventsButton.setAttribute( "data-datalayer", JSON.stringify( dataLayerJSON ) )
+        }
+        var upcomingEventAnchors = document.querySelectorAll( "section.section_upcoming-events div.event-card_cta-overlay > a" );
+        for ( var uea = 0; uea < upcomingEventAnchors.length; uea++ ) {
+          upcomingEventAnchors[uea].setAttribute( "data-analytics-id", "home:upcoming_events:" + ( uea + 2 ) + ":primary" )
+          var eventTitle = "unknown";
+          var card = upcomingEventAnchors[uea].closest( '.event-card_component' );
+          if ( card ) {
+
+            var cardTitle = card.querySelector( "h3,h2,h1" );
+            if ( cardTitle && typeof window?.AnalyticsFrameworkFunctions?.toSnakeCase === 'function'  ) {
+              eventTitle = window.AnalyticsFrameworkFunctions.toSnakeCase( cardTitle.textContent ).replace( /:/g, "_" );
+            }
+          }
+
+          var dataLayerJSON = {
+            "event": "custom_link",
+            "link_conversion": "0",
+            "link_text": eventTitle,
+            "link_name": "et:home:upcoming_events:" + eventTitle,
+            "generic_link_name": "et:home:upcoming_events:cta",
+            "link_type": "custom",
+            "link_url": "###"
+          }
+          upcomingEventAnchors[uea].setAttribute( "data-datalayer", JSON.stringify( dataLayerJSON ) );
+          var secondaryCTA = card.querySelector( "a.link-secondary-cta" );
+          if ( secondaryCTA ) {
+            secondaryCTA.setAttribute( "data-analytics-id", "home:upcoming_events:" + ( uea + 2 ) ) + ":secondary"
+            var dataLayerJSON = {
+              "event": "custom_link",
+              "link_conversion": "0",
+              "link_text": "###",
+              "link_name": "et:home:" + eventTitle + ":get_the_details",
+              "generic_link_name": "et:home:" + eventTitle + ":cta",
+              "link_type": "custom",
+              "link_url": "###"
+            }
+            secondaryCTA.setAttribute( "data-datalayer", JSON.stringify( dataLayerJSON ) )
+          }
+        }
+      };
+      // Why Tulsa Analytics
+      // Opportunities Analytics
+      // About Experience Tulsa Analytics
+      window.AnalyticsFrameworkFunctions.addLearnMoreSectionAnalytics = function () {
+        var leanMoreSections = {
+          "why_tulsa": ".section_homepage-why-tulsa-intro",
+          "opportunities": ".section_homepage-opportunities-intro",
+          "about_experience_tulsa": ".section_homepage-about-intro"
+        };
+        for ( var leanMoreSection in leanMoreSections ) {
+          var learnMoreButton = document.querySelector( "section" + leanMoreSections[leanMoreSection] + " a" );
+          if ( learnMoreButton ) {
+            learnMoreButton.setAttribute( "data-analytics-id", "home:" + leanMoreSection + ":1" )
+            var dataLayerJSON = {
+              "event": "custom_link",
+              "link_conversion": "0",
+              "link_text": "###",
+              "link_name": "et:home:" + leanMoreSection + ":learn_more",
+              "generic_link_name": "et:home:" + leanMoreSection + ":cta",
+              "link_type": "custom",
+              "link_url": "###"
+            }
+            learnMoreButton.setAttribute( "data-datalayer", JSON.stringify( dataLayerJSON ) )
+          }
+        }
+      };
+      // Stories Analytics
+      window.AnalyticsFrameworkFunctions.addStoriesAnalytics = function () {
+        var moresStoriesButton = document.querySelector( "section.section_tulsa-stories a[href='/stories']" )
+        if ( moresStoriesButton ) {
+          moresStoriesButton.setAttribute( "data-analytics-id", "home:tulsa_stories:1" )
+          var dataLayerJSON = {
+            "event": "custom_link",
+            "link_conversion": "0",
+            "link_text": "###",
+            "link_name": "et:home:tulsa_stories:view_more_stories",
+            "generic_link_name": "et:home:tulsa_stories:cta",
+            "link_type": "custom",
+            "link_url": "###"
+          }
+          moresStoriesButton.setAttribute( "data-datalayer", JSON.stringify( dataLayerJSON ) )
+        }
+        var storiestAnchors = document.querySelectorAll( "section.section_tulsa-stories [role='listitem'] a.resource_card_component" );
+        for ( var sa = 0; sa < storiestAnchors.length; sa++ ) {
+          storiestAnchors[sa].setAttribute( "data-analytics-id", "home:tulsa_stories:" + ( sa + 2 ) );
+          var storyType = "unknown";
+          var storyTitle = "unknown";
+          var linkText = "unknown";
+
+          var storyCardVariant = storiestAnchors[sa].getAttribute( "data-wf--story-card--variant" ) ;
+          if ( storyCardVariant && typeof window?.AnalyticsFrameworkFunctions?.toSnakeCase === 'function' ) {
+            storyType = window.AnalyticsFrameworkFunctions.toSnakeCase( storyCardVariant ).replace( /:/g, "_" );
+          }
+          
+          var storyTitleElement = storiestAnchors[sa].querySelector( ".resource-card_title" );
+          if ( storyTitleElement && typeof window?.AnalyticsFrameworkFunctions?.toSnakeCase === 'function' ) {
+            storyTitle = window.AnalyticsFrameworkFunctions.toSnakeCase( storyTitleElement.textContent ).replace( /:/g, "_" );
+          }
+
+          var linkSecondaryCta = storiestAnchors[sa].querySelector( ".link-secondary-cta" );
+          if ( linkSecondaryCta && typeof window?.AnalyticsFrameworkFunctions?.toSnakeCase === 'function' ) {
+            linkText = window.AnalyticsFrameworkFunctions.toSnakeCase( linkSecondaryCta.textContent ).replace( /:/g, "_" );
+          }
+
+          var dataLayerJSON = [
+            {
+              "event": "custom_link",
+              "link_conversion": "0",
+              "link_text": linkText,
+              "link_name": "et:home:tulsa_stories:read_more",
+              "generic_link_name": "et:home:tulsa_stories:cta",
+              "link_type": "custom",
+              "link_url": "###",
+              "component_type": storyType,
+              "component_name": storyTitle,
+              "tout_position": ( sa + 1 )
+            },
+            {
+              "component_type": "",
+              "component_name": "",
+              "tout_position": ""
+            }
+          ]
+          storiestAnchors[sa].setAttribute( "data-datalayer", JSON.stringify( dataLayerJSON ) )
+        }
+      };
+      
+      const checkAnalyticsFrameworkFunctions = setInterval( () => {
+        if ( typeof window.AnalyticsFrameworkFunctions === 'object' && window.AnalyticsFrameworkFunctions !== null ) {
+          if ( typeof window.AnalyticsFrameworkFunctions.toSnakeCase === 'function' ) {
+            clearInterval( checkAnalyticsFrameworkFunctions );
+            window.AnalyticsFrameworkFunctions.addUpcomingEventsAnalytics();
+            window.AnalyticsFrameworkFunctions.addLearnMoreSectionAnalytics();
+            window.AnalyticsFrameworkFunctions.addStoriesAnalytics();
+          }
+        }
+      }, 50 );
+    } );
+  </script>
+<!--
+===============
+//2025 RETAGGING
+===============
+--></head><body><div class="page-wrapper"><header class="section_navbar_wrapper"><div data-w-id="bd8c8426-cd59-be2f-c1ff-8929f2051d9d" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav"><div class="navbar_main-layout"><nav class="navbar_utility-wrapper"><div class="padding-global"><div class="w-layout-blockcontainer container w-container"><div class="navbar_utility-layout"><div class="heading-style-h6">COnnect with Us</div><div class="navbar_social-buttons_layout"><a href="mailto:Info@experiencetulsa.com" class="button social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" viewBox="0 0 15 12" fill="none">
+  <path d="M1.5 12C1.0875 12 0.734375 11.8531 0.440625 11.5594C0.146875 11.2656 0 10.9125 0 10.5V1.5C0 1.0875 0.146875 0.734375 0.440625 0.440625C0.734375 0.146875 1.0875 0 1.5 0H13.5C13.9125 0 14.2656 0.146875 14.5594 0.440625C14.8531 0.734375 15 1.0875 15 1.5V10.5C15 10.9125 14.8531 11.2656 14.5594 11.5594C14.2656 11.8531 13.9125 12 13.5 12H1.5ZM7.5 6.75L1.5 3V10.5H13.5V3L7.5 6.75ZM7.5 5.25L13.5 1.5H1.5L7.5 5.25ZM1.5 3V1.5V10.5V3Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.instagram.com/experience.tulsa" target="_blank" class="button social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 15 15" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5998 1.94531H4.7998C3.14295 1.94531 1.7998 3.28846 1.7998 4.94531V9.74531C1.7998 11.4022 3.14295 12.7453 4.7998 12.7453H9.5998C11.2566 12.7453 12.5998 11.4022 12.5998 9.74531V4.94531C12.5998 3.28846 11.2566 1.94531 9.5998 1.94531ZM11.5498 9.74531C11.5465 10.8209 10.6754 11.692 9.5998 11.6953H4.7998C3.72421 11.692 2.8531 10.8209 2.8498 9.74531V4.94531C2.8531 3.86972 3.72421 2.99861 4.7998 2.99531H9.5998C10.6754 2.99861 11.5465 3.86972 11.5498 4.94531V9.74531ZM10.0498 5.09531C10.3812 5.09531 10.6498 4.82668 10.6498 4.49531C10.6498 4.16394 10.3812 3.89531 10.0498 3.89531C9.71842 3.89531 9.4498 4.16394 9.4498 4.49531C9.4498 4.82668 9.71842 5.09531 10.0498 5.09531ZM7.1998 4.64531C5.70864 4.64531 4.4998 5.85414 4.4998 7.34531C4.4998 8.83649 5.70864 10.0453 7.1998 10.0453C8.69099 10.0453 9.89981 8.83649 9.89981 7.34531C9.90143 6.62873 9.61744 5.94105 9.11074 5.43436C8.60404 4.92767 7.91639 4.64372 7.1998 4.64531ZM5.5498 7.34531C5.5498 8.25659 6.28852 8.99531 7.1998 8.99531C8.11108 8.99531 8.8498 8.25659 8.8498 7.34531C8.8498 6.43403 8.11108 5.69531 7.1998 5.69531C6.28852 5.69531 5.5498 6.43403 5.5498 7.34531Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.tiktok.com/@experience.tulsa" target="_blank" class="button social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 15 15" fill="none">
+  <path d="M9.96058 3.4918C9.55053 3.02352 9.32452 2.42224 9.32458 1.7998H7.47058V9.2398C7.45658 9.64252 7.28669 10.0241 6.99677 10.3039C6.70684 10.5838 6.31954 10.74 5.91658 10.7398C5.06458 10.7398 4.35658 10.0438 4.35658 9.17981C4.35658 8.14781 5.35258 7.3738 6.37858 7.6918V5.7958C4.30858 5.5198 2.49658 7.1278 2.49658 9.17981C2.49658 11.1778 4.15258 12.5998 5.91058 12.5998C7.79458 12.5998 9.32458 11.0698 9.32458 9.17981V5.4058C10.0764 5.94571 10.979 6.23539 11.9046 6.23381V4.3798C11.9046 4.3798 10.7766 4.4338 9.96058 3.4918Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.linkedin.com/company/experience-tulsa/" target="_blank" class="button social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 15 15" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.6998 1.94531C2.20275 1.94531 1.7998 2.34825 1.7998 2.84531V11.8453C1.7998 12.3424 2.20275 12.7453 2.6998 12.7453H11.6998C12.1968 12.7453 12.5998 12.3424 12.5998 11.8453V2.84531C12.5998 2.34825 12.1968 1.94531 11.6998 1.94531H2.6998ZM5.11226 4.34694C5.11564 4.92069 4.68617 5.27423 4.17654 5.27169C3.69645 5.26916 3.27795 4.88694 3.28048 4.34779C3.28301 3.84069 3.68379 3.43316 4.20439 3.44498C4.73257 3.45679 5.11564 3.84407 5.11226 4.34694ZM7.36763 6.00237H5.85563H5.85478V11.1383H7.45282V11.0185C7.45282 10.7905 7.45264 10.5625 7.45246 10.3345C7.45198 9.72617 7.45144 9.11723 7.45456 8.50913C7.4554 8.36147 7.46212 8.20793 7.5001 8.06699C7.64266 7.54049 8.11607 7.20047 8.64425 7.28405C8.98343 7.33715 9.20783 7.53377 9.30232 7.85357C9.36059 8.05349 9.38674 8.26865 9.38927 8.47709C9.39611 9.10565 9.39514 9.73421 9.39419 10.3628C9.39383 10.5847 9.39347 10.8067 9.39347 11.0286V11.1374H10.9966V11.0143C10.9966 10.7431 10.9965 10.4719 10.9963 10.2008C10.996 9.52307 10.9956 8.84537 10.9974 8.16743C10.9983 7.86113 10.9654 7.55909 10.8903 7.26293C10.7781 6.82247 10.5461 6.45797 10.1689 6.19475C9.90142 6.00743 9.60779 5.88677 9.27958 5.87327C9.24221 5.87172 9.20452 5.86968 9.16667 5.86764C8.99885 5.85857 8.82827 5.84935 8.66783 5.88171C8.20883 5.97368 7.80556 6.18377 7.50094 6.55415C7.46554 6.59663 7.43092 6.63977 7.37926 6.70415L7.36763 6.71873V6.00237ZM3.40879 11.14H4.99926V6.00571H3.40879V11.14Z" fill="currentColor"/>
+</svg></div></a></div></div></div></div></nav><nav class="navbar_main-wrapper"><div class="padding-global"><div class="navbar_main-wrapper_layout"><a href="/" aria-current="page" class="navbar_logo-link w-nav-brand w--current"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/691cbfe94eca1b9695c444e2_ET%20Logo.svg" loading="lazy" alt="" class="navbar_logo-on-dark"/><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/691cc4bce1d5af9879955ab6_ET%20Logo-one-color.svg" loading="lazy" alt="" class="navbar_logo-on-light display-none"/></a><div fs-mirrorclick-delay="100" fs-mirrorclick-element="trigger" class="nav-menu-back nav-item-on-dark"><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="11" viewBox="0 0 22 11" fill="none">
+  <path d="M0.17226 4.99108C-0.0904179 5.17103 -0.0454521 5.54836 0.257862 5.65431C3.25617 6.68906 6.05044 8.63403 8.8151 10.1883C9.00957 10.2972 9.29546 10.2043 9.34771 9.97064C9.53492 9.1202 9.67949 7.63673 9.60548 6.78339C13.5428 7.64109 17.5279 8.24771 21.5407 8.60037C21.7946 8.62359 21.9311 8.35221 21.8919 8.14178C21.6422 6.82983 21.5972 5.51643 21.7337 4.19433C22.1153 4.11886 22.0863 3.48322 21.6495 3.47741C17.9691 3.42807 14.2902 3.52385 10.617 3.7604C10.3761 2.59794 10.1366 1.43403 9.89573 0.271564C9.85945 0.0959608 9.62433 -0.0520681 9.45018 0.0175926C6.18194 1.33679 3.07624 2.99414 0.17226 4.99108Z" fill="currentColor"/>
+</svg></div><div class="text-size-xlarge text-weight-bold">Go Back</div></div><nav role="navigation" class="navbar_main-menu_wrapper w-nav-menu"><div class="tablet_bg-pattern_nav-bar"><div class="full-bg-purple"><div class="bg-pattern-icon-repeat"></div></div></div><ul role="list" class="nav-menu-block w-list-unstyled"><li><div data-hover="false" data-delay="0" class="navbar_dropdown_module w-dropdown"><div class="dropdown-toggle nav-item-on-dark w-dropdown-toggle"><div class="nav-dropdown-icon w-icon-dropdown-toggle"></div><div class="navbar_dropdown-label"><div class="navbar_link">Why Tulsa</div></div></div><nav class="navbar_dropdown-panel w-dropdown-list"><div class="navbar_dropdown-panel_styling"><div class="navbar_dropdown-panel_container"><div class="navbar_dropdown-panel_links-layout"><a data-wf--link---secondary-cta--variant="on-dark" href="/why-tulsa" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Why Tulsa</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a><a data-wf--link---secondary-cta--variant="on-dark" href="/why-tulsa/neighborhoods" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Neighborhoods</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a><a data-wf--link---secondary-cta--variant="on-dark" href="/why-tulsa/culture" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Culture and Lifestyle</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div><div class="navbar_dropdown-panel_featured-story"><div><div><a target="" data-wf--story-card--variant="community-beat" href="/blog/your-guide-to-parks-and-trails-in-tulsa" class="resource_card_component w-variant-21540923-8822-b810-35ed-6cd69d184ece w-inline-block"><div class="story-card_label-wrapper"></div><div class="resource-card_copy-layout"><div><div><div class="story-card_copy-spacer"></div><div class="story-card_labels-wrapper"><div fs-list-field="content-type" class="story-card_label-content-type">Community Beat</div></div><div class="spacer-20"></div></div><div class="resource_title-description_layout"><div fs-list-field="title" class="resource-card_title">Your Guide to Parks and Trails in Tulsa</div><p fs-list-field="description" class="resource-card_description">Discover 8,700 acres of parks and trails that are yours to explore.</p></div></div><div class="margin-top-auto"><div class="link-secondary-cta"><div>Read More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></div></div></div></a></div></div></div></div></div></nav></div></li><li class="list-item"><div data-hover="false" data-delay="0" class="navbar_dropdown_module w-dropdown"><div class="dropdown-toggle nav-item-on-dark w-dropdown-toggle"><div class="nav-dropdown-icon w-icon-dropdown-toggle"></div><div class="navbar_dropdown-label"><div class="navbar_link">Opportunities</div></div></div><nav class="navbar_dropdown-panel w-dropdown-list"><div class="navbar_dropdown-panel_styling"><div class="navbar_dropdown-panel_container"><div class="navbar_dropdown-panel_links-layout"><a data-wf--link---secondary-cta--variant="on-dark" href="/opportunities" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Opportunities</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a><a data-wf--link---secondary-cta--variant="on-dark" href="/opportunities/local" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>For Tulsans</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a><a data-wf--link---secondary-cta--variant="on-dark" href="/opportunities/future-tulsans" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>For Future Tulsans</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div><div class="navbar_dropdown-panel_featured-story"><div><div><a target="_blank" data-wf--story-card--variant="press" href="https://www.latimes.com/california/story/2025-08-15/10-000-to-move-to-tulsa-why-some-californians-are-packing-up-for-oklahoma" class="resource_card_component w-variant-a67bca1d-9940-1299-c39a-8bdd325699bc w-inline-block"><div class="story-card_label-wrapper"><div fs-list-field="publication-name" class="story-card_label-publication-title">LATIMES</div></div><div class="resource-card_copy-layout"><div><div><div class="story-card_copy-spacer"></div><div class="story-card_labels-wrapper"><div fs-list-field="content-type" class="story-card_label-content-type">Press</div><div fs-list-fieldtype="date" fs-list-field="date" class="resource-card-date">August 9, 2025</div></div><div class="spacer-20"></div></div><div class="resource_title-description_layout"><div fs-list-field="title" class="resource-card_title">LATimes: Would You Move to Tulsa, OK for $10,000?</div><p fs-list-field="description" class="resource-card_description">The LA Times spotlights how Tulsa’s affordability, vibrant culture, and sense of community are inspiring remote workers nationwide to make the move.</p></div></div><div class="margin-top-auto"><div class="link-secondary-cta"><div>Read More</div><div class="icon-external-link w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M6.46469 1.66663H8.33252C8.79274 1.66663 9.16586 2.03974 9.16586 2.49996C9.16586 2.96018 8.79274 3.33329 8.33252 3.33329H6.49919C5.78539 3.33329 5.30011 3.33394 4.92504 3.36461C4.55974 3.39443 4.37289 3.44853 4.24256 3.51493C3.92896 3.67476 3.67401 3.92972 3.51417 4.24332C3.44777 4.37365 3.39366 4.5605 3.36385 4.9258C3.33318 5.30087 3.33253 5.78615 3.33253 6.49995V13.5C3.33253 14.2138 3.33318 14.699 3.36385 15.0741C3.39367 15.4395 3.44777 15.6263 3.51417 15.7566C3.674 16.0702 3.92896 16.3252 4.24256 16.485C4.37289 16.5514 4.55974 16.6054 4.92504 16.6354C5.30011 16.666 5.78539 16.6666 6.49919 16.6666H13.4992C14.213 16.6666 14.6983 16.666 15.0733 16.6354C15.4387 16.6054 15.6255 16.5514 15.7558 16.485C16.0694 16.3252 16.3244 16.0702 16.4842 15.7566C16.5506 15.6262 16.6046 15.4395 16.6346 15.0741C16.6652 14.699 16.6658 14.2138 16.6658 13.5V11.6666C16.6658 11.2064 17.039 10.8333 17.4992 10.8333C17.9594 10.8333 18.3325 11.2064 18.3325 11.6666V13.5345C18.3325 14.2053 18.3325 14.7589 18.2957 15.2098C18.2574 15.6782 18.1753 16.1088 17.9692 16.5133C17.6496 17.1405 17.1397 17.6504 16.5125 17.9699C16.108 18.1761 15.6774 18.2582 15.209 18.2964C14.758 18.3333 14.2045 18.3333 13.5337 18.3333H6.46485C5.79408 18.3333 5.24043 18.3333 4.78951 18.2964C4.3211 18.2582 3.8905 18.1761 3.48606 17.9699C2.85885 17.6503 2.3489 17.1404 2.02936 16.5133C1.82325 16.1088 1.74115 15.6782 1.70286 15.2098C1.66602 14.7588 1.66602 14.2052 1.66602 13.5345V6.46562C1.66602 5.79485 1.66602 5.2412 1.70286 4.79028C1.74115 4.32187 1.82324 3.89127 2.0293 3.48683C2.3489 2.85962 2.85885 2.34967 3.48606 2.03007C3.8905 1.82402 4.3211 1.74192 4.78951 1.70363C5.2405 1.66678 5.79413 1.66678 6.46485 1.66678L6.46469 1.66663ZM11.6659 2.49996C11.6659 2.03974 12.039 1.66663 12.4992 1.66663H17.4992C17.9594 1.66663 18.3325 2.03974 18.3325 2.49996V7.49996C18.3325 7.96018 17.9594 8.33329 17.4992 8.33329C17.039 8.33329 16.6659 7.96018 16.6659 7.49996V4.51179L10.5885 10.5891C10.2631 10.9145 9.73546 10.9145 9.41001 10.5891C9.08462 10.2637 9.08462 9.73606 9.41001 9.41061L15.4873 3.33328H12.4992C12.039 3.33328 11.6658 2.96016 11.6658 2.49994L11.6659 2.49996Z" fill="currentColor"/>
+</svg></div></div></div></div></a></div></div></div></div></div></nav></div></li><li><div data-hover="false" data-delay="0" class="navbar_dropdown_module w-dropdown"><div class="dropdown-toggle nav-item-on-dark w-dropdown-toggle"><div class="nav-dropdown-icon w-icon-dropdown-toggle"></div><div class="navbar_dropdown-label"><div class="navbar_link">Stories</div></div></div><nav class="navbar_dropdown-panel shadow-three mobile-shadow-hide w-dropdown-list"><div class="navbar_dropdown-panel_styling"><div class="navbar_dropdown-panel_container"><div class="navbar_dropdown-panel_links-layout"><a data-wf--link---secondary-cta--variant="on-dark" href="/stories" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>All Stories</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a><a data-wf--link---secondary-cta--variant="on-dark" href="/blog" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Blog</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a><a data-wf--link---secondary-cta--variant="on-dark" href="/newsroom" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Press</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a><a data-wf--link---secondary-cta--variant="on-dark" href="/community-beat" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Community Beat</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div><div class="navbar_dropdown-panel_featured-story"><div><div><a target="" data-wf--story-card--variant="blog" href="/blog/the-best-music-venues-in-tulsa" class="resource_card_component w-inline-block"><div class="story-card_label-wrapper"></div><div class="resource-card_copy-layout"><div><div><div class="story-card_copy-spacer"></div><div class="story-card_labels-wrapper"><div fs-list-field="content-type" class="story-card_label-content-type">Blog</div></div><div class="spacer-20"></div></div><div class="resource_title-description_layout"><div fs-list-field="title" class="resource-card_title">The Best Music Venues in Tulsa</div><p fs-list-field="description" class="resource-card_description">Immerse yourself in Tulsa&#x27;s music scene, one venue at a time.</p></div></div><div class="margin-top-auto"><div class="link-secondary-cta"><div>Read More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></div></div></div></a></div></div></div></div></div></nav></div></li><li><a href="/about-us" class="navbar_about-us_link-block nav-item-on-dark w-inline-block"><div class="navbar_about-us_flag-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none">
+  <path d="M19.5322 3.23523C19.7516 3.20134 19.9737 3.21472 20.1562 3.32898C20.3419 3.44521 20.4658 3.65328 20.5146 3.9657C20.5675 4.3059 20.5151 4.67558 20.4443 5.03015C20.3721 5.39178 20.2827 5.73177 20.248 6.04187C20.1606 6.81767 20.1344 7.60113 20.165 8.38171C20.2 9.22399 20.3171 10.0518 20.4766 10.8827C20.552 11.2746 20.6181 11.6759 20.2656 12.0223L20.2666 12.0233C20.2513 12.0386 20.2322 12.0563 20.2109 12.0712L20.0654 11.9423C20.133 11.8171 20.0909 11.6695 19.9941 11.578C19.9468 11.5333 19.8925 11.5088 19.8428 11.5057C19.7961 11.5029 19.7447 11.5184 19.6943 11.5712L19.5371 11.4491C19.5564 11.4183 19.5809 11.3887 19.6074 11.3622V11.3612C19.6087 11.3591 19.6121 11.3522 19.6152 11.3368C19.6197 11.3149 19.6219 11.2838 19.6201 11.244C19.6166 11.1646 19.5988 11.0647 19.5752 10.9589C19.5517 10.8538 19.5233 10.747 19.498 10.6542C19.4738 10.5649 19.4508 10.482 19.4424 10.4325V10.4315C19.3922 10.1233 19.3494 9.8148 19.3154 9.50476L19.2686 9.01746C19.2297 8.53037 19.2141 8.04104 19.2207 7.55261C19.2296 6.86831 19.2844 6.18359 19.3789 5.50574L19.5146 4.6825V4.68152C19.5235 4.63121 19.5335 4.5806 19.543 4.53308C19.5526 4.48513 19.5612 4.43966 19.5684 4.39734C19.5833 4.30888 19.5878 4.24748 19.5801 4.20984C19.5784 4.20175 19.5767 4.1964 19.5752 4.19324C19.5745 4.19176 19.5736 4.19088 19.5732 4.19031L19.5723 4.18933C19.5711 4.18879 19.5672 4.1872 19.5605 4.1864C19.5266 4.18256 19.4525 4.19536 19.3154 4.25867C18.9803 4.41339 18.5803 4.637 18.1377 4.8739C17.6972 5.10963 17.2181 5.35651 16.7324 5.54968C15.7681 5.93323 14.7426 6.12136 13.9404 5.55261L13.8779 5.50867L13.9043 5.4364C13.9785 5.23746 14.0601 5.04013 14.1475 4.8446L14.2051 4.71667L14.2598 4.59558L14.3613 4.68152C14.8509 5.09709 15.5698 5.0103 16.3252 4.72546C17.0755 4.44247 17.8084 3.986 18.3047 3.72546L18.5645 3.5907C18.8504 3.44626 19.2054 3.28573 19.5322 3.23523Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M19.8545 11.3056C19.9599 11.3122 20.0567 11.3624 20.1309 11.4326C20.2771 11.5709 20.3606 11.8142 20.2402 12.037L20.2305 12.0556L20.2129 12.0693C20.009 12.2231 19.7715 12.1611 19.626 12.0253C19.4875 11.896 19.4097 11.6774 19.5215 11.4755V11.4619L19.54 11.4423L19.5645 11.4033H19.583C19.6652 11.3322 19.759 11.2997 19.8545 11.3056Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M19.7031 11.5572C19.6355 11.6628 19.6671 11.7911 19.7617 11.8795C19.8552 11.9666 19.9845 11.9907 20.0918 11.9097L20.2412 12.0338L20.1914 12.1129C18.9265 13.7296 17.1518 14.8703 15.1895 15.4439H15.1885C14.696 15.5872 13.7979 15.8297 12.96 15.857C12.5411 15.8706 12.1286 15.8305 11.7871 15.692C11.4421 15.5519 11.1674 15.3096 11.0371 14.9244L11.2207 14.8472C11.2581 14.92 11.3082 14.9529 11.3574 14.9644C11.4096 14.9766 11.4719 14.9673 11.5312 14.9361C11.6527 14.8722 11.7298 14.7376 11.6865 14.5972L11.6572 14.5005L11.7539 14.4722L11.7939 14.4605L11.8896 14.4322L11.918 14.5279C11.952 14.6414 12.0748 14.7428 12.2686 14.815C12.4572 14.8852 12.6877 14.9175 12.8896 14.9127C13.3553 14.9012 13.8254 14.814 14.2881 14.7115C16.355 14.2521 18.208 13.1403 19.5156 11.4713L19.5176 11.4673C19.5266 11.4568 19.5352 11.4472 19.542 11.439L19.7031 11.5572Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M13.7725 4.3822C13.9192 4.33717 14.0818 4.37452 14.2051 4.5238L14.2812 4.60779C14.3069 4.63376 14.3333 4.65801 14.3604 4.68103L14.418 4.72986L14.3867 4.79822L14.3291 4.92615C14.2432 5.11824 14.1634 5.31168 14.0908 5.50623L14.0449 5.62927L13.9395 5.55212C13.7961 5.44886 13.6589 5.32301 13.5332 5.17126H13.5322C13.4019 5.01345 13.3945 4.82741 13.459 4.67615H13.46C13.5173 4.53904 13.6332 4.42499 13.7725 4.3822Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M11.0566 0.123901C11.8429 0.0768134 12.665 0.073867 13.4102 0.362183L13.5557 0.423706C14.2713 0.748816 14.8084 1.34994 14.957 2.14929C15.1339 3.10071 14.7498 3.98534 14.3877 4.79871L14.333 4.92078L14.2314 4.83386C14.1684 4.7803 14.1087 4.71982 14.0518 4.65027C13.9801 4.56378 13.9012 4.55199 13.832 4.57312C13.7554 4.59668 13.6814 4.66519 13.6445 4.75378L13.6055 4.84656L13.5127 4.8075L13.502 4.80261L13.4102 4.76355L13.4492 4.67078C13.5696 4.3903 13.69 4.11033 13.8008 3.82312C14.0074 3.2876 14.0948 2.72026 13.9805 2.24304C13.8678 1.77322 13.5573 1.3818 12.9424 1.18542V1.18445C12.496 1.04264 12.0057 1.0106 11.5049 1.02332C11.002 1.0361 10.5003 1.09313 10.0205 1.12878C8.9054 1.20927 7.8011 1.35722 6.72949 1.66296C5.46602 2.02437 4.27344 2.57296 3.125 3.21082L3.00488 3.2782L2.97852 3.14246C2.9302 2.89208 2.87896 2.64123 2.82617 2.3905L2.81055 2.31824L2.87598 2.2821C4.13599 1.59831 5.45581 1.0161 6.85547 0.661011C7.98143 0.375495 9.13797 0.250205 10.2871 0.176636L11.0566 0.123901Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M13.3945 12.2617L13.3955 12.2626L13.4141 12.2587L13.5898 12.2861C13.6013 12.2507 13.608 12.2138 13.6104 12.1757L13.6035 12.0576C13.2153 9.8214 13.2978 7.60821 14.0918 5.50677L14.1191 5.43549L14.0566 5.39056C13.927 5.29719 13.8024 5.18263 13.6875 5.04388C13.6095 4.94936 13.6055 4.84425 13.6436 4.75482L13.6826 4.66302L13.5908 4.62299L13.5811 4.61908L13.4893 4.58002L13.4492 4.67181C13.2198 5.20508 12.9882 5.74076 12.8252 6.31635L12.7598 6.56537C12.3596 8.21641 12.3625 9.9156 12.5898 11.582L12.5996 11.6542L12.6719 11.6669C12.856 11.6986 13.0179 11.754 13.1426 11.8466C13.2637 11.9367 13.3555 12.0655 13.3945 12.2587V12.2558L13.4131 12.2587L13.3945 12.2617ZM13.3945 12.2617V12.2626L13.3984 12.2753C13.3977 12.2732 13.3971 12.2704 13.3965 12.2675C13.396 12.2654 13.3948 12.2635 13.3945 12.2617Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M12.7041 11.4695C12.9045 11.504 13.102 11.5666 13.2617 11.6854C13.4241 11.8061 13.5418 11.9809 13.5898 12.2244L13.5908 12.2254V12.2274C13.5911 12.2287 13.5915 12.2303 13.5918 12.2322C13.5922 12.2352 13.5938 12.2453 13.5938 12.2557V12.2703L13.5898 12.284C13.5269 12.4926 13.3297 12.6188 13.1426 12.6346C13.0472 12.6426 12.9467 12.6227 12.8633 12.5643C12.7782 12.5045 12.7185 12.41 12.6973 12.2869C12.656 12.0524 12.6189 11.8173 12.5879 11.5809L12.5703 11.4471L12.7041 11.4695Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M11.5107 13.5714C11.5768 13.7998 11.6567 14.0251 11.751 14.2471L11.8496 14.4678L11.8506 14.4688C11.8611 14.4916 11.8698 14.5148 11.877 14.5381C11.9555 14.7927 11.8074 15.0154 11.623 15.1124C11.5296 15.1614 11.419 15.1834 11.3115 15.1583C11.2011 15.1324 11.1044 15.0591 11.042 14.9376L11.0361 14.9239C11.0061 14.8337 10.9846 14.7365 10.9707 14.6329V14.6319C10.9192 14.2278 11.0779 13.8684 11.3105 13.5684C11.3203 13.5551 11.3312 13.5422 11.3389 13.5333L11.459 13.3926L11.5107 13.5714Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M10.8057 11.4669C10.9179 11.4669 11.0342 11.5024 11.124 11.5792C11.2159 11.6576 11.2744 11.7744 11.2754 11.921L11.2871 12.2608L11.2939 12.3653L11.1895 12.3672C10.9477 12.3716 10.7035 12.3824 10.4609 12.3985L10.3604 12.4053L10.3545 12.3047L10.3418 11.9229C10.3409 11.7766 10.3974 11.6592 10.4883 11.5801C10.5773 11.5029 10.6933 11.4669 10.8057 11.4669Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M11.7402 11.4267C11.9453 11.4288 12.2021 11.4202 12.4551 11.4394L12.7051 11.4697L12.7773 11.4824L12.7871 11.5556C12.8177 11.7887 12.8546 12.0207 12.8955 12.2529L12.9092 12.3046C12.9258 12.3507 12.9509 12.3809 12.9785 12.4003C13.0168 12.4272 13.0682 12.4403 13.126 12.4355C13.2456 12.4255 13.363 12.3437 13.3984 12.2265L13.5928 12.2363C13.641 12.4898 13.6067 12.7021 13.5156 12.8837C13.4257 13.0629 13.284 13.2061 13.127 13.329C12.9707 13.4514 12.7909 13.5599 12.626 13.665C12.4583 13.7718 12.3034 13.8761 12.1816 13.9941C11.9215 14.2458 11.8858 14.4183 11.9189 14.5273L11.9482 14.624L11.8516 14.6523L11.8115 14.664L11.7168 14.6923L11.6885 14.5976C11.6841 14.5832 11.6777 14.5686 11.6709 14.5536L11.5684 14.3251C11.471 14.0958 11.3886 13.863 11.3203 13.6269L11.3057 13.5761L11.3389 13.5351C11.4841 13.3582 11.6584 13.2404 11.8242 13.1347C11.993 13.0271 12.1501 12.934 12.2861 12.8007L12.2949 12.7919L12.3047 12.7861C12.3338 12.7686 12.3626 12.751 12.3916 12.7333C12.4095 12.7225 12.4272 12.7111 12.4453 12.7001C12.47 12.6216 12.4847 12.5579 12.4883 12.5068C12.4923 12.4482 12.4836 12.4149 12.4736 12.3974C12.4614 12.3763 12.4208 12.3398 12.2666 12.372L12.2393 12.3779L12.2129 12.3691C12.1148 12.3344 11.9737 12.3287 11.8135 12.3359C11.735 12.3394 11.6554 12.3459 11.5781 12.3515C11.502 12.357 11.4269 12.3615 11.3604 12.3622H11.3594C11.3015 12.3622 11.248 12.3631 11.1953 12.3671L11.0938 12.3749L11.0879 12.2734C11.0804 12.1566 11.0777 12.0403 11.0762 11.9238V11.9228C11.0756 11.833 11.041 11.7714 10.9941 11.7314C10.9452 11.6896 10.8769 11.6669 10.8057 11.6669H10.7061V11.4492L10.8008 11.4453C11.1124 11.4305 11.4257 11.4237 11.7402 11.4267Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M11.2881 12.261C11.3156 12.7076 11.3887 13.145 11.5127 13.5706L11.5283 13.6223L11.4932 13.6633C11.4838 13.6742 11.4779 13.6817 11.4736 13.6877L11.4707 13.6907C11.2572 13.966 11.1288 14.2731 11.1709 14.6057C11.1834 14.6986 11.2028 14.7835 11.2285 14.8606L11.0439 14.9368L11.043 14.9348C11.0417 14.9325 11.0396 14.9279 11.0371 14.9221V14.9231C10.6428 14.0913 10.4121 13.2181 10.3555 12.3049L10.3486 12.2063L10.4482 12.1995C10.693 12.1832 10.94 12.1717 11.1855 12.1672L11.2812 12.1653L11.2881 12.261Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M10.9033 11.6666H10.8037C10.7335 11.6666 10.6666 11.6897 10.6191 11.731C10.5851 11.7607 10.5572 11.8021 10.5459 11.8589L10.541 11.9214C10.5425 12.0459 10.5465 12.1706 10.5537 12.2935L10.5596 12.3922L10.4609 12.399C10.2173 12.415 9.97314 12.4367 9.72949 12.4644C7.82416 12.6833 5.97975 13.2512 4.27637 14.1109L4.13477 14.1822L4.13086 14.024C4.12794 13.9045 4.12354 13.7849 4.11914 13.6646L4.10059 13.2232L4.09668 13.1568L4.15723 13.1285C5.56297 12.4507 7.05775 11.9599 8.60156 11.691C9.32761 11.5641 10.0616 11.4789 10.7988 11.4449L10.9033 11.44V11.6666Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M4.33008 14.0178C4.36388 14.9775 4.38376 15.938 4.39258 16.8976C4.40019 17.7123 4.4878 18.6194 4.38379 19.4689L4.32617 19.8293C4.22275 20.3562 3.86133 20.8431 3.41797 21.1027C2.97105 21.3644 2.4248 21.4017 1.9834 20.9953L1.73535 20.7668L2.06738 20.8224C2.22776 20.8494 2.4037 20.7568 2.4209 20.5666V20.5656C2.42678 20.5009 2.43319 20.4374 2.4375 20.3742L2.45312 20.1428L2.61035 20.3137C2.69428 20.4045 2.76902 20.4167 2.83691 20.3996C2.91553 20.3797 3.00294 20.315 3.09082 20.215C3.17696 20.1171 3.25439 19.9954 3.31348 19.8791C3.3732 19.7616 3.4104 19.6572 3.42188 19.5959C3.49002 19.2307 3.46485 18.8356 3.46484 18.4445C3.46484 17.6477 3.46046 16.8509 3.44727 16.0558C3.43846 15.5071 3.42677 14.9582 3.40918 14.4113L3.40723 14.3508L3.45996 14.3205C3.69868 14.1864 3.93938 14.0569 4.18457 13.9328L4.32422 13.8615L4.33008 14.0178Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M4.30078 13.2136C4.30814 13.3608 4.31348 13.5094 4.31934 13.6559V13.6569C4.32374 13.7772 4.3281 13.8982 4.33105 14.0192L4.33301 14.0827L4.27637 14.111C4.03432 14.2335 3.79635 14.3618 3.55957 14.4948L3.41602 14.5759L3.41016 14.4108C3.40135 14.1363 3.39308 13.8618 3.38281 13.5876L3.37988 13.5261L3.43457 13.4958C3.67235 13.3673 3.91354 13.2453 4.15723 13.1286L4.29297 13.0632L4.30078 13.2136Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M3.58301 13.5803C3.5933 13.8551 3.60252 14.13 3.61133 14.4045L3.61328 14.465L3.56055 14.4953C3.32418 14.6295 3.08992 14.7683 2.85938 14.9142L2.86035 14.9152C2.82871 14.9356 2.79736 14.9503 2.76855 14.9611L2.63477 15.0109L2.63281 14.8683C2.62988 14.5872 2.62452 14.3071 2.61719 14.0256L2.61523 13.968L2.66504 13.9377C2.91878 13.7843 3.17563 13.6366 3.43555 13.4963L3.57715 13.4201L3.58301 13.5803Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M3.01953 2.34967C3.07246 2.60108 3.12427 2.85279 3.17285 3.10455L3.18652 3.17584L3.12207 3.211C2.89703 3.33521 2.67229 3.46427 2.4502 3.59576L2.32617 3.66901L2.30078 3.5274C2.25395 3.27423 2.20405 3.02083 2.15137 2.76764L2.13672 2.69733L2.19824 2.66119C2.42082 2.53148 2.6469 2.4047 2.87402 2.28229L2.99219 2.21881L3.01953 2.34967Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M2.81445 14.0202C2.8218 14.3024 2.82811 14.5843 2.83105 14.8669L2.83203 14.9362L2.7666 14.9606C2.60261 15.0224 2.4474 14.9761 2.33789 14.8806C2.23096 14.7871 2.16319 14.644 2.16309 14.4977C2.16309 14.354 2.2284 14.2078 2.38086 14.112L2.66309 13.9382L2.81055 13.8483L2.81445 14.0202Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M1.68262 3.98358C2.34743 7.29296 2.72718 10.651 2.81543 14.0207L2.81738 14.0783L2.76758 14.1086C2.67347 14.1659 2.57988 14.2223 2.48828 14.2805V14.2814C2.39746 14.3383 2.36335 14.418 2.36328 14.4973V14.5949L2.26562 14.5978L1.99414 14.6037L1.89355 14.6057L1.8916 14.5051C1.8271 10.9886 1.44333 7.4834 0.741211 4.03143L0.927734 3.96698C0.961494 4.03324 1.01565 4.0834 1.0752 4.10565C1.13155 4.12662 1.20134 4.1254 1.28027 4.07538C1.32229 4.04884 1.36458 4.0232 1.40625 3.99725C1.44814 3.97116 1.48971 3.94439 1.53125 3.91815L1.6543 3.841L1.68262 3.98358Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M2.36426 14.4973C2.36426 14.5844 2.40594 14.6731 2.4707 14.7297C2.53294 14.7841 2.61182 14.8058 2.69727 14.7737L2.83105 14.7239L2.83301 14.8665C2.85506 16.7078 2.79014 18.5506 2.63867 20.3889L2.62109 20.6047L2.46777 20.4514C2.43732 20.4209 2.412 20.3875 2.3877 20.3518H2.38672C2.31864 20.2512 2.22097 20.22 2.12598 20.2327C2.02599 20.2461 1.93636 20.3073 1.89648 20.3831L1.70801 20.3284C1.86776 18.3892 1.92922 16.4457 1.89258 14.5051L1.89062 14.4055L1.99023 14.4036L2.26172 14.3977L2.36426 14.3948V14.4973Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M2.34863 2.72705C2.40164 2.9818 2.4519 3.23694 2.49902 3.4917L2.51172 3.56006L2.45117 3.59619C2.17751 3.75717 1.90647 3.92058 1.63867 4.0874L1.51562 4.16455L1.4873 4.02295C1.43597 3.76921 1.38334 3.51385 1.3291 3.26025L1.31445 3.19189L1.37402 3.15479C1.64677 2.98524 1.92202 2.82108 2.2002 2.66064L2.32031 2.59229L2.34863 2.72705Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M2.09766 20.0344C2.25941 20.0127 2.4364 20.0689 2.55176 20.2395H2.55078C2.57043 20.2683 2.58908 20.2915 2.6084 20.3108L2.64062 20.343L2.6377 20.3879C2.6332 20.4539 2.62695 20.5198 2.62109 20.5842C2.59084 20.9219 2.27685 21.0602 2.03516 21.0198L2.00586 21.0149L1.9834 20.9954C1.94215 20.9573 1.90218 20.915 1.86328 20.8694L1.75098 20.7219C1.72624 20.6848 1.7057 20.6447 1.69238 20.6067L1.68555 20.5862L1.6875 20.5647C1.69475 20.4864 1.70018 20.4086 1.70605 20.3293L1.70801 20.3088L1.71777 20.2903C1.79113 20.1506 1.94098 20.0555 2.09766 20.0344Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M1.91895 20.6102L2.01758 20.7401C2.05134 20.7796 2.08601 20.8161 2.12109 20.8484L2.36914 21.077L2.03613 21.0203C1.94058 21.0039 1.8472 20.9592 1.78027 20.8807C1.71209 20.8005 1.67862 20.6926 1.68945 20.5662L1.88281 20.5408C1.89024 20.5609 1.90274 20.5858 1.91895 20.6102Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M1.90625 20.345C1.90039 20.4242 1.89414 20.5031 1.88672 20.5833L1.69238 20.6058C1.65345 20.4909 1.66928 20.3816 1.71777 20.2903L1.90625 20.345Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M1.52539 3.21899C1.57978 3.4733 1.63217 3.72948 1.68359 3.98364L1.69727 4.05103L1.63965 4.08716C1.59764 4.11369 1.55533 4.14032 1.51367 4.16626C1.47186 4.1923 1.42915 4.21723 1.3877 4.24341L1.38867 4.24438C1.25912 4.3265 1.12411 4.33682 1.00684 4.29321C0.892907 4.25082 0.803804 4.16075 0.750977 4.05688L0.745117 4.04517L0.742188 4.03149C0.727523 3.95964 0.712947 3.88725 0.698242 3.81372L0.695312 3.80103L0.696289 3.78735C0.703509 3.68772 0.743715 3.59124 0.821289 3.51294L0.912109 3.44067C1.06634 3.34373 1.22075 3.24856 1.375 3.15454L1.49512 3.08032L1.52539 3.21899Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M1.16602 1.65662C1.29247 2.17567 1.41168 2.69615 1.52344 3.21814L1.53809 3.28748L1.47754 3.32458L1.0166 3.61072C0.933658 3.6627 0.899583 3.73241 0.894531 3.80212L0.696289 3.81482C0.561445 3.16552 0.414669 2.51745 0.257812 1.87244L0.177734 1.54041L0.424805 1.77673C0.475389 1.82496 0.539393 1.85462 0.602539 1.85876C0.663311 1.86264 0.730007 1.84333 0.792969 1.78259L0.900391 1.68591C0.936421 1.65545 0.972632 1.62608 1.00977 1.599L1.13086 1.51111L1.16602 1.65662Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M0.579102 1.22815C0.687175 1.19836 0.808451 1.2022 0.914062 1.25354C0.995291 1.29308 1.06314 1.35848 1.10645 1.44885L1.1416 1.54749V1.54846C1.14591 1.56641 1.14992 1.5843 1.1543 1.60217C1.15868 1.62007 1.16352 1.63832 1.16797 1.65686L1.18359 1.72131L1.12988 1.76038C1.06355 1.80874 0.997502 1.8653 0.932617 1.92737L0.931641 1.92639C0.82903 2.02512 0.708786 2.06587 0.59082 2.05823C0.475026 2.05064 0.368122 1.99784 0.288086 1.92151L0.267578 1.90198L0.259766 1.87463L0.239258 1.7926V1.79065C0.204229 1.64826 0.232984 1.52009 0.301758 1.42053C0.369011 1.3234 0.471145 1.25799 0.579102 1.22815Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M0.9375 3.99188L0.750977 4.05829C0.70819 3.97628 0.684727 3.88117 0.696289 3.7829L0.893555 3.77509C0.908188 3.84825 0.922826 3.91998 0.9375 3.99188Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+  <path d="M2.24512 0.534851C2.43162 0.548746 2.63533 0.660093 2.68848 0.879578C2.80618 1.36804 2.91654 1.85887 3.01953 2.35028L3.03516 2.42255L2.96875 2.45868C2.74394 2.57985 2.52036 2.70515 2.2998 2.83368L2.17969 2.90399L2.15137 2.76825C2.06195 2.33628 1.96596 1.90565 1.86621 1.47626C1.59475 1.50548 1.35139 1.59699 1.12793 1.76044L1.00684 1.8493L0.97168 1.7038C0.967362 1.6858 0.962391 1.66799 0.958008 1.65009C0.953656 1.63231 0.949735 1.61382 0.945312 1.5954L0.924805 1.5368C0.900357 1.48504 0.864508 1.45246 0.825195 1.43329C0.77008 1.40646 0.69977 1.40165 0.630859 1.42059C0.561976 1.43958 0.501208 1.4808 0.463867 1.53485C0.428195 1.58659 0.410549 1.65506 0.431641 1.74188L0.442383 1.78387C0.445715 1.79759 0.448757 1.81103 0.452148 1.82391L0.540039 2.15887L0.287109 1.92255C0.203621 1.84444 0.142385 1.73539 0.131836 1.61591C0.121153 1.49344 0.164356 1.36784 0.272461 1.26337C0.820601 0.733501 1.48135 0.47986 2.24512 0.534851Z" fill="currentColor" stroke="currentColor" stroke-width="0.2"/>
+</svg></div><div class="navbar_dropdown-label"><div class="navbar_link">About Us</div></div></a></li><li><div class="display-none-tablet"><a href="/events" class="button small w-button">Explore Events</a></div></li><li class="nav-menu-li-search"><div class="global-search-component nav-item-on-dark"><div class="global-search-wrapper"><form action="/search" class="global-search-form w-form"><label for="search" class="display-visually-hidden">Search</label><input class="form-input-field menu-search-field w-input" maxlength="256" name="query" placeholder="Search…" type="search" id="search" required=""/><input type="submit" class="display-visually-hidden w-button" value="Search"/></form></div><div data-w-id="bd8c8426-cd59-be2f-c1ff-8929f2051dfc" class="search-open-trigger"><div class="search-open-label-layout"><div class="search-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 16 16" fill="none">
+  <path d="M14 14L11.1 11.1M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667 2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div><div class="display-visually-hidden">Search</div></div></div><div data-w-id="bd8c8426-cd59-be2f-c1ff-8929f2051e01" class="search-close-trigger"><div class="search-close-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 40 40" fill="none">
+  <path d="M20 22.1293L12.5475 29.5817C12.2687 29.8606 11.9138 30 11.4829 30C11.052 30 10.6971 29.8606 10.4183 29.5817C10.1394 29.3029 10 28.948 10 28.5171C10 28.0862 10.1394 27.7313 10.4183 27.4525L17.8707 20L10.4183 12.5475C10.1394 12.2687 10 11.9138 10 11.4829C10 11.052 10.1394 10.6971 10.4183 10.4183C10.6971 10.1394 11.052 10 11.4829 10C11.9138 10 12.2687 10.1394 12.5475 10.4183L20 17.8707L27.4525 10.4183C27.7313 10.1394 28.0862 10 28.5171 10C28.948 10 29.3029 10.1394 29.5817 10.4183C29.8606 10.6971 30 11.052 30 11.4829C30 11.9138 29.8606 12.2687 29.5817 12.5475L22.1293 20L29.5817 27.4525C29.8606 27.7313 30 28.0862 30 28.5171C30 28.948 29.8606 29.3029 29.5817 29.5817C29.3029 29.8606 28.948 30 28.5171 30C28.0862 30 27.7313 29.8606 27.4525 29.5817L20 22.1293Z" fill="currentColor"/>
+</svg></div></div></div></li></ul><div class="mobile-menu-events-block"><a href="/events" class="button small w-button">Explore Events</a><div class="navbar_utility-layout"><div class="heading-style-h6 mobile-display-none">Connect with Us</div><div class="navbar_social-buttons_layout"><a href="mailto:Info@experiencetulsa.com" class="button big-social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="90%" height="auto" viewBox="0 0 15 12" fill="none">
+  <path d="M1.5 12C1.0875 12 0.734375 11.8531 0.440625 11.5594C0.146875 11.2656 0 10.9125 0 10.5V1.5C0 1.0875 0.146875 0.734375 0.440625 0.440625C0.734375 0.146875 1.0875 0 1.5 0H13.5C13.9125 0 14.2656 0.146875 14.5594 0.440625C14.8531 0.734375 15 1.0875 15 1.5V10.5C15 10.9125 14.8531 11.2656 14.5594 11.5594C14.2656 11.8531 13.9125 12 13.5 12H1.5ZM7.5 6.75L1.5 3V10.5H13.5V3L7.5 6.75ZM7.5 5.25L13.5 1.5H1.5L7.5 5.25ZM1.5 3V1.5V10.5V3Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.instagram.com/experience.tulsa" target="_blank" class="button big-social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 15 15" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5998 1.94531H4.7998C3.14295 1.94531 1.7998 3.28846 1.7998 4.94531V9.74531C1.7998 11.4022 3.14295 12.7453 4.7998 12.7453H9.5998C11.2566 12.7453 12.5998 11.4022 12.5998 9.74531V4.94531C12.5998 3.28846 11.2566 1.94531 9.5998 1.94531ZM11.5498 9.74531C11.5465 10.8209 10.6754 11.692 9.5998 11.6953H4.7998C3.72421 11.692 2.8531 10.8209 2.8498 9.74531V4.94531C2.8531 3.86972 3.72421 2.99861 4.7998 2.99531H9.5998C10.6754 2.99861 11.5465 3.86972 11.5498 4.94531V9.74531ZM10.0498 5.09531C10.3812 5.09531 10.6498 4.82668 10.6498 4.49531C10.6498 4.16394 10.3812 3.89531 10.0498 3.89531C9.71842 3.89531 9.4498 4.16394 9.4498 4.49531C9.4498 4.82668 9.71842 5.09531 10.0498 5.09531ZM7.1998 4.64531C5.70864 4.64531 4.4998 5.85414 4.4998 7.34531C4.4998 8.83649 5.70864 10.0453 7.1998 10.0453C8.69099 10.0453 9.89981 8.83649 9.89981 7.34531C9.90143 6.62873 9.61744 5.94105 9.11074 5.43436C8.60404 4.92767 7.91639 4.64372 7.1998 4.64531ZM5.5498 7.34531C5.5498 8.25659 6.28852 8.99531 7.1998 8.99531C8.11108 8.99531 8.8498 8.25659 8.8498 7.34531C8.8498 6.43403 8.11108 5.69531 7.1998 5.69531C6.28852 5.69531 5.5498 6.43403 5.5498 7.34531Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.tiktok.com/@experience.tulsa" target="_blank" class="button big-social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 15 15" fill="none">
+  <path d="M9.96058 3.4918C9.55053 3.02352 9.32452 2.42224 9.32458 1.7998H7.47058V9.2398C7.45658 9.64252 7.28669 10.0241 6.99677 10.3039C6.70684 10.5838 6.31954 10.74 5.91658 10.7398C5.06458 10.7398 4.35658 10.0438 4.35658 9.17981C4.35658 8.14781 5.35258 7.3738 6.37858 7.6918V5.7958C4.30858 5.5198 2.49658 7.1278 2.49658 9.17981C2.49658 11.1778 4.15258 12.5998 5.91058 12.5998C7.79458 12.5998 9.32458 11.0698 9.32458 9.17981V5.4058C10.0764 5.94571 10.979 6.23539 11.9046 6.23381V4.3798C11.9046 4.3798 10.7766 4.4338 9.96058 3.4918Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.linkedin.com/company/experience-tulsa/" target="_blank" class="button big-social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 15 15" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.6998 1.94531C2.20275 1.94531 1.7998 2.34825 1.7998 2.84531V11.8453C1.7998 12.3424 2.20275 12.7453 2.6998 12.7453H11.6998C12.1968 12.7453 12.5998 12.3424 12.5998 11.8453V2.84531C12.5998 2.34825 12.1968 1.94531 11.6998 1.94531H2.6998ZM5.11226 4.34694C5.11564 4.92069 4.68617 5.27423 4.17654 5.27169C3.69645 5.26916 3.27795 4.88694 3.28048 4.34779C3.28301 3.84069 3.68379 3.43316 4.20439 3.44498C4.73257 3.45679 5.11564 3.84407 5.11226 4.34694ZM7.36763 6.00237H5.85563H5.85478V11.1383H7.45282V11.0185C7.45282 10.7905 7.45264 10.5625 7.45246 10.3345C7.45198 9.72617 7.45144 9.11723 7.45456 8.50913C7.4554 8.36147 7.46212 8.20793 7.5001 8.06699C7.64266 7.54049 8.11607 7.20047 8.64425 7.28405C8.98343 7.33715 9.20783 7.53377 9.30232 7.85357C9.36059 8.05349 9.38674 8.26865 9.38927 8.47709C9.39611 9.10565 9.39514 9.73421 9.39419 10.3628C9.39383 10.5847 9.39347 10.8067 9.39347 11.0286V11.1374H10.9966V11.0143C10.9966 10.7431 10.9965 10.4719 10.9963 10.2008C10.996 9.52307 10.9956 8.84537 10.9974 8.16743C10.9983 7.86113 10.9654 7.55909 10.8903 7.26293C10.7781 6.82247 10.5461 6.45797 10.1689 6.19475C9.90142 6.00743 9.60779 5.88677 9.27958 5.87327C9.24221 5.87172 9.20452 5.86968 9.16667 5.86764C8.99885 5.85857 8.82827 5.84935 8.66783 5.88171C8.20883 5.97368 7.80556 6.18377 7.50094 6.55415C7.46554 6.59663 7.43092 6.63977 7.37926 6.70415L7.36763 6.71873V6.00237ZM3.40879 11.14H4.99926V6.00571H3.40879V11.14Z" fill="currentColor"/>
+</svg></div></a></div></div></div></nav><div fs-mirrorclick-element="target" class="nav-menu-icon nav-item-on-dark w-nav-button"><div class="menu-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 48 48" fill="none">
+  <path d="M8 36H40C41.1 36 42 35.1 42 34C42 32.9 41.1 32 40 32H8C6.9 32 6 32.9 6 34C6 35.1 6.9 36 8 36ZM8 26H40C41.1 26 42 25.1 42 24C42 22.9 41.1 22 40 22H8C6.9 22 6 22.9 6 24C6 25.1 6.9 26 8 26ZM6 14C6 15.1 6.9 16 8 16H40C41.1 16 42 15.1 42 14C42 12.9 41.1 12 40 12H8C6.9 12 6 12.9 6 14Z" fill="currentColor"/>
+</svg></div><div class="menu-close-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 48 48" fill="none">
+  <path d="M24 26.5551L15.057 35.4981C14.7224 35.8327 14.2966 36 13.7795 36C13.2624 36 12.8365 35.8327 12.5019 35.4981C12.1673 35.1635 12 34.7376 12 34.2205C12 33.7034 12.1673 33.2776 12.5019 32.943L21.4449 24L12.5019 15.057C12.1673 14.7224 12 14.2966 12 13.7795C12 13.2624 12.1673 12.8365 12.5019 12.5019C12.8365 12.1673 13.2624 12 13.7795 12C14.2966 12 14.7224 12.1673 15.057 12.5019L24 21.4449L32.943 12.5019C33.2776 12.1673 33.7034 12 34.2205 12C34.7376 12 35.1635 12.1673 35.4981 12.5019C35.8327 12.8365 36 13.2624 36 13.7795C36 14.2966 35.8327 14.7224 35.4981 15.057L26.5551 24L35.4981 32.943C35.8327 33.2776 36 33.7034 36 34.2205C36 34.7376 35.8327 35.1635 35.4981 35.4981C35.1635 35.8327 34.7376 36 34.2205 36C33.7034 36 33.2776 35.8327 32.943 35.4981L24 26.5551Z" fill="currentColor"/>
+</svg></div></div></div></div></nav></div></div></header><main class="main-wrapper"><section data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;experience_tulsa&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:experience_tulsa&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" data-analytics-id="home:sections:1" data-analytics-blade="true" class="section_homepage-leadspace"><div class="w-layout-blockcontainer container homepage_leadspace_container w-container"><div class="homepage_leadspace-animation"><div class="homepage_leadspace-content-wrapper"><div class="homepage_leadspace-content"><div class="homepage_leadspace_h1-padding"><h1 class="homepage-h1-xxl">Fall in Love </h1><h1 class="homepage-h1-xl">WITH TULSA</h1></div></div></div><div class="homepage_leadspace-image-wrapper"><img data-wf-target="[[[&quot;68efc267f6b4426e5b3f6f10&quot;,&quot;571d1076-c4b4-a73b-7bdd-e2908eaa534a&quot;],[]]]" loading="lazy" alt="" src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/695ec29511f1089b1613d1d0_leadspace-vector-corners.png" class="leadspace-cutout-left"/><img loading="lazy" src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/695ec29511f1089b1613d1d0_leadspace-vector-corners.png" alt="" class="leadspace-cutout-right"/></div><div data-preserve-aspect-ratio="xMidYMid slice" data-w-id="571d1076-c4b4-a73b-7bdd-e2908eaa5342" data-is-ix2-target="1" class="homepage_leadspace-lottie" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/68eea62eec7a141249a63069/690a547f5bc68839fca729eb_ETLeadspaceLottie.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="2.3333333333333335"></div><div class="display-none"></div></div></div></section><section data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;upcoming_events&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:upcoming_events&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" data-analytics-id="home:sections:2" data-analytics-blade="true" class="section_upcoming-events"><section data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;reels&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:reels&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" data-analytics-id="home:reels" data-analytics-blade="true" class="section_social-feed"><div class="bg-pattern-icon-repeat"></div><div class="padding-global padding-social-embed"><div class="w-layout-blockcontainer container w-container"><div class="embed-social_module"><div class="embed-social-header-padding"><h2>See the Real Tulsa</h2></div><div class="embed-social_script-w-embed-w-script"><div class="w-embed w-script"><div class="embedsocial-hashtag" data-ref="2ba08e9fa2c73fe44d0bf73ba9e16b3506a8142b"></div><script>(function(d, s, id){var js; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = "https://embedsocial.com/cdn/ht.js"; d.getElementsByTagName("head")[0].appendChild(js);}(document, "script", "EmbedSocialHashtagScript"));</script></div></div></div></div></div></section><div data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;upcoming_events&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:upcoming_events&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" class="padding-global padding-section"><div class="w-layout-blockcontainer container w-container"><div class="layout_heading-cta"><div class="layout_icon-heading"><div class="lottie-icon-heading clock-icon" data-w-id="d4412589-9558-99a6-5997-8c9ae8529884" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/692efde02da1b898e1d56251_Clock.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="1.0416666666666667"></div><h2 class="heading-style-h2-lg">EXPLORE OUR EVENTS</h2></div><a fs-list-element="item-link" data-wf--button--variant="yellow" href="/events" class="button w-button">View More Events</a></div><div class="spacer-16"></div><div class="width-max-800"><p class="text-size-xlarge">Tulsa is a social town, where everyone is welcome for a drink, a turn at the two-step or something inviting almost any night of the week.</p></div><div class="spacer-32"></div><div class="w-dyn-list"><div role="list" class="layout_events-grid w-dyn-items"><div role="listitem" class="w-dyn-item"><div class="event-card_component"><div id="w-node-_7fd2768a-9d6c-0da4-c5af-741663307c80-63307c7f" class="event-card_image-frame"><div class="event-card_cta-overlay"><a fs-list-element="item-link" data-wf--button--variant="outline-white" href="/event/okie-film-night-march" class="button w-variant-06567a8b-9c7f-0e73-f858-b2ee8c96ce83 w-button">Get The Details</a></div><img src="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/693c2fbced7787740d8f342b_Okie%20Film%20Night.png" loading="lazy" alt="" sizes="(max-width: 479px) 100vw, 311.0069580078125px" srcset="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/693c2fbced7787740d8f342b_Okie%20Film%20Night-p-500.png 500w, https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/693c2fbced7787740d8f342b_Okie%20Film%20Night-p-800.png 800w, https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/693c2fbced7787740d8f342b_Okie%20Film%20Night-p-1080.png 1080w, https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/693c2fbced7787740d8f342b_Okie%20Film%20Night.png 1200w" class="event-card_image"/><div class="frame-corner-1 event-notched-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <path d="M8 8V16H0V0H16V8H8Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-3 event-notched-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <path d="M0 8H8V0H16V16H0V8Z" fill="currentColor"/>
+</svg></div></div><div class="event-card_text"><div class="event-card_label"><div>Mar 3</div><div>•</div><div>Circle Cinema</div></div><h3 fs-list-field="title">Okie Film Night: Leaves of Grass</h3><div class="spacer-4"></div><p>Celebrate Oklahoma&#x27;s Film Legacy at Circle Cinema, a true Tulsa staple. This month, we’ve invited Evan Hughes, Tulsa’s comedian extraordinaire, to pick the film! Evan has selected one of his favorite comedies, “Leaves of Grass” which was made in Oklahoma from writer/director/fellow Tulsan Tim Blake Nelson and starring Edward Norton. What makes this Oklahoma comedy movie so special? Come to the show and find out!</p><div class="spacer-24"></div><div class="get-the-details-cta-wrapper"><div class="link-secondary-cta"><a data-wf--link---secondary-cta--variant="base" href="/event/okie-film-night-march" class="link-secondary-cta w-inline-block"><div>Get The Details</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div></div></div></div></div><div role="listitem" class="w-dyn-item"><div class="event-card_component"><div id="w-node-_7fd2768a-9d6c-0da4-c5af-741663307c80-63307c7f" class="event-card_image-frame"><div class="event-card_cta-overlay"><a fs-list-element="item-link" data-wf--button--variant="outline-white" href="/event/sample-where-first-friday-begins-march" class="button w-variant-06567a8b-9c7f-0e73-f858-b2ee8c96ce83 w-button">Get The Details</a></div><img src="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6970062ede0e34d2420be082_Eventbrite%20Header%20(600%20x%20300%20px)%20(564%20x%20291%20px).png" loading="lazy" alt="" sizes="(max-width: 479px) 100vw, 311.0069580078125px" srcset="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6970062ede0e34d2420be082_Eventbrite%20Header%20(600%20x%20300%20px)%20(564%20x%20291%20px)-p-500.png 500w, https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6970062ede0e34d2420be082_Eventbrite%20Header%20(600%20x%20300%20px)%20(564%20x%20291%20px).png 564w" class="event-card_image"/><div class="frame-corner-1 event-notched-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <path d="M8 8V16H0V0H16V8H8Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-3 event-notched-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <path d="M0 8H8V0H16V16H0V8Z" fill="currentColor"/>
+</svg></div></div><div class="event-card_text"><div class="event-card_label"><div>Mar 6</div><div>•</div><div>The Canopy</div></div><h3 fs-list-field="title">SAMPLE: Where First Friday Begins </h3><div class="spacer-4"></div><p>SAMPLE is a relaxed, art-forward social mixer—your starting point before the First Friday Art Crawl unfolds.</p><div class="spacer-24"></div><div class="get-the-details-cta-wrapper"><div class="link-secondary-cta"><a data-wf--link---secondary-cta--variant="base" href="/event/sample-where-first-friday-begins-march" class="link-secondary-cta w-inline-block"><div>Get The Details</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div></div></div></div></div><div role="listitem" class="w-dyn-item"><div class="event-card_component"><div id="w-node-_7fd2768a-9d6c-0da4-c5af-741663307c80-63307c7f" class="event-card_image-frame"><div class="event-card_cta-overlay"><a fs-list-element="item-link" data-wf--button--variant="outline-white" href="/event/black-wall-street-tour-with-kode-ransom" class="button w-variant-06567a8b-9c7f-0e73-f858-b2ee8c96ce83 w-button">Get The Details</a></div><img src="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6998ba373540cff55a7bd81a_ET%20Website%20Images-3.png" loading="lazy" alt="" sizes="(max-width: 479px) 100vw, 311.0069580078125px" srcset="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6998ba373540cff55a7bd81a_ET%20Website%20Images-3-p-500.png 500w, https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6998ba373540cff55a7bd81a_ET%20Website%20Images-3-p-800.png 800w, https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6998ba373540cff55a7bd81a_ET%20Website%20Images-3-p-1080.png 1080w, https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6998ba373540cff55a7bd81a_ET%20Website%20Images-3.png 1200w" class="event-card_image"/><div class="frame-corner-1 event-notched-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <path d="M8 8V16H0V0H16V8H8Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-3 event-notched-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <path d="M0 8H8V0H16V16H0V8Z" fill="currentColor"/>
+</svg></div></div><div class="event-card_text"><div class="event-card_label"><div>Mar 7</div><div>•</div><div>Greenwood Griot</div></div><h3 fs-list-field="title">Black Wall Street Tour with Kode Ransom</h3><div class="spacer-4"></div><p>Discover the story of Black Wall Street and the 1921 Tulsa Race Massacre with Tulsa native Kode Ransom. Explore Greenwood’s history, witness the community’s resilience, and gain insight into its enduring legacy—a powerful story of courage, perseverance, and hope that continues to inspire today.</p><div class="spacer-24"></div><div class="get-the-details-cta-wrapper"><div class="link-secondary-cta"><a data-wf--link---secondary-cta--variant="base" href="/event/black-wall-street-tour-with-kode-ransom" class="link-secondary-cta w-inline-block"><div>Get The Details</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div></div></div></div></div></div></div></div></div></section><section data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;why_tulsa&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:why_tulsa&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" data-analytics-id="home:sections:3" data-analytics-blade="true" class="section_homepage-why-tulsa-intro"><div class="padding-global padding-section"><div class="w-layout-blockcontainer container w-container"><div class="_2col-image-text-layout"><div class="_2col-text"><div class="heading-style-h5">why tulsa</div><div><div class="spacer-8 display-none-tablet"></div><h2>Everyone is Talking About Tulsa</h2><div class="spacer-8 display-none-tablet"></div></div><div><p class="text-size-large">You’re right that Tulsa is everywhere lately. See for yourself what everyone’s talking about.</p><div class="spacer-20"></div></div><div><a data-wf--link---secondary-cta--variant="base" href="/why-tulsa" class="link-secondary-cta w-inline-block"><div>Learn More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div></div><div class="image-slot"><div class="frame-component"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/69122befb1145a09eba4233d_homepage-why-tulsa.png" class="_2col-image"/><div class="frame-corner-1 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 32" fill="none">
+  <path d="M8 32H0V0H36.77C20.88 0 8 12.89 8 28.78V32Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-2 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 32" fill="none">
+  <path d="M28.78 28.78C28.78 12.89 15.9 0 0 0H36.78V32H28.78V28.78Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-3 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 37 32" fill="none">
+  <path d="M28.78 0H36.78V32H0C15.9 32 28.78 19.12 28.78 3.22998V0Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-4 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 32" fill="none">
+  <path d="M0 0H8V3.22998C8 19.12 20.88 32 36.77 32H0V0Z" fill="currentColor"/>
+</svg></div></div></div></div></div></div></section><section data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;opportunities&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:opportunities&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" data-analytics-id="home:sections:4" data-analytics-blade="true" class="section_homepage-opportunities-intro"><div class="padding-global padding-section-bottom"><div class="w-layout-blockcontainer container w-container"><div class="_2col-image-text-layout"><div><div class="frame-component"><img alt="" loading="lazy" src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/69122bef7c3c6fdc808c0234_homepage-opportunities-image.png" class="_2col-image"/><div class="frame-corner-1 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 32" fill="none">
+  <path d="M8 32H0V0H36.77C20.88 0 8 12.89 8 28.78V32Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-2 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 32" fill="none">
+  <path d="M28.78 28.78C28.78 12.89 15.9 0 0 0H36.78V32H28.78V28.78Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-3 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 37 32" fill="none">
+  <path d="M28.78 0H36.78V32H0C15.9 32 28.78 19.12 28.78 3.22998V0Z" fill="currentColor"/>
+</svg></div><div class="frame-corner-4 image-rounded-corner w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 32" fill="none">
+  <path d="M0 0H8V3.22998C8 19.12 20.88 32 36.77 32H0V0Z" fill="currentColor"/>
+</svg></div></div></div><div class="_2col-text"><div class="heading-style-h5">Opportunities</div><div><div class="spacer-8"></div><h2>Open New Doors</h2><div class="spacer-8"></div></div><div><p class="text-size-large">Tulsa has the resources and opportunities you need, whether it’s for a new career or your next chapter.</p><div class="spacer-20"></div></div><div><a data-wf--link---secondary-cta--variant="base" href="/opportunities" class="link-secondary-cta w-inline-block"><div>Learn More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div></div></div></div></div></section><section data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;about_experience_tulsa&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:about_experience_tulsa&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" data-analytics-id="home:sections:5" data-analytics-blade="true" class="section_homepage-about-intro"><div class="padding-global"><div class="padding-cta--section-bg-image"><div class="w-layout-blockcontainer container w-container"><div class="_2col-text is-homepage-banner-cta"><div class="layout_icon-heading is-mobile-flex-horizontal"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/69123477200fe64c4beb2304_lighteningIcon.png" loading="lazy" alt="" class="icon-eyebrow"/><div class="heading-style-h5">about experience tulsa</div></div><div><h2>Connecting Everyone with Everything Tulsa Has to Offer</h2><div class="spacer-8"></div></div><div><p>Our dynamic mix of programs and community-driven experiences connects newcomers and longtime Tulsans to the heart of our city and to the future we’re building together.</p><div class="spacer-16"></div></div><div><div class="spacer-16"></div><a data-wf--link---secondary-cta--variant="on-dark" href="/about-us" class="link-secondary-cta w-variant-928a0a42-315f-e71b-a36a-0a1b3eb1e943 w-inline-block"><div>Learn More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></a></div></div></div></div></div></section><section data-datalayer="{&#x27;event&#x27;:&#x27;impression&#x27;,&#x27;link_conversion&#x27;:&#x27;0&#x27;,&#x27;blade_text&#x27;:&#x27;tulsa_stories&#x27;,&#x27;blade_name&#x27;:&#x27;et:home:tulsa_stories&#x27;,&#x27;generic_blade_name&#x27;:&#x27;et:home:blade&#x27;}" data-analytics-id="home:sections:6" data-analytics-blade="true" class="section_tulsa-stories bg-purple-700"><div class="padding-global padding-section"><div fs-list-instance="stories" class="w-layout-blockcontainer container w-container"><div class="layout_heading-cta"><div><div class="layout_icon-heading"><div data-is-ix2-target="1" class="lottie-icon-heading chat-bubbles-icon" data-w-id="8cd2aae2-2f69-425b-dcfb-2dfe8005af87" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/692efde0e69026d53d26c03c_ChatBubbles.json" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0" data-duration="1.5833333333333333"></div><h2 class="heading-style-h2-lg">Told by Tulsans</h2></div><p class="text-size-xlarge display-none">Stories by and for Tulsans.</p></div><a fs-list-element="item-link" data-wf--button--variant="yellow" href="/stories" class="button w-button">View More Stories</a></div><div class="spacer-56"></div><div class="featured-stories-cms-combine-wrapper"><div class="filters-form-block display-none w-form"><form id="wf-form-Content-Type-Filter-Form" name="wf-form-Content-Type-Filter-Form" data-name="Content Type Filter Form" method="get" fs-list-element="filters" class="cms-filters-form" data-wf-page-id="68efc267f6b4426e5b3f6f10" data-wf-element-id="207fc8a9-30b6-60e8-f47c-9de840ea6173"><div class="display-none"><a fs-list-element="sort-trigger" href="#" class="button w-button">Sort by Date</a></div></form><div class="display-none w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="display-none w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div></div><div fs-list-instance="stories" fs-list-element="list" class="w-dyn-list"><div class="display-none w-dyn-empty"><div>No items found.</div></div></div><div fs-list-combine="stories" fs-list-element="list" class="w-dyn-list"><div role="list" class="_3col-grid_story-cards w-dyn-items"><div role="listitem" class="cms-collection-item_resource-card w-dyn-item"><a target="" data-wf--story-card--variant="community-beat" href="/community-beat/best-of-tulsa-with-recording-artist-singer-songwriter-and-music-producer-johnny-polygon" class="resource_card_component w-variant-21540923-8822-b810-35ed-6cd69d184ece w-inline-block"><div class="resource-card_image-container"><img src="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6998e4c0cdb86c3d0229dd46_Quote%20Overlay%20Side%20-%20Community%20Beat%20BOT.png" loading="lazy" alt="" class="story-card_image"/></div><div class="story-card_label-wrapper"><div class="story-card_label-spacer"></div></div><div class="resource-card_copy-layout"><div><div><div class="story-card_copy-spacer"></div><div class="story-card_labels-wrapper"><div fs-list-field="content-type" class="story-card_label-content-type">Community beat</div></div><div class="spacer-20"></div></div><div class="resource_title-description_layout"><div fs-list-field="title" class="resource-card_title">Best of Tulsa with Johnny Polygon</div><p fs-list-field="description" class="resource-card_description">The music aficionado and Lowdown actor shares his favorite places in Tulsa.</p></div></div><div class="margin-top-auto"><div class="link-secondary-cta"><div>Read More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></div></div></div></a></div><div role="listitem" class="cms-collection-item_resource-card w-dyn-item"><a target="" data-wf--story-card--variant="community-beat" href="/community-beat/shagah-zakerions-best-of-tulsa" class="resource_card_component w-variant-21540923-8822-b810-35ed-6cd69d184ece w-inline-block"><div class="resource-card_image-container"><img src="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/6945693c4b3146090df1f866_Shagah%20Zakerian%203%20Medium.jpeg" loading="lazy" alt="Image of Shagah being interviewed" class="story-card_image"/></div><div class="story-card_label-wrapper"><div class="story-card_label-spacer"></div></div><div class="resource-card_copy-layout"><div><div><div class="story-card_copy-spacer"></div><div class="story-card_labels-wrapper"><div fs-list-field="content-type" class="story-card_label-content-type">Community beat</div></div><div class="spacer-20"></div></div><div class="resource_title-description_layout"><div fs-list-field="title" class="resource-card_title">Best of Tulsa with Shagah Zakerion</div><p fs-list-field="description" class="resource-card_description">A Tulsa maven, Shagah Zakerion, recommends her favorite things to do in town on Best of Tulsa.</p></div></div><div class="margin-top-auto"><div class="link-secondary-cta"><div>Read More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></div></div></div></a></div><div role="listitem" class="cms-collection-item_resource-card w-dyn-item"><a target="" data-wf--story-card--variant="community-beat" href="/community-beat/best-of-tulsa-with-local-chef-colin-sato" class="resource_card_component w-variant-21540923-8822-b810-35ed-6cd69d184ece w-inline-block"><div class="resource-card_image-container"><img src="https://cdn.prod.website-files.com/6924d01e5521d46b317a01b8/694568e7842689a233372c4e_Colin%20Sato.png" loading="lazy" alt="Image of Colin Sato being interviewed" class="story-card_image"/></div><div class="story-card_label-wrapper"><div class="story-card_label-spacer"></div></div><div class="resource-card_copy-layout"><div><div><div class="story-card_copy-spacer"></div><div class="story-card_labels-wrapper"><div fs-list-field="content-type" class="story-card_label-content-type">Community beat</div></div><div class="spacer-20"></div></div><div class="resource_title-description_layout"><div fs-list-field="title" class="resource-card_title">Best of Tulsa with local chef, Colin Sato</div><p fs-list-field="description" class="resource-card_description">Culinary innovator Colin Sato shares some of his favorite spots in Tulsa.</p></div></div><div class="margin-top-auto"><div class="link-secondary-cta"><div>Read More</div><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></div></div></div></a></div></div></div><div fs-list-instance="stories" fs-list-element="list" class="w-dyn-list"><div class="display-none w-dyn-empty"><div>No items found.</div></div></div></div></div></div></section></main><section class="section_footer"><div class="footer_main-menu"><div class="footer_bg-pattern"></div><div class="padding-global"><div class="padding-footer-main"><div class="w-layout-blockcontainer container w-container"><div class="footer_main-layout"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925e660e5b22bebb68751fa_Footer_ET%20Logo.svg" loading="lazy" id="w-node-_0ff4dc5f-6546-dd05-0d2b-51182bb7793f-3e836507" alt="" class="footer_logo"/><div id="w-node-_7a46e1de-7cdd-7e04-60bb-f3619f83deb7-3e836507" class="footer_social-icons_wrapper"><div class="heading-style-h5 text-no-wrap">Follow Us</div><div class="navbar_social-buttons_layout"><a href="https://www.instagram.com/experience.tulsa" target="_blank" class="button big-social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5998 1.94531H4.7998C3.14295 1.94531 1.7998 3.28846 1.7998 4.94531V9.74531C1.7998 11.4022 3.14295 12.7453 4.7998 12.7453H9.5998C11.2566 12.7453 12.5998 11.4022 12.5998 9.74531V4.94531C12.5998 3.28846 11.2566 1.94531 9.5998 1.94531ZM11.5498 9.74531C11.5465 10.8209 10.6754 11.692 9.5998 11.6953H4.7998C3.72421 11.692 2.8531 10.8209 2.8498 9.74531V4.94531C2.8531 3.86972 3.72421 2.99861 4.7998 2.99531H9.5998C10.6754 2.99861 11.5465 3.86972 11.5498 4.94531V9.74531ZM10.0498 5.09531C10.3812 5.09531 10.6498 4.82668 10.6498 4.49531C10.6498 4.16394 10.3812 3.89531 10.0498 3.89531C9.71842 3.89531 9.4498 4.16394 9.4498 4.49531C9.4498 4.82668 9.71842 5.09531 10.0498 5.09531ZM7.1998 4.64531C5.70864 4.64531 4.4998 5.85414 4.4998 7.34531C4.4998 8.83649 5.70864 10.0453 7.1998 10.0453C8.69099 10.0453 9.89981 8.83649 9.89981 7.34531C9.90143 6.62873 9.61744 5.94105 9.11074 5.43436C8.60404 4.92767 7.91639 4.64372 7.1998 4.64531ZM5.5498 7.34531C5.5498 8.25659 6.28852 8.99531 7.1998 8.99531C8.11108 8.99531 8.8498 8.25659 8.8498 7.34531C8.8498 6.43403 8.11108 5.69531 7.1998 5.69531C6.28852 5.69531 5.5498 6.43403 5.5498 7.34531Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.tiktok.com/@experience.tulsa" target="_blank" class="button big-social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none">
+  <path d="M9.96058 3.4918C9.55053 3.02352 9.32452 2.42224 9.32458 1.7998H7.47058V9.2398C7.45658 9.64252 7.28669 10.0241 6.99677 10.3039C6.70684 10.5838 6.31954 10.74 5.91658 10.7398C5.06458 10.7398 4.35658 10.0438 4.35658 9.17981C4.35658 8.14781 5.35258 7.3738 6.37858 7.6918V5.7958C4.30858 5.5198 2.49658 7.1278 2.49658 9.17981C2.49658 11.1778 4.15258 12.5998 5.91058 12.5998C7.79458 12.5998 9.32458 11.0698 9.32458 9.17981V5.4058C10.0764 5.94571 10.979 6.23539 11.9046 6.23381V4.3798C11.9046 4.3798 10.7766 4.4338 9.96058 3.4918Z" fill="currentColor"/>
+</svg></div></a><a href="https://www.linkedin.com/company/experience-tulsa/" target="_blank" class="button big-social w-inline-block"><div class="social-icon_svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.6998 1.94531C2.20275 1.94531 1.7998 2.34825 1.7998 2.84531V11.8453C1.7998 12.3424 2.20275 12.7453 2.6998 12.7453H11.6998C12.1968 12.7453 12.5998 12.3424 12.5998 11.8453V2.84531C12.5998 2.34825 12.1968 1.94531 11.6998 1.94531H2.6998ZM5.11226 4.34694C5.11564 4.92069 4.68617 5.27423 4.17654 5.27169C3.69645 5.26916 3.27795 4.88694 3.28048 4.34779C3.28301 3.84069 3.68379 3.43316 4.20439 3.44498C4.73257 3.45679 5.11564 3.84407 5.11226 4.34694ZM7.36763 6.00237H5.85563H5.85478V11.1383H7.45282V11.0185C7.45282 10.7905 7.45264 10.5625 7.45246 10.3345C7.45198 9.72617 7.45144 9.11723 7.45456 8.50913C7.4554 8.36147 7.46212 8.20793 7.5001 8.06699C7.64266 7.54049 8.11607 7.20047 8.64425 7.28405C8.98343 7.33715 9.20783 7.53377 9.30232 7.85357C9.36059 8.05349 9.38674 8.26865 9.38927 8.47709C9.39611 9.10565 9.39514 9.73421 9.39419 10.3628C9.39383 10.5847 9.39347 10.8067 9.39347 11.0286V11.1374H10.9966V11.0143C10.9966 10.7431 10.9965 10.4719 10.9963 10.2008C10.996 9.52307 10.9956 8.84537 10.9974 8.16743C10.9983 7.86113 10.9654 7.55909 10.8903 7.26293C10.7781 6.82247 10.5461 6.45797 10.1689 6.19475C9.90142 6.00743 9.60779 5.88677 9.27958 5.87327C9.24221 5.87172 9.20452 5.86968 9.16667 5.86764C8.99885 5.85857 8.82827 5.84935 8.66783 5.88171C8.20883 5.97368 7.80556 6.18377 7.50094 6.55415C7.46554 6.59663 7.43092 6.63977 7.37926 6.70415L7.36763 6.71873V6.00237ZM3.40879 11.14H4.99926V6.00571H3.40879V11.14Z" fill="currentColor"/>
+</svg></div></a></div><div class="spacer-social-icon-fill"></div></div><div id="w-node-_2dc9ebaa-709b-7fcb-1389-b96763c5f31e-3e836507" class="cta_newsletter-card is-in-footer"><div class="layout_icon-heading is-tablet-stacked"><div class="lottie-icon-heading envelope-icon" data-w-id="c7ca28b7-fdaf-a439-3100-cb5ed0a56ab9" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/692efde0efdf48baec59fed8_Letter.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="0" data-duration="0.7083333333333334"></div><h2>Stay in the Loop</h2></div><div class="spacer-16 mobile-spacer-12"></div><p>Get the latest on our events and local experiences – delivered straight to your inbox. Our newsletter is your insider pass to what’s happening. No spam. Just real events, real people and real Tulsa vibes.</p><div class="spacer-32"></div><a fs-list-element="item-link" data-wf--button--variant="midnight" href="/newsletter" class="button w-variant-8b7fcba5-b5b0-2948-3ef9-4d0eb4082b46 w-button">Sign Up</a></div></div></div></div></div></div><div class="footer_utility-menu"><div class="padding-global"><div class="padding-footer-utility"><div class="w-layout-blockcontainer container w-container"><div class="layout_programs-initiatives"><div class="layout_programs"><div class="footer-submenu-label-wrapper"><h5>Programs</h5></div><div class="footer_logo-badges_layout"><a href="https://www.atlasschool.com/" target="_blank" class="logo-parade_logo-link is-mobile-first w-inline-block"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925ecc1164a4a02f16469ac_logo.svg" loading="lazy" alt="" class="footer_logo-badge"/></a><a href="https://www.campustulsa.com/" target="_blank" class="logo-parade_logo-link is-mobile-second w-inline-block"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925ecc12d2def7422bd3def_logo-1.svg" loading="lazy" alt="" class="footer_logo-badge"/></a><a href="https://www.tulsainnovationlabs.com/" target="_blank" class="logo-parade_logo-link is-mobile-fourth w-inline-block"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925ecc1366249733cc25898_logo-2.svg" loading="lazy" alt="" class="footer_logo-badge"/></a><a href="https://www.tulsaremote.com/" target="_blank" class="logo-parade_logo-link is-mobile-third w-inline-block"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925ecc1e62d3eeb841c1ada_logo-3.svg" loading="lazy" alt="" class="footer_logo-badge"/></a><a href="https://www.tulsaserviceyear.com/" target="_blank" class="logo-parade_logo-link is-mobile-fifth w-inline-block"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925ecc1ee59c6369919e8ba_logo-4.svg" loading="lazy" alt="" class="footer_logo-badge"/></a><a href="https://www.buildintulsa.com/" target="_blank" class="logo-parade_logo-link is-mobile-last-logo w-inline-block"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925ecc130231b90485a4a31_logo-5.svg" loading="lazy" alt="" class="footer_logo-badge"/></a><a href="/visa-network" class="logo-parade_logo-link is-mobile-sixth w-inline-block"><img src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/6925ecc169e2cc11216782d4_logo-6.svg" loading="lazy" alt="" class="footer_logo-badge"/></a></div></div><div class="layout_initiatives"><div class="footer-submenu-label-wrapper"><div class="text-weight-bold">Initiatives</div></div><ul role="list" class="footer_list_initiaives"><li><a href="/events/find-your-tulsa" class="footer_initiative_link">Find Your Tulsa</a></li><li><a href="https://tulsa-bound.com/" target="_blank" class="footer_initiative_link">Tulsa Bound</a></li></ul></div></div></div><div class="w-layout-blockcontainer container w-container"><div class="footer_legal_links"><a href="/privacy-policy" class="footer_legal_link">Privacy Policy</a><a href="/terms-of-use" class="footer_legal_link">Terms of Use</a></div></div></div></div></div><div class="cookie-consent"><div fs-cc="banner" class="fs-cc-banner_component"><div class="fs-cc-banner_container"><div class="fs-cc-banner_text">By clicking <strong class="bold-text">“Accept All Cookies”</strong>, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. View our <a href="/privacy-policy" class="fs-cc-banner_text-link">Privacy Policy</a> for more information.</div><div class="fs-cc-banner_buttons-wrapper"><div class="cookie-consent-preferences-link-wrapper"><div class="link-secondary-cta"><a fs-cc="open-preferences" href="#" class="fs-cc-banner_text-link">Preferences</a><div class="icon-secondary-cta-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="9" viewBox="0 0 19 9" fill="none">
+  <path d="M18.2106 4.164C18.4298 4.31413 18.3923 4.62893 18.1392 4.71732C15.6377 5.5806 13.3065 7.20326 11 8.5C10.8378 8.59081 10.5992 8.51332 10.5557 8.31838C10.3995 7.60887 10.2789 6.37123 10.3406 5.6593C7.05578 6.37487 3.731 6.88097 0.383212 7.17519C0.171327 7.19456 0.0575236 6.96815 0.0902145 6.79258C0.298467 5.69805 0.336012 4.60229 0.222199 3.49928C-0.0962338 3.43632 -0.0720384 2.906 0.292404 2.90116C3.36292 2.85999 6.43223 2.9399 9.4967 3.13726C9.69768 2.16743 9.89746 1.19639 10.0984 0.226562C10.1287 0.0800589 10.3249 -0.0434398 10.4702 0.0146773C13.1968 1.11527 15.7879 2.49797 18.2106 4.164Z" fill="currentColor"/>
+</svg></div></div></div><div><a fs-cc="deny" href="#" class="fs-cc-banner_button fs-cc-button-alt button midnight-2 w-button">Deny</a></div><a fs-cc="allow" href="#" class="fs-cc-banner_button button outline-midnight w-button">Accept</a><div fs-cc="close" class="fs-cc-banner_close button big-social"><div class="fs-cc-banner_close-icon w-embed"><svg fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 16 16">
+	<path d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"></path>
+</svg></div></div></div></div><div fs-cc="interaction" class="fs-cc-banner_trigger"></div></div><div fs-cc="manager" class="fs-cc-manager_component"><div fs-cc="open-preferences" class="fs-cc-manager_button button big-social"><div class="cookie-icon-svg w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+  <g clip-path="url(#clip0_505_911)">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0376 5.67218H24.9939C24.5682 5.67218 24.0116 5.67218 23.4331 5.79224L22.0469 6.06511L22.4944 7.39669C22.68 7.95334 22.7891 8.31352 22.7891 8.70645C22.7127 10.038 22.0142 11.1732 21.0428 11.7626L20.3115 12.1991L20.4534 13.0287C20.5407 13.5853 20.6171 14.0328 20.6171 14.5567C20.6171 17.8638 17.9103 20.5816 14.6141 20.5816C14.1011 20.5816 13.5772 20.5052 13.0533 20.3524L11.9836 20.0468L11.558 21.0727C11.0232 22.3607 9.73523 23.3102 8.17443 23.3102C7.92339 23.3102 7.73785 23.2666 7.36675 23.1902C7.30126 23.1793 7.22486 23.1684 7.14845 23.1465L5.66406 22.8518V25.002C5.66406 35.6875 14.2866 44.3319 24.9393 44.3319C35.592 44.3319 44.3128 35.6875 44.3128 25.002C44.3128 14.3166 35.7012 5.67218 25.0376 5.67218ZM24.9393 41.8433C15.9238 41.8433 8.57827 34.7379 8.16352 25.7879H8.17443C10.3901 25.7879 12.2783 24.6418 13.3589 22.9719C13.7736 23.0374 14.1884 23.0701 14.6141 23.0701C19.2855 23.0701 23.1057 19.2391 23.1057 14.5567C23.1057 14.131 23.0729 13.749 23.0293 13.3888C24.3609 12.2865 25.1795 10.6056 25.2777 8.80468V8.7392C25.2777 8.54273 25.2668 8.34627 25.2449 8.16072C34.4351 8.28078 41.8352 15.7573 41.8352 25.002C41.8352 34.2467 34.2386 41.8433 24.9393 41.8433Z" fill="#000033"/>
+    <path d="M17.7898 8.11907C17.7898 6.83114 16.742 5.79425 15.465 5.79425C14.1879 5.79425 13.1401 6.84206 13.1401 8.11907C13.1401 9.39608 14.1879 10.4439 15.465 10.4439C16.742 10.4439 17.7898 9.39608 17.7898 8.11907Z" fill="#000033"/>
+    <path d="M16.5237 15.3989C16.5237 14.4603 15.7597 13.7072 14.8319 13.7072C13.9042 13.7072 13.1401 14.4712 13.1401 15.3989C13.1401 16.3267 13.9042 17.0907 14.8319 17.0907C15.7597 17.0907 16.5237 16.3267 16.5237 15.3989Z" fill="#000033"/>
+    <path d="M9.84327 16.5765C9.84327 15.6161 9.05742 14.8302 8.09693 14.8302C7.13644 14.8302 6.35059 15.6161 6.35059 16.5765C6.35059 17.537 7.13644 18.3229 8.09693 18.3229C9.05742 18.3229 9.84327 17.537 9.84327 16.5765Z" fill="#000033"/>
+  </g>
+</svg></div></div><div fs-cc="interaction" class="fs-cc-manager_trigger"></div></div><div fs-cc-scroll="disable" fs-cc="preferences" class="fs-cc-prefs_component w-form"><form id="cookie-preferences" name="wf-form-Cookie-Preferences" data-name="Cookie Preferences" method="get" class="fs-cc-prefs_form" data-wf-page-id="68efc267f6b4426e5b3f6f10" data-wf-element-id="61fa82b9-b0f9-3b63-c7a8-b3cfcb180497"><div fs-cc="close" class="fs-cc-prefs_close button big-social outline-midnight"><div class="fs-cc-prefs_close-icon w-embed"><svg fill="currentColor" aria-hidden="true" focusable="false" viewBox="0 0 16 24">
+	<path d="M9.414 8l4.293-4.293-1.414-1.414L8 6.586 3.707 2.293 2.293 3.707 6.586 8l-4.293 4.293 1.414 1.414L8 9.414l4.293 4.293 1.414-1.414L9.414 8z"></path>
+</svg></div></div><div class="fs-cc-prefs_content"><div class="fs-cc-prefs_space-small"><h2 class="heading-style-h2-lg">Privacy Preferences</h2></div><div class="fs-cc-prefs_space-small"><div class="fs-cc-prefs_text">When you visit websites, they may store or retrieve data in your browser. This storage is often necessary for the basic functionality of the website. The storage may be used for marketing, analytics, and personalization of the site, such as storing your preferences. Privacy is important to us, so you have the option of disabling certain types of storage that may not be necessary for the basic functioning of the website. Blocking categories may impact your experience on the website.</div></div><div class="fs-cc-prefs_space-medium"><div class="button-group"><a fs-cc="deny" href="#" class="fs-cc-prefs_button fs-cc-button-alt button w-button">Reject all cookies</a><a fs-cc="allow" href="#" class="fs-cc-prefs_button button outline-midnight w-button">Allow all cookies</a></div></div><div class="fs-cc-prefs_space-small"><div class="fs-cc-prefs_title">Manage Consent Preferences by Category</div></div><div class="fs-cc-prefs_option"><div class="fs-cc-prefs_toggle-wrapper"><div class="fs-cc-prefs_label">Essential</div><div class="fs-cc-prefs_text"><strong>Always Active</strong></div></div><div class="fs-cc-prefs_text">These items are required to enable basic website functionality.</div></div><div class="fs-cc-prefs_option"><div class="fs-cc-prefs_toggle-wrapper"><div class="fs-cc-prefs_label">Marketing</div><label class="w-checkbox fs-cc-prefs_checkbox-field"><input type="checkbox" name="marketing" id="marketing" data-name="Marketing" fs-cc-checkbox="marketing" class="w-checkbox-input fs-cc-prefs_checkbox"/><span for="marketing" class="fs-cc-prefs_checkbox-label w-form-label">Essential</span><div class="fs-cc-prefs_toggle"></div></label></div><div class="fs-cc-prefs_text">These items are used to deliver advertising that is more relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns. Advertising networks usually place them with the website operator’s permission.</div></div><div class="fs-cc-prefs_option"><div class="fs-cc-prefs_toggle-wrapper"><div class="fs-cc-prefs_label">Personalization</div><label class="w-checkbox fs-cc-prefs_checkbox-field"><input type="checkbox" name="personalization" id="personalization" data-name="Personalization" fs-cc-checkbox="personalization" class="w-checkbox-input fs-cc-prefs_checkbox"/><span for="personalization" class="fs-cc-prefs_checkbox-label w-form-label">Essential</span><div class="fs-cc-prefs_toggle"></div></label></div><div class="fs-cc-prefs_text">These items allow the website to remember choices you make (such as your user name, language, or the region you are in) and provide enhanced, more personal features. For example, a website may provide you with local weather reports or traffic news by storing data about your current location.</div></div><div class="fs-cc-prefs_option"><div class="fs-cc-prefs_toggle-wrapper"><div class="fs-cc-prefs_label">Analytics</div><label class="w-checkbox fs-cc-prefs_checkbox-field"><input type="checkbox" name="analytics" id="analytics" data-name="Analytics" fs-cc-checkbox="analytics" class="w-checkbox-input fs-cc-prefs_checkbox"/><span for="analytics" class="fs-cc-prefs_checkbox-label w-form-label">Essential</span><div class="fs-cc-prefs_toggle"></div></label></div><div class="fs-cc-prefs_text">These items help the website operator understand how its website performs, how visitors interact with the site, and whether there may be technical issues. This storage type usually doesn’t collect information that identifies a visitor.</div></div><div class="fs-cc-prefs_buttons-wrapper"><a fs-cc="submit" href="#" class="fs-cc-prefs_button button midnight-2 w-button">Confirm my preferences and close</a></div><input type="submit" data-wait="Please wait..." class="fs-cc-prefs_submit-hide w-button" value="Submit"/><div class="w-embed"><style>
+/* smooth scrolling on iOS devices */
+.fs-cc-prefs_content{-webkit-overflow-scrolling: touch}
+</style></div></div></form><div class="success-message w-form-done"></div><div class="error-message w-form-fail"></div><div fs-cc="close" class="fs-cc-prefs_overlay"></div><div fs-cc="interaction" class="fs-cc-prefs_trigger"></div></div></div></section></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68efc266f6b4426e5b3f6e0b" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/js/experience-tulsa-web-2025.schunk.e0c428ff9737f919.js" type="text/javascript" integrity="sha384-ar82P9eriV3WGOD8Lkag3kPxxkFE9GSaSPalaC0MRlR/5aACGoFQNfyqt0dNuYvt" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/js/experience-tulsa-web-2025.schunk.05c565276a4d3716.js" type="text/javascript" integrity="sha384-E0bhofI1USD8AfF4LunyrNPSAmLfE4pq4fe+oU835CFAAJyJX6K3wGwcYQVpGUxw" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/68efc266f6b4426e5b3f6e0b/js/experience-tulsa-web-2025.a577d6ec.828c1ec197bc9ca7.js" type="text/javascript" integrity="sha384-xNO85SMiPGo858Ab5ejcDhxBek9R4L6NRs5oe4rEX90l/jVhXibAo5i/3EGm6APc" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js" type="text/javascript"></script><script type="text/javascript">gsap.registerPlugin(ScrollTrigger);</script><style>
+
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+
+/* Set color style to inherit */
+.inherit-color * {
+    color: inherit;
+}
+
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+ 
+.margin-0 {
+  margin: 0rem !important;
+}
+  
+.padding-0 {
+  padding: 0rem !important;
+}
+
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+  
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+  
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+  
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+  
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+
+	/* Branded Slider dots */
+	.w-slider-dot {
+		width: var(--scale--16);
+		height: var(--scale--16);
+		border: 1px solid var(--brand--color--blue, #003);
+		background-color: #EAEAEC;
+	}
+
+	.w-slider-dot.w-active {
+		background-color: var(--_primitives---yellow--base, #fcd11a);
+	}
+</style>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHKX7N5G"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><script>
+var Webflow = Webflow || [];
+Webflow.push(function() {
+	window.addEventListener('resize', function() {
+	    window.Webflow.require("lottie").lottie.resize();
+	});	
+});
+</script>
+
+</body></html>
