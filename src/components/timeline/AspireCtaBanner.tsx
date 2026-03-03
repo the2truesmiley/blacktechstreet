@@ -76,7 +76,7 @@ export function AspireCtaBanner() {
                     <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground leading-tight">
                       Your next step starts{' '}
                       <span className="text-primary drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]">
-                        March&nbsp;28th
+                        April&nbsp;18th
                       </span>
                     </h3>
 
