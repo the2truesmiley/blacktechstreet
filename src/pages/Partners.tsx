@@ -121,7 +121,8 @@ export default function Partners() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "100px 0px" }}
+            transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
             <p className="text-3xl md:text-4xl font-display font-bold text-foreground">
@@ -137,7 +138,7 @@ export default function Partners() {
                 key={partner.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "50px 0px" }}
                 transition={{ delay: index * 0.15 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group relative"
@@ -201,7 +202,8 @@ export default function Partners() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "100px 0px" }}
+            transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
             <p className="text-3xl md:text-4xl font-display font-bold text-foreground">
@@ -209,20 +211,15 @@ export default function Partners() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {corePartners.map((partner, index) => (
               <motion.div
                 key={partner.name}
                 id={partner.name.toLowerCase().replace(/\s+/g, '-')}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, margin: "50px 0px" }}
+                transition={{ delay: index * 0.1, duration: 0.4 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="group relative"
               >
@@ -246,7 +243,7 @@ export default function Partners() {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -256,7 +253,8 @@ export default function Partners() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "100px 0px" }}
+            transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
             <p className="text-3xl md:text-4xl font-display font-bold text-foreground">
@@ -264,20 +262,15 @@ export default function Partners() {
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
-          >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
                 id={partner.name.toLowerCase().replace(/\s+/g, '-')}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                viewport={{ once: true, margin: "50px 0px" }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="group relative"
               >
@@ -332,7 +325,7 @@ export default function Partners() {
                 )}
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
