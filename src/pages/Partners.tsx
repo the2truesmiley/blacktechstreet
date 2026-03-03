@@ -20,7 +20,7 @@ import gradientLogo from '@/assets/partners/gradient-logo.svg';
 import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
 import langstonLogo from '@/assets/partners/langston-university-logo.webp';
 import musaCapitalLogo from '@/assets/partners/musa-capital-logo.png';
-import typrosLogo from '@/assets/partners/typros-logo.png';
+import typrosLogo from '@/assets/partners/typros-logo.svg';
 import urbanCodersGuildLogo from '@/assets/partners/urban-coders-guild-logo.webp';
 import buildInTulsaLogo from '@/assets/partners/build-in-tulsa-logo.svg';
 
