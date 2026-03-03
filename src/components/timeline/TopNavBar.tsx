@@ -14,10 +14,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: 'About Us', href: '/about' },
   { 
-    label: 'Programs', 
+    label: 'G-ACE', 
     children: [
       { label: 'ASPIRE', href: '/aspire' },
-      { label: '2026 Events', href: '/aspire/events' },
+      { label: '2026 ASPIRE Workshops', href: '/aspire/events' },
     ]
   },
   { 
