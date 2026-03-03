@@ -224,7 +224,7 @@ export default function Partners() {
                 id={partner.name.toLowerCase().replace(/\s+/g, '-')}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-30px" }}
+                viewport={{ once: true, margin: "50px 0px" }}
                 transition={{ delay: index * 0.1, duration: 0.4 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="group relative"
