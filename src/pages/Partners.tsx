@@ -18,6 +18,7 @@ import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
 import actHouseLogo from '@/assets/partners/act-house-logo.svg';
 import gradientLogo from '@/assets/partners/gradient-logo.svg';
 import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
+import langstonLogo from '@/assets/partners/langston-university-logo.webp';
 
 // Featured partners (larger display)
 const featuredPartners = [
@@ -48,6 +49,7 @@ const partners = [
   { name: 'Atlas School', logo: atlasLogo, needsLightBg: false, link: 'https://www.atlasschool.com/' },
   { name: 'Gradient', logo: gradientLogo, needsLightBg: true, link: 'https://www.joingradient.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
+  { name: 'Langston University', logo: langstonLogo, needsLightBg: true, link: 'https://langston.edu/' },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: true, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
