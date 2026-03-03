@@ -367,7 +367,7 @@ export function TimelineHero() {
           className="flex-1 text-center lg:text-left"
         >
           <motion.h1 
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground tracking-tight leading-tight mb-4 text-balance"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground tracking-tight leading-tight mb-4 lg:mb-6 text-balance"
           >
             <motion.span
               animate={{
