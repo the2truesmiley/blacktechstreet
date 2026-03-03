@@ -49,6 +49,7 @@ const partners = [
   { name: 'Gradient', logo: gradientLogo, needsLightBg: true, link: 'https://www.joingradient.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
+  { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: true, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
 ];
 
