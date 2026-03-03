@@ -276,10 +276,10 @@ export default function Partners() {
               <motion.div
                 key={partner.name}
                 id={partner.name.toLowerCase().replace(/\s+/g, '-')}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{ delay: index * 0.05, duration: 0.4 }}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="group relative"
               >
