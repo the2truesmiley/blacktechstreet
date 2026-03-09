@@ -269,9 +269,9 @@ export default function Partners() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <p className="text-3xl md:text-4xl font-display font-bold text-foreground">
-              Community Partners
-            </p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
+              Community <span className="text-primary">Partners</span>
+            </h2>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
