@@ -23,6 +23,12 @@ import musaCapitalLogo from '@/assets/partners/musa-capital-logo.png';
 import typrosLogo from '@/assets/partners/typros-logo.svg';
 import urbanCodersGuildLogo from '@/assets/partners/urban-coders-guild-logo.webp';
 import buildInTulsaLogo from '@/assets/partners/build-in-tulsa-logo.svg';
+import utulsaLogo from '@/assets/partners/utulsa-logo.png';
+
+// Research partners
+const researchPartners = [
+  { name: 'University of Tulsa', logo: utulsaLogo, needsLightBg: true, link: 'https://utulsa.edu/' },
+];
 import tulsaRegionalChamberLogo from '@/assets/partners/tulsa-regional-chamber-logo.png';
 
 // Featured partners (larger display)
