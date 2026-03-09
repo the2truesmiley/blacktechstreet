@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
