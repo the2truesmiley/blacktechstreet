@@ -352,7 +352,6 @@ export default function Partners() {
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-              <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary/70">Research</span>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-foreground">
