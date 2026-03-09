@@ -306,7 +306,7 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
             href="/"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = '/';
+              navigate('/');
             }}
             className="flex items-center gap-3 group"
           >

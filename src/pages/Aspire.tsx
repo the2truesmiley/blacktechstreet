@@ -7,10 +7,16 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Lightbulb, Target, Zap, Users, Brain } from 'lucide-react';
 import teamGroupPhoto from '@/assets/team_group_photo.jpg';
 import btsLogo from '@/assets/logo_b_circuit.png';
+import { useSEO } from '@/hooks/useSEO';
 
 const Aspire = () => {
+  useSEO({
+    title: 'ASPIRE | Black Tech Street',
+    description: 'ASPIRE offers GenAI fluency and responsible innovation training for life, work, and community in Greenwood, Tulsa.',
+    canonical: 'https://blacktechstreet.com/aspire',
+  });
+
   useEffect(() => {
-    document.title = 'ASPIRE | Black Tech Street';
     window.scrollTo(0, 0);
   }, []);
 

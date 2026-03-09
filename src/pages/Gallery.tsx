@@ -6,8 +6,15 @@ import { Footer } from '@/components/timeline/Footer';
 import { Camera, Calendar, Loader2 } from 'lucide-react';
 import { useGalleryPhotos, useGalleryTags, filterPhotosByTag } from '@/hooks/useGalleryPhotos';
 import { format } from 'date-fns';
+import { useSEO } from '@/hooks/useSEO';
 
 export default function Gallery() {
+  useSEO({
+    title: 'Gallery | Black Tech Street',
+    description: 'Photos from Black Tech Street workshops, events, and community gatherings in Greenwood, Tulsa.',
+    canonical: 'https://blacktechstreet.com/gallery',
+  });
+
   const [activeTag, setActiveTag] = useState('All');
   const { data: photos, isLoading, error } = useGalleryPhotos();
   const tags = useGalleryTags(photos);

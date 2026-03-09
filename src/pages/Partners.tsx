@@ -329,30 +329,7 @@ export default function Partners() {
                 transition={{ delay: index * 0.05 }}
                 className="group"
               >
-                <a
-                  href={partner.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "relative h-52 p-8 rounded-xl",
-                    "bg-card/50 backdrop-blur-sm",
-                    "border border-border/30 hover:border-primary/40",
-                    "flex items-center justify-center",
-                    "transition-all duration-300",
-                    "block"
-                  )}
-                >
-                  <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className={cn(
-                    "relative z-10 flex items-center justify-center rounded-lg",
-                    partner.needsLightBg ? "bg-white/95 px-6 py-4" : "px-4 py-3"
-                  )}>
-                    <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[160px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
-                  </div>
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                    {partner.name}
-                  </div>
-                </a>
+                <PartnerCard {...partner} logoWidth="w-[160px]" />
               </motion.div>
             ))}
           </div>

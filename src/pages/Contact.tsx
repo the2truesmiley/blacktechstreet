@@ -21,8 +21,13 @@ const itemVariants = {
 } as const;
 
 export default function Contact() {
+  useSEO({
+    title: 'Contact Us | Black Tech Street',
+    description: 'Get in touch with Black Tech Street. Inquire about programs, partnerships, or how to get involved in Tulsa\'s AI innovation movement.',
+    canonical: 'https://blacktechstreet.com/contact',
+  });
+
   useEffect(() => {
-    document.title = 'Contact Us | Black Tech Street';
     window.scrollTo(0, 0);
 
     // Load Tally embed script

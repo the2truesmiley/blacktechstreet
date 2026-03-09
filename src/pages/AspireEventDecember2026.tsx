@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
 import jovieChildcareBadge from '@/assets/partners/jovie-childcare-badge.png';
+import { useSEO } from '@/hooks/useSEO';
 
 const containerVariants = {
   hidden: { opacity: 0 },

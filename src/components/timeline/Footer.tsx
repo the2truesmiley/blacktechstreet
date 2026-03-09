@@ -24,13 +24,15 @@ const contactInfo = [
 ];
 
 export function Footer() {
+  const navigate = useNavigate();
+
   const handleNavClick = (href: string) => {
-    if (href.startsWith('/')) {
+    if (href.startsWith('mailto:')) {
       window.location.href = href;
       return;
     }
-    if (href.startsWith('mailto:')) {
-      window.location.href = href;
+    if (href.startsWith('/')) {
+      navigate(href);
       return;
     }
     const element = document.querySelector(href);
