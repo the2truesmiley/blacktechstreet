@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import logoGlow from '@/assets/logo_bts_dark_glow.png';
 import logoCircuit from '@/assets/logo_b_circuit.png';
