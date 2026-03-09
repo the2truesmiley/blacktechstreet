@@ -25,10 +25,12 @@ import urbanCodersGuildLogo from '@/assets/partners/urban-coders-guild-logo.webp
 import buildInTulsaLogo from '@/assets/partners/build-in-tulsa-logo.svg';
 import utulsaLogo from '@/assets/partners/utulsa-logo.png';
 import mitLogo from '@/assets/partners/mit-logo.png';
+import nyuTulsaLogo from '@/assets/partners/nyu-tulsa-logo.png';
 
 // Research partners
 const researchPartners = [
   { name: 'MIT', logo: mitLogo, needsLightBg: true, link: 'https://www.mit.edu/' },
+  { name: 'NYU Tulsa', logo: nyuTulsaLogo, needsLightBg: false, link: 'https://www.nyu.edu/tulsa.html' },
   { name: 'University of Tulsa', logo: utulsaLogo, needsLightBg: true, link: 'https://utulsa.edu/' },
 ];
 import tulsaRegionalChamberLogo from '@/assets/partners/tulsa-regional-chamber-logo.png';
