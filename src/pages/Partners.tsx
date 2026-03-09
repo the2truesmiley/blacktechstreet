@@ -31,7 +31,7 @@ import nyuTulsaLogo from '@/assets/partners/nyu-tulsa-logo.png';
 const researchPartners = [
   { name: 'MIT', logo: mitLogo, needsLightBg: true, link: 'https://www.mit.edu/' },
   { name: 'NYU Tulsa', logo: nyuTulsaLogo, needsLightBg: false, link: 'https://www.nyu.edu/tulsa.html' },
-  { name: 'University of Tulsa', logo: utulsaLogo, needsLightBg: true, link: 'https://utulsa.edu/' },
+  { name: 'University of Tulsa', logo: utulsaLogo, needsLightBg: false, link: 'https://utulsa.edu/' },
 ];
 import tulsaRegionalChamberLogo from '@/assets/partners/tulsa-regional-chamber-logo.png';
 
