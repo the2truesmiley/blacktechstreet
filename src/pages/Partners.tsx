@@ -31,7 +31,8 @@ const featuredPartners = [
     name: 'Microsoft', 
     logo: microsoftLogo,
     link: 'https://www.microsoft.com/',
-    description: 'AI & Cybersecurity Innovation Partner'
+    description: 'AI & Cybersecurity Innovation Partner',
+    needsLightBg: true
   },
   { 
     name: 'NVIDIA', 
