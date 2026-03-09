@@ -384,10 +384,10 @@ export default function Partners() {
                 >
                   <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className={cn(
-                    "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                    partner.needsLightBg && "bg-white/90"
+                    "relative z-10 flex items-center justify-center rounded-lg",
+                    partner.needsLightBg ? "bg-white/95 px-6 py-4" : "px-4 py-3"
                   )}>
-                    <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
+                    <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[160px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
                   </div>
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
                     {partner.name}
