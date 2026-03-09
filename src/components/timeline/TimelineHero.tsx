@@ -337,6 +337,7 @@ function HeroSlideshow({ onIndexChange }: { onIndexChange: (i: number) => void }
 
 export function TimelineHero() {
   const [slideIndex, setSlideIndex] = useState(0);
+  const navigate = useNavigate();
 
   const scrollToContent = () => {
     document.getElementById('timeline-start')?.scrollIntoView({ behavior: 'smooth' });
