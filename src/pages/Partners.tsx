@@ -58,7 +58,7 @@ const partners = [
   { name: 'Musa Capital', logo: musaCapitalLogo, needsLightBg: true, link: 'https://www.musacap.com/' },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: false, link: 'https://www.tulsadreamcenter.org/' },
-  { name: 'Tulsa Regional Chamber of Commerce', logo: null, needsLightBg: false, link: 'https://tulsachamber.com/' },
+  { name: 'Tulsa Regional Chamber of Commerce', logo: tulsaRegionalChamberLogo, needsLightBg: true, link: 'https://tulsachamber.com/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
   { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
   { name: 'Urban Coders Guild', logo: urbanCodersGuildLogo, needsLightBg: true, link: 'https://www.urbancodersguild.org/' },
