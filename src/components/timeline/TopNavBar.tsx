@@ -215,17 +215,19 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navigate = useNavigate();
+
   const handleNavClick = (href: string, isEmail?: boolean) => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
     
-    if (isEmail) {
+    if (isEmail || href.startsWith('mailto:')) {
       window.location.href = href;
       return;
     }
     
     if (href.startsWith('/')) {
-      window.location.href = href;
+      navigate(href);
       return;
     }
     
