@@ -337,6 +337,65 @@ export default function Partners() {
         </div>
       </section>
 
+      {/* Research Partners Section */}
+      <section className="relative py-20">
+        <div className="relative z-10 max-w-6xl mx-auto px-5">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "100px 0px" }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <span className="text-sm font-medium tracking-[0.2em] uppercase text-primary/70">Research</span>
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center text-foreground">
+              Research <span className="text-primary">Partners</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {researchPartners.map((partner, index) => (
+              <motion.div
+                key={partner.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "100px 0px" }}
+                transition={{ delay: index * 0.05 }}
+                className="group"
+              >
+                <a
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "relative h-52 p-8 rounded-xl",
+                    "bg-card/50 backdrop-blur-sm",
+                    "border border-border/30 hover:border-primary/40",
+                    "flex items-center justify-center",
+                    "transition-all duration-300",
+                    "block"
+                  )}
+                >
+                  <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className={cn(
+                    "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
+                    partner.needsLightBg && "bg-white/90"
+                  )}>
+                    <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
+                  </div>
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
+                    {partner.name}
+                  </div>
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-24">
         {/* Background gradient */}
