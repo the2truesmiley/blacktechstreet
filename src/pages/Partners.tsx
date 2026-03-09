@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
+import { PartnerCard } from '@/components/partners/PartnerCard';
+import { useSEO } from '@/hooks/useSEO';
 
 // Import partner logos
 import microsoftLogo from '@/assets/partners/microsoft-logo.png';
