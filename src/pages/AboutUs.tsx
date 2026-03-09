@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TeamSection } from '@/components/timeline/TeamSection';
+import { useSEO } from '@/hooks/useSEO';
 
 const values = [
   {
