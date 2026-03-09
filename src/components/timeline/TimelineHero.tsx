@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useMemo, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
 // Hero slideshow photos — curated 12-shot selection
