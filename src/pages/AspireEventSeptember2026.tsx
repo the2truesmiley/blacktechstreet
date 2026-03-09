@@ -42,8 +42,13 @@ export default function AspireEventSeptember2026() {
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
+  useSEO({
+    title: 'September 2026 ASPIRE Workshop | Black Tech Street',
+    description: 'Register for the September 2026 ASPIRE GenAI Fluency Workshop in Greenwood, Tulsa. Hands-on AI training with free childcare.',
+    canonical: 'https://blacktechstreet.com/aspire/events/september-2026',
+  });
+
   useEffect(() => {
-    document.title = 'September 2026 ASPIRE Workshop | Black Tech Street';
     window.scrollTo(0, 0);
   }, []);
 
