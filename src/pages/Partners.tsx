@@ -52,18 +52,17 @@ const corePartners = [
 const partners = [
   { name: 'ACT House', logo: actHouseLogo, needsLightBg: true, link: 'https://www.act.house/' },
   { name: 'Atlas School', logo: atlasLogo, needsLightBg: false, link: 'https://www.atlasschool.com/' },
+  { name: 'Build In Tulsa', logo: buildInTulsaLogo, needsLightBg: false, link: 'https://www.buildintulsa.com/', nofollow: true },
   { name: 'Gradient', logo: gradientLogo, needsLightBg: true, link: 'https://www.joingradient.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
+  { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
   { name: 'Langston University', logo: langstonLogo, needsLightBg: true, link: 'https://langston.edu/' },
   { name: 'Musa Capital', logo: musaCapitalLogo, needsLightBg: true, link: 'https://www.musacap.com/' },
-  { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: false, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Regional Chamber of Commerce', logo: tulsaRegionalChamberLogo, needsLightBg: true, link: 'https://tulsachamber.com/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
   { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
   { name: 'Urban Coders Guild', logo: urbanCodersGuildLogo, needsLightBg: true, link: 'https://www.urbancodersguild.org/' },
-  // IMPORTANT: Build In Tulsa must ALWAYS be the last item in this list
-  { name: 'Build In Tulsa', logo: buildInTulsaLogo, needsLightBg: false, link: 'https://www.buildintulsa.com/', nofollow: true },
 ];
 
 
