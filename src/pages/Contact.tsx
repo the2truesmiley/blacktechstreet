@@ -5,6 +5,7 @@ import { TechBackground } from '@/components/timeline/TechBackground';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { cn } from '@/lib/utils';
+import { useSEO } from '@/hooks/useSEO';
 
 const containerVariants = {
   hidden: { opacity: 0 },
