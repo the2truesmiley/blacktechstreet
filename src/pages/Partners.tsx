@@ -37,7 +37,8 @@ const featuredPartners = [
     name: 'NVIDIA', 
     logo: nvidiaLogo,
     link: 'https://www.nvidia.com/',
-    description: 'AI Training & Compute Access Partner'
+    description: 'AI Training & Compute Access Partner',
+    needsLightBg: true
   },
 ];
 
@@ -157,8 +158,8 @@ export default function Partners() {
                   
                   <div className="flex flex-col items-center justify-center h-full">
                     {/* Logo Container */}
-                    <div className="relative w-full h-48 flex items-center justify-center">
-                      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-xl" />
+                    <div className={cn("relative w-full h-48 flex items-center justify-center rounded-xl", partner.needsLightBg && "bg-white/90")}>
+                      <div className={cn("absolute inset-0 rounded-xl", !partner.needsLightBg && "bg-gradient-to-b from-primary/5 to-transparent")} />
                       {partner.link ? (
                         <a
                           href={partner.link}
