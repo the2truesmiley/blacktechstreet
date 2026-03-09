@@ -37,7 +37,8 @@ const featuredPartners = [
     name: 'NVIDIA', 
     logo: nvidiaLogo,
     link: 'https://www.nvidia.com/',
-    description: 'AI Training & Compute Access Partner'
+    description: 'AI Training & Compute Access Partner',
+    needsLightBg: true
   },
 ];
 
