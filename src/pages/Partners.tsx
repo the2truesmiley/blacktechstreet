@@ -81,6 +81,12 @@ const partners = [
 
 
 export default function Partners() {
+  useSEO({
+    title: 'Partners | Black Tech Street',
+    description: 'Meet the organizations powering our mission to transform Historic Greenwood into a global epicenter for AI and cybersecurity innovation.',
+    canonical: 'https://blacktechstreet.com/partners',
+  });
+
   return (
     <div className="min-h-screen bg-background overflow-hidden">
       <TopNavBar />
