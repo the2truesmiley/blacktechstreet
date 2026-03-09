@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
@@ -13,7 +14,7 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'G-ACE', href: '/aspire' },
   { label: 'Partners', href: '/partners' },
-  { label: 'Team', href: '/about' },
+  { label: 'Team', href: '/about#team-section' },
   { label: 'In The News', href: '/news' },
 ];
 
@@ -23,13 +24,15 @@ const contactInfo = [
 ];
 
 export function Footer() {
+  const navigate = useNavigate();
+
   const handleNavClick = (href: string) => {
-    if (href.startsWith('/')) {
+    if (href.startsWith('mailto:')) {
       window.location.href = href;
       return;
     }
-    if (href.startsWith('mailto:')) {
-      window.location.href = href;
+    if (href.startsWith('/')) {
+      navigate(href);
       return;
     }
     const element = document.querySelector(href);

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
+import { PartnerCard } from '@/components/partners/PartnerCard';
+import { useSEO } from '@/hooks/useSEO';
 
 // Import partner logos
 import microsoftLogo from '@/assets/partners/microsoft-logo.png';
@@ -79,6 +81,12 @@ const partners = [
 
 
 export default function Partners() {
+  useSEO({
+    title: 'Partners | Black Tech Street',
+    description: 'Meet the organizations powering our mission to transform Historic Greenwood into a global epicenter for AI and cybersecurity innovation.',
+    canonical: 'https://blacktechstreet.com/partners',
+  });
+
   return (
     <div className="min-h-screen bg-background overflow-hidden">
       <TopNavBar />
@@ -286,55 +294,7 @@ export default function Partners() {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="group relative"
               >
-                {partner.link ? (
-                  <a href={partner.link} target="_blank" rel={`noopener noreferrer${partner.nofollow ? ' nofollow' : ''}`} className="block">
-                    <div className={cn(
-                      "relative h-52 p-8 rounded-xl",
-                      "bg-card/50 backdrop-blur-sm",
-                      "border border-border/30 hover:border-primary/40",
-                      "flex items-center justify-center",
-                      "transition-all duration-300"
-                    )}>
-                      <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <div className={cn(
-                        "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                        partner.needsLightBg && "bg-white/90"
-                      )}>
-                        {partner.logo ? (
-                          <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
-                        ) : (
-                          <span className="text-lg font-bold text-foreground text-center leading-tight">{partner.name}</span>
-                        )}
-                      </div>
-                      <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                        {partner.name}
-                      </div>
-                    </div>
-                  </a>
-                ) : (
-                  <div className={cn(
-                    "relative h-52 p-8 rounded-xl",
-                    "bg-card/50 backdrop-blur-sm",
-                    "border border-border/30 hover:border-primary/40",
-                    "flex items-center justify-center",
-                    "transition-all duration-300"
-                  )}>
-                    <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className={cn(
-                      "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                      partner.needsLightBg && "bg-white/90"
-                    )}>
-                        {partner.logo ? (
-                          <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
-                        ) : (
-                          <span className="text-lg font-bold text-foreground text-center leading-tight">{partner.name}</span>
-                        )}
-                    </div>
-                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                      {partner.name}
-                    </div>
-                  </div>
-                )}
+                <PartnerCard {...partner} />
               </motion.div>
             ))}
           </div>
@@ -369,30 +329,7 @@ export default function Partners() {
                 transition={{ delay: index * 0.05 }}
                 className="group"
               >
-                <a
-                  href={partner.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cn(
-                    "relative h-52 p-8 rounded-xl",
-                    "bg-card/50 backdrop-blur-sm",
-                    "border border-border/30 hover:border-primary/40",
-                    "flex items-center justify-center",
-                    "transition-all duration-300",
-                    "block"
-                  )}
-                >
-                  <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className={cn(
-                    "relative z-10 flex items-center justify-center rounded-lg",
-                    partner.needsLightBg ? "bg-white/95 px-6 py-4" : "px-4 py-3"
-                  )}>
-                    <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[160px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
-                  </div>
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                    {partner.name}
-                  </div>
-                </a>
+                <PartnerCard {...partner} logoWidth="w-[160px]" />
               </motion.div>
             ))}
           </div>

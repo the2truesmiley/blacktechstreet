@@ -1,50 +1,54 @@
 
 
-# Plan: Three Codebase Improvements
+## Plan: "BTS In The News" Page
 
-## 1. Extract Reusable PartnerCard Component
+### Overview
+Create a new `/news` page showcasing 44 press articles about Black Tech Street, organized by year in reverse chronological order (newest first). The page will follow the same design patterns as the Partners page (TopNavBar, Footer, dark theme, motion animations).
 
-The community partners section in `Partners.tsx` (lines 289-337) has ~50 lines of nearly identical markup duplicated for linked vs non-linked partners. Extract a shared `PartnerCard` component.
+### Data
+- 44 articles spanning 2021-2025
+- Each has: headline, source, author, summary, URL, date, source type (National/Local)
+- Split evenly: 22 National, 22 Local
 
-**New file:** `src/components/partners/PartnerCard.tsx`
-- Accepts `name`, `logo`, `needsLightBg`, `link?`, `nofollow?`
-- Renders the card with conditional `<a>` wrapper when `link` is provided
-- Reuse for community, core, and research partner sections where markup overlaps
+### Page Design
 
-**Modified:** `src/pages/Partners.tsx`
-- Import and use `PartnerCard` in all four partner grid sections (strategic, core, community, research)
-- Remove duplicated card markup
+**Hero Section**: "BTS In The News" headline with article count stat and brief intro text.
 
----
+**Filter Bar**: Toggle between All / National / Local sources, plus year filter pills (2025, 2024, 2023, 2022, 2021).
 
-## 2. Replace `window.location.href` with React Router Navigation
+**Article Cards**: Each card shows:
+- Source badge (e.g. "CNN" with National/Local tag)
+- Headline as the card title
+- Date
+- Summary text (truncated with expand)
+- "Read Article" link opening the URL in a new tab
 
-Currently, internal links in `TopNavBar.tsx`, `Footer.tsx`, and `TimelineHero.tsx` use `window.location.href`, causing full page reloads instead of SPA transitions.
+Articles grouped by year with year divider headers, newest first.
+
+### Technical Details
+
+**New files:**
+1. `src/data/newsArticles.ts` - Typed array of all 44 articles parsed from the uploaded markdown
+2. `src/pages/News.tsx` - The page component
 
 **Modified files:**
-- `src/components/timeline/TopNavBar.tsx` — Import `useNavigate` from `react-router-dom`. In `handleNavClick`, replace `window.location.href = href` with `navigate(href)` for internal routes. Keep `window.location.href` only for `mailto:` links. Replace the logo click (`window.location.href = '/'`) with `navigate('/')`.
-- `src/components/timeline/Footer.tsx` — Same pattern: import `useNavigate`, use it for internal `/` routes, keep `window.location.href` for `mailto:`.
-- `src/components/timeline/TimelineHero.tsx` — Replace `window.location.href = '/contact'` with `navigate('/contact')`.
+1. `src/App.tsx` - Add `/news` route
+2. `src/components/timeline/TopNavBar.tsx` - Add "In The News" nav link (under a new or existing dropdown)
+3. `src/constants/routes.ts` - Add NEWS route
 
----
+**Component structure for News.tsx:**
+- Uses TopNavBar + Footer for consistency
+- Framer Motion animations matching Partners page style
+- Filter state for source type and year
+- Cards use the existing dark card styling (`bg-card/50`, `border-border/30`)
+- External links open in new tabs with `rel="noopener noreferrer"`
 
-## 3. Standardize SEO with `useSEO` Hook
+**Nav placement:** Add "In The News" as a top-level nav item, or nest it. Given the existing nav structure (About Us, Programs dropdown, People dropdown, Gallery, Contact), adding it as a top-level "News" link keeps it simple.
 
-Currently only `News.tsx` and `AspireEvents.tsx` use the `useSEO` hook. Other pages either use manual `document.title` or have no SEO setup at all.
-
-**Modified files** (add `useSEO` import and call, remove manual `document.title` logic):
-
-| Page | Current | Change |
-|------|---------|--------|
-| `Index.tsx` | Manual `useEffect` with `document.title` + meta tag updates (~30 lines) | Replace with `useSEO({...})` |
-| `AboutUs.tsx` | No title set | Add `useSEO({title: 'About Us \| Black Tech Street', ...})` |
-| `Contact.tsx` | Manual `document.title` | Replace with `useSEO({...})` |
-| `Gallery.tsx` | No title/meta | Add `useSEO({...})` |
-| `Partners.tsx` | No title/meta | Add `useSEO({...})` |
-| `Aspire.tsx` | Manual `document.title` | Replace with `useSEO({...})` |
-| `AspireEventJune2026.tsx` | No title set | Add `useSEO({...})` |
-| `AspireEventSeptember2026.tsx` | Manual `document.title` | Replace with `useSEO({...})` |
-| `AspireEventDecember2026.tsx` | Manual `document.title` | Replace with `useSEO({...})` |
-
-Each call will include `title`, `description`, and `canonical` for proper SEO coverage.
+### Steps
+1. Create `src/data/newsArticles.ts` with all 44 articles as typed data
+2. Create `src/pages/News.tsx` with hero, filters, and article cards
+3. Add lazy-loaded route in `src/App.tsx`
+4. Add "News" link to TopNavBar
+5. Add route constant
 

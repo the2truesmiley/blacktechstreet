@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useMemo, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import logoCircuit from '@/assets/logo_b_circuit.png';
 
 // Hero slideshow photos — curated 12-shot selection
@@ -336,6 +337,7 @@ function HeroSlideshow({ onIndexChange }: { onIndexChange: (i: number) => void }
 
 export function TimelineHero() {
   const [slideIndex, setSlideIndex] = useState(0);
+  const navigate = useNavigate();
 
   const scrollToContent = () => {
     document.getElementById('timeline-start')?.scrollIntoView({ behavior: 'smooth' });
@@ -400,7 +402,7 @@ export function TimelineHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            onClick={() => { window.location.href = '/contact'; }}
+            onClick={() => { navigate('/contact'); }}
             className="group inline-flex items-center gap-3 px-8 py-4 lg:px-10 lg:py-5 rounded-full bg-white/10 backdrop-blur-sm border border-primary/50 text-foreground font-medium text-lg lg:text-xl hover:bg-primary/20 hover:border-primary hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20"
           >
             Get Involved

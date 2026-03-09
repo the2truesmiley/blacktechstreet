@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TeamSection } from '@/components/timeline/TeamSection';
+import { useSEO } from '@/hooks/useSEO';
 
 const values = [
   {
@@ -98,6 +99,12 @@ const timeline = [
 ];
 
 export default function AboutUs() {
+  useSEO({
+    title: 'About Us | Black Tech Street',
+    description: "Learn about Black Tech Street's founding story, mission, and the team rebirthing Greenwood as a world-class AI innovation economy.",
+    canonical: 'https://blacktechstreet.com/about',
+  });
+
   useEffect(() => {
     if (window.location.hash) {
       const el = document.querySelector(window.location.hash);

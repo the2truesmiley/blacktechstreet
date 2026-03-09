@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop, Calendar, Clock, MapPin, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
@@ -14,6 +14,7 @@ import { Button } from '@/components/ui/button';
 import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
 import jovieChildcareBadge from '@/assets/partners/jovie-childcare-badge.png';
+import { useSEO } from '@/hooks/useSEO';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -36,6 +37,12 @@ const itemVariants = {
 } as const;
 
 export default function AspireEventJune2026() {
+  useSEO({
+    title: 'June 2026 ASPIRE Workshop | Black Tech Street',
+    description: 'Register for the June 2026 ASPIRE GenAI Fluency Workshop in Greenwood, Tulsa. Hands-on AI training with free childcare.',
+    canonical: 'https://blacktechstreet.com/aspire/events/june-2026',
+  });
+
   const [selectedEvent, setSelectedEvent] = useState<AspireEvent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import logoGlow from '@/assets/logo_bts_dark_glow.png';
 import logoCircuit from '@/assets/logo_b_circuit.png';
@@ -214,17 +215,19 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navigate = useNavigate();
+
   const handleNavClick = (href: string, isEmail?: boolean) => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
     
-    if (isEmail) {
+    if (isEmail || href.startsWith('mailto:')) {
       window.location.href = href;
       return;
     }
     
     if (href.startsWith('/')) {
-      window.location.href = href;
+      navigate(href);
       return;
     }
     
@@ -303,7 +306,7 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
             href="/"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = '/';
+              navigate('/');
             }}
             className="flex items-center gap-3 group"
           >
