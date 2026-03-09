@@ -294,55 +294,7 @@ export default function Partners() {
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="group relative"
               >
-                {partner.link ? (
-                  <a href={partner.link} target="_blank" rel={`noopener noreferrer${partner.nofollow ? ' nofollow' : ''}`} className="block">
-                    <div className={cn(
-                      "relative h-52 p-8 rounded-xl",
-                      "bg-card/50 backdrop-blur-sm",
-                      "border border-border/30 hover:border-primary/40",
-                      "flex items-center justify-center",
-                      "transition-all duration-300"
-                    )}>
-                      <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <div className={cn(
-                        "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                        partner.needsLightBg && "bg-white/90"
-                      )}>
-                        {partner.logo ? (
-                          <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
-                        ) : (
-                          <span className="text-lg font-bold text-foreground text-center leading-tight">{partner.name}</span>
-                        )}
-                      </div>
-                      <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                        {partner.name}
-                      </div>
-                    </div>
-                  </a>
-                ) : (
-                  <div className={cn(
-                    "relative h-52 p-8 rounded-xl",
-                    "bg-card/50 backdrop-blur-sm",
-                    "border border-border/30 hover:border-primary/40",
-                    "flex items-center justify-center",
-                    "transition-all duration-300"
-                  )}>
-                    <div className="absolute inset-0 bg-primary/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className={cn(
-                      "relative z-10 flex items-center justify-center px-4 py-3 rounded-lg",
-                      partner.needsLightBg && "bg-white/90"
-                    )}>
-                        {partner.logo ? (
-                          <img src={partner.logo} alt={partner.name} loading="lazy" className="w-[150px] h-auto object-contain transition-all duration-300 opacity-90 group-hover:opacity-100 group-hover:scale-110" />
-                        ) : (
-                          <span className="text-lg font-bold text-foreground text-center leading-tight">{partner.name}</span>
-                        )}
-                    </div>
-                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap px-3 py-1.5 rounded-full bg-card border border-border/50 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-lg">
-                      {partner.name}
-                    </div>
-                  </div>
-                )}
+                <PartnerCard {...partner} />
               </motion.div>
             ))}
           </div>
