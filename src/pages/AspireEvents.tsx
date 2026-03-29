@@ -94,6 +94,7 @@ export default function AspireEvents() {
       
       <TopNavBar />
       
+      <main className="relative">
       <EventsHero />
 
       {/* Next Event Hero Section */}
@@ -475,6 +476,7 @@ export default function AspireEvents() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       <Footer />
 

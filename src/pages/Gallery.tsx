@@ -24,6 +24,7 @@ export default function Gallery() {
     <div className="min-h-screen bg-background text-foreground">
       <TopNavBar />
       
+      <main className="relative">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-5">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
@@ -129,6 +130,7 @@ export default function Gallery() {
           )}
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <div className="relative z-10 px-5 max-w-5xl mx-auto">

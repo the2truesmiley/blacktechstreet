@@ -99,6 +99,7 @@ export default function AspireEventSeptember2026() {
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <TechBackground isVisible={true} />
       <TopNavBar />
+      <main className="relative">
       <EventsHero hideBadges={['workshops', 'all-saturdays']} />
 
       {/* September Event Hero Section */}
@@ -534,6 +535,7 @@ export default function AspireEventSeptember2026() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       <Footer />
 
