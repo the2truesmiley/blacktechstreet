@@ -15,6 +15,9 @@ const AspireEvents = lazy(() => import("./pages/AspireEvents"));
 const AspireEventJune2026 = lazy(() => import("./pages/AspireEventJune2026"));
 const AspireEventSeptember2026 = lazy(() => import("./pages/AspireEventSeptember2026"));
 const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember2026"));
+const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
+const FreeAiWorkshop = lazy(() => import("./pages/FreeAiWorkshop"));
+const FreeAiTrainingFaq = lazy(() => import("./pages/FreeAiTrainingFaq"));
 const Partners = lazy(() => import("./pages/Partners"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Gallery = lazy(() => import("./pages/Gallery"));
@@ -44,6 +47,9 @@ const App = () => (
             <Route path="/aspire/events/june-2026" element={<AspireEventJune2026 />} />
             <Route path="/aspire/events/september-2026" element={<AspireEventSeptember2026 />} />
             <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
+            <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
+            <Route path="/free-ai-workshop" element={<FreeAiWorkshop />} />
+            <Route path="/free-ai-training-faq" element={<FreeAiTrainingFaq />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
