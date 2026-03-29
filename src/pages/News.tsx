@@ -157,6 +157,7 @@ export default function News() {
           </motion.div>
         </AnimatePresence>
       </section>
+      </main>
 
       <Footer />
     </div>
