@@ -25,7 +25,7 @@ export default function Gallery() {
       <TopNavBar />
       
       <main className="relative">
-      {/* Hero Section */}
+        {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-5">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
         <div className="max-w-6xl mx-auto relative">

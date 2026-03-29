@@ -95,7 +95,7 @@ export default function AspireEvents() {
       <TopNavBar />
       
       <main className="relative">
-      <EventsHero />
+        <EventsHero />
 
       {/* Next Event Hero Section */}
       <section className="py-16 relative">
