@@ -15,6 +15,7 @@ import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
 import jovieChildcareBadge from '@/assets/partners/jovie-childcare-badge.png';
 import { useSEO } from '@/hooks/useSEO';
+import { EventJsonLd } from '@/components/seo/EventJsonLd';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -99,6 +100,14 @@ export default function AspireEventDecember2026() {
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <TechBackground isVisible={true} />
       <TopNavBar />
+      <EventJsonLd
+        name="ASPIRE AI Workshop — Free Hands-On AI Training"
+        description="A free, full-day AI workshop in Tulsa's Greenwood District. Learn ChatGPT, AI tools, and responsible innovation. Free childcare and laptop checkout included."
+        startDate="2026-12-05T10:00:00-06:00"
+        endDate="2026-12-05T18:00:00-06:00"
+        location={{ name: 'Langston University - Tulsa Campus', address: '914 N Greenwood Ave, Tulsa, OK 74106' }}
+        url="https://blacktechstreet.ai/aspire/events/december-2026"
+      />
       <main className="relative">
       <EventsHero hideBadges={['workshops', 'all-saturdays']} />
 
