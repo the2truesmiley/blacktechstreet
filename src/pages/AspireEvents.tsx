@@ -94,6 +94,7 @@ export default function AspireEvents() {
       
       <TopNavBar />
       
+      <main className="relative">
       <EventsHero />
 
       {/* Next Event Hero Section */}
