@@ -75,6 +75,7 @@ const Aspire = () => {
     <div className="min-h-screen bg-background text-foreground">
       <TopNavBar />
 
+      <main className="relative">
       {/* Hero Section - Black background */}
       <section className="bg-background text-foreground pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
