@@ -535,6 +535,7 @@ export default function AspireEventDecember2026() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       <Footer />
 
