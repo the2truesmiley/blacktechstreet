@@ -91,6 +91,7 @@ export default function Partners() {
     <div className="min-h-screen bg-background overflow-hidden">
       <TopNavBar />
       
+      <main className="relative">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
