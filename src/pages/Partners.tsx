@@ -426,6 +426,7 @@ export default function Partners() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>

@@ -476,6 +476,7 @@ export default function AspireEvents() {
           </motion.div>
         </div>
       </section>
+      </main>
 
       <Footer />
 

@@ -348,6 +348,7 @@ const Aspire = () => {
           </div>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
       <div className="relative z-10 px-5 max-w-5xl mx-auto bg-background">
