@@ -124,15 +124,26 @@ export default function AspireParkingDetails() {
               </div>
               <p className="text-muted-foreground mb-1 font-medium">{PARKING_CONFIG.locationName}</p>
               <p className="text-muted-foreground mb-4">{PARKING_CONFIG.address}</p>
-              <a
-                href={googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 text-sm font-medium transition-colors"
-              >
-                Open in Google Maps
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a
+                  href={directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
+                >
+                  <Navigation className="w-4 h-4" />
+                  Get Directions
+                </a>
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-border text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+                >
+                  Open in Google Maps
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
             {/* Parking Tips Card */}
