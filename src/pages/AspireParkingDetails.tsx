@@ -22,6 +22,7 @@ const PARKING_CONFIG = {
 const MAPBOX_TOKEN = 'pk.eyJ1IjoidGhlMXRydWVzbWlsZXkiLCJhIjoiY21uY3d4am1rMTF2dzJ4b2YzZWlzYWExcyJ9.oIwFEKKcZYh2XwJL74EMcA';
 
 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${PARKING_CONFIG.latitude},${PARKING_CONFIG.longitude}`;
+const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${PARKING_CONFIG.latitude},${PARKING_CONFIG.longitude}`;
 
 export default function AspireParkingDetails() {
   const mapContainer = useRef<HTMLDivElement>(null);
