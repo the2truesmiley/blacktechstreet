@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, ArrowRight, Sparkles } from 'lucide-react';
+import { Calendar, Clock, MapPin, ArrowRight, Sparkles, Car } from 'lucide-react';
 import { format, isPast } from 'date-fns';
 import { FlipClock } from './FlipClock';
 import { Button } from '@/components/ui/button';
@@ -220,6 +220,13 @@ export function NextEventHero({ onRegister }: NextEventHeroProps) {
                     <span className="text-base text-muted-foreground group-hover/map:text-primary/80 transition-colors">914 N Greenwood Ave, Tulsa, OK 74106</span>
                   </div>
                 </a>
+                <Link
+                  to="/aspire/parking"
+                  className="inline-flex items-center gap-2 mt-2 pl-8 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  <Car className="w-4 h-4" />
+                  Parking Details
+                </Link>
               </motion.div>
 
               <motion.div variants={itemVariants}>

@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop, Calendar, Clock, MapPin, ArrowRight } from 'lucide-react';
+import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop, Calendar, Clock, MapPin, ArrowRight, Car } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
@@ -219,6 +220,13 @@ export default function AspireEventSeptember2026() {
                           <span className="text-base text-muted-foreground group-hover:text-primary/80 transition-colors">914 N Greenwood Ave, Tulsa, OK 74106</span>
                         </div>
                       </a>
+                      <Link
+                        to="/aspire/parking"
+                        className="inline-flex items-center gap-2 mt-2 pl-8 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                      >
+                        <Car className="w-4 h-4" />
+                        Parking Details
+                      </Link>
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
