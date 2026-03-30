@@ -19,7 +19,6 @@ const navItems: NavItem[] = [
     children: [
       { label: 'ASPIRE', href: '/aspire' },
       { label: '2026 ASPIRE Workshops', href: '/aspire/events' },
-      { label: 'Parking Details', href: '/aspire/parking' },
     ]
   },
   { 
