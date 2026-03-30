@@ -220,6 +220,13 @@ export default function AspireEventSeptember2026() {
                           <span className="text-base text-muted-foreground group-hover:text-primary/80 transition-colors">914 N Greenwood Ave, Tulsa, OK 74106</span>
                         </div>
                       </a>
+                      <Link
+                        to="/aspire/parking"
+                        className="inline-flex items-center gap-2 mt-2 pl-8 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                      >
+                        <Car className="w-4 h-4" />
+                        Parking Details
+                      </Link>
                     </motion.div>
 
                     <motion.div variants={itemVariants}>
