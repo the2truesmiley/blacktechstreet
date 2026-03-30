@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop, Calendar, Clock, MapPin, ArrowRight } from 'lucide-react';
+import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop, Calendar, Clock, MapPin, ArrowRight, Car } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
