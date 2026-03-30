@@ -11,8 +11,8 @@ import { useSEO } from '@/hooks/useSEO';
 // ─── EDITABLE CONFIG ─────────────────────────────────────────────────────────
 // To change the parking location, update these values:
 const PARKING_CONFIG = {
-  latitude: 36.1573,
-  longitude: -95.9921,
+  latitude: 36.167233,
+  longitude: -95.986507,
   zoom: 16,
   markerLabel: 'ASPIRE Workshop Parking',
   address: '914 N Greenwood Ave, Tulsa, OK 74106',
