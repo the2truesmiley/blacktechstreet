@@ -81,10 +81,6 @@ export default function AspireParkingDetails() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-4">
-              <Car className="w-4 h-4" />
-              Parking Information
-            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 tracking-tight">
               Parking Details
             </h1>
