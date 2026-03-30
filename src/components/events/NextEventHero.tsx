@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, ArrowRight, Sparkles, Car } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { format, isPast } from 'date-fns';
 import { FlipClock } from './FlipClock';
 import { Button } from '@/components/ui/button';
