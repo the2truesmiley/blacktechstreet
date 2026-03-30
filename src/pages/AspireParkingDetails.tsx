@@ -68,7 +68,7 @@ export default function AspireParkingDetails() {
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-      <TechBackground />
+      <TechBackground isVisible={true} />
       <TopNavBar />
 
       <main className="relative z-10 pt-24 pb-16">
