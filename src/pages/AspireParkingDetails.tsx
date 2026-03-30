@@ -40,7 +40,7 @@ export default function AspireParkingDetails() {
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/dark-v11',
+      style: 'mapbox://styles/mapbox/satellite-streets-v12',
       center: [PARKING_CONFIG.longitude, PARKING_CONFIG.latitude],
       zoom: PARKING_CONFIG.zoom,
     });
