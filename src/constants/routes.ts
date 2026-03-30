@@ -53,6 +53,11 @@ export const PERMANENT_ROUTES = {
    * Full URL: https://blacktechstreet.ai/aspire/events/april-2026
    */
   ASPIRE_EVENT_APRIL_2026: '/aspire/events/april-2026',
+
+  /**
+   * ASPIRE Parking Details Page
+   */
+  ASPIRE_PARKING: '/aspire/parking',
 } as const;
 
 /**
