@@ -1,54 +1,34 @@
 
 
-## Plan: "BTS In The News" Page
+# Parking Details Page with Mapbox Map
 
-### Overview
-Create a new `/news` page showcasing 44 press articles about Black Tech Street, organized by year in reverse chronological order (newest first). The page will follow the same design patterns as the Partners page (TopNavBar, Footer, dark theme, motion animations).
+## Overview
 
-### Data
-- 44 articles spanning 2021-2025
-- Each has: headline, source, author, summary, URL, date, source type (National/Local)
-- Split evenly: 22 National, 22 Local
+Create a new `/aspire/parking` page with an interactive Mapbox map showing Langston Tulsa parking. The Mapbox public token (`pk.eyJ1...`) will be stored directly in the code since it's a publishable key.
 
-### Page Design
+## Changes
 
-**Hero Section**: "BTS In The News" headline with article count stat and brief intro text.
+### 1. Install dependency
+- `mapbox-gl` (includes types)
 
-**Filter Bar**: Toggle between All / National / Local sources, plus year filter pills (2025, 2024, 2023, 2022, 2021).
+### 2. Create `src/pages/AspireParkingDetails.tsx`
+- Reuses `TopNavBar`, `Footer`, `TechBackground` (matching existing ASPIRE pages)
+- Editable `PARKING_CONFIG` constant at top of file with coordinates, zoom, address, label
+- Default: Langston Tulsa (~36.1594, -95.9934)
+- Mapbox GL map with custom marker
+- Below map: address, parking instructions, Google Maps link
+- `useSEO` for meta tags
+- To change the location: edit the `PARKING_CONFIG` object's `latitude`/`longitude`/`address` values
 
-**Article Cards**: Each card shows:
-- Source badge (e.g. "CNN" with National/Local tag)
-- Headline as the card title
-- Date
-- Summary text (truncated with expand)
-- "Read Article" link opening the URL in a new tab
+### 3. Update `src/App.tsx`
+- Add lazy import and route: `/aspire/parking`
 
-Articles grouped by year with year divider headers, newest first.
+### 4. Update `src/constants/routes.ts`
+- Add `ASPIRE_PARKING: '/aspire/parking'`
 
-### Technical Details
+### 5. Update `src/components/timeline/TopNavBar.tsx`
+- Add "Parking Details" link under the G-ACE dropdown children
 
-**New files:**
-1. `src/data/newsArticles.ts` - Typed array of all 44 articles parsed from the uploaded markdown
-2. `src/pages/News.tsx` - The page component
-
-**Modified files:**
-1. `src/App.tsx` - Add `/news` route
-2. `src/components/timeline/TopNavBar.tsx` - Add "In The News" nav link (under a new or existing dropdown)
-3. `src/constants/routes.ts` - Add NEWS route
-
-**Component structure for News.tsx:**
-- Uses TopNavBar + Footer for consistency
-- Framer Motion animations matching Partners page style
-- Filter state for source type and year
-- Cards use the existing dark card styling (`bg-card/50`, `border-border/30`)
-- External links open in new tabs with `rel="noopener noreferrer"`
-
-**Nav placement:** Add "In The News" as a top-level nav item, or nest it. Given the existing nav structure (About Us, Programs dropdown, People dropdown, Gallery, Contact), adding it as a top-level "News" link keeps it simple.
-
-### Steps
-1. Create `src/data/newsArticles.ts` with all 44 articles as typed data
-2. Create `src/pages/News.tsx` with hero, filters, and article cards
-3. Add lazy-loaded route in `src/App.tsx`
-4. Add "News" link to TopNavBar
-5. Add route constant
+## Token Storage
+The Mapbox token `pk.eyJ1IjoidGhlMXRydWVzbWlsZXkiLCJhIjoiY21uY3d4am1rMTF2dzJ4b2YzZWlzYWExcyJ9.oIwFEKKcZYh2XwJL74EMcA` will be stored as a constant in the page file since it's a public/publishable key.
 
