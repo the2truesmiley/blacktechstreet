@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, ExternalLink, Car } from 'lucide-react';
+import { MapPin, ExternalLink, Car, Navigation } from 'lucide-react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
