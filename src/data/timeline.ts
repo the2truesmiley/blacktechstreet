@@ -180,7 +180,7 @@ Allen remains active in service and civic leadership. He volunteers with My Brot
   },
   {
     name: "Smiley Elmore III",
-    title: "Communications Manager",
+    title: "Director of Technology",
     shortBio: "Smiley Elmore III leads all organizational communications, marketing, and brand execution across digital, email, and public platforms.",
     expandedBio: `Smiley Elmore III is a Tulsa-based communications strategist and creative technologist who serves as the Communications Manager for Black Tech Street (BTS). In this role, Smiley leads all organizational communications, marketing, and brand execution across digital, email, and public platforms. He develops and manages communications flows, designs marketing assets, and oversees the messaging strategy for BTS initiatives and events. Smiley directs communications for major BTS programs including the ASPIRE AI Fluency Program, the NVIDIA collaboration, and partnerships with Tulsa Innovation Labs and Microsoft.
 
