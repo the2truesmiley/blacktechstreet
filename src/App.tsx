@@ -16,6 +16,7 @@ const AspireEventJune2026 = lazy(() => import("./pages/AspireEventJune2026"));
 const AspireEventSeptember2026 = lazy(() => import("./pages/AspireEventSeptember2026"));
 const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember2026"));
 const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
+const AspireParkingDetails = lazy(() => import("./pages/AspireParkingDetails"));
 const FreeAiWorkshop = lazy(() => import("./pages/FreeAiWorkshop"));
 const FreeAiTrainingFaq = lazy(() => import("./pages/FreeAiTrainingFaq"));
 const Partners = lazy(() => import("./pages/Partners"));
