@@ -98,6 +98,33 @@ const Aspire = () => {
         </div>
       </section>
 
+      {/* Workshop CTA Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="px-6 -mt-4 mb-8"
+      >
+        <Link
+          to="/aspire/events"
+          className="group block max-w-3xl mx-auto rounded-xl border border-primary/30 bg-primary/5 hover:bg-primary/10 backdrop-blur-sm transition-all duration-300 px-6 py-4"
+        >
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary" />
+              </span>
+              <p className="text-sm sm:text-base font-medium text-foreground">
+                Looking for our upcoming ASPIRE workshops?{' '}
+                <span className="text-primary font-semibold">View dates & register free →</span>
+              </p>
+            </div>
+            <ArrowRight className="w-5 h-5 text-primary shrink-0 group-hover:translate-x-1 transition-transform" />
+          </div>
+        </Link>
+      </motion.div>
+
       {/* What is ASPIRE Section */}
       <section className="py-20 px-6 bg-card">
         <div className="max-w-6xl mx-auto">
