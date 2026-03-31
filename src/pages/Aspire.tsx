@@ -68,7 +68,7 @@ const Aspire = () => {
     { label: "teacher", desc: "who wants to inspire, not just instruct" },
     { label: "creative", desc: "looking to break new ground with bold tools" },
     { label: "community leader", desc: "driven to amplify your mission" },
-    { label: "curious", desc: "about the future..." }
+    { label: "person curious", desc: "about the future of AI and technology" }
   ];
 
   return (
