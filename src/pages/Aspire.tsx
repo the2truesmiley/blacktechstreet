@@ -100,29 +100,54 @@ const Aspire = () => {
 
       {/* Workshop CTA Banner */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        initial={{ opacity: 0, scale: 0.92, y: 30 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.5, type: 'spring', bounce: 0.35 }}
         className="px-6 -mt-4 mb-8"
       >
-        <Link
-          to="/aspire/events"
-          className="group block max-w-3xl mx-auto rounded-xl border border-primary/30 bg-primary/5 hover:bg-primary/10 backdrop-blur-sm transition-all duration-300 px-6 py-4"
+        <motion.div
+          animate={{
+            boxShadow: [
+              '0 0 0px 0px hsl(var(--primary) / 0)',
+              '0 0 24px 4px hsl(var(--primary) / 0.35)',
+              '0 0 0px 0px hsl(var(--primary) / 0)',
+            ],
+          }}
+          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
+          className="max-w-3xl mx-auto rounded-xl"
         >
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <span className="relative flex h-2.5 w-2.5 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary" />
-              </span>
-              <p className="text-sm sm:text-base font-medium text-foreground">
-                Looking for our upcoming ASPIRE workshops?{' '}
-                <span className="text-primary font-semibold">View dates & register free →</span>
-              </p>
+          <Link
+            to="/aspire/events"
+            className="group block rounded-xl border border-primary/30 bg-primary/5 hover:bg-primary/10 backdrop-blur-sm transition-all duration-300 px-6 py-4 relative overflow-hidden"
+          >
+            {/* Shimmer sweep */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -skew-x-12 pointer-events-none"
+              initial={{ x: '-200%' }}
+              animate={{ x: '200%' }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 3, delay: 1.5 }}
+            />
+
+            <div className="relative flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <span className="relative flex h-2.5 w-2.5 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary" />
+                </span>
+                <p className="text-sm sm:text-base font-medium text-foreground">
+                  Looking for our upcoming ASPIRE workshops?{' '}
+                  <span className="text-primary font-semibold">View dates & register free →</span>
+                </p>
+              </div>
+              <motion.div
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <ArrowRight className="w-5 h-5 text-primary shrink-0" />
+              </motion.div>
             </div>
-            <ArrowRight className="w-5 h-5 text-primary shrink-0 group-hover:translate-x-1 transition-transform" />
-          </div>
-        </Link>
+          </Link>
+        </motion.div>
       </motion.div>
 
       {/* What is ASPIRE Section */}
