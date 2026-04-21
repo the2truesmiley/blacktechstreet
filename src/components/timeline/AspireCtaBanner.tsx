@@ -3,8 +3,14 @@ import { ArrowRight, Calendar, Clock, MapPin, Baby } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FlipClock } from '@/components/events/FlipClock';
 import { aspireEvents2026 } from '@/data/aspireEvents';
-import { isPast } from 'date-fns';
+import { isPast, format } from 'date-fns';
 import { useMemo } from 'react';
+
+const ordinal = (n: number) => {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+};
 
 export function AspireCtaBanner() {
   const nextEvent = useMemo(() => {
@@ -76,7 +82,7 @@ export function AspireCtaBanner() {
                     <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground leading-tight">
                       Your next step starts{' '}
                       <span className="text-primary drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]">
-                        April&nbsp;18th
+                        {format(nextEvent.date, 'MMMM')}&nbsp;{ordinal(nextEvent.date.getDate())}
                       </span>
                     </h3>
 
@@ -94,15 +100,15 @@ export function AspireCtaBanner() {
                     <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-4 h-4 text-primary" />
-                        April 18, 2026
+                        {format(nextEvent.date, 'MMMM d, yyyy')}
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Clock className="w-4 h-4 text-primary" />
-                        10:00 AM – 6:00 PM
+                        {nextEvent.time.replace('-', '–')}
                       </span>
                       <span className="flex items-center gap-1.5">
                         <MapPin className="w-4 h-4 text-primary" />
-                        Langston Tulsa
+                        {nextEvent.location}
                       </span>
                     </div>
                   </div>
