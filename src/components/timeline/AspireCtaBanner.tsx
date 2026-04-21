@@ -3,8 +3,14 @@ import { ArrowRight, Calendar, Clock, MapPin, Baby } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { FlipClock } from '@/components/events/FlipClock';
 import { aspireEvents2026 } from '@/data/aspireEvents';
-import { isPast } from 'date-fns';
+import { isPast, format } from 'date-fns';
 import { useMemo } from 'react';
+
+const ordinal = (n: number) => {
+  const s = ['th', 'st', 'nd', 'rd'];
+  const v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+};
 
 export function AspireCtaBanner() {
   const nextEvent = useMemo(() => {
