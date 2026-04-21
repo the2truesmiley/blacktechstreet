@@ -12,13 +12,13 @@ export interface AspireEvent {
 export const aspireEvents2026: AspireEvent[] = [
   {
     id: "april-2026",
-    date: new Date(2026, 3, 18), // April 18, 2026
+    date: new Date(2026, 3, 18), // April 18, 2026 (past)
     title: "ASPIRE AI Workshop",
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/embed/EkWBo2",
-    status: "registration-open",
+    status: "sold-out",
   },
   {
     id: "june-2026",
@@ -28,7 +28,7 @@ export const aspireEvents2026: AspireEvent[] = [
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/embed/kd6Yyo",
-    status: "upcoming",
+    status: "registration-open",
   },
   {
     id: "september-2026",
