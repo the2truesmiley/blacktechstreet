@@ -382,7 +382,7 @@ const Aspire = () => {
           </motion.div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg">
-              <a href="https://tally.so/r/EkWBo2" target="_blank" rel="noopener noreferrer">
+              <a href="https://tally.so/r/kd6Yyo" target="_blank" rel="noopener noreferrer">
                 Join The Session
                 <ArrowRight className="ml-2 w-5 h-5" />
               </a>
