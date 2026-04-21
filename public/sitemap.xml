@@ -5,7 +5,7 @@
   <url><loc>https://blacktechstreet.ai/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://blacktechstreet.ai/aspire</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://blacktechstreet.ai/aspire/events</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://blacktechstreet.ai/aspire/events/april-2026</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <!-- /aspire/events/april-2026 removed from sitemap: workshop concluded -->
   <url><loc>https://blacktechstreet.ai/aspire/events/june-2026</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://blacktechstreet.ai/aspire/events/september-2026</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://blacktechstreet.ai/aspire/events/december-2026</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -20,7 +20,7 @@
   <url><loc>https://blacktechstreet.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://blacktechstreet.com/aspire</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://blacktechstreet.com/aspire/events</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://blacktechstreet.com/aspire/events/april-2026</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <!-- /aspire/events/april-2026 removed from sitemap: workshop concluded -->
   <url><loc>https://blacktechstreet.com/aspire/events/june-2026</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://blacktechstreet.com/aspire/events/september-2026</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://blacktechstreet.com/aspire/events/december-2026</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
