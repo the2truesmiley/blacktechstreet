@@ -159,6 +159,54 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
+
+    // Post-render tweaks: inject BTS logo + asterisk before attire note.
+    // Babel transforms are async, so poll until the rendered React tree is in.
+    var attempts = 0;
+    var tweakInterval = setInterval(function () {
+      attempts++;
+      var done = false;
+
+      // 1) Add asterisk to attire note
+      var nodes = document.querySelectorAll('div, p, span');
+      for (var i = 0; i < nodes.length; i++) {
+        var el = nodes[i];
+        if (el.children.length === 0) {
+          var t = (el.textContent || '').trim();
+          if (t.indexOf('We recommend comfortable attire') === 0) {
+            el.textContent = '*' + t;
+            done = true;
+            break;
+          }
+        }
+      }
+
+      // 2) Inject BTS logo above the message section if not already added
+      if (!document.getElementById('__bts_logo_wrap')) {
+        var paras = document.querySelectorAll('p');
+        for (var j = 0; j < paras.length; j++) {
+          var pt = (paras[j].textContent || '').trim();
+          if (pt.indexOf('Black Tech Street invites you') === 0) {
+            var divider = paras[j].previousElementSibling;
+            var wrap = document.createElement('div');
+            wrap.id = '__bts_logo_wrap';
+            wrap.style.cssText = 'display:flex;justify-content:center;align-items:center;margin:0 auto 32px;';
+            var img = document.createElement('img');
+            img.src = '/bts-logo.png';
+            img.alt = 'Black Tech Street';
+            img.style.cssText = 'max-width:160px;width:60%;height:auto;display:block;opacity:0.95;';
+            wrap.appendChild(img);
+            var anchor = divider && divider.tagName === 'DIV' ? divider : paras[j];
+            anchor.parentNode.insertBefore(wrap, anchor);
+            break;
+          }
+        }
+      }
+
+      if ((done && document.getElementById('__bts_logo_wrap')) || attempts > 40) {
+        clearInterval(tweakInterval);
+      }
+    }, 150);
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
     console.error('Bundle unpack error:', err);
