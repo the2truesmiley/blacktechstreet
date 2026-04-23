@@ -157,6 +157,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (window.Babel && typeof window.Babel.transformScriptTags === 'function') {
       window.Babel.transformScriptTags();
     }
+
+    // Fix any broken Black Tech Street logo images by swapping in the hosted asset.
+    function fixLogos() {
+      document.querySelectorAll('img[alt*="Black Tech Street" i]').forEach(function(img) {
+        img.addEventListener('error', function() { img.src = '/bts-logo.png'; }, { once: true });
+        // Also swap immediately if the image already failed (naturalWidth === 0 after load attempt).
+        if (img.complete && img.naturalWidth === 0) img.src = '/bts-logo.png';
+      });
+    }
+    setTimeout(fixLogos, 100);
+    setTimeout(fixLogos, 1000);
   } catch (err) {
     setStatus('Error unpacking: ' + err.message);
     console.error('Bundle unpack error:', err);
