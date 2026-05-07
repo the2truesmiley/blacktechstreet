@@ -28,8 +28,46 @@ interface TeamMemberCardProps {
   index: number;
 }
 
+function normalizeBioText(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function shouldOmitFirstExpandedParagraph(shortBio: string, firstParagraph: string) {
+  const shortTokens = new Set(normalizeBioText(shortBio).split(' ').filter((token) => token.length > 3));
+  const paragraphTokens = normalizeBioText(firstParagraph)
+    .split(' ')
+    .filter((token) => token.length > 3);
+
+  if (!shortTokens.size || !paragraphTokens.length) {
+    return false;
+  }
+
+  const overlappingTokens = paragraphTokens.filter((token) => shortTokens.has(token));
+  return overlappingTokens.length / shortTokens.size >= 0.45;
+}
+
+function getExpandedBioContent(member: TeamMember) {
+  const paragraphs = member.expandedBio
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+
+  if (paragraphs.length <= 1) {
+    return member.expandedBio;
+  }
+
+  return shouldOmitFirstExpandedParagraph(member.shortBio, paragraphs[0])
+    ? paragraphs.slice(1).join('\n\n')
+    : member.expandedBio;
+}
+
 function TeamMemberCard({ member, index }: TeamMemberCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const expandedBioContent = getExpandedBioContent(member);
 
   return (
     <motion.div
@@ -103,7 +141,7 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                   className="overflow-hidden"
                 >
                   <p className="text-sm sm:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
-                    {member.expandedBio}
+                    {expandedBioContent}
                   </p>
                 </motion.div>
               )}
