@@ -9,6 +9,7 @@ import smileyHeadshot from '@/assets/team/smiley-headshot.png';
 import tiffanyCrutcherHeadshot from '@/assets/team/tiffany-crutcher-headshot.png';
 import robertThomasHeadshot from '@/assets/team/robert-thomas-headshot.png';
 import kevinGriffinHeadshot from '@/assets/team/kevin-griffin-headshot.jpg';
+import seanAlexanderHeadshot from '@/assets/team/sean-alexander-headshot.jpg';
 
 // Map team member names to their photos
 const teamPhotos: Record<string, string> = {
@@ -19,6 +20,7 @@ const teamPhotos: Record<string, string> = {
   "Dr. Tiffany Crutcher": tiffanyCrutcherHeadshot,
   "Robert Thomas": robertThomasHeadshot,
   "Kevin Griffin, Ph.D.": kevinGriffinHeadshot,
+  "Sean Alexander": seanAlexanderHeadshot,
 };
 
 interface TeamMemberCardProps {
