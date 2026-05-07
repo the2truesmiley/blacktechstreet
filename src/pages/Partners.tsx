@@ -100,7 +100,7 @@ export default function Partners() {
     title: 'Partners | Black Tech Street — AI & Cybersecurity in Greenwood, Tulsa',
     description: 'Microsoft, NVIDIA, MIT, NYU Tulsa, OU Polytechnic, and 20+ Tulsa organizations partnering with Black Tech Street to build the next AI and cybersecurity hub in Historic Greenwood.',
     canonical: 'https://blacktechstreet.com/partners',
-    ogImage: 'https://blacktechstreet.com/og-image.jpg',
+    ogImage: 'https://blacktechstreet.com/og-image.png',
   });
 
   // Structured data: CollectionPage + organization partners list
