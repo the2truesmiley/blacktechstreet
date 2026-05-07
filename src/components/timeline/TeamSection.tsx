@@ -65,9 +65,9 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
           </div>
 
           {/* Content */}
-          <div className="flex-1 text-center md:text-left">
+          <div className="flex-1 min-w-0 text-center md:text-left">
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
-              <h3 className="text-xl font-display font-bold text-foreground">
+              <h3 className="text-lg sm:text-xl font-display font-bold text-foreground break-words">
                 {member.name}
               </h3>
               {member.linkedIn && (
@@ -75,7 +75,7 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                   href={member.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center md:justify-start gap-2 text-primary hover:text-primary/80 transition-colors bg-primary/10 px-3 py-1.5 rounded-full"
+                  className="inline-flex self-center md:self-auto items-center justify-center md:justify-start gap-2 text-primary hover:text-primary/80 transition-colors bg-primary/10 px-3 py-1.5 rounded-full"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Linkedin className="w-5 h-5" />
@@ -83,11 +83,11 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                 </a>
               )}
             </div>
-            <p className="text-base text-primary font-medium mb-3">
+            <p className="text-sm sm:text-base text-primary font-medium mb-3">
               {member.title}
             </p>
             
-            <p className="text-base text-foreground/90 leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">
               {member.shortBio}
             </p>
 
