@@ -105,16 +105,18 @@ export default function AboutUs() {
     canonical: 'https://blacktechstreet.com/about',
   });
 
+  const location = useLocation();
+
   useEffect(() => {
-    if (window.location.hash) {
-      const el = document.querySelector(window.location.hash);
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
       if (el) {
         setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 300);
         return;
       }
     }
     window.scrollTo(0, 0);
-  }, []);
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
