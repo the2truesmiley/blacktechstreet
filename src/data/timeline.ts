@@ -209,6 +209,7 @@ In partnership with national and local leaders, Dr. Crutcher has led efforts to 
 A proud HBCU graduate and alumna of the Harvard Kennedy School's Leadership, Organizing, and Advocacy program, Dr. Crutcher serves on several boards focused on community growth, innovation, and entrepreneurship. She has received numerous honors for her leadership and impact, including Tulsan of the Year, Root 100, and Black Wall Street Times Person of the Year.
 
 In 2022, Dr. Crutcher and the Terence Crutcher Foundation acquired a 65,000-square-foot property on 5.8 acres near the historic Greenwood District, advancing a bold vision to help rebuild Black Wall Street through workforce development, business creation, and community-centered investment. Known as "America's Sister," Dr. Crutcher remains committed to empowering individuals and communities to not only survive, but thrive.`,
+    linkedIn: "https://www.linkedin.com/in/dr-tiffany-crutcher-3588747b/"
   },
   {
     name: "Robert Thomas",
