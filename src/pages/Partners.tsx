@@ -29,6 +29,7 @@ import buildInTulsaLogo from '@/assets/partners/build-in-tulsa-logo.svg';
 import utulsaLogo from '@/assets/partners/utulsa-logo.png';
 import mitLogo from '@/assets/partners/mit-logo.png';
 import nyuTulsaLogo from '@/assets/partners/nyu-tulsa-logo.webp';
+import ouPolytechnicLogo from '@/assets/partners/ou-polytechnic-institute-logo.png';
 import terenceCrutcherFoundationLogo from '@/assets/partners/terence-crutcher-foundation-logo.svg';
 import tulsaHigherEdConsortiumLogo from '@/assets/partners/tulsa-higher-education-consortium-logo.png';
 
@@ -37,6 +38,7 @@ const researchPartners = [
   { name: 'MIT', logo: mitLogo, needsLightBg: true, link: 'https://www.mit.edu/' },
   { name: 'NYU Tulsa', logo: nyuTulsaLogo, needsLightBg: false, link: 'https://www.nyu.edu/' },
   { name: 'University of Tulsa', logo: utulsaLogo, needsLightBg: false, link: 'https://utulsa.edu/' },
+  { name: 'University of Oklahoma Polytechnic Institute', logo: ouPolytechnicLogo, needsLightBg: true, link: 'https://www.ou.edu/polytechnic' },
 ];
 import tulsaRegionalChamberLogo from '@/assets/partners/tulsa-regional-chamber-logo.png';
 
