@@ -249,7 +249,8 @@ One of his signature accomplishments was leading the first collaboration between
 
 As a keynote presenter and executive producer, Sean has appeared on some of the largest global stages alongside Microsoft CEOs, executives, and partners including former CEOs Bill Gates and Steve Ballmer. He has also produced keynote speeches for current CEO Satya Nadella and EVP of Azure Scott Guthrie, and worked with former Microsoft CTO Ray Ozzie and EVP of AI & Research Dr. Harry Shum.
 
-Sean serves his alma mater, The University of Tulsa, as a Trustee and Executive Committee member. He also volunteers on the Executive Committee of the George Kaiser Family Foundation's tech initiative, Tulsa Innovation Labs, an organization committed to fostering Tulsa's innovation economy. With a deep appreciation for the Arts & Humanities, he serves on the Executive Committee of the Board of Trustees at the Philbrook Museum of Art & Gardens.`
+Sean serves his alma mater, The University of Tulsa, as a Trustee and Executive Committee member. He also volunteers on the Executive Committee of the George Kaiser Family Foundation's tech initiative, Tulsa Innovation Labs, an organization committed to fostering Tulsa's innovation economy. With a deep appreciation for the Arts & Humanities, he serves on the Executive Committee of the Board of Trustees at the Philbrook Museum of Art & Gardens.`,
+    linkedIn: "https://www.linkedin.com/in/seanalex/"
   }
 ];
 
