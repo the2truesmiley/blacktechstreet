@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, User, ChevronDown } from 'lucide-react';
-import { teamMembers, TeamMember } from '@/data/timeline';
+import { teamMembers, strategicAdvisors, TeamMember } from '@/data/timeline';
 import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
 import josephineHeadshot from '@/assets/team/josephine-headshot.png';
 import allenHeadshot from '@/assets/team/allen-headshot.png';
 import smileyHeadshot from '@/assets/team/smiley-headshot.png';
+import tiffanyCrutcherHeadshot from '@/assets/team/tiffany-crutcher-headshot.png';
 
 // Map team member names to their photos
 const teamPhotos: Record<string, string> = {
@@ -13,6 +14,7 @@ const teamPhotos: Record<string, string> = {
   "Josephine Nelms": josephineHeadshot,
   "Allen Collins": allenHeadshot,
   "Smiley Elmore III": smileyHeadshot,
+  "Dr. Tiffany Crutcher": tiffanyCrutcherHeadshot,
 };
 
 interface TeamMemberCardProps {
@@ -152,6 +154,27 @@ export function TeamSection() {
           <TeamMemberCard key={member.name + index} member={member} index={index} />
         ))}
       </div>
+
+      {strategicAdvisors.length > 0 && (
+        <>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-20 mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
+              <span className="text-primary">Strategic</span>{' '}
+              <span className="text-foreground">Advisors</span>
+            </h2>
+          </motion.div>
+          <div className="grid gap-8">
+            {strategicAdvisors.map((member, index) => (
+              <TeamMemberCard key={member.name + index} member={member} index={index} />
+            ))}
+          </div>
+        </>
+      )}
     </section>
   );
 }
