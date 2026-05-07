@@ -167,13 +167,13 @@ export default function AboutUs() {
                       whileHover={{ y: -3 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: parseInt(item.number) * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                      className="relative bg-secondary/20 border border-primary/15 rounded-2xl p-7 hover:border-primary/40 transition-all duration-300 group"
+                      className="relative bg-secondary/20 border border-primary/15 rounded-2xl p-5 sm:p-7 hover:border-primary/40 transition-all duration-300 group"
                     >
-                      <div className="flex gap-4 items-start">
-                        <span className="text-5xl font-display font-black text-primary/50 group-hover:text-primary transition-colors duration-300 shrink-0 leading-none">
+                      <div className="flex gap-3 sm:gap-4 items-start">
+                        <span className="text-4xl sm:text-5xl font-display font-black text-primary/50 group-hover:text-primary transition-colors duration-300 shrink-0 leading-none">
                           {item.number}
                         </span>
-                        <p className="text-foreground leading-relaxed text-base pt-1">
+                        <p className="text-foreground leading-relaxed text-sm sm:text-base pt-1">
                           {item.text} <strong className="text-primary">{item.highlight}</strong> {item.suffix}
                         </p>
                       </div>

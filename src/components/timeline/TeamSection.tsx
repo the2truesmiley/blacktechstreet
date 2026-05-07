@@ -44,10 +44,10 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
         className="relative overflow-hidden rounded-2xl bg-card/60 backdrop-blur-sm border border-border/40 hover:border-primary/30 transition-all duration-300 cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div className="flex flex-col md:flex-row gap-6 p-6">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-6 p-4 sm:p-6 md:pr-14">
           {/* Avatar */}
           <div className="flex-shrink-0 flex justify-center md:justify-start">
-            <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-xl overflow-hidden bg-secondary border-2 border-primary/20 group-hover:border-primary/40 transition-colors">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-xl overflow-hidden bg-secondary border-2 border-primary/20 group-hover:border-primary/40 transition-colors">
               {teamPhotos[member.name] ? (
                 <img 
                   src={teamPhotos[member.name]} 
@@ -65,9 +65,9 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
           </div>
 
           {/* Content */}
-          <div className="flex-1 text-center md:text-left">
+          <div className="flex-1 min-w-0 text-center md:text-left">
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
-              <h3 className="text-xl font-display font-bold text-foreground">
+              <h3 className="text-lg sm:text-xl font-display font-bold text-foreground break-words">
                 {member.name}
               </h3>
               {member.linkedIn && (
@@ -75,7 +75,7 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                   href={member.linkedIn}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center md:justify-start gap-2 text-primary hover:text-primary/80 transition-colors bg-primary/10 px-3 py-1.5 rounded-full"
+                  className="inline-flex self-center md:self-auto items-center justify-center md:justify-start gap-2 text-primary hover:text-primary/80 transition-colors bg-primary/10 px-3 py-1.5 rounded-full"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <Linkedin className="w-5 h-5" />
@@ -83,11 +83,11 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                 </a>
               )}
             </div>
-            <p className="text-base text-primary font-medium mb-3">
+            <p className="text-sm sm:text-base text-primary font-medium mb-3">
               {member.title}
             </p>
             
-            <p className="text-base text-foreground/90 leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">
               {member.shortBio}
             </p>
 
@@ -101,7 +101,7 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                   className="overflow-hidden"
                 >
                   <div className="pt-4 border-t border-border/30 mt-4">
-                    <p className="text-base text-foreground/80 leading-relaxed whitespace-pre-line">
+                    <p className="text-sm sm:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
                       {member.expandedBio}
                     </p>
                   </div>
