@@ -26,6 +26,7 @@ const navItems: NavItem[] = [
     children: [
       { label: 'Partners', href: '/partners' },
       { label: 'Team', href: '/about#team-section' },
+      { label: 'Senior Advisors', href: '/about#senior-advisors' },
     ]
   },
   { label: 'Gallery', href: '/gallery' },
