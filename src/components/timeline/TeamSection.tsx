@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Linkedin, User, ChevronDown } from 'lucide-react';
-import { teamMembers, TeamMember } from '@/data/timeline';
+import { teamMembers, strategicAdvisors, TeamMember } from '@/data/timeline';
 import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
 import josephineHeadshot from '@/assets/team/josephine-headshot.png';
 import allenHeadshot from '@/assets/team/allen-headshot.png';
 import smileyHeadshot from '@/assets/team/smiley-headshot.png';
+import tiffanyCrutcherHeadshot from '@/assets/team/tiffany-crutcher-headshot.png';
 
 // Map team member names to their photos
 const teamPhotos: Record<string, string> = {
@@ -13,6 +14,7 @@ const teamPhotos: Record<string, string> = {
   "Josephine Nelms": josephineHeadshot,
   "Allen Collins": allenHeadshot,
   "Smiley Elmore III": smileyHeadshot,
+  "Dr. Tiffany Crutcher": tiffanyCrutcherHeadshot,
 };
 
 interface TeamMemberCardProps {
