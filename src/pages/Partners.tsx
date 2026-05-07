@@ -28,6 +28,7 @@ import buildInTulsaLogo from '@/assets/partners/build-in-tulsa-logo.svg';
 import utulsaLogo from '@/assets/partners/utulsa-logo.png';
 import mitLogo from '@/assets/partners/mit-logo.png';
 import nyuTulsaLogo from '@/assets/partners/nyu-tulsa-logo.webp';
+import terenceCrutcherFoundationLogo from '@/assets/partners/terence-crutcher-foundation-logo.svg';
 
 // Research partners
 const researchPartners = [
