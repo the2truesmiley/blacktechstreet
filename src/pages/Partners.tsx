@@ -79,6 +79,7 @@ const partners = [
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Greenwood Trust', logo: greenwoodTrustLogo, needsLightBg: true, link: 'https://thegreenwoodtrust.org/' },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
+  { name: 'i2E', logo: i2eLogo, needsLightBg: true, link: 'https://i2e.org/' },
   { name: 'Langston University', logo: langstonLogo, needsLightBg: true, link: 'https://langston.edu/' },
   { name: 'Musa Capital', logo: musaCapitalLogo, needsLightBg: true, link: 'https://www.musacap.com/' },
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: false, link: 'https://www.tulsadreamcenter.org/' },
