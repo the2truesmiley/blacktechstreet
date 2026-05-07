@@ -222,6 +222,19 @@ He serves as a Board of Advisors Member for the Financial Economics Institute at
 
 Mr. Thomas earned a Bachelor of Arts Degree in Economics from Claremont McKenna College, Magna Cum Laude and is a CFA Charterholder.`,
     linkedIn: "https://www.linkedin.com/in/robert-p-thomas-jr/"
+  },
+  {
+    name: "Kevin Griffin, Ph.D.",
+    title: "Senior Developer Technology Engineer, NVIDIA",
+    shortBio: "Kevin Griffin is a Senior Developer Technology Engineer at NVIDIA specializing in scientific visualization and AI/ML, and an Executive-in-Residence at Tulsa Innovation Labs supporting Black Tech Street's innovation economy mission.",
+    expandedBio: `Kevin Griffin is a Senior Developer Technology Engineer at NVIDIA specializing in scientific visualization and AI/ML, helping researchers accelerate their code with NVIDIA hardware and tools. Kevin is also a member of the ANARI working group and founder of KSG Technology Consulting, providing strategic technical advice and mentorship.
+
+As an Executive-in-Residence at Tulsa Innovation Labs, he works on improving the University of Tulsa Cyber Fellows program, building corporate research partnerships, and supporting Black Tech Street's innovation economy mission.
+
+Previously, he served as an associate professor at San Joaquin Delta College and held technical and leadership roles at Lawrence Livermore National Laboratory. A veteran, Kevin served as a communications specialist in the U.S. Army and an Information Warfare Officer in the U.S. Navy Reserves.
+
+He holds a PhD in computer science from UC Davis, an MS from the University of Tulsa, and a BS from the University of Delaware.`,
+    linkedIn: "https://www.linkedin.com/in/kevin-griffin-ph-d-85280623/"
   }
 ];
 
