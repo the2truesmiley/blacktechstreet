@@ -209,6 +209,19 @@ In partnership with national and local leaders, Dr. Crutcher has led efforts to 
 A proud HBCU graduate and alumna of the Harvard Kennedy School's Leadership, Organizing, and Advocacy program, Dr. Crutcher serves on several boards focused on community growth, innovation, and entrepreneurship. She has received numerous honors for her leadership and impact, including Tulsan of the Year, Root 100, and Black Wall Street Times Person of the Year.
 
 In 2022, Dr. Crutcher and the Terence Crutcher Foundation acquired a 65,000-square-foot property on 5.8 acres near the historic Greenwood District, advancing a bold vision to help rebuild Black Wall Street through workforce development, business creation, and community-centered investment. Known as "America's Sister," Dr. Crutcher remains committed to empowering individuals and communities to not only survive, but thrive.`,
+  },
+  {
+    name: "Robert Thomas",
+    title: "Investment Strategy & Portfolio Lead, WestRiver Group",
+    shortBio: "Robert Thomas oversees investment strategy and portfolio at WestRiver Group. He previously served 15 years as Chief Investment Officer for the George Kaiser Family Foundation, managing its $5 billion portfolio, and a decade as a Portfolio Manager for the Bill Gates Investment Office (Cascade Investment).",
+    expandedBio: `Robert Thomas joined WestRiver in February 2024 and oversees the firm's investment strategy and portfolio. Mr. Thomas joined WestRiver Group after having been a core investment partner of the firm since its expansion in 2011.
+
+Prior to joining WestRiver, Mr. Robert Thomas served for 15 years as the Chief Investment Officer for the George Kaiser Family Foundation. The George Kaiser Family Foundation is focused on the areas of early childhood education, social services support, community health, and civic enhancement. In his role at the foundation, Mr. Thomas was responsible for the financial administration and management of its $5 billion investment portfolio. For the 10 years prior, he served as a Portfolio Manager for the Bill Gates Investment Office (aka Cascade Investment). The Gates office invests the personal assets of Mr. Gates, as well as the assets of the Bill & Melinda Gates Foundation. In his capacity working for BGI/Cascade, he held several different Portfolio Manager positions, most recently having had responsibility for oversight of all externally managed fund relationships (public and private). Previous areas of responsibility have included energy/commodities, fixed income, currencies and general public and private equity analysis.
+
+He serves as a Board of Advisors Member for the Financial Economics Institute at Claremont McKenna College, is a Trustee of The University of Tulsa, is President of the Board of Directors of Undercroft Montessori School in Tulsa, Oklahoma and serves as Chairman for the Board of City Year Tulsa.
+
+Mr. Thomas earned a Bachelor of Arts Degree in Economics from Claremont McKenna College, Magna Cum Laude and is a CFA Charterholder.`,
+    linkedIn: "https://www.linkedin.com/in/robert-p-thomas-jr/"
   }
 ];
 
