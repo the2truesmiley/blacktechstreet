@@ -18,6 +18,7 @@ import seedaiLogo from '@/assets/partners/seedai-logo.png';
 import tedcLogo from '@/assets/partners/tedc-logo.png';
 import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
 import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
+import tulsaCommunityCollegeLogo from '@/assets/partners/tulsa-community-college-logo.webp';
 import actHouseLogo from '@/assets/partners/act-house-logo.svg';
 import gradientLogo from '@/assets/partners/gradient-logo.svg';
 import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
@@ -80,6 +81,7 @@ const partners = [
   { name: 'Musa Capital', logo: musaCapitalLogo, needsLightBg: true, link: 'https://www.musacap.com/' },
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: false, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Regional Chamber of Commerce', logo: tulsaRegionalChamberLogo, needsLightBg: true, link: 'https://tulsachamber.com/' },
+  { name: 'Tulsa Community College', logo: tulsaCommunityCollegeLogo, needsLightBg: true, link: 'https://www.tulsacc.edu/' },
   { name: 'Terence Crutcher Foundation', logo: terenceCrutcherFoundationLogo, needsLightBg: true, link: 'https://www.terencecrutcherfoundation.org/' },
   { name: 'Tulsa Higher Education Consortium', logo: tulsaHigherEdConsortiumLogo, needsLightBg: true, link: 'https://tulsahighered.com/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
