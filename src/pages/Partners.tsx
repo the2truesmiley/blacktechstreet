@@ -29,6 +29,7 @@ import utulsaLogo from '@/assets/partners/utulsa-logo.png';
 import mitLogo from '@/assets/partners/mit-logo.png';
 import nyuTulsaLogo from '@/assets/partners/nyu-tulsa-logo.webp';
 import terenceCrutcherFoundationLogo from '@/assets/partners/terence-crutcher-foundation-logo.svg';
+import tulsaHigherEdConsortiumLogo from '@/assets/partners/tulsa-higher-education-consortium-logo.png';
 
 // Research partners
 const researchPartners = [
@@ -76,6 +77,7 @@ const partners = [
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: false, link: 'https://www.tulsadreamcenter.org/' },
   { name: 'Tulsa Regional Chamber of Commerce', logo: tulsaRegionalChamberLogo, needsLightBg: true, link: 'https://tulsachamber.com/' },
   { name: 'Terence Crutcher Foundation', logo: terenceCrutcherFoundationLogo, needsLightBg: true, link: 'https://www.terencecrutcherfoundation.org/' },
+  { name: 'Tulsa Higher Education Consortium', logo: tulsaHigherEdConsortiumLogo, needsLightBg: true, link: 'https://tulsahighered.com/' },
   { name: 'Tulsa Remote', logo: tulsaRemoteLogo, needsLightBg: true },
   { name: 'TYPROS', logo: typrosLogo, needsLightBg: true, link: 'https://www.typros.org/' },
   { name: 'Urban Coders Guild', logo: urbanCodersGuildLogo, needsLightBg: true, link: 'https://www.urbancodersguild.org/' },
