@@ -12,6 +12,7 @@ import microsoftLogo from '@/assets/partners/microsoft-logo.png';
 import nvidiaLogo from '@/assets/partners/nvidia-logo.png';
 import atlasLogo from '@/assets/partners/atlas-logo.png';
 import greenwoodLogo from '@/assets/partners/greenwood-cultural-center-logo.png';
+import greenwoodTrustLogo from '@/assets/partners/greenwood-trust-logo.jpg';
 import hpLogo from '@/assets/partners/hewlett-packard-logo.png';
 import seedaiLogo from '@/assets/partners/seedai-logo.png';
 import tedcLogo from '@/assets/partners/tedc-logo.png';
@@ -71,6 +72,7 @@ const partners = [
   { name: 'Build In Tulsa', logo: buildInTulsaLogo, needsLightBg: false, link: 'https://www.buildintulsa.com/', nofollow: true },
   { name: 'Gradient', logo: gradientLogo, needsLightBg: true, link: 'https://www.joingradient.com/' },
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
+  { name: 'Greenwood Trust', logo: greenwoodTrustLogo, needsLightBg: true, link: 'https://thegreenwoodtrust.org/' },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
   { name: 'Langston University', logo: langstonLogo, needsLightBg: true, link: 'https://langston.edu/' },
   { name: 'Musa Capital', logo: musaCapitalLogo, needsLightBg: true, link: 'https://www.musacap.com/' },
