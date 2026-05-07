@@ -87,11 +87,13 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
               {member.title}
             </p>
             
-            <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">
-              {member.shortBio}
-            </p>
+            {!isExpanded && (
+              <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">
+                {member.shortBio}
+              </p>
+            )}
 
-            <AnimatePresence>
+            <AnimatePresence initial={false}>
               {isExpanded && (
                 <motion.div
                   initial={{ opacity: 0, height: 0 }}
@@ -100,11 +102,9 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
-                  <div className="pt-4 border-t border-border/30 mt-4">
-                    <p className="text-sm sm:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
-                      {member.expandedBio}
-                    </p>
-                  </div>
+                  <p className="text-sm sm:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
+                    {member.expandedBio}
+                  </p>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -170,7 +170,7 @@ export function TeamSection() {
             className="text-center mt-20 mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold">
-              <span className="text-primary">Strategic</span>{' '}
+              <span className="text-primary">Senior</span>{' '}
               <span className="text-foreground">Advisors</span>
             </h2>
           </motion.div>
