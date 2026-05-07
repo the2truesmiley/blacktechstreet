@@ -20,6 +20,7 @@ import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
 import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
 import tulsaCommunityCollegeLogo from '@/assets/partners/tulsa-community-college-logo.webp';
 import tulsaPublicSchoolsLogo from '@/assets/partners/tulsa-public-schools-logo.png';
+import i2eLogo from '@/assets/partners/i2e-logo.svg';
 import actHouseLogo from '@/assets/partners/act-house-logo.svg';
 import gradientLogo from '@/assets/partners/gradient-logo.svg';
 import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
@@ -78,6 +79,7 @@ const partners = [
   { name: 'Greenwood Cultural Center', logo: greenwoodLogo, needsLightBg: false },
   { name: 'Greenwood Trust', logo: greenwoodTrustLogo, needsLightBg: true, link: 'https://thegreenwoodtrust.org/' },
   { name: 'Hewlett Packard', logo: hpLogo, needsLightBg: false },
+  { name: 'i2E', logo: i2eLogo, needsLightBg: true, link: 'https://i2e.org/' },
   { name: 'Langston University', logo: langstonLogo, needsLightBg: true, link: 'https://langston.edu/' },
   { name: 'Musa Capital', logo: musaCapitalLogo, needsLightBg: true, link: 'https://www.musacap.com/' },
   { name: 'Tulsa Dream Center', logo: tulsaDreamCenterLogo, needsLightBg: false, link: 'https://www.tulsadreamcenter.org/' },
