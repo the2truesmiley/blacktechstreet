@@ -35,10 +35,17 @@ export default function Donate() {
     title: 'Support Black Tech Street | Donate',
     description: 'Support Black Tech Street and help build the future of AI innovation rooted in Tulsa\'s Greenwood District.',
     canonical: 'https://blacktechstreet.com/donate',
-    noindex: true,
-  } as any);
+  });
 
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // Block search indexing while in preview
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+    return () => { document.head.removeChild(meta); };
+  }, []);
 
   const amount = custom ? Number(custom) : selected ?? 0;
 

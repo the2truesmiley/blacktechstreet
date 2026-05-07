@@ -24,6 +24,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const News = lazy(() => import("./pages/News"));
 const GEMInvite = lazy(() => import("./pages/GEMInvite"));
+const Donate = lazy(() => import("./pages/Donate"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/news" element={<News />} />
             <Route path="/GEMinvite" element={<GEMInvite />} />
+            <Route path="/donate" element={<Donate />} />
             <Route path="/flyer1" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
