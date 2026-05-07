@@ -236,6 +236,20 @@ Previously, he served as an associate professor at San Joaquin Delta College and
 
 He holds a PhD in computer science from UC Davis, an MS from the University of Tulsa, and a BS from the University of Delaware.`,
     linkedIn: "https://www.linkedin.com/in/kevin-griffin-ph-d-85280623/"
+  },
+  {
+    name: "Sean Alexander",
+    title: "Independent Advisor & Board Member, Former Microsoft Executive",
+    shortBio: "Former Microsoft Executive and Independent Consultant who led global launches of Azure, Windows, Xbox, Industry Clouds, and Microsoft AI, including the first Microsoft collaboration with OpenAI that laid the foundation for ChatGPT, Copilots, and Plugins.",
+    expandedBio: `Sean Alexander is a former Microsoft Executive who now serves as an Independent Consultant and Board Advisor as a member of the National Association of Corporate Directors (NACD).
+
+He is a graduate of MIT's AI for Business executive program and the Microsoft and Northwestern Kellogg Leadership Bench Executive MBA program. Throughout more than 25 years in tech, Sean has led global teams in the launch of world-changing technologies including Azure, Windows, Media Platforms, Xbox, Industry Clouds, and Microsoft AI. He holds multiple patents and received a technical Emmy Award for his team's work on media platforms.
+
+One of his signature accomplishments was leading the first collaboration between Microsoft and OpenAI, a partnership that laid the foundation for transformative advancements including ChatGPT, Copilots, and Plugins.
+
+As a keynote presenter and executive producer, Sean has appeared on some of the largest global stages alongside Microsoft CEOs, executives, and partners including former CEOs Bill Gates and Steve Ballmer. He has also produced keynote speeches for current CEO Satya Nadella and EVP of Azure Scott Guthrie, and worked with former Microsoft CTO Ray Ozzie and EVP of AI & Research Dr. Harry Shum.
+
+Sean serves his alma mater, The University of Tulsa, as a Trustee and Executive Committee member. He also volunteers on the Executive Committee of the George Kaiser Family Foundation's tech initiative, Tulsa Innovation Labs, an organization committed to fostering Tulsa's innovation economy. With a deep appreciation for the Arts & Humanities, he serves on the Executive Committee of the Board of Trustees at the Philbrook Museum of Art & Gardens.`
   }
 ];
 

@@ -1,34 +1,36 @@
+## Add Sean Alexander as Strategic Advisor #4
 
+Add Sean Alexander to the Strategic Advisors section on the Team page (`/about#team-section`), following the exact pattern used for Tiffany Crutcher, Robert Thomas, and Kevin Griffin.
 
-# Parking Details Page with Mapbox Map
+### Source
+Bio pulled from https://seanalexander.com/about-2/
 
-## Overview
+### Data entry (`src/data/timeline.ts`)
+Append a new `seanAlexander` entry to the `strategicAdvisors` array:
 
-Create a new `/aspire/parking` page with an interactive Mapbox map showing Langston Tulsa parking. The Mapbox public token (`pk.eyJ1...`) will be stored directly in the code since it's a publishable key.
+- **name:** "Sean Alexander"
+- **title:** "Independent Advisor & Board Member, Former Microsoft Executive"
+- **shortBio:** "Former Microsoft Executive and Independent Consultant who led global launches of Azure, Windows, Xbox, Industry Clouds, and Microsoft AI — including the first collaboration with OpenAI that laid the groundwork for ChatGPT and Copilots."
+- **expandedBio:** Full multi-paragraph bio covering:
+  - NACD member, Independent Consultant & Board Advisor
+  - MIT AI for Business executive program; Microsoft & Northwestern Kellogg Leadership Bench Executive MBA
+  - 25+ years at Microsoft leading global teams across Azure, Windows, Media Platforms, Xbox, Industry Clouds, and Microsoft AI
+  - Multiple patents and a technical Emmy Award for media platforms work
+  - Led the first Microsoft–OpenAI collaboration (foundation for ChatGPT, Copilots, Plugins)
+  - Keynote work alongside Bill Gates, Steve Ballmer, Satya Nadella, Scott Guthrie, Ray Ozzie, and Dr. Harry Shum
+  - Trustee & Executive Committee member, The University of Tulsa
+  - Executive Committee, Tulsa Innovation Labs (George Kaiser Family Foundation)
+  - Executive Committee, Board of Trustees, Philbrook Museum of Art & Gardens
+- **linkedIn:** Will ask user to provide (not listed on his About page); fall back to omitting if not given.
 
-## Changes
+### Asset
+Headshot is not available on the public About page (only group/event photos). Will ask user to upload a headshot. Once uploaded:
+- Copy to `src/assets/team/sean-alexander-headshot.{png|jpg}`
 
-### 1. Install dependency
-- `mapbox-gl` (includes types)
+### Component update (`src/components/timeline/TeamSection.tsx`)
+- Import `seanAlexanderHeadshot`
+- Add `"Sean Alexander": seanAlexanderHeadshot` to the `teamPhotos` map
 
-### 2. Create `src/pages/AspireParkingDetails.tsx`
-- Reuses `TopNavBar`, `Footer`, `TechBackground` (matching existing ASPIRE pages)
-- Editable `PARKING_CONFIG` constant at top of file with coordinates, zoom, address, label
-- Default: Langston Tulsa (~36.1594, -95.9934)
-- Mapbox GL map with custom marker
-- Below map: address, parking instructions, Google Maps link
-- `useSEO` for meta tags
-- To change the location: edit the `PARKING_CONFIG` object's `latitude`/`longitude`/`address` values
-
-### 3. Update `src/App.tsx`
-- Add lazy import and route: `/aspire/parking`
-
-### 4. Update `src/constants/routes.ts`
-- Add `ASPIRE_PARKING: '/aspire/parking'`
-
-### 5. Update `src/components/timeline/TopNavBar.tsx`
-- Add "Parking Details" link under the G-ACE dropdown children
-
-## Token Storage
-The Mapbox token `pk.eyJ1IjoidGhlMXRydWVzbWlsZXkiLCJhIjoiY21uY3d4am1rMTF2dzJ4b2YzZWlzYWExcyJ9.oIwFEKKcZYh2XwJL74EMcA` will be stored as a constant in the page file since it's a public/publishable key.
-
+### Open questions before implementing
+1. LinkedIn URL for Sean Alexander?
+2. Please upload a headshot image.
