@@ -27,7 +27,7 @@ import urbanCodersGuildLogo from '@/assets/partners/urban-coders-guild-logo.webp
 import buildInTulsaLogo from '@/assets/partners/build-in-tulsa-logo.svg';
 import utulsaLogo from '@/assets/partners/utulsa-logo.png';
 import mitLogo from '@/assets/partners/mit-logo.png';
-import nyuTulsaLogo from '@/assets/partners/nyu-tulsa-logo.png';
+import nyuTulsaLogo from '@/assets/partners/nyu-tulsa-logo.webp';
 
 // Research partners
 const researchPartners = [
