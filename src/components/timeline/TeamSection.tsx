@@ -67,7 +67,7 @@ function getExpandedBioContent(member: TeamMember) {
 
 function TeamMemberCard({ member, index }: TeamMemberCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const expandedBioContent = getExpandedBioContent(member);
+  const expandedBioContent = member.expandedBio;
 
   return (
     <motion.div
