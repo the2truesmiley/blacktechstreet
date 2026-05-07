@@ -44,10 +44,10 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
         className="relative overflow-hidden rounded-2xl bg-card/60 backdrop-blur-sm border border-border/40 hover:border-primary/30 transition-all duration-300 cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div className="flex flex-col md:flex-row gap-6 p-6">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-6 p-4 sm:p-6 md:pr-14">
           {/* Avatar */}
           <div className="flex-shrink-0 flex justify-center md:justify-start">
-            <div className="relative w-32 h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-xl overflow-hidden bg-secondary border-2 border-primary/20 group-hover:border-primary/40 transition-colors">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-44 lg:h-44 rounded-xl overflow-hidden bg-secondary border-2 border-primary/20 group-hover:border-primary/40 transition-colors">
               {teamPhotos[member.name] ? (
                 <img 
                   src={teamPhotos[member.name]} 
