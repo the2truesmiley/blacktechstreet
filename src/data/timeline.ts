@@ -158,7 +158,7 @@ Tyrance has given a TEDx talk and been featured in publications like Forbes, Bla
 
 Before joining Black Tech Street, she served as Director of Operations at Atento Capital, where she led enterprise operations, HR initiatives and strategic planning for a rapidly growing venture capital firm. Prior to that, she spent a decade with Girl Scouts of Eastern Oklahoma, ultimately serving as Director of Community Outreach, where she expanded programs reaching thousands of youth annually and strengthened partnerships across Eastern Oklahoma.
 
-Her leadership has earned several honors, including the Supervisor of the Year Award (2018), the Youth at Heart Alumnus Achievement Award (2019), the Atent-Awesome Leadership Award (2023) and recognition from the Supporters of Families with Sickle Cell Disease (2023).
+Her leadership has earned several honors, including the Supervisor of the Year Award (2018), the Youth at Heart Alumnus Achievement Award (2019), the Leadership Award (2023) and recognition from the Supporters of Families with Sickle Cell Disease (2023).
 
 A Tulsa native, Josephine is a graduate of the University of Tulsa with a Bachelor of Science in Biological Sciences and a Minor in Chemistry. She also completed Leadership Tulsa New Voices Class 11 and has served on the boards of the American Red Cross and Broken Arrow Neighbors. She remains actively connected to her community through volunteer work with 3D Elite Track and Field Club.
 
