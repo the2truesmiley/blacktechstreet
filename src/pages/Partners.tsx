@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -96,10 +97,58 @@ const partners = [
 
 export default function Partners() {
   useSEO({
-    title: 'Partners | Black Tech Street',
-    description: 'Meet the organizations powering our mission to transform Historic Greenwood into a global epicenter for AI and cybersecurity innovation.',
+    title: 'Partners | Black Tech Street — AI & Cybersecurity in Greenwood, Tulsa',
+    description: 'Microsoft, NVIDIA, MIT, NYU Tulsa, OU Polytechnic, and 20+ Tulsa organizations partnering with Black Tech Street to build the next AI and cybersecurity hub in Historic Greenwood.',
     canonical: 'https://blacktechstreet.com/partners',
+    ogImage: 'https://blacktechstreet.com/og-image.png',
   });
+
+  // Structured data: CollectionPage + organization partners list
+  const allPartners = [
+    ...featuredPartners.map((p) => ({ name: p.name, url: p.link })),
+    ...corePartners.map((p) => ({ name: p.name, url: undefined })),
+    ...partners.map((p) => ({ name: p.name, url: (p as { link?: string }).link })),
+    ...researchPartners.map((p) => ({ name: p.name, url: p.link })),
+  ];
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Black Tech Street Partners',
+    description: 'Strategic, community, and research partners powering Black Tech Street in Historic Greenwood, Tulsa.',
+    url: 'https://blacktechstreet.com/partners',
+    isPartOf: {
+      '@type': 'Organization',
+      name: 'Black Tech Street',
+      url: 'https://blacktechstreet.com',
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: allPartners.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Organization',
+          name: p.name,
+          ...(p.url ? { url: p.url } : {}),
+        },
+      })),
+    },
+  };
+
+  useEffect(() => {
+    const existing = document.getElementById('partners-jsonld');
+    if (existing) existing.remove();
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'partners-jsonld';
+    script.text = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+    return () => {
+      const el = document.getElementById('partners-jsonld');
+      if (el) el.remove();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
