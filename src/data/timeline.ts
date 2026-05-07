@@ -197,6 +197,21 @@ His experience includes strategic communications, content development, event pro
 
 export const strategicAdvisors: TeamMember[] = [
   {
+    name: "Sean Alexander",
+    title: "Independent Advisor & Board Member, Former Microsoft Executive",
+    shortBio: "Former Microsoft Executive and Independent Consultant who led global launches of Azure, Windows, Xbox, Industry Clouds, and Microsoft AI, including the first Microsoft collaboration with OpenAI that laid the foundation for ChatGPT, Copilots, and Plugins.",
+    expandedBio: `Sean Alexander is a former Microsoft Executive who now serves as an Independent Consultant and Board Advisor as a member of the National Association of Corporate Directors (NACD).
+
+He is a graduate of MIT's AI for Business executive program and the Microsoft and Northwestern Kellogg Leadership Bench Executive MBA program. Throughout more than 25 years in tech, Sean has led global teams in the launch of world-changing technologies including Azure, Windows, Media Platforms, Xbox, Industry Clouds, and Microsoft AI. He holds multiple patents and received a technical Emmy Award for his team's work on media platforms.
+
+One of his signature accomplishments was leading the first collaboration between Microsoft and OpenAI, a partnership that laid the foundation for transformative advancements including ChatGPT, Copilots, and Plugins.
+
+As a keynote presenter and executive producer, Sean has appeared on some of the largest global stages alongside Microsoft CEOs, executives, and partners including former CEOs Bill Gates and Steve Ballmer. He has also produced keynote speeches for current CEO Satya Nadella and EVP of Azure Scott Guthrie, and worked with former Microsoft CTO Ray Ozzie and EVP of AI & Research Dr. Harry Shum.
+
+Sean serves his alma mater, The University of Tulsa, as a Trustee and Executive Committee member. He also volunteers on the Executive Committee of the George Kaiser Family Foundation's tech initiative, Tulsa Innovation Labs, an organization committed to fostering Tulsa's innovation economy. With a deep appreciation for the Arts & Humanities, he serves on the Executive Committee of the Board of Trustees at the Philbrook Museum of Art & Gardens.`,
+    linkedIn: "https://www.linkedin.com/in/seanalex/"
+  },
+  {
     name: "Dr. Tiffany Crutcher",
     title: "Executive Director, Terence Crutcher Foundation",
     shortBio: "Dr. Tiffany T. Crutcher is a Tulsa native, community leader, and Executive Director of the Terence Crutcher Foundation. Her work transforms history into opportunity by strengthening communities, fostering economic mobility, and creating pathways for long-term prosperity in North Tulsa and beyond.",
@@ -212,19 +227,6 @@ In 2022, Dr. Crutcher and the Terence Crutcher Foundation acquired a 65,000-squa
     linkedIn: "https://www.linkedin.com/in/dr-tiffany-crutcher-3588747b/"
   },
   {
-    name: "Robert Thomas",
-    title: "Investment Strategy & Portfolio Lead, WestRiver Group",
-    shortBio: "Robert Thomas oversees investment strategy and portfolio at WestRiver Group. He previously served 15 years as Chief Investment Officer for the George Kaiser Family Foundation, managing its $5 billion portfolio, and a decade as a Portfolio Manager for the Bill Gates Investment Office (Cascade Investment).",
-    expandedBio: `Robert Thomas joined WestRiver in February 2024 and oversees the firm's investment strategy and portfolio. Mr. Thomas joined WestRiver Group after having been a core investment partner of the firm since its expansion in 2011.
-
-Prior to joining WestRiver, Mr. Robert Thomas served for 15 years as the Chief Investment Officer for the George Kaiser Family Foundation. The George Kaiser Family Foundation is focused on the areas of early childhood education, social services support, community health, and civic enhancement. In his role at the foundation, Mr. Thomas was responsible for the financial administration and management of its $5 billion investment portfolio. For the 10 years prior, he served as a Portfolio Manager for the Bill Gates Investment Office (aka Cascade Investment). The Gates office invests the personal assets of Mr. Gates, as well as the assets of the Bill & Melinda Gates Foundation. In his capacity working for BGI/Cascade, he held several different Portfolio Manager positions, most recently having had responsibility for oversight of all externally managed fund relationships (public and private). Previous areas of responsibility have included energy/commodities, fixed income, currencies and general public and private equity analysis.
-
-He serves as a Board of Advisors Member for the Financial Economics Institute at Claremont McKenna College, is a Trustee of The University of Tulsa, is President of the Board of Directors of Undercroft Montessori School in Tulsa, Oklahoma and serves as Chairman for the Board of City Year Tulsa.
-
-Mr. Thomas earned a Bachelor of Arts Degree in Economics from Claremont McKenna College, Magna Cum Laude and is a CFA Charterholder.`,
-    linkedIn: "https://www.linkedin.com/in/robert-p-thomas-jr/"
-  },
-  {
     name: "Kevin Griffin, Ph.D.",
     title: "Senior Developer Technology Engineer, NVIDIA",
     shortBio: "Kevin Griffin is a Senior Developer Technology Engineer at NVIDIA specializing in scientific visualization and AI/ML, and an Executive-in-Residence at Tulsa Innovation Labs supporting Black Tech Street's innovation economy mission.",
@@ -238,19 +240,17 @@ He holds a PhD in computer science from UC Davis, an MS from the University of T
     linkedIn: "https://www.linkedin.com/in/kevin-griffin-ph-d-85280623/"
   },
   {
-    name: "Sean Alexander",
-    title: "Independent Advisor & Board Member, Former Microsoft Executive",
-    shortBio: "Former Microsoft Executive and Independent Consultant who led global launches of Azure, Windows, Xbox, Industry Clouds, and Microsoft AI, including the first Microsoft collaboration with OpenAI that laid the foundation for ChatGPT, Copilots, and Plugins.",
-    expandedBio: `Sean Alexander is a former Microsoft Executive who now serves as an Independent Consultant and Board Advisor as a member of the National Association of Corporate Directors (NACD).
+    name: "Robert Thomas",
+    title: "Investment Strategy & Portfolio Lead, WestRiver Group",
+    shortBio: "Robert Thomas oversees investment strategy and portfolio at WestRiver Group. He previously served 15 years as Chief Investment Officer for the George Kaiser Family Foundation, managing its $5 billion portfolio, and a decade as a Portfolio Manager for the Bill Gates Investment Office (Cascade Investment).",
+    expandedBio: `Robert Thomas joined WestRiver in February 2024 and oversees the firm's investment strategy and portfolio. Mr. Thomas joined WestRiver Group after having been a core investment partner of the firm since its expansion in 2011.
 
-He is a graduate of MIT's AI for Business executive program and the Microsoft and Northwestern Kellogg Leadership Bench Executive MBA program. Throughout more than 25 years in tech, Sean has led global teams in the launch of world-changing technologies including Azure, Windows, Media Platforms, Xbox, Industry Clouds, and Microsoft AI. He holds multiple patents and received a technical Emmy Award for his team's work on media platforms.
+Prior to joining WestRiver, Mr. Robert Thomas served for 15 years as the Chief Investment Officer for the George Kaiser Family Foundation. The George Kaiser Family Foundation is focused on the areas of early childhood education, social services support, community health, and civic enhancement. In his role at the foundation, Mr. Thomas was responsible for the financial administration and management of its $5 billion investment portfolio. For the 10 years prior, he served as a Portfolio Manager for the Bill Gates Investment Office (aka Cascade Investment). The Gates office invests the personal assets of Mr. Gates, as well as the assets of the Bill & Melinda Gates Foundation. In his capacity working for BGI/Cascade, he held several different Portfolio Manager positions, most recently having had responsibility for oversight of all externally managed fund relationships (public and private). Previous areas of responsibility have included energy/commodities, fixed income, currencies and general public and private equity analysis.
 
-One of his signature accomplishments was leading the first collaboration between Microsoft and OpenAI, a partnership that laid the foundation for transformative advancements including ChatGPT, Copilots, and Plugins.
+He serves as a Board of Advisors Member for the Financial Economics Institute at Claremont McKenna College, is a Trustee of The University of Tulsa, is President of the Board of Directors of Undercroft Montessori School in Tulsa, Oklahoma and serves as Chairman for the Board of City Year Tulsa.
 
-As a keynote presenter and executive producer, Sean has appeared on some of the largest global stages alongside Microsoft CEOs, executives, and partners including former CEOs Bill Gates and Steve Ballmer. He has also produced keynote speeches for current CEO Satya Nadella and EVP of Azure Scott Guthrie, and worked with former Microsoft CTO Ray Ozzie and EVP of AI & Research Dr. Harry Shum.
-
-Sean serves his alma mater, The University of Tulsa, as a Trustee and Executive Committee member. He also volunteers on the Executive Committee of the George Kaiser Family Foundation's tech initiative, Tulsa Innovation Labs, an organization committed to fostering Tulsa's innovation economy. With a deep appreciation for the Arts & Humanities, he serves on the Executive Committee of the Board of Trustees at the Philbrook Museum of Art & Gardens.`,
-    linkedIn: "https://www.linkedin.com/in/seanalex/"
+Mr. Thomas earned a Bachelor of Arts Degree in Economics from Claremont McKenna College, Magna Cum Laude and is a CFA Charterholder.`,
+    linkedIn: "https://www.linkedin.com/in/robert-p-thomas-jr/"
   }
 ];
 
