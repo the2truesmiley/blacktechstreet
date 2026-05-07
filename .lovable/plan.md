@@ -1,36 +1,17 @@
-## Add Sean Alexander as Strategic Advisor #4
+## Problem
 
-Add Sean Alexander to the Strategic Advisors section on the Team page (`/about#team-section`), following the exact pattern used for Tiffany Crutcher, Robert Thomas, and Kevin Griffin.
+When Josephine's or Allen's card is expanded on desktop, the bio runs many lines tall in the right column while the headshot stays short on the left. This leaves a large empty space below the photo and makes the card feel unbalanced.
 
-### Source
-Bio pulled from https://seanalexander.com/about-2/
+## Fix
 
-### Data entry (`src/data/timeline.ts`)
-Append a new `seanAlexander` entry to the `strategicAdvisors` array:
+In `src/components/timeline/TeamSection.tsx`, change the card layout so that when expanded on desktop, the bio text wraps under the headshot instead of staying in a narrow right column.
 
-- **name:** "Sean Alexander"
-- **title:** "Independent Advisor & Board Member, Former Microsoft Executive"
-- **shortBio:** "Former Microsoft Executive and Independent Consultant who led global launches of Azure, Windows, Xbox, Industry Clouds, and Microsoft AI — including the first collaboration with OpenAI that laid the groundwork for ChatGPT and Copilots."
-- **expandedBio:** Full multi-paragraph bio covering:
-  - NACD member, Independent Consultant & Board Advisor
-  - MIT AI for Business executive program; Microsoft & Northwestern Kellogg Leadership Bench Executive MBA
-  - 25+ years at Microsoft leading global teams across Azure, Windows, Media Platforms, Xbox, Industry Clouds, and Microsoft AI
-  - Multiple patents and a technical Emmy Award for media platforms work
-  - Led the first Microsoft–OpenAI collaboration (foundation for ChatGPT, Copilots, Plugins)
-  - Keynote work alongside Bill Gates, Steve Ballmer, Satya Nadella, Scott Guthrie, Ray Ozzie, and Dr. Harry Shum
-  - Trustee & Executive Committee member, The University of Tulsa
-  - Executive Committee, Tulsa Innovation Labs (George Kaiser Family Foundation)
-  - Executive Committee, Board of Trustees, Philbrook Museum of Art & Gardens
-- **linkedIn:** Will ask user to provide (not listed on his About page); fall back to omitting if not given.
+Approach: keep the current side-by-side layout for the collapsed state (name, title, short bio next to photo), but when `isExpanded` is true, render the expanded bio as a full-width block below the avatar+header row. This uses the entire card width for long-form text and eliminates the lopsided empty space next to the photo.
 
-### Asset
-Headshot is not available on the public About page (only group/event photos). Will ask user to upload a headshot. Once uploaded:
-- Copy to `src/assets/team/sean-alexander-headshot.{png|jpg}`
+Specifically:
+- Wrap the existing flex row in a column container
+- Keep avatar + name/title/LinkedIn + short bio in the top row (as today)
+- Move the `AnimatePresence` expanded bio block out of the right column and place it below the row, spanning full card width with appropriate top padding
+- Keep the chevron indicator behavior unchanged
 
-### Component update (`src/components/timeline/TeamSection.tsx`)
-- Import `seanAlexanderHeadshot`
-- Add `"Sean Alexander": seanAlexanderHeadshot` to the `teamPhotos` map
-
-### Open questions before implementing
-1. LinkedIn URL for Sean Alexander?
-2. Please upload a headshot image.
+No copy or data changes. No changes to mobile layout (already stacks vertically).

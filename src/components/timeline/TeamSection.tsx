@@ -130,26 +130,10 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
                 {member.shortBio}
               </p>
             )}
-
-            <AnimatePresence initial={false}>
-              {isExpanded && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
-                  className="overflow-hidden"
-                >
-                  <p className="text-sm sm:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
-                    {expandedBioContent}
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
 
           {/* Expand indicator - Desktop */}
-          <div className="absolute right-4 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center">
+          <div className="absolute right-4 top-8 hidden md:flex items-center justify-center">
             <motion.div
               animate={{ rotate: isExpanded ? 180 : 0 }}
               transition={{ duration: 0.3 }}
@@ -160,8 +144,27 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
           </div>
         </div>
 
+        {/* Expanded bio - full width below the row */}
+        <AnimatePresence initial={false}>
+          {isExpanded && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <div className="px-4 sm:px-6 md:px-8 pb-2 md:pr-14">
+                <p className="text-sm sm:text-base text-foreground/80 leading-relaxed whitespace-pre-line">
+                  {expandedBioContent}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Expand indicator - Mobile */}
-        <div className="flex md:hidden items-center justify-center pb-4 gap-2 text-xs text-muted-foreground">
+        <div className="flex md:hidden items-center justify-center pb-4 pt-2 gap-2 text-xs text-muted-foreground">
           <motion.div
             animate={{ rotate: isExpanded ? 180 : 0 }}
             transition={{ duration: 0.3 }}
