@@ -20,6 +20,7 @@ import tilLogo from '@/assets/partners/tulsa-innovation-labs-logo.png';
 import tulsaRemoteLogo from '@/assets/partners/tulsa-remote-logo.png';
 import tulsaCommunityCollegeLogo from '@/assets/partners/tulsa-community-college-logo.webp';
 import tulsaPublicSchoolsLogo from '@/assets/partners/tulsa-public-schools-logo.png';
+import i2eLogo from '@/assets/partners/i2e-logo.svg';
 import actHouseLogo from '@/assets/partners/act-house-logo.svg';
 import gradientLogo from '@/assets/partners/gradient-logo.svg';
 import tulsaDreamCenterLogo from '@/assets/partners/tulsa-dream-center-logo.svg';
