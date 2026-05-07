@@ -154,6 +154,27 @@ export function TeamSection() {
           <TeamMemberCard key={member.name + index} member={member} index={index} />
         ))}
       </div>
+
+      {strategicAdvisors.length > 0 && (
+        <>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-20 mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-display font-bold">
+              <span className="text-primary">Strategic</span>{' '}
+              <span className="text-foreground">Advisors</span>
+            </h2>
+          </motion.div>
+          <div className="grid gap-8">
+            {strategicAdvisors.map((member, index) => (
+              <TeamMemberCard key={member.name + index} member={member} index={index} />
+            ))}
+          </div>
+        </>
+      )}
     </section>
   );
 }
