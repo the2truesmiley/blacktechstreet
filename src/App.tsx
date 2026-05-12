@@ -53,6 +53,7 @@ const App = () => (
             <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
             <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
             <Route path="/aspire/parking" element={<AspireParkingDetails />} />
+            <Route path="/hq/parking" element={<HqParkingDetails />} />
             <Route path="/free-ai-workshop" element={<FreeAiWorkshop />} />
             <Route path="/free-ai-training-faq" element={<FreeAiTrainingFaq />} />
             <Route path="/partners" element={<Partners />} />
