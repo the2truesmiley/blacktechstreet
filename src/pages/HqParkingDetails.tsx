@@ -19,6 +19,36 @@ const PARKING_CONFIG = {
   locationName: 'GEM Building — BTS HQ & Microsoft Cyber + AI Lab',
 };
 
+// Carver Middle School overflow parking lot (just south of GEM, across Pine St)
+const CARVER_PARKING = {
+  latitude: 36.17215,
+  longitude: -95.98660,
+  radiusMeters: 55,
+  label: 'Carver Middle School — Overflow Parking',
+};
+
+// Generate a circle polygon (GeoJSON) from a center point and radius in meters.
+function circlePolygon(lng: number, lat: number, radiusMeters: number, points = 64) {
+  const coords: [number, number][] = [];
+  const earthRadius = 6378137;
+  const lat1 = (lat * Math.PI) / 180;
+  for (let i = 0; i <= points; i++) {
+    const bearing = (i * 2 * Math.PI) / points;
+    const dByR = radiusMeters / earthRadius;
+    const lat2 = Math.asin(
+      Math.sin(lat1) * Math.cos(dByR) + Math.cos(lat1) * Math.sin(dByR) * Math.cos(bearing)
+    );
+    const lng2 =
+      (lng * Math.PI) / 180 +
+      Math.atan2(
+        Math.sin(bearing) * Math.sin(dByR) * Math.cos(lat1),
+        Math.cos(dByR) - Math.sin(lat1) * Math.sin(lat2)
+      );
+    coords.push([(lng2 * 180) / Math.PI, (lat2 * 180) / Math.PI]);
+  }
+  return coords;
+}
+
 const MAPBOX_TOKEN = 'pk.eyJ1IjoidGhlMXRydWVzbWlsZXkiLCJhIjoiY21uY3d4am1rMTF2dzJ4b2YzZWlzYWExcyJ9.oIwFEKKcZYh2XwJL74EMcA';
 
 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${PARKING_CONFIG.latitude},${PARKING_CONFIG.longitude}`;
