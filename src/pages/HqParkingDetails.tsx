@@ -19,12 +19,12 @@ const PARKING_CONFIG = {
   locationName: 'GEM Building — BTS HQ & Microsoft Cyber + AI Lab',
 };
 
-// Carver Middle School overflow parking lot (just south of GEM, across Pine St)
+// Overflow parking lot at the corner of E Pine St N & N Greenwood Ave
 const CARVER_PARKING = {
-  latitude: 36.17215,
-  longitude: -95.98660,
-  radiusMeters: 55,
-  label: 'Carver Middle School — Overflow Parking',
+  latitude: 36.17288,
+  longitude: -95.98875,
+  radiusMeters: 45,
+  label: 'Overflow Parking — Pine St & Greenwood Ave',
 };
 
 // Generate a circle polygon (GeoJSON) from a center point and radius in meters.
@@ -229,7 +229,7 @@ export default function HqParkingDetails() {
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex gap-2"><span className="text-primary">•</span> Free street parking is available around the GEM Building</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> Arrive 15 minutes early for best spots</li>
-                <li className="flex gap-2"><span className="text-primary">•</span> Overflow parking at Carver Middle School lot, across Pine St (highlighted in green on the map)</li>
+                <li className="flex gap-2"><span className="text-primary">•</span> Overflow parking at the lot on the corner of E Pine St N & N Greenwood Ave (highlighted in green on the map)</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
               </ul>
             </div>
