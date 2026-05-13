@@ -21,8 +21,8 @@ const PARKING_CONFIG = {
 
 // Overflow parking lot in the large southeast lot at E Pine St N & N Greenwood Ave
 const CARVER_PARKING = {
-  latitude: 36.17578,
-  longitude: -95.98592,
+  latitude: 36.17545,
+  longitude: -95.98555,
   radiusMeters: 72,
   label: 'Overflow Parking — Pine St & Greenwood Ave',
 };
