@@ -1,17 +1,33 @@
-## Problem
+# Highlight Carver Middle School Parking Lot
 
-When Josephine's or Allen's card is expanded on desktop, the bio runs many lines tall in the right column while the headshot stays short on the left. This leaves a large empty space below the photo and makes the card feel unbalanced.
+Add a visible circle overlay on the `/hq/parking` Mapbox map marking the Carver Middle School parking lot (just south of the GEM Building, across Pine St) as the recommended overflow parking area.
 
-## Fix
+## What changes
 
-In `src/components/timeline/TeamSection.tsx`, change the card layout so that when expanded on desktop, the bio text wraps under the headshot instead of staying in a narrow right column.
+**File:** `src/pages/HqParkingDetails.tsx`
 
-Approach: keep the current side-by-side layout for the collapsed state (name, title, short bio next to photo), but when `isExpanded` is true, render the expanded bio as a full-width block below the avatar+header row. This uses the entire card width for long-form text and eliminates the lopsided empty space next to the photo.
+1. **Add a Carver parking config** alongside the existing `PARKING_CONFIG`:
+   - Approx coordinates: `lat 36.1722, lng -95.9866` (Carver Middle School lot, ~150ft south of GEM)
+   - Radius: ~50 meters to encompass the lot
+   - Label: "Carver Middle School — Overflow Parking"
 
-Specifically:
-- Wrap the existing flex row in a column container
-- Keep avatar + name/title/LinkedIn + short bio in the top row (as today)
-- Move the `AnimatePresence` expanded bio block out of the right column and place it below the row, spanning full card width with appropriate top padding
-- Keep the chevron indicator behavior unchanged
+2. **Draw a circle on the map** using a Mapbox GeoJSON source + fill/line layers built from a turf-style circle polygon (computed inline so we don't need to add `@turf/turf` as a dependency — a small ~30-line helper generates a 64-point polygon from center + radius in meters).
+   - Fill: emerald `hsl(160, 84%, 39%)` at ~20% opacity
+   - Outline: solid emerald, 2px
+   - Added inside the existing `map.on('load', ...)` callback
 
-No copy or data changes. No changes to mobile layout (already stacks vertically).
+3. **Add a second marker** at the Carver lot center with a smaller/secondary-styled pin and popup ("Overflow Parking — Carver Middle School").
+
+4. **Adjust the initial map view** to fit both the GEM Building and the Carver lot:
+   - Use `map.fitBounds([[gemLng, gemLat], [carverLng, carverLat]], { padding: 80 })` instead of the fixed `center`/`zoom`.
+
+5. **Update the Parking Tips card copy** so the existing "Additional parking available across from Carver Middle School" line references the highlighted circle ("see green circle on map").
+
+## Out of scope
+
+- No new pages, no new dependencies, no routing changes.
+- Circle is approximate — fine for wayfinding. If you later want the exact lot footprint, we'd swap the circle for a hand-drawn polygon (I can do that next round if you give me the corners or want me to trace from satellite).
+
+## Open question
+
+The Carver lot center coordinates above are estimated from the satellite imagery around 609 E Pine St. If you want pinpoint accuracy for the circle, share a Google Maps pin or confirm and I'll lock it in during implementation.

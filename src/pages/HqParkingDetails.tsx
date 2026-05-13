@@ -19,6 +19,36 @@ const PARKING_CONFIG = {
   locationName: 'GEM Building — BTS HQ & Microsoft Cyber + AI Lab',
 };
 
+// Carver Middle School overflow parking lot (just south of GEM, across Pine St)
+const CARVER_PARKING = {
+  latitude: 36.17215,
+  longitude: -95.98660,
+  radiusMeters: 55,
+  label: 'Carver Middle School — Overflow Parking',
+};
+
+// Generate a circle polygon (GeoJSON) from a center point and radius in meters.
+function circlePolygon(lng: number, lat: number, radiusMeters: number, points = 64) {
+  const coords: [number, number][] = [];
+  const earthRadius = 6378137;
+  const lat1 = (lat * Math.PI) / 180;
+  for (let i = 0; i <= points; i++) {
+    const bearing = (i * 2 * Math.PI) / points;
+    const dByR = radiusMeters / earthRadius;
+    const lat2 = Math.asin(
+      Math.sin(lat1) * Math.cos(dByR) + Math.cos(lat1) * Math.sin(dByR) * Math.cos(bearing)
+    );
+    const lng2 =
+      (lng * Math.PI) / 180 +
+      Math.atan2(
+        Math.sin(bearing) * Math.sin(dByR) * Math.cos(lat1),
+        Math.cos(dByR) - Math.sin(lat1) * Math.sin(lat2)
+      );
+    coords.push([(lng2 * 180) / Math.PI, (lat2 * 180) / Math.PI]);
+  }
+  return coords;
+}
+
 const MAPBOX_TOKEN = 'pk.eyJ1IjoidGhlMXRydWVzbWlsZXkiLCJhIjoiY21uY3d4am1rMTF2dzJ4b2YzZWlzYWExcyJ9.oIwFEKKcZYh2XwJL74EMcA';
 
 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${PARKING_CONFIG.latitude},${PARKING_CONFIG.longitude}`;
@@ -48,6 +78,7 @@ export default function HqParkingDetails() {
 
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
+    // Primary marker — GEM Building
     const markerEl = document.createElement('div');
     markerEl.className = 'flex items-center justify-center';
     markerEl.innerHTML = `<div style="width:32px;height:32px;background:hsl(160,84%,39%);border-radius:50%;border:3px solid white;box-shadow:0 0 12px rgba(16,185,129,0.6);"></div>`;
@@ -58,6 +89,51 @@ export default function HqParkingDetails() {
         `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_CONFIG.markerLabel}</strong><br/>${PARKING_CONFIG.address}</div>`
       ))
       .addTo(map);
+
+    // Secondary marker — Carver Middle School overflow lot
+    const carverEl = document.createElement('div');
+    carverEl.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
+    new mapboxgl.Marker(carverEl)
+      .setLngLat([CARVER_PARKING.longitude, CARVER_PARKING.latitude])
+      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
+        `<div style="color:#111;font-family:sans-serif;"><strong>${CARVER_PARKING.label}</strong></div>`
+      ))
+      .addTo(map);
+
+    // Circle overlay around Carver parking lot
+    map.on('load', () => {
+      const ring = circlePolygon(
+        CARVER_PARKING.longitude,
+        CARVER_PARKING.latitude,
+        CARVER_PARKING.radiusMeters
+      );
+      map.addSource('carver-circle', {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          properties: {},
+          geometry: { type: 'Polygon', coordinates: [ring] },
+        },
+      });
+      map.addLayer({
+        id: 'carver-circle-fill',
+        type: 'fill',
+        source: 'carver-circle',
+        paint: { 'fill-color': 'hsl(160, 84%, 39%)', 'fill-opacity': 0.22 },
+      });
+      map.addLayer({
+        id: 'carver-circle-line',
+        type: 'line',
+        source: 'carver-circle',
+        paint: { 'line-color': 'hsl(160, 84%, 45%)', 'line-width': 2.5 },
+      });
+
+      // Fit both points into view
+      const bounds = new mapboxgl.LngLatBounds()
+        .extend([PARKING_CONFIG.longitude, PARKING_CONFIG.latitude])
+        .extend([CARVER_PARKING.longitude, CARVER_PARKING.latitude]);
+      map.fitBounds(bounds, { padding: 90, maxZoom: 17.5, duration: 0 });
+    });
 
     mapRef.current = map;
 
@@ -153,7 +229,7 @@ export default function HqParkingDetails() {
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex gap-2"><span className="text-primary">•</span> Free street parking is available around the GEM Building</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> Arrive 15 minutes early for best spots</li>
-                <li className="flex gap-2"><span className="text-primary">•</span> Additional parking available across from Carver Middle School</li>
+                <li className="flex gap-2"><span className="text-primary">•</span> Overflow parking at Carver Middle School lot, across Pine St (highlighted in green on the map)</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
               </ul>
             </div>
