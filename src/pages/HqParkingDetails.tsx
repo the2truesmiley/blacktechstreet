@@ -78,6 +78,7 @@ export default function HqParkingDetails() {
 
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
+    // Primary marker — GEM Building
     const markerEl = document.createElement('div');
     markerEl.className = 'flex items-center justify-center';
     markerEl.innerHTML = `<div style="width:32px;height:32px;background:hsl(160,84%,39%);border-radius:50%;border:3px solid white;box-shadow:0 0 12px rgba(16,185,129,0.6);"></div>`;
@@ -88,6 +89,51 @@ export default function HqParkingDetails() {
         `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_CONFIG.markerLabel}</strong><br/>${PARKING_CONFIG.address}</div>`
       ))
       .addTo(map);
+
+    // Secondary marker — Carver Middle School overflow lot
+    const carverEl = document.createElement('div');
+    carverEl.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
+    new mapboxgl.Marker(carverEl)
+      .setLngLat([CARVER_PARKING.longitude, CARVER_PARKING.latitude])
+      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
+        `<div style="color:#111;font-family:sans-serif;"><strong>${CARVER_PARKING.label}</strong></div>`
+      ))
+      .addTo(map);
+
+    // Circle overlay around Carver parking lot
+    map.on('load', () => {
+      const ring = circlePolygon(
+        CARVER_PARKING.longitude,
+        CARVER_PARKING.latitude,
+        CARVER_PARKING.radiusMeters
+      );
+      map.addSource('carver-circle', {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          properties: {},
+          geometry: { type: 'Polygon', coordinates: [ring] },
+        },
+      });
+      map.addLayer({
+        id: 'carver-circle-fill',
+        type: 'fill',
+        source: 'carver-circle',
+        paint: { 'fill-color': 'hsl(160, 84%, 39%)', 'fill-opacity': 0.22 },
+      });
+      map.addLayer({
+        id: 'carver-circle-line',
+        type: 'line',
+        source: 'carver-circle',
+        paint: { 'line-color': 'hsl(160, 84%, 45%)', 'line-width': 2.5 },
+      });
+
+      // Fit both points into view
+      const bounds = new mapboxgl.LngLatBounds()
+        .extend([PARKING_CONFIG.longitude, PARKING_CONFIG.latitude])
+        .extend([CARVER_PARKING.longitude, CARVER_PARKING.latitude]);
+      map.fitBounds(bounds, { padding: 90, maxZoom: 17.5, duration: 0 });
+    });
 
     mapRef.current = map;
 
