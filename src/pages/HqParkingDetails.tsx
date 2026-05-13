@@ -229,7 +229,7 @@ export default function HqParkingDetails() {
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex gap-2"><span className="text-primary">•</span> Free street parking is available around the GEM Building</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> Arrive 15 minutes early for best spots</li>
-                <li className="flex gap-2"><span className="text-primary">•</span> Overflow parking at Carver Middle School lot, across Pine St (highlighted in green on the map)</li>
+                <li className="flex gap-2"><span className="text-primary">•</span> Overflow parking at the lot on the corner of E Pine St N & N Greenwood Ave (highlighted in green on the map)</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
               </ul>
             </div>
