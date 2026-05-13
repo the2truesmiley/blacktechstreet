@@ -7,7 +7,7 @@ import logoCircuit from '@/assets/logo_b_circuit.png';
 const socialLinks = [
   { icon: Facebook, href: 'https://facebook.com/blacktechstreet', label: 'Facebook' },
   { icon: Instagram, href: 'https://instagram.com/blacktechstreet', label: 'Instagram' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/blacktechstreet', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/76900155', label: 'LinkedIn' },
 ];
 
 const quickLinks = [

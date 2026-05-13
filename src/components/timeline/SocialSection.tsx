@@ -83,7 +83,7 @@ export function SocialSection() {
           <ArrowUpRight className="w-4 h-4" />
         </a>
         <a
-          href="https://www.linkedin.com/company/black-tech-street/"
+          href="https://www.linkedin.com/company/76900155"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
