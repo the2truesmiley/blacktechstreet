@@ -19,11 +19,11 @@ const PARKING_CONFIG = {
   locationName: 'GEM Building — BTS HQ & Microsoft Cyber + AI Lab',
 };
 
-// Overflow parking lot at the corner of E Pine St N & N Greenwood Ave
+// Overflow parking lot on the southeast side of E Pine St N & N Greenwood Ave
 const CARVER_PARKING = {
-  latitude: 36.176943,
-  longitude: -95.986811,
-  radiusMeters: 50,
+  latitude: 36.17619,
+  longitude: -95.98593,
+  radiusMeters: 58,
   label: 'Overflow Parking — Pine St & Greenwood Ave',
 };
 
