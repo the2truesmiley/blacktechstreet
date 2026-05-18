@@ -19,12 +19,19 @@ const PARKING_CONFIG = {
   locationName: 'GEM Building — BTS HQ & Microsoft Cyber + AI Lab',
 };
 
-// Overflow parking lot in the large southeast lot at E Pine St N & N Greenwood Ave
+// Overflow parking lots
 const CARVER_PARKING = {
   latitude: 36.176586,
   longitude: -95.986343,
   radiusMeters: 70,
-  label: 'Overflow Parking — Pine St & Greenwood Ave',
+  label: 'Overflow Parking 1 — Pine St & Greenwood Ave',
+};
+
+const PARKING_LOT_2 = {
+  latitude: 36.178030,
+  longitude: -95.984117,
+  radiusMeters: 70,
+  label: 'Overflow Parking 2',
 };
 
 // Generate a circle polygon (GeoJSON) from a center point and radius in meters.
