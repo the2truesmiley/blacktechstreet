@@ -19,12 +19,19 @@ const PARKING_CONFIG = {
   locationName: 'GEM Building — BTS HQ & Microsoft Cyber + AI Lab',
 };
 
-// Overflow parking lot in the large southeast lot at E Pine St N & N Greenwood Ave
+// Overflow parking lots
 const CARVER_PARKING = {
   latitude: 36.176586,
   longitude: -95.986343,
   radiusMeters: 70,
-  label: 'Overflow Parking — Pine St & Greenwood Ave',
+  label: 'Overflow Parking 1 — Pine St & Greenwood Ave',
+};
+
+const PARKING_LOT_2 = {
+  latitude: 36.178030,
+  longitude: -95.984117,
+  radiusMeters: 70,
+  label: 'Overflow Parking 2',
 };
 
 // Generate a circle polygon (GeoJSON) from a center point and radius in meters.
@@ -100,38 +107,46 @@ export default function HqParkingDetails() {
       ))
       .addTo(map);
 
-    // Circle overlay around Carver parking lot
-    map.on('load', () => {
-      const ring = circlePolygon(
-        CARVER_PARKING.longitude,
-        CARVER_PARKING.latitude,
-        CARVER_PARKING.radiusMeters
-      );
-      map.addSource('carver-circle', {
-        type: 'geojson',
-        data: {
-          type: 'Feature',
-          properties: {},
-          geometry: { type: 'Polygon', coordinates: [ring] },
-        },
-      });
-      map.addLayer({
-        id: 'carver-circle-fill',
-        type: 'fill',
-        source: 'carver-circle',
-        paint: { 'fill-color': 'hsl(160, 84%, 39%)', 'fill-opacity': 0.22 },
-      });
-      map.addLayer({
-        id: 'carver-circle-line',
-        type: 'line',
-        source: 'carver-circle',
-        paint: { 'line-color': 'hsl(160, 84%, 45%)', 'line-width': 2.5 },
-      });
+    // Third marker — Parking Lot 2
+    const lot2El = document.createElement('div');
+    lot2El.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
+    new mapboxgl.Marker(lot2El)
+      .setLngLat([PARKING_LOT_2.longitude, PARKING_LOT_2.latitude])
+      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
+        `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_LOT_2.label}</strong></div>`
+      ))
+      .addTo(map);
 
-      // Fit both points into view
+    // Circle overlays around overflow parking lots
+    map.on('load', () => {
+      const addCircle = (id: string, lng: number, lat: number, r: number) => {
+        const ring = circlePolygon(lng, lat, r);
+        map.addSource(id, {
+          type: 'geojson',
+          data: { type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [ring] } },
+        });
+        map.addLayer({
+          id: `${id}-fill`,
+          type: 'fill',
+          source: id,
+          paint: { 'fill-color': 'hsl(160, 84%, 39%)', 'fill-opacity': 0.22 },
+        });
+        map.addLayer({
+          id: `${id}-line`,
+          type: 'line',
+          source: id,
+          paint: { 'line-color': 'hsl(160, 84%, 45%)', 'line-width': 2.5 },
+        });
+      };
+
+      addCircle('carver-circle', CARVER_PARKING.longitude, CARVER_PARKING.latitude, CARVER_PARKING.radiusMeters);
+      addCircle('lot2-circle', PARKING_LOT_2.longitude, PARKING_LOT_2.latitude, PARKING_LOT_2.radiusMeters);
+
+      // Fit all points into view
       const bounds = new mapboxgl.LngLatBounds()
         .extend([PARKING_CONFIG.longitude, PARKING_CONFIG.latitude])
-        .extend([CARVER_PARKING.longitude, CARVER_PARKING.latitude]);
+        .extend([CARVER_PARKING.longitude, CARVER_PARKING.latitude])
+        .extend([PARKING_LOT_2.longitude, PARKING_LOT_2.latitude]);
       map.fitBounds(bounds, { padding: 90, maxZoom: 17.5, duration: 0 });
     });
 
