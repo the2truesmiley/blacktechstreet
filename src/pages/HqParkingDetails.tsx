@@ -82,6 +82,17 @@ const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${PARK
 export default function HqParkingDetails() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const lotsRef = useRef<Record<string, mapboxgl.Marker>>({});
+
+  const flyToLot = (lot: { latitude: number; longitude: number }) => {
+    if (mapRef.current) {
+      mapRef.current.flyTo({
+        center: [lot.longitude, lot.latitude],
+        zoom: 18,
+        essential: true,
+      });
+    }
+  };
 
   useSEO({
     title: 'Parking Details — BTS HQ Grand Opening | Black Tech Street',
