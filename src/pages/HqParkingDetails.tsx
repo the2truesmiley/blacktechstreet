@@ -131,8 +131,8 @@ export default function HqParkingDetails() {
       const el = document.createElement('div');
       el.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer;';
       el.innerHTML = `
-        <div style="background:rgba(255,255,255,0.95);color:#111;font-family:sans-serif;font-size:11px;font-weight:600;padding:3px 8px;border-radius:9999px;box-shadow:0 1px 4px rgba(0,0,0,0.25);white-space:nowrap;margin-bottom:4px;">${lot.shortLabel}</div>
-        <div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);"></div>
+        <div class="lot-label" style="background:rgba(255,255,255,0.95);color:#111;font-family:sans-serif;font-size:10px;font-weight:600;padding:2px 6px;border-radius:9999px;box-shadow:0 1px 4px rgba(0,0,0,0.25);white-space:nowrap;margin-bottom:4px;max-width:120px;overflow:hidden;text-overflow:ellipsis;">${lot.shortLabel}</div>
+        <div style="width:20px;height:20px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);"></div>
       `;
       const popup = new mapboxgl.Popup({ offset: 28, closeButton: false, closeOnClick: false }).setHTML(
         `<div style="color:#111;font-family:sans-serif;"><strong>${lot.label}</strong></div>`
