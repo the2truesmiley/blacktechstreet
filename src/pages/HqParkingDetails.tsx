@@ -41,6 +41,13 @@ const PARKING_LOT_3 = {
   label: 'Overflow Parking 3',
 };
 
+const PARKING_LOT_4 = {
+  latitude: 36.178327,
+  longitude: -95.985684,
+  radiusMeters: 70,
+  label: 'Overflow Parking 4',
+};
+
 // Generate a circle polygon (GeoJSON) from a center point and radius in meters.
 function circlePolygon(lng: number, lat: number, radiusMeters: number, points = 64) {
   const coords: [number, number][] = [];
