@@ -34,6 +34,13 @@ const PARKING_LOT_2 = {
   label: 'Overflow Parking 2',
 };
 
+const PARKING_LOT_3 = {
+  latitude: 36.177257,
+  longitude: -95.985477,
+  radiusMeters: 70,
+  label: 'Overflow Parking 3',
+};
+
 // Generate a circle polygon (GeoJSON) from a center point and radius in meters.
 function circlePolygon(lng: number, lat: number, radiusMeters: number, points = 64) {
   const coords: [number, number][] = [];
@@ -117,6 +124,16 @@ export default function HqParkingDetails() {
       ))
       .addTo(map);
 
+    // Fourth marker — Parking Lot 3
+    const lot3El = document.createElement('div');
+    lot3El.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
+    new mapboxgl.Marker(lot3El)
+      .setLngLat([PARKING_LOT_3.longitude, PARKING_LOT_3.latitude])
+      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
+        `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_LOT_3.label}</strong></div>`
+      ))
+      .addTo(map);
+
     // Circle overlays around overflow parking lots
     map.on('load', () => {
       const addCircle = (id: string, lng: number, lat: number, r: number) => {
@@ -141,12 +158,14 @@ export default function HqParkingDetails() {
 
       addCircle('carver-circle', CARVER_PARKING.longitude, CARVER_PARKING.latitude, CARVER_PARKING.radiusMeters);
       addCircle('lot2-circle', PARKING_LOT_2.longitude, PARKING_LOT_2.latitude, PARKING_LOT_2.radiusMeters);
+      addCircle('lot3-circle', PARKING_LOT_3.longitude, PARKING_LOT_3.latitude, PARKING_LOT_3.radiusMeters);
 
       // Fit all points into view
       const bounds = new mapboxgl.LngLatBounds()
         .extend([PARKING_CONFIG.longitude, PARKING_CONFIG.latitude])
         .extend([CARVER_PARKING.longitude, CARVER_PARKING.latitude])
-        .extend([PARKING_LOT_2.longitude, PARKING_LOT_2.latitude]);
+        .extend([PARKING_LOT_2.longitude, PARKING_LOT_2.latitude])
+        .extend([PARKING_LOT_3.longitude, PARKING_LOT_3.latitude]);
       map.fitBounds(bounds, { padding: 90, maxZoom: 17.5, duration: 0 });
     });
 
