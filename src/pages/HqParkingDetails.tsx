@@ -82,6 +82,22 @@ const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${PARK
 export default function HqParkingDetails() {
   const mapContainer = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const lotsRef = useRef<Record<string, mapboxgl.Marker>>({});
+
+  const flyToLot = (id: string, lot: { latitude: number; longitude: number }) => {
+    if (mapRef.current) {
+      mapRef.current.flyTo({
+        center: [lot.longitude, lot.latitude],
+        zoom: 18,
+        essential: true,
+      });
+    }
+    const marker = lotsRef.current[id];
+    if (marker) {
+      marker.togglePopup();
+      setTimeout(() => marker.togglePopup(), 2500);
+    }
+  };
 
   useSEO({
     title: 'Parking Details — BTS HQ Grand Opening | Black Tech Street',
@@ -107,7 +123,7 @@ export default function HqParkingDetails() {
 
 
     // Helper: build a marker with always-visible short label + hover popup with full label
-    const addParkingMarker = (lot: { latitude: number; longitude: number; label: string; shortLabel: string }) => {
+    const addParkingMarker = (id: string, lot: { latitude: number; longitude: number; label: string; shortLabel: string }) => {
       const el = document.createElement('div');
       el.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer;';
       el.innerHTML = `
@@ -123,12 +139,13 @@ export default function HqParkingDetails() {
         .addTo(map);
       el.addEventListener('mouseenter', () => marker.togglePopup());
       el.addEventListener('mouseleave', () => marker.togglePopup());
+      lotsRef.current[id] = marker;
     };
 
-    addParkingMarker(CARVER_PARKING);
-    addParkingMarker(PARKING_LOT_2);
-    addParkingMarker(PARKING_LOT_3);
-    addParkingMarker(PARKING_LOT_4);
+    addParkingMarker('carver', CARVER_PARKING);
+    addParkingMarker('lot2', PARKING_LOT_2);
+    addParkingMarker('lot3', PARKING_LOT_3);
+    addParkingMarker('lot4', PARKING_LOT_4);
 
 
     // Circle overlays around overflow parking lots
@@ -262,7 +279,15 @@ export default function HqParkingDetails() {
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex gap-2"><span className="text-primary">•</span> Free street parking is available around the GEM Building</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> Arrive early</li>
-                <li className="flex gap-2"><span className="text-primary">•</span> Overflow parking at the lot on the corner of E Pine St N & N Greenwood Ave (highlighted in green on the map)</li>
+                <li className="flex gap-2 flex-wrap">
+                  <span className="text-primary">•</span>
+                  <span>Overflow parking available at: </span>
+                  <button onClick={() => flyToLot('carver', CARVER_PARKING)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Carver Middle School Lot</button>,
+                  <button onClick={() => flyToLot('lot2', PARKING_LOT_2)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Rudisill Lot</button>,
+                  <button onClick={() => flyToLot('lot3', PARKING_LOT_3)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">East Lot</button>, and
+                  <button onClick={() => flyToLot('lot4', PARKING_LOT_4)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">PartnerTulsa Lot</button>
+                  <span> (highlighted in green on the map)</span>
+                </li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
               </ul>
             </div>
