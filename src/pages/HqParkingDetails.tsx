@@ -92,17 +92,8 @@ export default function HqParkingDetails() {
 
     map.addControl(new mapboxgl.NavigationControl(), 'top-right');
 
-    // Primary marker — GEM Building
-    const markerEl = document.createElement('div');
-    markerEl.className = 'flex items-center justify-center';
-    markerEl.innerHTML = `<div style="width:32px;height:32px;background:hsl(160,84%,39%);border-radius:50%;border:3px solid white;box-shadow:0 0 12px rgba(16,185,129,0.6);"></div>`;
+    // (Primary GEM Building marker removed — not a parking location)
 
-    new mapboxgl.Marker(markerEl)
-      .setLngLat([PARKING_CONFIG.longitude, PARKING_CONFIG.latitude])
-      .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(
-        `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_CONFIG.markerLabel}</strong><br/>${PARKING_CONFIG.address}</div>`
-      ))
-      .addTo(map);
 
     // Secondary marker — Carver Middle School overflow lot
     const carverEl = document.createElement('div');
