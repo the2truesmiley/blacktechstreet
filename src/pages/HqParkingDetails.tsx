@@ -282,10 +282,10 @@ export default function HqParkingDetails() {
                 <li className="flex gap-2 flex-wrap">
                   <span className="text-primary">•</span>
                   <span>Overflow parking available at: </span>
-                  <button onClick={() => flyToLot(CARVER_PARKING)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Carver Middle School Lot</button>,
-                  <button onClick={() => flyToLot(PARKING_LOT_2)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Rudisill Lot</button>,
-                  <button onClick={() => flyToLot(PARKING_LOT_3)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">East Lot</button>, and
-                  <button onClick={() => flyToLot(PARKING_LOT_4)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">PartnerTulsa Lot</button>
+                  <button onClick={() => flyToLot('carver', CARVER_PARKING)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Carver Middle School Lot</button>,
+                  <button onClick={() => flyToLot('lot2', PARKING_LOT_2)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Rudisill Lot</button>,
+                  <button onClick={() => flyToLot('lot3', PARKING_LOT_3)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">East Lot</button>, and
+                  <button onClick={() => flyToLot('lot4', PARKING_LOT_4)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">PartnerTulsa Lot</button>
                   <span> (highlighted in green on the map)</span>
                 </li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
