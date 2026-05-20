@@ -85,18 +85,22 @@ export default function HqParkingDetails() {
   const lotsRef = useRef<Record<string, mapboxgl.Marker>>({});
 
   const flyToLot = (id: string, lot: { latitude: number; longitude: number }) => {
-    if (mapRef.current) {
-      mapRef.current.flyTo({
-        center: [lot.longitude, lot.latitude],
-        zoom: 18,
-        essential: true,
-      });
-    }
-    const marker = lotsRef.current[id];
-    if (marker) {
-      marker.togglePopup();
-      setTimeout(() => marker.togglePopup(), 2500);
-    }
+    // Scroll map into view (helpful on mobile where map sits above the tips card)
+    mapContainer.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      if (mapRef.current) {
+        mapRef.current.flyTo({
+          center: [lot.longitude, lot.latitude],
+          zoom: 18,
+          essential: true,
+        });
+      }
+      const marker = lotsRef.current[id];
+      if (marker) {
+        marker.togglePopup();
+        setTimeout(() => marker.togglePopup(), 2500);
+      }
+    }, 350);
   };
 
   useSEO({
