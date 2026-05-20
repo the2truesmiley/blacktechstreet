@@ -37,7 +37,7 @@ const PARKING_LOT_2 = {
 const PARKING_LOT_3 = {
   latitude: 36.177257,
   longitude: -95.985477,
-  radiusMeters: 70,
+  radiusMeters: 25,
   label: 'Overflow Parking 3',
 };
 
