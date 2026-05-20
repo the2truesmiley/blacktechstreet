@@ -118,7 +118,7 @@ export default function HqParkingDetails() {
 
 
     // Helper: build a marker with always-visible short label + hover popup with full label
-    const addParkingMarker = (lot: { latitude: number; longitude: number; label: string; shortLabel: string }) => {
+    const addParkingMarker = (id: string, lot: { latitude: number; longitude: number; label: string; shortLabel: string }) => {
       const el = document.createElement('div');
       el.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer;';
       el.innerHTML = `
@@ -134,12 +134,13 @@ export default function HqParkingDetails() {
         .addTo(map);
       el.addEventListener('mouseenter', () => marker.togglePopup());
       el.addEventListener('mouseleave', () => marker.togglePopup());
+      lotsRef.current[id] = marker;
     };
 
-    addParkingMarker(CARVER_PARKING);
-    addParkingMarker(PARKING_LOT_2);
-    addParkingMarker(PARKING_LOT_3);
-    addParkingMarker(PARKING_LOT_4);
+    addParkingMarker('carver', CARVER_PARKING);
+    addParkingMarker('lot2', PARKING_LOT_2);
+    addParkingMarker('lot3', PARKING_LOT_3);
+    addParkingMarker('lot4', PARKING_LOT_4);
 
 
     // Circle overlays around overflow parking lots
