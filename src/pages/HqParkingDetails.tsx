@@ -274,7 +274,15 @@ export default function HqParkingDetails() {
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex gap-2"><span className="text-primary">•</span> Free street parking is available around the GEM Building</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> Arrive early</li>
-                <li className="flex gap-2"><span className="text-primary">•</span> Overflow parking at the lot on the corner of E Pine St N & N Greenwood Ave (highlighted in green on the map)</li>
+                <li className="flex gap-2 flex-wrap">
+                  <span className="text-primary">•</span>
+                  <span>Overflow parking available at: </span>
+                  <button onClick={() => flyToLot(CARVER_PARKING)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Carver Middle School Lot</button>,
+                  <button onClick={() => flyToLot(PARKING_LOT_2)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Rudisill Lot</button>,
+                  <button onClick={() => flyToLot(PARKING_LOT_3)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">East Lot</button>, and
+                  <button onClick={() => flyToLot(PARKING_LOT_4)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">PartnerTulsa Lot</button>
+                  <span> (highlighted in green on the map)</span>
+                </li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
               </ul>
             </div>
