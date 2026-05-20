@@ -106,45 +106,30 @@ export default function HqParkingDetails() {
     // (Primary GEM Building marker removed — not a parking location)
 
 
-    // Secondary marker — Carver Middle School overflow lot
-    const carverEl = document.createElement('div');
-    carverEl.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
-    new mapboxgl.Marker(carverEl)
-      .setLngLat([CARVER_PARKING.longitude, CARVER_PARKING.latitude])
-      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
-        `<div style="color:#111;font-family:sans-serif;"><strong>${CARVER_PARKING.label}</strong></div>`
-      ))
-      .addTo(map);
+    // Helper: build a marker with always-visible short label + hover popup with full label
+    const addParkingMarker = (lot: { latitude: number; longitude: number; label: string; shortLabel: string }) => {
+      const el = document.createElement('div');
+      el.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer;';
+      el.innerHTML = `
+        <div style="background:rgba(255,255,255,0.95);color:#111;font-family:sans-serif;font-size:11px;font-weight:600;padding:3px 8px;border-radius:9999px;box-shadow:0 1px 4px rgba(0,0,0,0.25);white-space:nowrap;margin-bottom:4px;">${lot.shortLabel}</div>
+        <div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);"></div>
+      `;
+      const popup = new mapboxgl.Popup({ offset: 28, closeButton: false, closeOnClick: false }).setHTML(
+        `<div style="color:#111;font-family:sans-serif;"><strong>${lot.label}</strong></div>`
+      );
+      const marker = new mapboxgl.Marker(el)
+        .setLngLat([lot.longitude, lot.latitude])
+        .setPopup(popup)
+        .addTo(map);
+      el.addEventListener('mouseenter', () => marker.togglePopup());
+      el.addEventListener('mouseleave', () => marker.togglePopup());
+    };
 
-    // Third marker — Parking Lot 2
-    const lot2El = document.createElement('div');
-    lot2El.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
-    new mapboxgl.Marker(lot2El)
-      .setLngLat([PARKING_LOT_2.longitude, PARKING_LOT_2.latitude])
-      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
-        `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_LOT_2.label}</strong></div>`
-      ))
-      .addTo(map);
+    addParkingMarker(CARVER_PARKING);
+    addParkingMarker(PARKING_LOT_2);
+    addParkingMarker(PARKING_LOT_3);
+    addParkingMarker(PARKING_LOT_4);
 
-    // Fourth marker — Parking Lot 3
-    const lot3El = document.createElement('div');
-    lot3El.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
-    new mapboxgl.Marker(lot3El)
-      .setLngLat([PARKING_LOT_3.longitude, PARKING_LOT_3.latitude])
-      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
-        `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_LOT_3.label}</strong></div>`
-      ))
-      .addTo(map);
-
-    // Fifth marker — Parking Lot 4
-    const lot4El = document.createElement('div');
-    lot4El.innerHTML = `<div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);opacity:0.95;"></div>`;
-    new mapboxgl.Marker(lot4El)
-      .setLngLat([PARKING_LOT_4.longitude, PARKING_LOT_4.latitude])
-      .setPopup(new mapboxgl.Popup({ offset: 20 }).setHTML(
-        `<div style="color:#111;font-family:sans-serif;"><strong>${PARKING_LOT_4.label}</strong></div>`
-      ))
-      .addTo(map);
 
     // Circle overlays around overflow parking lots
     map.on('load', () => {
