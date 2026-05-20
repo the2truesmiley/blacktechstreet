@@ -283,14 +283,25 @@ export default function HqParkingDetails() {
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex gap-2"><span className="text-primary">•</span> Free street parking is available around the GEM Building</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> Arrive early</li>
-                <li className="flex gap-2 flex-wrap">
-                  <span className="text-primary">•</span>
-                  <span>Overflow parking available at: </span>
-                  <button onClick={() => flyToLot('carver', CARVER_PARKING)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Carver Middle School Lot</button>,
-                  <button onClick={() => flyToLot('lot2', PARKING_LOT_2)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Rudisill Lot</button>,
-                  <button onClick={() => flyToLot('lot3', PARKING_LOT_3)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">East Lot</button>, and
-                  <button onClick={() => flyToLot('lot4', PARKING_LOT_4)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">PartnerTulsa Lot</button>
-                  <span> (highlighted in green on the map)</span>
+                <li className="flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Overflow parking (highlighted in green on the map):</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pl-4">
+                    <button onClick={() => flyToLot('carver', CARVER_PARKING)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> Carver Middle School Lot
+                    </button>
+                    <button onClick={() => flyToLot('lot2', PARKING_LOT_2)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> Rudisill Lot
+                    </button>
+                    <button onClick={() => flyToLot('lot3', PARKING_LOT_3)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> East Lot
+                    </button>
+                    <button onClick={() => flyToLot('lot4', PARKING_LOT_4)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> PartnerTulsa Lot
+                    </button>
+                  </div>
                 </li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
               </ul>
