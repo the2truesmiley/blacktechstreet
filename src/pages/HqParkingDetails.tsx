@@ -84,13 +84,18 @@ export default function HqParkingDetails() {
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const lotsRef = useRef<Record<string, mapboxgl.Marker>>({});
 
-  const flyToLot = (lot: { latitude: number; longitude: number }) => {
+  const flyToLot = (id: string, lot: { latitude: number; longitude: number }) => {
     if (mapRef.current) {
       mapRef.current.flyTo({
         center: [lot.longitude, lot.latitude],
         zoom: 18,
         essential: true,
       });
+    }
+    const marker = lotsRef.current[id];
+    if (marker) {
+      marker.togglePopup();
+      setTimeout(() => marker.togglePopup(), 2500);
     }
   };
 
