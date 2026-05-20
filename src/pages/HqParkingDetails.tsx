@@ -32,8 +32,8 @@ const PARKING_LOT_2 = {
   latitude: 36.178030,
   longitude: -95.984117,
   radiusMeters: 70,
-  shortLabel: 'Lot 2',
-  label: 'Overflow Parking 2',
+  shortLabel: 'Rudisill Lot',
+  label: 'Rudisill Lot',
 };
 
 const PARKING_LOT_3 = {
