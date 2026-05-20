@@ -85,18 +85,22 @@ export default function HqParkingDetails() {
   const lotsRef = useRef<Record<string, mapboxgl.Marker>>({});
 
   const flyToLot = (id: string, lot: { latitude: number; longitude: number }) => {
-    if (mapRef.current) {
-      mapRef.current.flyTo({
-        center: [lot.longitude, lot.latitude],
-        zoom: 18,
-        essential: true,
-      });
-    }
-    const marker = lotsRef.current[id];
-    if (marker) {
-      marker.togglePopup();
-      setTimeout(() => marker.togglePopup(), 2500);
-    }
+    // Scroll map into view (helpful on mobile where map sits above the tips card)
+    mapContainer.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      if (mapRef.current) {
+        mapRef.current.flyTo({
+          center: [lot.longitude, lot.latitude],
+          zoom: 18,
+          essential: true,
+        });
+      }
+      const marker = lotsRef.current[id];
+      if (marker) {
+        marker.togglePopup();
+        setTimeout(() => marker.togglePopup(), 2500);
+      }
+    }, 350);
   };
 
   useSEO({
@@ -127,8 +131,8 @@ export default function HqParkingDetails() {
       const el = document.createElement('div');
       el.style.cssText = 'display:flex;flex-direction:column;align-items:center;cursor:pointer;';
       el.innerHTML = `
-        <div style="background:rgba(255,255,255,0.95);color:#111;font-family:sans-serif;font-size:11px;font-weight:600;padding:3px 8px;border-radius:9999px;box-shadow:0 1px 4px rgba(0,0,0,0.25);white-space:nowrap;margin-bottom:4px;">${lot.shortLabel}</div>
-        <div style="width:22px;height:22px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);"></div>
+        <div class="lot-label" style="background:rgba(255,255,255,0.95);color:#111;font-family:sans-serif;font-size:10px;font-weight:600;padding:2px 6px;border-radius:9999px;box-shadow:0 1px 4px rgba(0,0,0,0.25);white-space:nowrap;margin-bottom:4px;max-width:120px;overflow:hidden;text-overflow:ellipsis;">${lot.shortLabel}</div>
+        <div style="width:20px;height:20px;background:hsl(160,84%,39%);border-radius:50%;border:2px solid white;box-shadow:0 0 8px rgba(16,185,129,0.6);"></div>
       `;
       const popup = new mapboxgl.Popup({ offset: 28, closeButton: false, closeOnClick: false }).setHTML(
         `<div style="color:#111;font-family:sans-serif;"><strong>${lot.label}</strong></div>`
@@ -279,14 +283,25 @@ export default function HqParkingDetails() {
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li className="flex gap-2"><span className="text-primary">•</span> Free street parking is available around the GEM Building</li>
                 <li className="flex gap-2"><span className="text-primary">•</span> Arrive early</li>
-                <li className="flex gap-2 flex-wrap">
-                  <span className="text-primary">•</span>
-                  <span>Overflow parking available at: </span>
-                  <button onClick={() => flyToLot('carver', CARVER_PARKING)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Carver Middle School Lot</button>,
-                  <button onClick={() => flyToLot('lot2', PARKING_LOT_2)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">Rudisill Lot</button>,
-                  <button onClick={() => flyToLot('lot3', PARKING_LOT_3)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">East Lot</button>, and
-                  <button onClick={() => flyToLot('lot4', PARKING_LOT_4)} className="text-primary underline hover:text-primary/80 cursor-pointer bg-transparent border-none p-0 font-inherit text-sm">PartnerTulsa Lot</button>
-                  <span> (highlighted in green on the map)</span>
+                <li className="flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <span className="text-primary">•</span>
+                    <span>Overflow parking (highlighted in green on the map):</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pl-4">
+                    <button onClick={() => flyToLot('carver', CARVER_PARKING)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> Carver Middle School Lot
+                    </button>
+                    <button onClick={() => flyToLot('lot2', PARKING_LOT_2)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> Rudisill Lot
+                    </button>
+                    <button onClick={() => flyToLot('lot3', PARKING_LOT_3)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> East Lot
+                    </button>
+                    <button onClick={() => flyToLot('lot4', PARKING_LOT_4)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
+                      <MapPin className="w-3 h-3" /> PartnerTulsa Lot
+                    </button>
+                  </div>
                 </li>
                 <li className="flex gap-2"><span className="text-primary">•</span> This is an outdoor event — dress comfortably for the weather</li>
               </ul>
