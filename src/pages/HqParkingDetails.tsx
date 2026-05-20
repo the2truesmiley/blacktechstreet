@@ -40,8 +40,8 @@ const PARKING_LOT_3 = {
   latitude: 36.177257,
   longitude: -95.985477,
   radiusMeters: 25,
-  shortLabel: 'East Lot',
-  label: 'East Lot',
+  shortLabel: 'GEM East Lot',
+  label: 'GEM East Lot',
 };
 
 const PARKING_LOT_4 = {
@@ -296,7 +296,7 @@ export default function HqParkingDetails() {
                       <MapPin className="w-3 h-3" /> Rudisill Lot
                     </button>
                     <button onClick={() => flyToLot('lot3', PARKING_LOT_3)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
-                      <MapPin className="w-3 h-3" /> East Lot
+                      <MapPin className="w-3 h-3" /> GEM East Lot
                     </button>
                     <button onClick={() => flyToLot('lot4', PARKING_LOT_4)} className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors">
                       <MapPin className="w-3 h-3" /> PartnerTulsa Lot
