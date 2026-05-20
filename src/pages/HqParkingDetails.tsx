@@ -40,8 +40,8 @@ const PARKING_LOT_3 = {
   latitude: 36.177257,
   longitude: -95.985477,
   radiusMeters: 25,
-  shortLabel: 'Lot 3',
-  label: 'Overflow Parking 3',
+  shortLabel: 'East Lot',
+  label: 'East Lot',
 };
 
 const PARKING_LOT_4 = {
