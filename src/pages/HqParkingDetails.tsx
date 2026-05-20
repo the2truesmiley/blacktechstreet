@@ -24,13 +24,15 @@ const CARVER_PARKING = {
   latitude: 36.176586,
   longitude: -95.986343,
   radiusMeters: 70,
-  label: 'Overflow Parking 1 — Pine St & Greenwood Ave',
+  shortLabel: 'Carver Middle School Lot',
+  label: 'Carver Middle School Lot',
 };
 
 const PARKING_LOT_2 = {
   latitude: 36.178030,
   longitude: -95.984117,
   radiusMeters: 70,
+  shortLabel: 'Lot 2',
   label: 'Overflow Parking 2',
 };
 
@@ -38,11 +40,13 @@ const PARKING_LOT_3 = {
   latitude: 36.177257,
   longitude: -95.985477,
   radiusMeters: 25,
+  shortLabel: 'Lot 3',
   label: 'Overflow Parking 3',
 };
 
 const PARKING_LOT_4 = {
   latitude: 36.178327,
+
   longitude: -95.985684,
   radiusMeters: 70,
   label: 'Overflow Parking 4',
