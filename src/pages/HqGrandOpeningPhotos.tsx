@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useSEO } from "@/hooks/useSEO";
 
-const BUCKET = "gallery";
-const FOLDER = "hq-grand-opening";
+const BUCKET = "hqopeningphotos";
+const FOLDER = "";
 
 interface Photo {
   name: string;
