@@ -1,0 +1,1 @@
+CREATE POLICY "Public read hqopeningphotos" ON storage.objects FOR SELECT USING (bucket_id = 'hqopeningphotos');
