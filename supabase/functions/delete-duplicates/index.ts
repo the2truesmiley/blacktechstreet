@@ -11,12 +11,8 @@ Deno.serve(async (req) => {
     Deno.env.get("SUPABASE_URL")!,
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
   );
-  const files = [
-    "DSC01810-2.jpg",
-    "DSC01817-2.jpg",
-    "RIV02370-2.jpg",
-    "RIV02413-2.jpg",
-  ];
+  const body = await req.json().catch(() => ({}));
+  const files: string[] = body.files ?? [];
   const { data, error } = await supabase.storage
     .from("hqopeningphotos")
     .remove(files);
