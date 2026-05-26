@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Helmet } from "react-helmet-async";
 import { Download, X, Share2, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { useSEO } from "@/hooks/useSEO";
 
 const BUCKET = "gallery";
 const FOLDER = "hq-grand-opening";
@@ -79,16 +79,15 @@ export default function HqGrandOpeningPhotos() {
     }
   };
 
+  useSEO({
+    title: "HQ Grand Opening Photos | Black Tech Street",
+    description:
+      "Thank you for joining us. Browse, download, and share photos from the Black Tech Street HQ Grand Opening.",
+    canonical: "https://blacktechstreet.ai/hqgrandopeningphotos",
+  });
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Helmet>
-        <title>HQ Grand Opening Photos | Black Tech Street</title>
-        <meta
-          name="description"
-          content="Thank you for joining us. Browse, download, and share photos from the Black Tech Street HQ Grand Opening."
-        />
-        <link rel="canonical" href="https://blacktechstreet.ai/hqgrandopeningphotos" />
-      </Helmet>
 
       <header className="border-b border-border/40">
         <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
