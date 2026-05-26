@@ -18,6 +18,7 @@ const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember20
 const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
 const AspireParkingDetails = lazy(() => import("./pages/AspireParkingDetails"));
 const HqParkingDetails = lazy(() => import("./pages/HqParkingDetails"));
+const HqGrandOpeningPhotos = lazy(() => import("./pages/HqGrandOpeningPhotos"));
 const FreeAiWorkshop = lazy(() => import("./pages/FreeAiWorkshop"));
 const FreeAiTrainingFaq = lazy(() => import("./pages/FreeAiTrainingFaq"));
 const Partners = lazy(() => import("./pages/Partners"));
@@ -54,6 +55,7 @@ const App = () => (
             <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
             <Route path="/aspire/parking" element={<AspireParkingDetails />} />
             <Route path="/hq/parking" element={<HqParkingDetails />} />
+            <Route path="/hqgrandopeningphotos" element={<HqGrandOpeningPhotos />} />
             <Route path="/free-ai-workshop" element={<FreeAiWorkshop />} />
             <Route path="/free-ai-training-faq" element={<FreeAiTrainingFaq />} />
             <Route path="/partners" element={<Partners />} />
