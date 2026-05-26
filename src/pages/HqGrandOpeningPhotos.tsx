@@ -90,35 +90,70 @@ export default function HqGrandOpeningPhotos() {
   return (
     <div className="min-h-screen bg-background text-foreground">
 
-      <header className="border-b border-border/40">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition"
-          >
-            <ArrowLeft className="w-4 h-4" /> Back home
-          </Link>
-          <button
-            onClick={sharePage}
-            className="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 transition"
-          >
-            <Share2 className="w-4 h-4" /> Share
-          </button>
+      {/* Editorial header — cream block */}
+      <header className="bg-[hsl(45,38%,94%)] text-[hsl(150,30%,12%)]">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 pt-6 pb-3">
+          {/* Top meta row */}
+          <div className="grid grid-cols-3 items-start gap-4 text-[10px] md:text-xs tracking-[0.22em] uppercase font-medium">
+            <div className="flex items-center">
+              <Link to="/" aria-label="Back home" className="inline-flex items-center gap-2 hover:opacity-70 transition">
+                <img src={logoCircuit} alt="Black Tech Street" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
+              </Link>
+            </div>
+            <div className="text-center leading-relaxed">
+              <div>Black Tech Street</div>
+              <div className="text-[hsl(150,20%,30%)]">Historic Greenwood · Tulsa, Oklahoma</div>
+            </div>
+            <div className="text-right leading-relaxed">
+              <div>05.21.2026</div>
+              <div className="text-[hsl(150,20%,30%)]">Grand Opening</div>
+            </div>
+          </div>
+
+          <div className="mt-5 h-px bg-[hsl(150,30%,12%)]/30" />
+
+          {/* Display title */}
+          <div className="text-center py-10 md:py-14">
+            <h1 className="font-serif italic tracking-tight text-[hsl(150,40%,14%)] text-[2.5rem] sm:text-6xl md:text-7xl leading-[1.02]">
+              Black Tech Street HQ
+              <br />
+              <span className="text-[hsl(150,40%,14%)]">
+                <span className="not-italic">&amp;</span> the Greenwood Cyber <span className="not-italic">+</span> AI Lab
+              </span>
+            </h1>
+            <p className="mt-6 italic text-base md:text-lg text-[hsl(150,25%,25%)]">
+              in collaboration with Microsoft and ecosystem partners
+            </p>
+          </div>
+
+          {/* Sub actions row */}
+          <div className="flex items-center justify-between pb-6 text-xs tracking-[0.2em] uppercase">
+            <Link to="/" className="inline-flex items-center gap-2 hover:opacity-70 transition">
+              <ArrowLeft className="w-3.5 h-3.5" /> Back home
+            </Link>
+            <button
+              onClick={sharePage}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[hsl(150,30%,12%)]/40 hover:bg-[hsl(150,30%,12%)] hover:text-[hsl(45,38%,94%)] transition"
+            >
+              <Share2 className="w-3.5 h-3.5" /> Share
+            </button>
+          </div>
         </div>
       </header>
 
-      <section className="max-w-4xl mx-auto px-6 pt-16 pb-12 text-center">
+      <section className="max-w-4xl mx-auto px-6 pt-14 pb-10 text-center">
         <p className="text-primary text-xs font-medium tracking-[0.2em] uppercase mb-4">
           Thank You
         </p>
-        <h1 className="font-display text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-          HQ Grand Opening
-        </h1>
+        <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight mb-6">
+          A Historic Moment, Captured
+        </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
           Thank you for being part of a historic moment on Black Wall Street.
           Browse, download, and share the memories from our HQ Grand Opening.
         </p>
       </section>
+
 
       <section className="max-w-6xl mx-auto px-6 pb-24">
         {loading ? (
