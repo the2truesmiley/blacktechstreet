@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Download, X, Share2, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import logoCircuit from "@/assets/logo_b_circuit.png";
 import { useSEO } from "@/hooks/useSEO";
 
 const BUCKET = "hqopeningphotos";
