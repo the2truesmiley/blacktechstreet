@@ -49,7 +49,7 @@ const App = () => (
             <Route path="/about" element={<AboutUs />} />
             <Route path="/aspire" element={<Aspire />} />
             <Route path="/aspire/events" element={<AspireEvents />} />
-            <Route path="/aspire/events/june-2026" element={<AspireEventJune2026 />} />
+            <Route path="/aspire/events/june-2026" element={<Navigate to="/aspire/events" replace />} />
             <Route path="/aspire/events/september-2026" element={<AspireEventSeptember2026 />} />
             <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
             <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
