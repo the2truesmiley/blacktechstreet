@@ -12,7 +12,7 @@ import Index from "./pages/Index";
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const Aspire = lazy(() => import("./pages/Aspire"));
 const AspireEvents = lazy(() => import("./pages/AspireEvents"));
-const AspireEventJune2026 = lazy(() => import("./pages/AspireEventJune2026"));
+
 const AspireEventSeptember2026 = lazy(() => import("./pages/AspireEventSeptember2026"));
 const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember2026"));
 const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
