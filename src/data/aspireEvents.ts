@@ -21,16 +21,6 @@ export const aspireEvents2026: AspireEvent[] = [
     status: "sold-out",
   },
   {
-    id: "june-2026",
-    date: new Date(2026, 5, 27), // June 27, 2026
-    title: "ASPIRE AI Workshop",
-    time: "10:00 AM - 6:00 PM",
-    location: "Langston Tulsa",
-    locationFull: "Langston University - Tulsa Campus",
-    registrationUrl: "https://tally.so/embed/kd6Yyo",
-    status: "registration-open",
-  },
-  {
     id: "september-2026",
     date: new Date(2026, 8, 26), // September 26, 2026
     title: "ASPIRE AI Workshop",
