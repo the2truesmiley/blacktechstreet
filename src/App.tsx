@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Eagerly load the homepage for instant first paint
 import Index from "./pages/Index";
@@ -12,7 +12,7 @@ import Index from "./pages/Index";
 const AboutUs = lazy(() => import("./pages/AboutUs"));
 const Aspire = lazy(() => import("./pages/Aspire"));
 const AspireEvents = lazy(() => import("./pages/AspireEvents"));
-const AspireEventJune2026 = lazy(() => import("./pages/AspireEventJune2026"));
+
 const AspireEventSeptember2026 = lazy(() => import("./pages/AspireEventSeptember2026"));
 const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember2026"));
 const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
@@ -49,7 +49,7 @@ const App = () => (
             <Route path="/about" element={<AboutUs />} />
             <Route path="/aspire" element={<Aspire />} />
             <Route path="/aspire/events" element={<AspireEvents />} />
-            <Route path="/aspire/events/june-2026" element={<AspireEventJune2026 />} />
+            <Route path="/aspire/events/june-2026" element={<Navigate to="/aspire/events" replace />} />
             <Route path="/aspire/events/september-2026" element={<AspireEventSeptember2026 />} />
             <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
             <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
