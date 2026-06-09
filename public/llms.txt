@@ -1,0 +1,22 @@
+# Black Tech Street
+
+> Rebirthing Historic Black Wall Street as an AI innovation economy in Greenwood, Tulsa, Oklahoma.
+
+Black Tech Street is an organization working to establish Tulsa's Historic Greenwood District, the site of the original Black Wall Street, as a premier AI innovation economy. Founded and led by Tyrance Billingsley II, Founder & CEO, the organization builds community fluency in artificial intelligence through hands-on workshops, corporate partnerships, and local events. The flagship program is the ASPIRE AI Workshop, a free, full-day GenAI fluency experience designed for beginners and professionals alike. Black Tech Street partners with NVIDIA, Microsoft, and local institutions to advance AI education, innovation, and economic empowerment in Tulsa and beyond.
+
+## Pages
+
+- [/](/): Home page with mission overview, testimonials, and social links.
+- [/about](/about): About Black Tech Street, the mission to rebirth Black Wall Street, leadership team, and organization history.
+- [/aspire](/aspire): Overview of the ASPIRE AI Workshop program, what to expect, and how to get involved.
+- [/aspire/events](/aspire/events): Calendar of upcoming and past ASPIRE AI Workshop events.
+- [/aspire/events/september-2026](/aspire/events/september-2026): Details for the September 2026 ASPIRE AI Workshop in Tulsa.
+- [/aspire/events/december-2026](/aspire/events/december-2026): Details for the December 2026 ASPIRE AI Workshop in Tulsa.
+- [/aspire/parking](/aspire/parking): Parking and transit information for ASPIRE event attendees.
+- [/free-ai-workshop](/free-ai-workshop): Registration and information for free AI training workshops.
+- [/free-ai-training-faq](/free-ai-training-faq): Frequently asked questions about free AI training offerings.
+- [/partners](/partners): Corporate and community partners supporting Black Tech Street's mission.
+- [/contact](/contact): Contact form and information for reaching Black Tech Street.
+- [/gallery](/gallery): Photo gallery from Black Tech Street events and community activities.
+- [/news](/news): News updates, press coverage, and organizational announcements.
+- [/donate](/donate): Support Black Tech Street through donations.
