@@ -143,7 +143,7 @@ export const teamMembers: TeamMember[] = [
     name: "Tyrance Billingsley II",
     title: "Founder & CEO",
     shortBio: "Tyrance Billingsley II is a Tulsa-born entrepreneur, technologist, and ecosystem builder. Under his leadership, Black Tech Street has brokered a citywide alliance with Microsoft to establish 21st-century Greenwood and secured federal Tech Hubs designation with an eight-figure award.",
-    expandedBio: `Tyrance Billingsley II is a Tulsa-born and raised entrepreneur, technologist and ecosystem builder. Tyrance is the founder and executive director of Black Tech Street, an organization dedicated to rebirthing historic Black Wall Street as the nation's premiere innovation economy rooted in the critical technology areas of cybersecurity, data analytics and responsible artificial intelligence.
+    expandedBio: `Tyrance Billingsley II is a Tulsa-born and raised entrepreneur, technologist and ecosystem builder. Tyrance is the Founder & CEO of Black Tech Street, an organization dedicated to rebirthing historic Black Wall Street as the nation's premiere innovation economy rooted in the critical technology areas of cybersecurity, data analytics and responsible artificial intelligence.
 
 Under his leadership, Black Tech Street has, in just three years, brokered a citywide alliance with Microsoft to establish 21st-century Greenwood and, as a leader in cyber and AI, served on the Tulsa Tech Hub steering committee that secured both a federal Tech Hubs designation and funding from the Economic Development Administration, with an eight-figure award being allocated to Black Tech Street's work, and generated widespread community support for the vision of rebirthing Black Wall Street through technology.
 
