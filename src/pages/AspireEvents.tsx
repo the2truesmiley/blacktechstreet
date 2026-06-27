@@ -40,10 +40,10 @@ export default function AspireEvents() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useSEO({
-    title: 'ASPIRE GenAI Workshops | Black Tech Street – Tulsa AI Training',
+    title: 'ASPIRE GenAI Workshops | Black Tech Street',
     description: 'Register for ASPIRE GenAI Fluency Workshops in Tulsa. Hands-on AI training, free childcare, and community networking at Langston Tulsa. 2026 dates available.',
-    canonical: 'https://blacktechstreet.com/aspire/events',
-    ogImage: 'https://blacktechstreet.com/og-image.png',
+    canonical: 'https://blacktechstreet.ai/aspire/events',
+    ogImage: 'https://blacktechstreet.ai/og-image.png',
   });
   
   const { scrollYProgress } = useScroll();
