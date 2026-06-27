@@ -16,7 +16,7 @@ const Index = () => {
   useSEO({
     title: 'Black Tech Street | Rebirthing Historic Black Wall Street',
     description: "Explore Black Tech Street's journey rebirthing Historic Black Wall Street as a world-class AI innovation economy in Greenwood, Tulsa.",
-    canonical: 'https://blacktechstreet.com/',
+    canonical: 'https://blacktechstreet.ai/',
   });
 
   return (
