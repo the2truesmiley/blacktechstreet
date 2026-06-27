@@ -96,6 +96,7 @@ export function TestimonialsSection() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={goToPrev}
+              aria-label="Previous testimonial"
               className="p-2 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition-all duration-200 hover:scale-110"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -110,6 +111,8 @@ export function TestimonialsSection() {
                     setIsAutoPlaying(false);
                     setActiveIndex(index);
                   }}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-current={activeIndex === index}
                   className={cn(
                     "transition-all duration-300",
                     activeIndex === index
@@ -122,6 +125,7 @@ export function TestimonialsSection() {
             
             <button
               onClick={goToNext}
+              aria-label="Next testimonial"
               className="p-2 rounded-full bg-primary/10 border border-primary/20 text-primary hover:bg-primary/20 transition-all duration-200 hover:scale-110"
             >
               <ChevronRight className="h-5 w-5" />

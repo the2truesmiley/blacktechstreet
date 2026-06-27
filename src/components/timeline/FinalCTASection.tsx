@@ -50,7 +50,7 @@ export function FinalCTASection() {
               "shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30"
             )}
           >
-            Learn More
+            Learn about our mission
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
 

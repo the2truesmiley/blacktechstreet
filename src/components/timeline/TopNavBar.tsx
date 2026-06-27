@@ -437,6 +437,8 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
             className={cn(
               "md:hidden p-2.5 rounded-lg border transition-colors",
               isHome
