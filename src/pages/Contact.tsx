@@ -24,7 +24,7 @@ export default function Contact() {
   useSEO({
     title: 'Contact Us | Black Tech Street',
     description: 'Get in touch with Black Tech Street. Inquire about programs, partnerships, or how to get involved in Tulsa\'s AI innovation movement.',
-    canonical: 'https://blacktechstreet.com/contact',
+    canonical: 'https://blacktechstreet.ai/contact',
   });
 
   useEffect(() => {

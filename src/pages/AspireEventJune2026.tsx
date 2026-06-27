@@ -42,7 +42,7 @@ export default function AspireEventJune2026() {
   useSEO({
     title: 'June 2026 ASPIRE Workshop | Black Tech Street',
     description: 'Register for the June 2026 ASPIRE GenAI Fluency Workshop in Greenwood, Tulsa. Hands-on AI training with free childcare.',
-    canonical: 'https://blacktechstreet.com/aspire/events/june-2026',
+    canonical: 'https://blacktechstreet.ai/aspire/events/june-2026',
   });
 
   const [selectedEvent, setSelectedEvent] = useState<AspireEvent | null>(null);

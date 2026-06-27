@@ -12,7 +12,7 @@ export default function Gallery() {
   useSEO({
     title: 'Gallery | Black Tech Street',
     description: 'Photos from Black Tech Street workshops, events, and community gatherings in Greenwood, Tulsa.',
-    canonical: 'https://blacktechstreet.com/gallery',
+    canonical: 'https://blacktechstreet.ai/gallery',
   });
 
   const [activeTag, setActiveTag] = useState('All');

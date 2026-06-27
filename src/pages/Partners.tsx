@@ -97,10 +97,10 @@ const partners = [
 
 export default function Partners() {
   useSEO({
-    title: 'Partners | Black Tech Street — AI & Cybersecurity in Greenwood, Tulsa',
+    title: 'Partners | Black Tech Street',
     description: 'Microsoft, NVIDIA, MIT, NYU Tulsa, OU Polytechnic, and 20+ Tulsa organizations partnering with Black Tech Street to build the next AI and cybersecurity hub in Historic Greenwood.',
-    canonical: 'https://blacktechstreet.com/partners',
-    ogImage: 'https://blacktechstreet.com/og-image.png',
+    canonical: 'https://blacktechstreet.ai/partners',
+    ogImage: 'https://blacktechstreet.ai/og-image.png',
   });
 
   // Structured data: CollectionPage + organization partners list

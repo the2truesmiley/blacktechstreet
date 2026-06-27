@@ -34,7 +34,7 @@ export default function Donate() {
   useSEO({
     title: 'Support Black Tech Street | Donate',
     description: 'Support Black Tech Street and help build the future of AI innovation rooted in Tulsa\'s Greenwood District.',
-    canonical: 'https://blacktechstreet.com/donate',
+    canonical: 'https://blacktechstreet.ai/donate',
   });
 
   useEffect(() => {

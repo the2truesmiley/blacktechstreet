@@ -68,7 +68,7 @@ const faqCategories = [
 
 export default function FreeAiTrainingFaq() {
   useSEO({
-    title: 'Free AI Training FAQ | ASPIRE Workshop Questions | Black Tech Street',
+    title: 'Free AI Training FAQ | Black Tech Street',
     description: 'Got questions about free AI training in Tulsa? Find answers about ASPIRE AI Workshops — eligibility, childcare, what you\'ll learn, and how to register.',
     canonical: 'https://blacktechstreet.ai/free-ai-training-faq',
   });

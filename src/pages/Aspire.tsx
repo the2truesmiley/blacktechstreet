@@ -13,7 +13,7 @@ const Aspire = () => {
   useSEO({
     title: 'ASPIRE | Black Tech Street',
     description: 'ASPIRE offers GenAI fluency and responsible innovation training for life, work, and community in Greenwood, Tulsa.',
-    canonical: 'https://blacktechstreet.com/aspire',
+    canonical: 'https://blacktechstreet.ai/aspire',
   });
 
   useEffect(() => {
