@@ -54,7 +54,7 @@ const faqs = [
 
 export default function FreeAiWorkshop() {
   useSEO({
-    title: 'Free AI Workshop in Tulsa | Learn AI for Free | ASPIRE by Black Tech Street',
+    title: 'Free AI Workshop in Tulsa | Black Tech Street ASPIRE',
     description: 'Free hands-on AI training in Tulsa, Oklahoma. Learn ChatGPT, AI tools & responsible innovation. No experience needed. Free childcare & laptops. Register now.',
     canonical: 'https://blacktechstreet.ai/free-ai-workshop',
   });
