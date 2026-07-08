@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion, useMotionValue, useSpring, useInView } from 'framer-motion';
 import { Calendar, Clock, MapPin, Laptop, Baby } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
@@ -11,6 +11,88 @@ import btsLogo from '@/assets/logo_bts_dark_glow.png';
 
 
 const TALLY_FORM_ID = 'zxvANM';
+
+function useTypewriter(text: string, speed: number = 40, startDelay: number = 600) {
+  const [displayed, setDisplayed] = useState('');
+  const [started, setStarted] = useState(false);
+  const shouldReduceMotion = useReducedMotion() ?? false;
+
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      setDisplayed(text);
+      return;
+    }
+    const timer = setTimeout(() => setStarted(true), startDelay);
+    return () => clearTimeout(timer);
+  }, [text, startDelay, shouldReduceMotion]);
+
+  useEffect(() => {
+    if (!started || shouldReduceMotion) return;
+    setDisplayed('');
+    let i = 0;
+    const interval = setInterval(() => {
+      i += 1;
+      setDisplayed(text.slice(0, i));
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+    return () => clearInterval(interval);
+  }, [started, text, speed, shouldReduceMotion]);
+
+  return displayed;
+}
+
+interface CountUpProps {
+  to: number;
+  duration?: number;
+  suffix?: string;
+  prefix?: string;
+  className?: string;
+  startWhen?: boolean;
+}
+
+function CountUp({ to, duration = 2, suffix = '', prefix = '', className, startWhen = true }: CountUpProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { duration: duration * 1000, bounce: 0 });
+  const [display, setDisplay] = useState('0');
+  const shouldReduceMotion = useReducedMotion() ?? false;
+
+  useEffect(() => {
+    if (isInView && startWhen) {
+      motionValue.set(shouldReduceMotion ? to : 0);
+      if (!shouldReduceMotion) {
+        motionValue.set(to);
+      }
+    }
+  }, [isInView, startWhen, to, motionValue, shouldReduceMotion]);
+
+  useEffect(() => {
+    const unsubscribe = springValue.on('change', (latest) => {
+      setDisplay(Math.round(latest).toString());
+    });
+    return () => unsubscribe();
+  }, [springValue]);
+
+  return (
+    <span ref={ref} className={className}>
+      {prefix}{display}{suffix}
+    </span>
+  );
+}
+
+function TypewriterHeading({ text, className }: { text: string; className?: string }) {
+  const typed = useTypewriter(text, 45, 800);
+  const shouldReduceMotion = useReducedMotion() ?? false;
+  return (
+    <span className={className}>
+      {typed}
+      {!shouldReduceMotion && (
+        <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 align-middle animate-pulse" aria-hidden="true" />
+      )}
+    </span>
+  );
+}
 
 
 export default function AspireTypros() {
@@ -62,14 +144,16 @@ export default function AspireTypros() {
   }, [iframeKey, startLoadTimer, clearLoadTimeout]);
 
   const fadeUp = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
     show: (i: number = 0) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
-        delay: i * 0.08,
-        ease: [0.22, 1, 0.36, 1] as const,
+        type: 'spring' as const,
+        stiffness: 55,
+        damping: 22,
+        mass: 1,
+        delay: i * 0.12,
       },
     }),
   };
@@ -125,15 +209,24 @@ export default function AspireTypros() {
               </span>
             </motion.div>
 
-            <motion.h1
+            <motion.div
               variants={fadeUp}
               custom={2}
-              className="text-4xl md:text-6xl font-display font-bold mb-5 tracking-tight leading-[1.05]"
+              className="mb-5"
             >
-              AI is changing how we work.
-              <br />
-              <span className="text-primary">Learn to use it well.</span>
-            </motion.h1>
+              <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight leading-[1.05]">
+                <TypewriterHeading text="AI is changing how we work." />
+                <br />
+                <motion.span
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.2, type: 'spring' as const, stiffness: 55, damping: 22 }}
+                  className="text-primary"
+                >
+                  Learn to use it well.
+                </motion.span>
+              </h1>
+            </motion.div>
 
             <motion.p
               variants={fadeUp}
@@ -176,6 +269,27 @@ export default function AspireTypros() {
             ))}
           </motion.div>
 
+          {/* Animated stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ type: 'spring' as const, stiffness: 55, damping: 22, delay: 0.1 }}
+            className="grid grid-cols-2 gap-4 mb-10"
+          >
+            <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-6 text-center">
+              <div className="text-5xl md:text-7xl font-display font-bold text-primary mb-1">
+                <CountUp to={8} suffix="" />
+              </div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">Hours of hands-on training</div>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-6 text-center">
+              <div className="text-5xl md:text-7xl font-display font-bold text-primary mb-1">
+                <CountUp to={1} suffix="" />
+              </div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">Day intensive workshop</div>
+            </div>
+          </motion.div>
 
           {/* What to expect */}
           <motion.div
