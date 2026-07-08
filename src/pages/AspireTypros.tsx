@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Laptop, Baby } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
+import { cn } from '@/lib/utils';
 import typrosBadge from '@/assets/typros-badge.png.asset.json';
 
 
