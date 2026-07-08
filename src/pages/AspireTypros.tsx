@@ -23,7 +23,7 @@ export default function AspireTypros() {
     window.scrollTo(0, 0);
   }, []);
 
-  const shouldReduceMotion = useReducedMotion() ?? false;
+  const shouldReduceMotion = useReducedMotion();
 
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
