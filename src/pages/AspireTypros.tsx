@@ -488,8 +488,6 @@ export default function AspireTypros() {
                 .
               </p>
             )}
-
-
           </motion.div>
 
           {/* Black Tech Street brand closer */}
