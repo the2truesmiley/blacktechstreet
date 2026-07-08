@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Laptop, Baby, Sparkles } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Calendar, Clock, MapPin, Laptop, Baby } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
 import typrosBadge from '@/assets/typros-badge.png.asset.json';
+
 
 const TALLY_FORM_ID = 'zxvANM';
 
@@ -22,6 +23,21 @@ export default function AspireTypros() {
     window.scrollTo(0, 0);
   }, []);
 
+  const shouldReduceMotion = useReducedMotion();
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+    show: (i: number = 0) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        delay: i * 0.08,
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
+    }),
+  };
+
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <TechBackground isVisible={true} />
@@ -31,12 +47,16 @@ export default function AspireTypros() {
         <div className="max-w-4xl mx-auto">
           {/* Hero */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-10"
+            initial="hidden"
+            animate="show"
+            variants={fadeUp}
+            className="text-center mb-12"
           >
-            <div className="flex items-center justify-center gap-4 md:gap-6 mb-6">
+            <motion.div
+              variants={fadeUp}
+              custom={0}
+              className="flex items-center justify-center gap-4 md:gap-6 mb-8"
+            >
               <img
                 src={typrosBadge.url}
                 alt="TYPROS logo"
@@ -51,55 +71,80 @@ export default function AspireTypros() {
                   ASPIRE AI Workshop
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider border border-primary/30 mb-6">
-              <Sparkles className="w-3.5 h-3.5" />
-              Registration Open
-            </div>
+            <motion.div
+              variants={fadeUp}
+              custom={1}
+              className="inline-flex items-center gap-2.5 mb-8"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              </span>
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+                Now Accepting Registrations
+              </span>
+            </motion.div>
 
-            <h1 className="text-3xl md:text-5xl font-display font-bold mb-4 tracking-tight">
+            <motion.h1
+              variants={fadeUp}
+              custom={2}
+              className="text-4xl md:text-6xl font-display font-bold mb-5 tracking-tight leading-[1.05]"
+            >
               AI is changing how we work.
               <br />
               <span className="text-primary">Learn to use it well.</span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <motion.p
+              variants={fadeUp}
+              custom={3}
+              className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
+            >
               TYPROS and Black Tech Street are partnering to help young professionals better
               understand how AI can be used ethically, strategically, and effectively in the
               workplace.
-            </p>
+            </motion.p>
           </motion.div>
 
           {/* Event details */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.09 } },
+            }}
             className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10"
           >
-            <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5">
-              <Calendar className="w-5 h-5 text-primary mb-2" />
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Date</div>
-              <div className="font-display font-bold text-lg">August 20, 2026</div>
-            </div>
-            <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5">
-              <Clock className="w-5 h-5 text-primary mb-2" />
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Time</div>
-              <div className="font-display font-bold text-lg">9:00 AM – 5:00 PM</div>
-            </div>
-            <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5">
-              <MapPin className="w-5 h-5 text-primary mb-2" />
-              <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Location</div>
-              <div className="font-display font-bold text-lg">Langston Tulsa Campus</div>
-            </div>
+            {[
+              { icon: Calendar, label: 'Date', value: 'August 20, 2026' },
+              { icon: Clock, label: 'Time', value: '9:00 AM – 5:00 PM' },
+              { icon: MapPin, label: 'Location', value: 'Langston Tulsa Campus' },
+            ].map(({ icon: Icon, label, value }) => (
+              <motion.div
+                key={label}
+                variants={fadeUp}
+                whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="group rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5 hover:border-primary/50 hover:bg-card/90 transition-colors"
+              >
+                <Icon className="w-5 h-5 text-primary mb-2 transition-transform group-hover:scale-110" />
+                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{label}</div>
+                <div className="font-display font-bold text-lg">{value}</div>
+              </motion.div>
+            ))}
           </motion.div>
+
 
           {/* What to expect */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8 mb-10"
           >
             <h2 className="text-xl md:text-2xl font-display font-bold mb-3">
@@ -117,33 +162,35 @@ export default function AspireTypros() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-              <div className="flex items-start gap-3 rounded-lg border border-border/40 bg-background/40 p-4">
-                <Laptop className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-sm">Laptops available</div>
-                  <div className="text-xs text-muted-foreground">
-                    Available for checkout if you need one.
+              {[
+                { icon: Laptop, title: 'Laptops available', desc: 'Available for checkout if you need one.' },
+                { icon: Baby, title: 'Childcare', desc: 'Available upon request.' },
+              ].map(({ icon: Icon, title, desc }, i) => (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-start gap-3 rounded-lg border border-border/40 bg-background/40 p-4 hover:border-primary/40 hover:bg-background/60 transition-colors"
+                >
+                  <Icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-sm">{title}</div>
+                    <div className="text-xs text-muted-foreground">{desc}</div>
                   </div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 rounded-lg border border-border/40 bg-background/40 p-4">
-                <Baby className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-sm">Childcare</div>
-                  <div className="text-xs text-muted-foreground">
-                    Available upon request.
-                  </div>
-                </div>
-              </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
           {/* Registration form */}
           <motion.div
             id="register"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
@@ -163,8 +210,8 @@ export default function AspireTypros() {
                 className="w-full"
               />
             </div>
-
           </motion.div>
+
         </div>
       </main>
 
