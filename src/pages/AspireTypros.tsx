@@ -114,14 +114,17 @@ export default function AspireTypros() {
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="inline-flex items-center gap-2.5 mb-8"
+              className="inline-flex items-center gap-3 mb-8"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              <span className="inline-flex items-center rounded-full bg-primary/10 border border-primary/20 px-3 py-1.5 text-[11px] md:text-xs uppercase tracking-[0.2em] text-primary font-semibold">
+                Free Training
               </span>
               <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
                 Now Accepting Registrations
+              </span>
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
             </motion.div>
 
