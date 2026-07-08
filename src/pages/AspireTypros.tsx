@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Laptop, Baby, Sparkles } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Calendar, Clock, MapPin, Laptop, Baby } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
 import typrosBadge from '@/assets/typros-badge.png.asset.json';
+
 
 const TALLY_FORM_ID = 'zxvANM';
 
