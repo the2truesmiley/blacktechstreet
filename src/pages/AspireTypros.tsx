@@ -398,53 +398,79 @@ export default function AspireTypros() {
                 {formSubmitted && 'Your reservation has been received.'}
               </div>
 
-              {loadStatus === 'loading' && (
-                <div
-                  className="absolute inset-0 z-10 p-6 md:p-8 space-y-4 bg-background"
-                  aria-busy="true"
-                >
-                  <div className="h-8 bg-muted rounded w-1/3 animate-pulse" />
-                  <div className="h-4 bg-muted rounded w-2/3 animate-pulse" />
-                  <div className="h-4 bg-muted rounded w-1/2 animate-pulse" />
-                  <div className="h-4 bg-muted rounded w-3/4 animate-pulse" />
-                  <div className="h-96 bg-muted rounded animate-pulse" />
+              {formSubmitted ? (
+                <div className="absolute inset-0 z-20 flex items-center justify-center p-6 md:p-8 bg-background">
+                  <div className="text-center max-w-sm">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+                      <Check className="h-8 w-8 text-primary" strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-display font-bold mb-2">
+                      You're registered!
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-6">
+                      Your seat is reserved for the Black Tech Street × TYPROS ASPIRE AI Workshop
+                      on August 20, 2026.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={handleResetForm}
+                      className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                    >
+                      Register another person
+                    </button>
+                  </div>
                 </div>
-              )}
-
-              {loadStatus === 'error' && (
-                <div
-                  className="relative z-10 p-6 md:p-8 text-center"
-                  role="alert"
-                >
-                  <p className="text-muted-foreground mb-4">
-                    The registration form couldn't load. Please check your connection and try again.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={handleRetry}
-                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                  >
-                    Retry loading form
-                  </button>
-                </div>
-              )}
-
-              {loadStatus !== 'error' && (
-                <iframe
-                  key={iframeKey}
-                  src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
-                  width="100%"
-                  height="6235"
-                  frameBorder={0}
-                  loading="lazy"
-                  title="ASPIRE AI - TYPROS registration form"
-                  name="tally-aspire-typros-registration"
-                  onLoad={handleIframeLoad}
-                  className={cn(
-                    'w-full transition-opacity duration-300',
-                    loadStatus === 'loading' ? 'opacity-0' : 'opacity-100'
+              ) : (
+                <>
+                  {loadStatus === 'loading' && (
+                    <div
+                      className="absolute inset-0 z-10 p-6 md:p-8 space-y-4 bg-background"
+                      aria-busy="true"
+                    >
+                      <div className="h-8 bg-muted rounded w-1/3 animate-pulse" />
+                      <div className="h-4 bg-muted rounded w-2/3 animate-pulse" />
+                      <div className="h-4 bg-muted rounded w-1/2 animate-pulse" />
+                      <div className="h-4 bg-muted rounded w-3/4 animate-pulse" />
+                      <div className="h-96 bg-muted rounded animate-pulse" />
+                    </div>
                   )}
-                />
+
+                  {loadStatus === 'error' && (
+                    <div
+                      className="relative z-10 p-6 md:p-8 text-center"
+                      role="alert"
+                    >
+                      <p className="text-muted-foreground mb-4">
+                        The registration form couldn't load. Please check your connection and try again.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={handleRetry}
+                        className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                      >
+                        Retry loading form
+                      </button>
+                    </div>
+                  )}
+
+                  {loadStatus !== 'error' && (
+                    <iframe
+                      key={iframeKey}
+                      src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
+                      width="100%"
+                      height="6235"
+                      frameBorder={0}
+                      loading="lazy"
+                      title="ASPIRE AI - TYPROS registration form"
+                      name="tally-aspire-typros-registration"
+                      onLoad={handleIframeLoad}
+                      className={cn(
+                        'w-full transition-opacity duration-300',
+                        loadStatus === 'loading' ? 'opacity-0' : 'opacity-100'
+                      )}
+                    />
+                  )}
+                </>
               )}
             </div>
 
