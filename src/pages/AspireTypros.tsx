@@ -195,17 +195,14 @@ export default function AspireTypros() {
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="flex flex-col sm:flex-row items-center gap-3 mb-8"
+              className="flex items-center justify-center gap-2 mb-8"
             >
-              <span className="inline-flex items-center rounded-full bg-primary/10 border border-primary/20 px-3 py-1.5 text-[11px] md:text-xs uppercase tracking-[0.2em] text-primary font-semibold">
-                Free Training
-              </span>
-              <span className="inline-flex items-center gap-2 text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
                 Now Accepting Registrations
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-                </span>
+              </span>
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
             </motion.div>
 
@@ -238,7 +235,13 @@ export default function AspireTypros() {
               workplace.
             </motion.p>
 
-            <motion.div variants={fadeUp} custom={4} className="mt-8 mb-2">
+            <motion.div variants={fadeUp} custom={4} className="mt-8 mb-3">
+              <span className="inline-flex items-center rounded-full bg-primary/10 border border-primary/20 px-4 py-2 text-xs uppercase tracking-[0.2em] text-primary font-semibold">
+                Free Training
+              </span>
+            </motion.div>
+
+            <motion.div variants={fadeUp} custom={5} className="mb-2">
               <a
                 href="#register"
                 onClick={(e) => {
@@ -247,7 +250,7 @@ export default function AspireTypros() {
                 }}
                 className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/30 transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                Reserve your free seat
+                Reserve your seat
               </a>
             </motion.div>
           </motion.div>
@@ -359,10 +362,10 @@ export default function AspireTypros() {
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
-              Reserve your free seat
+              Reserve your seat
             </h2>
             <p className="text-sm text-muted-foreground text-center mb-6">
-              Free to attend. Seats are limited.
+              Seats are limited.
             </p>
 
             <div className="relative rounded-xl overflow-hidden bg-background min-h-[400px]">
