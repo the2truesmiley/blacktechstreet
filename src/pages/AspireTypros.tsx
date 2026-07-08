@@ -195,6 +195,17 @@ export default function AspireTypros() {
       <TechBackground isVisible={true} />
       <TopNavBar />
 
+      {/* Scroll progress */}
+      <div
+        className="fixed top-16 md:top-20 left-0 right-0 h-1 bg-muted/30 z-40"
+        aria-hidden="true"
+      >
+        <div
+          className="h-full bg-primary transition-[width] duration-150 ease-out"
+          style={{ width: `${scrollProgress * 100}%` }}
+        />
+      </div>
+
       <main className="relative pt-16 md:pt-20 pb-20 px-5">
         <div className="max-w-4xl mx-auto">
           {/* Hero */}
