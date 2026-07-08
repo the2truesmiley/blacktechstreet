@@ -269,6 +269,27 @@ export default function AspireTypros() {
             ))}
           </motion.div>
 
+          {/* Animated stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ type: 'spring' as const, stiffness: 55, damping: 22, delay: 0.1 }}
+            className="grid grid-cols-2 gap-4 mb-10"
+          >
+            <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-6 text-center">
+              <div className="text-5xl md:text-7xl font-display font-bold text-primary mb-1">
+                <CountUp to={8} suffix="" />
+              </div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">Hours of hands-on training</div>
+            </div>
+            <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-6 text-center">
+              <div className="text-5xl md:text-7xl font-display font-bold text-primary mb-1">
+                <CountUp to={1} suffix="" />
+              </div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">Day intensive workshop</div>
+            </div>
+          </motion.div>
 
           {/* What to expect */}
           <motion.div
