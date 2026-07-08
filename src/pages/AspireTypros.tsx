@@ -7,6 +7,7 @@ import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
 import { cn } from '@/lib/utils';
 import typrosBadge from '@/assets/typros-badge.png.asset.json';
+import btsLogo from '@/assets/logo_bts_dark_glow.png';
 
 
 const TALLY_FORM_ID = 'zxvANM';
@@ -14,9 +15,9 @@ const TALLY_FORM_ID = 'zxvANM';
 
 export default function AspireTypros() {
   useSEO({
-    title: 'TYPROS x Black Tech Street ASPIRE AI Workshop',
+    title: 'Black Tech Street × TYPROS ASPIRE AI Workshop',
     description:
-      'TYPROS and Black Tech Street are partnering to help young professionals learn to use AI practically, ethically, and effectively in the workplace. Register for the August 20, 2026 ASPIRE AI Workshop.',
+      'Black Tech Street and TYPROS are partnering to help young professionals learn to use AI practically, ethically, and effectively in the workplace. Register for the free August 20, 2026 ASPIRE AI Workshop.',
     canonical: 'https://blacktechstreet.ai/aspire-typros',
   });
 
@@ -90,35 +91,40 @@ export default function AspireTypros() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="flex items-center justify-center gap-4 md:gap-6 mb-8"
+              className="flex flex-col items-center gap-3 mb-8"
             >
-              <img
-                src={typrosBadge.url}
-                alt="TYPROS logo"
-                className="h-16 md:h-20 w-auto"
-              />
-              <span className="text-2xl md:text-3xl font-light text-muted-foreground">×</span>
-              <div className="text-left leading-tight">
-                <div className="text-xs md:text-sm uppercase tracking-widest text-primary font-semibold">
-                  Black Tech Street
-                </div>
-                <div className="text-base md:text-lg font-display font-bold">
-                  ASPIRE AI Workshop
-                </div>
+              <div className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+                Black Tech Street × TYPROS
+              </div>
+              <div className="flex items-center justify-center gap-4 md:gap-6">
+                <img
+                  src={btsLogo}
+                  alt="Black Tech Street logo"
+                  className="h-20 md:h-24 w-auto"
+                />
+                <span className="text-2xl md:text-3xl font-light text-muted-foreground">×</span>
+                <img
+                  src={typrosBadge.url}
+                  alt="TYPROS logo"
+                  className="h-14 md:h-16 w-auto"
+                />
               </div>
             </motion.div>
 
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="inline-flex items-center gap-2.5 mb-8"
+              className="inline-flex items-center gap-3 mb-8"
             >
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              <span className="inline-flex items-center rounded-full bg-primary/10 border border-primary/20 px-3 py-1.5 text-[11px] md:text-xs uppercase tracking-[0.2em] text-primary font-semibold">
+                Free Training
               </span>
               <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
                 Now Accepting Registrations
+              </span>
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
             </motion.div>
 
@@ -229,7 +235,7 @@ export default function AspireTypros() {
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
-              Reserve your seat
+              Reserve your free seat
             </h2>
             <p className="text-sm text-muted-foreground text-center mb-6">
               Free to attend. Seats are limited.
@@ -305,6 +311,24 @@ export default function AspireTypros() {
             </p>
 
 
+          </motion.div>
+
+          {/* Black Tech Street brand closer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center justify-center gap-4 mt-16 text-center"
+          >
+            <img
+              src={btsLogo}
+              alt="Black Tech Street logo"
+              className="h-16 md:h-20 w-auto opacity-90"
+            />
+            <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+              Powered by Black Tech Street
+            </p>
           </motion.div>
 
         </div>
