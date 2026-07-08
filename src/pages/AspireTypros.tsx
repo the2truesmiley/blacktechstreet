@@ -183,7 +183,7 @@ export default function AspireTypros() {
       <TechBackground isVisible={true} />
       <TopNavBar />
 
-      <main className="relative pt-28 md:pt-32 pb-20 px-5">
+      <main className="relative pt-16 md:pt-20 pb-20 px-5">
         <div className="max-w-4xl mx-auto">
           {/* Hero */}
           <motion.div
