@@ -93,9 +93,6 @@ export default function AspireTypros() {
               custom={0}
               className="flex flex-col items-center gap-3 mb-8"
             >
-              <div className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
-                Black Tech Street × TYPROS
-              </div>
               <div className="flex items-center justify-center gap-4 md:gap-6">
                 <img
                   src={btsLogo}
