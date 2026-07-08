@@ -107,11 +107,23 @@ export default function AspireTypros() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? window.scrollY / docHeight : 0;
+      setScrollProgress(Math.min(1, Math.max(0, progress)));
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const shouldReduceMotion = useReducedMotion() ?? false;
 
   const [loadStatus, setLoadStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
   const [iframeKey, setIframeKey] = useState(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const loadTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
 
@@ -182,6 +194,17 @@ export default function AspireTypros() {
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <TechBackground isVisible={true} />
       <TopNavBar />
+
+      {/* Scroll progress */}
+      <div
+        className="fixed top-16 md:top-20 left-0 right-0 h-1 bg-muted/30 z-40"
+        aria-hidden="true"
+      >
+        <div
+          className="h-full bg-primary transition-[width] duration-150 ease-out"
+          style={{ width: `${scrollProgress * 100}%` }}
+        />
+      </div>
 
       <main className="relative pt-16 md:pt-20 pb-20 px-5">
         <div className="max-w-4xl mx-auto">
