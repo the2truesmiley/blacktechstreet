@@ -209,15 +209,24 @@ export default function AspireTypros() {
               </span>
             </motion.div>
 
-            <motion.h1
+            <motion.div
               variants={fadeUp}
               custom={2}
-              className="text-4xl md:text-6xl font-display font-bold mb-5 tracking-tight leading-[1.05]"
+              className="mb-5"
             >
-              AI is changing how we work.
-              <br />
-              <span className="text-primary">Learn to use it well.</span>
-            </motion.h1>
+              <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight leading-[1.05]">
+                <TypewriterHeading text="AI is changing how we work." />
+                <br />
+                <motion.span
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.2, type: 'spring' as const, stiffness: 55, damping: 22 }}
+                  className="text-primary"
+                >
+                  Learn to use it well.
+                </motion.span>
+              </h1>
+            </motion.div>
 
             <motion.p
               variants={fadeUp}
