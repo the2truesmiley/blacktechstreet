@@ -12,7 +12,7 @@ const socialLinks = [
 
 const quickLinks = [
   { label: 'About Us', href: '/about' },
-  { label: 'G-ACE', href: '/aspire' },
+  { label: 'Programs', href: '/aspire' },
   { label: 'Partners', href: '/partners' },
   { label: 'Team', href: '/about#team-section' },
   { label: 'In The News', href: '/news' },
