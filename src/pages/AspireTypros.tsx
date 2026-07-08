@@ -237,6 +237,19 @@ export default function AspireTypros() {
               understand how AI can be used practically, ethically, and effectively in the
               workplace.
             </motion.p>
+
+            <motion.div variants={fadeUp} custom={4} className="mt-8 mb-2">
+              <a
+                href="#register"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/30 transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                Reserve your free seat
+              </a>
+            </motion.div>
           </motion.div>
 
           {/* Event details */}
