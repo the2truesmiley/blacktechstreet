@@ -210,6 +210,9 @@ export default function AspireTypros() {
                   className="h-16 sm:h-20 md:h-28 w-auto"
                 />
               </div>
+              <p className="text-sm md:text-base font-semibold tracking-wide text-foreground/90 uppercase mt-2">
+                ASPIRE Enterprise Workshop
+              </p>
             </motion.div>
 
             <motion.div
@@ -231,7 +234,7 @@ export default function AspireTypros() {
               custom={2}
               className="mb-5"
             >
-              <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight leading-[1.05]">
+              <h1 className="text-3xl md:text-5xl font-display font-bold tracking-tight leading-[1.05]">
                 <TypewriterHeading text="AI is changing how we work." />
                 <br />
                 <motion.span
