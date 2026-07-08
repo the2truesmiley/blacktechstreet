@@ -112,6 +112,7 @@ export default function AspireTypros() {
   const [loadStatus, setLoadStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
   const [iframeKey, setIframeKey] = useState(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const loadTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
 
