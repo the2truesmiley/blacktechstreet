@@ -393,8 +393,9 @@ export default function AspireTypros() {
 
             <div className="relative rounded-xl overflow-hidden bg-background min-h-[400px]">
               <div className="sr-only" aria-live="polite" aria-atomic="true">
-                {loadStatus === 'loading' && 'Loading registration form...'}
-                {loadStatus === 'error' && 'Registration form failed to load. Retry button available.'}
+                {loadStatus === 'loading' && !formSubmitted && 'Loading registration form...'}
+                {loadStatus === 'error' && !formSubmitted && 'Registration form failed to load. Retry button available.'}
+                {formSubmitted && 'Your reservation has been received.'}
               </div>
 
               {loadStatus === 'loading' && (
