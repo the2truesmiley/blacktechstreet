@@ -399,7 +399,7 @@ export default function AspireTypros() {
               </div>
 
               {formSubmitted ? (
-                <div className="absolute inset-0 z-20 flex items-center justify-center p-6 md:p-8 bg-background">
+                <div className="absolute inset-0 z-20 flex items-start justify-center pt-12 md:pt-16 p-6 md:p-8 bg-background">
                   <div className="text-center max-w-sm">
                     <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
                       <Check className="h-8 w-8 text-primary" strokeWidth={2.5} />
