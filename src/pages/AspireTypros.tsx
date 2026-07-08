@@ -16,7 +16,7 @@ export default function AspireTypros() {
   useSEO({
     title: 'TYPROS x Black Tech Street ASPIRE AI Workshop',
     description:
-      'TYPROS and Black Tech Street are partnering to help young professionals learn to use AI ethically, strategically, and effectively in the workplace. Register for the August 20, 2026 ASPIRE AI Workshop.',
+      'TYPROS and Black Tech Street are partnering to help young professionals learn to use AI practically, ethically, and effectively in the workplace. Register for the August 20, 2026 ASPIRE AI Workshop.',
     canonical: 'https://blacktechstreet.ai/aspire-typros',
   });
 
@@ -138,7 +138,7 @@ export default function AspireTypros() {
               className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
             >
               TYPROS and Black Tech Street are partnering to help young professionals better
-              understand how AI can be used ethically, strategically, and effectively in the
+              understand how AI can be used practically, ethically, and effectively in the
               workplace.
             </motion.p>
           </motion.div>
