@@ -136,14 +136,16 @@ export default function AspireTypros() {
   }, [iframeKey, startLoadTimer, clearLoadTimeout]);
 
   const fadeUp = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
+    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
     show: (i: number = 0) => ({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.7,
-        delay: i * 0.08,
-        ease: [0.22, 1, 0.36, 1] as const,
+        type: 'spring',
+        stiffness: 55,
+        damping: 22,
+        mass: 1,
+        delay: i * 0.12,
       },
     }),
   };
