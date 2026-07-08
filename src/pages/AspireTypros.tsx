@@ -7,6 +7,7 @@ import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
 import { cn } from '@/lib/utils';
 import typrosBadge from '@/assets/typros-badge.png.asset.json';
+import btsLogo from '@/assets/logo_bts_dark_glow.png';
 
 
 const TALLY_FORM_ID = 'zxvANM';
