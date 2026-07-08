@@ -16,6 +16,7 @@ const AspireEvents = lazy(() => import("./pages/AspireEvents"));
 const AspireEventSeptember2026 = lazy(() => import("./pages/AspireEventSeptember2026"));
 const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember2026"));
 const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
+const AspireTypros = lazy(() => import("./pages/AspireTypros"));
 const AspireParkingDetails = lazy(() => import("./pages/AspireParkingDetails"));
 const HqParkingDetails = lazy(() => import("./pages/HqParkingDetails"));
 const HqGrandOpeningPhotos = lazy(() => import("./pages/HqGrandOpeningPhotos"));
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/aspire/events/september-2026" element={<AspireEventSeptember2026 />} />
             <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
             <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
+            <Route path="/aspire-typros" element={<AspireTypros />} />
             <Route path="/aspire/parking" element={<AspireParkingDetails />} />
             <Route path="/hq/parking" element={<HqParkingDetails />} />
             <Route path="/hqgrandopeningphotos" element={<HqGrandOpeningPhotos />} />
