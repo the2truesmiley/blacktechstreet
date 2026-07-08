@@ -278,7 +278,7 @@ export default function AspireTypros() {
             </motion.p>
 
             <motion.div variants={fadeUp} custom={4} className="mt-8 mb-3">
-              <span className="inline-flex items-center justify-center rounded-full bg-primary-foreground border border-primary/20 px-7 py-3.5 w-64 text-sm font-semibold text-primary">
+              <span className="inline-flex items-center justify-center rounded-full bg-foreground border border-primary/20 px-7 py-3.5 w-64 text-sm font-semibold text-primary">
                 Free Training
               </span>
             </motion.div>
