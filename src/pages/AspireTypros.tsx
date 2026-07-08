@@ -141,9 +141,10 @@ export default function AspireTypros() {
 
           {/* What to expect */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8 mb-10"
           >
             <h2 className="text-xl md:text-2xl font-display font-bold mb-3">
@@ -161,33 +162,35 @@ export default function AspireTypros() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-              <div className="flex items-start gap-3 rounded-lg border border-border/40 bg-background/40 p-4">
-                <Laptop className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-sm">Laptops available</div>
-                  <div className="text-xs text-muted-foreground">
-                    Available for checkout if you need one.
+              {[
+                { icon: Laptop, title: 'Laptops available', desc: 'Available for checkout if you need one.' },
+                { icon: Baby, title: 'Childcare', desc: 'Available upon request.' },
+              ].map(({ icon: Icon, title, desc }, i) => (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.6, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-start gap-3 rounded-lg border border-border/40 bg-background/40 p-4 hover:border-primary/40 hover:bg-background/60 transition-colors"
+                >
+                  <Icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-semibold text-sm">{title}</div>
+                    <div className="text-xs text-muted-foreground">{desc}</div>
                   </div>
-                </div>
-              </div>
-              <div className="flex items-start gap-3 rounded-lg border border-border/40 bg-background/40 p-4">
-                <Baby className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <div>
-                  <div className="font-semibold text-sm">Childcare</div>
-                  <div className="text-xs text-muted-foreground">
-                    Available upon request.
-                  </div>
-                </div>
-              </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
           {/* Registration form */}
           <motion.div
             id="register"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
@@ -207,8 +210,8 @@ export default function AspireTypros() {
                 className="w-full"
               />
             </div>
-
           </motion.div>
+
         </div>
       </main>
 
