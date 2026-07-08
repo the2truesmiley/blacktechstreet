@@ -177,17 +177,17 @@ export default function AspireTypros() {
               custom={0}
               className="flex flex-col items-center gap-3 mb-8"
             >
-              <div className="flex items-center justify-center gap-4 md:gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
                 <img
                   src={btsLogo}
                   alt="Black Tech Street logo"
-                  className="h-28 md:h-40 w-auto"
+                  className="h-24 sm:h-28 md:h-40 w-auto"
                 />
-                <span className="text-3xl md:text-5xl font-light text-muted-foreground">×</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-light text-muted-foreground">×</span>
                 <img
                   src={typrosBadge.url}
                   alt="TYPROS logo"
-                  className="h-20 md:h-28 w-auto"
+                  className="h-16 sm:h-20 md:h-28 w-auto"
                 />
               </div>
             </motion.div>
