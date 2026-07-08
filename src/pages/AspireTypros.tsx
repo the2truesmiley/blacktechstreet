@@ -7,8 +7,8 @@ import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
 import typrosBadge from '@/assets/typros-badge.png.asset.json';
 
-// TODO: Replace with the real Tally form ID once provided
-const TALLY_FORM_ID = 'REPLACE_ME';
+const TALLY_FORM_ID = 'zxvANM';
+
 
 export default function AspireTypros() {
   useSEO({
@@ -153,22 +153,17 @@ export default function AspireTypros() {
               Free to attend. Seats are limited.
             </p>
 
-            {TALLY_FORM_ID === 'REPLACE_ME' ? (
-              <div className="rounded-xl border border-dashed border-border p-8 text-center text-muted-foreground">
-                Registration form loading soon.
-              </div>
-            ) : (
-              <div className="rounded-xl overflow-hidden bg-background">
-                <iframe
-                  src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`}
-                  width="100%"
-                  height="700"
-                  frameBorder={0}
-                  title="TYPROS x ASPIRE AI Workshop Registration"
-                  className="min-h-[700px] w-full"
-                />
-              </div>
-            )}
+            <div className="rounded-xl overflow-hidden bg-background">
+              <iframe
+                src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
+                width="100%"
+                height="6235"
+                frameBorder={0}
+                title="ASPIRE AI - TYPROS"
+                className="w-full"
+              />
+            </div>
+
           </motion.div>
         </div>
       </main>
