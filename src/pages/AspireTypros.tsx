@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { motion, useReducedMotion, useMotionValue, useSpring, useInView } from 'framer-motion';
-import { Calendar, Clock, MapPin, Laptop, Baby } from 'lucide-react';
+import { Calendar, Clock, MapPin, Laptop, Baby, Check } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
@@ -111,7 +111,21 @@ export default function AspireTypros() {
 
   const [loadStatus, setLoadStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
   const [iframeKey, setIframeKey] = useState(0);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const loadTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (typeof event.data !== 'string') return;
+      if (event.data.includes('Tally.FormSubmitted')) {
+        setFormSubmitted(true);
+        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   const clearLoadTimeout = useCallback(() => {
     if (loadTimeoutRef.current) {
@@ -137,6 +151,12 @@ export default function AspireTypros() {
     setLoadStatus('loading');
     setIframeKey((prev) => prev + 1);
   }, [clearLoadTimeout]);
+
+  const handleResetForm = useCallback(() => {
+    setFormSubmitted(false);
+    setLoadStatus('loading');
+    setIframeKey((prev) => prev + 1);
+  }, []);
 
   useEffect(() => {
     startLoadTimer();
@@ -355,6 +375,7 @@ export default function AspireTypros() {
           {/* Registration form */}
           <motion.div
             id="register"
+            ref={formSectionRef}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -362,82 +383,111 @@ export default function AspireTypros() {
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
-              Reserve your seat
+              {formSubmitted ? 'Reservation received' : 'Reserve your seat'}
             </h2>
             <p className="text-sm text-muted-foreground text-center mb-6">
-              Seats are limited.
+              {formSubmitted
+                ? "We'll see you at the ASPIRE AI Workshop on August 20, 2026."
+                : 'Seats are limited.'}
             </p>
 
             <div className="relative rounded-xl overflow-hidden bg-background min-h-[400px]">
               <div className="sr-only" aria-live="polite" aria-atomic="true">
-                {loadStatus === 'loading' && 'Loading registration form...'}
-                {loadStatus === 'error' && 'Registration form failed to load. Retry button available.'}
+                {loadStatus === 'loading' && !formSubmitted && 'Loading registration form...'}
+                {loadStatus === 'error' && !formSubmitted && 'Registration form failed to load. Retry button available.'}
+                {formSubmitted && 'Your reservation has been received.'}
               </div>
 
-              {loadStatus === 'loading' && (
-                <div
-                  className="absolute inset-0 z-10 p-6 md:p-8 space-y-4 bg-background"
-                  aria-busy="true"
-                >
-                  <div className="h-8 bg-muted rounded w-1/3 animate-pulse" />
-                  <div className="h-4 bg-muted rounded w-2/3 animate-pulse" />
-                  <div className="h-4 bg-muted rounded w-1/2 animate-pulse" />
-                  <div className="h-4 bg-muted rounded w-3/4 animate-pulse" />
-                  <div className="h-96 bg-muted rounded animate-pulse" />
+              {formSubmitted ? (
+                <div className="absolute inset-0 z-20 flex items-start justify-center pt-12 md:pt-16 p-6 md:p-8 bg-background">
+                  <div className="text-center max-w-sm">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+                      <Check className="h-8 w-8 text-primary" strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-display font-bold mb-2">
+                      You're registered!
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-6">
+                      Your seat is reserved for the Black Tech Street × TYPROS ASPIRE AI Workshop
+                      on August 20, 2026.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={handleResetForm}
+                      className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                    >
+                      Register another person
+                    </button>
+                  </div>
                 </div>
-              )}
-
-              {loadStatus === 'error' && (
-                <div
-                  className="relative z-10 p-6 md:p-8 text-center"
-                  role="alert"
-                >
-                  <p className="text-muted-foreground mb-4">
-                    The registration form couldn't load. Please check your connection and try again.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={handleRetry}
-                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                  >
-                    Retry loading form
-                  </button>
-                </div>
-              )}
-
-              {loadStatus !== 'error' && (
-                <iframe
-                  key={iframeKey}
-                  src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
-                  width="100%"
-                  height="6235"
-                  frameBorder={0}
-                  loading="lazy"
-                  title="ASPIRE AI - TYPROS registration form"
-                  name="tally-aspire-typros-registration"
-                  onLoad={handleIframeLoad}
-                  className={cn(
-                    'w-full transition-opacity duration-300',
-                    loadStatus === 'loading' ? 'opacity-0' : 'opacity-100'
+              ) : (
+                <>
+                  {loadStatus === 'loading' && (
+                    <div
+                      className="absolute inset-0 z-10 p-6 md:p-8 space-y-4 bg-background"
+                      aria-busy="true"
+                    >
+                      <div className="h-8 bg-muted rounded w-1/3 animate-pulse" />
+                      <div className="h-4 bg-muted rounded w-2/3 animate-pulse" />
+                      <div className="h-4 bg-muted rounded w-1/2 animate-pulse" />
+                      <div className="h-4 bg-muted rounded w-3/4 animate-pulse" />
+                      <div className="h-96 bg-muted rounded animate-pulse" />
+                    </div>
                   )}
-                />
+
+                  {loadStatus === 'error' && (
+                    <div
+                      className="relative z-10 p-6 md:p-8 text-center"
+                      role="alert"
+                    >
+                      <p className="text-muted-foreground mb-4">
+                        The registration form couldn't load. Please check your connection and try again.
+                      </p>
+                      <button
+                        type="button"
+                        onClick={handleRetry}
+                        className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                      >
+                        Retry loading form
+                      </button>
+                    </div>
+                  )}
+
+                  {loadStatus !== 'error' && (
+                    <iframe
+                      key={iframeKey}
+                      src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
+                      width="100%"
+                      height="6235"
+                      frameBorder={0}
+                      loading="lazy"
+                      title="ASPIRE AI - TYPROS registration form"
+                      name="tally-aspire-typros-registration"
+                      onLoad={handleIframeLoad}
+                      className={cn(
+                        'w-full transition-opacity duration-300',
+                        loadStatus === 'loading' ? 'opacity-0' : 'opacity-100'
+                      )}
+                    />
+                  )}
+                </>
               )}
             </div>
 
-            <p className="text-sm text-muted-foreground text-center mt-4">
-              If the form above doesn’t load,{' '}
-              <a
-                href={`https://tally.so/embed/${TALLY_FORM_ID}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2 text-primary hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
-              >
-                open the registration form in a new tab
-              </a>
-              .
-            </p>
-
-
+            {!formSubmitted && (
+              <p className="text-sm text-muted-foreground text-center mt-4">
+                If the form above doesn't load,{' '}
+                <a
+                  href={`https://tally.so/embed/${TALLY_FORM_ID}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 text-primary hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
+                >
+                  open the registration form in a new tab
+                </a>
+                .
+              </p>
+            )}
           </motion.div>
 
           {/* Black Tech Street brand closer */}
