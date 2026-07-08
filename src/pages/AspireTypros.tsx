@@ -313,6 +313,24 @@ export default function AspireTypros() {
 
           </motion.div>
 
+          {/* Black Tech Street brand closer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-center justify-center gap-4 mt-16 text-center"
+          >
+            <img
+              src={btsLogo}
+              alt="Black Tech Street logo"
+              className="h-16 md:h-20 w-auto opacity-90"
+            />
+            <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+              Powered by Black Tech Street
+            </p>
+          </motion.div>
+
         </div>
       </main>
 
