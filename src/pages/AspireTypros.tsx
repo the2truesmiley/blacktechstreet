@@ -177,17 +177,17 @@ export default function AspireTypros() {
               custom={0}
               className="flex flex-col items-center gap-3 mb-8"
             >
-              <div className="flex items-center justify-center gap-4 md:gap-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
                 <img
                   src={btsLogo}
                   alt="Black Tech Street logo"
-                  className="h-28 md:h-40 w-auto"
+                  className="h-24 sm:h-28 md:h-40 w-auto"
                 />
-                <span className="text-3xl md:text-5xl font-light text-muted-foreground">×</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-light text-muted-foreground">×</span>
                 <img
                   src={typrosBadge.url}
                   alt="TYPROS logo"
-                  className="h-20 md:h-28 w-auto"
+                  className="h-16 sm:h-20 md:h-28 w-auto"
                 />
               </div>
             </motion.div>
@@ -195,17 +195,17 @@ export default function AspireTypros() {
             <motion.div
               variants={fadeUp}
               custom={1}
-              className="inline-flex items-center gap-3 mb-8"
+              className="flex flex-col sm:flex-row items-center gap-3 mb-8"
             >
               <span className="inline-flex items-center rounded-full bg-primary/10 border border-primary/20 px-3 py-1.5 text-[11px] md:text-xs uppercase tracking-[0.2em] text-primary font-semibold">
                 Free Training
               </span>
-              <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+              <span className="inline-flex items-center gap-2 text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
                 Now Accepting Registrations
-              </span>
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                </span>
               </span>
             </motion.div>
 
@@ -237,6 +237,19 @@ export default function AspireTypros() {
               understand how AI can be used practically, ethically, and effectively in the
               workplace.
             </motion.p>
+
+            <motion.div variants={fadeUp} custom={4} className="mt-8 mb-2">
+              <a
+                href="#register"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/30 transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                Reserve your free seat
+              </a>
+            </motion.div>
           </motion.div>
 
           {/* Event details */}
