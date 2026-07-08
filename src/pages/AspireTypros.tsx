@@ -15,9 +15,9 @@ const TALLY_FORM_ID = 'zxvANM';
 
 export default function AspireTypros() {
   useSEO({
-    title: 'TYPROS x Black Tech Street ASPIRE AI Workshop',
+    title: 'Black Tech Street × TYPROS ASPIRE AI Workshop',
     description:
-      'TYPROS and Black Tech Street are partnering to help young professionals learn to use AI practically, ethically, and effectively in the workplace. Register for the August 20, 2026 ASPIRE AI Workshop.',
+      'Black Tech Street and TYPROS are partnering to help young professionals learn to use AI practically, ethically, and effectively in the workplace. Register for the free August 20, 2026 ASPIRE AI Workshop.',
     canonical: 'https://blacktechstreet.ai/aspire-typros',
   });
 
