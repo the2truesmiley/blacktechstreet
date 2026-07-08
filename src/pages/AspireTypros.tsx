@@ -226,7 +226,7 @@ export default function AspireTypros() {
                   alt="Black Tech Street logo"
                   className="h-24 sm:h-28 md:h-40 w-auto"
                 />
-                <span className="text-2xl sm:text-3xl md:text-5xl font-light text-muted-foreground">×</span>
+                <span className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground">×</span>
                 <img
                   src={typrosBadge.url}
                   alt="TYPROS logo"
@@ -243,12 +243,8 @@ export default function AspireTypros() {
               custom={1}
               className="flex items-center justify-center gap-2 mb-8"
             >
-              <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-foreground font-medium">
                 Now Accepting Registrations
-              </span>
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-primary opacity-60 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
             </motion.div>
 
@@ -274,7 +270,7 @@ export default function AspireTypros() {
             <motion.p
               variants={fadeUp}
               custom={3}
-              className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
+              className="text-base md:text-lg text-foreground max-w-2xl mx-auto"
             >
               TYPROS and Black Tech Street are partnering to help young professionals better
               understand how AI can be used practically, ethically, and effectively in the
@@ -325,7 +321,7 @@ export default function AspireTypros() {
                 className="group rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5 hover:border-primary/50 hover:bg-card/90 transition-colors"
               >
                 <Icon className="w-5 h-5 text-primary mb-2 transition-transform group-hover:scale-110" />
-                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{label}</div>
+                <div className="text-xs uppercase tracking-wider text-foreground mb-1">{label}</div>
                 <div className="font-display font-bold text-lg">{value}</div>
               </motion.div>
             ))}
@@ -343,13 +339,13 @@ export default function AspireTypros() {
               <div className="text-5xl md:text-7xl font-display font-bold text-primary mb-1">
                 <CountUp to={8} suffix="" />
               </div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground">Hours of hands-on training</div>
+              <div className="text-xs uppercase tracking-wider text-foreground">Hours of hands-on training</div>
             </div>
             <div className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-6 text-center">
               <div className="text-5xl md:text-7xl font-display font-bold text-primary mb-1">
                 <CountUp to={1} suffix="" />
               </div>
-              <div className="text-xs uppercase tracking-wider text-muted-foreground">Day intensive workshop</div>
+              <div className="text-xs uppercase tracking-wider text-foreground">Day intensive workshop</div>
             </div>
           </motion.div>
 
@@ -364,13 +360,13 @@ export default function AspireTypros() {
             <h2 className="text-xl md:text-2xl font-display font-bold mb-3">
               What you'll take away
             </h2>
-            <p className="text-muted-foreground mb-4">
+            <p className="text-foreground mb-4">
               Through Black Tech Street's ASPIRE training course, participants gain the knowledge
               and confidence to use AI as a tool that enhances their work while aligning with
               organizational values and producing high-quality results through hands-on learning
               and practical application.
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-foreground">
               Whether you're just getting started or already experimenting with AI, this session
               will give you practical takeaways you can put to work immediately.
             </p>
@@ -391,7 +387,7 @@ export default function AspireTypros() {
                   <Icon className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                   <div>
                     <div className="font-semibold text-sm">{title}</div>
-                    <div className="text-xs text-muted-foreground">{desc}</div>
+                    <div className="text-xs text-foreground">{desc}</div>
                   </div>
                 </motion.div>
               ))}
@@ -411,7 +407,7 @@ export default function AspireTypros() {
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
               {formSubmitted ? 'Reservation received' : 'Reserve your seat'}
             </h2>
-            <p className="text-sm text-muted-foreground text-center mb-6">
+            <p className="text-sm text-foreground text-center mb-6">
               {formSubmitted
                 ? "We'll see you at the ASPIRE AI Workshop on August 20, 2026."
                 : 'Seats are limited.'}
@@ -433,7 +429,7 @@ export default function AspireTypros() {
                     <h3 className="text-xl md:text-2xl font-display font-bold mb-2">
                       You're registered!
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-6">
+                    <p className="text-sm text-foreground mb-6">
                       Your seat is reserved for the Black Tech Street × TYPROS ASPIRE AI Workshop
                       on August 20, 2026.
                     </p>
@@ -466,7 +462,7 @@ export default function AspireTypros() {
                       className="relative z-10 p-6 md:p-8 text-center"
                       role="alert"
                     >
-                      <p className="text-muted-foreground mb-4">
+                      <p className="text-foreground mb-4">
                         The registration form couldn't load. Please check your connection and try again.
                       </p>
                       <button
@@ -501,7 +497,7 @@ export default function AspireTypros() {
             </div>
 
             {!formSubmitted && (
-              <p className="text-sm text-muted-foreground text-center mt-4">
+              <p className="text-sm text-foreground text-center mt-4">
                 If the form above doesn't load,{' '}
                 <a
                   href={`https://tally.so/embed/${TALLY_FORM_ID}`}
@@ -529,7 +525,7 @@ export default function AspireTypros() {
               alt="Black Tech Street logo"
               className="h-20 md:h-28 w-auto opacity-90"
             />
-            <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+            <p className="text-xs uppercase tracking-[0.28em] text-foreground font-medium">
               Powered by Black Tech Street
             </p>
           </motion.div>
