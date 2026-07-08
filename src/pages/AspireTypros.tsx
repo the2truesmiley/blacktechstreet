@@ -152,6 +152,12 @@ export default function AspireTypros() {
     setIframeKey((prev) => prev + 1);
   }, [clearLoadTimeout]);
 
+  const handleResetForm = useCallback(() => {
+    setFormSubmitted(false);
+    setLoadStatus('loading');
+    setIframeKey((prev) => prev + 1);
+  }, []);
+
   useEffect(() => {
     startLoadTimer();
     return () => clearLoadTimeout();
