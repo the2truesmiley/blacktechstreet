@@ -91,21 +91,23 @@ export default function AspireTypros() {
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="flex items-center justify-center gap-4 md:gap-6 mb-8"
+              className="flex flex-col items-center gap-3 mb-8"
             >
-              <img
-                src={typrosBadge.url}
-                alt="TYPROS logo"
-                className="h-16 md:h-20 w-auto"
-              />
-              <span className="text-2xl md:text-3xl font-light text-muted-foreground">×</span>
-              <div className="text-left leading-tight">
-                <div className="text-xs md:text-sm uppercase tracking-widest text-primary font-semibold">
-                  Black Tech Street
-                </div>
-                <div className="text-base md:text-lg font-display font-bold">
-                  ASPIRE AI Workshop
-                </div>
+              <div className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
+                Black Tech Street × TYPROS
+              </div>
+              <div className="flex items-center justify-center gap-4 md:gap-6">
+                <img
+                  src={btsLogo}
+                  alt="Black Tech Street logo"
+                  className="h-20 md:h-24 w-auto"
+                />
+                <span className="text-2xl md:text-3xl font-light text-muted-foreground">×</span>
+                <img
+                  src={typrosBadge.url}
+                  alt="TYPROS logo"
+                  className="h-14 md:h-16 w-auto"
+                />
               </div>
             </motion.div>
 
