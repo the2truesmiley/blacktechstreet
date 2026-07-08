@@ -210,6 +210,9 @@ export default function AspireTypros() {
                   className="h-16 sm:h-20 md:h-28 w-auto"
                 />
               </div>
+              <p className="text-sm md:text-base font-semibold tracking-wide text-foreground/90 uppercase mt-2">
+                ASPIRE Enterprise Workshop
+              </p>
             </motion.div>
 
             <motion.div
