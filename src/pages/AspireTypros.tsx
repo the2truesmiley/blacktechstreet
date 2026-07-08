@@ -206,10 +206,26 @@ export default function AspireTypros() {
                 width="100%"
                 height="6235"
                 frameBorder={0}
-                title="ASPIRE AI - TYPROS"
+                loading="lazy"
+                title="ASPIRE AI - TYPROS registration form"
+                name="tally-aspire-typros-registration"
                 className="w-full"
               />
             </div>
+
+            <p className="text-sm text-muted-foreground text-center mt-4">
+              If the form above doesn’t load,{' '}
+              <a
+                href={`https://tally.so/embed/${TALLY_FORM_ID}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 text-primary hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
+              >
+                open the registration form in a new tab
+              </a>
+              .
+            </p>
+
           </motion.div>
 
         </div>
