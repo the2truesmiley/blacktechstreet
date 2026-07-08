@@ -111,7 +111,21 @@ export default function AspireTypros() {
 
   const [loadStatus, setLoadStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
   const [iframeKey, setIframeKey] = useState(0);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const loadTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (typeof event.data !== 'string') return;
+      if (event.data.includes('Tally.FormSubmitted')) {
+        setFormSubmitted(true);
+        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
 
   const clearLoadTimeout = useCallback(() => {
     if (loadTimeoutRef.current) {
