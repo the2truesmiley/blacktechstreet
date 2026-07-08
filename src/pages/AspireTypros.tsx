@@ -12,6 +12,80 @@ import btsLogo from '@/assets/logo_bts_dark_glow.png';
 
 const TALLY_FORM_ID = 'zxvANM';
 
+function useTypewriter(text: string, speed: number = 40, startDelay: number = 600) {
+  const [displayed, setDisplayed] = useState('');
+  const [started, setStarted] = useState(false);
+  const shouldReduceMotion = useReducedMotion() ?? false;
+
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      setDisplayed(text);
+      return;
+    }
+    const timer = setTimeout(() => setStarted(true), startDelay);
+    return () => clearTimeout(timer);
+  }, [text, startDelay, shouldReduceMotion]);
+
+  useEffect(() => {
+    if (!started || shouldReduceMotion) return;
+    setDisplayed('');
+    let i = 0;
+    const interval = setInterval(() => {
+      i += 1;
+      setDisplayed(text.slice(0, i));
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+    return () => clearInterval(interval);
+  }, [started, text, speed, shouldReduceMotion]);
+
+  return displayed;
+}
+
+interface CountUpProps {
+  to: number;
+  duration?: number;
+  suffix?: string;
+  prefix?: string;
+  className?: string;
+  startWhen?: boolean;
+}
+
+function CountUp({ to, duration = 2, suffix = '', prefix = '', className, startWhen = true }: CountUpProps) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { duration: duration * 1000, bounce: 0 });
+  const [display, setDisplay] = useState('0');
+  const shouldReduceMotion = useReducedMotion() ?? false;
+
+  useEffect(() => {
+    if (isInView && startWhen) {
+      motionValue.set(shouldReduceMotion ? to : 0);
+      if (!shouldReduceMotion) {
+        motionValue.set(to);
+      }
+    }
+  }, [isInView, startWhen, to, motionValue, shouldReduceMotion]);
+
+  useEffect(() => {
+    const unsubscribe = springValue.on('change', (latest) => {
+      setDisplay(Math.round(latest).toString());
+    });
+    return () => unsubscribe();
+  }, [springValue]);
+
+  return (
+    <span ref={ref} className={className}>
+      {prefix}{display}{suffix}
+    </span>
+  );
+}
+
+function TypewriterHeading({ text, className }: { text: string; className?: string }) {
+  const typed = useTypewriter(text, 45, 800);
+  return <span className={className}>{typed}</span>;
+}
+
 
 export default function AspireTypros() {
   useSEO({
