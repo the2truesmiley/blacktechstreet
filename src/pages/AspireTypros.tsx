@@ -83,7 +83,15 @@ function CountUp({ to, duration = 2, suffix = '', prefix = '', className, startW
 
 function TypewriterHeading({ text, className }: { text: string; className?: string }) {
   const typed = useTypewriter(text, 45, 800);
-  return <span className={className}>{typed}</span>;
+  const shouldReduceMotion = useReducedMotion() ?? false;
+  return (
+    <span className={className}>
+      {typed}
+      {!shouldReduceMotion && (
+        <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 align-middle animate-pulse" aria-hidden="true" />
+      )}
+    </span>
+  );
 }
 
 
