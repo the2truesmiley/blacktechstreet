@@ -26,6 +26,40 @@ export default function AspireTypros() {
 
   const shouldReduceMotion = useReducedMotion() ?? false;
 
+  const [loadStatus, setLoadStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
+  const [iframeKey, setIframeKey] = useState(0);
+  const loadTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearLoadTimeout = useCallback(() => {
+    if (loadTimeoutRef.current) {
+      clearTimeout(loadTimeoutRef.current);
+      loadTimeoutRef.current = null;
+    }
+  }, []);
+
+  const startLoadTimer = useCallback(() => {
+    clearLoadTimeout();
+    loadTimeoutRef.current = setTimeout(() => {
+      setLoadStatus((prev) => (prev === 'loading' ? 'error' : prev));
+    }, 10000);
+  }, [clearLoadTimeout]);
+
+  const handleIframeLoad = useCallback(() => {
+    clearLoadTimeout();
+    setLoadStatus('loaded');
+  }, [clearLoadTimeout]);
+
+  const handleRetry = useCallback(() => {
+    clearLoadTimeout();
+    setLoadStatus('loading');
+    setIframeKey((prev) => prev + 1);
+  }, [clearLoadTimeout]);
+
+  useEffect(() => {
+    startLoadTimer();
+    return () => clearLoadTimeout();
+  }, [iframeKey, startLoadTimer, clearLoadTimeout]);
+
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
     show: (i: number = 0) => ({
