@@ -235,17 +235,60 @@ export default function AspireTypros() {
               Free to attend. Seats are limited.
             </p>
 
-            <div className="rounded-xl overflow-hidden bg-background">
-              <iframe
-                src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
-                width="100%"
-                height="6235"
-                frameBorder={0}
-                loading="lazy"
-                title="ASPIRE AI - TYPROS registration form"
-                name="tally-aspire-typros-registration"
-                className="w-full"
-              />
+            <div className="relative rounded-xl overflow-hidden bg-background min-h-[400px]">
+              <div className="sr-only" aria-live="polite" aria-atomic="true">
+                {loadStatus === 'loading' && 'Loading registration form...'}
+                {loadStatus === 'error' && 'Registration form failed to load. Retry button available.'}
+              </div>
+
+              {loadStatus === 'loading' && (
+                <div
+                  className="absolute inset-0 z-10 p-6 md:p-8 space-y-4 bg-background"
+                  aria-busy="true"
+                >
+                  <div className="h-8 bg-muted rounded w-1/3 animate-pulse" />
+                  <div className="h-4 bg-muted rounded w-2/3 animate-pulse" />
+                  <div className="h-4 bg-muted rounded w-1/2 animate-pulse" />
+                  <div className="h-4 bg-muted rounded w-3/4 animate-pulse" />
+                  <div className="h-96 bg-muted rounded animate-pulse" />
+                </div>
+              )}
+
+              {loadStatus === 'error' && (
+                <div
+                  className="relative z-10 p-6 md:p-8 text-center"
+                  role="alert"
+                >
+                  <p className="text-muted-foreground mb-4">
+                    The registration form couldn't load. Please check your connection and try again.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={handleRetry}
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-primary-foreground font-medium hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                  >
+                    Retry loading form
+                  </button>
+                </div>
+              )}
+
+              {loadStatus !== 'error' && (
+                <iframe
+                  key={iframeKey}
+                  src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
+                  width="100%"
+                  height="6235"
+                  frameBorder={0}
+                  loading="lazy"
+                  title="ASPIRE AI - TYPROS registration form"
+                  name="tally-aspire-typros-registration"
+                  onLoad={handleIframeLoad}
+                  className={cn(
+                    'w-full transition-opacity duration-300',
+                    loadStatus === 'loading' ? 'opacity-0' : 'opacity-100'
+                  )}
+                />
+              )}
             </div>
 
             <p className="text-sm text-muted-foreground text-center mt-4">
@@ -260,6 +303,7 @@ export default function AspireTypros() {
               </a>
               .
             </p>
+
 
           </motion.div>
 
