@@ -97,13 +97,13 @@ export default function AspireTypros() {
                 <img
                   src={btsLogo}
                   alt="Black Tech Street logo"
-                  className="h-20 md:h-24 w-auto"
+                  className="h-28 md:h-40 w-auto"
                 />
-                <span className="text-2xl md:text-3xl font-light text-muted-foreground">×</span>
+                <span className="text-3xl md:text-5xl font-light text-muted-foreground">×</span>
                 <img
                   src={typrosBadge.url}
                   alt="TYPROS logo"
-                  className="h-14 md:h-16 w-auto"
+                  className="h-20 md:h-28 w-auto"
                 />
               </div>
             </motion.div>
@@ -321,7 +321,7 @@ export default function AspireTypros() {
             <img
               src={btsLogo}
               alt="Black Tech Street logo"
-              className="h-16 md:h-20 w-auto opacity-90"
+              className="h-20 md:h-28 w-auto opacity-90"
             />
             <p className="text-xs uppercase tracking-[0.28em] text-muted-foreground font-medium">
               Powered by Black Tech Street
