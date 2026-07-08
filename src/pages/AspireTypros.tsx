@@ -107,6 +107,17 @@ export default function AspireTypros() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? window.scrollY / docHeight : 0;
+      setScrollProgress(Math.min(1, Math.max(0, progress)));
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const shouldReduceMotion = useReducedMotion() ?? false;
 
   const [loadStatus, setLoadStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
