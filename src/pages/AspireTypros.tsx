@@ -243,7 +243,7 @@ export default function AspireTypros() {
               custom={1}
               className="flex items-center justify-center gap-2 mb-8"
             >
-              <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-foreground font-medium">
+              <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-primary font-medium">
                 Now Accepting Registrations
               </span>
             </motion.div>
@@ -278,7 +278,7 @@ export default function AspireTypros() {
             </motion.p>
 
             <motion.div variants={fadeUp} custom={4} className="mt-8 mb-3">
-              <span className="inline-flex items-center justify-center rounded-full bg-primary/10 border border-primary/20 px-7 py-3.5 w-64 text-sm font-semibold text-primary">
+              <span className="inline-flex items-center justify-center rounded-full bg-primary-foreground border border-primary/20 px-7 py-3.5 w-64 text-sm font-semibold text-primary">
                 Free Training
               </span>
             </motion.div>
