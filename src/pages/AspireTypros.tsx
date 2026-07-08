@@ -362,10 +362,10 @@ export default function AspireTypros() {
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
-              Reserve your free seat
+              Reserve your seat
             </h2>
             <p className="text-sm text-muted-foreground text-center mb-6">
-              Free to attend. Seats are limited.
+              Seats are limited.
             </p>
 
             <div className="relative rounded-xl overflow-hidden bg-background min-h-[400px]">
