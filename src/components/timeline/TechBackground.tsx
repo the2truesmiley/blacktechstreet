@@ -44,13 +44,12 @@ export function TechBackground({ isVisible }: TechBackgroundProps) {
   const resize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const parent = canvas.parentElement;
-    if (!parent) return;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const w = parent.scrollWidth || window.innerWidth;
-    const h = parent.scrollHeight || document.documentElement.scrollHeight;
+    // Size to viewport only — painting the full document scrollHeight every
+    // frame kills perf on long pages. The container is fixed to the viewport.
+    const w = window.innerWidth;
+    const h = window.innerHeight;
 
-    // Skip if size hasn't actually changed
     if (sizeRef.current.w === w && sizeRef.current.h === h) return;
     sizeRef.current = { w, h };
 
@@ -61,7 +60,6 @@ export function TechBackground({ isVisible }: TechBackgroundProps) {
     const ctx = canvas.getContext('2d');
     if (ctx) {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      // Clear canvas on resize to avoid artifacts
       ctx.clearRect(0, 0, w, h);
     }
   }, []);
@@ -197,8 +195,7 @@ export function TechBackground({ isVisible }: TechBackgroundProps) {
 
   return (
     <div
-      className="absolute inset-0 pointer-events-none overflow-hidden z-0"
-      style={{ minHeight: '100vh' }}
+      className="fixed inset-0 pointer-events-none overflow-hidden z-0"
     >
       <canvas
         ref={canvasRef}
