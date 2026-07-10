@@ -549,7 +549,7 @@ export default function AspireTypros() {
                   {loadStatus !== 'error' && (
                     <iframe
                       key={iframeKey}
-                      src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
+                      data-tally-src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
                       width="100%"
                       height="6235"
                       frameBorder={0}
