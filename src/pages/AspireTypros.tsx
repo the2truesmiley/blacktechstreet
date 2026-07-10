@@ -242,6 +242,35 @@ export default function AspireTypros() {
     return () => clearLoadTimeout();
   }, [iframeKey, startLoadTimer, clearLoadTimeout]);
 
+  // Load Tally embed widget so data-tally-src iframes get initialised and
+  // dynamic height / event forwarding work correctly.
+  useEffect(() => {
+    if (!unlocked || formSubmitted) return;
+    const TALLY_SRC = 'https://tally.so/widgets/embed.js';
+    const load = () => {
+      const w = window as typeof window & { Tally?: { loadEmbeds: () => void } };
+      if (w.Tally) {
+        w.Tally.loadEmbeds();
+      } else {
+        document
+          .querySelectorAll<HTMLIFrameElement>('iframe[data-tally-src]:not([src])')
+          .forEach((el) => {
+            if (el.dataset.tallySrc) el.src = el.dataset.tallySrc;
+          });
+      }
+    };
+    const existing = document.querySelector<HTMLScriptElement>(`script[src="${TALLY_SRC}"]`);
+    if (existing) {
+      load();
+      return;
+    }
+    const s = document.createElement('script');
+    s.src = TALLY_SRC;
+    s.onload = load;
+    s.onerror = load;
+    document.body.appendChild(s);
+  }, [unlocked, formSubmitted, iframeKey]);
+
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
     show: (i: number = 0) => ({
@@ -549,7 +578,7 @@ export default function AspireTypros() {
                   {loadStatus !== 'error' && (
                     <iframe
                       key={iframeKey}
-                      src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
+                      data-tally-src={`https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`}
                       width="100%"
                       height="6235"
                       frameBorder={0}
