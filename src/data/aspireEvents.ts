@@ -22,7 +22,7 @@ export const aspireEvents2026: AspireEvent[] = [
   },
   {
     id: "september-2026",
-    date: new Date(2026, 8, 26), // September 26, 2026
+    date: new Date(2026, 8, 19), // September 19, 2026
     title: "ASPIRE AI Workshop",
     time: "10:00 AM - 6:00 PM",
     location: "Langston Tulsa",

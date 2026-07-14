@@ -104,8 +104,8 @@ export default function AspireEventSeptember2026() {
       <EventJsonLd
         name="ASPIRE AI Workshop — Free Hands-On AI Training"
         description="A free, full-day AI workshop in Tulsa's Greenwood District. Learn ChatGPT, AI tools, and responsible innovation. Free childcare and laptop checkout included."
-        startDate="2026-09-26T10:00:00-05:00"
-        endDate="2026-09-26T18:00:00-05:00"
+        startDate="2026-09-19T10:00:00-05:00"
+        endDate="2026-09-19T18:00:00-05:00"
         location={{ name: 'Langston University - Tulsa Campus', address: '914 N Greenwood Ave, Tulsa, OK 74106' }}
         url="https://blacktechstreet.ai/aspire/events/september-2026"
       />

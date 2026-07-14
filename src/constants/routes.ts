@@ -36,7 +36,7 @@ export const PERMANENT_ROUTES = {
    * 
    * ⚠️ DO NOT CHANGE THIS PATH
    * 
-   * Dedicated landing page for the September 26, 2026 workshop.
+   * Dedicated landing page for the September 19, 2026 workshop.
    * May be used in physical/digital marketing materials.
    * 
    * Full URL: https://blacktechstreet.ai/aspire/events/september-2026
