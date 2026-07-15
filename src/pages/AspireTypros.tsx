@@ -432,7 +432,7 @@ export default function AspireTypros() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-6 md:p-8"
+            className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-3 sm:p-6 md:p-8"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
               {formSubmitted ? 'Reservation received' : 'Reserve your seat'}
@@ -443,7 +443,7 @@ export default function AspireTypros() {
                 : 'Seats are limited.'}
             </p>
 
-            <div className="relative rounded-xl overflow-hidden bg-background min-h-[400px]">
+            <div className="relative -mx-3 sm:mx-0 rounded-none sm:rounded-xl overflow-hidden bg-background min-h-[400px]">
               <div className="sr-only" aria-live="polite" aria-atomic="true">
                 {loadStatus === 'loading' && !formSubmitted && 'Loading registration form...'}
                 {loadStatus === 'error' && !formSubmitted && 'Registration form failed to load. Retry button available.'}
@@ -517,7 +517,7 @@ export default function AspireTypros() {
                       name="tally-aspire-typros-registration"
                       onLoad={handleIframeLoad}
                       className={cn(
-                        'w-full transition-opacity duration-300',
+                        'block w-full max-w-full transition-opacity duration-300',
                         loadStatus === 'loading' ? 'opacity-0' : 'opacity-100'
                       )}
                     />
