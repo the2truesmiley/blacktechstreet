@@ -179,7 +179,7 @@ export default function AspireTypros() {
   // Load Tally embed widget so data-tally-src iframes get initialised and
   // dynamic height / event forwarding work correctly.
   useEffect(() => {
-    if (!unlocked || formSubmitted) return;
+    if (formSubmitted) return;
     const TALLY_SRC = 'https://tally.so/widgets/embed.js';
     const load = () => {
       const w = window as typeof window & { Tally?: { loadEmbeds: () => void } };
@@ -203,7 +203,7 @@ export default function AspireTypros() {
     s.onload = load;
     s.onerror = load;
     document.body.appendChild(s);
-  }, [unlocked, formSubmitted, iframeKey]);
+  }, [formSubmitted, iframeKey]);
 
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
