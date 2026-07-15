@@ -95,73 +95,7 @@ function TypewriterHeading({ text, className }: { text: string; className?: stri
 }
 
 
-const ACCESS_PASSWORD = 'TYPROS';
-const ACCESS_STORAGE_KEY = 'aspire-typros-access';
-
-function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
-  const [value, setValue] = useState('');
-  const [error, setError] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (value.trim().toUpperCase() === ACCESS_PASSWORD) {
-      try {
-        sessionStorage.setItem(ACCESS_STORAGE_KEY, '1');
-      } catch {
-        /* ignore */
-      }
-      onUnlock();
-    } else {
-      setError(true);
-    }
-  };
-
-  return (
-    <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center px-5">
-      <TechBackground isVisible={true} />
-      <form
-        onSubmit={handleSubmit}
-        className="relative z-10 w-full max-w-sm rounded-2xl border border-border/60 bg-card/80 backdrop-blur-md p-8 text-center"
-      >
-        <img src={btsLogo} alt="Black Tech Street" className="h-16 w-auto mx-auto mb-6" />
-        <h1 className="text-xl font-display font-bold mb-2">Protected Page</h1>
-        <p className="text-sm text-foreground/80 mb-6">Enter the password to continue.</p>
-        <input
-          type="password"
-          autoFocus
-          value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-            setError(false);
-          }}
-          placeholder="Password"
-          className="w-full rounded-lg border border-border/60 bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary"
-        />
-        {error && (
-          <p className="text-xs text-red-400 mt-2" role="alert">
-            Incorrect password.
-          </p>
-        )}
-        <button
-          type="submit"
-          className="mt-4 w-full inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          Unlock
-        </button>
-      </form>
-    </div>
-  );
-}
-
 export default function AspireTypros() {
-  const [unlocked, setUnlocked] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false;
-    try {
-      return sessionStorage.getItem(ACCESS_STORAGE_KEY) === '1';
-    } catch {
-      return false;
-    }
-  });
 
   useSEO({
     title: 'Black Tech Street × TYPROS ASPIRE AI Workshop',
@@ -245,7 +179,7 @@ export default function AspireTypros() {
   // Load Tally embed widget so data-tally-src iframes get initialised and
   // dynamic height / event forwarding work correctly.
   useEffect(() => {
-    if (!unlocked || formSubmitted) return;
+    if (formSubmitted) return;
     const TALLY_SRC = 'https://tally.so/widgets/embed.js';
     const load = () => {
       const w = window as typeof window & { Tally?: { loadEmbeds: () => void } };
@@ -269,7 +203,7 @@ export default function AspireTypros() {
     s.onload = load;
     s.onerror = load;
     document.body.appendChild(s);
-  }, [unlocked, formSubmitted, iframeKey]);
+  }, [formSubmitted, iframeKey]);
 
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
@@ -285,10 +219,6 @@ export default function AspireTypros() {
       },
     }),
   };
-
-  if (!unlocked) {
-    return <PasswordGate onUnlock={() => setUnlocked(true)} />;
-  }
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
