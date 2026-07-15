@@ -220,10 +220,6 @@ export default function AspireTypros() {
     }),
   };
 
-  if (!unlocked) {
-    return <PasswordGate onUnlock={() => setUnlocked(true)} />;
-  }
-
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
       <TechBackground isVisible={true} />
