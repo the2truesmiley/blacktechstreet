@@ -517,7 +517,7 @@ export default function AspireTypros() {
                       name="tally-aspire-typros-registration"
                       onLoad={handleIframeLoad}
                       className={cn(
-                        'w-full transition-opacity duration-300',
+                        'block w-full max-w-full transition-opacity duration-300',
                         loadStatus === 'loading' ? 'opacity-0' : 'opacity-100'
                       )}
                     />
