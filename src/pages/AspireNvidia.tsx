@@ -505,7 +505,7 @@ export default function AspireNvidia() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="mb-12"
           >
-            <h2 className="text-xl md:text-2xl font-display font-bold mb-2">The five exercises</h2>
+            <h2 className="text-xl md:text-2xl font-display font-bold mb-2">Five Exercises</h2>
             <p className="text-sm text-foreground mb-6 max-w-2xl">
               Each exercise builds on the last, and you do not move on until the current one produces a
               real result. The same steps work for any skill built that morning.
