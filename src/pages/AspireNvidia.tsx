@@ -299,7 +299,9 @@ export default function AspireNvidia() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
                 <img src={btsLogo} alt="Black Tech Street logo" className="h-24 sm:h-28 md:h-40 w-auto" />
                 <span className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground">×</span>
-                <img src={nvidiaLogo} alt="NVIDIA logo" className="h-10 sm:h-12 md:h-16 w-auto" />
+                <span className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2">
+                  <img src={nvidiaLogo.url} alt="NVIDIA logo" className="h-16 sm:h-20 md:h-24 w-auto" />
+                </span>
               </div>
               <h1 className="text-2xl md:text-4xl font-display font-bold tracking-tight uppercase text-foreground/90 mt-2">
                 ASPIRE Skills Building Workshop
