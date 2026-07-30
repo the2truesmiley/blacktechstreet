@@ -408,7 +408,7 @@ export default function AspireNvidia() {
                   title: 'Manager of Trustworthy AI Product',
                   org: 'NVIDIA',
                   role: 'Skills build',
-                  image: michaelHeadshotAsset.url,
+                  image: michaelHeadshot,
                 },
                 {
                   name: 'Tyrance Billingsley II, Founder & CEO',
