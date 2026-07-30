@@ -12,6 +12,7 @@ import {
   Repeat,
   Gauge,
   Share2,
+  Megaphone,
 } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
