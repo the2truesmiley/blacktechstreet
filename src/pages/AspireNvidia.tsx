@@ -411,7 +411,8 @@ export default function AspireNvidia() {
                   image: michaelHeadshot,
                 },
                 {
-                  name: 'Tyrance Billingsley II, Founder & CEO',
+                  name: 'Tyrance Billingsley II',
+                  title: 'Founder & CEO',
                   org: 'Black Tech Street',
                   role: 'Application portion',
                   image: tyranceHeadshot,
