@@ -4,7 +4,6 @@ import {
   Calendar,
   Clock,
   MapPin,
-  Users,
   Laptop,
   Check,
   Sparkles,
