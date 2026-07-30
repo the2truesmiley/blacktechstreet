@@ -321,7 +321,7 @@ export default function AspireNvidia() {
               custom={2}
               className="text-xl md:text-3xl font-display font-bold tracking-tight leading-[1.15] mb-5"
             >
-              Build the skill. Apply it to your own work.{' '}
+              Build the Skill. Apply it to your own work.{' '}
               <span className="text-primary">Walk out with it running.</span>
             </motion.h2>
 
