@@ -166,6 +166,8 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
       onUnlock();
     } else {
       setError(true);
+      setValue('');
+      inputRef.current?.focus();
     }
   };
 
