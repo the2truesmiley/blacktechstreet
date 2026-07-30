@@ -300,7 +300,7 @@ export default function AspireNvidia() {
                 <img src={btsLogo} alt="Black Tech Street logo" className="h-24 sm:h-28 md:h-40 w-auto" />
                 <span className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground">×</span>
                 <span className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2">
-                  <img src={nvidiaLogo.url} alt="NVIDIA logo" className="h-16 sm:h-20 md:h-24 w-auto" />
+                  <img src={nvidiaLogo} alt="NVIDIA logo" className="h-16 sm:h-20 md:h-24 w-auto" />
                 </span>
               </div>
               <h1 className="text-2xl md:text-4xl font-display font-bold tracking-tight uppercase text-foreground/90 mt-2">
