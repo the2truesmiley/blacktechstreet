@@ -12,6 +12,8 @@ import {
   Gauge,
   Share2,
   Megaphone,
+  Eye,
+  EyeOff,
 } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
