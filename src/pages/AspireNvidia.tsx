@@ -21,6 +21,8 @@ import { useSEO } from '@/hooks/useSEO';
 import { cn } from '@/lib/utils';
 import btsLogo from '@/assets/logo_bts_dark_glow.png';
 import nvidiaLogo from '@/assets/nvidia-logo.png';
+import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
+import michaelHeadshotAsset from '@/assets/michael-boone-headshot.png.asset.json';
 
 /**
  * Drop the Tally form ID here when registration opens.
