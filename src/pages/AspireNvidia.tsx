@@ -20,7 +20,7 @@ import { EventJsonLd } from '@/components/seo/EventJsonLd';
 import { useSEO } from '@/hooks/useSEO';
 import { cn } from '@/lib/utils';
 import btsLogo from '@/assets/logo_bts_dark_glow.png';
-import nvidiaLogo from '@/assets/nvidia-logo.png.asset.json';
+import nvidiaLogo from '@/assets/nvidia-logo.png';
 
 /**
  * Drop the Tally form ID here when registration opens.
