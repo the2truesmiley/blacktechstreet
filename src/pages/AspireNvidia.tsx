@@ -419,7 +419,7 @@ export default function AspireNvidia() {
                   name: 'Tyrance Billingsley II',
                   title: 'Founder & CEO',
                   org: 'Black Tech Street',
-                  role: 'Application portion',
+                  role: 'Skills Application',
                   image: tyranceHeadshot,
                 },
               ].map((lead) => (
