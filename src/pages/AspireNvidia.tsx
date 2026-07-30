@@ -199,7 +199,6 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
             />
             <button
               type="button"
-              on line={198}
               onClick={() => setShowPassword((prev) => !prev)}
               aria-label={showPassword ? 'Hide password' : 'Show password'}
               aria-pressed={showPassword}
