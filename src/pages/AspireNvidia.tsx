@@ -152,7 +152,64 @@ const takeaways = [
   'A skill proven to work in someone else\u2019s hands, ready to share.',
 ];
 
-export default function AspireNvidia() {
+const ACCESS_PASSWORD = 'BTS';
+const ACCESS_STORAGE_KEY = 'aspire-nvidia-unlocked';
+
+function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
+  const [value, setValue] = useState('');
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (value.trim().toUpperCase() === ACCESS_PASSWORD) {
+      sessionStorage.setItem(ACCESS_STORAGE_KEY, 'true');
+      onUnlock();
+    } else {
+      setError(true);
+    }
+  };
+
+  return (
+    <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center px-4">
+      <TechBackground isVisible={true} />
+      <div className="relative z-10 w-full max-w-sm rounded-2xl border border-border/50 bg-card/80 backdrop-blur p-8 text-center">
+        <img src={btsLogo} alt="Black Tech Street" className="h-16 mx-auto mb-6 object-contain" />
+        <h1 className="font-display text-xl mb-2">Protected page</h1>
+        <p className="text-sm text-foreground/80 mb-6">Enter the access password to continue.</p>
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <label htmlFor="access-password" className="sr-only">Access password</label>
+          <input
+            id="access-password"
+            type="password"
+            value={value}
+            onChange={(e) => { setValue(e.target.value); setError(false); }}
+            placeholder="Password"
+            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-center text-foreground outline-none focus:border-primary"
+            autoFocus
+          />
+          {error && <p className="text-sm text-destructive">Incorrect password. Try again.</p>}
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-primary px-4 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Enter
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+export default function AspireNvidiaPage() {
+  const [unlocked, setUnlocked] = useState(
+    () => typeof window !== 'undefined' && sessionStorage.getItem(ACCESS_STORAGE_KEY) === 'true'
+  );
+
+  if (!unlocked) return <PasswordGate onUnlock={() => setUnlocked(true)} />;
+  return <AspireNvidia />;
+}
+
+function AspireNvidia() {
   useSEO({
     title: 'Black Tech Street × NVIDIA ASPIRE Skills Workshop',
     description:
