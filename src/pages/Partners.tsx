@@ -10,7 +10,7 @@ import { useSEO } from '@/hooks/useSEO';
 
 // Import partner logos
 import microsoftLogo from '@/assets/partners/microsoft-logo.png';
-import nvidiaLogo from '@/assets/partners/nvidia-logo.png';
+import nvidiaLogo from '@/assets/nvidia-logo.png';
 import atlasLogo from '@/assets/partners/atlas-logo.png';
 import greenwoodLogo from '@/assets/partners/greenwood-cultural-center-logo.png';
 import greenwoodTrustLogo from '@/assets/partners/greenwood-trust-logo.jpg';
