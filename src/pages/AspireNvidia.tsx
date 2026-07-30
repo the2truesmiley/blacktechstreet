@@ -401,7 +401,7 @@ export default function AspireNvidia() {
             <h2 className="text-xl md:text-2xl font-display font-bold mb-4">Led by</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                { name: 'Michael Boone', org: 'NVIDIA', role: 'Skills build' },
+                { name: 'Michael Boone', title: 'Manager of Trustworthy AI Product', org: 'NVIDIA', role: 'Skills build' },
                 {
                   name: 'Tyrance Billingsley II, Founder & CEO',
                   org: 'Black Tech Street',
@@ -414,6 +414,9 @@ export default function AspireNvidia() {
                 >
                   <div className="text-xs uppercase tracking-wider text-primary mb-2">{lead.role}</div>
                   <div className="font-display font-bold text-lg leading-snug">{lead.name}</div>
+                  {'title' in lead && lead.title && (
+                    <div className="text-sm text-foreground/80">{lead.title}</div>
+                  )}
                   <div className="text-sm text-foreground">{lead.org}</div>
                 </div>
               ))}
