@@ -17,6 +17,7 @@ const AspireEventSeptember2026 = lazy(() => import("./pages/AspireEventSeptember
 const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember2026"));
 const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
 const AspireTypros = lazy(() => import("./pages/AspireTypros"));
+const AspireNvidia = lazy(() => import("./pages/AspireNvidia"));
 const AspireParkingDetails = lazy(() => import("./pages/AspireParkingDetails"));
 const HqParkingDetails = lazy(() => import("./pages/HqParkingDetails"));
 const HqGrandOpeningPhotos = lazy(() => import("./pages/HqGrandOpeningPhotos"));
