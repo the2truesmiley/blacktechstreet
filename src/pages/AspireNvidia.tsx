@@ -12,6 +12,8 @@ import {
   Gauge,
   Share2,
   Megaphone,
+  Eye,
+  EyeOff,
 } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
@@ -158,6 +160,7 @@ const ACCESS_STORAGE_KEY = 'aspire-nvidia-unlocked';
 function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   const [value, setValue] = useState('');
   const [error, setError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -181,18 +184,29 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
         <p className="text-sm text-foreground/80 mb-6">Enter the access password to continue.</p>
         <form onSubmit={handleSubmit} className="space-y-3">
           <label htmlFor="access-password" className="sr-only">Access password</label>
-          <input
-            id="access-password"
-            ref={inputRef}
-            type="password"
-            value={value}
-            onChange={(e) => { setValue(e.target.value); setError(false); }}
-            placeholder="Password"
-            aria-invalid={error}
-            aria-describedby={error ? 'access-password-error' : undefined}
-            className="w-full rounded-lg border border-border bg-background px-4 py-3 text-center text-foreground outline-none focus:border-primary aria-[invalid=true]:border-destructive"
-            autoFocus
-          />
+          <div className="relative">
+            <input
+              id="access-password"
+              ref={inputRef}
+              type={showPassword ? 'text' : 'password'}
+              value={value}
+              onChange={(e) => { setValue(e.target.value); setError(false); }}
+              placeholder="Password"
+              aria-invalid={error}
+              aria-describedby={error ? 'access-password-error' : undefined}
+              className="w-full rounded-lg border border-border bg-background px-4 py-3 pr-11 text-center text-foreground outline-none focus:border-primary aria-[invalid=true]:border-destructive"
+              autoFocus
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((prev) => !prev)}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+              aria-pressed={showPassword}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-foreground/60 hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+            >
+              {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+            </button>
+          </div>
           {error && (
             <p id="access-password-error" role="alert" className="text-sm text-destructive">
               Incorrect password. Try again.
