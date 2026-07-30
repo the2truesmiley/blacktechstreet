@@ -332,9 +332,15 @@ export default function AspireNvidia() {
             </motion.p>
 
             <motion.div variants={fadeUp} custom={4} className="mt-8 mb-3 flex justify-center">
-              <span className="inline-flex items-center justify-center rounded-full bg-foreground border border-primary/20 px-7 py-3.5 w-64 text-sm font-semibold text-primary">
-                Free Training
-              </span>
+              <div className="w-full max-w-md rounded-xl bg-primary/10 border border-primary/30 px-5 py-4 flex items-center gap-3">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <Megaphone className="h-4 w-4" />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-semibold text-primary">Free Training</div>
+                  <div className="text-xs text-foreground/80">No cost to attend — registration required.</div>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div variants={fadeUp} custom={5} className="flex justify-center">
