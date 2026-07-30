@@ -179,7 +179,51 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
     <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center px-4">
       <TechBackground isVisible={true} />
       <div className="relative z-10 w-full max-w-sm rounded-2xl border border-border/50 bg-card/80 backdrop-blur p-8 text-center">
-        <img src={btsLogo} alt="Black Tech Street" className="h-16 mx-auto mb-6 object-contain
+        <img src={btsLogo} alt="Black Tech Street" className="h-16 mx-auto mb-6 object-contain" />
+        <h1 className="font-display text-xl mb-2">Protected page</h1>
+        <p className="text-sm text-foreground/80 mb-6">Enter the access password to continue.</p>
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <label htmlFor="access-password" className="sr-only">Access password</label>
+          <div className="relative">
+            <input
+              id="access-password"
+              ref={inputRef}
+              type={showPassword ? 'text' : 'password'}
+              value={value}
+              onChange={(e) => { setValue(e.target.value); setError(false); }}
+              placeholder="Password"
+              aria-invalid={error}
+              aria-describedby={error ? 'access-password-error' : undefined}
+              className="w-full rounded-lg border border-border bg-background px-4 py-3 pr-11 text-center text-foreground outline-none focus:border-primary aria-[invalid=true]:border-destructive"
+              autoFocus
+            />
+            <button
+              type="button"
+              on line={198}
+              onClick={() => setShowPassword((prev) => !prev)}
+              aria-label={showPassword ? 'Hide password' : 'Show password'}
+              aria-pressed={showPassword}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-foreground/60 hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+            >
+              {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+            </button>
+          </div>
+          {error && (
+            <p id="access-password-error" role="alert" className="text-sm text-destructive">
+              Incorrect password. Try again.
+            </p>
+          )}
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-primary px-4 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            Enter
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
 
 export default function AspireNvidiaPage() {
   const [unlocked, setUnlocked] = useState(
