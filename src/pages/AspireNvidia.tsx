@@ -357,13 +357,12 @@ export default function AspireNvidia() {
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6"
           >
             {[
               { icon: Calendar, label: 'Date', value: 'Saturday, October 10, 2026' },
               { icon: Clock, label: 'Time', value: '10:00 AM – 2:00 PM' },
               { icon: MapPin, label: 'Location', value: 'Langston University, Tulsa' },
-              { icon: Users, label: 'Capacity', value: '150 participants' },
             ].map(({ icon: Icon, label, value }) => (
               <motion.div
                 key={label}
