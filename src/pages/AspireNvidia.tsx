@@ -74,7 +74,7 @@ const runOfShow = [
   },
   {
     time: '11:50 AM – 1:20 PM',
-    title: 'Application, five exercises',
+    title: 'Skills Application',
     lead: 'Black Tech Street',
     points: [
       'Five exercises, each building on the last.',
