@@ -298,11 +298,11 @@ export default function AspireNvidia() {
           {/* Hero */}
           <motion.div initial="hidden" animate="show" variants={fadeUp} className="text-center mb-12">
             <motion.div variants={fadeUp} custom={0} className="flex flex-col items-center gap-3 mb-8">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
-                <img src={btsLogo} alt="Black Tech Street logo" className="h-24 sm:h-28 md:h-40 w-auto" />
-                <span className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground">×</span>
-                <span className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2">
-                  <img src={nvidiaLogo} alt="NVIDIA logo" className="h-16 sm:h-20 md:h-24 w-auto" />
+              <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6">
+                <img src={btsLogo} alt="Black Tech Street logo" className="h-20 sm:h-28 md:h-40 w-auto" />
+                <span className="text-xl sm:text-3xl md:text-5xl font-light text-foreground">×</span>
+                <span className="inline-flex items-center justify-center rounded-xl bg-white px-3 py-2 sm:px-4">
+                  <img src={nvidiaLogo} alt="NVIDIA logo" className="h-14 sm:h-20 md:h-24 w-auto" />
                 </span>
               </div>
               <h1 className="text-2xl md:text-4xl font-display font-bold tracking-tight uppercase text-foreground/90 mt-2">
