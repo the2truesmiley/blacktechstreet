@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, useReducedMotion, useMotionValue, useSpring, useInView } from 'framer-motion';
 import { Calendar, Clock, MapPin, Laptop, Baby, ExternalLink } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
