@@ -5,7 +5,7 @@ import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
-import typrosBadge from '@/assets/typros-badge.png.asset.json';
+import typrosBadge from '@/assets/typros-badge.png';
 import btsLogo from '@/assets/logo_bts_dark_glow.png';
 
 
@@ -51,27 +51,27 @@ interface CountUpProps {
 
 function CountUp({ to, duration = 2, suffix = '', prefix = '', className, startWhen = true }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: duration * 1000, bounce: 0 });
-  const [display, setDisplay] = useState('0');
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const [display, setDisplay] = useState(0);
   const shouldReduceMotion = useReducedMotion() ?? false;
 
   useEffect(() => {
-    if (isInView && startWhen) {
-      motionValue.set(shouldReduceMotion ? to : 0);
-      if (!shouldReduceMotion) {
-        motionValue.set(to);
-      }
+    if (!isInView || !startWhen) return;
+    if (shouldReduceMotion) {
+      setDisplay(to);
+      return;
     }
-  }, [isInView, startWhen, to, motionValue, shouldReduceMotion]);
-
-  useEffect(() => {
-    const unsubscribe = springValue.on('change', (latest) => {
-      setDisplay(Math.round(latest).toString());
-    });
-    return () => unsubscribe();
-  }, [springValue]);
+    const start = performance.now();
+    let frame = 0;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / (duration * 1000));
+      const eased = 1 - Math.pow(1 - t, 3);
+      setDisplay(Math.round(to * eased));
+      if (t < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [isInView, startWhen, to, duration, shouldReduceMotion]);
 
   return (
     <span ref={ref} className={className}>
@@ -174,7 +174,7 @@ export default function AspireTypros() {
                 />
                 <span className="text-2xl sm:text-3xl md:text-5xl font-light text-foreground">×</span>
                 <img
-                  src={typrosBadge.url}
+                  src={typrosBadge}
                   alt="TYPROS logo"
                   className="h-16 sm:h-20 md:h-28 w-auto"
                 />
