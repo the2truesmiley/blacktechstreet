@@ -1,16 +1,15 @@
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion, useMotionValue, useSpring, useInView } from 'framer-motion';
-import { Calendar, Clock, MapPin, Laptop, Baby, Check } from 'lucide-react';
+import { Calendar, Clock, MapPin, Laptop, Baby, ExternalLink } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { useSEO } from '@/hooks/useSEO';
-import { cn } from '@/lib/utils';
 import typrosBadge from '@/assets/typros-badge.png.asset.json';
 import btsLogo from '@/assets/logo_bts_dark_glow.png';
 
 
-const TALLY_FORM_ID = 'zxvANM';
+const TALLY_FORM_URL = 'https://tally.so/r/zxvANM';
 
 function useTypewriter(text: string, speed: number = 40, startDelay: number = 600) {
   const [displayed, setDisplayed] = useState('');
