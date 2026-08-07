@@ -103,6 +103,9 @@ export default function AspireTypros() {
     canonical: 'https://blacktechstreet.ai/aspire-typros',
   });
 
+  const shouldReduceMotion = useReducedMotion() ?? false;
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -117,9 +120,6 @@ export default function AspireTypros() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const shouldReduceMotion = useReducedMotion() ?? false;
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   const fadeUp = {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 30 },
