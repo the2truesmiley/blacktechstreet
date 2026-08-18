@@ -102,7 +102,7 @@ export default function AboutUs() {
   useSEO({
     title: 'About Us | Black Tech Street',
     description: "Learn about Black Tech Street's founding story, mission, and the team rebirthing Greenwood as a world-class AI innovation economy.",
-    canonical: 'https://blacktechstreet.com/about',
+    canonical: 'https://blacktechstreet.ai/about',
   });
 
   const location = useLocation();

@@ -10,7 +10,8 @@ import { useSEO } from '@/hooks/useSEO';
 export default function News() {
   useSEO({
     title: 'BTS In The News | Black Tech Street',
-    description: 'Explore 44 press articles covering Black Tech Street\'s mission to rebuild Black Wall Street through technology — from CNN to Forbes to the U.S. Senate.',
+    description: 'Explore 44 press articles covering Black Tech Street\'s mission to rebuild Black Wall Street through technology, from CNN to Forbes to the U.S. Senate.',
+    canonical: 'https://blacktechstreet.ai/news',
   });
 
   const [yearFilter, setYearFilter] = useState<number | null>(null);
