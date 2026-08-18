@@ -20,6 +20,8 @@ import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { EventJsonLd } from '@/components/seo/EventJsonLd';
 import { useSEO } from '@/hooks/useSEO';
+import { supabase } from '@/integrations/supabase/client';
+import { FunctionsHttpError } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
 import btsLogo from '@/assets/logo_bts_dark_glow.png';
 import nvidiaLogo from '@/assets/nvidia-logo.png';
@@ -154,24 +156,52 @@ const takeaways = [
   'A skill proven to work in someone else\u2019s hands, ready to share.',
 ];
 
-const ACCESS_PASSWORD = 'BTS';
-const ACCESS_STORAGE_KEY = 'aspire-nvidia-unlocked';
+const ACCESS_STORAGE_KEY = 'aspire-nvidia-access-token';
+
+async function requestAccessToken(password: string): Promise<string> {
+  const { data, error } = await supabase.functions.invoke('nvidia-access', {
+    body: { password },
+  });
+  if (error) {
+    const details =
+      error instanceof FunctionsHttpError ? await error.context.text() : error.message;
+    console.error('nvidia-access failed:', details);
+    throw new Error('incorrect');
+  }
+  if (!data?.token) throw new Error('incorrect');
+  return data.token as string;
+}
+
+async function verifyAccessToken(token: string): Promise<boolean> {
+  const { data, error } = await supabase.functions.invoke('nvidia-access', {
+    body: { action: 'verify', token },
+  });
+  if (error) return false;
+  return data?.valid === true;
+}
 
 function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   const [value, setValue] = useState('');
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (value.trim().toUpperCase() === ACCESS_PASSWORD) {
-      sessionStorage.setItem(ACCESS_STORAGE_KEY, 'true');
+    if (submitting) return;
+    setSubmitting(true);
+    setError(null);
+    try {
+      const token = await requestAccessToken(value.trim());
+      sessionStorage.setItem(ACCESS_STORAGE_KEY, token);
       onUnlock();
-    } else {
-      setError(true);
+    } catch {
+      setError('Incorrect password. Try again.');
       setValue('');
       inputRef.current?.focus();
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -190,9 +220,10 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
               ref={inputRef}
               type={showPassword ? 'text' : 'password'}
               value={value}
-              onChange={(e) => { setValue(e.target.value); setError(false); }}
+              onChange={(e) => { setValue(e.target.value); setError(null); }}
               placeholder="Password"
-              aria-invalid={error}
+              maxLength={128}
+              aria-invalid={!!error}
               aria-describedby={error ? 'access-password-error' : undefined}
               className="w-full rounded-lg border border-border bg-background px-4 py-3 pr-11 text-center text-foreground outline-none focus:border-primary aria-[invalid=true]:border-destructive"
               autoFocus
@@ -209,14 +240,15 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
           </div>
           {error && (
             <p id="access-password-error" role="alert" className="text-sm text-destructive">
-              Incorrect password. Try again.
+              {error}
             </p>
           )}
           <button
             type="submit"
-            className="w-full rounded-lg bg-primary px-4 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            disabled={submitting || value.trim().length === 0}
+            className="w-full rounded-lg bg-primary px-4 py-3 font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
           >
-            Enter
+            {submitting ? 'Checking…' : 'Enter'}
           </button>
         </form>
       </div>
@@ -225,13 +257,47 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
 }
 
 export default function AspireNvidiaPage() {
-  const [unlocked, setUnlocked] = useState(
-    () => typeof window !== 'undefined' && sessionStorage.getItem(ACCESS_STORAGE_KEY) === 'true'
-  );
+  const [status, setStatus] = useState<'checking' | 'locked' | 'unlocked'>('checking');
 
-  if (!unlocked) return <PasswordGate onUnlock={() => setUnlocked(true)} />;
+  useEffect(() => {
+    let active = true;
+    const token = sessionStorage.getItem(ACCESS_STORAGE_KEY);
+    if (!token) {
+      setStatus('locked');
+      return;
+    }
+    verifyAccessToken(token).then((valid) => {
+      if (!active) return;
+      if (!valid) sessionStorage.removeItem(ACCESS_STORAGE_KEY);
+      setStatus(valid ? 'unlocked' : 'locked');
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  // Keep this page out of search results regardless of gate state.
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+    return () => meta.remove();
+  }, []);
+
+  if (status === 'checking') {
+    return (
+      <div className="relative min-h-screen bg-background text-foreground flex items-center justify-center px-4">
+        <TechBackground isVisible={true} />
+        <p className="relative z-10 text-sm text-foreground/70">Checking access…</p>
+      </div>
+    );
+  }
+
+  if (status === 'locked') return <PasswordGate onUnlock={() => setStatus('unlocked')} />;
   return <AspireNvidia />;
 }
+
 
 function AspireNvidia() {
   useSEO({
