@@ -21,23 +21,24 @@ import heroImg12 from '@/assets/gallery/feb-2026-students-collaborating.jpg';
 
 interface HeroSlide {
   src: string;
+  alt: string;
   position: string;
   kenBurns: { scaleStart: number; scaleEnd: number; xStart: string; xEnd: string; yStart: string; yEnd: string };
 }
 
 const heroSlides: HeroSlide[] = [
-  { src: heroImg1,  position: 'center 20%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '0%',  xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg2,  position: 'center 30%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
-  { src: heroImg3,  position: 'center 22%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg4,  position: 'center 35%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '0%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
-  { src: heroImg5,  position: 'center 18%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg6,  position: 'center 32%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '0%',   yStart: '0%',  yEnd: '-1%'  } },
-  { src: heroImg7,  position: 'center 38%', kenBurns: { scaleStart: 1.07, scaleEnd: 1.0,  xStart: '0%',  xEnd: '-1%',  yStart: '-1%', yEnd: '1%'   } },
-  { src: heroImg8,  position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
-  { src: heroImg9,  position: 'center 22%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
-  { src: heroImg10, position: 'center 28%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '0%',  xEnd: '1%',   yStart: '-1%', yEnd: '0%'   } },
-  { src: heroImg11, position: 'center 22%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '-1%'  } },
-  { src: heroImg12, position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg1,  alt: 'Tyrance Billingsley II, Founder and CEO of Black Tech Street, speaking on stage in Tulsa', position: 'center 20%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '0%',  xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg2,  alt: 'A full auditorium of attendees at a Black Tech Street ASPIRE AI Workshop', position: 'center 30%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg3,  alt: 'An instructor presenting AI training at an ASPIRE AI Workshop in Greenwood', position: 'center 22%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg4,  alt: 'Women collaborating on laptops during an ASPIRE AI Workshop session', position: 'center 35%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '0%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg5,  alt: 'Tyrance Billingsley II presenting to workshop participants in Tulsa', position: 'center 18%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg6,  alt: 'Participants learning generative AI tools at a Black Tech Street workshop', position: 'center 32%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '1%',  xEnd: '0%',   yStart: '0%',  yEnd: '-1%'  } },
+  { src: heroImg7,  alt: 'Students working through hands-on AI exercises at an ASPIRE AI Workshop', position: 'center 38%', kenBurns: { scaleStart: 1.07, scaleEnd: 1.0,  xStart: '0%',  xEnd: '-1%',  yStart: '-1%', yEnd: '1%'   } },
+  { src: heroImg8,  alt: 'A group of workshop attendees working together on laptops', position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '-1%', xEnd: '1%',   yStart: '1%',  yEnd: '0%'   } },
+  { src: heroImg9,  alt: 'Graduates holding certificates after completing an ASPIRE AI Workshop', position: 'center 22%', kenBurns: { scaleStart: 1.08, scaleEnd: 1.0,  xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
+  { src: heroImg10, alt: 'A facilitator coaching a participant one-on-one during AI training', position: 'center 28%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.07, xStart: '0%',  xEnd: '1%',   yStart: '-1%', yEnd: '0%'   } },
+  { src: heroImg11, alt: 'A group of ASPIRE AI Workshop graduates celebrating with their certificates', position: 'center 22%', kenBurns: { scaleStart: 1.06, scaleEnd: 1.0,  xStart: '-1%', xEnd: '0%',   yStart: '1%',  yEnd: '-1%'  } },
+  { src: heroImg12, alt: 'Students collaborating on an AI project during a Black Tech Street workshop', position: 'center 38%', kenBurns: { scaleStart: 1.0,  scaleEnd: 1.08, xStart: '1%',  xEnd: '-1%',  yStart: '0%',  yEnd: '1%'   } },
 ];
 
 const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';

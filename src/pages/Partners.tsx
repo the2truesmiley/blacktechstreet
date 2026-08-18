@@ -116,11 +116,11 @@ export default function Partners() {
     '@type': 'CollectionPage',
     name: 'Black Tech Street Partners',
     description: 'Strategic, community, and research partners powering Black Tech Street in Historic Greenwood, Tulsa.',
-    url: 'https://blacktechstreet.com/partners',
+    url: 'https://blacktechstreet.ai/partners',
     isPartOf: {
       '@type': 'Organization',
       name: 'Black Tech Street',
-      url: 'https://blacktechstreet.com',
+      url: 'https://blacktechstreet.ai',
     },
     mainEntity: {
       '@type': 'ItemList',
