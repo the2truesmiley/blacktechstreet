@@ -311,7 +311,7 @@ function HeroSlideshow({ onIndexChange }: { onIndexChange: (i: number) => void }
         >
           <motion.img
             src={slide.src}
-            alt=""
+            alt={slide.alt}
             className="w-full h-full object-cover"
             style={{ objectPosition: slide.position }}
             initial={{

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { TimelineProgress } from '@/components/timeline/TimelineProgress';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
@@ -18,6 +19,36 @@ const Index = () => {
     description: "Explore Black Tech Street's journey rebirthing Historic Black Wall Street as a world-class AI innovation economy in Greenwood, Tulsa.",
     canonical: 'https://blacktechstreet.ai/',
   });
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'organization-jsonld';
+    script.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Black Tech Street',
+      url: 'https://blacktechstreet.ai',
+      logo: 'https://blacktechstreet.ai/bts-logo.png',
+      description:
+        'Black Tech Street is rebirthing Historic Black Wall Street as a world-class AI innovation economy in Greenwood, Tulsa, Oklahoma.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '914 N Greenwood Ave',
+        addressLocality: 'Tulsa',
+        addressRegion: 'OK',
+        postalCode: '74106',
+        addressCountry: 'US',
+      },
+      sameAs: ['https://x.com/BlackTechStreet'],
+    });
+    document.getElementById('organization-jsonld')?.remove();
+    document.head.appendChild(script);
+    return () => {
+      script.remove();
+    };
+  }, []);
+
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
