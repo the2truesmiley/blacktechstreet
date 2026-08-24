@@ -81,7 +81,7 @@ export default function AiAtWorkGuide() {
                 key={section.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
+                viewport={{ once: true, margin: '150px 0px' }}
                 transition={{ duration: 0.45, delay: i * 0.05 }}
                 className="rounded-2xl border border-border/40 bg-secondary/20 p-6 md:p-8"
               >

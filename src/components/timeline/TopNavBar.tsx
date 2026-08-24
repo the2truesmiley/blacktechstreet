@@ -257,10 +257,10 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
           isHome
             ? isScrolled
               ? "bg-background/90 backdrop-blur-xl border-b border-primary/30 shadow-[0_4px_30px_rgba(16,185,129,0.08)]"
-              : "bg-background/60 backdrop-blur-sm border-b border-primary/25"
+              : "bg-background/85 backdrop-blur-lg border-b border-primary/25"
             : isScrolled
               ? "bg-background/95 backdrop-blur-xl border-b border-border/20 shadow-sm"
-              : "bg-background/80 backdrop-blur-md border-b border-border/10"
+              : "bg-background/95 backdrop-blur-lg border-b border-border/10"
         )}
       >
         {/* ── Animated matrix canvas lives here, behind all nav content ── */}

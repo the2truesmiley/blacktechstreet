@@ -7,7 +7,7 @@ export function GreenwoodLegacySection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed"
         >

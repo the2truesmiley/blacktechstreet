@@ -54,15 +54,17 @@ export function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="md:col-span-2"
           >
             <a
-              href="#"
+              href="/"
               onClick={(e) => {
                 e.preventDefault();
+                navigate('/');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
+              aria-label="Black Tech Street home"
               className="group flex items-center gap-3 mb-4"
             >
               <div className="relative">
@@ -108,7 +110,7 @@ export function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             transition={{ delay: 0.1 }}
           >
             <h4 className="font-display font-semibold text-foreground text-sm mb-4">
@@ -133,7 +135,7 @@ export function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             transition={{ delay: 0.2 }}
           >
             <h4 className="font-display font-semibold text-foreground text-sm mb-4">
@@ -166,7 +168,7 @@ export function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           transition={{ delay: 0.15 }}
           className="mt-10 pt-8 border-t border-border/30"
         >
@@ -187,14 +189,29 @@ export function Footer() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           transition={{ delay: 0.3 }}
           className="mt-10 pt-6 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Black Tech Street. All rights reserved.
           </p>
+          <nav aria-label="Legal" className="flex items-center gap-4 text-xs">
+            <button
+              onClick={() => handleNavClick('/privacy')}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={() => handleNavClick('/terms')}
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Terms of Use
+            </button>
+          </nav>
         </motion.div>
+
       </div>
     </footer>
   );

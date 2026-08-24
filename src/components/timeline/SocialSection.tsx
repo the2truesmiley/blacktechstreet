@@ -35,7 +35,7 @@ export function SocialSection() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4">
@@ -47,7 +47,7 @@ export function SocialSection() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         transition={{ delay: 0.1 }}
         className="flex flex-wrap justify-center gap-4 mb-12"
       >
@@ -103,7 +103,7 @@ export function SocialSection() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         transition={{ delay: 0.2 }}
         className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto"
       >
@@ -156,7 +156,7 @@ export function SocialSection() {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             transition={{ delay: 0.3 }}
           >
             <p className="text-xl md:text-2xl lg:text-3xl font-display leading-relaxed text-foreground">

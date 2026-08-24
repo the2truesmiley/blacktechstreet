@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { useGalleryPhotos } from '@/hooks/useGalleryPhotos';
 import { Loader2 } from 'lucide-react';
+import { thumbUrl } from '@/lib/imageUrl';
 
 export function PhotoGallerySection() {
   const { data: photos, isLoading } = useGalleryPhotos();
@@ -14,7 +15,7 @@ export function PhotoGallerySection() {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         className="text-2xl md:text-3xl font-display font-bold text-center mb-10 text-foreground"
       >
         Our Community in Action
@@ -31,7 +32,7 @@ export function PhotoGallerySection() {
               key={item.id}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '150px 0px' }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
               className={cn(
@@ -42,9 +43,10 @@ export function PhotoGallerySection() {
             >
               {/* Image */}
               <img
-                src={item.image_url}
+                src={thumbUrl(item.image_url, 600)}
                 alt={item.title}
                 loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
@@ -70,7 +72,7 @@ export function PhotoGallerySection() {
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         transition={{ delay: 0.5 }}
         className="text-center text-muted-foreground text-sm mt-6"
       >

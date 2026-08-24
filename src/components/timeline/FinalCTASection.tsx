@@ -17,7 +17,7 @@ export function FinalCTASection() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6"
         >
           THE FUTURE OF TECH{' '}
@@ -27,7 +27,7 @@ export function FinalCTASection() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           transition={{ delay: 0.1 }}
           className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto"
         >
@@ -37,7 +37,7 @@ export function FinalCTASection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           transition={{ delay: 0.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >

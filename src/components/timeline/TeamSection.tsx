@@ -74,7 +74,7 @@ function TeamMemberCard({ member, index }: TeamMemberCardProps) {
       key={member.name + index}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '150px 0px' }}
       transition={{ delay: index * 0.1 }}
       className="group relative"
     >
@@ -187,7 +187,7 @@ export function TeamSection() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-display font-bold">
@@ -208,7 +208,7 @@ export function TeamSection() {
             id="senior-advisors"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="text-center mt-20 mb-12 scroll-mt-24"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold">

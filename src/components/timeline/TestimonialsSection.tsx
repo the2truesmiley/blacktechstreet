@@ -31,7 +31,7 @@ export function TestimonialsSection() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         className="text-center mb-12"
       >
         <h2 className="text-2xl md:text-3xl font-display font-bold">
@@ -53,7 +53,7 @@ export function TestimonialsSection() {
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="flex justify-center mb-6"
           >
             <div className="relative">
