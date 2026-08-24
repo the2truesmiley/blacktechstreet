@@ -9,6 +9,8 @@ import { SocialSection } from '@/components/timeline/SocialSection';
 
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
 import { FinalCTASection } from '@/components/timeline/FinalCTASection';
+import { ResourceUnlockCard } from '@/components/email/ResourceUnlockCard';
+
 import { Footer } from '@/components/timeline/Footer';
 import { BackToTopButton } from '@/components/timeline/BackToTopButton';
 import { useSEO } from '@/hooks/useSEO';
@@ -72,9 +74,13 @@ const Index = () => {
         {/* Testimonials */}
         <TestimonialsSection />
 
+        {/* Free guide email capture */}
+        <ResourceUnlockCard />
+
         {/* Social section with Instagram */}
         <SocialSection />
       </main>
+
 
       {/* Final CTA */}
       <FinalCTASection />
