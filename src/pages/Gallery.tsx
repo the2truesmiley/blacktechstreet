@@ -92,17 +92,23 @@ export default function Gallery() {
                   key={item.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
+                  viewport={{ once: true, margin: '150px 0px' }}
+                  transition={{ delay: Math.min(index, 6) * 0.05 }}
                   whileHover={{ y: -5 }}
                   className="group relative"
                   layout
                 >
-                  <div className={cn(
-                    "relative aspect-[4/3] rounded-2xl overflow-hidden",
-                    "bg-secondary/50 border border-border/40",
-                    "hover:border-primary/50 transition-all duration-500"
-                  )}>
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`View photo: ${item.title}`}
+                    className={cn(
+                      "relative block w-full aspect-[4/3] rounded-2xl overflow-hidden text-left",
+                      "bg-secondary/50 border border-border/40 cursor-zoom-in",
+                      "hover:border-primary/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                      "transition-all duration-500"
+                    )}
+                  >
                     {/* Image */}
                     <img
                       src={thumbUrl(item.image_url, 800)}
@@ -115,6 +121,11 @@ export default function Gallery() {
                     {/* Subtle gradient only on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
+                    {/* Zoom affordance */}
+                    <span className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-background/70 text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Maximize2 className="w-4 h-4" />
+                    </span>
+
                     {/* Content overlay — visible only on hover */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                       <h3 className="text-sm font-semibold text-foreground">
@@ -125,7 +136,7 @@ export default function Gallery() {
                         {format(new Date(item.event_date), 'MMMM d, yyyy')}
                       </span>
                     </div>
-                  </div>
+                  </button>
                 </motion.div>
               ))}
             </div>
