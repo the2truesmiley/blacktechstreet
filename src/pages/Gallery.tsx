@@ -154,6 +154,60 @@ export default function Gallery() {
       </section>
       </main>
 
+      {/* Lightbox */}
+      <Dialog open={activePhoto !== null} onOpenChange={(open) => !open && setActiveIndex(null)}>
+        <DialogContent className="max-w-5xl border-border/40 bg-background/95 p-3 sm:p-4">
+          {activePhoto && (
+            <>
+              <DialogTitle className="sr-only">{activePhoto.title}</DialogTitle>
+              <DialogDescription className="sr-only">
+                Photo from {format(new Date(activePhoto.event_date), 'MMMM d, yyyy')}
+              </DialogDescription>
+
+              <div className="relative flex items-center justify-center">
+                <img
+                  src={thumbUrl(activePhoto.image_url, 1600, 80)}
+                  alt={activePhoto.title}
+                  className="max-h-[75vh] w-auto rounded-xl object-contain"
+                />
+
+                {filteredPhotos.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => step(-1)}
+                      aria-label="Previous photo"
+                      className="absolute left-2 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground transition-colors hover:bg-background"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => step(1)}
+                      aria-label="Next photo"
+                      className="absolute right-2 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground transition-colors hover:bg-background"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
+              </div>
+
+              <div className="px-1 pt-3">
+                <h2 className="font-display text-base font-semibold text-foreground">
+                  {activePhoto.title}
+                </h2>
+                <p className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
+                  <Calendar className="h-3 w-3" />
+                  {format(new Date(activePhoto.event_date), 'MMMM d, yyyy')}
+                  {activePhoto.location ? ` · ${activePhoto.location}` : ''}
+                </p>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+
       {/* Footer */}
       <div className="relative z-10 px-5 max-w-5xl mx-auto">
         <Footer />
