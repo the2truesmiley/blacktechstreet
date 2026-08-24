@@ -29,6 +29,8 @@ const Gallery = lazy(() => import("./pages/Gallery"));
 const News = lazy(() => import("./pages/News"));
 const GEMInvite = lazy(() => import("./pages/GEMInvite"));
 const Donate = lazy(() => import("./pages/Donate"));
+const AiAtWorkGuide = lazy(() => import("./pages/AiAtWorkGuide"));
+
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
