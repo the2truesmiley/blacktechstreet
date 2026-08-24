@@ -72,9 +72,13 @@ const Index = () => {
         {/* Testimonials */}
         <TestimonialsSection />
 
+        {/* Free guide email capture */}
+        <ResourceUnlockCard />
+
         {/* Social section with Instagram */}
         <SocialSection />
       </main>
+
 
       {/* Final CTA */}
       <FinalCTASection />
