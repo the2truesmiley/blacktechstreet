@@ -71,6 +71,8 @@ const App = () => (
             <Route path="/news" element={<News />} />
             <Route path="/GEMinvite" element={<GEMInvite />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/resources/ai-at-work" element={<AiAtWorkGuide />} />
+
             <Route path="/flyer1" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
