@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { Camera, Calendar, Loader2 } from 'lucide-react';
+import { Camera, Calendar, Loader2, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useGalleryPhotos, useGalleryTags, filterPhotosByTag } from '@/hooks/useGalleryPhotos';
 import { format } from 'date-fns';
 import { useSEO } from '@/hooks/useSEO';
 import { thumbUrl } from '@/lib/imageUrl';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 export default function Gallery() {
   useSEO({
