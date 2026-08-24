@@ -3,6 +3,8 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink } from 'lucid
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import logoCircuit from '@/assets/logo_b_circuit.png';
+import { EmailCapture } from '@/components/email/EmailCapture';
+
 
 const socialLinks = [
   { icon: Facebook, href: 'https://facebook.com/blacktechstreet', label: 'Facebook' },
