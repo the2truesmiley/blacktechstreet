@@ -160,6 +160,27 @@ export function Footer() {
           </motion.div>
         </div>
 
+        {/* Email capture */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="mt-10 pt-8 border-t border-border/30"
+        >
+          <div className="max-w-xl">
+            <h4 className="font-display font-semibold text-foreground text-sm mb-2">
+              Get updates on workshops and programs
+            </h4>
+            <p className="text-muted-foreground text-sm mb-4">
+              Add your email and we'll let you know when new AI training, events, and opportunities open up
+              in Greenwood.
+            </p>
+            <EmailCapture source="footer" buttonLabel="Keep me updated" />
+          </div>
+        </motion.div>
+
+
         {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
