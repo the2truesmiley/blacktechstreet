@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useGalleryPhotos } from '@/hooks/useGalleryPhotos';
 import { Loader2 } from 'lucide-react';
