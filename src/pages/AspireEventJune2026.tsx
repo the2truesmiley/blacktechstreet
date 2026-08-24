@@ -291,7 +291,7 @@ export default function AspireEventJune2026() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "150px 0px" }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="text-center mb-10"
           >
@@ -320,7 +320,7 @@ export default function AspireEventJune2026() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "150px 0px" }}
           >
             {expectItems.map((item) => (
               <motion.div
@@ -382,7 +382,7 @@ export default function AspireEventJune2026() {
           <motion.div
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "150px 0px" }}
             transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
             whileHover={{ scale: 1.01 }}
             className={cn(
@@ -526,7 +526,7 @@ export default function AspireEventJune2026() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "150px 0px" }}
             transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
             className="space-y-4"
           >

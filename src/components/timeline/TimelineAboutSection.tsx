@@ -36,7 +36,7 @@ export function TimelineAboutSection() {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           className="flex flex-col"
         >
           <div className="flex items-start gap-4 mb-6">
@@ -78,7 +78,7 @@ export function TimelineAboutSection() {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '150px 0px' }}
           className="flex flex-col"
         >
           <div className="flex items-center gap-3 mb-6">

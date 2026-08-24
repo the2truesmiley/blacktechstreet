@@ -13,7 +13,7 @@ export function EventAlertsSection({ detail = 'aspire-workshops' }: EventAlertsS
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
+          viewport={{ once: true, margin: '150px 0px' }}
           transition={{ duration: 0.5 }}
           className="rounded-2xl border border-border/40 bg-secondary/20 p-6 md:p-8 backdrop-blur-sm"
         >

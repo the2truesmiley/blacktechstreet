@@ -157,7 +157,7 @@ const Aspire = () => {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '150px 0px' }}
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-card-foreground mb-6 uppercase tracking-tight">
@@ -173,7 +173,7 @@ const Aspire = () => {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '150px 0px' }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
@@ -197,7 +197,7 @@ const Aspire = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="text-3xl md:text-4xl font-bold mb-12 text-center uppercase tracking-tight"
           >
             What You'll Get From ASPIRE
@@ -208,7 +208,7 @@ const Aspire = () => {
                 key={benefit.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '150px 0px' }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card/50 p-6 rounded-xl border border-border hover:border-primary/50 transition-colors"
               >
@@ -235,7 +235,7 @@ const Aspire = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-card-foreground mb-6 uppercase tracking-tight">
@@ -245,7 +245,7 @@ const Aspire = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             transition={{ delay: 0.2 }}
             className="prose prose-lg max-w-none text-muted-foreground"
           >
@@ -289,7 +289,7 @@ const Aspire = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 uppercase tracking-tight">
@@ -302,7 +302,7 @@ const Aspire = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             transition={{ delay: 0.2 }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
@@ -325,7 +325,7 @@ const Aspire = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="text-3xl md:text-4xl font-bold mb-12 text-center"
           >
             <span className="text-primary">ASPIRE</span> Curriculum Pillars
@@ -336,7 +336,7 @@ const Aspire = () => {
                 key={pillar.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: '150px 0px' }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="text-center p-8 bg-card/50 rounded-xl border border-border"
               >
@@ -357,7 +357,7 @@ const Aspire = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             className="text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tight"
           >
             Innovate in Tulsa, Lead It Everywhere
@@ -365,7 +365,7 @@ const Aspire = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '150px 0px' }}
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground space-y-4 mb-12 max-w-2xl mx-auto"
           >

@@ -26,7 +26,7 @@ export function AspireCtaBanner() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: '150px 0px' }}
         transition={{ duration: 0.6 }}
       >
         {/* Pulsing border glow wrapper */}

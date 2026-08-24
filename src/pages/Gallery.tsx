@@ -7,6 +7,7 @@ import { Camera, Calendar, Loader2 } from 'lucide-react';
 import { useGalleryPhotos, useGalleryTags, filterPhotosByTag } from '@/hooks/useGalleryPhotos';
 import { format } from 'date-fns';
 import { useSEO } from '@/hooks/useSEO';
+import { thumbUrl } from '@/lib/imageUrl';
 
 export default function Gallery() {
   useSEO({
@@ -104,9 +105,10 @@ export default function Gallery() {
                   )}>
                     {/* Image */}
                     <img
-                      src={item.image_url}
+                      src={thumbUrl(item.image_url, 800)}
                       alt={item.title}
                       loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
 

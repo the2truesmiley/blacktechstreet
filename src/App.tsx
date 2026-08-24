@@ -31,6 +31,9 @@ const GEMInvite = lazy(() => import("./pages/GEMInvite"));
 const Donate = lazy(() => import("./pages/Donate"));
 const AiAtWorkGuide = lazy(() => import("./pages/AiAtWorkGuide"));
 
+const Privacy = lazy(() => import("./pages/Privacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -72,6 +75,15 @@ const App = () => (
             <Route path="/GEMinvite" element={<GEMInvite />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/resources/ai-at-work" element={<AiAtWorkGuide />} />
+
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+
+            {/* Short / guessed URLs people type or print */}
+            <Route path="/events" element={<Navigate to="/aspire/events" replace />} />
+            <Route path="/programs" element={<Navigate to="/aspire" replace />} />
+            <Route path="/faq" element={<Navigate to="/free-ai-training-faq" replace />} />
+            <Route path="/team" element={<Navigate to="/about#team-section" replace />} />
 
             <Route path="/flyer1" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

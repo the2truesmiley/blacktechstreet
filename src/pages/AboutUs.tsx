@@ -247,7 +247,7 @@ export default function AboutUs() {
                   key={`${item.year}-${item.title}`}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: true, margin: "150px 0px" }}
                   transition={{ duration: 0.6, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
                   className={cn(
                     "relative pl-12 md:pl-0 pb-12 last:pb-0",

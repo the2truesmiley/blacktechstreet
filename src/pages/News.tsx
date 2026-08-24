@@ -176,7 +176,7 @@ function ArticleCard({ article, index }: { article: typeof newsArticles[0]; inde
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
+      viewport={{ once: true, margin: '150px 0px' }}
       transition={{ delay: Math.min(index * 0.05, 0.3) }}
       className={cn(
         'group relative p-5 md:p-6 rounded-xl',
