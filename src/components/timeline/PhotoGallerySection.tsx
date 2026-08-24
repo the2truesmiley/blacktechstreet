@@ -35,12 +35,16 @@ export function PhotoGallerySection() {
               viewport={{ once: true, margin: '150px 0px' }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className={cn(
-                "group relative aspect-square rounded-xl overflow-hidden cursor-pointer",
-                "bg-secondary/50 border border-border/40",
-                "hover:border-primary/50 transition-all duration-300"
-              )}
             >
+              <Link
+                to="/gallery"
+                aria-label={`View gallery photo: ${item.title}`}
+                className={cn(
+                  "group relative block aspect-square rounded-xl overflow-hidden",
+                  "bg-secondary/50 border border-border/40",
+                  "hover:border-primary/50 transition-all duration-300"
+                )}
+              >
               {/* Image */}
               <img
                 src={thumbUrl(item.image_url, 600)}
