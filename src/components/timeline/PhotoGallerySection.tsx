@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { useGalleryPhotos } from '@/hooks/useGalleryPhotos';
 import { Loader2 } from 'lucide-react';
@@ -35,12 +36,16 @@ export function PhotoGallerySection() {
               viewport={{ once: true, margin: '150px 0px' }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className={cn(
-                "group relative aspect-square rounded-xl overflow-hidden cursor-pointer",
-                "bg-secondary/50 border border-border/40",
-                "hover:border-primary/50 transition-all duration-300"
-              )}
             >
+              <Link
+                to="/gallery"
+                aria-label={`View gallery photo: ${item.title}`}
+                className={cn(
+                  "group relative block aspect-square rounded-xl overflow-hidden",
+                  "bg-secondary/50 border border-border/40",
+                  "hover:border-primary/50 transition-all duration-300"
+                )}
+              >
               {/* Image */}
               <img
                 src={thumbUrl(item.image_url, 600)}
@@ -64,6 +69,7 @@ export function PhotoGallerySection() {
 
               {/* Corner accent */}
               <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
             </motion.div>
           ))}
         </div>

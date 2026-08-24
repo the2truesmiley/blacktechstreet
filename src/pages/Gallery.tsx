@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
-import { Camera, Calendar, Loader2 } from 'lucide-react';
+import { Camera, Calendar, Loader2, Maximize2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useGalleryPhotos, useGalleryTags, filterPhotosByTag } from '@/hooks/useGalleryPhotos';
 import { format } from 'date-fns';
 import { useSEO } from '@/hooks/useSEO';
 import { thumbUrl } from '@/lib/imageUrl';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 export default function Gallery() {
   useSEO({
@@ -17,9 +18,17 @@ export default function Gallery() {
   });
 
   const [activeTag, setActiveTag] = useState('All');
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { data: photos, isLoading, error } = useGalleryPhotos();
   const tags = useGalleryTags(photos);
   const filteredPhotos = filterPhotosByTag(photos, activeTag);
+  const activePhoto = activeIndex === null ? null : filteredPhotos[activeIndex] ?? null;
+
+  const step = (delta: number) => {
+    if (activeIndex === null || filteredPhotos.length === 0) return;
+    const next = (activeIndex + delta + filteredPhotos.length) % filteredPhotos.length;
+    setActiveIndex(next);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -92,17 +101,23 @@ export default function Gallery() {
                   key={item.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
+                  viewport={{ once: true, margin: '150px 0px' }}
+                  transition={{ delay: Math.min(index, 6) * 0.05 }}
                   whileHover={{ y: -5 }}
                   className="group relative"
                   layout
                 >
-                  <div className={cn(
-                    "relative aspect-[4/3] rounded-2xl overflow-hidden",
-                    "bg-secondary/50 border border-border/40",
-                    "hover:border-primary/50 transition-all duration-500"
-                  )}>
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    aria-label={`View photo: ${item.title}`}
+                    className={cn(
+                      "relative block w-full aspect-[4/3] rounded-2xl overflow-hidden text-left",
+                      "bg-secondary/50 border border-border/40 cursor-zoom-in",
+                      "hover:border-primary/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+                      "transition-all duration-500"
+                    )}
+                  >
                     {/* Image */}
                     <img
                       src={thumbUrl(item.image_url, 800)}
@@ -115,6 +130,11 @@ export default function Gallery() {
                     {/* Subtle gradient only on hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
+                    {/* Zoom affordance */}
+                    <span className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-background/70 text-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Maximize2 className="w-4 h-4" />
+                    </span>
+
                     {/* Content overlay — visible only on hover */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                       <h3 className="text-sm font-semibold text-foreground">
@@ -125,7 +145,7 @@ export default function Gallery() {
                         {format(new Date(item.event_date), 'MMMM d, yyyy')}
                       </span>
                     </div>
-                  </div>
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -133,6 +153,60 @@ export default function Gallery() {
         </div>
       </section>
       </main>
+
+      {/* Lightbox */}
+      <Dialog open={activePhoto !== null} onOpenChange={(open) => !open && setActiveIndex(null)}>
+        <DialogContent className="max-w-5xl border-border/40 bg-background/95 p-3 sm:p-4">
+          {activePhoto && (
+            <>
+              <DialogTitle className="sr-only">{activePhoto.title}</DialogTitle>
+              <DialogDescription className="sr-only">
+                Photo from {format(new Date(activePhoto.event_date), 'MMMM d, yyyy')}
+              </DialogDescription>
+
+              <div className="relative flex items-center justify-center">
+                <img
+                  src={thumbUrl(activePhoto.image_url, 1600, 80)}
+                  alt={activePhoto.title}
+                  className="max-h-[75vh] w-auto rounded-xl object-contain"
+                />
+
+                {filteredPhotos.length > 1 && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => step(-1)}
+                      aria-label="Previous photo"
+                      className="absolute left-2 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground transition-colors hover:bg-background"
+                    >
+                      <ChevronLeft className="h-5 w-5" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => step(1)}
+                      aria-label="Next photo"
+                      className="absolute right-2 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground transition-colors hover:bg-background"
+                    >
+                      <ChevronRight className="h-5 w-5" />
+                    </button>
+                  </>
+                )}
+              </div>
+
+              <div className="px-1 pt-3">
+                <h2 className="font-display text-base font-semibold text-foreground">
+                  {activePhoto.title}
+                </h2>
+                <p className="mt-1 flex items-center gap-2 text-xs text-muted-foreground">
+                  <Calendar className="h-3 w-3" />
+                  {format(new Date(activePhoto.event_date), 'MMMM d, yyyy')}
+                  {activePhoto.location ? ` · ${activePhoto.location}` : ''}
+                </p>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Footer */}
       <div className="relative z-10 px-5 max-w-5xl mx-auto">
