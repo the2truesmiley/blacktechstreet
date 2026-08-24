@@ -221,17 +221,31 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
   const handleNavClick = (href: string, isEmail?: boolean) => {
     setIsMobileMenuOpen(false);
     setOpenDropdown(null);
-    
+
     if (isEmail || href.startsWith('mailto:')) {
       window.location.href = href;
       return;
     }
-    
+
     if (href.startsWith('/')) {
+      const [path, hash] = href.split('#');
+      const targetPath = path || '/';
+
+      // Already on the target page: scroll to the section ourselves, since a
+      // same-path navigation does not remount or scroll.
+      if (hash && window.location.pathname === targetPath) {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.history.replaceState(null, '', `${targetPath}#${hash}`);
+          return;
+        }
+      }
+
       navigate(href);
       return;
     }
-    
+
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
