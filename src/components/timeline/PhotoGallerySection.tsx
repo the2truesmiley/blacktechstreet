@@ -68,6 +68,7 @@ export function PhotoGallerySection() {
 
               {/* Corner accent */}
               <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              </Link>
             </motion.div>
           ))}
         </div>
