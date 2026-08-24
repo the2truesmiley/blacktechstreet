@@ -9,6 +9,8 @@ import { NextEventHero } from '@/components/events/NextEventHero';
 import { EventsHero } from '@/components/events/EventsHero';
 import { EventTestimonials } from '@/components/events/EventTestimonials';
 import { FacilitatorsSection } from '@/components/events/FacilitatorsSection';
+import { EventAlertsSection } from '@/components/email/EventAlertsSection';
+
 import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { type AspireEvent } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
