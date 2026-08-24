@@ -18,9 +18,17 @@ export default function Gallery() {
   });
 
   const [activeTag, setActiveTag] = useState('All');
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { data: photos, isLoading, error } = useGalleryPhotos();
   const tags = useGalleryTags(photos);
   const filteredPhotos = filterPhotosByTag(photos, activeTag);
+  const activePhoto = activeIndex === null ? null : filteredPhotos[activeIndex] ?? null;
+
+  const step = (delta: number) => {
+    if (activeIndex === null || filteredPhotos.length === 0) return;
+    const next = (activeIndex + delta + filteredPhotos.length) % filteredPhotos.length;
+    setActiveIndex(next);
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
