@@ -414,6 +414,11 @@ export default function AspireEvents() {
       {/* Testimonials Section */}
       <EventTestimonials />
 
+      {/* Event alert email capture */}
+      <EventAlertsSection />
+
+
+
       {/* Contact CTA Section */}
       <section className="py-16 relative overflow-hidden">
         {/* Animated background */}
