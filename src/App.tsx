@@ -60,6 +60,12 @@ const App = () => (
             <Route path="/aspire/events" element={<AspireEvents />} />
             <Route path="/aspire/events/june-2026" element={<Navigate to="/aspire/events" replace />} />
             <Route path="/aspire/events/september-2026" element={<AspireEventSeptember2026 />} />
+            {/* Old September 26 links (date changed to Sept 19) */}
+            <Route path="/aspire/events/september-26-2026" element={<Navigate to="/aspire/events/september-2026" replace />} />
+            <Route path="/aspire/events/sept-26-2026" element={<Navigate to="/aspire/events/september-2026" replace />} />
+            <Route path="/aspire/events/sept-2026" element={<Navigate to="/aspire/events/september-2026" replace />} />
+            <Route path="/aspire/events/september-19-2026" element={<Navigate to="/aspire/events/september-2026" replace />} />
+            <Route path="/september-2026" element={<Navigate to="/aspire/events/september-2026" replace />} />
             <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
             <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
             <Route path="/aspire-typros" element={<AspireTypros />} />
