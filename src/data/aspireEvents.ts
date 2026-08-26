@@ -6,6 +6,8 @@ export interface AspireEvent {
   location: string;
   locationFull: string;
   registrationUrl: string;
+  /** Direct, full-page Tally form link (used as fallback / new-tab link) */
+  directRegistrationUrl: string;
   status: "upcoming" | "registration-open" | "sold-out";
 }
 
@@ -18,6 +20,7 @@ export const aspireEvents2026: AspireEvent[] = [
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/embed/EkWBo2",
+    directRegistrationUrl: "https://tally.so/r/EkWBo2",
     status: "sold-out",
   },
   {
@@ -28,6 +31,7 @@ export const aspireEvents2026: AspireEvent[] = [
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/embed/lbdNNN",
+    directRegistrationUrl: "https://tally.so/r/lbdNNN",
     status: "upcoming",
   },
   {
@@ -38,6 +42,7 @@ export const aspireEvents2026: AspireEvent[] = [
     location: "Langston Tulsa",
     locationFull: "Langston University - Tulsa Campus",
     registrationUrl: "https://tally.so/embed/Zj6dde",
+    directRegistrationUrl: "https://tally.so/r/Zj6dde",
     status: "upcoming",
   },
 ];
