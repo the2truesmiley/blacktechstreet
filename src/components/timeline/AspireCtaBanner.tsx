@@ -41,7 +41,7 @@ export function AspireCtaBanner() {
           }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <Link to="/aspire/events" className="block group">
+          <Link to="/aspire/events/september-2026/register" className="block group">
             <div className="relative overflow-hidden rounded-2xl border border-primary/40 bg-background/90 backdrop-blur-md hover:border-primary/70 transition-colors duration-300">
 
               {/* Animated background gradient */}
