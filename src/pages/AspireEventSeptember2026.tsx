@@ -9,7 +9,6 @@ import { format } from 'date-fns';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
-import { EventsHero } from '@/components/events/EventsHero';
 import { EventTestimonials } from '@/components/events/EventTestimonials';
 import { FacilitatorsSection } from '@/components/events/FacilitatorsSection';
 import { FlipClock } from '@/components/events/FlipClock';
@@ -143,10 +142,8 @@ export default function AspireEventSeptember2026() {
       />
 
       <main className="relative pb-24 md:pb-0">
-        <EventsHero hideBadges={['workshops', 'all-saturdays']} />
-
         {/* Offer hero */}
-        <section className="relative py-12 md:py-16">
+        <section className="relative pt-28 pb-12 md:pt-32 md:pb-16">
           <div className="relative mx-auto max-w-5xl px-5">
             <motion.div
               variants={reduceMotion ? undefined : containerVariants}
@@ -161,7 +158,7 @@ export default function AspireEventSeptember2026() {
               <div className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
                 <motion.div variants={reduceMotion ? undefined : itemVariants} className="space-y-5">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-                    {format(septemberEvent.date, 'MMMM d, yyyy')} · Greenwood, Tulsa
+                    ASPIRE 2026 · GenAI Fluency &amp; Responsible Innovation
                   </p>
 
                   <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
