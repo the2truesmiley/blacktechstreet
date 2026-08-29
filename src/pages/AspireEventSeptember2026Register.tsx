@@ -8,9 +8,18 @@ import { aspireEvents2026 } from '@/data/aspireEvents';
 import { useSEO } from '@/hooks/useSEO';
 
 const FALLBACK_HEIGHT = 3200;
+// Extra breathing room so Tally's submit button is never clipped by
+// rounding differences or late-loading fields on narrow screens.
+const HEIGHT_BUFFER = 120;
+const MIN_HEIGHT = 900;
 
 export default function AspireEventSeptember2026Register() {
   const [height, setHeight] = useState(FALLBACK_HEIGHT);
+  // Remount the iframe when the layout width bucket changes so Tally
+  // re-measures and re-reports its height after resize / rotation.
+  const [widthKey, setWidthKey] = useState(() =>
+    typeof window === 'undefined' ? 'md' : String(Math.round(window.innerWidth / 80)),
+  );
 
   const event = useMemo(
     () => aspireEvents2026.find((e) => e.id === 'september-2026')!,
@@ -30,6 +39,23 @@ export default function AspireEventSeptember2026Register() {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    let raf = 0;
+    const onResize = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        setWidthKey(String(Math.round(window.innerWidth / 80)));
+      });
+    };
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('orientationchange', onResize);
+    };
+  }, []);
+
   // Tally forwards its content height via postMessage when dynamicHeight=1.
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
@@ -37,7 +63,9 @@ export default function AspireEventSeptember2026Register() {
       try {
         const data = JSON.parse(e.data);
         const h = Number(data?.payload?.height);
-        if (h && Number.isFinite(h)) setHeight(Math.max(h + 40, 600));
+        if (h && Number.isFinite(h)) {
+          setHeight(Math.max(h + HEIGHT_BUFFER, MIN_HEIGHT));
+        }
       } catch {
         /* ignore non-JSON messages */
       }
@@ -45,6 +73,7 @@ export default function AspireEventSeptember2026Register() {
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
   }, []);
+
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
