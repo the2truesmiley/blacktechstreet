@@ -135,15 +135,18 @@ export default function AspireEventSeptember2026Register() {
 
           <div className="mt-6 -mx-4 sm:mx-0">
             <iframe
+              key={widthKey}
               src={`${event.registrationUrl}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1`}
               width="100%"
               height={height}
               frameBorder="0"
+              scrolling="no"
               title="Registration form for the September 19, 2026 ASPIRE AI Workshop"
-              className="block w-full"
-              style={{ height }}
+              className="block w-full border-0"
+              style={{ height, minHeight: MIN_HEIGHT }}
             />
           </div>
+
 
           <p className="mt-8 text-sm text-muted-foreground">
             Questions or accessibility needs?{' '}
