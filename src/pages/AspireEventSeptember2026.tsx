@@ -1,53 +1,112 @@
-import { useState, useMemo, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop, Calendar, Clock, MapPin, ArrowRight, Car } from 'lucide-react';
+import { useEffect, useMemo } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
+import {
+  Users, Sparkles, Briefcase, Shield, ExternalLink, Accessibility, Baby, Laptop,
+  Calendar, Clock, MapPin, ArrowRight, Car, CheckCircle2,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { TechBackground } from '@/components/timeline/TechBackground';
-import { EventsHero } from '@/components/events/EventsHero';
 import { EventTestimonials } from '@/components/events/EventTestimonials';
 import { FacilitatorsSection } from '@/components/events/FacilitatorsSection';
-import { RegistrationModal } from '@/components/events/RegistrationModal';
 import { FlipClock } from '@/components/events/FlipClock';
-import { Button } from '@/components/ui/button';
-import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
+import { StickyRegisterBar } from '@/components/events/StickyRegisterBar';
+import {
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
+} from '@/components/ui/accordion';
+import { aspireEvents2026 } from '@/data/aspireEvents';
 import { cn } from '@/lib/utils';
-import jovieChildcareBadge from '@/assets/partners/jovie-childcare-badge.png';
 import { useSEO } from '@/hooks/useSEO';
 import { EventJsonLd } from '@/components/seo/EventJsonLd';
+
+const REGISTER_PATH = '/aspire/events/september-2026/register';
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.08, delayChildren: 0.05 },
   },
 } as const;
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    scale: 1,
-  },
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
 } as const;
 
-export default function AspireEventSeptember2026() {
-  const [selectedEvent, setSelectedEvent] = useState<AspireEvent | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+function RegisterCta({
+  className,
+  label = 'Reserve my free spot',
+  note = 'Free · Takes about 3 minutes',
+}: {
+  className?: string;
+  label?: string;
+  note?: string | null;
+}) {
+  return (
+    <div className={cn('w-full', className)}>
+      <Link
+        to={REGISTER_PATH}
+        className={cn(
+          'group inline-flex min-h-[52px] w-full items-center justify-center gap-2 sm:w-auto',
+          'rounded-lg bg-primary px-8 text-base sm:text-lg font-semibold text-primary-foreground',
+          'shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-primary/90',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+        )}
+      >
+        {label}
+        <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+      </Link>
+      {note && <p className="mt-2 text-sm text-muted-foreground">{note}</p>}
+    </div>
+  );
+}
 
-  const { scrollYProgress } = useScroll();
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+const expectItems = [
+  { icon: Sparkles, title: 'Full-Day Immersive Experience', description: 'Deep dive into GenAI tools and responsible innovation practices' },
+  { icon: Briefcase, title: 'Hands-On AI Tool Training', description: 'Learn practical applications you can use immediately' },
+  { icon: Users, title: 'Networking with Community', description: 'Build lasting connections with fellow participants, local innovators, and Tulsa tech leaders' },
+  { icon: Baby, title: 'Free On-Site Childcare', description: 'Professional childcare provided at no cost during workshops' },
+  { icon: Accessibility, title: 'Accessibility Accommodations', description: 'Contact us for any accessibility needs' },
+  { icon: Laptop, title: 'Laptop Checkout Available', description: 'Need a device? Laptops are available to borrow during the workshop at no cost' },
+];
+
+const faqItems = [
+  {
+    q: 'Is it really free?',
+    a: 'Yes. The workshop, the materials, lunch-break logistics, childcare, and laptop checkout all cost you nothing. We never ask for payment information.',
+  },
+  {
+    q: 'Do I need to bring a laptop?',
+    a: 'Bring one if you have it. If you do not, laptops are available to borrow at the workshop at no cost — just note it during registration.',
+  },
+  {
+    q: 'Do I need any AI or tech experience?',
+    a: 'No. The workshop is built for complete beginners and still gives experienced users practical new workflows.',
+  },
+  {
+    q: 'What about childcare?',
+    a: 'Professional, vetted on-site childcare is provided free through our partnership with Jovie of Tulsa. Indicate your childcare needs during registration so we can reserve a spot.',
+  },
+  {
+    q: 'What if I cannot stay the whole day?',
+    a: 'Still register. Sessions build on each other, but you are welcome to attend the portion of the day that works for your schedule.',
+  },
+  {
+    q: 'Where do I park?',
+    a: 'Free parking is available near Langston University\u2019s Tulsa campus at 914 N Greenwood Ave. See the parking details page for the exact lots and entrances.',
+  },
+];
+
+export default function AspireEventSeptember2026() {
+  const reduceMotion = useReducedMotion();
 
   useSEO({
-    title: 'September 2026 ASPIRE Workshop | Black Tech Street',
-    description: 'Register for the September 2026 ASPIRE GenAI Fluency Workshop in Greenwood, Tulsa. Hands-on AI training with free childcare.',
+    title: 'Free AI Workshop Sept 19, 2026 | ASPIRE | Black Tech Street',
+    description:
+      'Reserve a free spot at the September 19, 2026 ASPIRE AI Workshop in Greenwood, Tulsa. Hands-on AI training, free childcare, laptops available. No experience needed.',
     canonical: 'https://blacktechstreet.ai/aspire/events/september-2026',
   });
 
@@ -55,47 +114,19 @@ export default function AspireEventSeptember2026() {
     window.scrollTo(0, 0);
   }, []);
 
-  const septemberEvent = useMemo(() => {
-    return aspireEvents2026.find(e => e.id === 'september-2026')!;
-  }, []);
+  const septemberEvent = useMemo(
+    () => aspireEvents2026.find((e) => e.id === 'september-2026')!,
+    [],
+  );
 
-  const handleRegister = () => {
-    setSelectedEvent(septemberEvent);
-    setIsModalOpen(true);
-  };
-
-  const expectItems = [
-    {
-      icon: Sparkles,
-      title: 'Full-Day Immersive Experience',
-      description: 'Deep dive into GenAI tools and responsible innovation practices'
-    },
-    {
-      icon: Briefcase,
-      title: 'Hands-On AI Tool Training',
-      description: 'Learn practical applications you can use immediately'
-    },
-    {
-      icon: Users,
-      title: 'Networking with Community',
-      description: 'Build lasting connections with fellow participants, local innovators, and Tulsa tech leaders'
-    },
-    {
-      icon: Baby,
-      title: 'Free On-Site Childcare',
-      description: 'Professional childcare provided at no cost during workshops'
-    },
-    {
-      icon: Accessibility,
-      title: 'Accessibility Accommodations',
-      description: 'Contact us for any accessibility needs'
-    },
-    {
-      icon: Laptop,
-      title: 'Laptop Checkout Available',
-      description: 'Need a device? Laptops are available to borrow during the workshop at no cost'
-    }
-  ];
+  const reveal = reduceMotion
+    ? {}
+    : {
+        initial: { opacity: 0, y: 24 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, margin: '150px 0px' },
+        transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
+      };
 
   return (
     <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -109,458 +140,251 @@ export default function AspireEventSeptember2026() {
         location={{ name: 'Langston University - Tulsa Campus', address: '914 N Greenwood Ave, Tulsa, OK 74106' }}
         url="https://blacktechstreet.ai/aspire/events/september-2026"
       />
-      <main className="relative">
-      <EventsHero hideBadges={['workshops', 'all-saturdays']} />
 
-      {/* September Event Hero Section */}
-      <section className="py-16 relative">
-        <motion.div 
-          className="absolute inset-0 bg-gradient-to-b from-background to-transparent opacity-50"
-          style={{ y: backgroundY }}
-        />
-        <div className="max-w-5xl mx-auto px-5 relative">
-          <motion.div 
-            className="space-y-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
+      <main className="relative pb-24 md:pb-0">
+        {/* Offer hero */}
+        <section className="relative pt-28 pb-12 md:pt-32 md:pb-16">
+          <div className="relative mx-auto max-w-5xl px-5">
             <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.01 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              variants={reduceMotion ? undefined : containerVariants}
+              initial={reduceMotion ? undefined : 'hidden'}
+              animate={reduceMotion ? undefined : 'visible'}
               className={cn(
-                "relative overflow-hidden rounded-2xl",
-                "bg-gradient-to-br from-primary/20 via-card to-card",
-                "border border-primary/30",
-                "p-6 md:p-10"
+                'relative overflow-hidden rounded-2xl',
+                'bg-gradient-to-br from-primary/15 via-card to-card',
+                'border border-primary/30 p-6 md:p-10',
               )}
             >
-              {/* Animated background gradient */}
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              />
-              
-              {/* Decorative glow */}
-              <motion.div 
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-y-1/2"
-                animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              />
+              <div className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
+                <motion.div variants={reduceMotion ? undefined : itemVariants} className="space-y-5">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+                    ASPIRE 2026 · GenAI Fluency &amp; Responsible Innovation
+                  </p>
 
-              <div className="relative">
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.1 }}
-                  className="mb-6"
-                >
-                  <motion.div 
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-semibold mb-3 border border-primary/30"
-                    animate={{
-                      boxShadow: [
-                        "0 0 0 0 hsl(var(--primary) / 0)",
-                        "0 0 20px 4px hsl(var(--primary) / 0.4)",
-                        "0 0 0 0 hsl(var(--primary) / 0)",
-                      ],
-                      scale: [1, 1.02, 1],
-                    }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                    Free full-day AI workshop
+                  </h1>
+
+                  <p className="max-w-xl text-lg text-foreground/90">
+                    Spend one Saturday learning how to use AI tools practically, ethically, and
+                    effectively — at work and in your own projects. No experience required.
+                  </p>
+
+                  <div className="flex flex-col gap-2 text-base">
+                    <span className="flex items-center gap-3">
+                      <Calendar className="h-5 w-5 shrink-0 text-primary" />
+                      {format(septemberEvent.date, 'EEEE, MMMM d, yyyy')}
                     </span>
-                    September Workshop
-                  </motion.div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
-                    ASPIRE GenAI Fluency Workshop
-                  </h2>
+                    <span className="flex items-center gap-3">
+                      <Clock className="h-5 w-5 shrink-0 text-primary" />
+                      {septemberEvent.time}
+                    </span>
+                    <a
+                      href="https://www.google.com/maps/dir/?api=1&destination=914+N+Greenwood+Ave,+Tulsa,+OK+74106"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-3 hover:text-primary transition-colors"
+                    >
+                      <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                      <span>
+                        {septemberEvent.locationFull}
+                        <span className="block text-sm text-muted-foreground group-hover:text-primary/80">
+                          914 N Greenwood Ave, Tulsa, OK 74106
+                        </span>
+                      </span>
+                    </a>
+                    <Link
+                      to="/aspire/parking"
+                      className="inline-flex items-center gap-2 pl-8 text-sm font-medium text-primary hover:underline"
+                    >
+                      <Car className="h-4 w-4" />
+                      Parking details
+                    </Link>
+                  </div>
+
+                  <RegisterCta className="pt-1" />
+
+                  <ul className="flex flex-wrap gap-x-5 gap-y-2 pt-1 text-sm text-foreground/90">
+                    {['No cost', 'Free childcare', 'Laptops provided', 'Beginner friendly'].map((t) => (
+                      <li key={t} className="flex items-center gap-1.5">
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  {/* Event Info */}
-                  <motion.div className="space-y-4" variants={containerVariants}>
-                    <motion.h3 variants={itemVariants} className="text-3xl md:text-4xl font-display font-bold">
-                      {format(septemberEvent.date, 'MMMM d, yyyy')}
-                    </motion.h3>
-                    
-                    <motion.div variants={itemVariants} className="flex flex-col gap-3">
-                      {[
-                        { icon: Calendar, text: format(septemberEvent.date, 'EEEE') },
-                        { icon: Clock, text: septemberEvent.time },
-                      ].map((item, idx) => (
-                        <motion.div 
-                          key={idx}
-                          className="flex items-center gap-3"
-                          whileHover={{ x: 3 }}
-                          transition={{ type: "spring", stiffness: 400 }}
-                        >
-                          <item.icon className="w-5 h-5 text-primary" />
-                          <span className="text-lg md:text-xl font-medium text-foreground">{item.text}</span>
-                        </motion.div>
-                      ))}
-                      <a
-                        href="https://www.google.com/maps/dir/?api=1&destination=914+N+Greenwood+Ave,+Tulsa,+OK+74106"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group"
-                      >
-                        <motion.div 
-                          className="flex items-center gap-3"
-                          whileHover={{ x: 3 }}
-                          transition={{ type: "spring", stiffness: 400 }}
-                        >
-                          <MapPin className="w-5 h-5 text-primary" />
-                          <span className="text-lg md:text-xl font-medium text-foreground group-hover:text-primary transition-colors">{septemberEvent.locationFull}</span>
-                        </motion.div>
-                        <div className="flex items-center gap-3 pl-8">
-                          <span className="text-base text-muted-foreground group-hover:text-primary/80 transition-colors">914 N Greenwood Ave, Tulsa, OK 74106</span>
-                        </div>
-                      </a>
-                      <Link
-                        to="/aspire/parking"
-                        className="inline-flex items-center gap-2 mt-2 pl-8 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
-                      >
-                        <Car className="w-4 h-4" />
-                        Parking Details
-                      </Link>
-                    </motion.div>
-
-                    <motion.div variants={itemVariants}>
-                      <motion.div
-                        className="mt-4 inline-block rounded-lg"
-                        animate={{
-                          boxShadow: [
-                            "0 0 10px hsl(var(--primary) / 0.3), 0 0 30px hsl(var(--primary) / 0.1)",
-                            "0 0 20px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.2)",
-                            "0 0 10px hsl(var(--primary) / 0.3), 0 0 30px hsl(var(--primary) / 0.1)",
-                          ],
-                        }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.97 }}
-                      >
-                        <Button 
-                          size="lg" 
-                          className="group relative overflow-hidden bg-primary text-primary-foreground px-8 py-6 text-lg font-semibold"
-                          onClick={handleRegister}
-                        >
-                          <motion.span
-                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                            animate={{ x: ["-200%", "200%"] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
-                          />
-                          <span className="relative flex items-center gap-2">
-                            Register Now
-                            <motion.span
-                              animate={{ x: [0, 4, 0] }}
-                              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                            >
-                              <ArrowRight className="w-5 h-5" />
-                            </motion.span>
-                          </span>
-                        </Button>
-                      </motion.div>
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Countdown */}
-                  <motion.div variants={itemVariants} className="flex justify-center md:justify-end">
+                <motion.div
+                  variants={reduceMotion ? undefined : itemVariants}
+                  className="flex justify-center md:justify-end"
+                >
+                  <div className="scale-90 origin-center md:scale-100">
                     <FlipClock targetDate={septemberEvent.date} />
-                  </motion.div>
-                </div>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* What to Expect Section */}
-      <section className="py-16 relative overflow-hidden">
-        <motion.div
-          className="absolute -top-32 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -bottom-32 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-        />
-        
-        <div className="max-w-6xl mx-auto px-5 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "150px 0px" }}
-            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-center mb-10"
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-display font-bold mb-4"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              What to Expect
-            </motion.h2>
-            <motion.p 
-              className="text-muted-foreground max-w-2xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              Each workshop is designed to provide hands-on experience with AI tools while fostering responsible innovation practices.
-            </motion.p>
-          </motion.div>
+        {/* What to Expect */}
+        <section className="relative py-14">
+          <div className="relative mx-auto max-w-6xl px-5">
+            <motion.div {...reveal} className="mb-10 text-center">
+              <h2 className="mb-3 font-display text-3xl font-bold md:text-4xl">What to Expect</h2>
+              <p className="mx-auto max-w-2xl text-muted-foreground">
+                Each workshop is designed to provide hands-on experience with AI tools while
+                fostering responsible innovation practices.
+              </p>
+            </motion.div>
 
-          <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "150px 0px" }}
-          >
-            {expectItems.map((item) => (
-              <motion.div
-                key={item.title}
-                variants={itemVariants}
-                whileHover="hover"
-                initial="rest"
-                animate="rest"
-                className={cn(
-                  "p-6 rounded-xl relative overflow-hidden cursor-default",
-                  "bg-card/50 backdrop-blur-sm border border-border/40",
-                  "transition-colors duration-300"
-                )}
-              >
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {expectItems.map((item) => (
                 <motion.div
-                  className="absolute inset-0"
-                  variants={{
-                    rest: { background: "linear-gradient(to bottom right, transparent, transparent)" },
-                    hover: { background: "linear-gradient(to bottom right, hsl(var(--primary) / 0.08), hsl(var(--primary) / 0.04))" },
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-                <motion.div
-                  className="absolute inset-0 rounded-xl"
-                  variants={{
-                    rest: { boxShadow: "inset 0 0 0 1px transparent" },
-                    hover: { boxShadow: "inset 0 0 0 1px hsl(var(--primary) / 0.3)" },
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
-                <div className="relative">
-                  <motion.div 
-                    className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4"
-                    variants={{
-                      rest: { scale: 1, rotate: 0 },
-                      hover: { scale: 1.1, rotate: 5, transition: { type: "spring", stiffness: 400 } },
-                    }}
-                  >
-                    <item.icon className="w-6 h-6 text-primary" />
-                  </motion.div>
-                  <motion.h3 
-                    className="text-lg font-display font-semibold mb-2"
-                    variants={{ rest: { x: 0 }, hover: { x: 4 } }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    {item.title}
-                  </motion.h3>
+                  key={item.title}
+                  {...reveal}
+                  className={cn(
+                    'rounded-xl p-6 bg-card/50 backdrop-blur-sm border border-border/40',
+                    'transition-colors duration-300 hover:border-primary/30',
+                  )}
+                >
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <item.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="mb-2 font-display text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+                </motion.div>
+              ))}
+            </div>
 
-      {/* Childcare Partnership Section */}
-      <section id="childcare" className="py-16 scroll-mt-24 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-5">
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "150px 0px" }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            whileHover={{ scale: 1.01 }}
-            className={cn(
-              "relative overflow-hidden rounded-2xl",
-              "bg-gradient-to-br from-primary/10 via-card/80 to-card/60",
-              "border border-primary/20 backdrop-blur-sm",
-              "p-8 md:p-10"
-            )}
-          >
-            <motion.div 
-              className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"
-              animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div 
-              className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"
-              animate={{ scale: [1.3, 1, 1.3], opacity: [0.3, 0.6, 0.3] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 3 }}
-            />
-            
-            <div className="relative">
-              <motion.a
-                href="https://www.jovie.com/resources-faq/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mb-6"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <img 
-                  src={jovieChildcareBadge} 
-                  alt="Jovie - Free On-Site Childcare Provided" 
-                  className="h-24 md:h-32 w-auto object-contain"
-                />
-              </motion.a>
+            <motion.div {...reveal} className="mt-10 flex justify-center">
+              <RegisterCta className="text-center sm:w-auto" note="Free · Takes about 3 minutes" />
+            </motion.div>
+          </div>
+        </section>
 
-              <motion.h2 
-                className="text-2xl md:text-3xl font-display font-bold mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15 }}
-              >
-                Free On-Site Childcare Provided
-              </motion.h2>
-              
-              <motion.p 
-                className="text-muted-foreground mb-6 max-w-2xl"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
+        {/* Childcare */}
+        <section id="childcare" className="relative scroll-mt-24 py-14">
+          <div className="mx-auto max-w-4xl px-5">
+            <motion.div
+              {...reveal}
+              className={cn(
+                'relative overflow-hidden rounded-2xl',
+                'bg-gradient-to-br from-primary/10 via-card/80 to-card/60',
+                'border border-primary/20 backdrop-blur-sm p-8 md:p-10',
+              )}
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <Baby className="h-7 w-7 text-primary" />
+                <h2 className="font-display text-2xl font-bold md:text-3xl">
+                  Free On-Site Childcare
+                </h2>
+              </div>
+
+              <p className="mb-6 max-w-2xl text-muted-foreground">
                 Black Tech Street has partnered with{' '}
-                <a 
-                  href="https://www.jovie.com/resources-faq/" 
-                  target="_blank" 
+                <a
+                  href="https://www.jovie.com/resources-faq/"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground font-semibold hover:text-primary transition-colors"
+                  className="font-semibold text-foreground hover:text-primary transition-colors"
                 >
                   Jovie of Tulsa
                 </a>{' '}
-                to provide professional on-site childcare at no cost during our ASPIRE AI workshops—so you can fully engage 
-                without worrying about your little ones.
-              </motion.p>
+                to provide professional on-site childcare at no cost during our ASPIRE AI workshops,
+                so you can fully engage without worrying about your little ones.
+              </p>
 
-              <motion.div 
-                className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
+              <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                 {[
                   { icon: Shield, title: 'Fully Vetted Staff', desc: 'CPR/FA certified & background checked' },
                   { icon: Users, title: 'Experienced Nannies', desc: 'Professional childcare experts' },
                   { icon: Sparkles, title: 'Age-Appropriate Activities', desc: 'Safe & structured environment' },
                 ].map((item) => (
-                  <motion.div 
-                    key={item.title}
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.03, y: -3, transition: { type: "spring", stiffness: 400 } }}
-                    className="flex items-start gap-3 p-4 rounded-lg bg-background/50 cursor-default"
-                  >
-                    <motion.div whileHover={{ rotate: 10, scale: 1.1 }} transition={{ type: "spring", stiffness: 400 }}>
-                      <item.icon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    </motion.div>
+                  <div key={item.title} className="flex items-start gap-3 rounded-lg bg-background/50 p-4">
+                    <item.icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                     <div>
-                      <p className="font-medium text-sm">{item.title}</p>
+                      <p className="text-sm font-medium">{item.title}</p>
                       <p className="text-xs text-muted-foreground">{item.desc}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
 
-              <motion.a
+              <a
                 href="https://www.jovie.com/resources-faq/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors relative overflow-hidden group"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
+                className="inline-flex items-center gap-2 rounded-lg border border-primary/40 px-5 py-2.5 font-medium text-primary transition-colors hover:bg-primary/10"
               >
-                <motion.span className="absolute inset-0 bg-white/10" initial={{ x: "-100%" }} whileHover={{ x: "100%" }} transition={{ duration: 0.5 }} />
-                <span className="relative">Learn More About Jovie</span>
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </motion.a>
+                Learn more about Jovie
+                <ExternalLink className="h-4 w-4" />
+              </a>
 
-              <motion.p 
-                className="mt-6 text-sm text-muted-foreground italic"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
+              <p className="mt-6 text-sm italic text-muted-foreground">
                 Indicate your childcare needs during registration to reserve your spot.
-              </motion.p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-      <FacilitatorsSection />
-      <EventTestimonials />
+        <FacilitatorsSection />
+        <EventTestimonials />
 
-      {/* Contact CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent"
-          animate={{ opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <div className="max-w-3xl mx-auto px-5 text-center relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "150px 0px" }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            className="space-y-4"
-          >
-            <motion.h2 className="text-2xl md:text-3xl font-display font-bold">
-              Questions?
+        <section className="relative py-10">
+          <div className="mx-auto max-w-4xl px-5 flex justify-center">
+            <RegisterCta className="text-center sm:w-auto" />
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="relative py-14">
+          <div className="mx-auto max-w-3xl px-5">
+            <motion.h2 {...reveal} className="mb-6 text-center font-display text-2xl font-bold md:text-3xl">
+              Common Questions
             </motion.h2>
-            <motion.p className="text-muted-foreground">
-              Have questions about our workshops or need accessibility accommodations? We're here to help.
-            </motion.p>
-            <motion.a
-              href="mailto:contact@blacktechstreet.com"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors relative overflow-hidden group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <motion.span className="absolute inset-0 bg-white/10" initial={{ x: "-100%" }} whileHover={{ x: "100%" }} transition={{ duration: 0.5 }} />
-              <span className="relative">Contact Us</span>
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((item, i) => (
+                <AccordionItem key={item.q} value={`faq-${i}`}>
+                  <AccordionTrigger className="text-left font-medium">{item.q}</AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">{item.a}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="relative py-16">
+          <div className="mx-auto max-w-3xl px-5 text-center">
+            <motion.div {...reveal} className="rounded-2xl border border-primary/25 bg-card/60 p-8 md:p-10">
+              <h2 className="font-display text-2xl font-bold md:text-3xl">
+                Save your seat for September 19
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+                Registration is open and completely free. Seats are limited to keep the workshop
+                hands-on.
+              </p>
+              <div className="mt-6 flex justify-center">
+                <RegisterCta className="text-center sm:w-auto" />
+              </div>
+              <p className="mt-6 text-sm text-muted-foreground">
+                Questions or accessibility needs?{' '}
+                <a
+                  href="mailto:contact@blacktechstreet.com"
+                  className="font-medium text-primary hover:underline"
+                >
+                  contact@blacktechstreet.com
+                </a>
+              </p>
+            </motion.div>
+          </div>
+        </section>
       </main>
 
       <Footer />
 
-      <RegistrationModal
-        event={selectedEvent}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
+      <StickyRegisterBar to={REGISTER_PATH} subLabel="Free · September 19, 2026 · Tulsa" />
     </div>
   );
 }
