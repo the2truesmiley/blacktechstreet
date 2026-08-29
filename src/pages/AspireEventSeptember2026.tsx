@@ -108,6 +108,8 @@ export default function AspireEventSeptember2026() {
     description:
       'Reserve a free spot at the September 19, 2026 ASPIRE AI Workshop in Greenwood, Tulsa. Hands-on AI training, free childcare, laptops available. No experience needed.',
     canonical: 'https://blacktechstreet.ai/aspire/events/september-2026',
+    ogUrl: 'https://blacktechstreet.ai/aspire/events/september-2026',
+    ogImage: 'https://blacktechstreet.ai/bts-logo.png',
   });
 
   useEffect(() => {
