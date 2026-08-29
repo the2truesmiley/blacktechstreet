@@ -114,6 +114,24 @@ export default function AspireEventSeptember2026() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // FAQPage structured data for search rich results
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.dataset.seo = 'faq-schema';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      })),
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.head.querySelectorAll('script[data-seo="faq-schema"]').forEach((el) => el.remove());
+    };
   }, []);
 
   const septemberEvent = useMemo(
