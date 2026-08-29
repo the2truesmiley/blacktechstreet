@@ -80,14 +80,14 @@ export function AspireCtaBanner() {
 
                     {/* Bold headline */}
                     <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground leading-tight">
-                      Your next step starts{' '}
+                      ASPIRE AI Workshop —{' '}
                       <span className="text-primary drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]">
-                        {format(nextEvent.date, 'MMMM')}&nbsp;{ordinal(nextEvent.date.getDate())}
+                        September 19, 2026
                       </span>
                     </h3>
 
                     <p className="text-muted-foreground text-sm max-w-sm">
-                      ASPIRE AI Workshop. A free, full-day AI training experience open to the community.
+                      A free, full-day AI training experience open to the community. Reserve your spot now.
                     </p>
 
                     {/* Free childcare callout */}
