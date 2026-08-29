@@ -5,35 +5,46 @@ interface SEOProps {
   description: string;
   ogImage?: string;
   ogType?: string;
+  ogUrl?: string;
   canonical?: string;
 }
 
-export function useSEO({ title, description, ogImage, ogType = 'website', canonical }: SEOProps) {
+function setMeta(selector: string, attr: string, value: string) {
+  const el = document.querySelector(`meta[${selector}]`);
+  if (el) el.setAttribute(attr, value);
+}
+
+function setOrCreateMeta(key: 'property' | 'name', id: string, content: string) {
+  let el = document.querySelector(`meta[${key}="${id}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(key, id);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+}
+
+export function useSEO({ title, description, ogImage, ogType = 'website', ogUrl, canonical }: SEOProps) {
   useEffect(() => {
     // Title
     document.title = title;
 
     // Meta description
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', description);
+    setMeta('name="description"', 'content', description);
 
-    // OG tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', title);
+    // Open Graph (updates static index.html tags in place where they exist)
+    setMeta('property="og:title"', 'content', title);
+    setMeta('property="og:description"', 'content', description);
+    setMeta('property="og:type"', 'content', ogType);
+    if (ogImage) setMeta('property="og:image"', 'content', ogImage);
+    if (ogUrl) setOrCreateMeta('property', 'og:url', ogUrl);
 
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', description);
-
-    const ogTypeTag = document.querySelector('meta[property="og:type"]');
-    if (ogTypeTag) ogTypeTag.setAttribute('content', ogType);
-
-    if (ogImage) {
-      const ogImg = document.querySelector('meta[property="og:image"]');
-      if (ogImg) ogImg.setAttribute('content', ogImage);
-
-      const twitterImg = document.querySelector('meta[name="twitter:image"]');
-      if (twitterImg) twitterImg.setAttribute('content', ogImage);
-    }
+    // Twitter card (twitter:title / twitter:description fall back to og:*,
+    // but set them explicitly for crawlers that prefer the twitter namespace)
+    setOrCreateMeta('name', 'twitter:card', 'summary_large_image');
+    setOrCreateMeta('name', 'twitter:title', title);
+    setOrCreateMeta('name', 'twitter:description', description);
+    if (ogImage) setMeta('name="twitter:image"', 'content', ogImage);
 
     // Canonical
     if (canonical) {
@@ -45,5 +56,5 @@ export function useSEO({ title, description, ogImage, ogType = 'website', canoni
       }
       link.setAttribute('href', canonical);
     }
-  }, [title, description, ogImage, ogType, canonical]);
+  }, [title, description, ogImage, ogType, ogUrl, canonical]);
 }
