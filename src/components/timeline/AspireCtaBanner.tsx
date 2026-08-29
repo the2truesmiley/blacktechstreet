@@ -41,7 +41,7 @@ export function AspireCtaBanner() {
           }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <Link to="/aspire/events" className="block group">
+          <Link to="/aspire/events/september-2026/register" className="block group">
             <div className="relative overflow-hidden rounded-2xl border border-primary/40 bg-background/90 backdrop-blur-md hover:border-primary/70 transition-colors duration-300">
 
               {/* Animated background gradient */}
@@ -80,14 +80,14 @@ export function AspireCtaBanner() {
 
                     {/* Bold headline */}
                     <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground leading-tight">
-                      Your next step starts{' '}
+                      ASPIRE AI Workshop —{' '}
                       <span className="text-primary drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]">
-                        {format(nextEvent.date, 'MMMM')}&nbsp;{ordinal(nextEvent.date.getDate())}
+                        September 19, 2026
                       </span>
                     </h3>
 
                     <p className="text-muted-foreground text-sm max-w-sm">
-                      ASPIRE AI Workshop. A free, full-day AI training experience open to the community.
+                      A free, full-day AI training experience open to the community. Reserve your spot now.
                     </p>
 
                     {/* Free childcare callout */}
@@ -142,7 +142,7 @@ export function AspireCtaBanner() {
                           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1 }}
                         />
                         <span className="relative flex items-center gap-2">
-                          Register Free
+                          Register
                           <motion.span
                             animate={{ x: [0, 4, 0] }}
                             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
