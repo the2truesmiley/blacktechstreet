@@ -9,7 +9,7 @@ import typrosBadge from '@/assets/typros-badge.png';
 import btsLogo from '@/assets/logo_bts_dark_glow.png';
 
 
-const TALLY_FORM_URL = 'https://tally.so/r/zxvANM';
+const TALLY_FORM_URL = 'https://tally.so/r/VLWZ1J';
 
 function useTypewriter(text: string, speed: number = 40, startDelay: number = 600) {
   const [displayed, setDisplayed] = useState('');
