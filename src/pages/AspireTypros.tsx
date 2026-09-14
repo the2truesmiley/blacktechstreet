@@ -97,9 +97,9 @@ function TypewriterHeading({ text, className }: { text: string; className?: stri
 export default function AspireTypros() {
 
   useSEO({
-    title: 'Black Tech Street × TYPROS ASPIRE AI Workshop',
+    title: 'AI Fluency Workshop | Black Tech Street × TYPROS',
     description:
-      'Black Tech Street and TYPROS are partnering to help young professionals learn to use AI practically, ethically, and effectively in the workplace. Register for the free August 20, 2026 ASPIRE AI Workshop.',
+      'Black Tech Street and TYPROS are partnering to help young professionals learn to use AI practically, ethically, and effectively in the workplace. Register for the free AI Fluency Workshop on Thursday, September 17, 2026 at OSU-Tulsa North Hall 150 in Greenwood. Beginners welcome.',
     canonical: 'https://blacktechstreet.ai/aspire-typros',
   });
 
@@ -180,7 +180,7 @@ export default function AspireTypros() {
                 />
               </div>
               <h1 className="text-2xl md:text-4xl font-display font-bold tracking-tight uppercase text-foreground/90 mt-2">
-                ASPIRE Enterprise Workshop
+                AI Fluency Workshop
               </h1>
             </motion.div>
 
@@ -254,9 +254,9 @@ export default function AspireTypros() {
             className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10"
           >
             {[
-              { icon: Calendar, label: 'Date', value: 'August 20, 2026' },
+              { icon: Calendar, label: 'Date', value: 'Thursday, September 17, 2026' },
               { icon: Clock, label: 'Time', value: '9:00 AM – 5:00 PM' },
-              { icon: MapPin, label: 'Location', value: 'Langston Tulsa Campus' },
+              { icon: MapPin, label: 'Location', value: 'OSU-Tulsa, North Hall 150 (Greenwood)' },
             ].map(({ icon: Icon, label, value }) => (
               <motion.div
                 key={label}
@@ -352,7 +352,7 @@ export default function AspireTypros() {
               Reserve your seat
             </h2>
             <p className="text-sm text-foreground mb-8 max-w-md mx-auto">
-              Seats are limited. Complete your free registration on Tally in a new tab and we'll see you at the ASPIRE AI Workshop on August 20, 2026.
+              Seats are limited and beginners are welcome. Complete your free registration in a new tab and we'll see you at the AI Fluency Workshop on Thursday, September 17, 2026.
             </p>
 
             <a
