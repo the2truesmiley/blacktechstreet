@@ -38,7 +38,7 @@ export default function HqGrandOpeningPhotos() {
       const mapped = files.map((f) => {
         const { data: pub } = supabase.storage
           .from(BUCKET)
-          .getPublicUrl(`${FOLDER}/${f.name}`);
+          .getPublicUrl(FOLDER ? `${FOLDER}/${f.name}` : f.name);
         return { name: f.name, url: pub.publicUrl };
       });
 
