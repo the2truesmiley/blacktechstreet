@@ -14,9 +14,10 @@ const ordinal = (n: number) => {
 
 export function AspireCtaBanner() {
   const nextEvent = useMemo(() => {
-    return aspireEvents2026
-      .sort((a, b) => a.date.getTime() - b.date.getTime())
-      .find(e => !isPast(e.date)) || null;
+    const events = [...aspireEvents2026].sort(
+      (a, b) => a.date.getTime() - b.date.getTime(),
+    );
+    return events.find(e => !isPast(e.date)) || null;
   }, []);
 
   if (!nextEvent) return null;
@@ -41,7 +42,7 @@ export function AspireCtaBanner() {
           }}
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <Link to="/aspire/events/september-2026/register" className="block group">
+          <Link to={`/aspire/events/${nextEvent.id}`} className="block group">
             <div className="relative overflow-hidden rounded-2xl border border-primary/40 bg-background/90 backdrop-blur-md hover:border-primary/70 transition-colors duration-300">
 
               {/* Animated background gradient */}
@@ -80,9 +81,9 @@ export function AspireCtaBanner() {
 
                     {/* Bold headline */}
                     <h3 className="text-2xl sm:text-3xl font-display font-bold text-foreground leading-tight">
-                      ASPIRE AI Workshop —{' '}
+                      {nextEvent.title} —{' '}
                       <span className="text-primary drop-shadow-[0_0_12px_hsl(var(--primary)/0.4)]">
-                        September 19, 2026
+                        {format(nextEvent.date, 'MMMM d, yyyy')}
                       </span>
                     </h3>
 
