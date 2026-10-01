@@ -1,0 +1,2 @@
+CREATE POLICY "Public read hqopeningphotos" ON storage.objects FOR SELECT USING (bucket_id = 'hqopeningphotos');
+CREATE POLICY "Gallery images are publicly accessible" ON storage.objects FOR SELECT USING (bucket_id = 'gallery');
