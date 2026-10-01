@@ -14,9 +14,10 @@ const ordinal = (n: number) => {
 
 export function AspireCtaBanner() {
   const nextEvent = useMemo(() => {
-    return aspireEvents2026
-      .sort((a, b) => a.date.getTime() - b.date.getTime())
-      .find(e => !isPast(e.date)) || null;
+    const events = [...aspireEvents2026].sort(
+      (a, b) => a.date.getTime() - b.date.getTime(),
+    );
+    return events.find(e => !isPast(e.date)) || null;
   }, []);
 
   if (!nextEvent) return null;
