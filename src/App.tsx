@@ -32,6 +32,8 @@ const News = lazy(() => import("./pages/News"));
 const GEMInvite = lazy(() => import("./pages/GEMInvite"));
 const Donate = lazy(() => import("./pages/Donate"));
 const AiAtWorkGuide = lazy(() => import("./pages/AiAtWorkGuide"));
+const ThoughtLeadership = lazy(() => import("./pages/ThoughtLeadership"));
+const ThoughtLeadershipPaper = lazy(() => import("./pages/ThoughtLeadershipPaper"));
 
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
@@ -94,6 +96,12 @@ const App = () => (
             <Route path="/GEMinvite" element={<GEMInvite />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/resources/ai-at-work" element={<AiAtWorkGuide />} />
+            <Route path="/thought-leadership" element={<ThoughtLeadership />} />
+            <Route path="/thought-leadership/:slug" element={<ThoughtLeadershipPaper />} />
+            {/* Short links for the Value-Native AI paper (op-ed / press) */}
+            <Route path="/value-native-ai" element={<Navigate to="/thought-leadership/value-native-ai" replace />} />
+            <Route path="/research" element={<Navigate to="/thought-leadership" replace />} />
+            <Route path="/papers" element={<Navigate to="/thought-leadership" replace />} />
 
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />

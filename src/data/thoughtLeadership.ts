@@ -67,13 +67,13 @@ export const papers: Paper[] = [
         count: '4',
         title: 'Human capabilities',
         items: ['Augmentation', 'Orchestration', 'Synthesis', 'Translation'],
-        body: 'Operating on a substrate of judgment.',
+        body: 'Operating on a substrate of judgment:',
       },
       {
         count: '6',
         title: 'Forms of economic value',
         items: ['Pre-registered baselines', 'Evidence in systems of record', 'Attestation'],
-        body: 'Held to three credibility disciplines.',
+        body: 'Every value claim is held to three credibility disciplines:',
       },
       {
         count: '8',

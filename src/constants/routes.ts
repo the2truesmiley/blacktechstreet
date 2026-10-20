@@ -58,6 +58,15 @@ export const PERMANENT_ROUTES = {
    * ASPIRE Parking Details Page
    */
   ASPIRE_PARKING: '/aspire/parking',
+
+  /**
+   * Value-Native AI paper page
+   *
+   * ⚠️ DO NOT CHANGE THIS PATH
+   *
+   * Linked from Tyrance's op-ed and press. Short link /value-native-ai redirects here.
+   */
+  PAPER_VALUE_NATIVE_AI: '/thought-leadership/value-native-ai',
 } as const;
 
 /**

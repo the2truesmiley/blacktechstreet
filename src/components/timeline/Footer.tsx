@@ -17,6 +17,7 @@ const quickLinks = [
   { label: 'Programs', href: '/aspire' },
   { label: 'Partners', href: '/partners' },
   { label: 'Team', href: '/about#team-section' },
+  { label: 'Thought Leadership', href: '/thought-leadership' },
   { label: 'In The News', href: '/news' },
 ];
 

@@ -29,6 +29,7 @@ const navItems: NavItem[] = [
       { label: 'Senior Advisors', href: '/about#senior-advisors' },
     ]
   },
+  { label: 'Thought Leadership', href: '/thought-leadership' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
