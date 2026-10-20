@@ -357,7 +357,7 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
               </AnimatePresence>
             </div>
             {(!isHome || isScrolled) && (
-              <span className="font-display font-bold text-foreground text-lg hidden sm:block tracking-tight">
+              <span className="font-display font-bold text-foreground text-lg hidden sm:block lg:block md:hidden tracking-tight whitespace-nowrap">
                 Black Tech Street
               </span>
             )}
@@ -375,12 +375,12 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                 {item.children ? (
                   <button
                     className={cn(
-                      "flex items-center gap-1.5 transition-colors duration-200 font-medium rounded-lg group",
+                      "flex items-center gap-1.5 whitespace-nowrap transition-colors duration-200 font-medium rounded-lg group",
                       isHome
                         ? isScrolled
-                          ? "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
-                          : "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
-                        : "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
+                          ? "text-muted-foreground hover:text-foreground text-[15px] px-3 lg:px-4 py-2 hover:bg-secondary/40"
+                          : "text-white/80 hover:text-white text-[15px] px-3 py-2 lg:text-lg lg:px-5 lg:py-2.5 hover:bg-white/10"
+                        : "text-muted-foreground hover:text-foreground text-[15px] px-3 lg:px-4 py-2 hover:bg-secondary/40"
                     )}
                   >
                     {item.label}
@@ -394,12 +394,12 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                   <button
                     onClick={() => handleNavClick(item.href!)}
                     className={cn(
-                      "relative transition-colors duration-200 font-medium rounded-lg group",
+                      "relative whitespace-nowrap transition-colors duration-200 font-medium rounded-lg group",
                       isHome
                         ? isScrolled
-                          ? "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
-                          : "text-white/80 hover:text-white text-lg px-5 py-2.5 hover:bg-white/10"
-                        : "text-muted-foreground hover:text-foreground text-[15px] px-4 py-2 hover:bg-secondary/40"
+                          ? "text-muted-foreground hover:text-foreground text-[15px] px-3 lg:px-4 py-2 hover:bg-secondary/40"
+                          : "text-white/80 hover:text-white text-[15px] px-3 py-2 lg:text-lg lg:px-5 lg:py-2.5 hover:bg-white/10"
+                        : "text-muted-foreground hover:text-foreground text-[15px] px-3 lg:px-4 py-2 hover:bg-secondary/40"
                     )}
                   >
                     {item.label}

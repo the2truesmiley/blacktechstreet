@@ -3,7 +3,8 @@ import logoCircuit from '@/assets/logo_b_circuit.png';
 import type { Paper } from '@/data/thoughtLeadership';
 
 /** Typeset "cover page" for a paper, drawn in CSS so it stays crisp at any size. */
-export function PaperCover({ paper, className }: { paper: Paper; className?: string }) {
+export function PaperCover({ paper, className, size = 'lg' }: { paper: Paper; className?: string; size?: 'sm' | 'lg' }) {
+  const sm = size === 'sm';
   return (
     <div
       className={cn(
@@ -23,12 +24,12 @@ export function PaperCover({ paper, className }: { paper: Paper; className?: str
           </span>
         </div>
 
-        <div className="mt-auto mb-auto pt-8">
-          <p className="font-display text-3xl sm:text-4xl font-bold leading-[1.05] text-foreground">
+        <div className={cn('my-auto', sm ? 'pt-3' : 'pt-8')}>
+          <p className={cn('font-display font-bold leading-[1.05] text-foreground', sm ? 'text-2xl' : 'text-4xl')}>
             Value<span className="text-primary">-</span>Native AI
           </p>
-          <div className="w-12 h-0.5 bg-primary my-4" />
-          <p className="text-[13px] leading-snug text-muted-foreground">
+          <div className={cn('w-12 h-0.5 bg-primary', sm ? 'my-2.5' : 'my-4')} />
+          <p className={cn('leading-snug text-muted-foreground', sm ? 'text-[11px]' : 'text-[13px]')}>
             Infrastructure for Creating, Identifying, and Capturing Value in the Age of AI
           </p>
         </div>

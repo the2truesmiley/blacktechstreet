@@ -58,7 +58,7 @@ export default function ThoughtLeadership() {
                 className="group grid md:grid-cols-[220px_1fr] gap-8 items-center p-6 md:p-8 rounded-2xl bg-card/50 border border-border/40 hover:border-primary/40 transition-colors"
               >
                 <Link to={paperPath(paper.slug)} className="block max-w-[220px] mx-auto md:mx-0 w-full" tabIndex={-1}>
-                  <PaperCover paper={paper} className="group-hover:-translate-y-1 transition-transform duration-300" />
+                  <PaperCover paper={paper} size="sm" className="group-hover:-translate-y-1 transition-transform duration-300" />
                 </Link>
                 <div>
                   <p className="text-sm text-primary font-semibold mb-3">
