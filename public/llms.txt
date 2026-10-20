@@ -18,5 +18,7 @@ Black Tech Street is an organization working to establish Tulsa's Historic Green
 - [/partners](/partners): Corporate and community partners supporting Black Tech Street's mission.
 - [/contact](/contact): Contact form and information for reaching Black Tech Street.
 - [/gallery](/gallery): Photo gallery from Black Tech Street events and community activities.
+- [/thought-leadership](/thought-leadership): Research papers and frameworks from Black Tech Street.
+- [/thought-leadership/value-native-ai](/thought-leadership/value-native-ai): "Value-Native AI: Infrastructure for Creating, Identifying, and Capturing Value in the Age of AI" by Tyrance Billingsley II, Founder & CEO (SSRN, October 2026), with PDF download.
 - [/news](/news): News updates, press coverage, and organizational announcements.
 - [/donate](/donate): Support Black Tech Street through donations.
