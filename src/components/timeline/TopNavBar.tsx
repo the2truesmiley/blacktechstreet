@@ -15,14 +15,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  {
-    label: 'About Us',
-    children: [
-      { label: 'Our Story', href: '/about' },
-      { label: 'Thought Leadership', href: '/thought-leadership' },
-    ],
-    isActive: (path) => path === '/about' || path.startsWith('/thought-leadership'),
-  },
+  { label: 'About Us', href: '/about' },
   { 
     label: 'Programs', 
     children: [
