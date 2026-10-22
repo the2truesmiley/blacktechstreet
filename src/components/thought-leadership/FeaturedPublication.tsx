@@ -7,8 +7,6 @@ import { authorInitials } from './citation';
 import { eyebrow, focusRing, headingLg } from './styles';
 
 export function FeaturedPublication({ paper }: { paper: Paper }) {
-  const chips = ['Research Paper', paper.publisher, paper.publishedDate.slice(0, 4)];
-
   return (
     <motion.article
       initial={{ opacity: 0, y: 16 }}
@@ -27,17 +25,7 @@ export function FeaturedPublication({ paper }: { paper: Paper }) {
         </div>
 
         <div>
-          <p className={`${eyebrow} mb-4`}>Featured paper</p>
-          <ul className="flex flex-wrap gap-2 mb-5" aria-label="Publication details">
-            {chips.map((c) => (
-              <li
-                key={c}
-                className="px-2.5 py-1 rounded-full border border-border text-xs font-medium text-muted-foreground"
-              >
-                {c}
-              </li>
-            ))}
-          </ul>
+          <p className={`${eyebrow} mb-5`}>Featured paper</p>
 
           <h2 id={`featured-${paper.slug}`} className={`${headingLg} mb-5`}>
             <Link to={paperPath(paper.slug)} className={`rounded-sm hover:text-primary transition-colors ${focusRing}`}>
