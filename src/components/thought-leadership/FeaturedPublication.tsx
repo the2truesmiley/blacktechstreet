@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { paperPath, formatPaperDate, type Paper } from '@/data/thoughtLeadership';
 import { FeaturedCover } from './FeaturedCover';
-import { authorInitials } from './citation';
+import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
 import { eyebrow, focusRing, headingLg } from './styles';
 
 export function FeaturedPublication({ paper }: { paper: Paper }) {
@@ -34,12 +34,13 @@ export function FeaturedPublication({ paper }: { paper: Paper }) {
           </h2>
 
           <div className="flex items-center gap-3 mb-2">
-            <span
-              aria-hidden="true"
-              className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/15 text-primary text-xs font-semibold font-display"
-            >
-              {authorInitials(paper.author)}
-            </span>
+            <img
+              src={tyranceHeadshot}
+              alt=""
+              width={32}
+              height={32}
+              className="w-8 h-8 rounded-full object-cover object-top ring-1 ring-primary/40"
+            />
             <p className="text-sm text-foreground">
               {paper.author}, <span className="text-muted-foreground">{paper.authorTitle}</span>
             </p>
