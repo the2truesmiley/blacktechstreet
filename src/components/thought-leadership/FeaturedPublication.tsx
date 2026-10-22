@@ -5,7 +5,7 @@ import { Check, ExternalLink, Share2 } from 'lucide-react';
 import { paperPath, formatPaperDate, featuredSummaries, type Paper } from '@/data/thoughtLeadership';
 import { FeaturedCover } from './FeaturedCover';
 import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
-import { eyebrow, focusRing, headingLg } from './styles';
+import { focusRing, headingLg } from './styles';
 
 async function copyText(text: string) {
   try {
