@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { FeaturedPublication } from '@/components/thought-leadership/FeaturedPublication';
-import { LibraryGrid } from '@/components/thought-leadership/LibraryGrid';
 import { ResearchSignup } from '@/components/thought-leadership/ResearchSignup';
 import { ClosingCta } from '@/components/thought-leadership/ClosingCta';
 import { getPaper, library } from '@/data/thoughtLeadership';
@@ -47,7 +46,6 @@ export default function ThoughtLeadership() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-5 pb-16 md:pb-20">
           {featured && <FeaturedPublication paper={featured} />}
-          <LibraryGrid items={library} />
           <ResearchSignup />
         </div>
 
