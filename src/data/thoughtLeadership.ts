@@ -90,6 +90,71 @@ export const getPaper = (slug: string) => papers.find((p) => p.slug === slug);
 
 export const paperPath = (slug: string) => `/thought-leadership/${slug}`;
 
+/** Longer two-sentence summary for the featured card, taken from the paper's abstract. */
+export const featuredSummaries: Record<string, string> = {
+  'value-native-ai':
+    'The world is making the largest concentrated capital bet of our lifetimes on artificial intelligence, yet 56 percent of chief executives report no significant financial benefit from AI to date. This paper introduces Value-Native AI, an approach in which value creation, not AI adoption, is the organizing principle, and presents a framework for maximizing the return on AI for any individual and any organization.',
+};
+
+/* ------------------------------------------------------------------ */
+/* Library: every piece shown in the "More from our team" grid.        */
+/* To add a paper, article, talk, or framework, add one object here.   */
+/* ------------------------------------------------------------------ */
+
+export type LibraryType = 'Paper' | 'Article' | 'Talk' | 'Framework';
+
+export interface LibraryItem {
+  title: string;
+  author: string;
+  date: string; // ISO date
+  type: LibraryType;
+  summary: string;
+  /** Internal path (e.g. /thought-leadership/slug) or full external URL. */
+  href: string;
+}
+
+export const library: LibraryItem[] = [
+  {
+    title: 'Value-Native AI: Infrastructure for Creating, Identifying, and Capturing Value in the Age of AI',
+    author: 'Tyrance Billingsley II',
+    date: '2026-10-16',
+    type: 'Paper',
+    summary:
+      'A framework for maximizing the return on AI for any individual and any organization, built on value creation rather than AI adoption as the organizing principle.',
+    href: '/thought-leadership/value-native-ai',
+  },
+];
+
+export const isExternalHref = (href: string) => /^https?:\/\//.test(href);
+
+/** Filter chips, in display order, and the item type each one matches. */
+export const LIBRARY_FILTERS = [
+  { label: 'All', type: null },
+  { label: 'Papers', type: 'Paper' },
+  { label: 'Articles', type: 'Article' },
+  { label: 'Talks', type: 'Talk' },
+] as const satisfies readonly { label: string; type: LibraryType | null }[];
+
+export type LibraryFilterLabel = (typeof LIBRARY_FILTERS)[number]['label'];
+
+/** "All" always shows; every other chip shows only once it has at least one item. */
+export function visibleFilters(items: LibraryItem[]): LibraryFilterLabel[] {
+  return LIBRARY_FILTERS.filter((f) => f.type === null || items.some((i) => i.type === f.type)).map((f) => f.label);
+}
+
+export function filterLibrary(items: LibraryItem[], label: LibraryFilterLabel): LibraryItem[] {
+  const f = LIBRARY_FILTERS.find((x) => x.label === label);
+  if (!f || f.type === null) return items;
+  return items.filter((i) => i.type === f.type);
+}
+
+/** The grid always shows at least this many cards; missing slots become "Coming soon" placeholders. */
+export const MIN_GRID_SLOTS = 3;
+
+export const placeholderCount = (itemCount: number) => Math.max(0, MIN_GRID_SLOTS - itemCount);
+
+export const sortByNewest = (items: LibraryItem[]) => [...items].sort((a, b) => b.date.localeCompare(a.date));
+
 export function formatPaperDate(iso: string) {
   return new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', {
     month: 'long',
