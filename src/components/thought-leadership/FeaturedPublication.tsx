@@ -58,12 +58,6 @@ export function FeaturedPublication({ paper }: { paper: Paper }) {
         </div>
 
         <div>
-          <div className="flex flex-wrap items-center gap-3 mb-5">
-            <p className={eyebrow}>Featured paper</p>
-            <span className="inline-flex items-center rounded-full border border-primary/40 bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-              Published on {paper.publisher}
-            </span>
-          </div>
 
           <h2 id={`featured-${paper.slug}`} className={`${headingLg} mb-5`}>
             <Link to={paperPath(paper.slug)} className={`rounded-sm hover:text-primary transition-colors ${focusRing}`}>
