@@ -4,7 +4,7 @@ import { Footer } from '@/components/timeline/Footer';
 import { FeaturedPublication } from '@/components/thought-leadership/FeaturedPublication';
 import { ResearchSignup } from '@/components/thought-leadership/ResearchSignup';
 import { ClosingCta } from '@/components/thought-leadership/ClosingCta';
-import { getPaper, library } from '@/data/thoughtLeadership';
+import { getPaper } from '@/data/thoughtLeadership';
 import { useSEO } from '@/hooks/useSEO';
 
 const SUBHEAD =
