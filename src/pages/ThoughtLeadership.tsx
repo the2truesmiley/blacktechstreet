@@ -36,10 +36,9 @@ export default function ThoughtLeadership() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative z-10 max-w-3xl mx-auto px-5 text-center"
           >
-            <h1 className="font-display font-bold tracking-tight leading-[1.05] text-[clamp(2.5rem,6vw,4.5rem)] text-foreground mb-5">
+            <h1 className="font-display font-bold tracking-tight leading-[1.05] text-[clamp(2.5rem,6vw,4.5rem)] text-foreground">
               Thought <span className="text-primary">Leadership</span>
             </h1>
-            <p className="text-lg md:text-xl leading-relaxed text-muted-foreground max-w-[52ch] mx-auto">{SUBHEAD}</p>
           </motion.div>
         </section>
 
