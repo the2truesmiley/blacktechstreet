@@ -3,7 +3,6 @@ import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
 import { FeaturedPublication } from '@/components/thought-leadership/FeaturedPublication';
 import { ResearchSignup } from '@/components/thought-leadership/ResearchSignup';
-import { ClosingCta } from '@/components/thought-leadership/ClosingCta';
 import { getPaper } from '@/data/thoughtLeadership';
 import { useSEO } from '@/hooks/useSEO';
 
@@ -49,7 +48,6 @@ export default function ThoughtLeadership() {
           <ResearchSignup />
         </div>
 
-        <ClosingCta />
       </main>
 
       <div className="relative z-10 px-5 max-w-5xl mx-auto">
