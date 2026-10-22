@@ -5,6 +5,7 @@ import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { TimelineHero } from '@/components/timeline/TimelineHero';
 
 import { AspireCtaBanner } from '@/components/timeline/AspireCtaBanner';
+import { ResearchSpotlight } from '@/components/home/ResearchSpotlight';
 import { SocialSection } from '@/components/timeline/SocialSection';
 
 import { TestimonialsSection } from '@/components/timeline/TestimonialsSection';
@@ -68,6 +69,9 @@ const Index = () => {
 
       {/* ASPIRE March CTA */}
       <AspireCtaBanner />
+
+      {/* Time-limited research spotlight (hides itself after its end date) */}
+      <ResearchSpotlight />
 
       {/* Main content */}
       <main className="relative z-10 px-5 pb-20 max-w-5xl mx-auto">
