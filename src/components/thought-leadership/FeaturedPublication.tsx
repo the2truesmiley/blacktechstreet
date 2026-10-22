@@ -4,7 +4,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import { paperPath, formatPaperDate, type Paper } from '@/data/thoughtLeadership';
 import { FeaturedCover } from './FeaturedCover';
 import { authorInitials } from './citation';
-import { focusRing } from './styles';
+import { eyebrow, focusRing, headingLg } from './styles';
 
 export function FeaturedPublication({ paper }: { paper: Paper }) {
   const chips = ['Research Paper', paper.publisher, paper.publishedDate.slice(0, 4)];
@@ -15,12 +15,19 @@ export function FeaturedPublication({ paper }: { paper: Paper }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
       aria-labelledby={`featured-${paper.slug}`}
-      className="rounded-2xl border border-border bg-gradient-to-br from-card to-background p-6 sm:p-8 lg:p-12 shadow-[0_1px_0_hsl(var(--foreground)/0.04)_inset]"
+      className="relative overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-card to-background p-6 sm:p-8 lg:p-12 shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06)]"
     >
       <div className="grid gap-8 md:gap-10 md:grid-cols-[38fr_62fr] md:items-center">
-        <FeaturedCover paper={paper} className="max-w-[260px] md:max-w-[320px] mx-auto md:mx-0" />
+        <div className="relative">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] aspect-square rounded-full bg-[radial-gradient(closest-side,hsl(var(--primary)/0.08),transparent)]"
+          />
+          <FeaturedCover paper={paper} className="relative max-w-[260px] md:max-w-[320px] mx-auto md:mx-0" />
+        </div>
 
         <div>
+          <p className={`${eyebrow} mb-4`}>Featured paper</p>
           <ul className="flex flex-wrap gap-2 mb-5" aria-label="Publication details">
             {chips.map((c) => (
               <li
@@ -32,10 +39,7 @@ export function FeaturedPublication({ paper }: { paper: Paper }) {
             ))}
           </ul>
 
-          <h2
-            id={`featured-${paper.slug}`}
-            className="font-display text-3xl lg:text-4xl font-semibold tracking-tight leading-tight text-foreground mb-5"
-          >
+          <h2 id={`featured-${paper.slug}`} className={`${headingLg} mb-5`}>
             <Link to={paperPath(paper.slug)} className={`rounded-sm hover:text-primary transition-colors ${focusRing}`}>
               {paper.title}
             </Link>
