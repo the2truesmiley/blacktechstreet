@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Check, Copy } from 'lucide-react';
 import type { Paper } from '@/data/thoughtLeadership';
 import { apaCitation, apaCitationParts } from './citation';
-import { focusRing, headingSm } from './styles';
+import { focusRing } from './styles';
 
 export function CiteThisWork({ paper }: { paper: Paper }) {
   const citation = apaCitation(paper);
@@ -24,11 +24,8 @@ export function CiteThisWork({ paper }: { paper: Paper }) {
   };
 
   return (
-    <section aria-labelledby="cite-this-work" className="mt-8 rounded-2xl border border-border p-5 md:p-6">
-      <div className="flex items-center justify-between gap-4 mb-4">
-        <h2 id="cite-this-work" className={headingSm}>
-          Cite this work
-        </h2>
+    <section aria-label="Citation" className="mt-8 rounded-2xl border border-border p-5 md:p-6">
+      <div className="flex items-center justify-end gap-4 mb-4">
         <button
           type="button"
           onClick={copy}
