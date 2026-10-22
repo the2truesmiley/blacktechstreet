@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import logoCircuit from '@/assets/logo_b_circuit.png';
 import { paperPath, type Paper } from '@/data/thoughtLeadership';
 import { cn } from '@/lib/utils';
 
@@ -28,12 +27,6 @@ export function FeaturedCover({ paper, className }: { paper: Paper; className?: 
       >
         <div className="absolute inset-x-0 top-0 h-[3px] bg-primary" />
         <div className="relative h-full flex flex-col p-[10%]">
-          <div className="flex items-center gap-2">
-            <img src={logoCircuit} alt="" width={24} height={24} className="w-6 h-6 object-contain" />
-            <span className="font-display text-[11px] font-semibold tracking-wide text-muted-foreground">
-              Black Tech Street
-            </span>
-          </div>
 
           <div className="my-auto">
             <p className="font-display font-bold tracking-tight leading-[1.02] text-foreground text-[clamp(1.75rem,3.2vw,2.5rem)]">
