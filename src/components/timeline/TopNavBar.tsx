@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import logoGlow from '@/assets/logo_bts_dark_glow.png';
 import logoCircuit from '@/assets/logo_b_circuit.png';
@@ -10,10 +10,19 @@ interface NavItem {
   label: string;
   href?: string;
   children?: { label: string; href: string; isEmail?: boolean }[];
+  /** Routes that mark this item as the current section. */
+  isActive?: (pathname: string) => boolean;
 }
 
 const navItems: NavItem[] = [
-  { label: 'About Us', href: '/about' },
+  {
+    label: 'About Us',
+    children: [
+      { label: 'Our Story', href: '/about' },
+      { label: 'Thought Leadership', href: '/thought-leadership' },
+    ],
+    isActive: (path) => path === '/about' || path.startsWith('/thought-leadership'),
+  },
   { 
     label: 'Programs', 
     children: [
@@ -29,7 +38,6 @@ const navItems: NavItem[] = [
       { label: 'Senior Advisors', href: '/about#senior-advisors' },
     ]
   },
-  { label: 'Thought Leadership', href: '/thought-leadership' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -218,6 +226,8 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
   }, []);
 
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const isItemActive = (item: NavItem) => !!item.isActive?.(pathname);
 
   const handleNavClick = (href: string, isEmail?: boolean) => {
     setIsMobileMenuOpen(false);
@@ -374,13 +384,15 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
               >
                 {item.children ? (
                   <button
+                    aria-current={isItemActive(item) ? 'page' : undefined}
                     className={cn(
                       "flex items-center gap-1.5 whitespace-nowrap transition-colors duration-200 font-medium rounded-lg group",
                       isHome
                         ? isScrolled
                           ? "text-muted-foreground hover:text-foreground text-[15px] px-3 lg:px-4 py-2 hover:bg-secondary/40"
                           : "text-white/80 hover:text-white text-[15px] px-3 py-2 lg:text-lg lg:px-5 lg:py-2.5 hover:bg-white/10"
-                        : "text-muted-foreground hover:text-foreground text-[15px] px-3 lg:px-4 py-2 hover:bg-secondary/40"
+                        : "text-muted-foreground hover:text-foreground text-[15px] px-3 lg:px-4 py-2 hover:bg-secondary/40",
+                      isItemActive(item) && (isHome && !isScrolled ? "text-white" : "text-foreground")
                     )}
                   >
                     {item.label}
@@ -488,9 +500,11 @@ export function TopNavBar({ variant = 'default' }: TopNavBarProps) {
                     <>
                       <button
                         onClick={() => toggleMobileExpanded(item.label)}
+                        aria-current={isItemActive(item) ? 'page' : undefined}
                         className={cn(
                           "flex items-center justify-between w-full text-left transition-colors duration-200 text-base font-medium py-2",
-                          isHome ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
+                          isHome ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground",
+                          isItemActive(item) && (isHome ? "text-white" : "text-foreground")
                         )}
                       >
                         {item.label}
