@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
 
-export type EmailCaptureSource = 'footer' | 'event-alerts' | 'resource-guide';
+export type EmailCaptureSource = 'footer' | 'event-alerts' | 'resource-guide' | 'research-updates';
 
 const schema = z.object({
   email: z
