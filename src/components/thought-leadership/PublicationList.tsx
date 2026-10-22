@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { paperPath, formatPaperDate, type Paper } from '@/data/thoughtLeadership';
-import { focusRing } from './styles';
+import { focusRing, headingMd } from './styles';
 
 /** Rendered only when there is more than one publication. */
 export function PublicationList({ papers }: { papers: Paper[] }) {
   if (papers.length < 2) return null;
 
   return (
-    <section aria-labelledby="all-publications" className="mt-16 md:mt-24">
-      <h2 id="all-publications" className="font-display text-2xl md:text-3xl font-semibold tracking-tight text-foreground mb-6">
+    <section aria-labelledby="all-publications" className="mt-10 md:mt-12">
+      <h2 id="all-publications" className={`${headingMd} mb-6`}>
         All publications
       </h2>
       <ul className="border-t border-border">
