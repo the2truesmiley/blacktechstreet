@@ -5,7 +5,6 @@ import { FeaturedPublication } from '@/components/thought-leadership/FeaturedPub
 import { PublicationList } from '@/components/thought-leadership/PublicationList';
 import { CiteThisWork } from '@/components/thought-leadership/CiteThisWork';
 import { ClosingCta } from '@/components/thought-leadership/ClosingCta';
-import { eyebrow } from '@/components/thought-leadership/styles';
 import { papers } from '@/data/thoughtLeadership';
 import { useSEO } from '@/hooks/useSEO';
 
@@ -38,14 +37,9 @@ export default function ThoughtLeadership() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative z-10 max-w-5xl mx-auto px-5"
           >
-            <p className={`${eyebrow} mb-5`}>Research and Publications</p>
-            <h1 className="font-display font-bold tracking-tight leading-[1.05] text-[clamp(2.5rem,6vw,4.5rem)] text-foreground mb-6">
+            <h1 className="font-display font-bold tracking-tight leading-[1.05] text-[clamp(2.5rem,6vw,4.5rem)] text-foreground">
               Thought <span className="text-primary">Leadership</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-[60ch] leading-relaxed">
-              Research and frameworks from Black Tech Street on building an AI Powered Economy, drawn from
-              field work in Greenwood and the empirical literature.
-            </p>
           </motion.div>
         </section>
 
