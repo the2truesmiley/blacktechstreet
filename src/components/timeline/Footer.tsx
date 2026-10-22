@@ -84,7 +84,7 @@ export function Footer() {
               Rebirthing Greenwood As The Nation's Premiere AI Powered Economy.
             </p>
             {/* Social Links */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -93,7 +93,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   aria-label={social.label}
                   className={cn(
-                    "px-2.5 sm:px-3 py-2.5 rounded-lg flex items-center gap-2",
+                    "px-1 sm:px-3 py-2.5 rounded-lg flex items-center gap-1 sm:gap-2",
                     "bg-secondary/50 border border-border/40",
                     "text-muted-foreground hover:text-primary",
                     "hover:border-primary/50 hover:bg-secondary",
