@@ -23,10 +23,16 @@ export function ssrnShortUrl(p: Paper) {
   return `https://doi.org/${p.doi}`;
 }
 
+/** APA citation split into its text and trailing URL, so the URL can render as a link. */
+export function apaCitationParts(p: Paper) {
+  const year = p.publishedDate.slice(0, 4);
+  return { text: `${apaAuthor(p.author)} (${year}). ${p.title}. ${p.publisher}.`, url: ssrnShortUrl(p) };
+}
+
 /** APA style citation built entirely from the publication data. */
 export function apaCitation(p: Paper) {
-  const year = p.publishedDate.slice(0, 4);
-  return `${apaAuthor(p.author)} (${year}). ${p.title}. ${p.publisher}. ${ssrnShortUrl(p)}`;
+  const { text, url } = apaCitationParts(p);
+  return `${text} ${url}`;
 }
 
 /** Initials for the author badge: first letter of the first two name parts. */
