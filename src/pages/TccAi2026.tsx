@@ -9,7 +9,8 @@ import { useSEO } from '@/hooks/useSEO';
 // The form itself also redirects to the homepage on completion.
 const TALLY_FORM_ID = 'q54qMd';
 const FORM_URL = `https://tally.so/r/${TALLY_FORM_ID}`;
-const EMBED_URL = `https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1`;
+// No transparentBackground: Tally's dark label text needs its own light card to stay readable on our dark page.
+const EMBED_URL = `https://tally.so/embed/${TALLY_FORM_ID}?alignLeft=1&hideTitle=1&dynamicHeight=1&formEventsForwarding=1`;
 
 const MIN_HEIGHT = 520;
 const HEIGHT_BUFFER = 60;
@@ -83,7 +84,7 @@ export default function TccAi2026() {
             </div>
           ) : (
             <>
-              <div className="mt-6 -mx-4 sm:mx-0">
+              <div className="mt-6 overflow-hidden rounded-xl border border-border/50 p-1">
                 <iframe
                   src={EMBED_URL}
                   width="100%"
