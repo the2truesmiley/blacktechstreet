@@ -34,6 +34,7 @@ const Donate = lazy(() => import("./pages/Donate"));
 const AiAtWorkGuide = lazy(() => import("./pages/AiAtWorkGuide"));
 const ThoughtLeadership = lazy(() => import("./pages/ThoughtLeadership"));
 const ThoughtLeadershipPaper = lazy(() => import("./pages/ThoughtLeadershipPaper"));
+const TccAi2026 = lazy(() => import("./pages/TccAi2026"));
 
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
@@ -102,6 +103,8 @@ const App = () => (
             <Route path="/value-native-ai" element={<Navigate to="/thought-leadership/value-native-ai" replace />} />
             <Route path="/research" element={<Navigate to="/thought-leadership" replace />} />
             <Route path="/papers" element={<Navigate to="/thought-leadership" replace />} />
+            {/* Unlisted contact form page (not linked anywhere on the site) */}
+            <Route path="/TCCAI2026" element={<TccAi2026 />} />
 
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
