@@ -65,10 +65,7 @@ export default function TccAi2026() {
 
       <main className="relative pt-24 pb-16">
         <div className="mx-auto w-full max-w-2xl px-4 sm:px-5">
-          <h1 className="font-display text-3xl md:text-4xl font-bold">Contact Information</h1>
-          <p className="mt-3 text-muted-foreground">
-            Fill out the form below and we'll be in touch.
-          </p>
+          <h1 className="font-display text-3xl md:text-4xl font-bold">Thanks For Listening!</h1>
 
           {submitted ? (
             <div
