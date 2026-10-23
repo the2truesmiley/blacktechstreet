@@ -105,6 +105,7 @@ const App = () => (
             <Route path="/papers" element={<Navigate to="/thought-leadership" replace />} />
             {/* Unlisted contact form page (not linked anywhere on the site) */}
             <Route path="/TCCAI2026" element={<TccAi2026 />} />
+            <Route path="/TCCAI" element={<Navigate to="/TCCAI2026" replace />} />
 
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
