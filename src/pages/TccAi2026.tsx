@@ -84,7 +84,7 @@ export default function TccAi2026() {
             </div>
           ) : (
             <>
-              <div className="mt-6 overflow-hidden rounded-xl border border-border/50 p-1">
+              <div className="mt-6 overflow-hidden rounded-xl">
                 <iframe
                   src={EMBED_URL}
                   width="100%"
