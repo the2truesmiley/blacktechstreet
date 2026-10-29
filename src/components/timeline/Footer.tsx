@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, ExternalLink, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import logoCircuit from '@/assets/logo_b_circuit.png';
@@ -22,7 +22,8 @@ const quickLinks = [
 
 const contactInfo = [
   { icon: Mail, text: 'contact@blacktechstreet.com', href: 'mailto:contact@blacktechstreet.com' },
-  { icon: MapPin, text: 'Tulsa, Oklahoma', href: null },
+  { icon: MapPin, text: '609 East Pine St, Tulsa, OK 74106', href: null },
+  { icon: Clock, text: 'Monday to Friday, 9:00 AM to 5:00 PM', href: null },
 ];
 
 export function Footer() {

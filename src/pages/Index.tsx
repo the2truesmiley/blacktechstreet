@@ -36,12 +36,13 @@ const Index = () => {
         'Black Tech Street is rebirthing Historic Black Wall Street as a world-class AI innovation economy in Greenwood, Tulsa, Oklahoma.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: '914 N Greenwood Ave',
+        streetAddress: '609 East Pine St',
         addressLocality: 'Tulsa',
         addressRegion: 'OK',
         postalCode: '74106',
         addressCountry: 'US',
       },
+      openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' }],
       sameAs: ['https://x.com/BlackTechStreet'],
     });
     document.getElementById('organization-jsonld')?.remove();
