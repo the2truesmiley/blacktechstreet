@@ -8,6 +8,13 @@
       "when": 1792694445670,
       "tag": "0000_allow_research_updates_signups",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795117901801,
+      "tag": "0001_drop_gallery_listing_policy",
+      "breakpoints": true
     }
   ]
 }
