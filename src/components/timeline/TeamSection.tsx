@@ -6,6 +6,7 @@ import tyranceHeadshot from '@/assets/team/tyrance-headshot.png';
 import josephineHeadshot from '@/assets/team/josephine-headshot.png';
 import allenHeadshot from '@/assets/team/allen-headshot.png';
 import smileyHeadshot from '@/assets/team/smiley-headshot.png';
+import danayJonesHeadshot from '@/assets/team/danay-jones-headshot.jpeg';
 import tiffanyCrutcherHeadshot from '@/assets/team/tiffany-crutcher-headshot.png';
 import robertThomasHeadshot from '@/assets/team/robert-thomas-headshot.png';
 import kevinGriffinHeadshot from '@/assets/team/kevin-griffin-headshot.jpg';
@@ -17,6 +18,7 @@ const teamPhotos: Record<string, string> = {
   "Josephine Nelms": josephineHeadshot,
   "Allen Collins": allenHeadshot,
   "Smiley Elmore III": smileyHeadshot,
+  "Danay Jones": danayJonesHeadshot,
   "Dr. Tiffany Crutcher": tiffanyCrutcherHeadshot,
   "Robert Thomas": robertThomasHeadshot,
   "Kevin Griffin, Ph.D.": kevinGriffinHeadshot,

@@ -192,6 +192,17 @@ Before joining Black Tech Street, Smiley founded Eminent Media, a digital agency
 
 His experience includes strategic communications, content development, event production, digital system design, and multimedia storytelling for organizations looking to modernize their brand and strengthen their operational pipeline. Smiley remains focused on communications, technology, and producing high-quality work that supports BTS and the broader innovation environment developing in Tulsa.`,
     linkedIn: "https://www.linkedin.com/in/smiley-elmore-iii/"
+  },
+  {
+    name: "Danay Jones",
+    title: "Office & Experience Coordinator",
+    shortBio: "Danay Jones is a community builder, entrepreneur, and operations professional with a background in healthcare recruitment and community engagement. She founded Sober Girls Houston and Sober Girls Tulsa, and as Office & Experience Coordinator at Black Tech Street, she supports technology, innovation, and opportunity in historic Greenwood.",
+    expandedBio: `Danay Jones is a community builder, entrepreneur, and operations professional with a background in healthcare recruitment, human services, event coordination, and community engagement. She holds an associate degree in Human Service Technology from Houston Community College and brings a people-first approach to building relationships, creating meaningful experiences, and supporting organizational growth.
+
+Before joining Black Tech Street, Danay founded Sober Girls Houston and Sober Girls Tulsa, community-driven initiatives creating inclusive spaces for women through alcohol-free social experiences, wellness programming, and community engagement. Through her work, she has built partnerships, coordinated events, led marketing and outreach efforts, and developed programs that bring people together through shared experiences and meaningful connections.
+
+Originally from Houston, Texas, Danay relocated to Tulsa through the Tulsa Remote program and is excited to contribute to the city's growing innovation ecosystem. As Office & Experience Coordinator at Black Tech Street, she focuses on creating a welcoming, seamless experience for team members, community partners, and visitors while supporting the organization's work to advance technology, innovation, and opportunity in historic Greenwood.`,
+    linkedIn: "https://www.linkedin.com/in/danay-jones"
   }
 ];
 
