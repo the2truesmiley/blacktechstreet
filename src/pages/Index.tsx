@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { AspireInvitation } from '@/components/home/AspireInvitation';
 import { TechBackground } from '@/components/timeline/TechBackground';
 import { TimelineProgress } from '@/components/timeline/TimelineProgress';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
@@ -95,6 +96,7 @@ const Index = () => {
 
       {/* Back to top button */}
       <BackToTopButton />
+      <AspireInvitation />
     </div>
   );
 };

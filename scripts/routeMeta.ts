@@ -1,7 +1,9 @@
 // Per-route link preview tags baked into static HTML at build time,
 // so social crawlers (which do not run JavaScript) see each page's own preview.
+import { aspireNearbyCities, nearbyCityPath, nearbyCityTitle, nearbyCityDescription } from '../src/data/aspireNearbyCities';
 export const SITE = "https://blacktechstreet.ai";
 export const routeMeta: Record<string, { title: string; description: string }> = {
+  ...Object.fromEntries(aspireNearbyCities.map(city => [nearbyCityPath(city.slug), { title: nearbyCityTitle(city.name), description: nearbyCityDescription(city.name) }])),
   "/aspire": { title: "ASPIRE | Black Tech Street", description: "ASPIRE offers GenAI fluency and responsible innovation training for life, work, and community in Greenwood, Tulsa." },
   "/aspire/events": { title: "ASPIRE GenAI Workshops | Black Tech Street", description: "Register for ASPIRE GenAI Fluency Workshops in Tulsa. Hands-on AI training, free childcare, and community networking." },
   "/aspire/events/december-2026": { title: "December 2026 ASPIRE Workshop | Black Tech Street", description: "Register for the December 2026 ASPIRE GenAI Fluency Workshop in Greenwood, Tulsa. Hands-on AI training with free childcare." },

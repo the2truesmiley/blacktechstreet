@@ -17,6 +17,7 @@ const AspireEvents = lazy(() => import("./pages/AspireEvents"));
 const AspireEventSeptember2026 = lazy(() => import("./pages/AspireEventSeptember2026"));
 const AspireEventSeptember2026Register = lazy(() => import("./pages/AspireEventSeptember2026Register"));
 const AspireEventDecember2026 = lazy(() => import("./pages/AspireEventDecember2026"));
+const AspireNearbyCity = lazy(() => import("./pages/AspireNearbyCity"));
 const AspireEventApril2026 = lazy(() => import("./pages/AspireEventApril2026"));
 const AspireTypros = lazy(() => import("./pages/AspireTypros"));
 const AspireNvidia = lazy(() => import("./pages/AspireNvidia"));
@@ -81,6 +82,7 @@ const App = () => (
             <Route path="/sept-19-2026" element={<Navigate to="/aspire/events/september-2026" replace />} />
             <Route path="/sept-26-2026" element={<Navigate to="/aspire/events/september-2026" replace />} />
             <Route path="/aspire/events/december-2026" element={<AspireEventDecember2026 />} />
+            <Route path="/aspire/events/december-2026/for/:city" element={<AspireNearbyCity />} />
             <Route path="/aspire/events/april-2026" element={<AspireEventApril2026 />} />
             <Route path="/aspire-typros" element={<AspireTypros />} />
             <Route path="/aspire-nvidia" element={<AspireNvidia />} />
