@@ -15,6 +15,13 @@
       "when": 1795117901801,
       "tag": "0001_drop_gallery_listing_policy",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795433561488,
+      "tag": "0002_create_workshop_questions",
+      "breakpoints": true
     }
   ]
 }

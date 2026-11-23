@@ -4,3 +4,5 @@ project_id = "qxcfebasxnjrihentndh"
 verify_jwt = false
 [functions.nvidia-access]
 verify_jwt = false
+[functions.workshop-assistant]
+verify_jwt = false

@@ -10,4 +10,4 @@
 
 - [x] Improve the December search title and description without changing the page design.
 - [x] Generate static event details, registration links, and structured data readable without JavaScript.
-- [x] Verify generated HTML with JavaScript disabled, 11 event-rule tests, and normal mobile/tablet/desktop registration loading through Tally Submit. Publishing remains the user's next step; deployed static HTML must be checked after publishing.
+- [x] Verify generated HTML with JavaScript disabled, 11 event-rule tests, and normal mobile/tablet/desktop registration loading through Tally Submit. Publishing remains the user's next step; deployed static HTML must be checked after publishing.- [ ] December 5 workshop question helper (AI, unanswered saved for team)

@@ -74,6 +74,39 @@ export type Database = {
         }
         Relationships: []
       }
+      workshop_questions: {
+        Row: {
+          answer: string | null
+          created_at: string
+          event_id: string
+          id: string
+          question: string
+          status: string
+          visitor_email: string | null
+          visitor_name: string | null
+        }
+        Insert: {
+          answer?: string | null
+          created_at?: string
+          event_id: string
+          id?: string
+          question: string
+          status: string
+          visitor_email?: string | null
+          visitor_name?: string | null
+        }
+        Update: {
+          answer?: string | null
+          created_at?: string
+          event_id?: string
+          id?: string
+          question?: string
+          status?: string
+          visitor_email?: string | null
+          visitor_name?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

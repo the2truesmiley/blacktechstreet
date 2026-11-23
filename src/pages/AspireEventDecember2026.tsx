@@ -10,6 +10,7 @@ import { EventsHero } from '@/components/events/EventsHero';
 import { EventTestimonials } from '@/components/events/EventTestimonials';
 import { FacilitatorsSection } from '@/components/events/FacilitatorsSection';
 import { RegistrationModal } from '@/components/events/RegistrationModal';
+import { WorkshopHelper } from '@/components/events/WorkshopHelper';
 import { FlipClock } from '@/components/events/FlipClock';
 import { Button } from '@/components/ui/button';
 import { aspireEvents2026, type AspireEvent } from '@/data/aspireEvents';
@@ -555,6 +556,7 @@ export default function AspireEventDecember2026() {
       </main>
 
       <Footer />
+      <WorkshopHelper />
 
       <RegistrationModal
         event={selectedEvent}
