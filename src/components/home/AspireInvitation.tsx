@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
-import { ASPIRE_INVITATION_ENABLED, ASPIRE_INVITATION_KEY, shouldShowAspireInvitation } from '@/lib/aspireInvitation';
+import { ASPIRE_INVITATION_ENABLED, ASPIRE_INVITATION_KEY, ASPIRE_INVITATION_DELAY, shouldShowAspireInvitation, canOpenAspireInvitation } from '@/lib/aspireInvitation';
 import workshopPhoto from '@/assets/gallery/dec-2025-ai-workshop-full-room.jpg';
 
 export function AspireInvitation() {
   const { pathname, search } = useLocation();
   const [open, setOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
   const preview = new URLSearchParams(search).get('aspire-popup') === 'preview';
 
   useEffect(() => {
@@ -21,22 +22,30 @@ export function AspireInvitation() {
       return;
     }
     if (!shouldShowAspireInvitation(Date.now(), seen, preview || ASPIRE_INVITATION_ENABLED)) return;
-    const timer = window.setTimeout(() => {
+    let timer: number;
+    const attemptOpen = () => {
+      const enteringData = Boolean(document.activeElement?.matches('input, textarea, select, [contenteditable="true"], [role="dialog"] *'));
+      if (!canOpenAspireInvitation(document.visibilityState === 'visible', enteringData)) {
+        timer = window.setTimeout(attemptOpen, 1000);
+        return;
+      }
       try {
+        if (!shouldShowAspireInvitation(Date.now(), localStorage.getItem(ASPIRE_INVITATION_KEY) === '1', preview || ASPIRE_INVITATION_ENABLED)) return;
         localStorage.setItem(ASPIRE_INVITATION_KEY, '1');
       } catch {
         return;
       }
       setOpen(true);
-    }, preview ? 300 : 5000);
+    };
+    timer = window.setTimeout(attemptOpen, preview ? 300 : ASPIRE_INVITATION_DELAY);
     return () => window.clearTimeout(timer);
   }, [pathname, preview]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="w-[calc(100%-2rem)] max-w-lg max-h-[90dvh] overflow-y-auto rounded-lg border-border bg-card p-0 gap-0 text-card-foreground motion-reduce:animate-none [&>button]:bg-card [&>button]:text-card-foreground [&>button]:p-2 [&>button]:opacity-100">
-        <img src={workshopPhoto} alt="Participants learning together at an ASPIRE AI Workshop in Tulsa" className="w-full h-36 sm:h-48 object-cover" />
-        <div className="p-6 sm:p-8 space-y-5">
+      <DialogContent ref={contentRef} tabIndex={-1} onOpenAutoFocus={event => { event.preventDefault(); contentRef.current?.focus({ preventScroll: true }); }} className="w-[calc(100%-2rem)] max-w-lg max-h-[90dvh] overflow-y-auto rounded-lg border-border bg-card p-0 gap-0 text-card-foreground motion-reduce:animate-none [&>button]:bg-card [&>button]:text-card-foreground [&>button]:p-2 [&>button]:opacity-100">
+        <img src={workshopPhoto} alt="Participants learning together at an ASPIRE AI Workshop in Tulsa" className="w-full h-36 sm:h-48 object-cover [@media(max-height:600px)]:h-20" />
+        <div className="p-6 sm:p-8 space-y-5 [@media(max-height:600px)]:p-4 [@media(max-height:600px)]:space-y-3">
           <DialogTitle className="font-display text-2xl sm:text-3xl leading-tight tracking-normal pr-2">
             Join the last <span className="text-primary">ASPIRE AI Workshop</span> of 2026
           </DialogTitle>
@@ -54,7 +63,7 @@ export function AspireInvitation() {
           <Button asChild size="lg" className="w-full text-base">
             <Link to="/aspire/events/december-2026" onClick={() => setOpen(false)}>Reserve my spot<ArrowRight /></Link>
           </Button>
-          <Button variant="ghost" className="w-full text-muted-foreground" onClick={() => setOpen(false)}>Not now</Button>
+          <Button variant="ghost" className="w-full min-h-11 text-muted-foreground" onClick={() => setOpen(false)}>Not now</Button>
         </div>
       </DialogContent>
     </Dialog>

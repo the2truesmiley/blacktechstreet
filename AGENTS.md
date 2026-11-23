@@ -1,6 +1,6 @@
 # AGENTS.md
 
-- Homepage event invitations are gated by a disabled-by-default campaign flag and an explicit preview query; persist a campaign-specific seen marker before opening and stop at event start. Why: review must precede activation and returning visitors must not receive repeat interruptions.
+- Homepage event invitations use a campaign flag enabled only after approval and an explicit preview query; persist a campaign-specific seen marker before opening, defer while entering data or in hidden tabs, and stop at event start. Why: review must precede activation and returning visitors must not receive repeat interruptions.
 - Nearby-city workshop pages share one page and city data array, including static preview metadata; all directions and registrations point to the actual event venue and form. Why: location targeting must never imply a separate event in each city.
 
 - Thought Leadership papers are data entries in `src/data/thoughtLeadership.ts`, rendered by one shared paper page at `/thought-leadership/:slug`. Why: adding a paper should never need a new page file, and published slugs stay stable for op-ed links.
