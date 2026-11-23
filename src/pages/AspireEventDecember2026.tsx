@@ -17,6 +17,7 @@ import { cn } from '@/lib/utils';
 import jovieChildcareBadge from '@/assets/partners/jovie-childcare-badge.png';
 import { useSEO } from '@/hooks/useSEO';
 import { EventJsonLd } from '@/components/seo/EventJsonLd';
+import { decemberWorkshopSeo, decemberWorkshopSchema } from '@/data/decemberWorkshopSeo';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -45,18 +46,16 @@ export default function AspireEventDecember2026() {
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
-  useSEO({
-    title: 'December 2026 ASPIRE Workshop | Black Tech Street',
-    description: 'Register for the December 2026 ASPIRE GenAI Fluency Workshop in Greenwood, Tulsa. Hands-on AI training with free childcare.',
-    canonical: 'https://blacktechstreet.com/aspire/events/december-2026',
-  });
+  useSEO(decemberWorkshopSeo);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const decemberEvent = useMemo(() => {
-    return aspireEvents2026.find(e => e.id === 'december-2026')!;
+    const event = aspireEvents2026.find(e => e.id === 'december-2026');
+    if (!event) throw new Error('December ASPIRE event is missing');
+    return event;
   }, []);
 
   const handleRegister = () => {
@@ -102,6 +101,7 @@ export default function AspireEventDecember2026() {
       <TechBackground isVisible={true} />
       <TopNavBar />
       <EventJsonLd
+        schema={decemberWorkshopSchema}
         name="ASPIRE AI Workshop — Free Hands-On AI Training"
         description="A free, full-day AI workshop in Tulsa's Greenwood District. Learn ChatGPT, AI tools, and responsible innovation. Free childcare and laptop checkout included."
         startDate="2026-12-05T10:00:00-06:00"

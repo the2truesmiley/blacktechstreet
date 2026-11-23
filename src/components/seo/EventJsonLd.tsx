@@ -12,6 +12,7 @@ interface EventJsonLdProps {
   url: string;
   imageUrl?: string;
   organizer?: string;
+  schema?: object;
 }
 
 export function EventJsonLd({
@@ -23,12 +24,13 @@ export function EventJsonLd({
   url,
   imageUrl,
   organizer = 'Black Tech Street',
+  schema,
 }: EventJsonLdProps) {
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'event-jsonld';
-    script.textContent = JSON.stringify({
+    script.textContent = JSON.stringify(schema ?? {
       '@context': 'https://schema.org',
       '@type': 'EducationEvent',
       name,
@@ -74,7 +76,7 @@ export function EventJsonLd({
     return () => {
       script.remove();
     };
-  }, [name, description, startDate, endDate, location, url, imageUrl, organizer]);
+  }, [name, description, startDate, endDate, location, url, imageUrl, organizer, schema]);
 
   return null;
 }
