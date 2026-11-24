@@ -196,7 +196,7 @@ His experience includes strategic communications, content development, event pro
   {
     name: "Danay Jones",
     title: "Office & Experience Coordinator",
-    shortBio: "Danay Jones is a community builder, entrepreneur, and operations professional with a background in healthcare recruitment and community engagement. She founded Sober Girls Houston and Sober Girls Tulsa, and as Office & Experience Coordinator at Black Tech Street, she supports technology, innovation, and opportunity in historic Greenwood.",
+    shortBio: "Danay Jones is a community builder and operations professional with a background in healthcare recruitment and community engagement. As Office & Experience Coordinator, she creates welcoming experiences that support Black Tech Street's work in historic Greenwood.",
     expandedBio: `Danay Jones is a community builder, entrepreneur, and operations professional with a background in healthcare recruitment, human services, event coordination, and community engagement. She holds an associate degree in Human Service Technology from Houston Community College and brings a people-first approach to building relationships, creating meaningful experiences, and supporting organizational growth.
 
 Before joining Black Tech Street, Danay founded Sober Girls Houston and Sober Girls Tulsa, community-driven initiatives creating inclusive spaces for women through alcohol-free social experiences, wellness programming, and community engagement. Through her work, she has built partnerships, coordinated events, led marketing and outreach efforts, and developed programs that bring people together through shared experiences and meaningful connections.
