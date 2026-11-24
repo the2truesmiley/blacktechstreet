@@ -176,9 +176,9 @@ export default function AspireEventDecember2026() {
                     </span>
                     December Workshop
                   </motion.div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
-                    ASPIRE GenAI Fluency Workshop
-                  </h2>
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
+                    ASPIRE AI Workshop: December 5, 2026 in Tulsa
+                  </h1>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 gap-8 items-center">

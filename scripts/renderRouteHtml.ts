@@ -42,6 +42,10 @@ export function renderRouteHtml(base: string, route: string): string {
       <p><a href="/aspire/parking">Parking details</a></p>
     </main>`;
     html = html.replace(/<div id="root"><\/div>/, `<div id="root">${content}</div>`);
+  } else {
+    // Real page heading and summary, visible until React renders the full page.
+    const heading = meta.title.split(' | ')[0];
+    html = html.replace(/<div id="root"><\/div>/, `<div id="root"><main><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(meta.description)}</p></main></div>`);
   }
   return html;
 }
