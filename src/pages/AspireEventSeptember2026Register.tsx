@@ -59,7 +59,7 @@ export default function AspireEventSeptember2026Register() {
   // Tally forwards its content height via postMessage when dynamicHeight=1.
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
-      if (typeof e.data !== 'string' || !e.data.includes('Tally.')) return;
+      if (e.origin !== 'https://tally.so' || typeof e.data !== 'string' || !e.data.includes('Tally.')) return;
       try {
         const data = JSON.parse(e.data);
         const h = Number(data?.payload?.height);

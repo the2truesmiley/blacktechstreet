@@ -333,7 +333,7 @@ function AspireNvidia() {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (typeof event.data !== 'string') return;
+      if (event.origin !== 'https://tally.so' || typeof event.data !== 'string') return;
       if (event.data.includes('Tally.FormSubmitted')) {
         setFormSubmitted(true);
         formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });

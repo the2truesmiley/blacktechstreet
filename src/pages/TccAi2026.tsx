@@ -34,7 +34,7 @@ export default function TccAi2026() {
 
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
-      if (typeof e.data !== 'string' || !e.data.includes('Tally.')) return;
+      if (e.origin !== 'https://tally.so' || typeof e.data !== 'string' || !e.data.includes('Tally.')) return;
       try {
         const data = JSON.parse(e.data);
         if (data?.event === 'Tally.FormSubmitted') {

@@ -74,9 +74,11 @@ Deno.serve(async (req) => {
   if (!question) return json({ error: 'Please type a question.' }, 400);
   const history = Array.isArray(body.history) ? body.history.slice(-6) : [];
   const input = [
+    // Only earlier visitor questions are accepted as context; assistant turns
+    // supplied by the caller are dropped so they cannot fake past replies.
     ...history
-      .filter((m: any) => (m?.role === 'user' || m?.role === 'assistant') && typeof m?.content === 'string')
-      .map((m: any) => ({ role: m.role, content: String(m.content).slice(0, 600) })),
+      .filter((m: any) => m?.role === 'user' && typeof m?.content === 'string')
+      .map((m: any) => ({ role: 'user', content: String(m.content).slice(0, 600) })),
     { role: 'user', content: question },
   ];
 

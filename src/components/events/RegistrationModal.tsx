@@ -20,7 +20,7 @@ export function RegistrationModal({ event, isOpen, onClose }: RegistrationModalP
   useEffect(() => {
     if (!isOpen) return;
     const onMessage = (e: MessageEvent) => {
-      if (typeof e.data !== 'string' || !e.data.includes('Tally.')) return;
+      if (e.origin !== 'https://tally.so' || typeof e.data !== 'string' || !e.data.includes('Tally.')) return;
       try {
         const data = JSON.parse(e.data);
         const h = Number(data?.payload?.height);
