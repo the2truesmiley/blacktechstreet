@@ -14,6 +14,7 @@ import {
   Megaphone,
   Eye,
   EyeOff,
+  type LucideIcon,
 } from 'lucide-react';
 import { TopNavBar } from '@/components/timeline/TopNavBar';
 import { Footer } from '@/components/timeline/Footer';
@@ -34,127 +35,67 @@ import michaelHeadshot from '@/assets/team/michael-boone-headshot.png';
  */
 const TALLY_FORM_ID = '';
 
-const runOfShow = [
-  {
-    time: '9:15 – 10:00 AM',
-    title: 'Doors, check in, setup',
-    lead: 'Black Tech Street',
-    points: [
-      'Participants check in and are seated.',
-      'Each person confirms their laptop and chatbot are working.',
-      'A support table handles anyone who is stuck, so no one starts the day behind.',
-      'Light breakfast and coffee available.',
-    ],
-  },
-  {
-    time: '10:00 – 10:15 AM',
-    title: 'Welcome and live build',
-    lead: 'Black Tech Street',
-    points: [
-      'Black Tech Street opens the day and frames what participants will walk out with.',
-      'One live build on stage: a real task from the audience becomes a working skill in front of the room.',
-      'Hand off to Michael Boone.',
-    ],
-  },
-  {
-    time: '10:15 – 11:35 AM',
-    title: 'Skills build',
-    lead: 'Michael Boone, NVIDIA',
-    points: [
-      'Michael Boone walks the room through building and uploading the skills, step by step.',
-      'The room works in sync, with a checkpoint roughly every ten minutes.',
-      'Coaches circulate to keep anyone from falling behind.',
-      'Goal: every participant finishes with at least one skill that runs.',
-    ],
-  },
-  {
-    time: '11:35 – 11:50 AM',
-    title: 'Break',
-    lead: '',
-    points: [
-      'Coaches clear any remaining technical issues before the applied portion begins.',
-      'Participants who want to build an extra skill can keep going with a coach.',
-    ],
-  },
-  {
-    time: '11:50 AM – 1:20 PM',
-    title: 'Skills Application',
-    lead: 'Black Tech Street',
-    points: [
-      'Five exercises, each building on the last.',
-      'Participants do not move on until the current exercise produces a real result.',
-    ],
-  },
-  {
-    time: '1:20 – 1:45 PM',
-    title: 'Participant presentations',
-    lead: 'Black Tech Street',
-    points: [
-      'Five to six people present for two minutes each: what they built, what it does for them, and why it mattered.',
-      'Presenters represent a range of starting experience levels.',
-    ],
-  },
-  {
-    time: '1:45 – 2:00 PM',
-    title: 'Close and follow up',
-    lead: 'Both',
-    points: [
-      'Participants write down what they saved and what they plan to automate next.',
-      'Black Tech Street collects these as the record of impact and confirms the 30 day follow up.',
-      'Doors stay open and the support table stays staffed for 20 minutes after.',
-    ],
-  },
-];
+/**
+ * The protected workshop content is NOT bundled with the site. It lives in the
+ * nvidia-access edge function and is only returned after the server validates
+ * an access token issued for the correct password.
+ */
+interface WorkshopContent {
+  seo: { title: string; description: string };
+  hero: {
+    heading: string;
+    status: string;
+    taglineLead: string;
+    taglineAccent: string;
+    subcopy: string;
+    calloutTitle: string;
+    calloutBody: string;
+    cta: string;
+  };
+  facts: { icon: string; label: string; value: string }[];
+  laptopNote: string;
+  leads: { name: string; title: string; org: string; role: string; imageKey: string }[];
+  runOfShow: { time: string; title: string; lead: string; points: string[] }[];
+  exercisesIntro: string;
+  exercises: { icon: string; n: string; title: string; duration: string; desc: string }[];
+  takeaways: string[];
+  registration: {
+    heading: string;
+    subcopy: string;
+    successHeading: string;
+    successSubcopy: string;
+    successBody: string;
+    placeholderHeading: string;
+    placeholderBody: string;
+  };
+  eventJsonLd: {
+    name: string;
+    description: string;
+    startDate: string;
+    endDate: string;
+    locationName: string;
+    locationAddress: string;
+  };
+}
 
-const exercises = [
-  {
-    icon: Sparkles,
-    n: '01',
-    title: 'Feed It the Truth',
-    duration: '15 min',
-    desc:
-      'Note three specific true things about your situation that a stranger would not know, then feed the skill your real information and get a first output.',
-  },
-  {
-    icon: Search,
-    n: '02',
-    title: 'Question It Before You Trust It',
-    duration: '20 min',
-    desc:
-      'Ask the skill what it assumed, what its weakest part is, and what it would need to know to improve. Answer the third and run it again. This is the master habit of the day.',
-  },
-  {
-    icon: Repeat,
-    n: '03',
-    title: 'Build the Routine',
-    duration: '15 min',
-    desc:
-      'Decide when you will run the skill again, put multiple skills in order so one feeds the next, and write the routine as one sentence.',
-  },
-  {
-    icon: Gauge,
-    n: '04',
-    title: 'Put a Number On It',
-    duration: '15 min',
-    desc:
-      'Write how long the task took before and how long now, multiply by how often you do it across a year, and name one dated action you will take this week.',
-  },
-  {
-    icon: Share2,
-    n: '05',
-    title: 'Make It Teachable',
-    duration: '25 min',
-    desc:
-      'Write the skill as three plain steps, hand it to a stranger who runs it on their own information, watch where they get stuck, and fix the instructions until it works.',
-  },
-];
+const factIcons: Record<string, LucideIcon> = {
+  calendar: Calendar,
+  clock: Clock,
+  mapPin: MapPin,
+};
 
-const takeaways = [
-  'At least one working skill you built yourself.',
-  'A real task from your own life, completed in the room.',
-  'One concrete action to take this week.',
-  'A skill proven to work in someone else\u2019s hands, ready to share.',
-];
+const exerciseIcons: Record<string, LucideIcon> = {
+  sparkles: Sparkles,
+  search: Search,
+  repeat: Repeat,
+  gauge: Gauge,
+  share: Share2,
+};
+
+const leadImages: Record<string, string> = {
+  michael: michaelHeadshot,
+  tyrance: tyranceHeadshot,
+};
 
 const ACCESS_STORAGE_KEY = 'aspire-nvidia-access-token';
 
@@ -172,15 +113,15 @@ async function requestAccessToken(password: string): Promise<string> {
   return data.token as string;
 }
 
-async function verifyAccessToken(token: string): Promise<boolean> {
+async function fetchWorkshopContent(token: string): Promise<WorkshopContent | null> {
   const { data, error } = await supabase.functions.invoke('nvidia-access', {
-    body: { action: 'verify', token },
+    body: { action: 'content', token },
   });
-  if (error) return false;
-  return data?.valid === true;
+  if (error || !data?.content) return null;
+  return data.content as WorkshopContent;
 }
 
-function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
+function PasswordGate({ onUnlock }: { onUnlock: (token: string) => void }) {
   const [value, setValue] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -195,7 +136,7 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
     try {
       const token = await requestAccessToken(value.trim());
       sessionStorage.setItem(ACCESS_STORAGE_KEY, token);
-      onUnlock();
+      onUnlock(token);
     } catch {
       setError('Incorrect password. Try again.');
       setValue('');
@@ -258,6 +199,18 @@ function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
 
 export default function AspireNvidiaPage() {
   const [status, setStatus] = useState<'checking' | 'locked' | 'unlocked'>('checking');
+  const [content, setContent] = useState<WorkshopContent | null>(null);
+
+  const unlockWithToken = useCallback(async (token: string) => {
+    const fetched = await fetchWorkshopContent(token);
+    if (!fetched) {
+      sessionStorage.removeItem(ACCESS_STORAGE_KEY);
+      setStatus('locked');
+      return;
+    }
+    setContent(fetched);
+    setStatus('unlocked');
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -266,10 +219,15 @@ export default function AspireNvidiaPage() {
       setStatus('locked');
       return;
     }
-    verifyAccessToken(token).then((valid) => {
+    fetchWorkshopContent(token).then((fetched) => {
       if (!active) return;
-      if (!valid) sessionStorage.removeItem(ACCESS_STORAGE_KEY);
-      setStatus(valid ? 'unlocked' : 'locked');
+      if (!fetched) {
+        sessionStorage.removeItem(ACCESS_STORAGE_KEY);
+        setStatus('locked');
+        return;
+      }
+      setContent(fetched);
+      setStatus('unlocked');
     });
     return () => {
       active = false;
@@ -294,16 +252,16 @@ export default function AspireNvidiaPage() {
     );
   }
 
-  if (status === 'locked') return <PasswordGate onUnlock={() => setStatus('unlocked')} />;
-  return <AspireNvidia />;
+  if (status === 'locked' || !content) {
+    return <PasswordGate onUnlock={unlockWithToken} />;
+  }
+  return <AspireNvidia content={content} />;
 }
 
-
-function AspireNvidia() {
+function AspireNvidia({ content }: { content: WorkshopContent }) {
   useSEO({
-    title: 'Black Tech Street × NVIDIA ASPIRE Skills Workshop',
-    description:
-      'A free, hands-on AI skills building workshop from Black Tech Street and NVIDIA. Saturday, October 10, 2026 at Langston University Tulsa. Build a skill, apply it to real work, walk out with it running.',
+    title: content.seo.title,
+    description: content.seo.description,
     canonical: 'https://blacktechstreet.ai/aspire-nvidia',
   });
 
@@ -424,11 +382,11 @@ function AspireNvidia() {
       <TopNavBar />
 
       <EventJsonLd
-        name="Black Tech Street × NVIDIA ASPIRE Skills Building Workshop"
-        description="A free, hands-on AI skills building workshop. Build a skill with NVIDIA, apply it to a real task from your own work with Black Tech Street, and present what you built."
-        startDate="2026-10-10T10:00:00-05:00"
-        endDate="2026-10-10T14:00:00-05:00"
-        location={{ name: 'Langston University, Tulsa', address: '914 N Greenwood Ave, Tulsa, OK 74106' }}
+        name={content.eventJsonLd.name}
+        description={content.eventJsonLd.description}
+        startDate={content.eventJsonLd.startDate}
+        endDate={content.eventJsonLd.endDate}
+        location={{ name: content.eventJsonLd.locationName, address: content.eventJsonLd.locationAddress }}
         url="https://blacktechstreet.ai/aspire-nvidia"
       />
 
@@ -453,13 +411,13 @@ function AspireNvidia() {
                 </span>
               </div>
               <h1 className="text-2xl md:text-4xl font-display font-bold tracking-tight uppercase text-foreground/90 mt-2">
-                ASPIRE Skills Building Workshop
+                {content.hero.heading}
               </h1>
             </motion.div>
 
             <motion.div variants={fadeUp} custom={1} className="mb-6">
               <span className="text-[11px] md:text-xs uppercase tracking-[0.28em] text-primary font-medium">
-                Now Accepting Registrations
+                {content.hero.status}
               </span>
             </motion.div>
 
@@ -468,14 +426,12 @@ function AspireNvidia() {
               custom={2}
               className="text-xl md:text-3xl font-display font-bold tracking-tight leading-[1.15] mb-5"
             >
-              Build the Skill. Apply it to your own work.{' '}
-              <span className="text-primary">Walk out with it running.</span>
+              {content.hero.taglineLead}{' '}
+              <span className="text-primary">{content.hero.taglineAccent}</span>
             </motion.h2>
 
             <motion.p variants={fadeUp} custom={3} className="text-base md:text-lg text-foreground max-w-2xl mx-auto">
-              NVIDIA teaches you to build the skill. Black Tech Street helps you apply it to a real
-              task from your own life. The day ends with participants presenting what they built and
-              why it mattered.
+              {content.hero.subcopy}
             </motion.p>
 
             <motion.div variants={fadeUp} custom={4} className="mt-8 mb-3 flex justify-center">
@@ -484,8 +440,8 @@ function AspireNvidia() {
                   <Megaphone className="h-4 w-4" />
                 </div>
                 <div className="text-left">
-                  <div className="text-sm font-semibold text-primary">Free Training</div>
-                  <div className="text-xs text-foreground/80">No cost to attend — registration required.</div>
+                  <div className="text-sm font-semibold text-primary">{content.hero.calloutTitle}</div>
+                  <div className="text-xs text-foreground/80">{content.hero.calloutBody}</div>
                 </div>
               </div>
             </motion.div>
@@ -499,7 +455,7 @@ function AspireNvidia() {
                 }}
                 className="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3.5 w-64 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90 hover:shadow-primary/30 transition-all hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
-                Reserve your seat
+                {content.hero.cta}
               </a>
             </motion.div>
           </motion.div>
@@ -512,23 +468,22 @@ function AspireNvidia() {
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6"
           >
-            {[
-              { icon: Calendar, label: 'Date', value: 'Saturday, October 10, 2026' },
-              { icon: Clock, label: 'Time', value: '10:00 AM – 2:00 PM' },
-              { icon: MapPin, label: 'Location', value: 'Langston University, Tulsa' },
-            ].map(({ icon: Icon, label, value }) => (
-              <motion.div
-                key={label}
-                variants={fadeUp}
-                whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="group rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5 hover:border-primary/50 hover:bg-card/90 transition-colors"
-              >
-                <Icon className="w-5 h-5 text-primary mb-2 transition-transform group-hover:scale-110" />
-                <div className="text-xs uppercase tracking-wider text-foreground mb-1">{label}</div>
-                <div className="font-display font-bold text-base leading-snug">{value}</div>
-              </motion.div>
-            ))}
+            {content.facts.map(({ icon, label, value }) => {
+              const Icon = factIcons[icon] ?? Calendar;
+              return (
+                <motion.div
+                  key={label}
+                  variants={fadeUp}
+                  whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  className="group rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5 hover:border-primary/50 hover:bg-card/90 transition-colors"
+                >
+                  <Icon className="w-5 h-5 text-primary mb-2 transition-transform group-hover:scale-110" />
+                  <div className="text-xs uppercase tracking-wider text-foreground mb-1">{label}</div>
+                  <div className="font-display font-bold text-base leading-snug">{value}</div>
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           <motion.div
@@ -540,7 +495,7 @@ function AspireNvidia() {
           >
             <Laptop className="w-5 h-5 text-primary shrink-0 mt-0.5" />
             <p className="text-sm text-foreground">
-              In person. Bring your own laptop and use any chatbot you like.
+              {content.laptopNote}
             </p>
           </motion.div>
 
@@ -554,35 +509,20 @@ function AspireNvidia() {
           >
             <h2 className="text-xl md:text-2xl font-display font-bold mb-4">Led by</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  name: 'Michael Boone',
-                  title: 'Manager of Trustworthy AI Product',
-                  org: 'NVIDIA',
-                  role: 'Skills build',
-                  image: michaelHeadshot,
-                },
-                {
-                  name: 'Tyrance Billingsley II',
-                  title: 'Founder & CEO',
-                  org: 'Black Tech Street',
-                  role: 'Skills Application',
-                  image: tyranceHeadshot,
-                },
-              ].map((lead) => (
+              {content.leads.map((lead) => (
                 <div
                   key={lead.name}
                   className="flex items-center gap-4 rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5"
                 >
                   <img
-                    src={lead.image}
+                    src={leadImages[lead.imageKey] ?? tyranceHeadshot}
                     alt={lead.name}
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl object-cover border border-border/60 shrink-0"
                   />
                   <div>
                     <div className="text-xs uppercase tracking-wider text-primary mb-1">{lead.role}</div>
                     <div className="font-display font-bold text-base sm:text-lg leading-snug">{lead.name}</div>
-                    {'title' in lead && lead.title && (
+                    {lead.title && (
                       <div className="text-sm text-foreground/80">{lead.title}</div>
                     )}
                     <div className="text-sm text-foreground">{lead.org}</div>
@@ -604,7 +544,7 @@ function AspireNvidia() {
             <div className="relative pl-6 sm:pl-8">
               <div className="absolute left-[7px] sm:left-[9px] top-2 bottom-2 w-px bg-border/70" aria-hidden="true" />
               <ol className="space-y-6">
-                {runOfShow.map((block, i) => (
+                {content.runOfShow.map((block, i) => (
                   <motion.li
                     key={block.title}
                     initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -12 }}
@@ -654,30 +594,32 @@ function AspireNvidia() {
           >
             <h2 className="text-xl md:text-2xl font-display font-bold mb-2">Five Exercises</h2>
             <p className="text-sm text-foreground mb-6 max-w-2xl">
-              Each exercise builds on the last, and you do not move on until the current one produces a
-              real result. The same steps work for any skill built that morning.
+              {content.exercisesIntro}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {exercises.map(({ icon: Icon, n, title, duration, desc }, i) => (
-                <motion.div
-                  key={title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-                  className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5 hover:border-primary/50 transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <Icon className="w-5 h-5 text-primary" />
-                    <span className="text-xs font-mono text-foreground/70">
-                      {n} · {duration}
-                    </span>
-                  </div>
-                  <h3 className="font-display font-bold text-base mb-2">{title}</h3>
-                  <p className="text-sm text-foreground">{desc}</p>
-                </motion.div>
-              ))}
+              {content.exercises.map(({ icon, n, title, duration, desc }, i) => {
+                const Icon = exerciseIcons[icon] ?? Sparkles;
+                return (
+                  <motion.div
+                    key={title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+                    className="rounded-xl border border-border/60 bg-card/70 backdrop-blur-md p-5 hover:border-primary/50 transition-colors"
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <Icon className="w-5 h-5 text-primary" />
+                      <span className="text-xs font-mono text-foreground/70">
+                        {n} · {duration}
+                      </span>
+                    </div>
+                    <h3 className="font-display font-bold text-base mb-2">{title}</h3>
+                    <p className="text-sm text-foreground">{desc}</p>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.section>
 
@@ -693,7 +635,7 @@ function AspireNvidia() {
               What every participant leaves with
             </h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {takeaways.map((t) => (
+              {content.takeaways.map((t) => (
                 <li
                   key={t}
                   className="flex items-start gap-3 rounded-lg border border-border/40 bg-background/40 p-4 text-sm text-foreground"
@@ -716,12 +658,10 @@ function AspireNvidia() {
             className="rounded-2xl border border-border/60 bg-card/70 backdrop-blur-md p-3 sm:p-6 md:p-8 scroll-mt-24"
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-2 text-center">
-              {formSubmitted ? 'Reservation received' : 'Reserve your seat'}
+              {formSubmitted ? content.registration.successHeading : content.registration.heading}
             </h2>
             <p className="text-sm text-foreground text-center mb-6">
-              {formSubmitted
-                ? "We'll see you on Saturday, October 10, 2026."
-                : 'Free to attend. Capacity is 150 participants.'}
+              {formSubmitted ? content.registration.successSubcopy : content.registration.subcopy}
             </p>
 
             {!TALLY_FORM_ID ? (
@@ -729,10 +669,9 @@ function AspireNvidia() {
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
                   <Calendar className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="font-display font-bold text-lg mb-2">Registration opens soon</h3>
+                <h3 className="font-display font-bold text-lg mb-2">{content.registration.placeholderHeading}</h3>
                 <p className="text-sm text-foreground max-w-md mx-auto">
-                  Sign-ups for the October 10 workshop are not open yet. Check back shortly, or reach
-                  out through our contact page and we will let you know the moment seats are released.
+                  {content.registration.placeholderBody}
                 </p>
               </div>
             ) : (
@@ -752,8 +691,7 @@ function AspireNvidia() {
                         </div>
                         <h3 className="text-xl md:text-2xl font-display font-bold mb-2">You're registered!</h3>
                         <p className="text-sm text-foreground mb-6">
-                          Your seat is reserved for the Black Tech Street × NVIDIA ASPIRE Skills Building
-                          Workshop on October 10, 2026.
+                          {content.registration.successBody}
                         </p>
                         <button
                           type="button"
