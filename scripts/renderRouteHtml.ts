@@ -7,7 +7,7 @@ const escapeHtml = (value: string) => value.replace(/&/g, '&amp;').replace(/"/g,
 export function renderRouteHtml(base: string, route: string): string {
   const meta = routeMeta[route];
   if (!meta) return base;
-  const url = SITE + route;
+  const url = SITE + (meta.url ?? route);
   let html = base.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(meta.title)}</title>`);
   const setTag = (pattern: RegExp, tag: string) => {
     html = pattern.test(html) ? html.replace(pattern, tag) : html.replace('</head>', `${tag}\n</head>`);
